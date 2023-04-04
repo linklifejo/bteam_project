@@ -32,12 +32,7 @@ public class MainActivity extends AppCompatActivity {
 //    검색 :     SearchFragment      =>  search_frag
 //    찜 :       WillHaveFragment  =>   willhave_frag
 //    나의정보 :  MyInfoFragment =>   myinfo_frag
-<<<<<<< HEAD
     //    용성 텍스트 추가 // 나도 추가 //동환추가
-
-=======
-    // 동환 추가
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
     public Bundle bundle;
     Toolbar toolbar;
     BottomNavigationView bNaviView;
