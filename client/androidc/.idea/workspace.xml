@@ -10,18 +10,12 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
-<<<<<<< HEAD
     <list default="true" id="8c87d6b5-1872-483d-b710-ef142a32e2d7" name="Changes" comment="" />
 =======
     <list default="true" id="8c87d6b5-1872-483d-b710-ef142a32e2d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
 >>>>>>> 4d25221d28ca6d148062026fe08f3e09e925d908
-=======
-    <list default="true" id="1e12188d-5eca-4783-aecf-5d673e509b4f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hanul/bteam/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hanul/bteam/MainActivity.java" afterDir="false" />
-    </list>
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,11 +33,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-<<<<<<< HEAD
   <component name="ProjectId" id="2Nwoq95xi9DaRfMkqhhg0BjnNIB" />
-=======
-  <component name="ProjectId" id="2Nwtjwp1edFOIIdagd2zrkobHBX" />
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,7 +43,6 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
   </component>
   <component name="RecentsManager">
@@ -62,9 +51,6 @@
       <recent name="D:\bteam_project\client\androidc\app\src\main\res\drawable-v24" />
       <recent name="D:\bteam_project\client\androidc\app\src\main\res\layout" />
     </key>
-=======
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -130,19 +116,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
       <changelist id="8c87d6b5-1872-483d-b710-ef142a32e2d7" name="Changes" comment="" />
       <created>1680584696878</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680584696878</updated>
-=======
-      <changelist id="1e12188d-5eca-4783-aecf-5d673e509b4f" name="Changes" comment="" />
-      <created>1680587114306</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1680587114306</updated>
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
     </task>
     <servers />
   </component>

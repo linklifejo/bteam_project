@@ -49,10 +49,7 @@ id tab4
 id textView
 id textView2
 id textView3
-<<<<<<< HEAD
 id textView4
-=======
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
 id toolbar
 id tvTitle
 layout activity_main

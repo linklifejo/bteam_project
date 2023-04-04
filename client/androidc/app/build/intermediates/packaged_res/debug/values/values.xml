@@ -9,11 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">bteam</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-<<<<<<< HEAD
     <style name="Theme.Bteam" parent="Theme.AppCompat.Light">
-=======
-    <style name="Theme.Bteam" parent="Theme.MaterialComponents.DayNight.NoActionBar">
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
         
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>

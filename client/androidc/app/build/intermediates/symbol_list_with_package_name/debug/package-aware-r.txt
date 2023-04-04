@@ -3288,10 +3288,7 @@ id textTop
 id textView
 id textView2
 id textView3
-<<<<<<< HEAD
 id textView4
-=======
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

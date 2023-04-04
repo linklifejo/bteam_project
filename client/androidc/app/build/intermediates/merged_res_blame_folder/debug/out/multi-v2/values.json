@@ -1,11 +1,7 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
             "outputFile": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-mergeDebugResources-28:\\values\\values.xml",
-=======
-            "outputFile": "com.hanul.bteam.app-mergeDebugResources-28:/values/values.xml",
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\ad4188aec8e47f950f9aa035ef92e540\\transformed\\glide-4.14.2\\res\\values\\values.xml",
@@ -389,7 +385,6 @@
                     }
                 }
             ]
-<<<<<<< HEAD
         },
         {
             "outputFile": "com.hanul.bteam.app-mergeDebugResources-28:/values/values.xml",
@@ -690,8 +685,6 @@
                     }
                 }
             ]
-=======
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
         }
     ]
 }

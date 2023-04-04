@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,39 +12,3 @@
         android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>
-=======
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="405dp"
-        app:cardCornerRadius="10dp"
-        app:cardUseCompatPadding="true">
-
-
-        <TextView
-            android:id="@+id/locname"
-            android:layout_width="197dp"
-            android:layout_height="40dp"
-            android:text="추천등산코스"
-            android:textSize="30sp" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="400dp"
-            android:src="@drawable/mudng2" />
-
-
-    </androidx.cardview.widget.CardView>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
