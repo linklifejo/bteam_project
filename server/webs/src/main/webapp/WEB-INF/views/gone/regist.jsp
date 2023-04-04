@@ -16,10 +16,24 @@
 <tr><th class='w-px140'>제목</th>
 	<td><input type='text' name='title' title='제목' class='chk full'></td>
 </tr>
+<tr><th>첨부파일</th>
+	<td class='txt-left'>
+		<div class='align'>
+		<label>
+			<input type='file' name='file' class='attach-file'>
+			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
+		</label>
+		<span class='file-name'></span>
+		<span class='preview'></span>
+		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
+		</div>
+	</td>
+</tr>
+	
 	<tr><th>가본산/찜한산</th>
 		<td>
-			<label><input type='radio' name='type' value='1'>가본산</label>
-			<label><input type='radio' checked name='type' value='2'>찜한산</label>
+			<label><input type='radio' checked name='type' value='1'>가본산</label>
+			<!-- <label><input type='radio' checked name='type' value='2'>찜한산</label> -->
 		</td>
 	</tr>
 <tr><th>산 선택</th>
@@ -46,19 +60,6 @@
 </tr>
 <tr><th>내용</th>
 	<td><textarea name='content' title='내용' class='chk full'></textarea> </td>
-</tr>
-<tr><th>첨부파일</th>
-	<td class='txt-left'>
-		<div class='align'>
-		<label>
-			<input type='file' name='file' class='attach-file'>
-			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
-		</label>
-		<span class='file-name'></span>
-		<span class='preview'></span>
-		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
-		</div>
-	</td>
 </tr>
 </table>
 </form>
