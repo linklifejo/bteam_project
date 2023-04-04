@@ -6,6 +6,22 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+	.align{
+		position: relative;
+	}
+
+	.delete-file{
+		position: absolute;
+		left: 10ox;
+		bottom: 0px;
+		right: 10px;
+	}
+
+
+
+</style>
+
 <body>
 <h3>탐방 글쓰기</h3>
 <form method='post' enctype='multipart/form-data' action='insert.go'>
@@ -16,26 +32,35 @@
 <tr><th class='w-px140'>제목</th>
 	<td><input type='text' name='title' title='제목' class='chk full'></td>
 </tr>
+
+<!-- .align { display: flex; align-items: center; }
+.align * { margin-right: 5px; } -->
+
+
 <tr><th>첨부파일</th>
 	<td class='txt-left'>
-		<div class='align'>
+		<div class="align">
 		<label>
 			<input type='file' name='file' class='attach-file'>
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
-		<span class='file-name'></span>
-		<span class='preview'></span>
-		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
+		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>		
+		<div class='file-name'></div>
+		<div class='preview'></div>
 		</div>
 	</td>
 </tr>
-	
-	<tr><th>가본산/찜한산</th>
+
+
+<input type='hidden' name='ptype' value='3'>
+
+
+<!-- 	<tr><th>가본산/찜한산</th>
 		<td>
 			<label><input type='radio' checked name='type' value='1'>가본산</label>
-			<!-- <label><input type='radio' checked name='type' value='2'>찜한산</label> -->
+			<label><input type='radio' checked name='type' value='2'>찜한산</label>
 		</td>
-	</tr>
+	</tr> -->
 <tr><th>산 선택</th>
 	<td><select name='location_id' class='w-px300 loc'>
 		<c:forEach items='${location}' var='l'>		
