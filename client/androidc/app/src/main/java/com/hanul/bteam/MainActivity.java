@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class MainActivity extends AppCompatActivity {
+    // 나의주석
 //    홈 :       HomeFragment      =>   home_frag
 //    검색 :     SearchFragment      =>  search_frag
 //    찜 :       WillHaveFragment  =>   willhave_frag
