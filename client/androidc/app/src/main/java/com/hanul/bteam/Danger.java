@@ -28,8 +28,8 @@ public class Danger extends Fragment {
         activity =(MainActivity)getActivity();
         Bundle b = activity.bundle;
         GoneDTO d = (GoneDTO) b.getSerializable("dto");
-//        TextView t = viewGroup.findViewById(R.id.locname);
-//        t.setText(d.getLocname());
+        TextView t = viewGroup.findViewById(R.id.locname);
+        t.setText(d.getLocname());
         return viewGroup;
 
     }
