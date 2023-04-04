@@ -45,6 +45,7 @@ public class GoneDAO implements GoneService {
 
 	@Override
 	public int gone_read(int id) {
+		System.out.println("");
 		return sql.update("go.read", id);
 	}
 
