@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e12188d-5eca-4783-aecf-5d673e509b4f" name="Changes" comment="" />
+    <list default="true" id="1e12188d-5eca-4783-aecf-5d673e509b4f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hanul/bteam/Danger.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hanul/bteam/Danger.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
