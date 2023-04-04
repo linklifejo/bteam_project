@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 //    검색 :     SearchFragment      =>  search_frag
 //    찜 :       WillHaveFragment  =>   willhave_frag
 //    나의정보 :  MyInfoFragment =>   myinfo_frag
-    //    용성 텍스트 추가
+    //    용성 텍스트 추가 // 나도 추가
 
     public Bundle bundle;
     Toolbar toolbar;
