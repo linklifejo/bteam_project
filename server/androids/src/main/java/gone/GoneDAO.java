@@ -20,6 +20,7 @@ public class GoneDAO implements GoneService {
 	
 	@Override
 	public int gone_insert(GoneVO vo) {
+		System.out.println("");
 		//방명록 글을 저장한 후
 		int dml = sql.insert("go.insert", vo);
 		//해당 글에 첨부된 파일이 있으면 파일정보를 저장한다
