@@ -9,9 +9,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.hanul.bteam.dto.GoneDTO;
 
 
 public class Course extends Fragment {
+    MainActivity activity;
 
     @Nullable
     @Override
@@ -21,7 +25,11 @@ public class Course extends Fragment {
 
         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.course,
                 container, false);
-
+        activity =(MainActivity)getActivity();
+        Bundle b = activity.bundle;
+        GoneDTO d = (GoneDTO) b.getSerializable("dto");
+        TextView t = viewGroup.findViewById(R.id.locname);
+        t.setText(d.getLocname());
         return viewGroup;
     }
 

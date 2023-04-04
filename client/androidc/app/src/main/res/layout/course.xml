@@ -14,7 +14,7 @@
 
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/locname"
             android:layout_width="197dp"
             android:layout_height="40dp"
             android:text="추천등산코스"
