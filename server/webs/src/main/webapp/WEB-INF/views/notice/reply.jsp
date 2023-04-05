@@ -6,7 +6,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+</style>
+
+
 <body>
+
+<div class="main">
 <h3>답글쓰기</h3>
 <form method='post' action='reply_insert.no' enctype='multipart/form-data'>
 <!-- 원글의정보 -->
@@ -46,6 +59,9 @@
 <a class='btn-empty' 
 href='info.no?search=${page.search}&keyword=${page.keyword}&id=${vo.id}&curPage=${page.curPage}'>취소</a>
 </div>
+</div>
+
+
 
 <script>
 $('.btn-save').click(function(){

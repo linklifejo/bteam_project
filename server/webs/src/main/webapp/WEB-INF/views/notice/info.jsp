@@ -8,9 +8,22 @@
 <title>Insert title here</title>
 <style type="text/css">
 table td { text-align: left }
+
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+
+
 </style>
 </head>
 <body>
+
+<div class="main">
+
 <h3>공지글 안내</h3>
 <table class='w-px1200'>
 <tr><th class='w-px140'>제목</th>
@@ -47,8 +60,12 @@ table td { text-align: left }
 	<c:if test="${not empty loginInfo }">
 	<a class='btn-fill' href='reply.no?id=${vo.id}&${params}'>답글쓰기</a>
 	</c:if>
+
 	
 </div>
+</div>
+
+
 
 </body>
 </html>

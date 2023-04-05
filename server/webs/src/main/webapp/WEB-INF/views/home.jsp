@@ -51,8 +51,8 @@
 	<a href='info.go?id=${vo.id}'></a>
 		<span style="display:inline-block; height:300px; width:250px;">
 	
-		<div class="card"><img class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
-    		 alt="사진파일">
+		<div class="card"><a href='info.go?id=${vo.id}'><img class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+    		 alt="사진파일"></a>
 		</div>
 		<div>${vo.filename}</div>
 	

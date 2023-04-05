@@ -6,8 +6,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+	}
+
+
+</style>
+
 <body>
+
+<div class="main">
 <h3>방명록 새글쓰기</h3>
+
+
 <form method='post' enctype='multipart/form-data' action='insert.bo'>
 <input type='hidden' name='writer' value='${loginInfo.id}'>
 <table class='w-px1200'>
@@ -36,6 +49,11 @@
 <a class='btn-fill btn-save'>저장</a>
 <a class='btn-empty' href='list.bo'>취소</a>
 </div>
+
+</div>
+
+
+
 <script>
 $('.btn-save').on('click', function(){
 	if( emptyCheck() ) $('form').submit();

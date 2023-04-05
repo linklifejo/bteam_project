@@ -6,12 +6,55 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+	
+	.main-2{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+		display: flex;
+		position: relative;
+	}
+	
+	
+	.new{
+	
+	}
+	
+	.ul{
+ 		position: absolute;
+		left: 10ox;
+		bottom: 0px;
+		right: 10px;
+	
+	}
+	
+
+</style>
+
+
+
 <body>
+
+<div class="main">
 <h3>탐방 목록</h3>
+</div>
+
 
 <form method='post' action='list.go'>
-<div id='list-top' class='w-px1200'>
-<ul>
+
+
+<div class="new">
+<div id='list-top' class='w-px1200 main-2'>
+<ul style="padding-left: 0">
 	<li><select name='search' class='w-px100'>
 		<option value='all' ${page.search eq 'all' ? 'selected' : ''}>전체</option>
 		<option value='title' ${page.search eq 'title' ? 'selected' : ''}>제목</option>
@@ -22,6 +65,7 @@
 	<li><input type='text' value='${page.keyword}' name='keyword' class='w-px250'></li>
 	<li><a class='btn-fill' onclick="$('form').submit()">검색</a></li>
 </ul>
+<div class="ul">
 <ul>
 	<li><select class='w-px100' name='pageList'>
 		<c:forEach var='i' begin='1' end='5'>
@@ -39,8 +83,17 @@
 	<li><a class='btn-fill' href='new.go'>새글쓰기</a></li>
 	</c:if>
 </ul>
+</div>
+
+
 
 </div>
+</div>
+
+
+
+
+
 <input type='hidden' name='curPage' value='1'>
 <input type='hidden' name='id'>
 </form>
