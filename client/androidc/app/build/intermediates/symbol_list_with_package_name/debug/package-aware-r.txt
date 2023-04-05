@@ -2999,6 +2999,7 @@ id contiguous
 id continuousVelocity
 id coordinator
 id cos
+id couname
 id counterclockwise
 id course
 id cradle
@@ -3361,6 +3362,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tutu
 id tvTitle
 id unchecked
 id uniform
@@ -3494,6 +3496,7 @@ layout abc_tooltip
 layout activity_main
 layout boardview
 layout course
+layout courseview
 layout custom_dialog
 layout danger
 layout design_bottom_navigation_item
@@ -3514,6 +3517,7 @@ layout design_text_input_start_icon
 layout detailmo
 layout goneview
 layout home_frag
+layout hulist
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

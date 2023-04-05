@@ -74,6 +74,7 @@ id button2
 id button3
 id button4
 id contain
+id couname
 id course
 id danger
 id filename
@@ -96,15 +97,25 @@ id textView3
 id textView4
 id textView5
 id textView6
+<<<<<<< HEAD
+=======
+id title
+>>>>>>> 9de0113f7d6860de5785e1134127d30715b85a88
 id toolbar
+id tutu
 id tvTitle
 layout activity_main
 layout boardview
 layout course
+layout courseview
 layout danger
 layout detailmo
 layout goneview
 layout home_frag
+<<<<<<< HEAD
+=======
+layout hulist
+>>>>>>> 9de0113f7d6860de5785e1134127d30715b85a88
 layout mountains_by_region
 layout mountains_by_seoul
 layout myinfo_frag

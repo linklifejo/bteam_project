@@ -23,6 +23,12 @@ public class GoneDTO implements Serializable {
         this.course_no = course_no;
         this.resId = resId;
     }
+    //테스트
+    public GoneDTO(String title) {
+        this.title = title;
+
+    }
+
 
     public String getTitle() {
         return title;

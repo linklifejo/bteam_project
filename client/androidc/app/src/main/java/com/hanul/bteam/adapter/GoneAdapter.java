@@ -48,6 +48,7 @@ public class GoneAdapter extends
     ////////////////////////////////////////////////////
     // 매소드는 여기에 만든다
     // dtos에 dto를 추가하는 매소드
+    //테스트
     public void addDto(GoneDTO dto) {
         dtos.add(dto);
     }

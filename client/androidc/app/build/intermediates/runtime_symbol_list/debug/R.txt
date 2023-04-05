@@ -2998,6 +2998,10 @@ int id contiguous 0x7f08008b
 int id continuousVelocity 0x7f08008c
 int id coordinator 0x7f08008d
 int id cos 0x7f08008e
+<<<<<<< HEAD
+=======
+int id couname 0x7f080211
+>>>>>>> 9de0113f7d6860de5785e1134127d30715b85a88
 int id counterclockwise 0x7f08008f
 int id course 0x7f080090
 int id cradle 0x7f080091
@@ -3360,6 +3364,10 @@ int id transition_position 0x7f0801f5
 int id transition_scene_layoutid_cache 0x7f0801f6
 int id transition_transform 0x7f0801f7
 int id triangle 0x7f0801f8
+<<<<<<< HEAD
+=======
+int id tutu 0x7f080213
+>>>>>>> 9de0113f7d6860de5785e1134127d30715b85a88
 int id tvTitle 0x7f0801f9
 int id unchecked 0x7f0801fa
 int id uniform 0x7f0801fb
@@ -3493,6 +3501,7 @@ int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
 int layout boardview 0x7f0b001d
 int layout course 0x7f0b001e
+int layout courseview 0x7f0b0077
 int layout custom_dialog 0x7f0b001f
 int layout danger 0x7f0b0020
 int layout design_bottom_navigation_item 0x7f0b0021
@@ -3513,6 +3522,7 @@ int layout design_text_input_start_icon 0x7f0b002f
 int layout detailmo 0x7f0b0030
 int layout goneview 0x7f0b0031
 int layout home_frag 0x7f0b0032
+int layout hulist 0x7f0b0079
 int layout m3_alert_dialog 0x7f0b0033
 int layout m3_alert_dialog_actions 0x7f0b0034
 int layout m3_alert_dialog_title 0x7f0b0035
