@@ -6,9 +6,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
 
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+	.main1{
+		text-align: center; margin: 0 auto;
+		container: text-center;	
+	}
+
+
+</style>
+
+<body>
+<div class="main">
 	<h3>전국산 정보</h3>
+</div>
 	<table class='w-px600'>
 	<colgroup>
 		<col width="140px">
@@ -31,11 +49,15 @@
 	</tr>
 	</table>
 
+
+<div class="main1">
 	<div class='btnSet'>
 		<a class='btn-fill' href='list.lo'>전국산목록</a>
 		<a class='btn-fill' href='modify.lo?id=${vo.id}'>정보수정</a>
 		<a class='btn-empty' onclick='fn_delete()'>정보삭제</a>
 	</div>
+</div>	
+
 
 <script>
 function fn_delete(){

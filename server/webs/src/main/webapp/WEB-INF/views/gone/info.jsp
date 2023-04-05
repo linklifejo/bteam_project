@@ -11,9 +11,24 @@ table td { text-align: left; }
 #comment-regist, #comment-list { width: 600px; margin: 0 auto; text-align: left }
 #comment, textarea.modify { height: 60px; margin-top: 5px;}
 #comment-regist div { display: flex;  justify-content: space-between;}
+
+
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+
+
+
 </style>
 </head>
 <body>
+
+
+<div class="main">
 <h3>탐방기록 안내</h3>
 <table class='w-px1200'>
 <colgroup>
@@ -34,10 +49,7 @@ table td { text-align: left; }
 	<th>조회수</th>
 	<td>${vo.readcnt}</td>
 </tr>
-<tr><th>내용</th>
-	<td colspan='5'>${fn: replace(vo.content, crlf, '<br>')}</td>
-</tr>
-<tr><th>첨부파일</th>
+<tr><th>사진</th>
 	<td colspan='5'>
 	<c:forEach items='${vo.fileInfo}' var='f'>
 	<div class='align'>
@@ -50,6 +62,9 @@ table td { text-align: left; }
 	</c:forEach>
 	</td>
 </tr>
+<tr><th>내용</th>
+	<td colspan='5'>${fn: replace(vo.content, crlf, '<br>')}</td>
+</tr>
 </table>
 <div class='btnSet'>
 	<a class='btn-fill' id='list'>목록으로</a>
@@ -59,6 +74,14 @@ table td { text-align: left; }
 	<a class='btn-fill' id='delete'>정보삭제</a>
 	</c:if>
 </div>
+</div>
+
+
+
+
+
+
+
 
 <div id='comment-regist'>
 	<div><span>댓글작성</span>

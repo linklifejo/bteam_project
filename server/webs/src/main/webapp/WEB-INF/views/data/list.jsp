@@ -10,17 +10,31 @@
 .pharmacy td:nth-child(3) { text-align: left; }
 #popup { width: 800px; height: 600px; }
 table.animal img { width:100%; height:100px }
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+	#list-top{
+		text-align: center; margin: 0 auto;
+		container: text-center;	
+	}
+
+
 </style>
 </head>
 <body>
+<div class="main">
 <h3>공공데이터</h3>
 <div class='btnSet api'>
 	<a>약국정보</a>
 	<a>유기동물정보</a>
 </div>
+</div>
 <div id='list-top'>
 	<ul class='animal-top'></ul>
-	<ul class='common'>
+	<ul class='common' style="padding-left: 0;" >
 		<li><select class='w-px100' id='pageList'>
 			<c:forEach var='i' begin='1' end='5'>
 			<option value='${10*i}'>${10*i}개씩</option>

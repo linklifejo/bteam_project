@@ -7,9 +7,17 @@
 <title>Insert title here</title>
 <style>
 table tr td { text-align: left }
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
 </style>
 </head>
 <body>
+<div class="main">
 <h3>신규사원등록</h3>
 <form method='post' action='insert.hr'>
 <table class='w-px600'>
@@ -62,6 +70,7 @@ table tr td { text-align: left }
 <div class='btnSet'>
 <a class='btn-fill btn-save'>저장</a>
 <a class='btn-empty' href='list.hr'>취소</a>
+</div>
 </div>
 <script>
 $(function(){

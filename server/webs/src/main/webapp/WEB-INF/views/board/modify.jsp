@@ -6,7 +6,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+</style>
 <body>
+
+<div class="main">
+
 <h3>방명록 안내수정</h3>
 <form method='post' enctype='multipart/form-data' action='info.bo'>
 <table class='w-px1200'>
@@ -54,6 +66,10 @@
 <a class='btn-fill' id='save'>저장</a>
 <a class='btn-empty' id='cancel'>취소</a>
 </div>
+</div>
+
+
+
 
 <script>
 <c:forEach items="${vo.fileInfo}" var="f" varStatus="s">

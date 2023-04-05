@@ -6,8 +6,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+	.main1{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+</style>
+
 <body>
+
+<div class="main">
 	<h3>코스정보등록</h3>
+</div>
 	<form method="post" action='insert.co' class="myform">
 		<%-- <input type='hidden' name='location_id' class='loc2' value='${vo.id}'></input> --%>
 	<table class='w-px600'>
@@ -38,11 +57,15 @@
 	</tr>
 	</table>
 	</form>
-	
+
+<div class="main">
 	<div class='btnSet'>
 		<a class='btn-fill' onclick="$('form').submit()">저장</a>
 		<a class='btn-empty' href='list.co'>취소</a>
 	</div>
+</div>	
+
+
 </body>
 
 <script>

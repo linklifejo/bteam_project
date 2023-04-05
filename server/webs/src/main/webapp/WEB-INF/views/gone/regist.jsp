@@ -20,10 +20,25 @@
 
 
 
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+	.main1{
+		text-align: center; margin: 0 auto;
+		container: text-center;	
+	}
+
+
 </style>
 
 <body>
+
+<div class="main">
 <h3>탐방 글쓰기</h3>
+</div>
 <form method='post' enctype='multipart/form-data' action='insert.go'>
 <!-- <input type='hidden' name='course_id' class="co2" >  --><!-- 코스선택 -->
 <!-- <input type='hidden' name='location_id' class="loc2" >  --><!-- 산선택 -->
@@ -88,10 +103,22 @@
 </tr>
 </table>
 </form>
+<div class="main1">
+
 <div class='btnSet'>
 <a class='btn-fill btn-save'>저장</a>
 <a class='btn-empty' href='list.go'>취소</a>
+
+
 </div>
+</div>
+
+
+
+
+
+</body>
+
 <script>
 $('.btn-save').on('click', function(){
 	if( emptyCheck() ) {

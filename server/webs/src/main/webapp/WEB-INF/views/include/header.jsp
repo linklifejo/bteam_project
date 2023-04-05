@@ -10,34 +10,25 @@
 	<div>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<ul>
-		<!-- 로그인하지 않은 경우 -->
-		<c:if test='${empty loginInfo}'>
-			
-		</c:if>
-		<!-- 로그인된 경우 -->
+
 		<c:if test='${not empty loginInfo}'>
-			<li><a ${category eq 'cu' ? "class='active'" : ''} href='<c:url value="/"/>list.cu'>고객관리</a></li>
-		</c:if>	
-		<c:if test='${not empty loginInfo}'>
-           <li><a ${loginInfo.admin eq 'Y' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>공지사항</a></li>
+			<c:choose>
+				<c:when test='${loginInfo.admin eq "Y"}'>
+					<li><a ${category eq 'hr' ? "class='active'" : ''} href='<c:url value="/"/>list.hr'>사원관리</a></li>
+					<li><a ${category eq 'vi' ? "class='active'" : ''} href='<c:url value="/"/>visual/list'>시각화</a></li>
+					<li><a ${category eq 'co' ? "class='active'" : ''} href='<c:url value="/"/>list.co'>코스정보</a></li>
+					<li><a ${category eq 'cu' ? "class='active'" : ''} href='<c:url value="/"/>list.cu'>고객관리</a></li>
+					<li><a ${category eq 'lo' ? "class='active'" : ''} href='<c:url value="/"/>list.lo'>전국산정보</a></li>
+				</c:when>
+				<c:otherwise>
+					<li><a ${category eq 'go' ? "class='active'" : ''} href='<c:url value="/"/>list.go'>탐방정보</a></li>
+					
+				</c:otherwise>
+			</c:choose>
 		</c:if>
-		<c:if test='${not empty loginInfo}'>
-           <li><a ${loginInfo.admin eq 'N' ? "class=''" : 'active'} href='<c:url value="/"/>list.no'>???</a></li>
-		</c:if>
-        
-		<%-- <c:if test="${not empty loginInfo.manager == 'N'}"> --%>
-		
-		<%-- <li><a ${category eq 'hr' ? "class='active'" : ''} href='<c:url value="/"/>list.hr'>사원관리</a></li> --%>
-		<%-- 	  <li><a type="button" value="회원전체목록(관리자용)" class="btn" onclick="location.href='/test/member/memberList'"></a></li>
-			<li><a href='<c:url value="/"/>list.hr' sec:authorize = "hasRole('Y')">사원관리</a></li> --%>
-			<%-- <li><a ${category eq 'no' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>공지사항</a></li> --%>
-			<li><a ${category eq 'bo' ? "class='active'" : ''} href='<c:url value="/"/>list.bo'>방명록</a></li>
-			<li><a ${category eq 'lo' ? "class='active'" : ''} href='<c:url value="/"/>list.lo'>전국산정보</a></li>
-			<li><a ${category eq 'co' ? "class='active'" : ''} href='<c:url value="/"/>list.co'>코스정보</a></li>
-			<li><a ${category eq 'go' ? "class='active'" : ''} href='<c:url value="/"/>list.go'>탐방정보</a></li>
-			<li><a ${category eq 'da' ? "class='active'" : ''} href='<c:url value="/"/>list.da'>공공데이터</a></li>
-			<li><a ${category eq 'vi' ? "class='active'" : ''} href='<c:url value="/"/>visual/list'>시각화</a></li>
-			<li><a ${category eq 'na' ? "class='active'" : ''} href='<c:url value="/"/>list.na'>내정보</a></li>
+			<li><a ${category eq 'bo' ? "class='active'" : ''} href='<c:url value="/"/>list.bo'>자유 계시판</a></li>
+			<li><a ${category eq 'no' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>공지사항</a></li>
+			<li><a ${category eq 'da' ? "class='active'" : ''} href='<c:url value="/"/>list.da'>공공데이터(산,코스)</a></li>
 		</ul>
 	</nav>
 	</div>
@@ -60,7 +51,8 @@
 			</c:choose>
 		
 			<li><strong>${loginInfo.name}</strong> 님</li>
-			<li><a class='btn-empty' href='changepw'>비밀번호변경</a></li>
+			<li><a class='btn-fill' ${category eq 'na' ? "class='active'" : ''} href='<c:url value="/"/>list.na'>내정보</a></li>
+			<!-- <li><a class='btn-empty' href='changepw'>비밀번호변경</a></li> -->
 			<li><a class='btn-fill' href='logout'>로그아웃</a></li>
 		</c:if>
 		</ul>
@@ -68,7 +60,7 @@
 	</div>
 	<div>
 	<!-- <img src='imgs/mainm.png' style='width:100%'> -->
-	<!-- <img class="mainimg object-fit-cover border rounded" src='imgs/mainm.png' style='width:100%'> -->
+	<img class="mainimg object-fit-cover border rounded" src='imgs/mainm.png' style='width:100%'>
 	</div>
 	</div>
 </header>
@@ -91,12 +83,13 @@
 	left: 10ox;
 	bottom: 0px;
 	right: 10px;
+	top: 2px;
 }
 
 
 
 header nav ul { font-size: 18px; font-weight: bold;}
-header ul { display: flex; }
+header ul { display: flex; 	padding-top: 8px;}
 header nav ul li:not(:first-child) { margin-left: 50px }
 header nav a:hover, header nav a.active { color:#0730fa  }
 
