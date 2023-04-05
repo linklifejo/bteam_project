@@ -67,15 +67,15 @@
 </tr>
 
 
-<input type='hidden' name='ptype' value='3'>
+<!-- <input type='hidden' name='ptype' value='3'> -->
 
 
-<!-- 	<tr><th>가본산/찜한산</th>
+<tr><th>가본산/찜한산</th>
 		<td>
 			<label><input type='radio' checked name='type' value='1'>가본산</label>
 			<label><input type='radio' checked name='type' value='2'>찜한산</label>
 		</td>
-	</tr> -->
+</tr>
 <tr><th>산 선택</th>
 	<td><select name='location_id' class='w-px300 loc'>
 		<c:forEach items='${location}' var='l'>		

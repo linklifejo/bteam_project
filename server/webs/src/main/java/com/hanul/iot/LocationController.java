@@ -12,8 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import common.CommonUtility;
+import gone.GoneFileVO;
+import gone.GoneVO;
 import location.LocationServiceImpl;
 import location.LocationVO;
 import member.MemberServiceImpl;
@@ -22,14 +25,36 @@ import member.MemberVO;
 @Controller
 public class LocationController {
 	@Autowired private LocationServiceImpl service;
-		
+	
+	
 	//신규고객등록처리 요청
 	@RequestMapping("/insert.lo")
-	public String insert(LocationVO vo) {
+	public String insert(LocationVO vo, MultipartFile file
+			, HttpServletRequest request) {
+		//첨부파일 처리
+		if( file != null ) {
+			LocationVO vo1 = attached_file(file, request);
+			vo.setFilename(vo1.getFilename());
+			vo.setFilepath(vo1.getFilepath());
+		}
 		//화면에서 입력한 정보로  DB에 신규삽입저장한다.
 		service.location_insert(vo);
 		//응답화면연결 - 고객목록
 		return "redirect:list.lo";
+	}
+	
+	//첨부한 파일정보 관리
+	private LocationVO attached_file(MultipartFile file
+								, HttpServletRequest request) {
+		LocationVO vo = null;
+		
+			if( file.isEmpty() ) return null;
+			if(vo==null) vo = new LocationVO();
+			vo.setFilename( file.getOriginalFilename() );
+			vo.setFilepath( 
+					common.fileUpload(file, "location", request) );
+	
+		return vo;
 	}
 	
 	@Autowired private CommonUtility common;
@@ -47,7 +72,7 @@ public class LocationController {
 		map.put("id", id);
 		map.put("pw", pw);
 		MemberVO vo = member.member_login(map);
-		session.setAttribute("loginInfo", vo);
+		/* session.setAttribute("loginInfo", vo); */
 		return "location/new";
 	}
 	

@@ -38,6 +38,20 @@
 	<tr><th>산이름</th>
 		<td><input type='text' name='locname' value='${vo.locname }'></td>
 	</tr>
+	<tr><th>첨부파일</th>
+	<td class='txt-left'>
+		<div class="align">
+		<label>
+			<input type='file' name='file' class='attach-file'>
+			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
+		</label>
+		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>		
+		<div class='file-name'></div>
+		<div class='preview'></div>
+		</div>
+	</td>
+	</tr>
+	
 	<tr><th>추가설명</th>
 	
            <td><input type='text' name='name_desc' value='${vo.name_desc }'></td>
