@@ -6,10 +6,24 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+</style>
 <body>
+
+<div class="main">
 <h3>코스목록</h3>
+
+
 <div class='btnSet'>
 	<a href='new.co' class='btn-fill'>코스등록</a>
+</div>
 </div>
 <table class='w-px600 tb-list'>
 <thead>

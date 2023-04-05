@@ -6,7 +6,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+</style>
+
+
 <body>
+
+<div class="main">
 <h3>공지글쓰기</h3>
 <form method='post' action='insert.no' enctype='multipart/form-data'>
 <table class='w-px1200'>
@@ -37,6 +51,11 @@
 <a class='btn-fill btn-save'>저장</a>
 <a class='btn-empty' href='list.no'>취소</a>
 </div>
+
+
+</div>
+
+
 
 <script>
 $('.btn-save').click(function(){

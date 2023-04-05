@@ -13,7 +13,23 @@ table td { text-align: left; }
 #comment-regist div { display: flex;  justify-content: space-between;}
 </style>
 </head>
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+</style>
 <body>
+
+<!-- test -->
+<!-- test -->
+
+
+<div class="main">
+
 <h3>방명록 안내</h3>
 <table class='w-px1200'>
 <colgroup>
@@ -59,6 +75,9 @@ table td { text-align: left; }
 	<a class='btn-fill' id='delete'>정보삭제</a>
 	</c:if>
 </div>
+</div>
+
+
 
 <div id='comment-regist'>
 	<div><span>댓글작성</span>

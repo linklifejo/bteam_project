@@ -6,16 +6,24 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+</style>
+
 <body>
+
+<div class="main">
 <h3>탐방록 안내수정</h3>
 <form method='post' enctype='multipart/form-data' action='info.bo'>
 <table class='w-px1200'>
 <tr><th class='w-px140'>제목</th>
 	<td><input type='text' name='title' value='${vo.title}' title='제목' class='chk full'></td>
-</tr>
-<tr><th>내용</th>
-	<td><textarea name='content' title='내용' 
-				class='chk full'>${vo.content}</textarea> </td>
 </tr>
 <tr><th>첨부파일</th>
 	<td class='txt-left'>
@@ -41,6 +49,10 @@
 		</div>		
 	</td>
 </tr>
+<tr><th>내용</th>
+	<td><textarea name='content' title='내용' 
+				class='chk full'>${vo.content}</textarea> </td>
+</tr>
 </table>
 <input type='hidden' name='removed'>
 <input type='hidden' name='id' value='${vo.id}'>
@@ -50,10 +62,21 @@
 <input type='hidden' name='pageList' value='${page.pageList }'>
 <input type='hidden' name='viewType' value='${page.viewType }'>
 </form>
+
+
 <div class='btnSet'>
+
 <a class='btn-fill' id='save'>저장</a>
-<a class='btn-empty' id='cancel'>취소</a>
+<a class='btn-empty' href='javascript:history.go(-1)'>취소</a>
+
+
+<!-- <a class='btn-fill btn-save'>저장</a> -->
+<!-- <a class='btn-empty' id='cancel'>취소</a> -->
 </div>
+
+</div>
+
+
 
 <script>
 <c:forEach items="${vo.fileInfo}" var="f" varStatus="s">

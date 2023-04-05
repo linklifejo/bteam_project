@@ -6,9 +6,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
 
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+	.main1{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+
+</style>
+
+<body>
+<div class="main">
 	<h3>코스정보수정</h3>
+</div>
 	<form method="post" action='update.co'>
 	<table class='w-px600'>
 	<colgroup>
@@ -34,10 +51,14 @@
 	<input type='hidden' name='id' value='${vo.id}'>
 	</form>
 
+
+<div class="main1">
 	<div class='btnSet'>
 		<a class='btn-fill' onclick="$('form').submit()">저장</a>
 		<a class='btn-empty' href='info.co?id=${vo.id}'>취소</a>
 	</div>
+</div>	
+
 
 <script>
 function fn_delete(){

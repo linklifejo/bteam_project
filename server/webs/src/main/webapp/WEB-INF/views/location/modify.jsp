@@ -7,9 +7,28 @@
 <title>Insert title here</title>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
-<body>
 
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		
+	}
+
+	.main1{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}	
+
+
+</style>
+
+
+
+<body>
+<div class="main">
 	<h3>전국산정보수정</h3>
+</div>
 	<form method="post" action='update.lo'>
 	<table class='w-px600'>
 	<colgroup>
@@ -40,11 +59,20 @@
 	</table>
 	<input type='hidden' name='id' value='${vo.id}'>
 	</form>
-
+	
+<div class="main1">
 	<div class='btnSet'>
 		<a class='btn-fill' onclick="$('form').submit()">저장</a>
 		<a class='btn-empty' href='info.lo?id=${vo.id}'>취소</a>
 	</div>
+</div>
+
+
+
+
+
+
+
 
 <script>
 $('.btn-post').on('click', function(){

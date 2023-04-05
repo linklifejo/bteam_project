@@ -10,8 +10,8 @@
 	.dis{
 		display: flex;
 		position: relative;
-				container: text-center;
-		text-align: center; margin: 0 auto;s
+		container: text-center;
+		text-align: center; margin: 0 auto;
 	}
 
 	.ul{
@@ -24,6 +24,9 @@
 	}
 	
 	
+	.main{
+		text-align: center; margin: 0 auto;	
+	}
 	
 	
 </style>
@@ -34,9 +37,11 @@
 <div class="mainsm">
 
 <div class="smdd">
+<div class="main">
 <h3>방명록 목록</h3>
+</div>
 
-<dis class="no">
+<div class="no">
 <form method='post' action='list.bo'>
 
 <div class="dis">
@@ -134,7 +139,7 @@ function fn_info( id ){
 </c:forEach>
 </table>
 </c:if>
-</dis>
+</div>
 </div>
 </div>
 
