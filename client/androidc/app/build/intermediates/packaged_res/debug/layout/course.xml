@@ -8,17 +8,13 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="405dp"
+        android:layout_height="300dp"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true">
 
 
         <TextView
-<<<<<<< HEAD
-            android:id="@+id/textView4"
-=======
             android:id="@+id/locname"
->>>>>>> 8954813a0d271dcc3d107aff934bf8d4f6d15a71
             android:layout_width="197dp"
             android:layout_height="40dp"
             android:text="추천등산코스"
@@ -27,13 +23,35 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
-            android:layout_height="400dp"
+            android:layout_height="353dp"
             android:src="@drawable/mudng2" />
 
 
     </androidx.cardview.widget.CardView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="175dp"
+        android:id="@+id/recycler"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="후기리스트"
+        android:textSize="20sp"
+        android:id="@+id/tutu"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="9"
+        android:background="#D1DDD5">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
+
+</LinearLayout>
