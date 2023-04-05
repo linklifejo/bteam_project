@@ -6,14 +6,17 @@
 
 <!-- 신규고객정보 삽입저장 -->
 <insert id='insert'>
-insert into location( locname, name_desc, latitude,longitude, post, address)
-values (#{locname}, #{name_desc}, #{latitude}, #{longitude}, #{post}, #{address})
+insert into location( locname, name_desc, latitude,longitude, post, address, filename, filepath)
+values (#{locname}, #{name_desc}, #{latitude}, #{longitude}, #{post}, #{address}, #{filename}, #{filepath})
 </insert>
+
 
 <!-- 해당고객정보 수정저장 -->
 <update id='update'>
 update location
-set locname = #{locname}, name_desc = #{name_desc}, latitude = #{latitude}, longitude = #{longitude}, post = #{post}, address = #{address}
+set locname = #{locname}, name_desc = #{name_desc}, latitude = #{latitude},
+			 longitude = #{longitude}, post = #{post}, address = #{address},
+			 filename = #{filename}, filepath = #{filepath}
 where id = #{id}
 </update>
 
@@ -26,8 +29,11 @@ delete from location where id = #{id}
 <select id='info' resultType='location.LocationVO'>
 select * from location where id = #{id}
 
-
 </select>
+
+
+
+
 
 <!-- 고객목록조회 -->
 <select id='list' resultType='location.LocationVO'>

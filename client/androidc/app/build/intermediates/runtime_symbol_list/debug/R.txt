@@ -3518,8 +3518,11 @@ int layout detailmo 0x7f0b0031
 int layout goneview 0x7f0b0032
 int layout home_frag 0x7f0b0033
 int layout hulist 0x7f0b0034
+<<<<<<< HEAD
 int layout local_frag 0x7f0b0079
 int layout locald_frag 0x7f0b007a
+=======
+>>>>>>> 1c075feeee50df0a47d05c42489d69ae2dd1077a
 int layout m3_alert_dialog 0x7f0b0035
 int layout m3_alert_dialog_actions 0x7f0b0036
 int layout m3_alert_dialog_title 0x7f0b0037
@@ -3539,6 +3542,11 @@ int layout material_time_input 0x7f0b0044
 int layout material_timepicker 0x7f0b0045
 int layout material_timepicker_dialog 0x7f0b0046
 int layout material_timepicker_textinput_display 0x7f0b0047
+<<<<<<< HEAD
+=======
+int layout mountains_by_region 0x7f0b0048
+int layout mountains_by_seoul 0x7f0b0049
+>>>>>>> 1c075feeee50df0a47d05c42489d69ae2dd1077a
 int layout mtrl_alert_dialog 0x7f0b004a
 int layout mtrl_alert_dialog_actions 0x7f0b004b
 int layout mtrl_alert_dialog_title 0x7f0b004c
