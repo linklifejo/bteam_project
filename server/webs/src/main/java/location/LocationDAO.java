@@ -36,4 +36,10 @@ public class LocationDAO implements LocationService {
 		return sql.delete("lo.delete", id);
 	}
 
+	@Override
+	public List<LocationVO> LocFile_list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
