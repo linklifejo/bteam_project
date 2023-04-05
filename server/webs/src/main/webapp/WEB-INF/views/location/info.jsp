@@ -35,6 +35,11 @@
 	<tr><th>산이름</th>
 		<td>${vo.locname }</td>
 	</tr>
+	<tr><th>${vo.filename}</th>
+		<td><img class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+    		 alt="사진파일"></td>
+	</tr>
+	
 	<tr><th>추가설명</th>
 		<td>${vo.name_desc }</td>
 	</tr>
