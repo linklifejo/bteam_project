@@ -48,6 +48,12 @@ public class HomeFragment extends Fragment {
        View view =  inflater.inflate(R.layout.home_frag,
                 container, false);
         activity = (MainActivity) getActivity();
+        view.findViewById(R.id.btnLocal).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.fragmentControl(new LocalFragment());
+            }
+        });
         dtos_re = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recyclerView);
         // recyclerView에서 반드시 아래와 같이 초기화를 해줘야 함

@@ -2955,6 +2955,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnLocal
 id btnMain1
 id btnMain2
 id btnMain3
@@ -3518,6 +3519,8 @@ layout detailmo
 layout goneview
 layout home_frag
 layout hulist
+layout local_frag
+layout locald_frag
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3537,8 +3540,6 @@ layout material_time_input
 layout material_timepicker
 layout material_timepicker_dialog
 layout material_timepicker_textinput_display
-layout mountains_by_region
-layout mountains_by_seoul
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title

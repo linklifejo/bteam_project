@@ -22,11 +22,9 @@ where id = #{id}
 delete from location where id = #{id}
 </delete>
 
-<!-- 해당고객정보조회 -->
+<!-- 산정보및 서울/경기정보조회 -->
 <select id='info' resultType='location.LocationVO'>
 select * from location where id = #{id}
-
-
 </select>
 
 <!-- 고객목록조회 -->
