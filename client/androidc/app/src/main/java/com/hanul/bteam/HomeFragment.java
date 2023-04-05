@@ -36,9 +36,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView,recycler;
     GoneAdapter adapter_re;
     ArrayList<GoneDTO> dtos_re;
-    Button btnAdd;
     MainActivity activity;
-    GridView gridView;
     BoardrAdapter adapter;
     ArrayList<BoardDTO> dtos;
     @Nullable
