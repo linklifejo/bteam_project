@@ -338,7 +338,7 @@ public class MemberController {
 	
 	//로그인처리 요청
 	@ResponseBody @RequestMapping("/iotLogin")
-	public boolean login(String id, String pw, HttpSession session) {
+	public boolean login(String id, String pw, String admin, HttpSession session) {
 		//화면에서 입력한 아이디의 솔트를 조회해와
 		//해당 솔트를 사용해서 입력한 비번을 암호화한다
 		String salt = service.member_salt(id);
@@ -348,6 +348,7 @@ public class MemberController {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
 		map.put("pw", pw);
+		map.put("admin", admin);
 		MemberVO vo = service.member_login(map);
 		session.setAttribute("loginInfo", vo);
 		return vo==null ? false : true;

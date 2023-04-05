@@ -23,9 +23,8 @@ a:link, a:visited { text-decoration: none;  color:inherit }
 
 #btn-delete, #attach-file, #delete-file
 , .attach-file, .delete-file { display: none }
-#preview img, .preview img {max-height: 24px; }
-.align { display: flex; align-items: center; }
-.align * { margin-right: 5px; }
+#preview img, .preview img {max-height: 1000px; }
+
 
 #container { padding: 0px 0 }
 table {
