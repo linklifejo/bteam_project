@@ -11,5 +11,5 @@ public interface LocationService {
 	LocationVO location_info(int id);		
 	int location_update(LocationVO vo);		
 	int location_delete(int id);
-	List<LocationVO> LocFile_list();
+	List<LocationVO> LocFile_list(); // 사진 추가
 }

@@ -1,7 +1,9 @@
 package location;
 
 import java.sql.Date;
+import java.util.List;
 
+import gone.GoneFileVO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,5 +12,4 @@ public class LocationVO {
 	private int id;
 	private String type, locname, name_desc,
 			post,address,latitude,longitude, filename, filepath;
-
 }
