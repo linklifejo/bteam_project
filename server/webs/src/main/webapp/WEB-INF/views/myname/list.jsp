@@ -6,15 +6,35 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+
+
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+	.main1{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}	
+
+
+</style>
 <body>
+<div class="main">
 <h3>내정보</h3>
 
-<table class="row justify-content-center" >
+
+
+<table>
 <colgroup>
 	<col width='200px'>
 	<col width='200px'>
 	<col width='400px'>
 </colgroup>
+
 <tr>
 			<c:if test='${not empty loginInfo}'>
 	<td>
@@ -44,8 +64,14 @@
 			<a class='btn-fill' href='logout'>로그아웃</a>
 		</div>
 	
+		<div class='btnSet'>
+			<a class='btn-empty' href='changepw'>비밀번호변경</a>
+		</div>
+		
 	</td>								 
 </tr>
+
+
 </table>
 
 
@@ -84,12 +110,7 @@
 	<col width='140px'>
 	<col width='140px'>
 </colgroup>
-<tr>
 
-	<div>작성자</div>
-	<div>제목</div>
-
-</tr>
 <c:forEach items='${page.list}' var='vo'>
 <tr>
 	<td><div>${vo.name }</div></td>
@@ -186,6 +207,7 @@
 
 
 
+</div>
 
 </body>
 </html>
