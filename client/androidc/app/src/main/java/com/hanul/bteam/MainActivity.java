@@ -271,17 +271,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void showCurrentLocation(Location location) {
+    public void showCurrentLocation(@NonNull Location location) {
         // 현재 내 위치 전역변수에 넣음
         myLoc = location;
 
         // 지도에 위치를 찍을때는 LatLng타입을 사용함
         // Location => LatLng 타입으로 변환시켜줌
-        LatLng curPoint = new
-                LatLng(location.getLatitude(), location.getLongitude());
-        // 지도에 현재위치 표시하기
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 18));
-
+        if (map != null) {
+            LatLng curPoint = new
+                    LatLng(location.getLatitude(), location.getLongitude());
+            // 지도에 현재위치 표시하기
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 18));
+        }
         // 마커 찍기 : Location 생성 : 나중에는 DB나 API에서 가져옴
         Location location1 = new Location("");
         location1.setLatitude(35.153817);
@@ -305,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
         // 마커와 내 위치까지의 거리를 구한다
         int distance = getDistance(myLoc, markerLoc);
 
-        if(myMarker == null){
+        if(myMarker != null){
             myMarker = new MarkerOptions();
             myMarker.position(new
                     LatLng(location.getLatitude(), location.getLongitude()));
@@ -317,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public int getDistance(Location myLoc, Location markerLoc) {
+    public int getDistance(@NonNull Location myLoc, Location markerLoc) {
         double distance = 0;
         // 거리를 구할때는 Location 타입 사용
         distance = myLoc.distanceTo(markerLoc);

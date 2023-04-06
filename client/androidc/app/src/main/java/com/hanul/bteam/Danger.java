@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -41,11 +42,12 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Danger extends Fragment  {
+public class Danger extends Fragment implements OnMapReadyCallback{
     MainActivity activity;
     GoogleMap map;
     EditText etAddress;
     SupportMapFragment mapFragment;
+
 
 
     @Nullable
@@ -70,20 +72,11 @@ public class Danger extends Fragment  {
                     .replace(R.id.map, mapFragment).commit();
         }
 
-        mapFragment.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(@NonNull GoogleMap googleMap) {
-                map = googleMap;
-                try {
-                    // 내 위치를 볼수 있게 해준다
-                    map.setMyLocationEnabled(true);
-                } catch (SecurityException e) {
-                    e.getMessage();
-                }
-            }
-        });
+        mapFragment.getMapAsync(this);
+
 
         MapsInitializer.initialize(activity);
+
         view.findViewById(R.id.btnLoc).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,11 +95,26 @@ public class Danger extends Fragment  {
 
                     // 한글주소에서 location으로 변환한것을 지도에서 보여준다
                     activity.showCurrentLocation(location);
+                    LatLng newLocation = new LatLng(location.getLatitude(), location.getLongitude());
+                    CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(newLocation, 15);
+                    map.moveCamera(cameraUpdate);
                 }
             }
         });
 
         return view;
     }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        map = googleMap;
+        try {
+            // 내 위치를 볼수 있게 해준다
+            map.setMyLocationEnabled(true);
+        } catch (SecurityException e) {
+            e.getMessage();
+        }
+    }
+
 }
 
