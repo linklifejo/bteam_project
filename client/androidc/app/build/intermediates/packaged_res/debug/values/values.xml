@@ -10,6 +10,10 @@
     <string name="app_name">bteam</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <style name="Theme.Bteam" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+<<<<<<< HEAD
+=======
+
+>>>>>>> f48ce31df14b7b4db96165e663f79e93aff9062c
         
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
