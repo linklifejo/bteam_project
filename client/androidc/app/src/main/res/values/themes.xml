@@ -1,10 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+<<<<<<< HEAD
 
     <style name="Theme.Bteam" parent="Theme.AppCompat.DayNight.NoActionBar">
 
 
 
+=======
+<<<<<<< HEAD
+    <style name="Theme.Bteam" parent="Theme.AppCompat.NoActionBar">
+=======
+    <style name="Theme.Bteam" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+>>>>>>> b4802eb278cc3c48cfafe60cc472ed360d88427f
+>>>>>>> 50196a0fdf0ffeef594c727b64fdcb1bc5d41a8b
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
