@@ -34,8 +34,10 @@ select * from location order by locname
 </select>
 
 <!-- 지역별산 대표사진 조회 산이름으로 -->
-<select id='image_info' resultType='location.LocationVO'>
-select * from location where locname like '%' || #{locname} || '%'
+<select id='image_info' resultType='gone.LocationVO'>
+select *  from location  
+where loccode= #{loccode} and rownum=1 
+order by id
 </select>
 
 <!-- 지역별산 조회 주소로 -->

@@ -91,8 +91,8 @@ public class LocationController {
 	// 지역별 이미지및 정보 가져오기
 	@ResponseBody @RequestMapping(value="/selectImage", produces="text/plain; charset=utf-8" )
 	public String selectImage(HttpServletRequest req, Model model) {
-		String locname = (String) req.getParameter("locname");		
-		LocationVO vo = service.location_image_info(locname);
+		String loccode = (String) req.getParameter("loccode");		
+		LocationVO vo = service.location_image_info(loccode);
 	
 		Gson gson = new Gson();
 		return gson.toJson( (LocationVO)vo );		
