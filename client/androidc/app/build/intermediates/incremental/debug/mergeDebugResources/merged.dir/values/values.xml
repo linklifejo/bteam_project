@@ -6051,7 +6051,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.Bteam" parent="Theme.AppCompat.NoActionBar">
+    <style name="Theme.Bteam" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
         
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
