@@ -36,6 +36,7 @@ drawable image02
 drawable item_color
 drawable ji_ri_san
 drawable ji_ri_san1
+drawable marker
 drawable mirg
 drawable mu_dueng_san
 drawable mu_dueng_san1
@@ -43,6 +44,7 @@ drawable mudm
 drawable mudng
 drawable mudng2
 drawable my
+drawable mylocation
 drawable nack_san
 drawable nack_san1
 drawable nae_jang_san
@@ -63,6 +65,8 @@ drawable tae_back_san
 drawable tae_back_san1
 drawable trash
 id bottom_navi
+id btnClick
+id btnLoc
 id btnLocal
 id btnMain1
 id btnMain2
@@ -78,12 +82,14 @@ id contain
 id couname
 id course
 id danger
+id etAddress
 id filename
 id filepath
 id guideline
 id imageView
 id imageView2
 id locname
+id map
 id parentLayout
 id recycler
 id recyclerView
