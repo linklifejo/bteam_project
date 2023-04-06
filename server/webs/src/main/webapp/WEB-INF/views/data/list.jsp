@@ -10,32 +10,18 @@
 .pharmacy td:nth-child(3) { text-align: left; }
 #popup { width: 800px; height: 600px; }
 table.animal img { width:100%; height:100px }
-
-	.main{
-		text-align: center; margin: 0 auto;
-		container: text-center;
-	}
-
-	#list-top{
-		text-align: center; margin: 0 auto;
-		container: text-center;	
-	}
-
-
 </style>
 </head>
 <body>
-<div class="main">
 <h3>공공데이터</h3>
 <div class='btnSet api'>
 	<a>약국정보</a>
 	<a>유기동물정보</a>
-	<a>산정보</a>
-</div>
+	<a>산 정보</a>
 </div>
 <div id='list-top'>
 	<ul class='animal-top'></ul>
-	<ul class='common' style="padding-left: 0;" >
+	<ul class='common'>
 		<li><select class='w-px100' id='pageList'>
 			<c:forEach var='i' begin='1' end='5'>
 			<option value='${10*i}'>${10*i}개씩</option>
@@ -74,6 +60,38 @@ $('.api a').click(function(){
 })
 
 
+//산 정보조회
+function location_list( page ){
+	$('.animal-top').empty();
+	
+	
+	$('#data-list').html('');
+	$('.page-list').html('');
+	loading(true);
+	var location = {};
+	location.pageNo  = page;
+	location.rows  = pageList;
+	
+	
+	$.ajax({
+		type: 'post',
+		contentType: 'application/json',
+		url: 'data/location/list',
+		data: JSON.stringify( location ),
+		success: function( response ){
+			$('#data-list').html( response );
+			loading(false);
+		},error: function(){
+			
+			loading(false);
+		}
+	});
+	
+}
+
+
+
+
 //유기동물 시도조회
 function animal_sido(){
 	$.ajax({
@@ -85,29 +103,6 @@ function animal_sido(){
 		}
 	})
 }
-
-
-function animal_list( page ){
-	$('#data-list').html('');
-	$('.page-list').html('');
-	loading(true);
-	
-	$.ajax({
-		url: 'data/animal/list',
-		data: { pageNo: page, rows: pageList },
-		success: function( response ){
-			console.log( response )
-			
-			loading(false);
-		},error: function(){
-			
-			loading(false);
-		}
-	
-	});
-
-}
-
 
 //축종
 function animal_type(){
@@ -123,7 +118,6 @@ function animal_type(){
 	$('.animal-top').append( tag );
 }
 
-
 //유기동물정보조회
 function animal_list( page ){
 	if( $('#sido').length==0 ) animal_sido();
@@ -131,7 +125,7 @@ function animal_list( page ){
 	$('#data-list').html('');
 	$('.page-list').html('');
 	loading(true);
-	var location = {};
+	var animal = {};
 	animal.pageNo  = page;
 	animal.rows  = pageList;
 	animal.sido  = $('#sido').length > 0 ? $('#sido').val() : '';
@@ -144,36 +138,9 @@ function animal_list( page ){
 		type: 'post',
 		contentType: 'application/json',
 		url: 'data/animal/list',
-		data: JSON.stringify( location ),
+		data: JSON.stringify( animal ),
 		success: function( response ){
 			$('#data-list').html( response );
-			loading(false);
-		},error: function(){
-			
-			loading(false);
-		}
-	});
-	
-}
-
-$('#pageList').change(function(){
-	pageList = $(this).val();
-	pharmacy_list(1);	
-});
-
-
-//산 정보조회
-function location_list( page ){	
-	$('#data-list').html('');
-	$('.page-list').html('');
-	loading(true);
-	
-	$.ajax({
-		url: 'data/location/list',
-		data: { pageNo: page, rows: pageList },
-		success: function( response ){
-			console.log( response )
-			
 			loading(false);
 		},error: function(){
 			
@@ -255,12 +222,13 @@ function makePage( totalList, curPage ){
 }
 
 $(function(){
-	$('.api a').eq(2).trigger('click');	
+	$('.api a').eq(0).trigger('click');	
 });
 
 $(document).on('click', '.page-list a', function(){
 	if( $('.pharmacy').length > 0 ) pharmacy_list( $(this).data('page') );
 	else if( $('.animal').length > 0 ) animal_list( $(this).data('page') );
+	else if( $('.location').length > 0 ) location_list( $(this).data('page') );
 	
 }).on('click', '.map', function(){
 	if(  $(this).data('x')=='undefined' || $(this).data('y')=='undefined' ){
@@ -304,7 +272,6 @@ $(document).on('click', '.page-list a', function(){
 	animal_list(1);
 	
 });
-
 
 //축종에 대한 품종조회
 function animal_kind(){
