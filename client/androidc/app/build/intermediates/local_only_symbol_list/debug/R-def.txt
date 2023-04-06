@@ -36,11 +36,8 @@ drawable image02
 drawable item_color
 drawable ji_ri_san
 drawable ji_ri_san1
-<<<<<<< HEAD
 drawable kakao_1
-=======
 drawable marker
->>>>>>> c1249841b8fc2b66c3b6927c42f62c3df43b0581
 drawable mirg
 drawable mu_dueng_san
 drawable mu_dueng_san1
