@@ -41,7 +41,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Danger extends Fragment implements OnMapReadyCallback {
+public class Danger extends Fragment  {
     MainActivity activity;
     GoogleMap map;
     EditText etAddress;
@@ -58,8 +58,10 @@ public class Danger extends Fragment implements OnMapReadyCallback {
                 container, false);
 
         activity = (MainActivity) getActivity();
+
+        activity.checkDangerousPermissions();
         etAddress = view.findViewById(R.id.etAddress);
-        mapFragment = (SupportMapFragment) getChildFragmentManager()
+        mapFragment = (SupportMapFragment) activity.getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
         if (mapFragment == null) {
@@ -80,6 +82,7 @@ public class Danger extends Fragment implements OnMapReadyCallback {
                 }
             }
         });
+
         MapsInitializer.initialize(activity);
         view.findViewById(R.id.btnLoc).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +95,8 @@ public class Danger extends Fragment implements OnMapReadyCallback {
         view.findViewById(R.id.btnClick).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etAddress.getText().toString().length() > 0){
+                activity = (MainActivity) getActivity();
+                if (etAddress.getText().toString().length() > 0) {
                     Location location = activity.getLocationFromAddress
                             (activity, etAddress.getText().toString());
 
@@ -103,13 +107,6 @@ public class Danger extends Fragment implements OnMapReadyCallback {
         });
 
         return view;
-    }
-
-
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        map = googleMap;
-        activity.checkDangerousPermissions();
     }
 }
 
