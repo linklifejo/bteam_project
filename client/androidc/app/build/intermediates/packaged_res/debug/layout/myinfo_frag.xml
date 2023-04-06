@@ -65,12 +65,13 @@
         app:layout_constraintStart_toEndOf="@+id/userInfo1_Name"
         app:layout_constraintTop_toBottomOf="@+id/BoardName" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_write"
         android:layout_width="120dp"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="#64B5FD"
         android:text="내 정보 수정"
         app:layout_constraintBottom_toTopOf="@+id/textView1"
         app:layout_constraintEnd_toEndOf="parent" />
