@@ -3029,13 +3029,6 @@ id bounceStart
 id btnClick
 id btnLoc
 id btnLocal
-id btnMain1
-id btnMain2
-id btnMain3
-id btnMain4
-id btnMain5
-id btnMain6
-id btnSub
 id btn_boardList
 id btn_delete
 id btn_modify
@@ -3154,12 +3147,13 @@ id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
 id gone
+id gr_san_imageView
 id graph
 id graph_wrap
 id group_divider
 id grouping
 id groups
-id guideline
+id han_ra_san_imageView
 id header_title
 id hideable
 id home
@@ -3184,6 +3178,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id ji_ri_san_imageView
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3197,6 +3192,7 @@ id line3
 id linear
 id listMode
 id list_item
+id local_frag
 id locname
 id m3_side_sheet
 id map
@@ -3258,7 +3254,9 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
+id mu_dueng_san_imageView
 id multiply
+id namsan_imageView
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3355,6 +3353,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id seol_ak_san_imageView
 id sharedValueSet
 id sharedValueUnset
 id shortcut
