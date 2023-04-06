@@ -23,7 +23,22 @@ public class DataController {
 	private String animalURL 
 		= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/";
 	
-
+	@Autowired private CommonUtility commonl;
+	private String locationURL
+	= "http://openapi.forest.go.kr/openapi/service/trailInfoService/";
+	
+	//산정보 조회 요청
+	@ResponseBody @RequestMapping("/data/location/list")
+	public Object location_list( int pageNo, int rows ) {
+		StringBuffer url = new StringBuffer( locationURL + "getforeststoryservice" );
+		url.append("?ServiceKey=").append(key);
+		url.append("&pageNo=").append(pageNo);
+		url.append("&numOfRows=").append(rows);
+		url.append("&_type=json");
+		return commonl.requestAPItoMap(url);
+	}
+	
+	
 	//유기동물 시군구조회 요청
 	@RequestMapping("/data/animal/sigungu")
 	public String animal_sigungu(String sido, Model model) {
@@ -36,6 +51,7 @@ public class DataController {
 		return "data/animal/sigungu";
 	}
 	
+
 	//유기동물 시도조회 요청
 	@RequestMapping("/data/animal/sido")
 	public String animal_sido(Model model) {
@@ -47,7 +63,7 @@ public class DataController {
 		return "data/animal/sido";
 	}
 	
-	
+
 	//유기동물 보호소조회 요청
 	@RequestMapping("/data/animal/shelter")
 	public String animal_shelter(String sido, String sigungu, Model model) {
@@ -60,11 +76,11 @@ public class DataController {
 		return "data/animal/shelter";
 	}
 	
-	
+
 	//유기동물정보조회 요청
 	@RequestMapping("/data/animal/list")
 	public Object animal_list( @RequestBody HashMap<String, Object> map, Model model ) {
-		StringBuffer url = new StringBuffer( animalURL + "abandonmentPublic" );
+		StringBuffer url = new StringBuffer( animalURL + "cultureInfoService2" );
 		url.append("?serviceKey=").append(key);
 		url.append("&pageNo=").append( map.get("pageNo") );
 		url.append("&numOfRows=").append( map.get("rows") );
@@ -79,6 +95,7 @@ public class DataController {
 		return "data/animal/animal_list";
 	}
 	
+
 	//유기동물 품종조회 요청
 	@RequestMapping("/data/animal/kind")
 	public String animal_kind(Model model, String upkind) {
