@@ -1,14 +1,21 @@
 package com.bteam.iot;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
+
+import gone.HomeVO;
 import location.LocationServiceImpl;
 import location.LocationVO;
 
@@ -81,6 +88,24 @@ public class LocationController {
 		model.addAttribute("list", list);
 		return "location/list";
 	}
-	// 산목록 인기순으로 정렬
-
+	// 지역별 이미지및 정보 가져오기
+	@ResponseBody @RequestMapping(value="/selectImage", produces="text/plain; charset=utf-8" )
+	public String selectImage(HttpServletRequest req, Model model) {
+		String locname = (String) req.getParameter("locname");		
+		LocationVO vo = service.location_image_info(locname);
+	
+		Gson gson = new Gson();
+		return gson.toJson( (LocationVO)vo );		
+		
+	}
+	// 지역별 이미지및 정보 가져오기
+	@ResponseBody @RequestMapping(value="/selectLocal", produces="text/plain; charset=utf-8" )
+	public String selectLocal(HttpServletRequest req, Model model) {
+		String address = (String) req.getParameter("address");		
+		List<LocationVO> list = service.location_local_list(address);
+	
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<LocationVO>)list );		
+		
+	}
 }
