@@ -44,8 +44,6 @@ public class CourseController {
 		return "redirect:info.co?id=" + vo.getId();
 	}
 	
-	
-	
 	//선택한 고객정보 수정화면 요청
 	@RequestMapping("/modify.co")
 	public String modify(Model model, int id) {
@@ -81,7 +79,6 @@ public class CourseController {
 		//응답화면연결
 		return "course/info";
 	}
-	
 	
 	//고객목록화면 요청
 	@RequestMapping("/list.co")
