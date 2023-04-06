@@ -10,31 +10,18 @@
 .pharmacy td:nth-child(3) { text-align: left; }
 #popup { width: 800px; height: 600px; }
 table.animal img { width:100%; height:100px }
-
-	.main{
-		text-align: center; margin: 0 auto;
-		container: text-center;
-	}
-
-	#list-top{
-		text-align: center; margin: 0 auto;
-		container: text-center;	
-	}
-
-
 </style>
 </head>
 <body>
-<div class="main">
 <h3>공공데이터</h3>
 <div class='btnSet api'>
 	<a>약국정보</a>
 	<a>유기동물정보</a>
-</div>
+	<a>산 정보</a>
 </div>
 <div id='list-top'>
 	<ul class='animal-top'></ul>
-	<ul class='common' style="padding-left: 0;" >
+	<ul class='common'>
 		<li><select class='w-px100' id='pageList'>
 			<c:forEach var='i' begin='1' end='5'>
 			<option value='${10*i}'>${10*i}개씩</option>
@@ -68,8 +55,42 @@ $('.api a').click(function(){
 	$('.api a').not( $(this) ).addClass('btn-empty');
 	
 	if( $(this).index()==0 ) pharmacy_list( 1 );
-	else					 animal_list( 1 );
+	else if( $(this).index()==1 ) animal_list( 1 );
+	else if( $(this).index()==2 ) location_list( 1 );
 })
+
+
+//산 정보조회
+function location_list( page ){
+	$('.animal-top').empty();
+	
+	
+	$('#data-list').html('');
+	$('.page-list').html('');
+	loading(true);
+	var location = {};
+	location.pageNo  = page;
+	location.rows  = pageList;
+	
+	
+	$.ajax({
+		type: 'post',
+		contentType: 'application/json',
+		url: 'data/location/list',
+		data: JSON.stringify( location ),
+		success: function( response ){
+			$('#data-list').html( response );
+			loading(false);
+		},error: function(){
+			
+			loading(false);
+		}
+	});
+	
+}
+
+
+
 
 //유기동물 시도조회
 function animal_sido(){
@@ -207,6 +228,7 @@ $(function(){
 $(document).on('click', '.page-list a', function(){
 	if( $('.pharmacy').length > 0 ) pharmacy_list( $(this).data('page') );
 	else if( $('.animal').length > 0 ) animal_list( $(this).data('page') );
+	else if( $('.location').length > 0 ) location_list( $(this).data('page') );
 	
 }).on('click', '.map', function(){
 	if(  $(this).data('x')=='undefined' || $(this).data('y')=='undefined' ){

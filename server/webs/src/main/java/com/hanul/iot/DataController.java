@@ -23,7 +23,22 @@ public class DataController {
 	private String animalURL 
 		= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/";
 	
-
+	
+	//산 정보조회 요청
+	@RequestMapping("/data/location/list")
+	public Object location_list( @RequestBody HashMap<String, Object> map, Model model ) {
+		StringBuffer url = new StringBuffer(
+				"http://api.forest.go.kr/openapi/service/trailInfoService/getforeststoryservice");
+		url.append("?ServiceKey=").append(key);
+		url.append("&_type=json");
+		url.append("&pageNo=").append( map.get("pageNo") );
+		url.append("&numOfRows=").append( map.get("rows") );
+		model.addAttribute("list", common.requestAPItoMap(url));
+		model.addAttribute("page", map.get("pageNo") );
+		return "data/location/list";
+	}
+	
+	
 	//유기동물 시군구조회 요청
 	@RequestMapping("/data/animal/sigungu")
 	public String animal_sigungu(String sido, Model model) {
@@ -102,6 +117,7 @@ public class DataController {
 		url.append("&numOfRows=").append( rows );
 		return common.requestAPItoMap(url);
 	}
+
 	
 	//공공데이터 목록화면 요청
 	@RequestMapping("/list.da")
