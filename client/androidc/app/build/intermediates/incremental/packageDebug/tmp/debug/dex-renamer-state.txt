@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-#Wed Apr 05 15:04:06 KST 2023
-=======
-#Wed Apr 05 15:05:51 KST 2023
->>>>>>> 1c075feeee50df0a47d05c42489d69ae2dd1077a
+#Thu Apr 06 10:31:36 KST 2023
 path.4=15/classes.dex
 path.3=14/classes.dex
 path.2=12/classes.dex
 path.1=0/classes.dex
+path.7=classes2.dex
 path.6=9/classes.dex
 path.5=5/classes.dex
 path.0=classes.dex
@@ -19,7 +16,9 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
+renamed.7=classes8.dex
 renamed.6=classes7.dex
+base.7=D\:\\bteam_project\\client\\androidc\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 renamed.5=classes6.dex
 base.6=D\:\\bteam_project\\client\\androidc\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
 renamed.4=classes5.dex

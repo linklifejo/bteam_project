@@ -10,203 +10,256 @@
 9        android:targetSdkVersion="33" />
 9-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml
 10
-11    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-11-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:5:5-79
-11-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:5:22-76
-12    <uses-permission android:name="android.permission.INTERNET" />
-12-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:6:5-67
-12-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:6:22-64
-13    <uses-permission
-13-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:7:5-9:38
-14        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-14-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:8:9-65
-15        android:maxSdkVersion="18" />
-15-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:9:9-35
-16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-16-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:10:5-80
-16-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:10:22-77
-17    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
-17-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:11:5-80
-17-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:11:22-77
-18    <uses-permission android:name="android.permission.CAMERA" />
-18-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:12:5-65
-18-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:12:22-62
-19
-20    <uses-feature
-20-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:14:5-16:35
-21        android:name="android.hardware.camera2"
-21-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:15:9-48
-22        android:required="true" /> <!-- API30이상에서는 queries사용해서 권한부여를 한번 더 해야함. -->
-22-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:16:9-32
-23    <queries>
-23-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:17:5-46:15
-24
-25        <!-- WebView -->
-26        <intent>
-26-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:20:9-26:18
-27            <action android:name="android.intent.action.VIEW" />
-27-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:21:13-65
-27-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:21:21-62
-28
-29            <category android:name="android.intent.category.BROWSABLE" />
-29-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:23:13-74
-29-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:23:23-71
+11    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+11-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:5:5-80
+11-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:5:22-78
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:6:5-78
+12-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+13-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:7:5-79
+13-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:8:5-67
+14-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:8:22-64
+15    <uses-permission
+15-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:9:5-11:38
+16        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+16-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:10:9-65
+17        android:maxSdkVersion="18" />
+17-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:11:9-35
+18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+18-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:12:5-80
+18-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:12:22-77
+19    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+19-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:13:5-80
+19-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:13:22-77
+20    <uses-permission android:name="android.permission.CAMERA" />
+20-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:14:5-65
+20-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:14:22-62
+21
+22    <uses-feature
+22-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:16:5-18:35
+23        android:name="android.hardware.camera2"
+23-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:17:9-48
+24        android:required="true" /> <!-- API30이상에서는 queries사용해서 권한부여를 한번 더 해야함. -->
+24-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:18:9-32
+25    <queries>
+25-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:19:5-48:15
+26
+27        <!-- WebView -->
+28        <intent>
+28-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:22:9-28:18
+29            <action android:name="android.intent.action.VIEW" />
+29-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:23:13-65
+29-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:23:21-62
 30
-31            <data android:scheme="http" />
-31-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:25:13-43
-31-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:25:19-40
-32        </intent>
-33        <intent>
-33-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:27:9-33:18
-34            <action android:name="android.intent.action.VIEW" />
-34-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:21:13-65
-34-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:21:21-62
-35
-36            <category android:name="android.intent.category.BROWSABLE" />
-36-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:23:13-74
-36-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:23:23-71
+31            <category android:name="android.intent.category.BROWSABLE" />
+31-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:25:13-74
+31-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:25:23-71
+32
+33            <data android:scheme="http" />
+33-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:27:13-43
+33-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:27:19-40
+34        </intent>
+35        <intent>
+35-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:29:9-35:18
+36            <action android:name="android.intent.action.VIEW" />
+36-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:23:13-65
+36-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:23:21-62
 37
-38            <data android:scheme="https" />
-38-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:25:13-43
-38-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:25:19-40
-39        </intent>
-40        <!-- Camera -->
-41        <intent>
-41-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:35:9-37:18
-42            <action android:name="android.media.action.IMAGE_CAPTURE" />
-42-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:36:13-73
-42-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:36:21-70
-43        </intent>
-44        <!-- Gallery -->
-45        <intent>
-45-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:39:9-41:18
-46            <action android:name="android.intent.action.GET_CONTENT" />
-46-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:40:13-72
-46-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:40:21-69
-47        </intent>
-48        <!-- Youtube -->
-49        <intent>
-49-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:43:9-45:18
-50            <action android:name="android.media.browse.MediaBrowserService" />
-50-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:44:13-79
-50-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:44:21-76
-51        </intent>
-52    </queries>
-53
-54    <permission
-54-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-55        android:name="com.hanul.bteam.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-55-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-56        android:protectionLevel="signature" />
-56-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+38            <category android:name="android.intent.category.BROWSABLE" />
+38-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:25:13-74
+38-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:25:23-71
+39
+40            <data android:scheme="https" />
+40-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:27:13-43
+40-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:27:19-40
+41        </intent>
+42        <!-- Camera -->
+43        <intent>
+43-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:37:9-39:18
+44            <action android:name="android.media.action.IMAGE_CAPTURE" />
+44-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:38:13-73
+44-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:38:21-70
+45        </intent>
+46        <!-- Gallery -->
+47        <intent>
+47-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:41:9-43:18
+48            <action android:name="android.intent.action.GET_CONTENT" />
+48-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:42:13-72
+48-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:42:21-69
+49        </intent>
+50        <!-- Youtube -->
+51        <intent>
+51-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:45:9-47:18
+52            <action android:name="android.media.browse.MediaBrowserService" />
+52-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:46:13-79
+52-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:46:21-76
+53        </intent>
+54        <!-- Needs to be explicitly declared on Android R+ -->
+55        <package android:name="com.google.android.apps.maps" />
+55-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
+55-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:33:18-61
+56    </queries>
 57
-58    <uses-permission android:name="com.hanul.bteam.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-58-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-58-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-59
-60    <application
-60-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:48:5-90:19
-61        android:allowBackup="true"
-61-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:49:9-35
-62        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-62-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-63        android:dataExtractionRules="@xml/data_extraction_rules"
-63-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:50:9-65
-64        android:debuggable="true"
-65        android:fullBackupContent="@xml/backup_rules"
-65-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:51:9-54
-66        android:icon="@mipmap/ic_launcher"
-66-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:52:9-43
-67        android:label="@string/app_name"
-67-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:53:9-41
-68        android:preserveLegacyExternalStorage="true"
-68-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:54:9-53
-69        android:requestLegacyExternalStorage="true"
-69-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:55:9-52
-70        android:roundIcon="@mipmap/ic_launcher_round"
-70-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:56:9-54
-71        android:supportsRtl="true"
-71-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:57:9-35
-72        android:testOnly="true"
-73        android:theme="@style/Theme.Bteam"
-73-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:58:9-43
-74        android:usesCleartextTraffic="true" >
-74-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:59:9-44
-75        <activity
-75-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:60:9-66:20
-76            android:name="com.hanul.bteam.Detailmo"
-76-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:61:13-37
-77            android:exported="false" >
-77-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:62:13-37
-78            <meta-data
-78-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:63:13-65:36
-79                android:name="android.app.lib_name"
-79-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:64:17-52
-80                android:value="" />
-80-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:65:17-33
-81        </activity>
-82        <activity
-82-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:67:9-79:20
-83            android:name="com.hanul.bteam.MainActivity"
-83-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:68:13-41
-84            android:exported="true" >
-84-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:69:13-36
-85            <intent-filter>
-85-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:70:13-74:29
-86                <action android:name="android.intent.action.MAIN" />
-86-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:71:17-69
-86-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:71:25-66
-87
-88                <category android:name="android.intent.category.LAUNCHER" />
-88-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:73:17-77
-88-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:73:27-74
-89            </intent-filter>
-90
-91            <meta-data
-91-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:63:13-65:36
-92                android:name="android.app.lib_name"
-92-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:64:17-52
-93                android:value="" />
-93-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:65:17-33
-94        </activity>
-95
-96        <provider
-97            android:name="androidx.core.content.FileProvider"
-97-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:82:13-62
-98            android:authorities="com.hanul.bteam.fileprovider"
-98-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:83:13-64
-99            android:exported="false"
-99-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:84:13-37
-100            android:grantUriPermissions="true" >
-100-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:85:13-47
-101            <meta-data
-101-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:86:13-88:52
-102                android:name="android.support.FILE_PROVIDER_PATHS"
-102-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:87:17-67
-103                android:resource="@xml/filepath" />
-103-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:88:17-49
-104        </provider>
-105        <provider
-105-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-106            android:name="androidx.startup.InitializationProvider"
-106-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-107            android:authorities="com.hanul.bteam.androidx-startup"
-107-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-108            android:exported="false" >
-108-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-109            <meta-data
-109-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-110                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-110-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-111                android:value="androidx.startup" />
-111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-112            <meta-data
-112-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-113                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-113-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-114                android:value="androidx.startup" />
-114-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-115        </provider>
-116    </application>
-117
-118</manifest>
+58    <!-- Include required permissions for Google Maps API to run. -->
+59    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+59-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:5-79
+59-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:23:22-76
+60
+61    <uses-feature
+61-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
+62        android:glEsVersion="0x00020000"
+62-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
+63        android:required="true" />
+63-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
+64
+65    <permission
+65-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+66        android:name="com.hanul.bteam.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+66-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+67        android:protectionLevel="signature" />
+67-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+68
+69    <uses-permission android:name="com.hanul.bteam.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+69-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+69-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+70
+71    <application
+71-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:50:5-97:19
+72        android:allowBackup="true"
+72-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:51:9-35
+73        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+73-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+74        android:dataExtractionRules="@xml/data_extraction_rules"
+74-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:52:9-65
+75        android:debuggable="true"
+76        android:fullBackupContent="@xml/backup_rules"
+76-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:53:9-54
+77        android:icon="@mipmap/ic_launcher"
+77-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:54:9-43
+78        android:label="@string/app_name"
+78-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:55:9-41
+79        android:preserveLegacyExternalStorage="true"
+79-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:56:9-53
+80        android:requestLegacyExternalStorage="true"
+80-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:57:9-52
+81        android:roundIcon="@mipmap/ic_launcher_round"
+81-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:58:9-54
+82        android:supportsRtl="true"
+82-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:59:9-35
+83        android:testOnly="true"
+84        android:theme="@style/Theme.Bteam"
+84-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:60:9-43
+85        android:usesCleartextTraffic="true" >
+85-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:61:9-44
+86        <meta-data
+86-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:64:9-66:70
+87            android:name="com.google.android.maps.v2.API_KEY"
+87-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:65:13-62
+88            android:value="AIzaSyCq0nwt8RzS19xW-xCl_T5ho7sEMdZZ8b8" />
+88-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:66:13-68
+89
+90        <activity
+90-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:67:9-73:20
+91            android:name="com.hanul.bteam.Detailmo"
+91-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:68:13-37
+92            android:exported="false" >
+92-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:69:13-37
+93            <meta-data
+93-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:70:13-72:36
+94                android:name="android.app.lib_name"
+94-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:71:17-52
+95                android:value="" />
+95-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:72:17-33
+96        </activity>
+97        <activity
+97-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:74:9-86:20
+98            android:name="com.hanul.bteam.MainActivity"
+98-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:75:13-41
+99            android:exported="true" >
+99-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:76:13-36
+100            <intent-filter>
+100-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:77:13-81:29
+101                <action android:name="android.intent.action.MAIN" />
+101-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:78:17-69
+101-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:78:25-66
+102
+103                <category android:name="android.intent.category.LAUNCHER" />
+103-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:80:17-77
+103-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:80:27-74
+104            </intent-filter>
+105
+106            <meta-data
+106-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:70:13-72:36
+107                android:name="android.app.lib_name"
+107-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:71:17-52
+108                android:value="" />
+108-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:72:17-33
+109        </activity>
+110
+111        <provider
+112            android:name="androidx.core.content.FileProvider"
+112-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:89:13-62
+113            android:authorities="com.hanul.bteam.fileprovider"
+113-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:90:13-64
+114            android:exported="false"
+114-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:91:13-37
+115            android:grantUriPermissions="true" >
+115-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:92:13-47
+116            <meta-data
+116-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:93:13-95:52
+117                android:name="android.support.FILE_PROVIDER_PATHS"
+117-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:94:17-67
+118                android:resource="@xml/filepath" />
+118-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:95:17-49
+119        </provider>
+120        <!-- Needs to be explicitly declared on P+ -->
+121        <uses-library
+121-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
+122            android:name="org.apache.http.legacy"
+122-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
+123            android:required="false" />
+123-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
+124
+125        <activity
+125-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\admin\.gradle\caches\transforms-3\9df4caf478e8a4a3e6e06e7b0287a07e\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+126            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+126-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\admin\.gradle\caches\transforms-3\9df4caf478e8a4a3e6e06e7b0287a07e\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+127            android:exported="false"
+127-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\admin\.gradle\caches\transforms-3\9df4caf478e8a4a3e6e06e7b0287a07e\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+128            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+128-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\admin\.gradle\caches\transforms-3\9df4caf478e8a4a3e6e06e7b0287a07e\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+129
+130        <meta-data
+130-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\admin\.gradle\caches\transforms-3\b4a76a349f706e6c557a13ae2ac7dde3\transformed\play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+131            android:name="com.google.android.gms.version"
+131-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\admin\.gradle\caches\transforms-3\b4a76a349f706e6c557a13ae2ac7dde3\transformed\play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+132            android:value="@integer/google_play_services_version" />
+132-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\admin\.gradle\caches\transforms-3\b4a76a349f706e6c557a13ae2ac7dde3\transformed\play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+133
+134        <provider
+134-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+135            android:name="androidx.startup.InitializationProvider"
+135-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+136            android:authorities="com.hanul.bteam.androidx-startup"
+136-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+137            android:exported="false" >
+137-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+138            <meta-data
+138-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+139                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+139-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+140                android:value="androidx.startup" />
+140-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+141            <meta-data
+141-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+142                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+142-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+143                android:value="androidx.startup" />
+143-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+144        </provider>
+145    </application>
+146
+147</manifest>

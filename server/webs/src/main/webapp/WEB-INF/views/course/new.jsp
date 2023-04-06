@@ -26,17 +26,32 @@
 
 <div class="main">
 	<h3>코스정보등록</h3>
+	
 </div>
-	<form method="post" action='insert.co' class="myform">
+	<form method="post" action='insert.co' class="myform" enctype='multipart/form-data'>
+
 		<%-- <input type='hidden' name='location_id' class='loc2' value='${vo.id}'></input> --%>
 	<table class='w-px600'>
 	<colgroup>
 		<col width="140px">
 		<col>
 	</colgroup>
-	<tr><th>코스명</th>
+	<tr><th>산이름</th>
 		<td><input type='text' name='couname' ></td>
 	</tr>
+	<tr><th>첨부파일</th>
+	<td class='txt-left'>
+		<div class="align">
+		<label>
+			<input type='file' name='file' class='attach-file'>
+			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
+		</label>
+		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>		
+		<div class='file-name'></div>
+		<div class='preview'></div>
+		</div>
+	</td>
+</tr>
 	<!--1: 위험 2: A코스 3: B코스 4: C코스 -->
 	<tr><th>구분</th>
 		<td>
