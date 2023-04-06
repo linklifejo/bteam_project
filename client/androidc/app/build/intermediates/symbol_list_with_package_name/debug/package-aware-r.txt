@@ -2859,8 +2859,6 @@ drawable trash
 id ALT
 id BOTTOM_END
 id BOTTOM_START
-id BoardName
-id BoardTitle
 id CTRL
 id FUNCTION
 id META
@@ -2965,11 +2963,6 @@ id btnMain4
 id btnMain5
 id btnMain6
 id btnSub
-id btn_boardList
-id btn_delete
-id btn_modify
-id btn_questionsList
-id btn_write
 id button2
 id button3
 id button4
@@ -3225,7 +3218,6 @@ id postLayout
 id pressed
 id progress_circular
 id progress_horizontal
-id questionsName
 id radio
 id ratio
 id rectangles
@@ -3394,9 +3386,6 @@ id withinBounds
 id wrap
 id wrap_content
 id wrap_content_constrained
-id writeDate
-id writename
-id writersID
 id x_left
 id x_right
 integer abc_config_activityDefaultDur
@@ -3506,9 +3495,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
-layout board_1
-layout board_1_view
-layout board_2
 layout boardview
 layout course
 layout courseview
@@ -3594,9 +3580,6 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout popupimg
-layout questions_1
-layout questions_1_view
-layout questions_2
 layout review_list
 layout search_frag
 layout select_dialog_item_material
