@@ -10,6 +10,8 @@ insert into course(couname, type, location_id)
 values (#{couname}, #{type}, #{location_id})
 </insert>
 
+
+
 <!-- 해당코스정보 수정저장 -->
 <update id='update'>
 update course
