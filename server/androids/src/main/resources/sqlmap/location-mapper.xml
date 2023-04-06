@@ -26,40 +26,16 @@ delete from location where id = #{id}
 <select id='info' resultType='location.LocationVO'>
 select * from location where id = #{id}
 </select>
-<!-- 지역별 산 정보조회 -->
-<select id='local_list' resultType='location.LocationVO'>
-select * from location where address like '%#{add}%'
-</select>
+
 
 <!-- 고객목록조회 -->
 <select id='list' resultType='location.LocationVO'>
 select * from location order by locname
 </select>
 
-<!-- 총 글의 건수 조회 -->
-<select id='totalCount' resultType='integer'>
+<!-- 지역별산 조회 -->
+<select id='localtotalCount' resultType='location.LocationVO'>
 select * from location where address like '%' || #{add} || '%'
 </select>
-
-<sql id='search_where'>
-<choose>
-<when test=" search=='all' ">
-where title like '%' || #{keyword} || '%'
-or    content like '%' || #{keyword} || '%'
-or    <include refid="search_writer"/>
-</when>
-<when test=" search=='title' or search=='content' ">
-where ${search} like '%' || #{keyword} || '%'
-</when>
-<when test=" search=='writer' ">
-where <include refid="search_writer"/>
-</when>
-</choose>
-</sql>
-
-<sql id='search_writer'>
-writer in (select id from member where name like '%' || #{keyword} || '%')
-</sql>
-
 
 </mapper>  

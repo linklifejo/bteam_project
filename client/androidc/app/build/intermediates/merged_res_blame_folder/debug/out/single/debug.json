@@ -36,6 +36,10 @@
         "source": "com.hanul.bteam.app-main-32:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-30:/layout_board_2.xml.flat",
+        "source": "com.hanul.bteam.app-main-32:/layout/board_2.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_o_deo_san.jpg.flat",
         "source": "com.hanul.bteam.app-main-32:/drawable/o_deo_san.jpg"
     },
@@ -44,12 +48,12 @@
         "source": "com.hanul.bteam.app-main-32:/drawable/namsan2.xml"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-30:/drawable_do_bong_san1.xml.flat",
-        "source": "com.hanul.bteam.app-main-32:/drawable/do_bong_san1.xml"
-    },
-    {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_ji_ri_san1.xml.flat",
         "source": "com.hanul.bteam.app-main-32:/drawable/ji_ri_san1.xml"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-30:/drawable_do_bong_san1.xml.flat",
+        "source": "com.hanul.bteam.app-main-32:/drawable/do_bong_san1.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_gye_bang_san.jpg.flat",
@@ -76,12 +80,12 @@
         "source": "com.hanul.bteam.app-main-32:/layout/detailmo.xml"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-30:/drawable_o_deo_san1.xml.flat",
-        "source": "com.hanul.bteam.app-main-32:/drawable/o_deo_san1.xml"
-    },
-    {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_namsan.webp.flat",
         "source": "com.hanul.bteam.app-main-32:/drawable/namsan.webp"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-30:/drawable_o_deo_san1.xml.flat",
+        "source": "com.hanul.bteam.app-main-32:/drawable/o_deo_san1.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_do_bong_san.jpg.flat",
@@ -152,12 +156,20 @@
         "source": "com.hanul.bteam.app-main-32:/layout/activity_main.xml"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-30:/layout_board_1_view.xml.flat",
+        "source": "com.hanul.bteam.app-main-32:/layout/board_1_view.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_su_rak_san.jpg.flat",
         "source": "com.hanul.bteam.app-main-32:/drawable/su_rak_san.jpg"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_gye_bang_san1.xml.flat",
         "source": "com.hanul.bteam.app-main-32:/drawable/gye_bang_san1.xml"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-30:/layout_questions_1_view.xml.flat",
+        "source": "com.hanul.bteam.app-main-32:/layout/questions_1_view.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-30:/layout_danger.xml.flat",
@@ -176,6 +188,10 @@
         "source": "com.hanul.bteam.app-main-32:/drawable-v24/image02.jpg"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-30:/layout_board_1.xml.flat",
+        "source": "com.hanul.bteam.app-main-32:/layout/board_1.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-30:/layout_willhave_frag.xml.flat",
         "source": "com.hanul.bteam.app-main-32:/layout/willhave_frag.xml"
     },
@@ -190,6 +206,10 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_search.png.flat",
         "source": "com.hanul.bteam.app-main-32:/drawable/search.png"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-30:/layout_questions_2.xml.flat",
+        "source": "com.hanul.bteam.app-main-32:/layout/questions_2.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_gumdang.jpg.flat",
@@ -302,6 +322,10 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "com.hanul.bteam.app-main-32:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-30:/layout_questions_1.xml.flat",
+        "source": "com.hanul.bteam.app-main-32:/layout/questions_1.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-30:/drawable_home.png.flat",
