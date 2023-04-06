@@ -13,18 +13,32 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     // 나의주석
@@ -33,9 +47,17 @@ public class MainActivity extends AppCompatActivity {
 //    찜 :       WillHaveFragment  =>   willhave_frag
 //    나의정보 :  MyInfoFragment =>   myinfo_frag
 
+    //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 //광추가
+    //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 // 인기산추가
+    // 크흠 // 메롱
+
     public Bundle bundle;
     Toolbar toolbar;
     BottomNavigationView bNaviView;
+    Location myLoc, markerLoc;
+    MarkerOptions myMarker;
+    GoogleMap map;
+    SupportMapFragment mapFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // 위험권한
-    private void checkDangerousPermissions() {
+    public void checkDangerousPermissions() {
         String[] permissions = {
                 android.Manifest.permission.CAMERA,
                 android.Manifest.permission.ACCESS_MEDIA_LOCATION,
@@ -183,4 +205,120 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
+    // 구글맵 메소드
+    // 한글 주소를 받아서 Location 형태로 변경시켜서 보내주는 매소드
+    public  Location getLocationFromAddress(Context context, String address) {
+        Geocoder geocoder = new Geocoder(context);
+        List<Address> addresses;
+        Location resLocation = new Location("");
+
+        try {                                 //    한글주소 ,  최대반환주소갯수
+            addresses = geocoder.getFromLocationName(address, 5);
+            if((addresses == null) || (addresses.size() == 0)){
+                return null;
+            }
+
+            // 넘겨받은 주소리스트에서 가장 주소에 가까운 0번째 값을 사용한다
+            Address addressLoc = addresses.get(0);
+            resLocation.setLatitude(addressLoc.getLatitude());
+            resLocation.setLongitude(addressLoc.getLongitude());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return resLocation;
+    }
+
+    public void requestMyLocation() {
+        LocationManager manager =
+                (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        try {
+            long minTime = 10000;
+            float minDistance = 0;
+
+            manager.requestLocationUpdates(
+                    LocationManager.GPS_PROVIDER,
+                    minTime,
+                    minDistance,
+                    new LocationListener() {
+                        @Override
+                        public void onLocationChanged(@NonNull Location location) {
+                            // 위치를 지도에 표시
+                            showCurrentLocation(location);
+                        }
+                    }
+            );
+            // 만약 터널 같은곳에 들어가면 신호를 받지 못하므로
+            // 마지막 수신된곳을 알려주게 한다
+            Location lastLocation =
+                    manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if(lastLocation != null){
+                // 마지막에 수신된 장소를 지도에 표시한다
+                showCurrentLocation(lastLocation);
+            }
+
+        }catch (SecurityException e){
+            e.getMessage();
+        }
+
+    }
+
+    public void showCurrentLocation(Location location) {
+        // 현재 내 위치 전역변수에 넣음
+        myLoc = location;
+
+        // 지도에 위치를 찍을때는 LatLng타입을 사용함
+        // Location => LatLng 타입으로 변환시켜줌
+        LatLng curPoint = new
+                LatLng(location.getLatitude(), location.getLongitude());
+        // 지도에 현재위치 표시하기
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 18));
+
+        // 마커 찍기 : Location 생성 : 나중에는 DB나 API에서 가져옴
+        Location location1 = new Location("");
+        location1.setLatitude(35.153817);
+        location1.setLongitude(126.8889);
+        String name = "똥강아지";
+        String phone = "010-1111-1111";
+        showMyLocationMarker(location1, name, phone);
+
+        Location location2 = new Location("");
+        location2.setLatitude(35.153825);
+        location2.setLongitude(126.8885);
+        showMyLocationMarker(location2, "초복", "010-1111-4444");
+
+    }
+
+    // location 받아서 마커 생성하여 지도에 표시하기
+    public void showMyLocationMarker(Location location,
+                                      String name, String phone){
+        // 마커위치를 전역변수에 담음
+        markerLoc = location;
+        // 마커와 내 위치까지의 거리를 구한다
+        int distance = getDistance(myLoc, markerLoc);
+
+        if(myMarker == null){
+            myMarker = new MarkerOptions();
+            myMarker.position(new
+                    LatLng(location.getLatitude(), location.getLongitude()));
+            myMarker.title("◎ " + name);
+            myMarker.snippet(phone + "\n거리 => " + distance + " M");
+            myMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.mylocation));
+            map.addMarker(myMarker);
+            myMarker = null;
+        }
+    }
+
+    public int getDistance(Location myLoc, Location markerLoc) {
+        double distance = 0;
+        // 거리를 구할때는 Location 타입 사용
+        distance = myLoc.distanceTo(markerLoc);
+
+        return (int)distance;
+    }
+
 }
