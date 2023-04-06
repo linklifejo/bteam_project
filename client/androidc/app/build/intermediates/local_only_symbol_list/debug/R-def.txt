@@ -39,6 +39,10 @@ drawable ji_ri_san1
 <<<<<<< HEAD
 drawable kakao_1
 =======
+<<<<<<< HEAD
+drawable kakao_1
+=======
+>>>>>>> aacb030955285644adefce71844a0cac0fa5b1d9
 drawable marker
 >>>>>>> c1249841b8fc2b66c3b6927c42f62c3df43b0581
 drawable mirg
