@@ -6,14 +6,14 @@
 
 <!-- 신규고객정보 삽입저장 -->
 <insert id='insert'>
-insert into location( locname, name_desc, latitude,longitude, post, address)
-values (#{locname}, #{name_desc}, #{latitude}, #{longitude}, #{post}, #{address})
+insert into location( locname, name_desc, latitude,longitude, post, address,loccode)
+values (#{locname}, #{name_desc}, #{latitude}, #{longitude}, #{post}, #{address}, #{loccode})
 </insert>
 
 <!-- 해당고객정보 수정저장 -->
 <update id='update'>
 update location
-set locname = #{locname}, name_desc = #{name_desc}, latitude = #{latitude}, longitude = #{longitude}, post = #{post}, address = #{address}
+set locname = #{locname}, name_desc = #{name_desc}, latitude = #{latitude}, longitude = #{longitude}, post = #{post}, address = #{address}, loccode = #{loccode}
 where id = #{id}
 </update>
 
@@ -22,7 +22,7 @@ where id = #{id}
 delete from location where id = #{id}
 </delete>
 
-<!-- 산정보및 서울/경기정보조회 -->
+<!-- 산정보 정보조회 -->
 <select id='info' resultType='location.LocationVO'>
 select * from location where id = #{id}
 </select>
@@ -33,9 +33,14 @@ select * from location where id = #{id}
 select * from location order by locname
 </select>
 
-<!-- 지역별산 조회 -->
-<select id='localtotalCount' resultType='location.LocationVO'>
-select * from location where address like '%' || #{add} || '%'
+<!-- 지역별산 대표사진 조회 산이름으로 -->
+<select id='image_info' resultType='location.LocationVO'>
+select * from location where locname like '%' || #{locname} || '%'
+</select>
+
+<!-- 지역별산 조회 주소로 -->
+<select id='local_list' resultType='location.LocationVO'>
+select * from location where loccode = #{loccode}
 </select>
 
 </mapper>  
