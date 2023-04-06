@@ -88,13 +88,15 @@ public class Danger extends Fragment implements OnMapReadyCallback{
         view.findViewById(R.id.btnClick).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity = (MainActivity) getActivity();
+
                 if (etAddress.getText().toString().length() > 0) {
                     Location location = activity.getLocationFromAddress
                             (activity, etAddress.getText().toString());
 
                     // 한글주소에서 location으로 변환한것을 지도에서 보여준다
                     activity.showCurrentLocation(location);
+
+
                     LatLng newLocation = new LatLng(location.getLatitude(), location.getLongitude());
                     CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(newLocation, 15);
                     map.moveCamera(cameraUpdate);
