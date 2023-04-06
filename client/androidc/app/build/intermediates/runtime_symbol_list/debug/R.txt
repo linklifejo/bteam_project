@@ -2858,8 +2858,6 @@ int drawable trash 0x7f070113
 int id ALT 0x7f080000
 int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002
-int id BoardName 0x7f080003
-int id BoardTitle 0x7f080004
 int id CTRL 0x7f080005
 int id FUNCTION 0x7f080006
 int id META 0x7f080007
@@ -2964,11 +2962,6 @@ int id btnMain4 0x7f080069
 int id btnMain5 0x7f08006a
 int id btnMain6 0x7f08006b
 int id btnSub 0x7f08006c
-int id btn_boardList 0x7f08006d
-int id btn_delete 0x7f08006e
-int id btn_modify 0x7f08006f
-int id btn_questionsList 0x7f080070
-int id btn_write 0x7f080071
 int id button2 0x7f080072
 int id button3 0x7f080073
 int id button4 0x7f080074
@@ -3224,7 +3217,6 @@ int id postLayout 0x7f08016d
 int id pressed 0x7f08016e
 int id progress_circular 0x7f08016f
 int id progress_horizontal 0x7f080170
-int id questionsName 0x7f080171
 int id radio 0x7f080172
 int id ratio 0x7f080173
 int id rectangles 0x7f080174
@@ -3393,9 +3385,6 @@ int id withinBounds 0x7f080216
 int id wrap 0x7f080217
 int id wrap_content 0x7f080218
 int id wrap_content_constrained 0x7f080219
-int id writeDate 0x7f08021a
-int id writename 0x7f08021b
-int id writersID 0x7f08021c
 int id x_left 0x7f08021d
 int id x_right 0x7f08021e
 int integer abc_config_activityDefaultDur 0x7f090000
@@ -3505,9 +3494,6 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
-int layout board_1 0x7f0b001d
-int layout board_1_view 0x7f0b001e
-int layout board_2 0x7f0b001f
 int layout boardview 0x7f0b0020
 int layout course 0x7f0b0021
 int layout courseview 0x7f0b0022
@@ -3593,9 +3579,6 @@ int layout notification_template_icon_group 0x7f0b0071
 int layout notification_template_part_chronometer 0x7f0b0072
 int layout notification_template_part_time 0x7f0b0073
 int layout popupimg 0x7f0b0074
-int layout questions_1 0x7f0b0075
-int layout questions_1_view 0x7f0b0076
-int layout questions_2 0x7f0b0077
 int layout review_list 0x7f0b0078
 int layout search_frag 0x7f0b0079
 int layout select_dialog_item_material 0x7f0b007a
