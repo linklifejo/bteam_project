@@ -7,28 +7,60 @@
 <title>Insert title here</title>
 <style type="text/css">
 .pharmacy, .animal, #list-top { width: 1200px }
+.location { width: 1500px }
 .pharmacy td:nth-child(3) { text-align: left; }
 #popup { width: 800px; height: 600px; }
 table.animal img { width:100%; height:100px }
+	
+ 	.main{
+		container: text-center;
+		text-align: center; margin: 0 auto;	
+	}
+	
+
+
+	.common1{
+ 		position: absolute;
+		left: 10ox;
+		bottom: 0px;
+		right: 10px;
+	
+	}
+		
+ 		
+ 	#list-top {
+		display: flex;
+		position: relative;
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+	
+
+		
 </style>
 </head>
 <body>
+<div class="main">
 <h3>공공데이터</h3>
 <div class='btnSet api'>
 	<a>약국정보</a>
 	<a>유기동물정보</a>
 	<a>산 정보</a>
+	<a>산 등산코스 정보</a>
 </div>
+
 <div id='list-top'>
-	<ul class='animal-top'></ul>
+	<ul class='animal-top' style="padding-left: 0px;"></ul>
 	<ul class='common'>
-		<li><select class='w-px100' id='pageList'>
+		<li class="common1" style="margin-bottom: 15px;">
+		<select class='w-px100 common1' id='pageList'>
 			<c:forEach var='i' begin='1' end='5'>
 			<option value='${10*i}'>${10*i}개씩</option>
 			</c:forEach>
 			</select>
 		</li>
 	</ul>
+</div>
 </div>
 <div id='data-list'></div>
 <div class='btnSet'>
@@ -57,7 +89,41 @@ $('.api a').click(function(){
 	if( $(this).index()==0 ) pharmacy_list( 1 );
 	else if( $(this).index()==1 ) animal_list( 1 );
 	else if( $(this).index()==2 ) location_list( 1 );
+	else if( $(this).index()==3 ) course_list( 1 );
 })
+
+
+//산 등산코스 정보조회
+function course_list( page ){
+	$('.animal-top').empty();
+	
+	
+	$('#data-list').html('');
+	$('.page-list').html('');
+	loading(true);
+	var course = {};
+	course.pageNo  = page;
+	course.rows  = pageList;
+	
+	
+	$.ajax({
+		type: 'post',
+		contentType: 'application/json',
+		url: 'data/course/list',
+		data: JSON.stringify( location ),
+		success: function( response ){
+			$('#data-list').html( response );
+			loading(false);
+		},error: function(){
+			
+			loading(false);
+		}
+	});
+	
+}
+
+
+
 
 
 //산 정보조회
@@ -222,13 +288,14 @@ function makePage( totalList, curPage ){
 }
 
 $(function(){
-	$('.api a').eq(0).trigger('click');	
+	$('.api a').eq(2).trigger('click');	
 });
 
 $(document).on('click', '.page-list a', function(){
 	if( $('.pharmacy').length > 0 ) pharmacy_list( $(this).data('page') );
 	else if( $('.animal').length > 0 ) animal_list( $(this).data('page') );
 	else if( $('.location').length > 0 ) location_list( $(this).data('page') );
+	else if( $('.course').length > 0 ) course_list( $(this).data('page') );
 	
 }).on('click', '.map', function(){
 	if(  $(this).data('x')=='undefined' || $(this).data('y')=='undefined' ){
