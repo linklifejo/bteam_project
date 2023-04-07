@@ -8,13 +8,13 @@
 </head>
 <body>
 <c:if test='${empty list.item}'>
-<table class='tb-list location'>
+<table class='tb-list course'>
 <tr><th>해당 산이 없습니다</th>
 </tr>
 </table>
 </c:if>
 <c:forEach items="${list.item}" var="vo">
-<table class='tb-list location'>
+<table class='tb-list course'>
 <colgroup>
 	<col width='120px'>
 	<col width='70px'><col width='100px'>
@@ -39,11 +39,11 @@
 	<td colspan='7' class='txt-left'>${vo.mntninfopoflc}</td>
 	<td colspan='2'>${vo.hkngpntdscrt}</td>
 </tr> --%>
-<tr><td rowspan='3'><img src="${vo.mntnattchimageseq}"></td>
-	<th>산명</th><td>${vo.mntnnm}</td>
-	<th>높이</th><td>${vo.mntninfohght}</td>
+<tr><td rowspan='3'><img src="${vo.mntnfile}"></td>
+	<th>산명</th><td>${vo.mntnimg}</td>
+	<th>높이</th><td>${vo.mntninfourl}</td>
 	
-	<th>주변관광정보이미지</th><td><img src="${vo.crcmrsghtngetcimageseq}"></td>
+	<th>주변관광정보이미지</th><td><img src="${vo.mntnnm}"></td>
 	<th>추천코스</th><td><img src="${vo.rcmmncoursimageseq}"></td>
 	<th>교통정보이미지</th><td><img src="${vo.mntninfotrnspinfoimageseq}"></td>
 </tr>
@@ -69,7 +69,7 @@
 </c:forEach>
 
 <script>
-$('.location img').on('click', function(){
+$('.course img').on('click', function(){
 	$('#popup, #popup-background').css('display', 'block');
 	$('#popup').html( $(this).clone() )
 });

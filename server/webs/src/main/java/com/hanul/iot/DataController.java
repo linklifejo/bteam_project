@@ -18,7 +18,7 @@ public class DataController {
 	//공공데이터 키
 	private String key = 
 			"FPgj2NXbJw46TcGkmAfZEiYFDbxilys7KLjk3KaB7AfeJE00ZhPNM0M8unwbsI69fSmT8SNfVEimE6ZZ2U14hA%3D%3D";
-	
+		
 	@Autowired private CommonUtility common;
 	private String animalURL 
 		= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/";
@@ -35,8 +35,44 @@ public class DataController {
 		url.append("&numOfRows=").append( map.get("rows") );
 		model.addAttribute("list", common.requestAPItoMap(url));
 		model.addAttribute("page", map.get("pageNo") );
+		model.addAttribute("crlf", "\r\n");
+		model.addAttribute("lf", "\n");
+		model.addAttribute("&nbsp;", "\r\n");
+		model.addAttribute("<br />", "\n");
 		return "data/location/list";
 	}
+
+	
+	//등산 코스 정보조회 요청
+	@RequestMapping("/data/course/list")
+	public Object course_list( @RequestBody HashMap<String, Object> map, Model model ) {
+		StringBuffer url = new StringBuffer(
+				"http://api.forest.go.kr/openapi/service/trailInfoService/getforestspatialdataservice");
+		url.append("?ServiceKey=").append(key);
+		url.append("&_type=json");
+		url.append("&pageNo=").append( map.get("pageNo") );
+		url.append("&numOfRows=").append( map.get("rows") );
+		model.addAttribute("list", common.requestAPItoMap(url));
+		model.addAttribute("page", map.get("pageNo") );
+		model.addAttribute("crlf", "\r\n");
+		model.addAttribute("lf", "\n");
+		return "data/course/list";
+	}
+	
+	
+
+//	//등산 코스 정보조회 요청
+//	@ResponseBody @RequestMapping("/data/course/list")
+//	public Object course_list( int pageNo, int rows ) {
+//		StringBuffer url = new StringBuffer(
+//				"http://api.forest.go.kr/openapi/service/trailInfoService/getforestspatialdataservice");
+//		url.append("?ServiceKey=").append(key);
+//		url.append("&_type=json");
+//		url.append("&pageNo=").append( pageNo );
+//		url.append("&numOfRows=").append( rows );
+//		common.requestAPItoMap(url);
+//		return "data/course/list";
+//	}
 	
 	
 	//유기동물 시군구조회 요청
