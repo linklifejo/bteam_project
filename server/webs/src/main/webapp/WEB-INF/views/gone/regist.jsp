@@ -43,7 +43,7 @@
 <!-- <input type='hidden' name='course_id' class="co2" >  --><!-- 코스선택 -->
 <!-- <input type='hidden' name='location_id' class="loc2" >  --><!-- 산선택 -->
 <input type='hidden' name='member_id' value='${loginInfo.id}'>
-<input type='hidden' name='loccode' value='${l.loccode}'>
+
 <table class='w-px1200'>
 <tr><th class='w-px140'>제목</th>
 	<td><input type='text' name='title' title='제목' class='chk full'></td>
