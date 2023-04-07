@@ -89,13 +89,13 @@ public class LocationController {
 		return "location/list";
 	}
 	// 지역별 이미지및 정보 가져오기
-	@ResponseBody @RequestMapping(value="/selectImage", produces="text/plain; charset=utf-8" )
+	@ResponseBody @RequestMapping(value="/localImage", produces="text/plain; charset=utf-8" )
 	public String selectImage(HttpServletRequest req, Model model) {
-		String loccode = (String) req.getParameter("loccode");		
-		LocationVO vo = service.location_image_info(loccode);
+		
+		ArrayList<LocationVO> list = (ArrayList<LocationVO>) service.location_image_list();
 	
 		Gson gson = new Gson();
-		return gson.toJson( (LocationVO)vo );		
+		return gson.toJson( (ArrayList<LocationVO>) list );		
 		
 	}
 	// 지역별 이미지및 정보 가져오기

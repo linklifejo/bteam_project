@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // 액션바가 보이지 않게 하기 위하여
         // 먼저 theme에 가서 NoActionBar로 수정한다
         // 내가 만든 툴바를 액션바로 지정한다
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
         cursor.moveToNext();
 
-        String path = cursor.getString( cursor.getColumnIndex( "_data" ) );
+        @SuppressLint("Range") String path = cursor.getString( cursor.getColumnIndex( "_data" ) );
 
         cursor.close();
 
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, null, "_data = '" + filePath + "'", null, null);
 
         cursor.moveToNext();
-        int id = cursor.getInt(cursor.getColumnIndex("_id"));
+        @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex("_id"));
         Uri uri = ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, id);
 
         return uri;

@@ -41,9 +41,9 @@ public class LocationServiceImpl implements LocationService {
 	}
 
 	@Override
-	public LocationVO location_image_info(String s) {
+	public List<LocationVO> location_image_list() {
 		// TODO Auto-generated method stub
-		return dao.location_image_info(s);
+		return dao.location_image_list();
 	}
 
 }

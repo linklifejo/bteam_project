@@ -56,8 +56,8 @@ values( #{id}, #{info.filename}, #{info.filepath} )
 
 <!-- 방명록 글 신규저장 -->
 <insert id='insert'>
-insert into gone(type, title, content, member_id, location_id, course_id)
-values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} )
+insert into gone(type, title, content, member_id, location_id, course_id, loccode)
+values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
 <selectKey keyProperty="id" order="AFTER" resultType='integer'>
 select seq_gone.currval from dual
 </selectKey>

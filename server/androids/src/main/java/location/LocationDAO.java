@@ -43,9 +43,9 @@ public class LocationDAO implements LocationService {
 	}
 
 	@Override
-	public LocationVO location_image_info(String  s) {
+	public List<LocationVO> location_image_list() {
 		// TODO Auto-generated method stub
-		return sql.selectOne("lo.image_info", s);
+		return sql.selectOne("lo.image_list");
 	}
 
 }
