@@ -152,6 +152,11 @@ where <include refid="search_writer"/>
 member_id in (select id from member where name like '%' || #{keyword} || '%')
 </sql>
 
+<!-- 선택한 방명록 글에 대한 첨부파일 조회 -->
+<select id='loc_info' resultType='location.LocationVO'>
+select * from location where id = #{id}
+</select>
+
 <!-- 산 목록조회 -->
 <select id='loc_list' resultType='location.LocationVO'>
 select *

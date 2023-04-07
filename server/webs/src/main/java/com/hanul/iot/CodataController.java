@@ -24,7 +24,7 @@ public class CodataController {
 		= "http://api.forest.go.kr/openapi/service/trailInfoService/getforestspatialdataservice/";
 	
 	
-	//약국정보조회 요청
+	//코스 정보조회 요청
 	@ResponseBody @RequestMapping("/codata/course")
 	public Object course_list( int pageNo, int rows ) {
 		StringBuffer url = new StringBuffer( courseURL + "mntninfourl" );

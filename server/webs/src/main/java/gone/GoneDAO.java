@@ -107,6 +107,12 @@ public class GoneDAO implements GoneService {
 		return sql.selectList("go.orderList");
 	}
 
+	@Override
+	public LocationVO location_info(int id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("go.loc_info", id);
+	}
+
 //	@Override
 //	public List<GoneFileVO> GoneFile_boardlist() {
 //		return sql.selectList("go.boardList");

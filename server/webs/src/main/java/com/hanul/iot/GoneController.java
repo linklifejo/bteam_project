@@ -23,6 +23,7 @@ import gone.GoneFileVO;
 import gone.GonePageVO;
 import gone.GoneServiceImpl;
 import gone.GoneVO;
+import location.LocationServiceImpl;
 import location.LocationVO;
 import member.MemberServiceImpl;
 import member.MemberVO;
@@ -31,6 +32,7 @@ import course.CourseVO;
 @Controller
 public class GoneController {
 	@Autowired private GoneServiceImpl service;
+	
 	
 	//방명록 새글신규저장처리 요청
 	@RequestMapping("/insert.go")
@@ -41,6 +43,8 @@ public class GoneController {
 			List<GoneFileVO> list = attached_file(file, request);
 			vo.setFileInfo(list);
 		}
+		LocationVO vol = service.location_info(vo.getLocation_id());
+		vo.setLoccode(vol.getLoccode());
 		//화면에서 입력한 정보로 DB에 신규저장
 		service.gone_insert(vo);
 		//화면연결
