@@ -11,5 +11,5 @@ import lombok.Setter;
 public class LocationVO {
 	private int id;
 	private String type, locname, name_desc,
-			post,address,latitude,longitude, filename, filepath;
+			post,address,latitude,longitude, filename, filepath, loccode;
 }
