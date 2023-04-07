@@ -88,24 +88,5 @@ public class LocationController {
 		model.addAttribute("list", list);
 		return "location/list";
 	}
-	// 지역별 이미지및 정보 가져오기
-	@ResponseBody @RequestMapping(value="/localImage", produces="text/plain; charset=utf-8" )
-	public String selectImage(HttpServletRequest req, Model model) {
-		
-		ArrayList<LocationVO> list = (ArrayList<LocationVO>) service.location_image_list();
-	
-		Gson gson = new Gson();
-		return gson.toJson( (ArrayList<LocationVO>) list );		
-		
-	}
-	// 지역별 이미지및 정보 가져오기
-	@ResponseBody @RequestMapping(value="/selectLocal", produces="text/plain; charset=utf-8" )
-	public String selectLocal(HttpServletRequest req, Model model) {
-		String loccode = (String) req.getParameter("loccode");		
-		List<LocationVO> list = service.location_local_list(loccode);
-	
-		Gson gson = new Gson();
-		return gson.toJson( (ArrayList<LocationVO>)list );		
-		
-	}
+
 }

@@ -101,6 +101,12 @@ public class GoneServiceImpl implements GoneService {
 		return dao.homeList(vo);
 	}
 
+	@Override
+	public List<GoneVO> gone_local_list(String loccode) {
+		// TODO Auto-generated method stub
+		return dao.gone_local_list(loccode);
+	}
+
 //	@Override
 //	public List<GoneFileVO> GoneFile_people_best() {
 //		// TODO Auto-generated method stub

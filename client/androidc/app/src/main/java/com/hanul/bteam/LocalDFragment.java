@@ -31,7 +31,8 @@ public class LocalDFragment extends Fragment {
     RecyclerView recycler;
     LocalAdapter adapter_local;
     MainActivity activity;
-    ArrayList<LocationDTO> dtos;
+    ArrayList<GoneDTO> dtos;
+    Bundle b;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -40,9 +41,12 @@ public class LocalDFragment extends Fragment {
 
         View view =  inflater.inflate(R.layout.locald_frag,
                 container, false);
+        dtos = null;
+        recycler = null;
         activity =(MainActivity)getActivity();
         dtos = new ArrayList<>();
         recycler = view.findViewById(R.id.recycler);
+
         // recycler에서 반드시 아래와 같이 초기화를 해줘야 함
         LinearLayoutManager layoutManager = new
                 LinearLayoutManager(
@@ -50,9 +54,8 @@ public class LocalDFragment extends Fragment {
         recycler.setLayoutManager(layoutManager);
         CommonMethod commonMethod = new CommonMethod();
 
-        Bundle b = activity.bundle;
-
-        ArrayList<LocationDTO> d = ( ArrayList<LocationDTO>) b.getSerializable("dtos");
+        b = activity.bundle;
+      //  ArrayList<GoneDTO> d = ( ArrayList<GoneDTO>) b.getSerializable("dtos");
 
         commonMethod.setParams("loccode",   b.getString("localcode"));
         commonMethod.getData("selectLocal", new Callback<String>(){
@@ -61,14 +64,14 @@ public class LocalDFragment extends Fragment {
 
                 if(response.isSuccessful()){
                     Gson gson = new Gson();
-                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<LocationDTO>>(){}.getType());
-                    for(LocationDTO dto: dtos){
+                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
+                    for(GoneDTO dto: dtos){
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
                     }
                     adapter_local = new LocalAdapter(activity.getApplicationContext(), dtos,activity);
                     recycler.setAdapter(adapter_local);
-                 //   adapter_local.notifyDataSetChanged();
+                    adapter_local.notifyDataSetChanged();
                 }
             }
             @Override

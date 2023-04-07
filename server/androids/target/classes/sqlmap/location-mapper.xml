@@ -33,21 +33,5 @@ select * from location where id = #{id}
 select * from location order by locname
 </select>
 
-<!-- 지역별산 대표사진 조회  -->
-<select id='image_list' resultType='location.LocationVO'>
-select *
-from location l,(select min(id) id from location group by loccode order by loccode) r
-where l.id=r.id and type='1'
-order by loccode
-
-</select>
-
-<!-- 지역별산 조회 주소로 -->
-<select id='local_list' resultType='location.LocationVO'>
-select * 
-from location 
-where loccode = #{loccode} and type='1'
-order by locname
-</select>
 
 </mapper>  

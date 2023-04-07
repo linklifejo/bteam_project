@@ -155,4 +155,14 @@ select *
 from course 
 order by couname
 </select>
+
+<!-- 지역정보 목록조회 -->
+<select id='loc_List' resultType='gone.GoneVO'>
+select g.*,(select locname from location where id=g.location_id) locname 
+          ,(select filepath from gone_file where gone_id=g.id) filepath 
+from gone g 
+where g.loccode = #{loccode} and type='1'
+order by locname
+</select>
+
 </mapper>  
