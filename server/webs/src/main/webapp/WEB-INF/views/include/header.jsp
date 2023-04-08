@@ -23,14 +23,28 @@
 				</c:otherwise>
 			</c:choose>
 		</c:if>
+		<div class="dropdown">
+  <button class="dropbtn">지역별산</button>
+  <div class="dropdown-content">
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>서울.경기</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>강원</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>전라도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>경상도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>충청도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>제주도</a>
+  </div>
+</div>
+		
+		
+		
 					<li><a ${category eq 'go' ? "class='active'" : ''} href='<c:url value="/"/>list.go'>탐방정보</a></li>
 					<li><a ${category eq 'co' ? "class='active'" : ''} href='<c:url value="/"/>list.co'>코스정보</a></li>
 					<li><a ${category eq 'lo' ? "class='active'" : ''} href='<c:url value="/"/>list.lo'>전국산정보</a></li>
-			<li><a ${category eq 'bo' ? "class='active'" : ''} href='<c:url value="/"/>list.bo'>동</a></li>
+			<li><a ${category eq 'do' ? "class='active'" : ''} href='<c:url value="/"/>list.do'>동</a></li>
 			<li><a ${category eq 'bo' ? "class='active'" : ''} href='<c:url value="/"/>list.bo'>자유 계시판</a></li>
+			<!--지역별산 region -->
 			<li><a ${category eq 'no' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>공지사항</a></li>
 			<li><a ${category eq 'da' ? "class='active'" : ''} href='<c:url value="/"/>list.da'>공공데이터(산)</a></li>
-			<li><a ${category eq 'co' ? "class='active'" : ''} href='<c:url value="/"/>list.co'>(코스)</a></li>
 		</ul>
 	</nav>
 	</div>
@@ -66,7 +80,49 @@
 	</div>
 	</div>
 </header>
+
 <style>
+.dropbtn {
+  padding: 16px;
+  font-size: ;
+  border: none;
+  background-color: #F8F9FA;
+}
+ 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+ 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ebebeb; /* 서브메뉴 */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+ 
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+ 
+.dropdown:hover .dropdown-content {display: block;}
+ 
+.dropdown:hover .dropbtn {background-color: #F8F9FA;}
+
+
+
+
+
+
+
+
 
 
 

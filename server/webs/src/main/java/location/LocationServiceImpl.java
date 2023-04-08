@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import gone.GoneFileVO;
+
 @Service
 public class LocationServiceImpl implements LocationService {
 	@Autowired private LocationDAO dao;
+	
 	
 	@Override
 	public int location_insert(LocationVO vo) {

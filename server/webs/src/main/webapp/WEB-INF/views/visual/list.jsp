@@ -20,10 +20,27 @@
 #legend li { display: flex; align-items: center; }
 #legend li:not(:first-child) { margin-left: 30px }
 .legend { width: 15px; height: 15px; margin-right: 5px }
+
+
+ 	.main{
+		container: text-center;
+		text-align: center; margin: 0 auto;	
+	}
+
+
+
+
+
+
+
+
 </style>
+
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.css'>
 </head>
 <body>
+
+<div class="main">
 <h3>사원정보분석</h3>
 <div class='w-px1200' style='margin: 0 auto'>
 	<ul id='tabs'>	
@@ -51,6 +68,7 @@
 		<li><span class='legend'></span><span>40~49명</span></li>
 		<li><span class='legend'></span><span>50명 이상</span></li>
 	</ul>
+</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
