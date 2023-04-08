@@ -36,5 +36,11 @@ public class LocationDAO implements LocationService {
 		return sql.delete("lo.delete", id);
 	}
 
+	@Override
+	public List<LocationVO> location_list(String local) {
+		// TODO Auto-generated method stub
+		return sql.selectList("lo.local_list",local);
+	}
+
 
 }

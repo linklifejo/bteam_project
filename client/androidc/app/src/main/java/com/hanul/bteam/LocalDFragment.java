@@ -31,7 +31,7 @@ public class LocalDFragment extends Fragment {
     RecyclerView recycler;
     LocalAdapter adapter_local;
     MainActivity activity;
-    ArrayList<GoneDTO> dtos;
+    ArrayList<LocationDTO> dtos;
     Bundle b;
     @Nullable
     @Override
@@ -64,8 +64,8 @@ public class LocalDFragment extends Fragment {
 
                 if(response.isSuccessful()){
                     Gson gson = new Gson();
-                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
-                    for(GoneDTO dto: dtos){
+                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<LocationDTO>>(){}.getType());
+                    for(LocationDTO dto: dtos){
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
                     }
@@ -78,11 +78,11 @@ public class LocalDFragment extends Fragment {
             public void onFailure(Call<String> call, Throwable t) {
             }
         });
-////         어댑터 객체 생성
-//        adapter_local = new
-//                LocalAdapter(activity.getApplicationContext(), dtos,activity);
-////        // 만든 어댑터를 리싸이클러뷰에 붙인다
-//        recycler.setAdapter(adapter_local);
+//         어댑터 객체 생성
+        adapter_local = new
+                LocalAdapter(activity.getApplicationContext(), dtos,activity);
+//        // 만든 어댑터를 리싸이클러뷰에 붙인다
+        recycler.setAdapter(adapter_local);
         return view;
     }
 }

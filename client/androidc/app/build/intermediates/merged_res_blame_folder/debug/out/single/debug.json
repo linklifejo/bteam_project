@@ -72,6 +72,10 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-35:\\drawable\\search.png"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-33:/layout_localview.xml.flat",
+        "source": "com.hanul.bteam.app-main-35:/layout/localview.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-33:\\drawable_o_deo_san.jpg.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-35:\\drawable\\o_deo_san.jpg"
     },
@@ -134,10 +138,6 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-33:\\drawable_namsan1.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-35:\\drawable\\namsan1.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/layout_locald_frag.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/layout/locald_frag.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-33:\\drawable_mu_dueng_san1.xml.flat",

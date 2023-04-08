@@ -267,7 +267,7 @@ public class GoneController {
 //		
 //	}
 	// 지역별 이미지및 정보 가져오기
-	@ResponseBody @RequestMapping(value="/selectLocal", produces="text/plain; charset=utf-8" )
+	@ResponseBody @RequestMapping(value="/selectLocalx", produces="text/plain; charset=utf-8" )
 	public String selectLocal(HttpServletRequest req, Model model) {
 		String loccode = (String) req.getParameter("loccode");		
 		List<GoneVO> list = service.gone_local_list(loccode);

@@ -32,6 +32,12 @@ select * from location where id = #{id}
 <select id='list' resultType='location.LocationVO'>
 select * from location order by locname
 </select>
-
+<!-- 지역별 산정보 목록조회 -->
+<select id='local_list' resultType='location.LocationVO'>
+select *
+from location
+where type='1' and loccode= #{loccode}
+ order by locname
+</select>
 
 </mapper>  

@@ -3,7 +3,6 @@ package com.hanul.bteam.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +17,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
-import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.LocationDTO;
 
 import java.util.ArrayList;
@@ -33,12 +30,12 @@ public class LocalAdapter extends
 
     // 메인에게 넘겨받는것 -> 반드시 : Context, ArrayList<DTO>
     Context context;
-    ArrayList<GoneDTO> dtos;
+    ArrayList<LocationDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
 
     // 생성자로 메인에서 넘겨받은것들을 연결
-    public LocalAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
+    public LocalAdapter(Context context, ArrayList<LocationDTO> dtos, MainActivity a) {
         this.activity = a;
         this.context = context;
         this.dtos = dtos;
@@ -50,7 +47,7 @@ public class LocalAdapter extends
     // 매소드는 여기에 만든다
     // dtos에 dto를 추가하는 매소드
     //테스트
-    public void addDto(GoneDTO dto) {
+    public void addDto(LocationDTO dto) {
         dtos.add(dto);
     }
 
@@ -76,7 +73,7 @@ public class LocalAdapter extends
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d(TAG, "onBindViewHolder: " + position);
         // dtos에 있는 데이터를 각각 불러온다
-        GoneDTO dto = dtos.get(position);
+        LocationDTO dto = dtos.get(position);
         // 불러온 데이터를 ViewHolder에 만들어 놓은 setDto를
         // 사용하여 데이터를 셋팅시킨다
         holder.setDto(dto);
@@ -121,7 +118,7 @@ public class LocalAdapter extends
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
-        public void setDto(@NonNull GoneDTO dto) {
+        public void setDto(@NonNull LocationDTO dto) {
             locname.setText(dto.getLocname());
 
 

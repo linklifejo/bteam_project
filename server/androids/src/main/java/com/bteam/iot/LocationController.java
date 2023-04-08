@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import gone.GoneVO;
 import gone.HomeVO;
 import location.LocationServiceImpl;
 import location.LocationVO;
@@ -87,6 +88,14 @@ public class LocationController {
 		List<LocationVO> list = service.location_list();
 		model.addAttribute("list", list);
 		return "location/list";
+	}
+	// 고객목록화면 요청
+	@ResponseBody @RequestMapping(value="/selectLocal", produces="text/plain; charset=utf-8" )
+	public String selectLocal(HttpServletRequest req, Model model) {
+		String loccode = (String) req.getParameter("loccode");	
+		List<LocationVO> list = service.location_list(loccode);
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<LocationVO>)list );		
 	}
 
 }

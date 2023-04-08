@@ -34,6 +34,12 @@ public class LocationServiceImpl implements LocationService {
 		return dao.location_delete(id);
 	}
 
+	@Override
+	public List<LocationVO> location_list(String local) {
+		// TODO Auto-generated method stub
+		return dao.location_list(local);
+	}
+
 
 
 }
