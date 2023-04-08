@@ -25,7 +25,7 @@ public interface GoneService {
 	List<GoneCommentVO> gone_comment_list(int gone_id); //댓글목록조회
 	List<LocationVO> location_list(); // 선택한 방명록 글 조회
 	List<CourseVO> course_list(); // 선택한 방명록 글 조회
-	
+	List<GoneVO> gone_local_list( String loccode ); //삭제하려는 첨부파일정보 조회
 	
 	// 사람들이 많이 조회한순
 //	List<GoneFileVO> GoneFile_list();

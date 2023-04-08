@@ -37,15 +37,10 @@ public class LocationDAO implements LocationService {
 	}
 
 	@Override
-	public List<LocationVO> location_local_list(String s) {
+	public List<LocationVO> location_list(String local) {
 		// TODO Auto-generated method stub
-		return sql.selectList("lo.local_list",s);
+		return sql.selectList("lo.local_list",local);
 	}
 
-	@Override
-	public List<LocationVO> location_image_list() {
-		// TODO Auto-generated method stub
-		return sql.selectOne("lo.image_list");
-	}
 
 }

@@ -27,6 +27,7 @@ import gone.GonePageVO;
 import gone.GoneServiceImpl;
 import gone.GoneVO;
 import gone.HomeVO;
+import location.LocationVO;
 
 @Controller
 public class GoneController {
@@ -255,5 +256,24 @@ public class GoneController {
 		return gson.toJson( (ArrayList<HomeVO>)list );		
 		
 	}
-
+//	// 지역별 이미지및 정보 가져오기
+//	@ResponseBody @RequestMapping(value="/localImage", produces="text/plain; charset=utf-8" )
+//	public String selectImage(HttpServletRequest req, Model model) {
+//		
+//		ArrayList<LocationVO> list = (ArrayList<LocationVO>) service.location_image_list();
+//	
+//		Gson gson = new Gson();
+//		return gson.toJson( (ArrayList<LocationVO>) list );		
+//		
+//	}
+	// 지역별 이미지및 정보 가져오기
+	@ResponseBody @RequestMapping(value="/selectLocalx", produces="text/plain; charset=utf-8" )
+	public String selectLocal(HttpServletRequest req, Model model) {
+		String loccode = (String) req.getParameter("loccode");		
+		List<GoneVO> list = service.gone_local_list(loccode);
+	
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<GoneVO>)list );		
+		
+	}
 }

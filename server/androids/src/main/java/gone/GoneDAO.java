@@ -123,6 +123,12 @@ public class GoneDAO implements GoneService {
 		return sql.selectList("go.homeList",vo);
 	}
 
+	@Override
+	public List<GoneVO> gone_local_list(String loccode) {
+		// TODO Auto-generated method stub
+		return sql.selectList("go.loc_list",loccode);
+	}
+
 //	@Override
 //	public List<GoneFileVO> GoneFile_people_best() {
 //		// TODO Auto-generated method stub
