@@ -20,7 +20,7 @@ from(select filename,filepath
 <select id='orderList' resultType='gone.GoneFileVO'>
 <![CDATA[
 select *
-from(select filename,filepath 
+from(select filename,filepath, gone_id 
 	from gone g, gone_file f 
 	where g.id=f.gone_id and type='1'
 	order by g.readcnt desc)

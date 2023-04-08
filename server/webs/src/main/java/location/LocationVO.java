@@ -10,6 +10,10 @@ import lombok.Setter;
 @Getter @Setter
 public class LocationVO {
 	private int id;
-	private String type, locname, name_desc,
-			post,address,latitude,longitude, filename, filepath,loccode;
+	private String type, locname, name_desc, post,address,latitude,longitude, filename, filepath,loccode;
+	public void setFileInfo(LocationVO files) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
