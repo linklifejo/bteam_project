@@ -6,14 +6,14 @@
 
 <!-- 신규고객정보 삽입저장 -->
 <insert id='insert'>
-insert into location( locname, name_desc, latitude,longitude, post, address,loccode)
-values (#{locname}, #{name_desc}, #{latitude}, #{longitude}, #{post}, #{address}, #{loccode})
+insert into location( locname, name_desc, latitude,longitude, post, address,loccode,heigh)
+values (#{locname}, #{name_desc}, #{latitude}, #{longitude}, #{post}, #{address}, #{loccode}, #{heigh})
 </insert>
 
 <!-- 해당고객정보 수정저장 -->
 <update id='update'>
 update location
-set locname = #{locname}, name_desc = #{name_desc}, latitude = #{latitude}, longitude = #{longitude}, post = #{post}, address = #{address}, loccode = #{loccode}
+set locname = #{locname}, name_desc = #{name_desc}, latitude = #{latitude}, longitude = #{longitude}, post = #{post}, address = #{address}, loccode = #{loccode}, heigh = #{heigh}
 where id = #{id}
 </update>
 

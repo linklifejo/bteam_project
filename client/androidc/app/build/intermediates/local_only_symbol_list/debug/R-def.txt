@@ -78,6 +78,7 @@ id btnKeong
 id btnLoc
 id btnLocal
 id btnSeoul
+id btnWillGo
 id btn_boardList
 id btn_delete
 id btn_modify
@@ -119,6 +120,10 @@ id textView6
 id title
 id toolbar
 id tutu
+id tvAddress
+id tvHeigh
+id tvLocname
+id tvName_desc
 id tvTitle
 id userInfo1_Name
 id userInfo2
@@ -140,6 +145,7 @@ layout home_frag
 layout hulist
 layout local_frag
 layout locald_frag
+layout localdd_frag
 layout localview
 layout myinfo_frag
 layout myinfo_frag_view

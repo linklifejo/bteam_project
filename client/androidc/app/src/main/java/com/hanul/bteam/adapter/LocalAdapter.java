@@ -3,6 +3,7 @@ package com.hanul.bteam.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.hanul.bteam.Detailmo;
+import com.hanul.bteam.LocalDDFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.LocationDTO;
@@ -82,9 +85,9 @@ public class LocalAdapter extends
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Bundle b = new Bundle();
-//                b.putSerializable("dto",dto);
-//                activity.fragmentControl(new Detailmo(),b);
+
+                activity.bundle.putSerializable("dto",dto);
+                activity.fragmentControl(new LocalDDFragment());
                 Toast.makeText(context,
                         "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
             }

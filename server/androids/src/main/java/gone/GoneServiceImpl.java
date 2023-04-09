@@ -13,7 +13,7 @@ import location.LocationVO;
 public class GoneServiceImpl implements GoneService {
 
 	@Autowired private GoneDAO dao;
-	
+
 	@Override
 	public int gone_insert(GoneVO vo) {
 		return dao.gone_insert(vo);
@@ -106,6 +106,20 @@ public class GoneServiceImpl implements GoneService {
 		// TODO Auto-generated method stub
 		return dao.gone_local_list(loccode);
 	}
+
+	@Override
+	public int gone_insert(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		return dao.gone_insert(map);
+	}
+
+	@Override
+	public CourseVO course_info(int location_id) {
+		// TODO Auto-generated method stub
+		return dao.course_info(location_id);
+	}
+
+	
 
 //	@Override
 //	public List<GoneFileVO> GoneFile_people_best() {

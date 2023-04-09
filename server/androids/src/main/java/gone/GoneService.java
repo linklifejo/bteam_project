@@ -8,6 +8,8 @@ import location.LocationVO;
 
 public interface GoneService {
 	//CRUD
+	
+	int gone_insert(HashMap<String,Object> map);//방명록 새글저장
 	int gone_insert(GoneVO vo);//방명록 새글저장
 	GonePageVO gone_list(GonePageVO vo); //방명록 목록 조회
 	GoneVO gone_info(int id); //선택한 방명록 글 조회
@@ -26,7 +28,7 @@ public interface GoneService {
 	List<LocationVO> location_list(); // 선택한 방명록 글 조회
 	List<CourseVO> course_list(); // 선택한 방명록 글 조회
 	List<GoneVO> gone_local_list( String loccode ); //삭제하려는 첨부파일정보 조회
-	
+	CourseVO course_info(int location_id);
 	// 사람들이 많이 조회한순
 //	List<GoneFileVO> GoneFile_list();
 	// 게시판에 올린사진 인기순

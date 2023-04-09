@@ -3035,6 +3035,7 @@ id btnKeong
 id btnLoc
 id btnLocal
 id btnSeoul
+id btnWillGo
 id btn_boardList
 id btn_delete
 id btn_modify
@@ -3452,6 +3453,10 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tutu
+id tvAddress
+id tvHeigh
+id tvLocname
+id tvName_desc
 id tvTitle
 id unchecked
 id uniform
@@ -3620,6 +3625,7 @@ layout home_frag
 layout hulist
 layout local_frag
 layout locald_frag
+layout localdd_frag
 layout localview
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

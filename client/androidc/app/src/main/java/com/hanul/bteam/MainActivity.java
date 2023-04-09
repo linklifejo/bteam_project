@@ -52,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
     //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 //광추가
     //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 // 인기산추가
     // 크흠 // 메롱
-
+    public  String loginid = null;
+    public String loccode = null;
+    public String location = null;
     public Bundle bundle;
     Toolbar toolbar;
     BottomNavigationView bNaviView;
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        loginid = "linklife";
+
 
         // 액션바가 보이지 않게 하기 위하여
         // 먼저 theme에 가서 NoActionBar로 수정한다

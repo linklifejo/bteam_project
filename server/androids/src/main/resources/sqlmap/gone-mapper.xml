@@ -55,6 +55,11 @@ values( #{id}, #{info.filename}, #{info.filepath} )
 </insert>
 
 <!-- 방명록 글 신규저장 -->
+<insert id='insert_will'>
+insert into gone(type, title, content, member_id, location_id, course_id, loccode)
+values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
+</insert>
+<!-- 방명록 글 신규저장 -->
 <insert id='insert'>
 insert into gone(type, title, content, member_id, location_id, course_id, loccode)
 values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
@@ -155,6 +160,13 @@ select *
 from course 
 order by couname
 </select>
+<!-- 코스조회 -->
+<select id='cou_info' resultType='course.CourseVO'>
+select *
+from course 
+where location_id = #{location_id}
+order by id
+</select>
 
 <!-- 지역정보 목록조회 -->
 <select id='loc_List' resultType='gone.GoneVO'>
@@ -164,5 +176,7 @@ from gone g
 where g.loccode = #{loccode} and type='1'
 order by locname
 </select>
+
+
 
 </mapper>  

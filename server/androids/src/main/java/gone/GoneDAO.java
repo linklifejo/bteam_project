@@ -16,7 +16,7 @@ import location.LocationVO;
 public class GoneDAO implements GoneService {
 	@Autowired @Qualifier("bteam") private SqlSession sql;
 	
-	
+
 	
 	@Override
 	public int gone_insert(GoneVO vo) {
@@ -128,6 +128,20 @@ public class GoneDAO implements GoneService {
 		// TODO Auto-generated method stub
 		return sql.selectList("go.loc_list",loccode);
 	}
+
+	@Override
+	public int gone_insert(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		return sql.insert("go.insert_will", map);
+	}
+
+	@Override
+	public CourseVO course_info(int location_id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("go.cou_info", location_id);
+	}
+
+
 
 //	@Override
 //	public List<GoneFileVO> GoneFile_people_best() {

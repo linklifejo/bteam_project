@@ -21,6 +21,8 @@ import org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMetho
 import com.google.gson.Gson;
 
 import common.CommonUtility;
+import course.CourseServiceImpl;
+import course.CourseVO;
 import gone.GoneCommentVO;
 import gone.GoneFileVO;
 import gone.GonePageVO;
@@ -33,6 +35,7 @@ import location.LocationVO;
 public class GoneController {
 	@Autowired
 	private GoneServiceImpl service;
+
 
 	// 방명록 새글신규저장처리 요청
 	@RequestMapping("/insert.go")
@@ -276,4 +279,26 @@ public class GoneController {
 		return gson.toJson( (ArrayList<GoneVO>)list );		
 		
 	}
+	@ResponseBody @RequestMapping(value="/willGo", produces="text/plain; charset=utf-8" )
+	public String willGo(HttpServletRequest req, Model model) {
+		String type = (String) req.getParameter("type");		
+		String title = (String) req.getParameter("title");
+		String content = (String) req.getParameter("content");
+		String member_id = (String) req.getParameter("member_id");
+		String loccode = (String) req.getParameter("loccode");
+		Integer location_id = Integer.valueOf(req.getParameter("location_id")) ;
+		CourseVO co =service.course_info(location_id);
+		Integer course_id = co.getId() ;
+		HashMap<String,Object> map = new HashMap<String, Object>();
+		map.put("type", type);
+		map.put("title", title);	
+		map.put("content", content);
+		map.put("member_id", member_id);
+		map.put("loccode", loccode);
+		map.put("location_id", location_id);	
+		map.put("course_id", course_id);	
+
+		return service.gone_insert(map) == 1 ? "성공" : "실패";
+	}		
+	
 }
