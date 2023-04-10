@@ -2819,6 +2819,8 @@ drawable image02
 drawable item_color
 drawable ji_ri_san
 drawable ji_ri_san1
+drawable jjim_heart
+drawable jjim_heart1
 drawable kakao_1
 drawable m3_appbar_background
 drawable m3_avd_hide_password
