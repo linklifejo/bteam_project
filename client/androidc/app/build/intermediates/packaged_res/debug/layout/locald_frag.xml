@@ -4,26 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="100"
+
     >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="33">
+        >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="서울-경기"
-            android:textSize="24sp" />
-
-        <androidx.recyclerview.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
-            android:layout_height="212dp" />
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

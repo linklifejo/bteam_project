@@ -88,6 +88,10 @@
         "source": "com.hanul.bteam.app-main-35:/drawable/gumdang.jpg"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-33:/layout_localview.xml.flat",
+        "source": "com.hanul.bteam.app-main-35:/layout/localview.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-33:/drawable-v24_image02.jpg.flat",
         "source": "com.hanul.bteam.app-main-35:/drawable-v24/image02.jpg"
     },
@@ -242,6 +246,10 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-33:/layout_board_1.xml.flat",
         "source": "com.hanul.bteam.app-main-35:/layout/board_1.xml"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-33:/layout_localdd_frag.xml.flat",
+        "source": "com.hanul.bteam.app-main-35:/layout/localdd_frag.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-33:/layout_questions_1_view.xml.flat",

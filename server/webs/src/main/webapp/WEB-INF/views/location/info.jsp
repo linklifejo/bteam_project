@@ -27,7 +27,7 @@
 <div class="main">
 	<h3>전국산 정보</h3>
 </div>
-	<table class='w-px600'>
+	<table width="900px"'>
 	<colgroup>
 		<col width="140px">
 		<col>
@@ -35,8 +35,8 @@
 	<tr><th>산이름</th>
 		<td>${vo.locname }</td>
 	</tr>
-	<tr><th>${vo.filename}</th>
-		<td><img class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+	<tr><th>사진</th>
+		<td><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepath}"
     		 alt="사진파일"></td>
 	</tr>
 	

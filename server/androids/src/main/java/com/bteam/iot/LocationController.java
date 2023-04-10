@@ -1,14 +1,22 @@
 package com.bteam.iot;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
+
+import gone.GoneVO;
+import gone.HomeVO;
 import location.LocationServiceImpl;
 import location.LocationVO;
 
@@ -81,6 +89,13 @@ public class LocationController {
 		model.addAttribute("list", list);
 		return "location/list";
 	}
-	// 산목록 인기순으로 정렬
+	// 고객목록화면 요청
+	@ResponseBody @RequestMapping(value="/selectLocal", produces="text/plain; charset=utf-8" )
+	public String selectLocal(HttpServletRequest req, Model model) {
+		String loccode = (String) req.getParameter("loccode");	
+		List<LocationVO> list = service.location_list(loccode);
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<LocationVO>)list );		
+	}
 
 }

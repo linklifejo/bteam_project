@@ -48,6 +48,8 @@ public class HomeFragment extends Fragment {
        View view =  inflater.inflate(R.layout.home_frag,
                 container, false);
         activity = (MainActivity) getActivity();
+
+
         view.findViewById(R.id.btnLocal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
