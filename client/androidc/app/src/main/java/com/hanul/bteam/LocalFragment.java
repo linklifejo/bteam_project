@@ -64,6 +64,7 @@ public class LocalFragment extends Fragment {
 
                 b.putString("localcode","L01");
                 activity.bundle = b;
+
                 activity.fragmentControl(new LocalDFragment());
             }
         });
