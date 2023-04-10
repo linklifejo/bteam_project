@@ -1,5 +1,6 @@
 package com.bteam.iot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -109,4 +110,15 @@ public class CourseController {
 		model.addAttribute("list", list);
 		return "course/list";
 	}
+	@ResponseBody @RequestMapping(value="/list", produces="text/plain; charset=utf-8" )
+	public String selectLocal(HttpServletRequest req, Model model) {	
+		List<CourseVO> list = service.course_list();
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<CourseVO>)list );		
+	}
+	
+	
+	
+	
+	
 }

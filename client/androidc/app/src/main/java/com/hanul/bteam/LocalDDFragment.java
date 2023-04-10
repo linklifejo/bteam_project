@@ -41,6 +41,7 @@ public class LocalDDFragment extends Fragment {
     LocationDTO dto;
 
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -51,10 +52,8 @@ public class LocalDDFragment extends Fragment {
                 container, false);
         activity = (MainActivity)getActivity();
 
-
         dto = (LocationDTO) activity.bundle.getSerializable("dto");
         activity.location = Integer.toString(dto.getId());
-        activity.loccode = dto.getLoccode();
         locname =view.findViewById(R.id.tvLocname);
         btnWillGo = view.findViewById(R.id.btnWillGo);
         locname.setText(dto.getLocname() );
@@ -67,12 +66,13 @@ public class LocalDDFragment extends Fragment {
         btnWillGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+              Bundle  b = activity.bundle;
                 CommonMethod commonMethod = new CommonMethod();
                 commonMethod.setParams("type", "2");
                 commonMethod.setParams("title", "찜한산");
                 commonMethod.setParams("content", "찜한산");
                 commonMethod.setParams("member_id", activity.loginid);
-                commonMethod.setParams("loccode", activity.loccode);
+                commonMethod.setParams("loccode",b.getString("localcode"));
                 commonMethod.setParams("location_id",activity.location);
                 commonMethod.getData("willGo", new Callback<String>() {
                     @Override

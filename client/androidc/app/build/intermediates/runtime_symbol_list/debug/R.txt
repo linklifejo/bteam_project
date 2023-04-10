@@ -2940,6 +2940,7 @@ int id SHOW_PROGRESS 0x7f08000d
 int id SYM 0x7f08000e
 int id TOP_END 0x7f08000f
 int id TOP_START 0x7f080010
+int id Title 0x7f080237
 int id accelerate 0x7f080011
 int id accessibility_action_clickable_span 0x7f080012
 int id accessibility_custom_action_0 0x7f080013
@@ -3027,6 +3028,7 @@ int id bounce 0x7f080064
 int id bounceBoth 0x7f080065
 int id bounceEnd 0x7f080066
 int id bounceStart 0x7f080067
+int id btn1 0x7f080236
 int id btnChung 0x7f080068
 int id btnClick 0x7f080069
 int id btnGwangwon 0x7f08006a
@@ -3175,7 +3177,6 @@ int id ignore 0x7f0800f8
 int id ignoreRequest 0x7f0800f9
 int id image 0x7f0800fa
 int id imageView 0x7f0800fb
-int id imageView2 0x7f0800fc
 int id immediateStop 0x7f0800fd
 int id included 0x7f0800fe
 int id indeterminate 0x7f0800ff
@@ -3485,7 +3486,9 @@ int id wrap 0x7f08022e
 int id wrap_content 0x7f08022f
 int id wrap_content_constrained 0x7f080230
 int id writeDate 0x7f080231
+int id writedate 0x7f080238
 int id writename 0x7f080232
+int id writer 0x7f080239
 int id writersID 0x7f080233
 int id x_left 0x7f080234
 int id x_right 0x7f080235

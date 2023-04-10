@@ -36,8 +36,13 @@ public class Detailmo extends Fragment {
         t.setText(d.getLocname());
         ImageView i = view.findViewById(R.id.filepath);
         Glide.with(view).load(d.getFilepath()).into(i);
+
+
         return view;
     }
+
+
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

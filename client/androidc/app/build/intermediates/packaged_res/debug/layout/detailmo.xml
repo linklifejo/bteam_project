@@ -19,11 +19,7 @@
             android:layout_height="200dp"
             android:src="@drawable/dream03" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="주소"
-            android:textSize="80sp" />
+
         <Button
             android:id="@+id/course"
             android:layout_width="match_parent"
