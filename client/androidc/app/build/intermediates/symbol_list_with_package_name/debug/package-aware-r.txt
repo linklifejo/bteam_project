@@ -2939,6 +2939,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id Title
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3026,6 +3027,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn1
 id btnChung
 id btnClick
 id btnGwangwon
@@ -3174,7 +3176,6 @@ id ignore
 id ignoreRequest
 id image
 id imageView
-id imageView2
 id immediateStop
 id included
 id indeterminate
@@ -3484,7 +3485,9 @@ id wrap
 id wrap_content
 id wrap_content_constrained
 id writeDate
+id writedate
 id writename
+id writer
 id writersID
 id x_left
 id x_right
