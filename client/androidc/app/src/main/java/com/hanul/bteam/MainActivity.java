@@ -302,6 +302,7 @@ public class MainActivity extends AppCompatActivity {
         location2.setLongitude(126.8885);
         showMyLocationMarker(location2, "초복", "010-1111-4444");
 
+
     }
 
     // location 받아서 마커 생성하여 지도에 표시하기

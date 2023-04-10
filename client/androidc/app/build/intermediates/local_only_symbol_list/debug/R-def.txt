@@ -68,7 +68,9 @@ drawable trash
 id BoardName
 id BoardSearch
 id BoardTitle
+id Title
 id bottom_navi
+id btn1
 id btnChung
 id btnClick
 id btnGwangwon
@@ -95,7 +97,6 @@ id etAddress
 id filename
 id filepath
 id imageView
-id imageView2
 id local_frag
 id locname
 id map
@@ -129,7 +130,9 @@ id userInfo1_Name
 id userInfo2
 id userInfo3
 id writeDate
+id writedate
 id writename
+id writer
 id writersID
 layout activity_main
 layout board_1

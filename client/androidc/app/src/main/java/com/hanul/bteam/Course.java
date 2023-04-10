@@ -12,16 +12,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.CourseAdapter;
 import com.hanul.bteam.adapter.GoneAdapter;
 import com.hanul.bteam.adapter.HuAdapter;
+import com.hanul.bteam.adapter.LocalAdapter;
 import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.HuDTO;
+import com.hanul.bteam.dto.LocationDTO;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class Course extends Fragment {
@@ -43,17 +54,44 @@ public class Course extends Fragment {
                 container, false);
         activity =(MainActivity)getActivity();
         Bundle b = activity.bundle;
+        GoneDTO d = (GoneDTO) b.getSerializable("dto");
+        TextView t = view.findViewById(R.id.locname);
+        t.setText(d.getLocname());
+        ImageView i = view.findViewById(R.id.filepath);
+        Glide.with(view).load(d.getFilepath()).into(i);
         dtos = new ArrayList<>();
+
         recycler = view.findViewById(R.id.recycler);
         // recyclerView에서 반드시 아래와 같이 초기화를 해줘야 함
         LinearLayoutManager layoutManager = new
                 LinearLayoutManager(
                 activity, RecyclerView.VERTICAL, false);
         recycler.setLayoutManager(layoutManager);
+
+        // 만든 어댑터를 리싸이클러뷰에 붙인다
+        CommonMethod commonMethod = new CommonMethod();
+        commonMethod.getData("list", new Callback<String>(){
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                if(response.isSuccessful()){
+                    Gson gson = new Gson();
+                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<CourseDTO>>(){}.getType());
+                    for(CourseDTO dto: dtos){
+                        dto.setCouname(dto.getCouname());
+                    }
+                    adapter = new CourseAdapter(activity.getApplicationContext(), dtos,activity);
+                    recycler.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+            }
+        });
         adapter = new
                 CourseAdapter(activity.getApplicationContext(), dtos,activity);
-        // 만든 어댑터를 리싸이클러뷰에 붙인다
-        adapter.addDto(new CourseDTO("코스코스"));
+
         recycler.setAdapter(adapter);
 
 
@@ -64,11 +102,30 @@ public class Course extends Fragment {
         LinearLayoutManager layoutManager2 = new
                 LinearLayoutManager(
                 activity, RecyclerView.VERTICAL, false);
+        commonMethod.getData("list", new Callback<String>(){
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                if(response.isSuccessful()){
+                    Gson gson = new Gson();
+                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<CourseDTO>>(){}.getType());
+                    for(CourseDTO dto: dtos){
+                        dto.setCouname(dto.getCouname());
+                    }
+                    adapter = new CourseAdapter(activity.getApplicationContext(), dtos,activity);
+                    recycler.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+            }
+        });
         recyclerView.setLayoutManager(layoutManager2);
         adapter_re = new
                 HuAdapter(activity.getApplicationContext(), dtos_re,activity);
         // 만든 어댑터를 리싸이클러뷰에 붙인다
-        adapter_re.addDto(new HuDTO("후기후기"));
+
         recyclerView.setAdapter(adapter_re);
 
 

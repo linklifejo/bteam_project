@@ -8,27 +8,21 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content"
         android:elevation="5dp"
+        app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true">
 
         <LinearLayout
             android:id="@+id/parentLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="50dp"
-                android:orientation="vertical"
-                android:paddingLeft="10dp"
-                >
+
 
                 <TextView
-                    android:id="@+id/BoardTitle"
+                    android:id="@+id/Title"
                     android:layout_width="387dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
@@ -37,14 +31,13 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="38dp"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal"
-                    android:paddingLeft="10dp"
-                     >
+                    android:paddingLeft="10dp">
 
                     <TextView
-                        android:id="@+id/writename"
+                        android:id="@+id/writer"
                         android:layout_width="196dp"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -52,7 +45,7 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/writeDate"
+                        android:id="@+id/writedate"
                         android:layout_width="174dp"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -60,8 +53,6 @@
                         android:textSize="16sp" />
 
                 </LinearLayout>
-
-            </LinearLayout>
 
 
         </LinearLayout>
