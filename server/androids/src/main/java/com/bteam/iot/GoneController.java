@@ -305,12 +305,21 @@ public class GoneController {
 	public String willGo(HttpServletRequest req, Model model) {
 		String member_id = (String) req.getParameter("member_id");		
 
-		List<GoneVO> list = service.gone_willgo_list(member_id);
+		ArrayList<GoneVO> list = (ArrayList<GoneVO>)service.gone_willgo_list(member_id);
 		
 		Gson gson = new Gson();
 		return gson.toJson( (ArrayList<GoneVO>)list );	
 	}		
-	
+	@ResponseBody @RequestMapping(value="/willGoDelete", produces="text/plain; charset=utf-8" )
+	public String willGoDelete(HttpServletRequest req, Model model) {
+		String member_id = (String) req.getParameter("member_id");		
+		Integer gone_id = Integer.valueOf(req.getParameter("gone_id")) ;	
+		service.gone_delete(gone_id); 
+		ArrayList<GoneVO> list = (ArrayList<GoneVO>)service.gone_willgo_list(member_id);
+		
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<GoneVO>)list );	
+	}		
 	
 	
 }

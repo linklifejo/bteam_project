@@ -41,7 +41,7 @@
             android:textSize="24sp" />
 
         <ImageView
-            android:id="@+id/delete"
+            android:id="@+id/ivTrash"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:scaleType="fitXY"

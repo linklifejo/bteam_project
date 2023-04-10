@@ -18,16 +18,24 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.GoneDTO;
+import com.hanul.bteam.dto.LocationDTO;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class WillGoAdapter extends
-        RecyclerView.Adapter<WillGoAdapter.ViewHolder> {
+        RecyclerView.Adapter<WillGoAdapter.ViewHolder> implements OnWillGoitemClickListener{
     private static final String TAG = "main:SingerAdapter";
 
     // 메인에게 넘겨받는것 -> 반드시 : Context, ArrayList<DTO>
@@ -35,7 +43,7 @@ public class WillGoAdapter extends
     ArrayList<GoneDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
-
+    OnWillGoitemClickListener listener;
     // 생성자로 메인에서 넘겨받은것들을 연결
     public WillGoAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
         this.activity = a;
@@ -58,6 +66,15 @@ public class WillGoAdapter extends
         dtos.remove(position);
     }
 
+
+    ////////////////////////////////////////////////////
+    public void setOnItemClickListener(OnWillGoitemClickListener listener ){
+        this.listener = listener;
+    }
+    // 화면을 인플레이트 시킨다 (붙인다)
+    public  GoneDTO getItem(int position){
+        return dtos.get(position);
+    }
     ////////////////////////////////////////////////////
 
     // 화면을 인플레이트 시킨다 (붙인다)
@@ -80,18 +97,58 @@ public class WillGoAdapter extends
         // 사용하여 데이터를 셋팅시킨다
         holder.setDto(dto);
 
+
         // 리싸이클러뷰에 항목을 선택했을때 그 항목을 가져오는 리스너
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle b = new Bundle();
-                b.putSerializable("dto",dto);
-                activity.fragmentControl(new Detailmo(),b);
+//                Bundle b = new Bundle();
+//                b.putSerializable("dto",dto);
+//                activity.fragmentControl(new Detailmo(),b);
                 Toast.makeText(context,
                         "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
             }
         });
 
+        // 쓰레기통을 클릭하여 항목 삭제 리스너
+        holder.ivTrash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                CommonMethod commonMethod = new CommonMethod();
+            //    commonMethod.setParams("gone_id",   b.getString("localcode"));
+                commonMethod.getData("selectLocal", new Callback<String>(){
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+
+                        if(response.isSuccessful()){
+                            Gson gson = new Gson();
+                            dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<LocationDTO>>(){}.getType());
+                            for(LocationDTO dto: dtos){
+                                dto.setLocname(dto.getLocname());
+                                dto.setFilepath(dto.getFilepath());
+                            }
+                            adapter = new LocalAdapter(activity.getApplicationContext(), dtos,activity);
+                            recycler.setAdapter(adapter_local);
+                            adapter_local.notifyDataSetChanged();
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                    }
+                });
+
+
+               // dtos.remove(position);
+                 delDto(position);
+                Toast.makeText(context,
+                        "찜삭제된 산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
+
+                // 지우거나 추가하면 반드시 화면을 갱신시켜야 한다
+                notifyDataSetChanged();
+              //  showMessage(position);
+            }
+        });
 
     }
 
@@ -101,11 +158,19 @@ public class WillGoAdapter extends
         return dtos.size();
     }
 
+    @Override
+    public void onItemClick(ViewHolder holderm, View view, int position) {
+        if(listener != null){
+            listener.onItemClick(holderm, view,position);
+        }
+    }
+
     // 3. xml 파일에서 사용된 모든 변수를 adapter에서 클래스로 선언한다
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         // singerview.xml 에서 사용된 모든 위젯을 정의한다
         TextView locname;
-        ImageView filepath;
+        ImageView filepath,ivTrash;
         LinearLayout parentLayout;
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
@@ -114,9 +179,17 @@ public class WillGoAdapter extends
 
             parentLayout = itemView.findViewById(R.id.parentLayout);
             locname = itemView.findViewById(R.id.locname);
-
+            ivTrash = itemView.findViewById(R.id.ivTrash);
             filepath = itemView.findViewById(R.id.filepath);
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if(listener != null){
+                        listener.onItemClick(ViewHolder.this,view,position);
+                    }
+                }
+            });
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
@@ -128,35 +201,37 @@ public class WillGoAdapter extends
 
         }
 
-        private void showMessage(int position) {
-            AlertDialog.Builder builder = new
-                    AlertDialog.Builder(context);
-            builder.setTitle("안내");
-            builder.setMessage("삭제하시겠습니까?");
-            builder.setIcon(android.R.drawable.ic_dialog_alert);
 
-            // 예 버튼
-            builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    // dtos.remove(position);
-                    delDto(position);
-                    // 지우거나 추가하면 반드시 화면을 갱신시켜야 한다
-                    notifyDataSetChanged();
-                }
-            });
-
-            // 아니요 버튼
-            builder.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-
-                }
-            });
-
-            AlertDialog dialog = builder.create();
-            dialog.show();
-        }
 
     }
+    private void showMessage(int position) {
+        AlertDialog.Builder builder = new
+                AlertDialog.Builder(context);
+        builder.setTitle("안내");
+        builder.setMessage("삭제하시겠습니까?");
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+
+        // 예 버튼
+        builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                 dtos.remove(position);
+               // delDto(position);
+                // 지우거나 추가하면 반드시 화면을 갱신시켜야 한다
+                notifyDataSetChanged();
+            }
+        });
+
+        // 아니요 버튼
+        builder.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
 }

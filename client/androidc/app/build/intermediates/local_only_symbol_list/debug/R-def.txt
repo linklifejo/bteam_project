@@ -94,11 +94,11 @@ id content
 id couname
 id course
 id danger
-id delete
 id etAddress
 id filename
 id filepath
 id imageView
+id ivTrash
 id local_frag
 id locname
 id map
