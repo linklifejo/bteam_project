@@ -43,8 +43,6 @@ where rownum <= #{num}
 ]]>
 </select>
 
-
-
 <!-- 방명록첨부파일 신규저장 -->
 <insert id="fileInsert">
 <foreach collection="fileInfo" item="info" separator=" "
