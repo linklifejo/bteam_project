@@ -3046,7 +3046,6 @@ id btn_modify
 id btn_questionsList
 id btn_write
 id button2
-id button3
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3096,6 +3095,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delete
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3701,7 +3701,8 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
-layout willhave_frag
+layout willgo_frag
+layout willgoview
 menu menu_bottom
 mipmap ic_launcher
 mipmap ic_launcher_round

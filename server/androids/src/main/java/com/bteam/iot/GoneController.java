@@ -279,8 +279,8 @@ public class GoneController {
 		return gson.toJson( (ArrayList<GoneVO>)list );		
 		
 	}
-	@ResponseBody @RequestMapping(value="/willGo", produces="text/plain; charset=utf-8" )
-	public String willGo(HttpServletRequest req, Model model) {
+	@ResponseBody @RequestMapping(value="/localGo", produces="text/plain; charset=utf-8" )
+	public String localGo(HttpServletRequest req, Model model) {
 		String type = (String) req.getParameter("type");		
 		String title = (String) req.getParameter("title");
 		String content = (String) req.getParameter("content");
@@ -299,6 +299,18 @@ public class GoneController {
 		map.put("course_id", course_id);	
 
 		return service.gone_insert(map) == 1 ? "성공" : "실패";
+	}	
+	
+	@ResponseBody @RequestMapping(value="/willGo", produces="text/plain; charset=utf-8" )
+	public String willGo(HttpServletRequest req, Model model) {
+		String member_id = (String) req.getParameter("member_id");		
+
+		List<GoneVO> list = service.gone_willgo_list(member_id);
+		
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<GoneVO>)list );	
 	}		
+	
+	
 	
 }

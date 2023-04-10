@@ -74,7 +74,7 @@ public class LocalDDFragment extends Fragment {
                 commonMethod.setParams("member_id", activity.loginid);
                 commonMethod.setParams("loccode",b.getString("localcode"));
                 commonMethod.setParams("location_id",activity.location);
-                commonMethod.getData("willGo", new Callback<String>() {
+                commonMethod.getData("localGo", new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if(response.isSuccessful()){

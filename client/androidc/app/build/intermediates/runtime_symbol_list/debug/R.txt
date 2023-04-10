@@ -3045,7 +3045,6 @@ int id btn_modify 0x7f080076
 int id btn_questionsList 0x7f080077
 int id btn_write 0x7f080078
 int id button2 0x7f080079
-int id button3 0x7f08007a
 int id buttonPanel 0x7f08007b
 int id cache_measures 0x7f08007c
 int id callMeasure 0x7f08007d
@@ -3095,6 +3094,7 @@ int id decelerate 0x7f0800a8
 int id decelerateAndComplete 0x7f0800a9
 int id decor_content_parent 0x7f0800aa
 int id default_activity_button 0x7f0800ab
+int id delete 0x7f080239
 int id deltaRelative 0x7f0800ac
 int id dependency_ordering 0x7f0800ad
 int id design_bottom_sheet 0x7f0800ae
@@ -3700,7 +3700,8 @@ int layout select_dialog_item_material 0x7f0b007d
 int layout select_dialog_multichoice_material 0x7f0b007e
 int layout select_dialog_singlechoice_material 0x7f0b007f
 int layout support_simple_spinner_dropdown_item 0x7f0b0080
-int layout willhave_frag 0x7f0b0081
+int layout willgo_frag 0x7f0b0083
+int layout willgoview 0x7f0b0082
 int menu menu_bottom 0x7f0d0000
 int mipmap ic_launcher 0x7f0e0000
 int mipmap ic_launcher_round 0x7f0e0001
