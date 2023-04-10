@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +37,7 @@ public class LocalDDFragment extends Fragment {
     TextView name_desc;
     TextView heigh;
     TextView address;
-    Button btnWillGo;
+    ImageButton btnWillGo;
     LocationDTO dto;
 
 
@@ -56,7 +57,6 @@ public class LocalDDFragment extends Fragment {
         activity.loccode = dto.getLoccode();
         locname =view.findViewById(R.id.tvLocname);
         btnWillGo = view.findViewById(R.id.btnWillGo);
-        btnWillGo.setText(activity.loginid + "님 " + btnWillGo.getText());
         locname.setText(dto.getLocname() );
         name_desc =view.findViewById(R.id.tvName_desc);
         name_desc.setText(dto.getName_desc());

@@ -2818,6 +2818,8 @@ int drawable image02 0x7f0700c1
 int drawable item_color 0x7f0700c2
 int drawable ji_ri_san 0x7f0700c3
 int drawable ji_ri_san1 0x7f0700c4
+int drawable jjim_heart 0x7f07012c
+int drawable jjim_heart1 0x7f07012d
 int drawable kakao_1 0x7f0700c5
 int drawable m3_appbar_background 0x7f0700c6
 int drawable m3_avd_hide_password 0x7f0700c7
