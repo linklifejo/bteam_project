@@ -47,7 +47,7 @@ public class CourseDAO implements CourseService {
 	@Override
 	public CourseVO course_info(String s) {
 		// TODO Auto-generated method stub
-		return null;
+		return sql.selectOne("co.cou_info", s);
 	}
 
 

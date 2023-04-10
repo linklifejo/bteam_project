@@ -6,15 +6,35 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style type="text/css">
+
+
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}
+
+	.main1{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+	}	
+
+
+</style>
 <body>
+<div class="main">
 <h3>내정보</h3>
 
-<table class="row justify-content-center" >
+
+
+<table>
 <colgroup>
 	<col width='200px'>
 	<col width='200px'>
 	<col width='400px'>
 </colgroup>
+
 <tr>
 			<c:if test='${not empty loginInfo}'>
 	<td>
@@ -37,15 +57,23 @@
 	<td>
 	
 		<div class='btnSet'>
+			<a class='btn-fill' href='logout'>로그아웃</a>
+		</div>
+
+
+		<div class='btnSet'>
 			<a href='new.lo' class='btn-fill'>내정보 수정</a>
 		</div>
 		
-		<div class='btnSet'>
-			<a class='btn-fill' href='logout'>로그아웃</a>
-		</div>
 	
+		<div class='btnSet'>
+			<a class='btn-empty' href='changepw'>비밀번호변경</a>
+		</div>
+		
 	</td>								 
 </tr>
+
+
 </table>
 
 
@@ -84,21 +112,21 @@
 	<col width='140px'>
 	<col width='140px'>
 </colgroup>
-<tr>
-
-	<div>작성자</div>
-	<div>제목</div>
-
+<tr><th>번호</th>
+	<th>제목</th>
+	<th>작성자</th>
+	<th>작성일자</th>
 </tr>
 <c:forEach items='${page.list}' var='vo'>
-<tr>
-	<td><div>${vo.name }</div></td>
-	<td><div class='txt-left'><a onclick="fn_info( ${vo.id} )">${vo.title }</a>
+<tr><td>${vo.no }</td>
+	<td class='txt-left'><a onclick="fn_info( ${vo.id} )">${vo.title }</a>
 	<c:if test='${vo.filecnt > 0}'>
 	<span><i class="font-img-b fa-solid fa-paperclip"></i></span>
 	</c:if>
-	</div></td>
-
+<%-- 	<span>${vo.filecnt eq 0 ? '' : '<i class="font-img-b fa-solid fa-paperclip"></i>'}</span> --%>
+	</td>
+	<td>${vo.name }</td>
+	<td>${vo.gone_date }</td>
 </tr>
 </c:forEach>
 </table>
@@ -107,6 +135,36 @@
 
 
 
+
+<div class="mainsm">
+
+
+<div class='smdd'>
+<div class='btnSet'>
+	<a href='new.cu' class='btn-fill'>인기산</a>
+</div>
+<table class='w-px600 tb-list'>
+
+<tbody>
+<div class="homeimg">
+<c:forEach items='${list}' var='vo'>
+	<a href='info.go?id=${vo.id}'></a>
+		<span style="display:inline-block; height:300px; width:250px;">
+	
+		<div class="card"><a href='info.go?id=${vo.id}'><img class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+    		 alt="사진파일"></a>
+		</div>
+		<div>${vo.filename}</div>
+	
+		</span>
+</c:forEach>
+</div>
+</tbody>
+</table>
+
+</div>
+
+</div>
 
 
 
@@ -186,6 +244,7 @@
 
 
 
+</div>
 
 </body>
 </html>
