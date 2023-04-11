@@ -125,6 +125,12 @@ public class GoneServiceImpl implements GoneService {
 		return dao.gone_willgo_list(member_id);
 	}
 
+	@Override
+	public List<GoneVO> bolist() {
+		// TODO Auto-generated method stub
+		return dao.bolist();
+	}
+
 	
 
 //	@Override

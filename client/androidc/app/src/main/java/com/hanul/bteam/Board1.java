@@ -61,7 +61,7 @@ public class Board1 extends Fragment {
                     for(GoneDTO dto: dtos){
                         dto.setTitle(dto.getTitle());
                         dto.setMember_id(dto.getMember_id());
-                        dto.setGone_date(dto.getGone_date());
+                        dto.setGone_time(dto.getGone_time());
                     }
                     adapter = new BoardOneAdapter(activity.getApplicationContext(), dtos,activity);
                     recycler.setAdapter(adapter);
