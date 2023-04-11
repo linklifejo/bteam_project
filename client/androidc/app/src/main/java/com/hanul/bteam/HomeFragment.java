@@ -93,10 +93,10 @@ public class HomeFragment extends Fragment {
             }
         });
 //         어댑터 객체 생성
-        adapter_re = new
-                GoneAdapter(activity.getApplicationContext(), dtos_re,activity);
-//        // 만든 어댑터를 리싸이클러뷰에 붙인다
-        recyclerView.setAdapter(adapter_re);
+//        adapter_re = new
+//                GoneAdapter(activity.getApplicationContext(), dtos_re,activity);
+////        // 만든 어댑터를 리싸이클러뷰에 붙인다
+//        recyclerView.setAdapter(adapter_re);
 
         // 중요 : dtos 넘겨줄때 반드시 생성해서 넘겨준다
         dtos = new ArrayList<>();

@@ -234,7 +234,6 @@ public class GoneController {
 		map.put("type", type);
 		map.put("ptype", ptype);		
 		map.put("num", num);	
-//		System.out.println("id : " + id );
 		ArrayList<HomeVO> list = (ArrayList<HomeVO>)service.homeList(map);
 		
 		//model.addAttribute("list", list);
@@ -251,7 +250,6 @@ public class GoneController {
 		map.put("type", type);
 		map.put("ptype", ptype);		
 		map.put("num", num);	
-//		System.out.println("id : " + id );
 		ArrayList<HomeVO> list = (ArrayList<HomeVO>)service.homeList(map);
 		
 		//model.addAttribute("list", list);

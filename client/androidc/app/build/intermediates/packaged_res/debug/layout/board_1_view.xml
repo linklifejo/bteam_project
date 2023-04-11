@@ -37,7 +37,7 @@
                     android:paddingLeft="10dp">
 
                     <TextView
-                        android:id="@+id/writer"
+                        android:id="@+id/memberid"
                         android:layout_width="196dp"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -45,7 +45,7 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/writedate"
+                        android:id="@+id/gonedate"
                         android:layout_width="174dp"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
