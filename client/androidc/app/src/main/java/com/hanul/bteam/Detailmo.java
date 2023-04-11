@@ -36,6 +36,8 @@ public class Detailmo extends Fragment {
         t.setText(d.getLocname());
         ImageView i = view.findViewById(R.id.filepath);
         Glide.with(view).load(d.getFilepath()).into(i);
+        TextView tt = view.findViewById(R.id.name_desc);
+        tt.setText(d.getName_desc());
 
 
         return view;

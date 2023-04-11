@@ -30,7 +30,7 @@ public class Board1 extends Fragment {
     MainActivity activity;
     RecyclerView recycler;
     BoardOneAdapter adapter;
-    ArrayList<GoneDTO> dtos;
+    ArrayList<BoardDTO> dtos;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -51,17 +51,20 @@ public class Board1 extends Fragment {
         recycler.setLayoutManager(layoutManager);
 
         CommonMethod commonMethod = new CommonMethod();
+
         commonMethod.getData("bolist", new Callback<String>(){
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
 
                 if(response.isSuccessful()){
                     Gson gson = new Gson();
-                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
-                    for(GoneDTO dto: dtos){
+                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<BoardDTO>>(){}.getType());
+                    for(BoardDTO dto: dtos){
                         dto.setTitle(dto.getTitle());
                         dto.setMember_id(dto.getMember_id());
-                        dto.setGone_time(dto.getGone_time());
+                        dto.setGonetime(dto.getGonetime());
+                        dto.setContent(dto.getContent());
+
                     }
                     adapter = new BoardOneAdapter(activity.getApplicationContext(), dtos,activity);
                     recycler.setAdapter(adapter);

@@ -36,6 +36,7 @@ values (#{content}, #{member_id}, #{gone_id})
 <![CDATA[ 
 select *
 from(select filename, filepath,member_id,gone_time,title,( select locname from location where id=g.location_id) locname,
+								( select name_desc from location where id = g.location_id)name_desc,
                                ( select name from member where id=g.member_id) name,
                                ( select couname from course where id=g.course_id) couname
             from gone g, gone_file f where g.id=f.gone_id and g.type= #{type} and f.ptype= #{ptype} order by g.readcnt desc)
@@ -177,7 +178,7 @@ order by g.gone_date
 
 <!-- 게시판 목록조회 -->
 <select id='bolist' resultType='gone.GoneVO'>
-select title,member_id,gone_time
+select title,member_id,gone_time,content
 from gone 
 order by gone_date
 </select>

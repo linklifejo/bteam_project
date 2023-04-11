@@ -103,6 +103,7 @@ id local_frag
 id locname
 id map
 id memberid
+id name_desc
 id parentLayout
 id questionsName
 id questionsTitle

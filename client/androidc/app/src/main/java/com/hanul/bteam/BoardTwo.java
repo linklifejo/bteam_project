@@ -30,6 +30,12 @@ public class BoardTwo extends Fragment {
         BoardDTO d = (BoardDTO) b.getSerializable("dto");
         TextView t = view.findViewById(R.id.title);
         t.setText(d.getTitle());
+        TextView tt = view.findViewById(R.id.memberid);
+        tt.setText(d.getMember_id());
+        TextView ttt = view.findViewById(R.id.content);
+        ttt.setText(d.getContent());
+
+
 
 
 
