@@ -97,11 +97,13 @@ id danger
 id etAddress
 id filename
 id filepath
+id gonedate
 id imageView
 id ivTrash
 id local_frag
 id locname
 id map
+id memberid
 id parentLayout
 id questionsName
 id questionsTitle
@@ -132,9 +134,7 @@ id userInfo1_Name
 id userInfo2
 id userInfo3
 id writeDate
-id writedate
 id writename
-id writer
 id writersID
 layout activity_main
 layout board_1

@@ -11,17 +11,26 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.BoardOneAdapter;
 import com.hanul.bteam.adapter.BoardrAdapter;
+import com.hanul.bteam.adapter.GoneAdapter;
 import com.hanul.bteam.dto.BoardDTO;
+import com.hanul.bteam.dto.GoneDTO;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Board1 extends Fragment {
     MainActivity activity;
     RecyclerView recycler;
     BoardOneAdapter adapter;
-    ArrayList<BoardDTO> dtos;
+    ArrayList<GoneDTO> dtos;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -40,6 +49,30 @@ public class Board1 extends Fragment {
                 LinearLayoutManager(
                 activity, RecyclerView.VERTICAL, false);
         recycler.setLayoutManager(layoutManager);
+
+        CommonMethod commonMethod = new CommonMethod();
+        commonMethod.getData("bolist", new Callback<String>(){
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                if(response.isSuccessful()){
+                    Gson gson = new Gson();
+                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
+                    for(GoneDTO dto: dtos){
+                        dto.setTitle(dto.getTitle());
+                        dto.setMember_id(dto.getMember_id());
+                        dto.setGone_date(dto.getGone_date());
+                    }
+                    adapter = new BoardOneAdapter(activity.getApplicationContext(), dtos,activity);
+                    recycler.setAdapter(adapter);
+                }
+            }
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+            }
+        });
+
+
         return view;
 
 
