@@ -31,13 +31,38 @@ public class RegionController {
 	@Autowired private LocationServiceImpl service;
 
 
-	//고객목록화면 요청
+	//지역별산 화면 요청
 	@RequestMapping("/list.re")
-	public String list(Model model, HttpSession session ) {
-		session.setAttribute("category", "ro");
+	public String local_list(Model model, HttpSession session ) {
+		session.setAttribute("category", "re");
 		List<LocationVO> list = service.location_list();
-		model.addAttribute("list", list);
+		model.addAttribute("local_list", list);
 		return "region/list";
 	}
+
+	
+	//선택한 고객정보화면 요청
+	@RequestMapping("/info.re")
+	public String info(int id, Model model) {
+		//해당 고객정보를 DB에서 조회해온다
+		LocationVO vo = service.location_info(id);
+		//화면에 출력할 수 있도록 Model에 attribute로 담는다
+		model.addAttribute("vo", vo);
+		
+		//응답화면연결
+		return "region/info";
+	}
+	
+//	//선택한 고객정보화면 요청
+//	@RequestMapping("/info.re")
+//	public String local_info(Model model, HttpSession session ) {
+//		//해당 고객정보를 DB에서 조회해온다
+//		List<LocationVO> vo = service.Loc_info();
+//		//화면에 출력할 수 있도록 Model에 attribute로 담는다
+//		model.addAttribute("vo", vo);
+//		
+//		//응답화면연결
+//		return "region/info";
+//	}
 	
 }

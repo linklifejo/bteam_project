@@ -24,14 +24,14 @@
 			</c:choose>
 		</c:if>
 		<div class="dropdown">
-  <button class="dropbtn">지역별산</button>
+  <button class="dropbtn">지역별산</button><%-- href='list.re?id=${vo.gone_id}' --%>
   <div class="dropdown-content">
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>서울.경기</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>강원</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>전라도</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>경상도</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>충청도</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re'>제주도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=${vo.loccode}'>서울.경기</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_2.re'>강원</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_3.re'>전라도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_4.re'>경상도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_5.re'>충청도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_6.re'>제주도</a>
   </div>
 </div>
 		
@@ -40,7 +40,6 @@
 					<li><a ${category eq 'go' ? "class='active'" : ''} href='<c:url value="/"/>list.go'>탐방정보</a></li>
 					<li><a ${category eq 'co' ? "class='active'" : ''} href='<c:url value="/"/>list.co'>코스정보</a></li>
 					<li><a ${category eq 'lo' ? "class='active'" : ''} href='<c:url value="/"/>list.lo'>전국산정보</a></li>
-			<li><a ${category eq 'do' ? "class='active'" : ''} href='<c:url value="/"/>list.do'>동</a></li>
 			<li><a ${category eq 'bo' ? "class='active'" : ''} href='<c:url value="/"/>list.bo'>자유 계시판</a></li>
 			<!--지역별산 region -->
 			<li><a ${category eq 'no' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>공지사항</a></li>

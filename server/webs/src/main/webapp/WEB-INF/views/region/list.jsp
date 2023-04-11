@@ -1,162 +1,109 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
+
+
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
-
 <style type="text/css">
+table tr:hover { cursor: pointer;  background-color: #f6f6f6 }
 
-	.main{
-		text-align: center; margin: 0 auto;
-		container: text-center;
+
+	.mainsm{
+		display:flex;
+		padding-top: 20px;
+		
 	}
 
+	.smdd{
+		width: auto;
+		text-align: center;
+		margin: 0 auto;
+	}
 
-	
-	.main-2{
-		text-align: center; margin: 0 auto;
-		container: text-center;
-		display: flex;
+	.top{
+		display: flex; 
 		position: relative;
 	}
-	
-	
-	.new{
-	
-	}
-	
-	.ul{
- 		position: absolute;
+
+
+	.hrbtn{
+		position: absolute;
 		left: 10ox;
-		bottom: 0px;
+		bottom: 16px;
 		right: 10px;
-	
 	}
 	
-
 </style>
-
-
-
 <body>
 
-<div class="main">
-<h3>탐방 목록</h3>
-</div>
+<div class="mainsm">
 
 
-<form method='post' action='list.re'>
+<div class='smdd'>
 
+<tbody>
 
-<div class="new">
-<div id='list-top' class='w-px1200 main-2'>
+<body>
+<h3>지역별산</h3>
+
+<form method='post' action='list.location'>
+<div id='list-top' class='w-px1000 top' >
 <ul style="padding-left: 0">
-	<li><select name='search' class='w-px100'>
-		<option value='all' ${page.search eq 'all' ? 'selected' : ''}>전체</option>
-		<option value='title' ${page.search eq 'title' ? 'selected' : ''}>제목</option>
-		<option value='content' ${page.search eq 'content' ? 'selected' : ''}>내용</option>
-		<option value='writer' ${page.search eq 'writer' ? 'selected' : ''}>작성자</option>
-		</select>
+	<li>서울-경기</li>
+	<li><select name='local_list' class='w-px180'
+		 onchange="$('form').submit()">
+			<option value='-1'>전체</option>
+			<c:forEach items='${location}' var='l'>
+			<option ${id eq l.id ? 'selected' : ''} value='${l.id }'>${l.name }</option>
+			</c:forEach>
+		</select>	
 	</li>
-	<li><input type='text' value='${page.keyword}' name='keyword' class='w-px250'></li>
-	<li><a class='btn-fill' onclick="$('form').submit()">검색</a></li>
-</ul>
-<div class="ul">
-<ul>
-	<li><select class='w-px100' name='pageList'>
-		<c:forEach var='i' begin='1' end='5'>
-		<option value='${10*i}'>${10*i}개씩</option>
-		</c:forEach>
-		</select>
-	</li>
-	<li><select class='w-px120' name='viewType'>
-		<option value='list'>리스트</option>
-		<option value='grid'>그리드</option>
-		</select>
-	</li>
-	<!-- 로그인된 경우 새글쓰기 가능 -->
-	<c:if test="${not empty loginInfo }">
-	<li><a class='btn-fill' href='new.go'>새글쓰기</a></li>
-	</c:if>
 </ul>
 </div>
-
-
-
-</div>
-</div>
-
-
-
-
-
-<input type='hidden' name='curPage' value='1'>
-<input type='hidden' name='id'>
 </form>
 
-<script>
-$('[name=pageList], [name=viewType]').change( function(){
-	$('form').submit();
-});
-$('[name=pageList]').val( ${page.pageList} ).prop('selected', true);
-$('[name=viewType]').val( '${page.viewType}' ).prop('selected', true);
 
-function fn_info( id ){
-	$('[name=id]').val( id );
-	$('[name=curPage]').val( ${page.curPage} );
-	$('form').attr('action', 'info.go');
-	$('form').submit();
-}
-</script>
-
-<c:if test='${page.viewType eq "grid"}'>
-<ul class='grid w-px1200'>
-	<c:forEach items="${page.list}" var="vo">
-	<li><div><a onclick="fn_info( ${vo.id} )">${vo.title }</a></div>
-		<div>${vo.name }</div>
-		<div>${vo.gone_date}
-			<c:if test="${vo.filecnt gt 0}">
-			<span style='float: right;'><i class="font-img-b fa-solid fa-paperclip"></i></span>
-			</c:if>
-		</div>
-	</li>
-	</c:forEach>
-</ul>
-</c:if>
-
-<c:if test='${page.viewType eq "list"}'>
-<table class='w-px1200 tb-list'>
+<table class='w-px1000 tb-list'>
 <colgroup>
 	<col width='100px'>
+	<col width='200px'>
+	<col width='220px'>
 	<col>
-	<col width='140px'>
 	<col width='140px'>
 </colgroup>
 <tr><th>번호</th>
-	<th>제목</th>
-	<th>작성자</th>
-	<th>작성일자</th>
+	<th>파일네임</th>
+	<th>사진</th>
+	<th>이름</th>
+	<th>주소</th>
 </tr>
-<c:forEach items='${page.list}' var='vo'>
-<tr><td>${vo.no }</td>
-	<td class='txt-left'><a onclick="fn_info( ${vo.id} )">${vo.title }</a>
-	<c:if test='${vo.filecnt > 0}'>
-	<span><i class="font-img-b fa-solid fa-paperclip"></i></span>
-	</c:if>
-<%-- 	<span>${vo.filecnt eq 0 ? '' : '<i class="font-img-b fa-solid fa-paperclip"></i>'}</span> --%>
-	</td>
-	<td>${vo.name }</td>
-	<td>${vo.gone_date }</td>
+
+
+<%-- <c:forEach items='${list}' var='vo'>
+	<a href='info.go?id=${vo.id}'></a> --%>
+<c:forEach items='${local_list }' var='vo'>
+<tr><td><a href='info.re?id=${vo.id}'>${vo.locname }</a></td>
+	<td>${vo.filename }</td>
+	<td><img alt="서울산 사진" src="${vo.filepath }" style="width: 300px" height="300px;"></td>
+	<td>${vo.name_desc }</td>
+	<td>${vo.address }</td>
 </tr>
 </c:forEach>
 </table>
-</c:if>
-<div class='btnSet'>
-<jsp:include page="/WEB-INF/views/include/page.jsp"/>
+	
+</tbody>
+
 </div>
+
 </body>
 </html>
+
+
+
+
+
+
