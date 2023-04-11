@@ -23,11 +23,9 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         fragmentControl(new SearchFragment());
                         break;
                     case R.id.tab3:
-                        fragmentControl(new WillHaveFragment());
+                        fragmentControl(new WillGoFragment());
                         break;
                     case R.id.tab4:
                         fragmentControl(new MyInfoFragment());
