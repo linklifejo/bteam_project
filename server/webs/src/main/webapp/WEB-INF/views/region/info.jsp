@@ -1,18 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+</head>
+
 <style type="text/css">
-table td { text-align: left; }
-#comment-regist, #comment-list { width: 600px; margin: 0 auto; text-align: left }
-#comment, textarea.modify { height: 60px; margin-top: 5px;}
-#comment-regist div { display: flex;  justify-content: space-between;}
-
-
 
 	.main{
 		text-align: center; margin: 0 auto;
@@ -20,163 +15,91 @@ table td { text-align: left; }
 	}
 
 
-
+	.main1{
+		text-align: center; margin: 0 auto;
+		container: text-center;	
+	}
 
 
 </style>
-</head>
+
 <body>
-
-
 <div class="main">
-<h3>탐방기록 안내</h3>
-<table class='w-px1200'>
-<colgroup>
-	<col width='140px'>
-	<col>
-	<col width='140px'>
-	<col width='140px'>
-	<col width='100px'>
-	<col width='100px'>
-</colgroup>
-<tr><th>제목</th>
-	<td colspan='5'>${vo.title}</td>
-</tr>
-<tr><th>작성자</th>
-	<td>${vo.name}</td>
-	<th>작성일자</th>
-	<td>${vo.gone_date}</td>
-	<th>조회수</th>
-	<td>${vo.readcnt}</td>
-</tr>
-<tr><th>사진</th>
-	<td colspan='5'>
-	<c:forEach items='${vo.fileInfo}' var='f'>
-	<div class='align'>
-		<span>${f.filename}
-<%-- 			<a href='download.go?id=${f.id}'><i class="font-img-b fa-solid fa-file-arrow-down"></i></a> --%>
-			<a class='download' data-file='${f.id}'><i class="font-img-b fa-solid fa-file-arrow-down"></i></a>
-		</span>
-		<span class='preview'></span>
-	</div>
-	</c:forEach>
-	</td>
-</tr>
-<tr><th>내용</th>
-	<td colspan='5'>${fn: replace(vo.content, crlf, '<br>')}</td>
-</tr>
-</table>
-<div class='btnSet'>
-	<a class='btn-fill' id='list'>목록으로</a>
-	<!-- 방명록 글 작성자만 수정/삭제 가능 -->
-	<c:if test="${vo.member_id eq loginInfo.id}">
-	<a class='btn-fill' id='modify'>정보수정</a>
-	<a class='btn-fill' id='delete'>정보삭제</a>
-	</c:if>
+	<h3>${vo.locname }</h3>
 </div>
-</div>
-
-
-
-
-
-
-
-
-<div id='comment-regist'>
-	<div><span>댓글작성</span>
-		<a class='btn-fill-s' id='regist'>댓글등록</a>
-	</div>
-	<textarea id='comment' class='full'></textarea>
-</div>
-<div id='comment-list'></div>
-
-<form method='post' action='download.bo'>
-<input type='hidden' name='file'>
-<input type='hidden' name='id' value='${vo.id}'>
-<input type='hidden' name='curPage' value='${page.curPage }'>
-<input type='hidden' name='search' value='${page.search }'>
-<input type='hidden' name='keyword' value='${page.keyword }'>
-<input type='hidden' name='pageList' value='${page.pageList }'>
-<input type='hidden' name='viewType' value='${page.viewType }'>
-</form>
-
-<script>
-$('#regist').click(function(){
-	if( $('#comment').val()=='' ){
-		alert('댓글을 입력하세요!');
-		$('#comment').focus();
-	}else if( ${empty loginInfo} ) {
-		alert('댓글을 등록하려면 로그인하세요!');
-		location = 'login'
-	}else{
-		$.ajax({
-			url: 'gone/comment/insert',
-			data: { gone_id: ${vo.id}, content: $('#comment').val(), member_id: '${loginInfo.id}' },
-			success: function( response ){
-				console.log( response )
-				if( response ){
-					alert('댓글이 등록되었습니다!');
-					$('#comment').val('');
-					comment_list();
-				}else{
-					alert('댓글이 등록 실패ㅠㅠ');
-				}
-			},error: function(req, text){
-				alert(text+':'+req.status);
-			}
-		});
-	}
+	<table width="900px"'>
+	<colgroup>
+		<col width="140px">
+		<col>
+	</colgroup>
+	<tr><th>산이름</th>
+		<td>${vo.locname }</td>
+	</tr>
+	<tr><th>사진</th>
+		<td><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepath}"
+    		 alt="사진파일"></td>
+	</tr>
 	
-});
+	<tr><th>추가설명</th>
+		<td>${vo.name_desc }</td>
+	</tr>
+	<tr><th>위도</th>
+		<td></td>
+	</tr>
+	<tr><th>경도</th>
+		<td></td>
+	</tr>
+	<tr><th>주소</th>
+		<td>${vo.address }</td>
+	</tr>
+	</table>
 
-comment_list();
 
-//댓글목록 조회
-function comment_list(){
-	$.ajax({
-		url: 'gone/comment/list/${vo.id}',
-		success: function( response ){
-			$('#comment-list').html( response );
-		},error: function(req,text){
-			alert(text+':'+req.status)
-		}
-	});
-}
 
-$('#list, #delete, #modify').click(function(){	
-	$('form').attr('action', $(this).attr('id') + '.go')
-	if( $(this).attr('id')=='delete' ){
-		if( confirm('정말 삭제?') ){
-			$('form').submit();			
-		}
-	}else
-		$('form').submit();
-});
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=08dd488f50a99d25a7a8d38a4634f0d5"></script>
 
-$('.download').click(function(){
-	$('[name=file]').val( $(this).data('file') )
-	$('form').submit();
-});
 
-<c:forEach items="${vo.fileInfo}" var='f' varStatus='state'>
-if( isImage( '${f.filename}' ) ){
-	$('.preview').eq( ${state.index}).html( '<img src="${f.filepath}">' )
-}
-</c:forEach>
 
+<div id="map" style="width:100%;height:350px;"></div>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
+
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
+
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch('광주광역시 봉선동', function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
 </script>
 </body>
+
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
