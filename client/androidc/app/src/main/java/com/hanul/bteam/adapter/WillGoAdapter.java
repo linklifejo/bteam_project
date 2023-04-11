@@ -114,14 +114,14 @@ public class WillGoAdapter extends
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
 
-//                        if(response.isSuccessful()){
-//                            Gson gson = new Gson();
-//                            LocationDTO dto = gson.fromJson(response.body(), LocationDTO.class);
-//                            Bundle b = new Bundle();
-//                            b.putSerializable("dto",dto);
-//                            activity.bundle = b;
-//                            activity.fragmentControl(new LocalDDFragment());
-//                        }
+                        if(response.isSuccessful()){
+                            Gson gson = new Gson();
+                            LocationDTO dto = gson.fromJson(response.body(), LocationDTO.class);
+                            Bundle b = new Bundle();
+                            b.putSerializable("dto",dto);
+                            activity.bundle = b;
+                            activity.fragmentControl(new LocalDDFragment());
+                        }
                     }
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
