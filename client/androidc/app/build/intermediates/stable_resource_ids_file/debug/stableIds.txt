@@ -106,7 +106,10 @@ com.hanul.bteam:style/Widget.MaterialComponents.BottomNavigationView.PrimarySurf
 com.hanul.bteam:style/Widget.MaterialComponents.BottomAppBar.PrimarySurface = 0x7f1103d6
 com.hanul.bteam:style/Widget.MaterialComponents.Badge = 0x7f1103d3
 com.hanul.bteam:style/Widget.MaterialComponents.AppBarLayout.PrimarySurface = 0x7f1103cd
+<<<<<<< HEAD
 com.hanul.bteam:style/Widget.Material3.Toolbar.OnSurface = 0x7f1103c4
+=======
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/Widget.Material3.Toolbar = 0x7f1103c3
 com.hanul.bteam:style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu = 0x7f1103c2
 com.hanul.bteam:style/Widget.Material3.TextInputLayout.OutlinedBox.Dense = 0x7f1103c0
@@ -904,6 +907,11 @@ com.hanul.bteam:style/Theme.MaterialComponents.DayNight.Dialog.MinWidth = 0x7f11
 com.hanul.bteam:macro/m3_comp_checkbox_selected_disabled_container_color = 0x7f0c0004
 com.hanul.bteam:macro/m3_comp_checkbox_selected_container_color = 0x7f0c0003
 com.hanul.bteam:macro/m3_comp_bottom_app_bar_container_color = 0x7f0c0002
+<<<<<<< HEAD
+=======
+com.hanul.bteam:layout/willgoview = 0x7f0b0082
+com.hanul.bteam:layout/willgo_frag = 0x7f0b0081
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:layout/select_dialog_item_material = 0x7f0b007d
 com.hanul.bteam:style/Widget.Material3.TextInputEditText.OutlinedBox = 0x7f1103b9
 com.hanul.bteam:layout/review_list = 0x7f0b007b
@@ -1294,6 +1302,7 @@ com.hanul.bteam:id/light = 0x7f08010d
 com.hanul.bteam:id/legacy = 0x7f08010c
 com.hanul.bteam:id/stop = 0x7f0801d3
 com.hanul.bteam:id/jumpToStart = 0x7f080107
+<<<<<<< HEAD
 com.hanul.bteam:id/item_touch_helper_previous_elevation = 0x7f080105
 com.hanul.bteam:id/italic = 0x7f080104
 com.hanul.bteam:id/inward = 0x7f080103
@@ -1406,6 +1415,120 @@ com.hanul.bteam:id/center_horizontal = 0x7f080083
 com.hanul.bteam:id/centerInside = 0x7f080082
 com.hanul.bteam:attr/layout_constraintBaseline_toBaselineOf = 0x7f030260
 com.hanul.bteam:id/cache_measures = 0x7f08007c
+=======
+com.hanul.bteam:id/item_touch_helper_previous_elevation = 0x7f080104
+com.hanul.bteam:id/italic = 0x7f080103
+com.hanul.bteam:id/inward = 0x7f080102
+com.hanul.bteam:macro/m3_comp_search_bar_container_surface_tint_layer_color = 0x7f0c0065
+com.hanul.bteam:id/info = 0x7f080100
+com.hanul.bteam:string/common_google_play_services_wear_update_text = 0x7f100036
+com.hanul.bteam:id/indeterminate = 0x7f0800ff
+com.hanul.bteam:id/imageView = 0x7f0800fc
+com.hanul.bteam:id/ignore = 0x7f0800f9
+com.hanul.bteam:id/icon_only = 0x7f0800f7
+com.hanul.bteam:id/icon = 0x7f0800f5
+com.hanul.bteam:style/Widget.Design.Snackbar = 0x7f110324
+com.hanul.bteam:id/hybrid = 0x7f0800f4
+com.hanul.bteam:id/honorRequest = 0x7f0800f2
+com.hanul.bteam:id/home = 0x7f0800f0
+com.hanul.bteam:id/hideable = 0x7f0800ef
+com.hanul.bteam:id/header_title = 0x7f0800ee
+com.hanul.bteam:style/Widget.MaterialComponents.BottomNavigationView.Colored = 0x7f1103d8
+com.hanul.bteam:id/groups = 0x7f0800ed
+com.hanul.bteam:id/parentLayout = 0x7f08016d
+com.hanul.bteam:id/grouping = 0x7f0800ec
+com.hanul.bteam:id/graph = 0x7f0800e9
+com.hanul.bteam:color/material_dynamic_neutral80 = 0x7f0501c8
+com.hanul.bteam:drawable/btn_radio_on_mtrl = 0x7f070080
+com.hanul.bteam:id/gone = 0x7f0800e8
+com.hanul.bteam:string/mtrl_switch_thumb_path_morphing = 0x7f10009a
+com.hanul.bteam:string/abc_search_hint = 0x7f100012
+com.hanul.bteam:attr/springStiffness = 0x7f0303c5
+com.hanul.bteam:id/fullscreen_header = 0x7f0800e4
+com.hanul.bteam:id/search_voice_btn = 0x7f0801ae
+com.hanul.bteam:color/design_fab_stroke_top_inner_color = 0x7f05005b
+com.hanul.bteam:id/frost = 0x7f0800e3
+com.hanul.bteam:style/TextAppearance.Material3.SearchView.Prefix = 0x7f1101e4
+com.hanul.bteam:drawable/image02 = 0x7f0700c1
+com.hanul.bteam:id/floating = 0x7f0800e0
+com.hanul.bteam:id/fitXY = 0x7f0800dd
+com.hanul.bteam:id/btn_write = 0x7f080078
+com.hanul.bteam:id/fitToContents = 0x7f0800dc
+com.hanul.bteam:id/fitStart = 0x7f0800db
+com.hanul.bteam:id/fitEnd = 0x7f0800da
+com.hanul.bteam:style/TextAppearance.Material3.BodyMedium = 0x7f1101d6
+com.hanul.bteam:id/fitCenter = 0x7f0800d9
+com.hanul.bteam:style/Widget.MaterialComponents.ActionBar.Primary = 0x7f1103c7
+com.hanul.bteam:id/filename = 0x7f0800d3
+com.hanul.bteam:id/expand_activities_button = 0x7f0800d0
+com.hanul.bteam:color/m3_tabs_ripple_color = 0x7f0501a1
+com.hanul.bteam:id/exitUntilCollapsed = 0x7f0800cf
+com.hanul.bteam:dimen/mtrl_textinput_box_corner_radius_small = 0x7f06029c
+com.hanul.bteam:id/endToStart = 0x7f0800cb
+com.hanul.bteam:attr/materialSearchViewStyle = 0x7f0302e5
+com.hanul.bteam:id/elastic = 0x7f0800c8
+com.hanul.bteam:color/material_grey_600 = 0x7f050203
+com.hanul.bteam:attr/guidelineUseRtl = 0x7f0301f4
+com.hanul.bteam:attr/colorTertiaryContainer = 0x7f030117
+com.hanul.bteam:id/edit_query = 0x7f0800c7
+com.hanul.bteam:attr/chipBackgroundColor = 0x7f0300b8
+com.hanul.bteam:color/m3_dynamic_dark_highlighted_text = 0x7f050086
+com.hanul.bteam:id/easeOut = 0x7f0800c5
+com.hanul.bteam:style/Widget.MaterialComponents.TimePicker.Display.TextInputLayout = 0x7f11043d
+com.hanul.bteam:id/easeInOut = 0x7f0800c4
+com.hanul.bteam:color/m3_tabs_text_color_secondary = 0x7f0501a4
+com.hanul.bteam:id/dragUp = 0x7f0800c1
+com.hanul.bteam:id/dragRight = 0x7f0800bf
+com.hanul.bteam:style/ThemeOverlay.Material3.HarmonizedColors = 0x7f110293
+com.hanul.bteam:id/dragLeft = 0x7f0800be
+com.hanul.bteam:id/dragEnd = 0x7f0800bd
+com.hanul.bteam:dimen/mtrl_btn_corner_radius = 0x7f0601fb
+com.hanul.bteam:id/dragDown = 0x7f0800bc
+com.hanul.bteam:id/dragAnticlockwise = 0x7f0800ba
+com.hanul.bteam:id/disableScroll = 0x7f0800b8
+com.hanul.bteam:style/Widget.MaterialComponents.ProgressIndicator = 0x7f110420
+com.hanul.bteam:style/TextAppearance.AppCompat.Widget.Switch = 0x7f1101b2
+com.hanul.bteam:attr/customBoolean = 0x7f030149
+com.hanul.bteam:id/disableIntraAutoTransition = 0x7f0800b6
+com.hanul.bteam:styleable/TextInputLayout = 0x7f12008f
+com.hanul.bteam:style/Widget.MaterialComponents.TabLayout = 0x7f110426
+com.hanul.bteam:id/content = 0x7f080096
+com.hanul.bteam:id/dimensions = 0x7f0800b3
+com.hanul.bteam:id/dialog_button = 0x7f0800b2
+com.hanul.bteam:id/design_navigation_view = 0x7f0800b1
+com.hanul.bteam:dimen/mtrl_card_elevation = 0x7f060241
+com.hanul.bteam:attr/state_lifted = 0x7f0303d8
+com.hanul.bteam:id/default_activity_button = 0x7f0800aa
+com.hanul.bteam:color/material_personalized_color_surface_variant = 0x7f05022c
+com.hanul.bteam:color/switch_thumb_disabled_material_dark = 0x7f050284
+com.hanul.bteam:id/decor_content_parent = 0x7f0800a9
+com.hanul.bteam:id/decelerate = 0x7f0800a7
+com.hanul.bteam:attr/tabPaddingTop = 0x7f030406
+com.hanul.bteam:id/dark = 0x7f0800a5
+com.hanul.bteam:attr/circularflow_radiusInDP = 0x7f0300d2
+com.hanul.bteam:dimen/m3_comp_extended_fab_primary_hover_container_elevation = 0x7f0600f8
+com.hanul.bteam:id/customPanel = 0x7f0800a2
+com.hanul.bteam:color/material_dynamic_neutral_variant80 = 0x7f0501d5
+com.hanul.bteam:id/cos = 0x7f08009b
+com.hanul.bteam:layout/questions_2 = 0x7f0b007a
+com.hanul.bteam:id/collapseActionView = 0x7f080090
+com.hanul.bteam:attr/textAppearanceSearchResultSubtitle = 0x7f030431
+com.hanul.bteam:id/clip_horizontal = 0x7f08008c
+com.hanul.bteam:id/clear_text = 0x7f08008b
+com.hanul.bteam:id/circle_center = 0x7f08008a
+com.hanul.bteam:dimen/mtrl_switch_thumb_size = 0x7f060298
+com.hanul.bteam:id/chronometer = 0x7f080089
+com.hanul.bteam:drawable/abc_list_divider_mtrl_alpha = 0x7f07004e
+com.hanul.bteam:id/checkbox = 0x7f080087
+com.hanul.bteam:style/Base.Theme.MaterialComponents.Light.Dialog.Alert = 0x7f11006d
+com.hanul.bteam:color/m3_sys_color_dynamic_dark_outline = 0x7f050163
+com.hanul.bteam:dimen/mtrl_btn_stroke_size = 0x7f06020d
+com.hanul.bteam:id/chains = 0x7f080086
+com.hanul.bteam:id/center_horizontal = 0x7f080082
+com.hanul.bteam:id/centerInside = 0x7f080081
+com.hanul.bteam:attr/layout_constraintBaseline_toBaselineOf = 0x7f030260
+com.hanul.bteam:id/cache_measures = 0x7f08007b
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/contentScrim = 0x7f030130
 com.hanul.bteam:id/button2 = 0x7f080079
 com.hanul.bteam:attr/subheaderTextAppearance = 0x7f0303e3
@@ -1425,7 +1548,11 @@ com.hanul.bteam:color/m3_ref_palette_error20 = 0x7f0500e7
 com.hanul.bteam:id/beginning = 0x7f080060
 com.hanul.bteam:id/baseline = 0x7f08005e
 com.hanul.bteam:dimen/m3_extended_fab_min_height = 0x7f06015a
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_checkbox_button_icon_indeterminate_unchecked = 0x7f0700e4
+=======
+com.hanul.bteam:drawable/mtrl_checkbox_button_icon_indeterminate_unchecked = 0x7f0700e6
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:id/autoCompleteToStart = 0x7f08005c
 com.hanul.bteam:color/mtrl_filled_icon_tint = 0x7f050252
 com.hanul.bteam:id/autoCompleteToEnd = 0x7f08005b
@@ -1456,7 +1583,11 @@ com.hanul.bteam:id/accessibility_custom_action_16 = 0x7f08001c
 com.hanul.bteam:string/mtrl_picker_toggle_to_text_input_mode = 0x7f100096
 com.hanul.bteam:id/accessibility_custom_action_15 = 0x7f08001b
 com.hanul.bteam:id/material_label = 0x7f080125
+<<<<<<< HEAD
 com.hanul.bteam:id/fill = 0x7f0800d6
+=======
+com.hanul.bteam:id/fill = 0x7f0800d5
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:id/withinBounds = 0x7f08022e
 com.hanul.bteam:id/accessibility_custom_action_13 = 0x7f080019
 com.hanul.bteam:dimen/mtrl_extended_fab_min_height = 0x7f060250
@@ -1476,7 +1607,11 @@ com.hanul.bteam:styleable/CustomAttribute = 0x7f12002e
 com.hanul.bteam:id/SHOW_PROGRESS = 0x7f08000d
 com.hanul.bteam:id/SHOW_ALL = 0x7f08000b
 com.hanul.bteam:attr/layout_constraintHorizontal_weight = 0x7f030276
+<<<<<<< HEAD
 com.hanul.bteam:id/ghost_view = 0x7f0800e6
+=======
+com.hanul.bteam:id/ghost_view = 0x7f0800e5
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:id/SHIFT = 0x7f08000a
 com.hanul.bteam:id/NO_DEBUG = 0x7f080009
 com.hanul.bteam:id/navigation_bar_item_icon_container = 0x7f080153
@@ -1489,6 +1624,7 @@ com.hanul.bteam:id/BoardSearch = 0x7f080004
 com.hanul.bteam:id/BOTTOM_START = 0x7f080002
 com.hanul.bteam:layout/search_frag = 0x7f0b007c
 com.hanul.bteam:color/material_dynamic_tertiary10 = 0x7f0501f4
+<<<<<<< HEAD
 com.hanul.bteam:drawable/test_level_drawable = 0x7f070128
 com.hanul.bteam:style/ShapeAppearance.MaterialComponents.LargeComponent = 0x7f11016d
 com.hanul.bteam:drawable/tae_back_san1 = 0x7f070127
@@ -1509,10 +1645,33 @@ com.hanul.bteam:drawable/notification_bg_normal = 0x7f070118
 com.hanul.bteam:drawable/notification_bg_low = 0x7f070115
 com.hanul.bteam:drawable/navigation_empty_icon = 0x7f070112
 com.hanul.bteam:drawable/naejang = 0x7f07010d
+=======
+com.hanul.bteam:drawable/test_level_drawable = 0x7f07012a
+com.hanul.bteam:style/ShapeAppearance.MaterialComponents.LargeComponent = 0x7f11016d
+com.hanul.bteam:drawable/tae_back_san1 = 0x7f070129
+com.hanul.bteam:drawable/su_rak_san = 0x7f070126
+com.hanul.bteam:style/Widget.Material3.MaterialTimePicker.Clock = 0x7f110398
+com.hanul.bteam:style/ThemeOverlay.MaterialComponents.Dialog.Alert.Framework = 0x7f1102bb
+com.hanul.bteam:id/material_timepicker_cancel_button = 0x7f080129
+com.hanul.bteam:drawable/search = 0x7f070123
+com.hanul.bteam:style/Widget.Material3.AutoCompleteTextView.FilledBox.Dense = 0x7f11032c
+com.hanul.bteam:color/mtrl_filled_stroke_color = 0x7f050253
+com.hanul.bteam:id/course = 0x7f08009e
+com.hanul.bteam:drawable/o_deo_san = 0x7f070121
+com.hanul.bteam:color/m3_sys_color_light_on_error = 0x7f05018b
+com.hanul.bteam:drawable/notify_panel_notification_icon_bg = 0x7f070120
+com.hanul.bteam:id/tutu = 0x7f080213
+com.hanul.bteam:drawable/notification_template_icon_low_bg = 0x7f07011e
+com.hanul.bteam:drawable/notification_bg_normal = 0x7f07011a
+com.hanul.bteam:drawable/notification_bg_low = 0x7f070117
+com.hanul.bteam:drawable/navigation_empty_icon = 0x7f070114
+com.hanul.bteam:drawable/naejang = 0x7f07010f
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/Theme.MaterialComponents.Dialog.MinWidth.Bridge = 0x7f11024f
 com.hanul.bteam:layout/m3_alert_dialog = 0x7f0b003c
 com.hanul.bteam:id/south = 0x7f0801c0
 com.hanul.bteam:dimen/material_clock_hand_padding = 0x7f0601c9
+<<<<<<< HEAD
 com.hanul.bteam:drawable/nae_jang_san = 0x7f07010b
 com.hanul.bteam:style/Widget.MaterialComponents.Tooltip = 0x7f110444
 com.hanul.bteam:drawable/my = 0x7f070107
@@ -1570,6 +1729,65 @@ com.hanul.bteam:color/m3_sys_color_dynamic_light_on_secondary = 0x7f050174
 com.hanul.bteam:drawable/m3_password_eye = 0x7f0700c9
 com.hanul.bteam:drawable/m3_avd_hide_password = 0x7f0700c7
 com.hanul.bteam:drawable/kakao_1 = 0x7f0700c5
+=======
+com.hanul.bteam:drawable/nae_jang_san = 0x7f07010d
+com.hanul.bteam:style/Widget.MaterialComponents.Tooltip = 0x7f110444
+com.hanul.bteam:drawable/my = 0x7f070109
+com.hanul.bteam:drawable/mu_dueng_san = 0x7f070104
+com.hanul.bteam:drawable/mtrl_switch_track = 0x7f070101
+com.hanul.bteam:drawable/$m3_avd_show_password__1 = 0x7f07000b
+com.hanul.bteam:drawable/mtrl_switch_thumb_unchecked_pressed = 0x7f070100
+com.hanul.bteam:color/m3_slider_inactive_track_color = 0x7f050137
+com.hanul.bteam:drawable/mtrl_switch_thumb_unchecked = 0x7f0700fe
+com.hanul.bteam:drawable/mtrl_switch_thumb_pressed = 0x7f0700fb
+com.hanul.bteam:drawable/mtrl_switch_thumb_checked_pressed = 0x7f0700f9
+com.hanul.bteam:attr/checkedIconEnabled = 0x7f0300b0
+com.hanul.bteam:drawable/mtrl_switch_thumb_checked = 0x7f0700f8
+com.hanul.bteam:style/Widget.MaterialComponents.TextInputLayout.FilledBox = 0x7f11042d
+com.hanul.bteam:drawable/abc_textfield_search_activated_mtrl_alpha = 0x7f070074
+com.hanul.bteam:drawable/mtrl_switch_thumb = 0x7f0700f7
+com.hanul.bteam:drawable/mtrl_popupmenu_background_overlay = 0x7f0700f6
+com.hanul.bteam:layout/material_chip_input_combo = 0x7f0b0041
+com.hanul.bteam:drawable/mtrl_popupmenu_background = 0x7f0700f5
+com.hanul.bteam:style/Widget.MaterialComponents.TextInputEditText.OutlinedBox = 0x7f11042b
+com.hanul.bteam:style/TextAppearance.AppCompat.Medium.Inverse = 0x7f110196
+com.hanul.bteam:drawable/mtrl_ic_checkbox_checked = 0x7f0700f0
+com.hanul.bteam:attr/closeIconStartPadding = 0x7f0300de
+com.hanul.bteam:drawable/mtrl_ic_check_mark = 0x7f0700ef
+com.hanul.bteam:id/aligned = 0x7f08004e
+com.hanul.bteam:drawable/mtrl_ic_cancel = 0x7f0700ee
+com.hanul.bteam:drawable/mtrl_dialog_background = 0x7f0700ea
+com.hanul.bteam:id/src_atop = 0x7f0801c9
+com.hanul.bteam:attr/behavior_overlapTop = 0x7f030061
+com.hanul.bteam:id/design_bottom_sheet = 0x7f0800ad
+com.hanul.bteam:dimen/material_clock_period_toggle_vertical_gap = 0x7f0601ce
+com.hanul.bteam:id/action_bar_root = 0x7f08003a
+com.hanul.bteam:drawable/mtrl_checkbox_button_checked_unchecked = 0x7f0700e1
+com.hanul.bteam:string/searchview_clear_text_content_description = 0x7f1000a9
+com.hanul.bteam:macro/m3_sys_shape_corner_large_family = 0x7f0c00c9
+com.hanul.bteam:drawable/mtrl_bottomsheet_drag_handle = 0x7f0700df
+com.hanul.bteam:drawable/nack_san1 = 0x7f07010c
+com.hanul.bteam:id/danger = 0x7f0800a4
+com.hanul.bteam:style/TextAppearance.Material3.MaterialTimePicker.Title = 0x7f1101e1
+com.hanul.bteam:anim/btn_radio_to_on_mtrl_dot_group_animation = 0x7f010015
+com.hanul.bteam:drawable/material_ic_menu_arrow_up_black_24dp = 0x7f0700dd
+com.hanul.bteam:color/m3_sys_color_dynamic_light_on_secondary_container = 0x7f050175
+com.hanul.bteam:drawable/material_ic_keyboard_arrow_right_black_24dp = 0x7f0700db
+com.hanul.bteam:attr/hideOnScroll = 0x7f030201
+com.hanul.bteam:drawable/material_ic_keyboard_arrow_next_black_24dp = 0x7f0700d9
+com.hanul.bteam:drawable/material_ic_clear_black_24dp = 0x7f0700d6
+com.hanul.bteam:drawable/material_ic_calendar_black_24dp = 0x7f0700d5
+com.hanul.bteam:drawable/marker = 0x7f0700d3
+com.hanul.bteam:drawable/m3_tabs_rounded_line_indicator = 0x7f0700d1
+com.hanul.bteam:drawable/m3_tabs_line_indicator = 0x7f0700d0
+com.hanul.bteam:drawable/m3_tabs_background = 0x7f0700cf
+com.hanul.bteam:drawable/m3_selection_control_ripple = 0x7f0700ce
+com.hanul.bteam:style/Widget.AppCompat.ActionButton.Overflow = 0x7f1102d9
+com.hanul.bteam:color/m3_sys_color_dynamic_light_on_secondary = 0x7f050174
+com.hanul.bteam:drawable/m3_password_eye = 0x7f0700cb
+com.hanul.bteam:drawable/m3_avd_hide_password = 0x7f0700c9
+com.hanul.bteam:drawable/kakao_1 = 0x7f0700c7
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:drawable/item_color = 0x7f0700c2
 com.hanul.bteam:attr/tickColorInactive = 0x7f030463
 com.hanul.bteam:drawable/ic_mtrl_chip_checked_circle = 0x7f0700bd
@@ -1586,7 +1804,11 @@ com.hanul.bteam:style/Widget.Material3.Chip.Input.Elevated = 0x7f110354
 com.hanul.bteam:drawable/gye_bang_san = 0x7f0700aa
 com.hanul.bteam:drawable/gr_san = 0x7f0700a7
 com.hanul.bteam:drawable/googleg_standard_color_18 = 0x7f0700a6
+<<<<<<< HEAD
 com.hanul.bteam:id/ghost_view_holder = 0x7f0800e7
+=======
+com.hanul.bteam:id/ghost_view_holder = 0x7f0800e6
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/flow_lastHorizontalStyle = 0x7f0301d7
 com.hanul.bteam:drawable/googleg_disabled_color_18 = 0x7f0700a5
 com.hanul.bteam:style/ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox.Dense = 0x7f1102cb
@@ -1624,11 +1846,19 @@ com.hanul.bteam:color/m3_elevated_chip_background_color = 0x7f05008f
 com.hanul.bteam:drawable/common_google_signin_btn_icon_dark = 0x7f070087
 com.hanul.bteam:macro/m3_comp_search_bar_supporting_text_type = 0x7f0c006e
 com.hanul.bteam:id/right = 0x7f080186
+<<<<<<< HEAD
 com.hanul.bteam:id/enterAlwaysCollapsed = 0x7f0800ce
 com.hanul.bteam:drawable/btn_checkbox_checked_mtrl = 0x7f07007a
 com.hanul.bteam:style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title = 0x7f110048
 com.hanul.bteam:drawable/avd_hide_password = 0x7f070078
 com.hanul.bteam:drawable/tae_back_san = 0x7f070126
+=======
+com.hanul.bteam:id/enterAlwaysCollapsed = 0x7f0800cd
+com.hanul.bteam:drawable/btn_checkbox_checked_mtrl = 0x7f07007a
+com.hanul.bteam:style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title = 0x7f110048
+com.hanul.bteam:drawable/avd_hide_password = 0x7f070078
+com.hanul.bteam:drawable/tae_back_san = 0x7f070128
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:drawable/btn_checkbox_unchecked_mtrl = 0x7f07007c
 com.hanul.bteam:dimen/abc_text_size_display_3_material = 0x7f060045
 com.hanul.bteam:drawable/abc_textfield_activated_mtrl_alpha = 0x7f070072
@@ -1655,11 +1885,15 @@ com.hanul.bteam:bool/abc_action_bar_embed_tabs = 0x7f040000
 com.hanul.bteam:dimen/mtrl_navigation_rail_margin = 0x7f060273
 com.hanul.bteam:drawable/abc_ic_voice_search_api_material = 0x7f07004a
 com.hanul.bteam:color/material_personalized_color_surface_inverse = 0x7f05022a
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mudm = 0x7f070104
+=======
+com.hanul.bteam:drawable/mudm = 0x7f070106
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:integer/m3_sys_motion_duration_short1 = 0x7f09001b
 com.hanul.bteam:drawable/abc_ic_menu_selectall_mtrl_alpha = 0x7f070047
 com.hanul.bteam:string/appbar_scrolling_view_behavior = 0x7f10001d
-com.hanul.bteam:drawable/su_rak_san1 = 0x7f070125
+com.hanul.bteam:drawable/su_rak_san1 = 0x7f070127
 com.hanul.bteam:attr/titleMarginStart = 0x7f030472
 com.hanul.bteam:drawable/abc_ic_menu_paste_mtrl_am_alpha = 0x7f070046
 com.hanul.bteam:style/Widget.Material3.TextInputEditText.FilledBox.Dense = 0x7f1103b8
@@ -1688,7 +1922,11 @@ com.hanul.bteam:drawable/abc_action_bar_item_background_material = 0x7f07002a
 com.hanul.bteam:style/Base.Widget.AppCompat.EditText = 0x7f1100d5
 com.hanul.bteam:id/touch_outside = 0x7f08020a
 com.hanul.bteam:id/scale = 0x7f080190
+<<<<<<< HEAD
 com.hanul.bteam:id/dragStart = 0x7f0800c1
+=======
+com.hanul.bteam:id/dragStart = 0x7f0800c0
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:string/mtrl_picker_invalid_range = 0x7f100082
 com.hanul.bteam:dimen/design_bottom_navigation_active_text_size = 0x7f060061
 com.hanul.bteam:drawable/$mtrl_switch_thumb_unchecked_pressed__0 = 0x7f070028
@@ -1699,6 +1937,8 @@ com.hanul.bteam:drawable/$mtrl_switch_thumb_checked_unchecked__0 = 0x7f070022
 com.hanul.bteam:drawable/$mtrl_checkbox_button_unchecked_checked__2 = 0x7f070020
 com.hanul.bteam:drawable/common_google_signin_btn_text_light = 0x7f070095
 com.hanul.bteam:drawable/$mtrl_checkbox_button_unchecked_checked__1 = 0x7f07001f
+com.hanul.bteam:style/Widget.Material3.Toolbar.OnSurface = 0x7f1103c4
+com.hanul.bteam:drawable/jjim_heart = 0x7f0700c5
 com.hanul.bteam:drawable/$mtrl_checkbox_button_icon_unchecked_indeterminate__2 = 0x7f07001d
 com.hanul.bteam:style/Widget.AppCompat.ButtonBar = 0x7f1102e3
 com.hanul.bteam:style/Base.Widget.Material3.TabLayout.OnSurface = 0x7f110109
@@ -1741,7 +1981,11 @@ com.hanul.bteam:layout/abc_action_menu_layout = 0x7f0b0003
 com.hanul.bteam:drawable/abc_list_selector_background_transition_holo_light = 0x7f070054
 com.hanul.bteam:style/Widget.MaterialComponents.TimePicker.ImageButton.ShapeAppearance = 0x7f11043f
 com.hanul.bteam:dimen/notification_subtext_size = 0x7f0602b7
+<<<<<<< HEAD
 com.hanul.bteam:id/fixed = 0x7f0800df
+=======
+com.hanul.bteam:id/fixed = 0x7f0800de
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/notification_small_icon_background_padding = 0x7f0602b5
 com.hanul.bteam:style/TextAppearance.MaterialComponents.Button = 0x7f1101eb
 com.hanul.bteam:attr/floatingActionButtonSurfaceStyle = 0x7f0301cc
@@ -1750,7 +1994,10 @@ com.hanul.bteam:drawable/abc_ic_ab_back_material = 0x7f07003e
 com.hanul.bteam:dimen/notification_content_margin_start = 0x7f0602ae
 com.hanul.bteam:dimen/mtrl_transition_shared_axis_slide_distance = 0x7f0602aa
 com.hanul.bteam:dimen/mtrl_tooltip_cornerSize = 0x7f0602a6
+<<<<<<< HEAD
 com.hanul.bteam:id/button3 = 0x7f08007a
+=======
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_alert_dialog_corner_size = 0x7f06009f
 com.hanul.bteam:dimen/mtrl_tooltip_arrowSize = 0x7f0602a5
 com.hanul.bteam:color/m3_dynamic_highlighted_text = 0x7f05008b
@@ -1765,11 +2012,19 @@ com.hanul.bteam:id/btn1 = 0x7f080069
 com.hanul.bteam:dimen/mtrl_snackbar_message_margin_horizontal = 0x7f060294
 com.hanul.bteam:dimen/mtrl_calendar_header_height_fullscreen = 0x7f060224
 com.hanul.bteam:dimen/mtrl_snackbar_margin = 0x7f060293
+<<<<<<< HEAD
 com.hanul.bteam:drawable/notification_bg = 0x7f070114
 com.hanul.bteam:id/withText = 0x7f08022c
 com.hanul.bteam:dimen/mtrl_calendar_action_padding = 0x7f060215
 com.hanul.bteam:dimen/mtrl_snackbar_background_corner_radius = 0x7f060291
 com.hanul.bteam:id/cradle = 0x7f0800a0
+=======
+com.hanul.bteam:drawable/notification_bg = 0x7f070116
+com.hanul.bteam:id/withText = 0x7f08022c
+com.hanul.bteam:dimen/mtrl_calendar_action_padding = 0x7f060215
+com.hanul.bteam:dimen/mtrl_snackbar_background_corner_radius = 0x7f060291
+com.hanul.bteam:id/cradle = 0x7f08009f
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/mtrl_snackbar_action_text_color_alpha = 0x7f060290
 com.hanul.bteam:style/ThemeOverlay.MaterialComponents.BottomSheetDialog = 0x7f1102b5
 com.hanul.bteam:id/bottom_navi = 0x7f080064
@@ -1780,12 +2035,20 @@ com.hanul.bteam:style/Base.TextAppearance.AppCompat.Body1 = 0x7f110015
 com.hanul.bteam:id/navigation_bar_item_active_indicator_view = 0x7f080152
 com.hanul.bteam:dimen/notification_large_icon_width = 0x7f0602b0
 com.hanul.bteam:dimen/mtrl_slider_thumb_radius = 0x7f06028c
+<<<<<<< HEAD
 com.hanul.bteam:id/fragment_container_view_tag = 0x7f0800e3
+=======
+com.hanul.bteam:id/fragment_container_view_tag = 0x7f0800e2
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/mtrl_slider_thumb_elevation = 0x7f06028b
 com.hanul.bteam:dimen/mtrl_slider_label_square_side = 0x7f06028a
 com.hanul.bteam:drawable/abc_ic_menu_cut_mtrl_alpha = 0x7f070044
 com.hanul.bteam:dimen/mtrl_shape_corner_size_small_component = 0x7f060286
+<<<<<<< HEAD
 com.hanul.bteam:drawable/material_ic_menu_arrow_down_black_24dp = 0x7f0700da
+=======
+com.hanul.bteam:drawable/material_ic_menu_arrow_down_black_24dp = 0x7f0700dc
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:id/snapMargins = 0x7f0801bf
 com.hanul.bteam:dimen/mtrl_shape_corner_size_large_component = 0x7f060284
 com.hanul.bteam:style/Theme.Material3.Dark.BottomSheetDialog = 0x7f11021a
@@ -1794,11 +2057,19 @@ com.hanul.bteam:styleable/CardView = 0x7f12001a
 com.hanul.bteam:dimen/mtrl_progress_circular_radius = 0x7f06027a
 com.hanul.bteam:color/design_error = 0x7f050055
 com.hanul.bteam:attr/uiZoomGestures = 0x7f0304a4
+<<<<<<< HEAD
 com.hanul.bteam:drawable/notification_bg_low_pressed = 0x7f070117
 com.hanul.bteam:style/TextAppearance.MaterialComponents.Overline = 0x7f1101f4
 com.hanul.bteam:dimen/mtrl_progress_circular_inset_medium = 0x7f060278
 com.hanul.bteam:dimen/mtrl_navigation_rail_text_bottom_margin = 0x7f060274
 com.hanul.bteam:drawable/mudng2 = 0x7f070106
+=======
+com.hanul.bteam:drawable/notification_bg_low_pressed = 0x7f070119
+com.hanul.bteam:style/TextAppearance.MaterialComponents.Overline = 0x7f1101f4
+com.hanul.bteam:dimen/mtrl_progress_circular_inset_medium = 0x7f060278
+com.hanul.bteam:dimen/mtrl_navigation_rail_text_bottom_margin = 0x7f060274
+com.hanul.bteam:drawable/mudng2 = 0x7f070108
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:id/btnKeong = 0x7f08006f
 com.hanul.bteam:dimen/mtrl_calendar_title_baseline_to_top_fullscreen = 0x7f060237
 com.hanul.bteam:dimen/mtrl_navigation_rail_icon_size = 0x7f060272
@@ -1813,7 +2084,11 @@ com.hanul.bteam:attr/textAppearanceLineHeightEnabled = 0x7f03042b
 com.hanul.bteam:drawable/ji_ri_san = 0x7f0700c3
 com.hanul.bteam:string/mtrl_picker_text_input_date_range_start_hint = 0x7f10008f
 com.hanul.bteam:dimen/mtrl_navigation_elevation = 0x7f060267
+<<<<<<< HEAD
 com.hanul.bteam:drawable/trash = 0x7f07012b
+=======
+com.hanul.bteam:drawable/trash = 0x7f07012d
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/defaultDuration = 0x7f030157
 com.hanul.bteam:attr/tabBackground = 0x7f0303f2
 com.hanul.bteam:dimen/mtrl_min_touch_target_size = 0x7f060264
@@ -1868,7 +2143,11 @@ com.hanul.bteam:color/m3_sys_color_light_outline_variant = 0x7f050196
 com.hanul.bteam:attr/arcMode = 0x7f030038
 com.hanul.bteam:dimen/mtrl_calendar_header_selection_line_height = 0x7f060225
 com.hanul.bteam:style/ShapeAppearanceOverlay.Material3.Button = 0x7f110171
+<<<<<<< HEAD
 com.hanul.bteam:id/checked = 0x7f080089
+=======
+com.hanul.bteam:id/checked = 0x7f080088
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/mtrl_calendar_header_divider_thickness = 0x7f060222
 com.hanul.bteam:dimen/mtrl_calendar_header_content_padding_fullscreen = 0x7f060221
 com.hanul.bteam:dimen/mtrl_calendar_day_vertical_padding = 0x7f06021c
@@ -1887,7 +2166,11 @@ com.hanul.bteam:string/abc_menu_delete_shortcut_label = 0x7f10000a
 com.hanul.bteam:dimen/mtrl_btn_pressed_z = 0x7f06020b
 com.hanul.bteam:drawable/common_google_signin_btn_text_light_focused = 0x7f070096
 com.hanul.bteam:dimen/mtrl_btn_max_width = 0x7f060206
+<<<<<<< HEAD
 com.hanul.bteam:id/callMeasure = 0x7f08007d
+=======
+com.hanul.bteam:id/callMeasure = 0x7f08007c
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/mtrl_btn_icon_btn_padding_left = 0x7f060202
 com.hanul.bteam:dimen/mtrl_btn_hovered_z = 0x7f060201
 com.hanul.bteam:color/abc_decor_view_status_guard = 0x7f050005
@@ -1897,7 +2180,11 @@ com.hanul.bteam:string/m3_sys_motion_easing_standard = 0x7f10004b
 com.hanul.bteam:dimen/mtrl_btn_focused_z = 0x7f060200
 com.hanul.bteam:dimen/mtrl_btn_disabled_elevation = 0x7f0601fd
 com.hanul.bteam:dimen/mtrl_btn_dialog_btn_min_width = 0x7f0601fc
+<<<<<<< HEAD
 com.hanul.bteam:id/dropdown_menu = 0x7f0800c3
+=======
+com.hanul.bteam:id/dropdown_menu = 0x7f0800c2
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:id/TOP_START = 0x7f080010
 com.hanul.bteam:dimen/mtrl_bottomappbar_fab_cradle_vertical_offset = 0x7f0601f9
 com.hanul.bteam:id/btnChung = 0x7f08006a
@@ -1926,10 +2213,17 @@ com.hanul.bteam:dimen/material_textinput_default_width = 0x7f0601e2
 com.hanul.bteam:dimen/material_helper_text_font_1_3_padding_horizontal = 0x7f0601df
 com.hanul.bteam:attr/limitBoundsTo = 0x7f0302a0
 com.hanul.bteam:dimen/material_font_1_3_box_collapsed_padding_top = 0x7f0601dc
+<<<<<<< HEAD
 com.hanul.bteam:drawable/tooltip_frame_light = 0x7f07012a
 com.hanul.bteam:dimen/material_filled_edittext_font_2_0_padding_bottom = 0x7f0601da
 com.hanul.bteam:dimen/material_divider_thickness = 0x7f0601d3
 com.hanul.bteam:drawable/mudng = 0x7f070105
+=======
+com.hanul.bteam:drawable/tooltip_frame_light = 0x7f07012c
+com.hanul.bteam:dimen/material_filled_edittext_font_2_0_padding_bottom = 0x7f0601da
+com.hanul.bteam:dimen/material_divider_thickness = 0x7f0601d3
+com.hanul.bteam:drawable/mudng = 0x7f070107
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/flow_wrapMode = 0x7f0301e0
 com.hanul.bteam:dimen/material_cursor_inset = 0x7f0601d1
 com.hanul.bteam:attr/iconSize = 0x7f03020f
@@ -1962,7 +2256,11 @@ com.hanul.bteam:attr/arrowHeadLength = 0x7f030039
 com.hanul.bteam:dimen/m3_comp_filled_text_field_disabled_active_indicator_opacity = 0x7f06010c
 com.hanul.bteam:dimen/m3_sys_motion_easing_linear_control_x1 = 0x7f0601ac
 com.hanul.bteam:id/west = 0x7f08022a
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_ic_indeterminate = 0x7f0700f1
+=======
+com.hanul.bteam:drawable/mtrl_ic_indeterminate = 0x7f0700f3
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_sys_motion_easing_legacy_decelerate_control_y1 = 0x7f0601aa
 com.hanul.bteam:style/Base.ThemeOverlay.AppCompat.Light = 0x7f110078
 com.hanul.bteam:macro/m3_ref_typeface_plain_regular = 0x7f0c00c2
@@ -1979,7 +2277,11 @@ com.hanul.bteam:dimen/m3_sys_motion_easing_legacy_control_x1 = 0x7f0601a4
 com.hanul.bteam:attr/textAppearanceOverline = 0x7f03042f
 com.hanul.bteam:dimen/m3_sys_motion_easing_legacy_accelerate_control_y1 = 0x7f0601a2
 com.hanul.bteam:color/material_personalized_color_error = 0x7f050216
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_checkbox_button_icon_checked_indeterminate = 0x7f0700e1
+=======
+com.hanul.bteam:drawable/mtrl_checkbox_button_icon_checked_indeterminate = 0x7f0700e3
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_sys_motion_easing_legacy_accelerate_control_x2 = 0x7f0601a1
 com.hanul.bteam:dimen/m3_sys_motion_easing_standard_decelerate_control_x2 = 0x7f0601b9
 com.hanul.bteam:dimen/m3_sys_motion_easing_emphasized_decelerate_control_y2 = 0x7f06019f
@@ -2034,7 +2336,7 @@ com.hanul.bteam:dimen/m3_navigation_item_shape_inset_bottom = 0x7f060167
 com.hanul.bteam:id/tabMode = 0x7f0801dc
 com.hanul.bteam:dimen/m3_navigation_item_horizontal_padding = 0x7f060165
 com.hanul.bteam:drawable/$mtrl_checkbox_button_icon_unchecked_checked__2 = 0x7f07001a
-com.hanul.bteam:drawable/m3_appbar_background = 0x7f0700c6
+com.hanul.bteam:drawable/m3_appbar_background = 0x7f0700c8
 com.hanul.bteam:dimen/m3_large_fab_size = 0x7f060162
 com.hanul.bteam:dimen/m3_fab_translation_z_pressed = 0x7f060160
 com.hanul.bteam:anim/design_snackbar_out = 0x7f01001b
@@ -2058,7 +2360,11 @@ com.hanul.bteam:id/row_index_key = 0x7f08018b
 com.hanul.bteam:color/m3_textfield_filled_background_color = 0x7f0501a8
 com.hanul.bteam:attr/collapsingToolbarLayoutMediumSize = 0x7f0300ea
 com.hanul.bteam:dimen/m3_comp_switch_track_width = 0x7f06014e
+<<<<<<< HEAD
 com.hanul.bteam:id/coordinator = 0x7f08009b
+=======
+com.hanul.bteam:id/coordinator = 0x7f08009a
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/mtrl_textinput_focused_box_stroke_color = 0x7f05026f
 com.hanul.bteam:dimen/m3_comp_switch_selected_hover_state_layer_opacity = 0x7f06014b
 com.hanul.bteam:layout/abc_expanded_menu_layout = 0x7f0b000d
@@ -2078,7 +2384,11 @@ com.hanul.bteam:dimen/m3_comp_slider_inactive_track_height = 0x7f06013f
 com.hanul.bteam:dimen/m3_comp_slider_disabled_inactive_track_opacity = 0x7f06013e
 com.hanul.bteam:dimen/m3_comp_sheet_bottom_docked_modal_container_elevation = 0x7f06013a
 com.hanul.bteam:color/m3_ref_palette_dynamic_primary60 = 0x7f0500c4
+<<<<<<< HEAD
 com.hanul.bteam:drawable/nack_san = 0x7f070109
+=======
+com.hanul.bteam:drawable/nack_san = 0x7f07010b
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/mtrl_extended_fab_icon_size = 0x7f06024e
 com.hanul.bteam:dimen/m3_comp_secondary_navigation_tab_hover_state_layer_opacity = 0x7f060138
 com.hanul.bteam:dimen/m3_comp_secondary_navigation_tab_focus_state_layer_opacity = 0x7f060137
@@ -2089,7 +2399,11 @@ com.hanul.bteam:dimen/m3_comp_search_bar_pressed_state_layer_opacity = 0x7f06013
 com.hanul.bteam:attr/cornerSizeBottomLeft = 0x7f03013c
 com.hanul.bteam:dimen/m3_comp_search_bar_hover_state_layer_opacity = 0x7f060131
 com.hanul.bteam:color/m3_ref_palette_neutral99 = 0x7f0500fd
+<<<<<<< HEAD
 com.hanul.bteam:id/buttonPanel = 0x7f08007b
+=======
+com.hanul.bteam:id/buttonPanel = 0x7f08007a
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:drawable/home = 0x7f0700b1
 com.hanul.bteam:drawable/abc_ic_search_api_material = 0x7f070049
 com.hanul.bteam:id/selected = 0x7f0801b0
@@ -2119,8 +2433,13 @@ com.hanul.bteam:id/action_bar_title = 0x7f08003d
 com.hanul.bteam:dimen/m3_comp_outlined_button_outline_width = 0x7f06011f
 com.hanul.bteam:dimen/m3_comp_outlined_button_disabled_outline_opacity = 0x7f06011e
 com.hanul.bteam:dimen/m3_comp_navigation_rail_icon_size = 0x7f06011c
+<<<<<<< HEAD
 com.hanul.bteam:drawable/material_ic_keyboard_arrow_left_black_24dp = 0x7f0700d6
 com.hanul.bteam:id/design_menu_item_action_area_stub = 0x7f0800b0
+=======
+com.hanul.bteam:drawable/material_ic_keyboard_arrow_left_black_24dp = 0x7f0700d8
+com.hanul.bteam:id/design_menu_item_action_area_stub = 0x7f0800af
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/imageButtonStyle = 0x7f030218
 com.hanul.bteam:dimen/m3_comp_input_chip_with_leading_icon_leading_icon_size = 0x7f060116
 com.hanul.bteam:dimen/mtrl_toolbar_default_height = 0x7f0602a4
@@ -2162,10 +2481,17 @@ com.hanul.bteam:dimen/m3_comp_elevated_button_disabled_container_elevation = 0x7
 com.hanul.bteam:dimen/m3_comp_elevated_button_container_elevation = 0x7f0600f2
 com.hanul.bteam:color/m3_ref_palette_neutral90 = 0x7f0500fb
 com.hanul.bteam:attr/textInputFilledStyle = 0x7f030444
+<<<<<<< HEAD
 com.hanul.bteam:id/east = 0x7f0800c7
 com.hanul.bteam:color/material_dynamic_neutral_variant50 = 0x7f0501d2
 com.hanul.bteam:dimen/m3_comp_divider_thickness = 0x7f0600f1
 com.hanul.bteam:id/easeIn = 0x7f0800c4
+=======
+com.hanul.bteam:id/east = 0x7f0800c6
+com.hanul.bteam:color/material_dynamic_neutral_variant50 = 0x7f0501d2
+com.hanul.bteam:dimen/m3_comp_divider_thickness = 0x7f0600f1
+com.hanul.bteam:id/easeIn = 0x7f0800c3
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_comp_bottom_app_bar_container_height = 0x7f0600ee
 com.hanul.bteam:style/Widget.Material3.TextInputEditText.FilledBox = 0x7f1103b7
 com.hanul.bteam:color/design_dark_default_color_on_background = 0x7f05003d
@@ -2178,7 +2504,11 @@ com.hanul.bteam:dimen/mtrl_extended_fab_bottom_padding = 0x7f060248
 com.hanul.bteam:dimen/m3_comp_assist_chip_elevated_container_elevation = 0x7f0600e9
 com.hanul.bteam:dimen/m3_comp_assist_chip_container_height = 0x7f0600e8
 com.hanul.bteam:style/Widget.Material3.MaterialCalendar.HeaderLayout = 0x7f110387
+<<<<<<< HEAD
 com.hanul.bteam:id/cut = 0x7f0800a4
+=======
+com.hanul.bteam:id/cut = 0x7f0800a3
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/itemShapeAppearanceOverlay = 0x7f030239
 com.hanul.bteam:dimen/m3_chip_icon_size = 0x7f0600e7
 com.hanul.bteam:style/Base.Widget.AppCompat.ListView.Menu = 0x7f1100e3
@@ -2187,7 +2517,11 @@ com.hanul.bteam:dimen/m3_chip_hovered_translation_z = 0x7f0600e6
 com.hanul.bteam:attr/buttonIconDimen = 0x7f030085
 com.hanul.bteam:color/m3_sys_color_dynamic_light_primary_container = 0x7f05017d
 com.hanul.bteam:dimen/m3_chip_elevated_elevation = 0x7f0600e5
+<<<<<<< HEAD
 com.hanul.bteam:id/expanded_menu = 0x7f0800d2
+=======
+com.hanul.bteam:id/expanded_menu = 0x7f0800d1
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_chip_dragged_translation_z = 0x7f0600e4
 com.hanul.bteam:dimen/m3_chip_corner_size = 0x7f0600e2
 com.hanul.bteam:dimen/m3_card_stroke_width = 0x7f0600e0
@@ -2215,7 +2549,11 @@ com.hanul.bteam:dimen/m3_btn_icon_only_icon_padding = 0x7f0600cb
 com.hanul.bteam:dimen/m3_btn_icon_btn_padding_right = 0x7f0600c8
 com.hanul.bteam:attr/itemHorizontalTranslationEnabled = 0x7f03022e
 com.hanul.bteam:dimen/m3_btn_elevation = 0x7f0600c6
+<<<<<<< HEAD
 com.hanul.bteam:id/filepath = 0x7f0800d5
+=======
+com.hanul.bteam:id/filepath = 0x7f0800d4
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_btn_disabled_translation_z = 0x7f0600c4
 com.hanul.bteam:style/Base.Widget.AppCompat.ButtonBar = 0x7f1100cd
 com.hanul.bteam:dimen/m3_btn_dialog_btn_min_width = 0x7f0600c1
@@ -2223,7 +2561,11 @@ com.hanul.bteam:dimen/m3_bottomappbar_horizontal_padding = 0x7f0600c0
 com.hanul.bteam:dimen/m3_bottomappbar_fab_end_margin = 0x7f0600be
 com.hanul.bteam:id/mtrl_picker_header = 0x7f080148
 com.hanul.bteam:dimen/m3_bottomappbar_fab_cradle_vertical_offset = 0x7f0600bd
+<<<<<<< HEAD
 com.hanul.bteam:id/end = 0x7f0800cb
+=======
+com.hanul.bteam:id/end = 0x7f0800ca
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_bottomappbar_fab_cradle_margin = 0x7f0600bb
 com.hanul.bteam:dimen/m3_bottom_sheet_modal_elevation = 0x7f0600ba
 com.hanul.bteam:dimen/m3_bottom_sheet_elevation = 0x7f0600b9
@@ -2247,10 +2589,17 @@ com.hanul.bteam:drawable/btn_radio_on_to_off_mtrl_animation = 0x7f070081
 com.hanul.bteam:dimen/m3_appbar_expanded_title_margin_horizontal = 0x7f0600a5
 com.hanul.bteam:integer/mtrl_view_gone = 0x7f090038
 com.hanul.bteam:color/m3_ref_palette_neutral_variant60 = 0x7f050105
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_switch_track_decoration = 0x7f070100
 com.hanul.bteam:id/wrap_content = 0x7f080230
 com.hanul.bteam:dimen/m3_alert_dialog_action_top_padding = 0x7f06009e
 com.hanul.bteam:id/fill_horizontal = 0x7f0800d7
+=======
+com.hanul.bteam:drawable/mtrl_switch_track_decoration = 0x7f070102
+com.hanul.bteam:id/wrap_content = 0x7f080230
+com.hanul.bteam:dimen/m3_alert_dialog_action_top_padding = 0x7f06009e
+com.hanul.bteam:id/fill_horizontal = 0x7f0800d6
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/item_touch_helper_swipe_escape_velocity = 0x7f06009c
 com.hanul.bteam:dimen/mtrl_navigation_bar_item_default_icon_size = 0x7f060265
 com.hanul.bteam:dimen/hint_pressed_alpha_material_light = 0x7f060099
@@ -2334,7 +2683,11 @@ com.hanul.bteam:dimen/abc_text_size_large_material = 0x7f060048
 com.hanul.bteam:attr/behavior_fitToContents = 0x7f03005e
 com.hanul.bteam:dimen/abc_text_size_display_4_material = 0x7f060046
 com.hanul.bteam:color/m3_ref_palette_dynamic_secondary40 = 0x7f0500cf
+<<<<<<< HEAD
 com.hanul.bteam:drawable/notification_template_icon_bg = 0x7f07011b
+=======
+com.hanul.bteam:drawable/notification_template_icon_bg = 0x7f07011d
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/Widget.Material3.Button = 0x7f110338
 com.hanul.bteam:attr/tabMaxWidth = 0x7f0303ff
 com.hanul.bteam:dimen/abc_text_size_display_2_material = 0x7f060044
@@ -2352,11 +2705,19 @@ com.hanul.bteam:dimen/abc_switch_padding = 0x7f06003e
 com.hanul.bteam:style/ThemeOverlay.MaterialComponents.Light.Dialog.Alert.Framework = 0x7f1102bd
 com.hanul.bteam:dimen/abc_select_dialog_padding_start_material = 0x7f06003a
 com.hanul.bteam:dimen/abc_seekbar_track_progress_height_material = 0x7f060039
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_switch_thumb_checked_unchecked = 0x7f0700f8
 com.hanul.bteam:dimen/m3_chip_checked_hovered_translation_z = 0x7f0600e1
 com.hanul.bteam:attr/navigationContentDescription = 0x7f030333
 com.hanul.bteam:dimen/abc_seekbar_track_background_height_material = 0x7f060038
 com.hanul.bteam:drawable/mtrl_switch_thumb_pressed_unchecked = 0x7f0700fb
+=======
+com.hanul.bteam:drawable/mtrl_switch_thumb_checked_unchecked = 0x7f0700fa
+com.hanul.bteam:dimen/m3_chip_checked_hovered_translation_z = 0x7f0600e1
+com.hanul.bteam:attr/navigationContentDescription = 0x7f030333
+com.hanul.bteam:dimen/abc_seekbar_track_background_height_material = 0x7f060038
+com.hanul.bteam:drawable/mtrl_switch_thumb_pressed_unchecked = 0x7f0700fd
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/abc_search_view_preferred_width = 0x7f060037
 com.hanul.bteam:attr/chipIconTint = 0x7f0300bf
 com.hanul.bteam:dimen/abc_progress_bar_height_material = 0x7f060035
@@ -2368,9 +2729,15 @@ com.hanul.bteam:attr/buttonTint = 0x7f03008c
 com.hanul.bteam:dimen/abc_list_item_height_large_material = 0x7f060030
 com.hanul.bteam:dimen/abc_floating_window_z = 0x7f06002f
 com.hanul.bteam:styleable/NavigationRailView = 0x7f12006d
+<<<<<<< HEAD
 com.hanul.bteam:id/disablePostScroll = 0x7f0800b8
 com.hanul.bteam:attr/chipIconEnabled = 0x7f0300bd
 com.hanul.bteam:id/disableHome = 0x7f0800b6
+=======
+com.hanul.bteam:id/disablePostScroll = 0x7f0800b7
+com.hanul.bteam:attr/chipIconEnabled = 0x7f0300bd
+com.hanul.bteam:id/disableHome = 0x7f0800b5
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/Widget.Material3.Chip.Filter = 0x7f110351
 com.hanul.bteam:dimen/abc_edit_text_inset_top_material = 0x7f06002e
 com.hanul.bteam:dimen/abc_edit_text_inset_horizontal_material = 0x7f06002d
@@ -2388,7 +2755,11 @@ com.hanul.bteam:dimen/abc_dialog_title_divider_material = 0x7f060026
 com.hanul.bteam:attr/flow_firstVerticalBias = 0x7f0301d0
 com.hanul.bteam:attr/textInputStyle = 0x7f030449
 com.hanul.bteam:dimen/abc_dialog_padding_top_material = 0x7f060025
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_checkbox_button_icon_unchecked_checked = 0x7f0700e5
+=======
+com.hanul.bteam:drawable/mtrl_checkbox_button_icon_unchecked_checked = 0x7f0700e7
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/materialSearchViewPrefixStyle = 0x7f0302e4
 com.hanul.bteam:dimen/abc_dialog_list_padding_top_no_title = 0x7f060021
 com.hanul.bteam:attr/colorOnSurface = 0x7f030101
@@ -2398,7 +2769,11 @@ com.hanul.bteam:attr/dragThreshold = 0x7f03016d
 com.hanul.bteam:dimen/m3_comp_primary_navigation_tab_inactive_pressed_state_layer_opacity = 0x7f06012c
 com.hanul.bteam:dimen/abc_dialog_fixed_height_minor = 0x7f06001d
 com.hanul.bteam:interpolator/m3_sys_motion_easing_standard_accelerate = 0x7f0a000c
+<<<<<<< HEAD
 com.hanul.bteam:id/contentPanel = 0x7f080098
+=======
+com.hanul.bteam:id/contentPanel = 0x7f080097
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:styleable/KeyTimeCycle = 0x7f120045
 com.hanul.bteam:animator/m3_extended_fab_change_size_collapse_motion_spec = 0x7f02000f
 com.hanul.bteam:dimen/abc_dialog_corner_radius_material = 0x7f06001b
@@ -2432,7 +2807,11 @@ com.hanul.bteam:dimen/material_textinput_min_width = 0x7f0601e4
 com.hanul.bteam:dimen/abc_action_bar_stacked_max_height = 0x7f060009
 com.hanul.bteam:color/m3_text_button_ripple_color_selector = 0x7f0501a7
 com.hanul.bteam:dimen/abc_action_bar_overflow_padding_end_material = 0x7f060007
+<<<<<<< HEAD
 com.hanul.bteam:id/container = 0x7f080096
+=======
+com.hanul.bteam:id/container = 0x7f080095
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/mtrl_calendar_header_height = 0x7f060223
 com.hanul.bteam:dimen/abc_action_bar_icon_vertical_padding_material = 0x7f060006
 com.hanul.bteam:attr/labelBehavior = 0x7f03024b
@@ -2554,7 +2933,11 @@ com.hanul.bteam:dimen/m3_comp_slider_disabled_active_track_opacity = 0x7f06013c
 com.hanul.bteam:color/mtrl_btn_text_btn_bg_color_selector = 0x7f05023d
 com.hanul.bteam:color/mtrl_btn_stroke_color_selector = 0x7f05023c
 com.hanul.bteam:color/mtrl_btn_ripple_color = 0x7f05023b
+<<<<<<< HEAD
 com.hanul.bteam:drawable/notification_bg_low_normal = 0x7f070116
+=======
+com.hanul.bteam:drawable/notification_bg_low_normal = 0x7f070118
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/mtrl_card_checked_icon_margin = 0x7f06023d
 com.hanul.bteam:style/TextAppearance.M3.Sys.Typescale.BodyMedium = 0x7f1101c5
 com.hanul.bteam:macro/m3_comp_primary_navigation_tab_with_icon_inactive_icon_color = 0x7f0c0060
@@ -2629,7 +3012,11 @@ com.hanul.bteam:dimen/abc_dialog_list_padding_bottom_no_buttons = 0x7f060020
 com.hanul.bteam:color/material_on_primary_disabled = 0x7f05020e
 com.hanul.bteam:color/material_on_background_emphasis_medium = 0x7f05020d
 com.hanul.bteam:color/material_on_background_disabled = 0x7f05020b
+<<<<<<< HEAD
 com.hanul.bteam:id/contiguous = 0x7f080099
+=======
+com.hanul.bteam:id/contiguous = 0x7f080098
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:id/add = 0x7f08004a
 com.hanul.bteam:style/Widget.AppCompat.CompoundButton.RadioButton = 0x7f1102e6
 com.hanul.bteam:color/material_harmonized_color_on_error_container = 0x7f05020a
@@ -2675,7 +3062,11 @@ com.hanul.bteam:attr/floatingActionButtonStyle = 0x7f0301cb
 com.hanul.bteam:dimen/design_navigation_item_horizontal_padding = 0x7f060078
 com.hanul.bteam:attr/viewTransitionOnPositiveCross = 0x7f0304b1
 com.hanul.bteam:color/material_dynamic_primary60 = 0x7f0501e0
+<<<<<<< HEAD
 com.hanul.bteam:id/center = 0x7f080080
+=======
+com.hanul.bteam:id/center = 0x7f08007f
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:styleable/Snackbar = 0x7f120081
 com.hanul.bteam:dimen/mtrl_btn_letter_spacing = 0x7f060205
 com.hanul.bteam:color/material_dynamic_primary50 = 0x7f0501df
@@ -2698,11 +3089,19 @@ com.hanul.bteam:color/material_dynamic_neutral_variant20 = 0x7f0501cf
 com.hanul.bteam:attr/materialCircleRadius = 0x7f0302da
 com.hanul.bteam:dimen/m3_searchview_divider_size = 0x7f060184
 com.hanul.bteam:color/material_dynamic_neutral_variant0 = 0x7f0501cc
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_switch_thumb_unchecked_checked = 0x7f0700fd
 com.hanul.bteam:color/material_dynamic_neutral95 = 0x7f0501ca
 com.hanul.bteam:dimen/m3_sys_motion_easing_linear_control_y1 = 0x7f0601ae
 com.hanul.bteam:attr/colorOnContainer = 0x7f0300f8
 com.hanul.bteam:drawable/seol_ak_san1 = 0x7f070123
+=======
+com.hanul.bteam:drawable/mtrl_switch_thumb_unchecked_checked = 0x7f0700ff
+com.hanul.bteam:color/material_dynamic_neutral95 = 0x7f0501ca
+com.hanul.bteam:dimen/m3_sys_motion_easing_linear_control_y1 = 0x7f0601ae
+com.hanul.bteam:attr/colorOnContainer = 0x7f0300f8
+com.hanul.bteam:drawable/seol_ak_san1 = 0x7f070125
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_sys_motion_easing_emphasized_accelerate_control_x2 = 0x7f060199
 com.hanul.bteam:style/Theme.MaterialComponents.Dialog.FixedSize = 0x7f11024c
 com.hanul.bteam:attr/lineSpacing = 0x7f0302a2
@@ -2750,7 +3149,11 @@ com.hanul.bteam:color/m3_text_button_foreground_color_selector = 0x7f0501a6
 com.hanul.bteam:style/Base.TextAppearance.AppCompat.Medium.Inverse = 0x7f110024
 com.hanul.bteam:color/m3_tabs_text_color = 0x7f0501a3
 com.hanul.bteam:color/m3_sys_color_dynamic_dark_on_surface_variant = 0x7f050160
+<<<<<<< HEAD
 com.hanul.bteam:id/enterAlways = 0x7f0800cd
+=======
+com.hanul.bteam:id/enterAlways = 0x7f0800cc
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/region_widthMoreThan = 0x7f030382
 com.hanul.bteam:color/m3_tabs_ripple_color_secondary = 0x7f0501a2
 com.hanul.bteam:dimen/mtrl_badge_long_text_horizontal_padding = 0x7f0601ee
@@ -2772,7 +3175,11 @@ com.hanul.bteam:color/m3_sys_color_light_on_tertiary = 0x7f050193
 com.hanul.bteam:color/m3_sys_color_light_on_surface_variant = 0x7f050192
 com.hanul.bteam:dimen/mtrl_btn_inset = 0x7f060204
 com.hanul.bteam:dimen/m3_comp_filter_chip_flat_container_elevation = 0x7f06010f
+<<<<<<< HEAD
 com.hanul.bteam:id/ignoreRequest = 0x7f0800fb
+=======
+com.hanul.bteam:id/ignoreRequest = 0x7f0800fa
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/m3_sys_color_light_on_surface = 0x7f050191
 com.hanul.bteam:string/mtrl_switch_thumb_group_name = 0x7f100098
 com.hanul.bteam:attr/upDuration = 0x7f0304a5
@@ -2781,7 +3188,11 @@ com.hanul.bteam:color/m3_ref_palette_dynamic_secondary20 = 0x7f0500cd
 com.hanul.bteam:color/m3_sys_color_light_on_primary = 0x7f05018d
 com.hanul.bteam:color/m3_sys_color_light_on_error_container = 0x7f05018c
 com.hanul.bteam:dimen/design_navigation_icon_size = 0x7f060077
+<<<<<<< HEAD
 com.hanul.bteam:id/glide_custom_view_target_tag = 0x7f0800e8
+=======
+com.hanul.bteam:id/glide_custom_view_target_tag = 0x7f0800e7
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/ThemeOverlay.Design.TextInputEditText = 0x7f11026c
 com.hanul.bteam:style/ShapeAppearanceOverlay.Material3.NavigationView.Item = 0x7f110178
 com.hanul.bteam:color/m3_sys_color_light_on_background = 0x7f05018a
@@ -2801,7 +3212,11 @@ com.hanul.bteam:color/m3_sys_color_dynamic_light_surface_variant = 0x7f050181
 com.hanul.bteam:dimen/abc_text_size_title_material = 0x7f06004f
 com.hanul.bteam:macro/m3_comp_switch_selected_focus_state_layer_color = 0x7f0c009a
 com.hanul.bteam:color/m3_sys_color_dynamic_light_surface = 0x7f050180
+<<<<<<< HEAD
 com.hanul.bteam:drawable/tooltip_frame_dark = 0x7f070129
+=======
+com.hanul.bteam:drawable/tooltip_frame_dark = 0x7f07012b
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/ThemeOverlay.Material3.Toolbar.Surface = 0x7f1102a8
 com.hanul.bteam:id/auto = 0x7f080059
 com.hanul.bteam:dimen/m3_simple_item_color_hovered_alpha = 0x7f06018a
@@ -2816,7 +3231,11 @@ com.hanul.bteam:dimen/m3_bottom_nav_item_active_indicator_height = 0x7f0600b2
 com.hanul.bteam:color/m3_sys_color_dynamic_light_outline_variant = 0x7f05017b
 com.hanul.bteam:color/m3_sys_color_dynamic_light_outline = 0x7f05017a
 com.hanul.bteam:color/m3_sys_color_dynamic_light_on_tertiary_container = 0x7f050179
+<<<<<<< HEAD
 com.hanul.bteam:id/design_menu_item_text = 0x7f0800b1
+=======
+com.hanul.bteam:id/design_menu_item_text = 0x7f0800b0
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/m3_calendar_item_disabled_text = 0x7f050071
 com.hanul.bteam:dimen/mtrl_slider_label_radius = 0x7f060289
 com.hanul.bteam:styleable/GradientColorItem = 0x7f12003c
@@ -2851,7 +3270,11 @@ com.hanul.bteam:color/m3_sys_color_dynamic_dark_on_primary = 0x7f05015b
 com.hanul.bteam:color/material_dynamic_secondary90 = 0x7f0501f0
 com.hanul.bteam:style/TextAppearance.AppCompat.Widget.ActionMode.Title = 0x7f1101a8
 com.hanul.bteam:color/m3_sys_color_dynamic_dark_inverse_surface = 0x7f050159
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_ic_arrow_drop_down = 0x7f0700ea
+=======
+com.hanul.bteam:drawable/mtrl_ic_arrow_drop_down = 0x7f0700ec
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/m3_sys_color_dynamic_dark_inverse_primary = 0x7f050158
 com.hanul.bteam:dimen/m3_alert_dialog_icon_size = 0x7f0600a2
 com.hanul.bteam:color/m3_sys_color_dynamic_dark_background = 0x7f050156
@@ -2868,7 +3291,11 @@ com.hanul.bteam:dimen/m3_sys_motion_easing_standard_decelerate_control_y1 = 0x7f
 com.hanul.bteam:color/m3_sys_color_dark_primary_container = 0x7f05014f
 com.hanul.bteam:attr/singleLine = 0x7f0303b6
 com.hanul.bteam:color/m3_sys_color_dark_primary = 0x7f05014e
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_dropdown_arrow = 0x7f0700e9
+=======
+com.hanul.bteam:drawable/mtrl_dropdown_arrow = 0x7f0700eb
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/m3_sys_color_dark_on_error_container = 0x7f050143
 com.hanul.bteam:color/m3_sys_color_dark_on_surface = 0x7f050148
 com.hanul.bteam:color/m3_sys_color_dark_on_secondary = 0x7f050146
@@ -2908,7 +3335,11 @@ com.hanul.bteam:color/m3_ref_palette_tertiary90 = 0x7f05012f
 com.hanul.bteam:style/Widget.Material3.Button.TonalButton = 0x7f110348
 com.hanul.bteam:color/m3_ref_palette_tertiary80 = 0x7f05012e
 com.hanul.bteam:macro/m3_comp_switch_unselected_hover_track_color = 0x7f0c00b0
+<<<<<<< HEAD
 com.hanul.bteam:id/icon_group = 0x7f0800f7
+=======
+com.hanul.bteam:id/icon_group = 0x7f0800f6
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/common_google_signin_btn_text_light_pressed = 0x7f050037
 com.hanul.bteam:color/m3_ref_palette_tertiary70 = 0x7f05012d
 com.hanul.bteam:style/Widget.Design.BottomNavigationView = 0x7f11031e
@@ -2922,7 +3353,11 @@ com.hanul.bteam:color/m3_ref_palette_tertiary100 = 0x7f050127
 com.hanul.bteam:style/Base.V14.Theme.MaterialComponents.Dialog.Bridge = 0x7f11008e
 com.hanul.bteam:drawable/abc_btn_colored_material = 0x7f070030
 com.hanul.bteam:color/m3_ref_palette_tertiary10 = 0x7f050126
+<<<<<<< HEAD
 com.hanul.bteam:id/homeAsUp = 0x7f0800f2
+=======
+com.hanul.bteam:id/homeAsUp = 0x7f0800f1
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/endIconScaleType = 0x7f03018d
 com.hanul.bteam:attr/cardMaxElevation = 0x7f030099
 com.hanul.bteam:color/m3_ref_palette_secondary90 = 0x7f050122
@@ -2933,7 +3368,11 @@ com.hanul.bteam:color/m3_ref_palette_secondary40 = 0x7f05011d
 com.hanul.bteam:color/m3_ref_palette_secondary10 = 0x7f050119
 com.hanul.bteam:id/visible = 0x7f080228
 com.hanul.bteam:color/m3_ref_palette_primary90 = 0x7f050115
+<<<<<<< HEAD
 com.hanul.bteam:id/cancel_button = 0x7f08007e
+=======
+com.hanul.bteam:id/cancel_button = 0x7f08007d
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/m3_ref_palette_primary70 = 0x7f050113
 com.hanul.bteam:styleable/Badge = 0x7f120013
 com.hanul.bteam:style/Widget.AppCompat.Light.ActionBar.TabText = 0x7f1102f1
@@ -2957,7 +3396,11 @@ com.hanul.bteam:attr/itemBackground = 0x7f03022b
 com.hanul.bteam:color/m3_ref_palette_neutral_variant20 = 0x7f050101
 com.hanul.bteam:macro/m3_comp_switch_selected_pressed_track_color = 0x7f0c00a5
 com.hanul.bteam:color/m3_ref_palette_neutral_variant100 = 0x7f050100
+<<<<<<< HEAD
 com.hanul.bteam:drawable/m3_popupmenu_background_overlay = 0x7f0700ca
+=======
+com.hanul.bteam:drawable/m3_popupmenu_background_overlay = 0x7f0700cc
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/highlight_alpha_material_dark = 0x7f060094
 com.hanul.bteam:id/split_action_bar = 0x7f0801c4
 com.hanul.bteam:attr/itemActiveIndicatorStyle = 0x7f03022a
@@ -2986,7 +3429,11 @@ com.hanul.bteam:color/m3_ref_palette_dynamic_tertiary100 = 0x7f0500d9
 com.hanul.bteam:dimen/abc_star_medium = 0x7f06003c
 com.hanul.bteam:attr/springStopThreshold = 0x7f0303c6
 com.hanul.bteam:color/m3_ref_palette_dynamic_secondary80 = 0x7f0500d3
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_checkbox_button_icon_checked_unchecked = 0x7f0700e2
+=======
+com.hanul.bteam:drawable/mtrl_checkbox_button_icon_checked_unchecked = 0x7f0700e4
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_comp_search_bar_avatar_size = 0x7f06012e
 com.hanul.bteam:color/m3_ref_palette_dynamic_secondary60 = 0x7f0500d1
 com.hanul.bteam:attr/cameraMaxZoomPreference = 0x7f03008f
@@ -3115,7 +3562,11 @@ com.hanul.bteam:color/m3_button_ripple_color = 0x7f05006f
 com.hanul.bteam:attr/dividerPadding = 0x7f030168
 com.hanul.bteam:attr/layout_goneMarginEnd = 0x7f030290
 com.hanul.bteam:color/m3_button_outline_color_selector = 0x7f05006e
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_checkbox_button_icon = 0x7f0700e0
+=======
+com.hanul.bteam:drawable/mtrl_checkbox_button_icon = 0x7f0700e2
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:drawable/ic_keyboard_black_24dp = 0x7f0700b5
 com.hanul.bteam:attr/tabPadding = 0x7f030402
 com.hanul.bteam:attr/indicatorSize = 0x7f030223
@@ -3156,7 +3607,11 @@ com.hanul.bteam:attr/helperTextEnabled = 0x7f0301fa
 com.hanul.bteam:color/design_dark_default_color_secondary_variant = 0x7f050046
 com.hanul.bteam:id/search_bar = 0x7f080198
 com.hanul.bteam:color/design_dark_default_color_primary_variant = 0x7f050044
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mtrl_checkbox_button_icon_unchecked_indeterminate = 0x7f0700e6
+=======
+com.hanul.bteam:drawable/mtrl_checkbox_button_icon_unchecked_indeterminate = 0x7f0700e8
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/colorOnError = 0x7f0300fa
 com.hanul.bteam:color/design_dark_default_color_primary = 0x7f050042
 com.hanul.bteam:color/design_dark_default_color_on_error = 0x7f05003e
@@ -3172,6 +3627,10 @@ com.hanul.bteam:attr/flow_horizontalGap = 0x7f0301d4
 com.hanul.bteam:color/m3_ref_palette_tertiary95 = 0x7f050130
 com.hanul.bteam:style/Theme.Material3.DynamicColors.Dark = 0x7f110229
 com.hanul.bteam:color/common_google_signin_btn_text_light_disabled = 0x7f050035
+<<<<<<< HEAD
+=======
+com.hanul.bteam:id/ivTrash = 0x7f080105
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/onNegativeCross = 0x7f030340
 com.hanul.bteam:attr/tabGravity = 0x7f0303f4
 com.hanul.bteam:color/common_google_signin_btn_text_light_default = 0x7f050034
@@ -3196,7 +3655,11 @@ com.hanul.bteam:attr/endIconTint = 0x7f03018e
 com.hanul.bteam:string/mtrl_picker_text_input_year_abbr = 0x7f100092
 com.hanul.bteam:macro/m3_comp_outlined_button_focus_outline_color = 0x7f0c003c
 com.hanul.bteam:color/bright_foreground_material_dark = 0x7f050026
+<<<<<<< HEAD
 com.hanul.bteam:drawable/mu_dueng_san1 = 0x7f070103
+=======
+com.hanul.bteam:drawable/mu_dueng_san1 = 0x7f070105
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/bright_foreground_inverse_material_light = 0x7f050025
 com.hanul.bteam:style/Widget.Material3.DrawerLayout = 0x7f110365
 com.hanul.bteam:dimen/m3_sys_motion_easing_legacy_decelerate_control_y2 = 0x7f0601ab
@@ -3204,10 +3667,14 @@ com.hanul.bteam:drawable/btn_checkbox_checked_to_unchecked_mtrl_animation = 0x7f
 com.hanul.bteam:macro/m3_comp_search_view_header_leading_icon_color = 0x7f0c0076
 com.hanul.bteam:color/m3_ref_palette_dynamic_tertiary30 = 0x7f0500db
 com.hanul.bteam:layout/design_navigation_item = 0x7f0b002c
+<<<<<<< HEAD
 com.hanul.bteam:id/filled = 0x7f0800d9
+=======
+com.hanul.bteam:id/filled = 0x7f0800d8
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/bright_foreground_disabled_material_dark = 0x7f050022
 com.hanul.bteam:attr/listChoiceIndicatorSingleAnimated = 0x7f0302a6
-com.hanul.bteam:drawable/o_deo_san1 = 0x7f070120
+com.hanul.bteam:drawable/o_deo_san1 = 0x7f070122
 com.hanul.bteam:color/background_material_light = 0x7f050020
 com.hanul.bteam:attr/buttonCompat = 0x7f030082
 com.hanul.bteam:color/accent_material_light = 0x7f05001a
@@ -3222,7 +3689,11 @@ com.hanul.bteam:attr/thumbStrokeColor = 0x7f03045c
 com.hanul.bteam:style/Widget.AppCompat.ActionButton.CloseMode = 0x7f1102d8
 com.hanul.bteam:color/abc_tint_spinner = 0x7f050017
 com.hanul.bteam:anim/btn_radio_to_on_mtrl_ring_outer_path_animation = 0x7f010017
+<<<<<<< HEAD
 com.hanul.bteam:id/counterclockwise = 0x7f08009e
+=======
+com.hanul.bteam:id/counterclockwise = 0x7f08009d
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/material_emphasis_medium = 0x7f0601d7
 com.hanul.bteam:style/RtlOverlay.Widget.AppCompat.PopupMenuItem.InternalGroup = 0x7f110142
 com.hanul.bteam:dimen/m3_navigation_rail_elevation = 0x7f06016f
@@ -3326,11 +3797,18 @@ com.hanul.bteam:color/m3_ref_palette_neutral_variant50 = 0x7f050104
 com.hanul.bteam:dimen/material_clock_period_toggle_width = 0x7f0601cf
 com.hanul.bteam:dimen/m3_card_elevated_elevation = 0x7f0600dc
 com.hanul.bteam:attr/touchRegionId = 0x7f030486
+com.hanul.bteam:layout/notification_template_custom_big = 0x7f0b0073
+com.hanul.bteam:dimen/m3_comp_extended_fab_primary_hover_state_layer_opacity = 0x7f0600f9
+com.hanul.bteam:drawable/jjim_heart1 = 0x7f0700c6
 com.hanul.bteam:attr/layout_constraintVertical_chainStyle = 0x7f030284
 com.hanul.bteam:drawable/$avd_show_password__1 = 0x7f070004
 com.hanul.bteam:attr/topInsetScrimEnabled = 0x7f030483
 com.hanul.bteam:layout/mtrl_layout_snackbar_include = 0x7f0b0061
+<<<<<<< HEAD
 com.hanul.bteam:id/center_vertical = 0x7f080084
+=======
+com.hanul.bteam:id/center_vertical = 0x7f080083
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/textAppearanceHeadline5 = 0x7f030422
 com.hanul.bteam:attr/tooltipText = 0x7f030482
 com.hanul.bteam:dimen/m3_comp_navigation_rail_container_width = 0x7f06011b
@@ -3352,7 +3830,11 @@ com.hanul.bteam:attr/trackDecorationTintMode = 0x7f03048e
 com.hanul.bteam:dimen/m3_comp_text_button_focus_state_layer_opacity = 0x7f060152
 com.hanul.bteam:style/Theme.MaterialComponents.Light.DialogWhenLarge = 0x7f11025e
 com.hanul.bteam:attr/titleTextAppearance = 0x7f030476
+<<<<<<< HEAD
 com.hanul.bteam:id/confirm_button = 0x7f080093
+=======
+com.hanul.bteam:id/confirm_button = 0x7f080092
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/titleMarginTop = 0x7f030473
 com.hanul.bteam:style/TextAppearance.AppCompat.Menu = 0x7f110197
 com.hanul.bteam:dimen/abc_list_item_height_small_material = 0x7f060032
@@ -3394,7 +3876,7 @@ com.hanul.bteam:attr/textureEffect = 0x7f030451
 com.hanul.bteam:style/ThemeOverlay.Material3.DynamicColors.DayNight = 0x7f110289
 com.hanul.bteam:attr/itemShapeFillColor = 0x7f03023a
 com.hanul.bteam:color/m3_ref_palette_neutral60 = 0x7f0500f8
-com.hanul.bteam:drawable/mylocation = 0x7f070108
+com.hanul.bteam:drawable/mylocation = 0x7f07010a
 com.hanul.bteam:dimen/mtrl_calendar_header_text_padding = 0x7f060226
 com.hanul.bteam:attr/textInputFilledDenseStyle = 0x7f030442
 com.hanul.bteam:attr/textureBlurFactor = 0x7f030450
@@ -3422,13 +3904,21 @@ com.hanul.bteam:attr/thumbStrokeWidth = 0x7f03045d
 com.hanul.bteam:attr/textEndPadding = 0x7f030440
 com.hanul.bteam:attr/bottomSheetDragHandleStyle = 0x7f03006f
 com.hanul.bteam:color/m3_ref_palette_dynamic_neutral_variant80 = 0x7f0500b9
+<<<<<<< HEAD
 com.hanul.bteam:id/dependency_ordering = 0x7f0800ad
+=======
+com.hanul.bteam:id/dependency_ordering = 0x7f0800ac
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:drawable/$avd_show_password__0 = 0x7f070003
 com.hanul.bteam:attr/listDividerAlertDialog = 0x7f0302a7
 com.hanul.bteam:attr/textColorAlertDialogListItem = 0x7f03043e
 com.hanul.bteam:style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense = 0x7f11042c
 com.hanul.bteam:attr/textBackground = 0x7f030439
+<<<<<<< HEAD
 com.hanul.bteam:id/etAddress = 0x7f0800cf
+=======
+com.hanul.bteam:id/etAddress = 0x7f0800ce
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/Widget.MaterialComponents.CircularProgressIndicator.ExtraSmall = 0x7f1103f0
 com.hanul.bteam:string/material_motion_easing_decelerated = 0x7f100056
 com.hanul.bteam:attr/touchAnchorSide = 0x7f030485
@@ -3494,7 +3984,11 @@ com.hanul.bteam:attr/motionDebug = 0x7f030304
 com.hanul.bteam:id/btn_questionsList = 0x7f080077
 com.hanul.bteam:color/m3_ref_palette_neutral0 = 0x7f0500f1
 com.hanul.bteam:attr/latLngBoundsNorthEastLatitude = 0x7f030250
+<<<<<<< HEAD
 com.hanul.bteam:id/chain = 0x7f080085
+=======
+com.hanul.bteam:id/chain = 0x7f080084
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:id/accessibility_custom_action_14 = 0x7f08001a
 com.hanul.bteam:attr/textAppearanceHeadline2 = 0x7f03041f
 com.hanul.bteam:attr/textAppearanceHeadline1 = 0x7f03041e
@@ -3530,7 +4024,11 @@ com.hanul.bteam:style/Base.Widget.AppCompat.ListMenuView = 0x7f1100df
 com.hanul.bteam:attr/tabPaddingBottom = 0x7f030403
 com.hanul.bteam:attr/fabAlignmentMode = 0x7f0301b0
 com.hanul.bteam:attr/tabMode = 0x7f030401
+<<<<<<< HEAD
 com.hanul.bteam:id/flip = 0x7f0800e0
+=======
+com.hanul.bteam:id/flip = 0x7f0800df
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/indeterminateProgressStyle = 0x7f03021e
 com.hanul.bteam:attr/tabIndicatorHeight = 0x7f0303fd
 com.hanul.bteam:attr/constraint_referenced_ids = 0x7f03011e
@@ -3544,20 +4042,27 @@ com.hanul.bteam:attr/contentPaddingStart = 0x7f03012e
 com.hanul.bteam:color/m3_sys_color_dynamic_light_on_surface = 0x7f050176
 com.hanul.bteam:attr/listItemLayout = 0x7f0302a8
 com.hanul.bteam:color/design_dark_default_color_on_surface = 0x7f050041
+<<<<<<< HEAD
 com.hanul.bteam:id/carryVelocity = 0x7f08007f
 com.hanul.bteam:dimen/mtrl_slider_track_side_padding = 0x7f06028e
 com.hanul.bteam:layout/home_frag = 0x7f0b0036
 com.hanul.bteam:id/clip_vertical = 0x7f08008e
+=======
+com.hanul.bteam:id/carryVelocity = 0x7f08007e
+com.hanul.bteam:dimen/mtrl_slider_track_side_padding = 0x7f06028e
+com.hanul.bteam:layout/home_frag = 0x7f0b0036
+com.hanul.bteam:id/clip_vertical = 0x7f08008d
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/itemStrokeWidth = 0x7f030241
 com.hanul.bteam:dimen/fastscroll_default_thickness = 0x7f060090
 com.hanul.bteam:attr/tabIndicatorAnimationDuration = 0x7f0303f8
-com.hanul.bteam:drawable/mtrl_ic_checkbox_unchecked = 0x7f0700ef
+com.hanul.bteam:drawable/mtrl_ic_checkbox_unchecked = 0x7f0700f1
 com.hanul.bteam:attr/closeIconTint = 0x7f0300df
 com.hanul.bteam:color/abc_background_cache_hint_selector_material_dark = 0x7f050000
 com.hanul.bteam:attr/tabIconTintMode = 0x7f0303f6
 com.hanul.bteam:color/design_dark_default_color_secondary = 0x7f050045
 com.hanul.bteam:attr/tabContentStart = 0x7f0303f3
-com.hanul.bteam:drawable/mtrl_ic_arrow_drop_up = 0x7f0700eb
+com.hanul.bteam:drawable/mtrl_ic_arrow_drop_up = 0x7f0700ed
 com.hanul.bteam:style/Widget.MaterialComponents.NavigationRailView.PrimarySurface = 0x7f11041a
 com.hanul.bteam:string/material_timepicker_select_time = 0x7f100062
 com.hanul.bteam:attr/behavior_draggable = 0x7f03005c
@@ -3587,7 +4092,7 @@ com.hanul.bteam:color/m3_ref_palette_primary40 = 0x7f050110
 com.hanul.bteam:attr/subtitleTextAppearance = 0x7f0303e7
 com.hanul.bteam:attr/subtitle = 0x7f0303e5
 com.hanul.bteam:attr/divider = 0x7f030163
-com.hanul.bteam:drawable/material_ic_edit_black_24dp = 0x7f0700d5
+com.hanul.bteam:drawable/material_ic_edit_black_24dp = 0x7f0700d7
 com.hanul.bteam:attr/toolbarStyle = 0x7f03047d
 com.hanul.bteam:style/Widget.MaterialComponents.CardView = 0x7f1103e8
 com.hanul.bteam:attr/submitBackground = 0x7f0303e4
@@ -3601,14 +4106,18 @@ com.hanul.bteam:attr/subheaderColor = 0x7f0303e0
 com.hanul.bteam:attr/ratingBarStyleSmall = 0x7f030379
 com.hanul.bteam:attr/strokeWidth = 0x7f0303de
 com.hanul.bteam:dimen/mtrl_exposed_dropdown_menu_popup_elevation = 0x7f060245
-com.hanul.bteam:drawable/mtrl_checkbox_button = 0x7f0700de
+com.hanul.bteam:drawable/mtrl_checkbox_button = 0x7f0700e0
 com.hanul.bteam:attr/counterTextAppearance = 0x7f030144
 com.hanul.bteam:color/m3_appbar_overlay_color = 0x7f050069
 com.hanul.bteam:drawable/abc_ratingbar_indicator_material = 0x7f07005b
 com.hanul.bteam:attr/titleMargin = 0x7f03046f
 com.hanul.bteam:attr/statusBarScrim = 0x7f0303dc
 com.hanul.bteam:string/mtrl_picker_end_date_description = 0x7f10007e
+<<<<<<< HEAD
 com.hanul.bteam:id/decelerateAndComplete = 0x7f0800a9
+=======
+com.hanul.bteam:id/decelerateAndComplete = 0x7f0800a8
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/statusBarForeground = 0x7f0303db
 com.hanul.bteam:attr/lastBaselineToBottomHeight = 0x7f03024e
 com.hanul.bteam:id/action_context_bar = 0x7f08003f
@@ -3662,8 +4171,13 @@ com.hanul.bteam:macro/m3_comp_switch_disabled_unselected_track_outline_color = 0
 com.hanul.bteam:attr/drawableTintMode = 0x7f030176
 com.hanul.bteam:color/m3_ref_palette_dynamic_neutral10 = 0x7f0500a4
 com.hanul.bteam:dimen/m3_sys_elevation_level1 = 0x7f060193
+<<<<<<< HEAD
 com.hanul.bteam:id/immediateStop = 0x7f0800fe
 com.hanul.bteam:drawable/seol_ak_san = 0x7f070122
+=======
+com.hanul.bteam:id/immediateStop = 0x7f0800fd
+com.hanul.bteam:drawable/seol_ak_san = 0x7f070124
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/m3_navigation_item_text_color = 0x7f05009d
 com.hanul.bteam:id/month_grid = 0x7f080133
 com.hanul.bteam:color/m3_navigation_item_ripple_color = 0x7f05009c
@@ -3690,7 +4204,11 @@ com.hanul.bteam:attr/simpleItemSelectedRippleColor = 0x7f0303b3
 com.hanul.bteam:attr/actionModeFindDrawable = 0x7f030018
 com.hanul.bteam:color/bright_foreground_disabled_material_light = 0x7f050023
 com.hanul.bteam:style/Widget.MaterialComponents.Button.Icon = 0x7f1103dd
+<<<<<<< HEAD
 com.hanul.bteam:id/design_menu_item_action_area = 0x7f0800af
+=======
+com.hanul.bteam:id/design_menu_item_action_area = 0x7f0800ae
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/Base.Theme.MaterialComponents.Bridge = 0x7f110060
 com.hanul.bteam:macro/m3_comp_search_bar_input_text_color = 0x7f0c0068
 com.hanul.bteam:attr/sideSheetModalStyle = 0x7f0303b0
@@ -3701,7 +4219,7 @@ com.hanul.bteam:style/TextAppearance.M3.Sys.Typescale.DisplayLarge = 0x7f1101c7
 com.hanul.bteam:attr/showText = 0x7f0303ac
 com.hanul.bteam:layout/local_frag = 0x7f0b0038
 com.hanul.bteam:attr/showDelay = 0x7f0303a8
-com.hanul.bteam:drawable/mtrl_checkbox_button_icon_indeterminate_checked = 0x7f0700e3
+com.hanul.bteam:drawable/mtrl_checkbox_button_icon_indeterminate_checked = 0x7f0700e5
 com.hanul.bteam:style/Base.Theme.AppCompat.Light.DarkActionBar = 0x7f110051
 com.hanul.bteam:attr/shapeAppearanceSmallComponent = 0x7f0303a2
 com.hanul.bteam:attr/actionBarWidgetTheme = 0x7f03000c
@@ -3733,13 +4251,21 @@ com.hanul.bteam:attr/fabCradleRoundedCornerRadius = 0x7f0301b5
 com.hanul.bteam:attr/searchHintIcon = 0x7f03038f
 com.hanul.bteam:dimen/mtrl_navigation_item_shape_vertical_margin = 0x7f06026c
 com.hanul.bteam:attr/scrimVisibleHeightTrigger = 0x7f03038e
+<<<<<<< HEAD
 com.hanul.bteam:id/direct = 0x7f0800b5
+=======
+com.hanul.bteam:id/direct = 0x7f0800b4
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/scaleFromTextSize = 0x7f03038a
 com.hanul.bteam:attr/drawableLeftCompat = 0x7f030171
 com.hanul.bteam:attr/ttcIndex = 0x7f03049c
 com.hanul.bteam:attr/toolbarNavigationButtonStyle = 0x7f03047c
 com.hanul.bteam:attr/colorOnPrimarySurface = 0x7f0300fe
+<<<<<<< HEAD
 com.hanul.bteam:id/dragClockwise = 0x7f0800bc
+=======
+com.hanul.bteam:id/dragClockwise = 0x7f0800bb
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/Base.Widget.AppCompat.Light.ActionBar.TabView = 0x7f1100dc
 com.hanul.bteam:attr/saturation = 0x7f030389
 com.hanul.bteam:attr/constraintRotate = 0x7f03011a
@@ -3784,7 +4310,11 @@ com.hanul.bteam:dimen/m3_comp_secondary_navigation_tab_active_indicator_height =
 com.hanul.bteam:attr/quantizeMotionInterpolator = 0x7f03036f
 com.hanul.bteam:attr/paddingBottomSystemWindowInsets = 0x7f030348
 com.hanul.bteam:color/highlighted_text_material_light = 0x7f050068
+<<<<<<< HEAD
 com.hanul.bteam:id/ifRoom = 0x7f0800f9
+=======
+com.hanul.bteam:id/ifRoom = 0x7f0800f8
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/pressedTranslationZ = 0x7f03036c
 com.hanul.bteam:macro/m3_comp_search_view_header_input_text_type = 0x7f0c0075
 com.hanul.bteam:color/abc_tint_default = 0x7f050014
@@ -3805,7 +4335,7 @@ com.hanul.bteam:attr/customIntegerValue = 0x7f03014e
 com.hanul.bteam:attr/polarRelativeTo = 0x7f030363
 com.hanul.bteam:attr/tabSelectedTextColor = 0x7f03040a
 com.hanul.bteam:attr/hintTextColor = 0x7f030205
-com.hanul.bteam:drawable/m3_radiobutton_ripple = 0x7f0700cb
+com.hanul.bteam:drawable/m3_radiobutton_ripple = 0x7f0700cd
 com.hanul.bteam:style/Theme.MaterialComponents.Dialog.Alert.Bridge = 0x7f11024a
 com.hanul.bteam:dimen/m3_navigation_item_shape_inset_top = 0x7f06016a
 com.hanul.bteam:attr/mock_labelBackgroundColor = 0x7f030300
@@ -3814,10 +4344,14 @@ com.hanul.bteam:attr/placeholder_emptyVisibility = 0x7f030362
 com.hanul.bteam:style/Widget.Material3.Button.TextButton.Snackbar = 0x7f110347
 com.hanul.bteam:attr/placeholderText = 0x7f03035f
 com.hanul.bteam:color/secondary_text_disabled_material_light = 0x7f050283
-com.hanul.bteam:drawable/notification_action_background = 0x7f070113
+com.hanul.bteam:drawable/notification_action_background = 0x7f070115
 com.hanul.bteam:drawable/ic_search_black_24 = 0x7f0700bf
 com.hanul.bteam:attr/percentWidth = 0x7f03035a
+<<<<<<< HEAD
 com.hanul.bteam:id/contain = 0x7f080095
+=======
+com.hanul.bteam:id/contain = 0x7f080094
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:id/mini = 0x7f080132
 com.hanul.bteam:attr/passwordToggleEnabled = 0x7f030354
 com.hanul.bteam:attr/trackColorActive = 0x7f030489
@@ -3826,10 +4360,14 @@ com.hanul.bteam:attr/percentX = 0x7f03035b
 com.hanul.bteam:attr/motionDurationLong3 = 0x7f03030b
 com.hanul.bteam:style/Base.Widget.AppCompat.Light.PopupMenu = 0x7f1100dd
 com.hanul.bteam:attr/paddingTopSystemWindowInsets = 0x7f03034e
-com.hanul.bteam:drawable/mtrl_ic_error = 0x7f0700f0
+com.hanul.bteam:drawable/mtrl_ic_error = 0x7f0700f2
 com.hanul.bteam:attr/paddingStart = 0x7f03034c
 com.hanul.bteam:attr/paddingRightSystemWindowInsets = 0x7f03034b
+<<<<<<< HEAD
 com.hanul.bteam:id/currentState = 0x7f0800a1
+=======
+com.hanul.bteam:id/currentState = 0x7f0800a0
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/ShapeAppearanceOverlay.Material3.FloatingActionButton = 0x7f110177
 com.hanul.bteam:attr/itemStrokeColor = 0x7f030240
 com.hanul.bteam:dimen/mtrl_low_ripple_default_alpha = 0x7f060260
@@ -3848,7 +4386,7 @@ com.hanul.bteam:attr/cameraTilt = 0x7f030093
 com.hanul.bteam:attr/numericModifiers = 0x7f03033d
 com.hanul.bteam:dimen/m3_btn_max_width = 0x7f0600ce
 com.hanul.bteam:color/m3_sys_color_dynamic_dark_primary_container = 0x7f050166
-com.hanul.bteam:drawable/mtrl_switch_thumb_pressed_checked = 0x7f0700fa
+com.hanul.bteam:drawable/mtrl_switch_thumb_pressed_checked = 0x7f0700fc
 com.hanul.bteam:color/m3_ref_palette_primary80 = 0x7f050114
 com.hanul.bteam:attr/windowMinWidthMajor = 0x7f0304c2
 com.hanul.bteam:attr/spanCount = 0x7f0303bd
@@ -3940,7 +4478,11 @@ com.hanul.bteam:attr/clickAction = 0x7f0300d5
 com.hanul.bteam:attr/motionDurationExtraLong2 = 0x7f030306
 com.hanul.bteam:id/textinput_error = 0x7f0801fd
 com.hanul.bteam:attr/motionDurationLong2 = 0x7f03030a
+<<<<<<< HEAD
 com.hanul.bteam:id/embed = 0x7f0800ca
+=======
+com.hanul.bteam:id/embed = 0x7f0800c9
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/flow_firstVerticalStyle = 0x7f0301d1
 com.hanul.bteam:color/m3_ref_palette_error80 = 0x7f0500ed
 com.hanul.bteam:attr/passwordToggleTint = 0x7f030355
@@ -4109,7 +4651,11 @@ com.hanul.bteam:dimen/material_time_picker_minimum_screen_width = 0x7f0601e6
 com.hanul.bteam:styleable/NavigationView = 0x7f12006e
 com.hanul.bteam:attr/layout_insetEdge = 0x7f030295
 com.hanul.bteam:attr/layout_goneMarginTop = 0x7f030294
+<<<<<<< HEAD
 com.hanul.bteam:id/deltaRelative = 0x7f0800ac
+=======
+com.hanul.bteam:id/deltaRelative = 0x7f0800ab
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/layout_goneMarginBottom = 0x7f03028f
 com.hanul.bteam:attr/actionViewClass = 0x7f030025
 com.hanul.bteam:color/m3_ref_palette_secondary100 = 0x7f05011a
@@ -4124,7 +4670,11 @@ com.hanul.bteam:attr/onStateTransition = 0x7f030343
 com.hanul.bteam:styleable/MenuGroup = 0x7f120060
 com.hanul.bteam:attr/layout_constraintWidth_percent = 0x7f03028a
 com.hanul.bteam:style/TextAppearance.AppCompat.Caption = 0x7f110188
+<<<<<<< HEAD
 com.hanul.bteam:id/group_divider = 0x7f0800ec
+=======
+com.hanul.bteam:id/group_divider = 0x7f0800eb
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/layout_constraintVertical_weight = 0x7f030285
 com.hanul.bteam:drawable/$mtrl_checkbox_button_icon_checked_unchecked__0 = 0x7f070011
 com.hanul.bteam:color/design_dark_default_color_surface = 0x7f050047
@@ -4133,7 +4683,7 @@ com.hanul.bteam:id/action_bar = 0x7f080037
 com.hanul.bteam:attr/customReference = 0x7f030151
 com.hanul.bteam:style/Widget.Material3.CollapsingToolbar.Large = 0x7f11035f
 com.hanul.bteam:macro/m3_comp_extended_fab_secondary_container_color = 0x7f0c0011
-com.hanul.bteam:drawable/material_cursor_drawable = 0x7f0700d2
+com.hanul.bteam:drawable/material_cursor_drawable = 0x7f0700d4
 com.hanul.bteam:color/material_dynamic_neutral40 = 0x7f0501c4
 com.hanul.bteam:attr/contentPadding = 0x7f030129
 com.hanul.bteam:color/design_fab_stroke_top_outer_color = 0x7f05005c
@@ -4219,7 +4769,7 @@ com.hanul.bteam:attr/contentPaddingBottom = 0x7f03012a
 com.hanul.bteam:color/m3_ref_palette_error90 = 0x7f0500ee
 com.hanul.bteam:drawable/$avd_hide_password__0 = 0x7f070000
 com.hanul.bteam:attr/layout_behavior = 0x7f03025a
-com.hanul.bteam:drawable/m3_avd_show_password = 0x7f0700c8
+com.hanul.bteam:drawable/m3_avd_show_password = 0x7f0700ca
 com.hanul.bteam:attr/checkboxStyle = 0x7f0300ac
 com.hanul.bteam:attr/fontVariationSettings = 0x7f0301eb
 com.hanul.bteam:attr/layout_anchorGravity = 0x7f030259
@@ -4264,7 +4814,11 @@ com.hanul.bteam:id/action_bar_activity_content = 0x7f080038
 com.hanul.bteam:layout/mtrl_picker_header_toggle = 0x7f0b006a
 com.hanul.bteam:attr/itemFillColor = 0x7f03022c
 com.hanul.bteam:attr/background = 0x7f030045
+<<<<<<< HEAD
 com.hanul.bteam:id/couname = 0x7f08009d
+=======
+com.hanul.bteam:id/couname = 0x7f08009c
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/isMaterialTheme = 0x7f030229
 com.hanul.bteam:macro/m3_comp_text_button_hover_state_layer_color = 0x7f0c00bb
 com.hanul.bteam:color/mtrl_tabs_icon_color_selector_colored = 0x7f050268
@@ -4272,14 +4826,22 @@ com.hanul.bteam:drawable/$m3_avd_show_password__2 = 0x7f07000c
 com.hanul.bteam:attr/isMaterial3Theme = 0x7f030228
 com.hanul.bteam:dimen/design_bottom_navigation_icon_size = 0x7f060064
 com.hanul.bteam:id/packed = 0x7f08016a
+<<<<<<< HEAD
 com.hanul.bteam:id/closest = 0x7f080090
+=======
+com.hanul.bteam:id/closest = 0x7f08008f
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/isMaterial3DynamicColorApplied = 0x7f030227
 com.hanul.bteam:dimen/m3_bottomappbar_fab_cradle_rounded_corner_radius = 0x7f0600bc
 com.hanul.bteam:attr/fontProviderFetchStrategy = 0x7f0301e5
 com.hanul.bteam:attr/titleMargins = 0x7f030474
 com.hanul.bteam:attr/extendedFloatingActionButtonStyle = 0x7f0301ac
 com.hanul.bteam:attr/flow_firstHorizontalStyle = 0x7f0301cf
+<<<<<<< HEAD
 com.hanul.bteam:id/disjoint = 0x7f0800ba
+=======
+com.hanul.bteam:id/disjoint = 0x7f0800b9
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/colorPrimaryInverse = 0x7f03010b
 com.hanul.bteam:color/m3_highlighted_text = 0x7f050094
 com.hanul.bteam:attr/colorOnBackground = 0x7f0300f7
@@ -4349,12 +4911,20 @@ com.hanul.bteam:attr/passwordToggleDrawable = 0x7f030353
 com.hanul.bteam:style/Widget.MaterialComponents.Button.UnelevatedButton.Icon = 0x7f1103e7
 com.hanul.bteam:attr/iconPadding = 0x7f03020e
 com.hanul.bteam:attr/selectableItemBackgroundBorderless = 0x7f030395
+<<<<<<< HEAD
 com.hanul.bteam:id/clockwise = 0x7f08008f
+=======
+com.hanul.bteam:id/clockwise = 0x7f08008e
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:macro/m3_comp_slider_label_label_text_color = 0x7f0c008e
 com.hanul.bteam:color/design_default_color_surface = 0x7f050054
 com.hanul.bteam:attr/homeAsUpIndicator = 0x7f030206
 com.hanul.bteam:color/m3_ref_palette_secondary99 = 0x7f050124
+<<<<<<< HEAD
 com.hanul.bteam:id/constraint = 0x7f080094
+=======
+com.hanul.bteam:id/constraint = 0x7f080093
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/chipIcon = 0x7f0300bc
 com.hanul.bteam:attr/verticalOffsetWithText = 0x7f0304ac
 com.hanul.bteam:style/Base.Widget.Material3.ActionMode = 0x7f1100f8
@@ -4390,7 +4960,7 @@ com.hanul.bteam:attr/layout_scrollInterpolator = 0x7f03029b
 com.hanul.bteam:attr/controlBackground = 0x7f030132
 com.hanul.bteam:attr/closeItemLayout = 0x7f0300e1
 com.hanul.bteam:attr/headerLayout = 0x7f0301f7
-com.hanul.bteam:drawable/namsan = 0x7f07010f
+com.hanul.bteam:drawable/namsan = 0x7f070111
 com.hanul.bteam:style/Theme.MaterialComponents.DayNight.DialogWhenLarge = 0x7f110245
 com.hanul.bteam:attr/goIcon = 0x7f0301f3
 com.hanul.bteam:attr/materialCalendarYearNavigationButton = 0x7f0302d5
@@ -4423,7 +4993,6 @@ com.hanul.bteam:layout/abc_cascading_menu_item_layout = 0x7f0b000b
 com.hanul.bteam:attr/cornerFamilyTopLeft = 0x7f030138
 com.hanul.bteam:attr/textAppearanceHeadlineMedium = 0x7f030425
 com.hanul.bteam:attr/shortcutMatchRequired = 0x7f0303a4
-com.hanul.bteam:layout/willhave_frag = 0x7f0b0081
 com.hanul.bteam:color/abc_btn_colored_text_material = 0x7f050003
 com.hanul.bteam:attr/flow_verticalStyle = 0x7f0301df
 com.hanul.bteam:style/RtlOverlay.Widget.AppCompat.Search.DropDown.Icon2 = 0x7f110149
@@ -4434,10 +5003,14 @@ com.hanul.bteam:color/m3_ref_palette_tertiary30 = 0x7f050129
 com.hanul.bteam:attr/textureHeight = 0x7f030452
 com.hanul.bteam:attr/flow_verticalGap = 0x7f0301de
 com.hanul.bteam:attr/mock_labelColor = 0x7f030301
+<<<<<<< HEAD
 com.hanul.bteam:id/forever = 0x7f0800e2
+=======
+com.hanul.bteam:id/forever = 0x7f0800e1
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/m3_comp_checkbox_selected_disabled_container_opacity = 0x7f0600ef
 com.hanul.bteam:style/TextAppearance.M3.Sys.Typescale.LabelLarge = 0x7f1101cd
-com.hanul.bteam:drawable/mtrl_checkbox_button_unchecked_checked = 0x7f0700e7
+com.hanul.bteam:drawable/mtrl_checkbox_button_unchecked_checked = 0x7f0700e9
 com.hanul.bteam:style/Widget.Material3.MaterialCalendar.Year.Today = 0x7f110392
 com.hanul.bteam:attr/collapsingToolbarLayoutStyle = 0x7f0300ec
 com.hanul.bteam:anim/abc_tooltip_exit = 0x7f01000b
@@ -4455,7 +5028,11 @@ com.hanul.bteam:color/m3_dynamic_primary_text_disable_only = 0x7f05008d
 com.hanul.bteam:style/Base.TextAppearance.AppCompat.Tooltip = 0x7f11002f
 com.hanul.bteam:color/m3_primary_text_disable_only = 0x7f05009f
 com.hanul.bteam:id/search_view_edit_text = 0x7f0801a6
+<<<<<<< HEAD
 com.hanul.bteam:id/centerCrop = 0x7f080081
+=======
+com.hanul.bteam:id/centerCrop = 0x7f080080
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/motionEasingStandardInterpolator = 0x7f030320
 com.hanul.bteam:color/material_deep_teal_500 = 0x7f0501bd
 com.hanul.bteam:attr/labelStyle = 0x7f03024c
@@ -4479,7 +5056,11 @@ com.hanul.bteam:attr/layout_constraintWidth_default = 0x7f030287
 com.hanul.bteam:attr/tabSelectedTextAppearance = 0x7f030409
 com.hanul.bteam:attr/fastScrollHorizontalThumbDrawable = 0x7f0301ba
 com.hanul.bteam:id/action_menu_divider = 0x7f080042
+<<<<<<< HEAD
 com.hanul.bteam:id/date_picker_actions = 0x7f0800a7
+=======
+com.hanul.bteam:id/date_picker_actions = 0x7f0800a6
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/uiMapToolbar = 0x7f03049e
 com.hanul.bteam:dimen/m3_datepicker_elevation = 0x7f060155
 com.hanul.bteam:style/Theme.AppCompat = 0x7f1101fc
@@ -4543,8 +5124,6 @@ com.hanul.bteam:attr/carousel_firstView = 0x7f03009f
 com.hanul.bteam:attr/colorOnTertiaryContainer = 0x7f030105
 com.hanul.bteam:attr/errorTextAppearance = 0x7f03019b
 com.hanul.bteam:color/m3_ref_palette_dynamic_neutral_variant95 = 0x7f0500bb
-com.hanul.bteam:layout/notification_template_custom_big = 0x7f0b0073
-com.hanul.bteam:dimen/m3_comp_extended_fab_primary_hover_state_layer_opacity = 0x7f0600f9
 com.hanul.bteam:dimen/abc_dialog_fixed_height_major = 0x7f06001c
 com.hanul.bteam:attr/layout_constraintBaseline_toTopOf = 0x7f030262
 com.hanul.bteam:dimen/mtrl_calendar_bottom_padding = 0x7f060216
@@ -4606,7 +5185,7 @@ com.hanul.bteam:string/material_clock_toggle_content_description = 0x7f10004f
 com.hanul.bteam:attr/setsTag = 0x7f030398
 com.hanul.bteam:style/Base.Widget.Material3.CompoundButton.CheckBox = 0x7f1100fd
 com.hanul.bteam:dimen/abc_action_bar_content_inset_material = 0x7f060000
-com.hanul.bteam:drawable/material_ic_keyboard_arrow_previous_black_24dp = 0x7f0700d8
+com.hanul.bteam:drawable/material_ic_keyboard_arrow_previous_black_24dp = 0x7f0700da
 com.hanul.bteam:color/error_color_material_light = 0x7f050064
 com.hanul.bteam:dimen/mtrl_badge_toolbar_action_menu_item_horizontal_offset = 0x7f0601f2
 com.hanul.bteam:drawable/chi_ak_san = 0x7f070084
@@ -4617,7 +5196,11 @@ com.hanul.bteam:dimen/m3_alert_dialog_title_bottom_margin = 0x7f0600a3
 com.hanul.bteam:attr/drawableStartCompat = 0x7f030174
 com.hanul.bteam:attr/path_percent = 0x7f030358
 com.hanul.bteam:dimen/mtrl_btn_padding_left = 0x7f060208
+<<<<<<< HEAD
 com.hanul.bteam:id/image = 0x7f0800fc
+=======
+com.hanul.bteam:id/image = 0x7f0800fb
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:dimen/material_emphasis_disabled_background = 0x7f0601d5
 com.hanul.bteam:id/navigation_bar_item_icon_view = 0x7f080154
 com.hanul.bteam:attr/coplanarSiblingViewId = 0x7f030134
@@ -4656,7 +5239,11 @@ com.hanul.bteam:anim/fragment_fast_out_extra_slow_in = 0x7f01001c
 com.hanul.bteam:id/bounce = 0x7f080065
 com.hanul.bteam:attr/dialogCornerRadius = 0x7f03015f
 com.hanul.bteam:drawable/g_ak = 0x7f0700a3
+<<<<<<< HEAD
 com.hanul.bteam:id/graph_wrap = 0x7f0800eb
+=======
+com.hanul.bteam:id/graph_wrap = 0x7f0800ea
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:style/ShapeAppearance.M3.Sys.Shape.Corner.Full = 0x7f11015b
 com.hanul.bteam:color/abc_hint_foreground_material_light = 0x7f050008
 com.hanul.bteam:dimen/notification_large_icon_height = 0x7f0602af
@@ -4672,7 +5259,7 @@ com.hanul.bteam:macro/m3_comp_outlined_text_field_error_trailing_icon_color = 0x
 com.hanul.bteam:attr/dayStyle = 0x7f030155
 com.hanul.bteam:style/Widget.Material3.BottomAppBar = 0x7f110330
 com.hanul.bteam:style/TextAppearance.AppCompat.Light.SearchResult.Title = 0x7f110192
-com.hanul.bteam:drawable/notification_tile_bg = 0x7f07011d
+com.hanul.bteam:drawable/notification_tile_bg = 0x7f07011f
 com.hanul.bteam:dimen/design_navigation_max_width = 0x7f06007b
 com.hanul.bteam:attr/SharedValueId = 0x7f030001
 com.hanul.bteam:attr/listPreferredItemPaddingEnd = 0x7f0302af
@@ -4800,7 +5387,11 @@ com.hanul.bteam:attr/chipMinHeight = 0x7f0300c1
 com.hanul.bteam:style/Widget.MaterialComponents.AppBarLayout.Surface = 0x7f1103ce
 com.hanul.bteam:attr/dividerHorizontal = 0x7f030165
 com.hanul.bteam:attr/colorSecondaryVariant = 0x7f030111
+<<<<<<< HEAD
 com.hanul.bteam:id/continuousVelocity = 0x7f08009a
+=======
+com.hanul.bteam:id/continuousVelocity = 0x7f080099
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/suffixTextColor = 0x7f0303ec
 com.hanul.bteam:attr/buttonBarButtonStyle = 0x7f03007d
 com.hanul.bteam:styleable/Motion = 0x7f120064
@@ -4837,15 +5428,15 @@ com.hanul.bteam:attr/contentPaddingRight = 0x7f03012d
 com.hanul.bteam:attr/dividerInsetStart = 0x7f030167
 com.hanul.bteam:attr/materialDisplayDividerStyle = 0x7f0302dc
 com.hanul.bteam:id/SYM = 0x7f08000e
-com.hanul.bteam:drawable/mirg = 0x7f0700dc
+com.hanul.bteam:drawable/mirg = 0x7f0700de
 com.hanul.bteam:attr/layout_constraintTag = 0x7f03027f
-com.hanul.bteam:drawable/namsan1 = 0x7f070110
+com.hanul.bteam:drawable/namsan1 = 0x7f070112
 com.hanul.bteam:animator/fragment_open_exit = 0x7f020008
 com.hanul.bteam:color/m3_sys_color_dark_inverse_on_surface = 0x7f05013e
 com.hanul.bteam:attr/warmth = 0x7f0304b4
 com.hanul.bteam:attr/itemTextAppearance = 0x7f030242
 com.hanul.bteam:dimen/m3_sys_motion_easing_standard_control_y2 = 0x7f0601b7
-com.hanul.bteam:drawable/mtrl_tabs_default_indicator = 0x7f070101
+com.hanul.bteam:drawable/mtrl_tabs_default_indicator = 0x7f070103
 com.hanul.bteam:attr/layout_constraintLeft_toRightOf = 0x7f030279
 com.hanul.bteam:style/Widget.Material3.CompoundButton.Switch = 0x7f110364
 com.hanul.bteam:anim/btn_checkbox_to_unchecked_box_inner_merged_animation = 0x7f01000f
@@ -4962,7 +5553,7 @@ com.hanul.bteam:attr/checkedState = 0x7f0300b6
 com.hanul.bteam:attr/autoSizeTextType = 0x7f030043
 com.hanul.bteam:anim/m3_side_sheet_slide_out = 0x7f010026
 com.hanul.bteam:style/Base.MaterialAlertDialog.MaterialComponents.Title.Panel = 0x7f110012
-com.hanul.bteam:drawable/namsan2 = 0x7f070111
+com.hanul.bteam:drawable/namsan2 = 0x7f070113
 com.hanul.bteam:styleable/ViewTransition = 0x7f12009a
 com.hanul.bteam:animator/design_fab_hide_motion_spec = 0x7f020001
 com.hanul.bteam:attr/toggleCheckedStateOnClick = 0x7f03047a
@@ -4981,7 +5572,11 @@ com.hanul.bteam:drawable/abc_ratingbar_small_material = 0x7f07005d
 com.hanul.bteam:dimen/m3_ripple_pressed_alpha = 0x7f06017a
 com.hanul.bteam:attr/collapsedTitleTextColor = 0x7f0300e7
 com.hanul.bteam:id/material_textinput_timepicker = 0x7f080128
+<<<<<<< HEAD
 com.hanul.bteam:drawable/notification_bg_normal_pressed = 0x7f070119
+=======
+com.hanul.bteam:drawable/notification_bg_normal_pressed = 0x7f07011b
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/counterTextColor = 0x7f030145
 com.hanul.bteam:styleable/LinearProgressIndicator = 0x7f12004a
 com.hanul.bteam:color/m3_ref_palette_dynamic_tertiary80 = 0x7f0500e0
@@ -4991,7 +5586,11 @@ com.hanul.bteam:dimen/m3_sys_motion_easing_standard_accelerate_control_y1 = 0x7f
 com.hanul.bteam:attr/autoSizePresetSizes = 0x7f030041
 com.hanul.bteam:attr/buttonBarNegativeButtonStyle = 0x7f03007e
 com.hanul.bteam:color/design_default_color_on_surface = 0x7f05004e
+<<<<<<< HEAD
 com.hanul.bteam:id/compress = 0x7f080092
+=======
+com.hanul.bteam:id/compress = 0x7f080091
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:color/cardview_shadow_end_color = 0x7f05002c
 com.hanul.bteam:attr/blendSrc = 0x7f030066
 com.hanul.bteam:style/Widget.MaterialComponents.TimePicker.Display.Divider = 0x7f11043a
@@ -5075,7 +5674,7 @@ com.hanul.bteam:style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle = 0x7f110
 com.hanul.bteam:attr/buttonBarNeutralButtonStyle = 0x7f03007f
 com.hanul.bteam:dimen/mtrl_slider_widget_height = 0x7f06028f
 com.hanul.bteam:string/mtrl_chip_close_icon_content_description = 0x7f100070
-com.hanul.bteam:drawable/mtrl_navigation_bar_item_background = 0x7f0700f2
+com.hanul.bteam:drawable/mtrl_navigation_bar_item_background = 0x7f0700f4
 com.hanul.bteam:style/Widget.Material3.TextInputLayout.FilledBox = 0x7f1103bb
 com.hanul.bteam:style/ShapeAppearance.Material3.Corner.Medium = 0x7f110164
 com.hanul.bteam:dimen/mtrl_btn_padding_right = 0x7f060209
@@ -5139,7 +5738,7 @@ com.hanul.bteam:dimen/mtrl_calendar_selection_text_baseline_to_bottom = 0x7f0602
 com.hanul.bteam:dimen/m3_menu_elevation = 0x7f060163
 com.hanul.bteam:attr/expandedTitleMarginStart = 0x7f0301a4
 com.hanul.bteam:color/m3_ref_palette_dynamic_neutral90 = 0x7f0500ad
-com.hanul.bteam:drawable/notification_icon_background = 0x7f07011a
+com.hanul.bteam:drawable/notification_icon_background = 0x7f07011c
 com.hanul.bteam:color/m3_ref_palette_dynamic_primary100 = 0x7f0500bf
 com.hanul.bteam:style/Widget.MaterialComponents.MaterialCalendar.DayTextView = 0x7f110403
 com.hanul.bteam:attr/layout_constraintWidth = 0x7f030286
@@ -5158,7 +5757,11 @@ com.hanul.bteam:attr/tabTextColor = 0x7f03040d
 com.hanul.bteam:attr/autoSizeMaxTextSize = 0x7f03003f
 com.hanul.bteam:styleable/FontFamilyFont = 0x7f120037
 com.hanul.bteam:style/Widget.Material3.MaterialCalendar.Day.Selected = 0x7f110380
+<<<<<<< HEAD
 com.hanul.bteam:id/fade = 0x7f0800d3
+=======
+com.hanul.bteam:id/fade = 0x7f0800d2
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/actionModeShareDrawable = 0x7f03001c
 com.hanul.bteam:attr/fontProviderPackage = 0x7f0301e7
 com.hanul.bteam:dimen/notification_main_column_padding_top = 0x7f0602b1
@@ -5193,12 +5796,16 @@ com.hanul.bteam:color/androidx_core_ripple_material_light = 0x7f05001b
 com.hanul.bteam:bool/abc_config_actionMenuItemAllCaps = 0x7f040001
 com.hanul.bteam:attr/actionBarStyle = 0x7f030007
 com.hanul.bteam:color/m3_dark_hint_foreground = 0x7f050080
-com.hanul.bteam:drawable/naejang2 = 0x7f07010e
+com.hanul.bteam:drawable/naejang2 = 0x7f070110
 com.hanul.bteam:dimen/mtrl_calendar_day_corner = 0x7f060218
 com.hanul.bteam:attr/borderWidth = 0x7f030069
 com.hanul.bteam:id/FUNCTION = 0x7f080007
 com.hanul.bteam:attr/chipSurfaceColor = 0x7f0300cb
+<<<<<<< HEAD
 com.hanul.bteam:id/custom = 0x7f0800a2
+=======
+com.hanul.bteam:id/custom = 0x7f0800a1
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:layout/design_layout_tab_text = 0x7f0b002a
 com.hanul.bteam:dimen/item_touch_helper_swipe_escape_max_velocity = 0x7f06009b
 com.hanul.bteam:styleable/Tooltip = 0x7f120092
@@ -5292,7 +5899,7 @@ com.hanul.bteam:attr/textBackgroundZoom = 0x7f03043d
 com.hanul.bteam:drawable/abc_edit_text_material = 0x7f07003d
 com.hanul.bteam:attr/selectionRequired = 0x7f030396
 com.hanul.bteam:style/Widget.MaterialComponents.Button.TextButton.Snackbar = 0x7f1103e5
-com.hanul.bteam:drawable/m3_tabs_transparent_background = 0x7f0700d0
+com.hanul.bteam:drawable/m3_tabs_transparent_background = 0x7f0700d2
 com.hanul.bteam:string/mtrl_checkbox_button_icon_path_name = 0x7f100068
 com.hanul.bteam:attr/onCross = 0x7f03033e
 com.hanul.bteam:style/Base.ThemeOverlay.Material3.Dialog = 0x7f11007b
@@ -5342,6 +5949,7 @@ com.hanul.bteam:dimen/m3_navigation_rail_item_active_indicator_width = 0x7f06017
 com.hanul.bteam:id/startToEnd = 0x7f0801cf
 com.hanul.bteam:dimen/m3_badge_with_text_horizontal_offset = 0x7f0600af
 com.hanul.bteam:layout/notification_action = 0x7f0b0071
+<<<<<<< HEAD
 com.hanul.bteam:id/horizontal_only = 0x7f0800f4
 com.hanul.bteam:attr/backgroundInsetTop = 0x7f03004a
 com.hanul.bteam:attr/imagePanX = 0x7f030219
@@ -5349,6 +5957,15 @@ com.hanul.bteam:id/fill_vertical = 0x7f0800d8
 com.hanul.bteam:id/line3 = 0x7f08010f
 com.hanul.bteam:id/actionDownUp = 0x7f080035
 com.hanul.bteam:drawable/nae_jang_san1 = 0x7f07010c
+=======
+com.hanul.bteam:id/horizontal_only = 0x7f0800f3
+com.hanul.bteam:attr/backgroundInsetTop = 0x7f03004a
+com.hanul.bteam:attr/imagePanX = 0x7f030219
+com.hanul.bteam:id/fill_vertical = 0x7f0800d7
+com.hanul.bteam:id/line3 = 0x7f08010f
+com.hanul.bteam:id/actionDownUp = 0x7f080035
+com.hanul.bteam:drawable/nae_jang_san1 = 0x7f07010e
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:styleable/AppCompatImageView = 0x7f12000e
 com.hanul.bteam:color/m3_ref_palette_dynamic_primary30 = 0x7f0500c1
 com.hanul.bteam:animator/m3_btn_elevated_btn_state_list_anim = 0x7f020009
@@ -5371,7 +5988,11 @@ com.hanul.bteam:attr/triggerSlack = 0x7f03049b
 com.hanul.bteam:styleable/TextAppearance = 0x7f12008c
 com.hanul.bteam:attr/chipStrokeWidth = 0x7f0300c9
 com.hanul.bteam:style/Widget.Material3.MaterialCalendar.MonthNavigationButton = 0x7f11038e
+<<<<<<< HEAD
 com.hanul.bteam:id/chain2 = 0x7f080086
+=======
+com.hanul.bteam:id/chain2 = 0x7f080085
+>>>>>>> c42e45158138bed83e1e93c5942d6de183f2136a
 com.hanul.bteam:attr/viewTransitionMode = 0x7f0304ae
 com.hanul.bteam:dimen/abc_panel_menu_list_width = 0x7f060034
 com.hanul.bteam:style/Widget.MaterialComponents.NavigationRailView.Compact = 0x7f110419

@@ -119,6 +119,12 @@ public class GoneServiceImpl implements GoneService {
 		return dao.course_info(location_id);
 	}
 
+	@Override
+	public List<GoneVO> gone_willgo_list(String member_id) {
+		// TODO Auto-generated method stub
+		return dao.gone_willgo_list(member_id);
+	}
+
 	
 
 //	@Override

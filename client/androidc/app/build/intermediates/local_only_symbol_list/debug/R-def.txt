@@ -36,6 +36,8 @@ drawable image02
 drawable item_color
 drawable ji_ri_san
 drawable ji_ri_san1
+drawable jjim_heart
+drawable jjim_heart1
 drawable kakao_1
 drawable marker
 drawable mirg
@@ -87,7 +89,6 @@ id btn_modify
 id btn_questionsList
 id btn_write
 id button2
-id button3
 id contain
 id content
 id couname
@@ -97,6 +98,7 @@ id etAddress
 id filename
 id filepath
 id imageView
+id ivTrash
 id local_frag
 id locname
 id map
@@ -158,7 +160,8 @@ layout questions_1_view
 layout questions_2
 layout review_list
 layout search_frag
-layout willhave_frag
+layout willgo_frag
+layout willgoview
 menu menu_bottom
 mipmap ic_launcher
 mipmap ic_launcher_round

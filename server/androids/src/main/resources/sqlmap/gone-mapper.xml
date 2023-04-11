@@ -166,6 +166,14 @@ where location_id = #{location_id}
 order by id
 </select>
 
+<!-- 찜한산조회 -->
+<select id='willgo_list' resultType='gone.GoneVO'>
+select g.id,l.locname,l.filepath
+from gone g, location l
+where g.location_id=l.id and g.type='2' and g.member_id= #{member_id}
+order by g.gone_date
+</select>
+
 <!-- 지역정보 목록조회 -->
 <select id='loc_List' resultType='gone.GoneVO'>
 select g.*,(select locname from location where id=g.location_id) locname 
