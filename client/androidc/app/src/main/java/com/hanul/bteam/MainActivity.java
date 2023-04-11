@@ -24,6 +24,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,6 +34,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.hanul.bteam.COMMON.CommonMethod;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -60,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
     MarkerOptions myMarker;
     GoogleMap map;
     SupportMapFragment mapFragment;
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return CommonMethod.keyDisappear(this, this.getCurrentFocus());
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

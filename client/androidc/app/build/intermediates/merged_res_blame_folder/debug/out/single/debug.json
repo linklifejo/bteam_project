@@ -40,6 +40,10 @@
         "source": "com.hanul.bteam.app-main-35:/drawable/buk_han_san.jpg"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-33:/layout_searchview.xml.flat",
+        "source": "com.hanul.bteam.app-main-35:/layout/searchview.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-33:/drawable_do_bong_san1.xml.flat",
         "source": "com.hanul.bteam.app-main-35:/drawable/do_bong_san1.xml"
     },

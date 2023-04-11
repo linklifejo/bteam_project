@@ -16,7 +16,7 @@ import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.BoardrAdapter;
 import com.hanul.bteam.adapter.GoneAdapter;
-import com.hanul.bteam.adapter.LocalAdapter;
+import com.hanul.bteam.adapter.SearchAdapter;
 import com.hanul.bteam.dto.BoardDTO;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.LocationDTO;
@@ -29,7 +29,7 @@ import retrofit2.Response;
 
 public class LocalDFragment extends Fragment {
     RecyclerView recycler;
-    LocalAdapter adapter_local;
+    SearchAdapter adapter;
     MainActivity activity;
     ArrayList<LocationDTO> dtos;
     Bundle b;
@@ -68,10 +68,12 @@ public class LocalDFragment extends Fragment {
                     for(LocationDTO dto: dtos){
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
+                        dto.setId(dto.getId());
+
                     }
-                    adapter_local = new LocalAdapter(activity.getApplicationContext(), dtos,activity);
-                    recycler.setAdapter(adapter_local);
-                    adapter_local.notifyDataSetChanged();
+                    adapter = new SearchAdapter(activity.getApplicationContext(), dtos,activity);
+                    recycler.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
                 }
             }
             @Override
@@ -79,10 +81,10 @@ public class LocalDFragment extends Fragment {
             }
         });
 //         어댑터 객체 생성
-        adapter_local = new
-                LocalAdapter(activity.getApplicationContext(), dtos,activity);
+        adapter = new
+                SearchAdapter(activity.getApplicationContext(), dtos,activity);
 //        // 만든 어댑터를 리싸이클러뷰에 붙인다
-        recycler.setAdapter(adapter_local);
+        recycler.setAdapter(adapter);
         return view;
     }
 }

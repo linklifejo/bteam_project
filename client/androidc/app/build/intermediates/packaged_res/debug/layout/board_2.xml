@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/BoardTitle"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -62,8 +62,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <TextView
-        android:id="@+id/writersID"
+        android:id="@+id/memberid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -73,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BoardTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
 
     <TextView
@@ -87,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/writersID" />
+        app:layout_constraintTop_toBottomOf="@+id/memberid" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

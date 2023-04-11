@@ -18,6 +18,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.hanul.bteam.Board1;
+import com.hanul.bteam.BoardTwo;
+import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.BoardDTO;
@@ -75,9 +78,9 @@ public class BoardrAdapter extends
             public void onClick(View v) {
                 Bundle b = new Bundle();
                 b.putSerializable("dto", dto);
-//                activity.fragmentControl(new Detailmo(),b);
+                activity.fragmentControl(new BoardTwo(),b);
                 Toast.makeText(context,
-                        "산이름 : " + dto.getFilename(), Toast.LENGTH_SHORT).show();
+                        "산이름 : " + dto.getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -91,7 +94,7 @@ public class BoardrAdapter extends
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // singerview.xml 에서 사용된 모든 위젯을 정의한다
-        TextView filename;
+        TextView title;
         ImageView filepath;
         LinearLayout parentLayout;
 
@@ -99,13 +102,13 @@ public class BoardrAdapter extends
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             parentLayout = itemView.findViewById(R.id.parentLayout);
-            filename = itemView.findViewById(R.id.filename);
+            title = itemView.findViewById(R.id.title);
             filepath = itemView.findViewById(R.id.filepath);
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
         public void setDto(@NonNull BoardDTO dto) {
-            filename.setText(dto.getLocname());
+            title.setText(dto.getTitle());
             Glide.with(itemView).load(dto.getFilepath()).into(filepath);
         }
 

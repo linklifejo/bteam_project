@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.adapter.LocalAdapter;
+import com.hanul.bteam.adapter.SearchAdapter;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.LocationDTO;
 

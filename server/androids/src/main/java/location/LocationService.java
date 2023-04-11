@@ -10,4 +10,5 @@ public interface LocationService {
 	int location_update(LocationVO vo);		
 	int location_delete(int id); 	
 	List<LocationVO> location_list(String local);	
+	List<LocationVO> location_search_list(String search);	
 }

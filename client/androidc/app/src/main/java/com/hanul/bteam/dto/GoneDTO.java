@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class GoneDTO implements Serializable {
     private int id,readcnt, no, filecnt,location_id,course_id;
-    private String title, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath;
+    private String title, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath,name_desc;
     private Date gone_date;
     private List<GoneFileDTO> fileInfo;
     public GoneDTO() {
@@ -159,6 +159,14 @@ public class GoneDTO implements Serializable {
 
     public void setFilepath(String filepath) {
         this.filepath = filepath;
+    }
+
+    public String getName_desc() {
+        return name_desc;
+    }
+
+    public void setName_desc(String name_desc) {
+        this.name_desc = name_desc;
     }
 
     public Date getGone_date() {

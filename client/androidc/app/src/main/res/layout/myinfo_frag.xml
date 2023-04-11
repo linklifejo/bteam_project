@@ -104,7 +104,8 @@
         android:text="최근 가본 산"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/recycler1"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler2"
