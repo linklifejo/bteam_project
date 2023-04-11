@@ -116,21 +116,21 @@ public class WillGoAdapter extends
             public void onClick(View v) {
 
                 CommonMethod commonMethod = new CommonMethod();
-            //    commonMethod.setParams("gone_id",   b.getString("localcode"));
-                commonMethod.getData("selectLocal", new Callback<String>(){
+                GoneDTO dto = dtos.get(position);
+                commonMethod.setParams("gone_id",  dto.getId() + "");
+                commonMethod.getData("willGoDelete", new Callback<String>(){
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
 
                         if(response.isSuccessful()){
                             Gson gson = new Gson();
-                            dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<LocationDTO>>(){}.getType());
-                            for(LocationDTO dto: dtos){
-                                dto.setLocname(dto.getLocname());
-                                dto.setFilepath(dto.getFilepath());
-                            }
-                            adapter = new LocalAdapter(activity.getApplicationContext(), dtos,activity);
-                            recycler.setAdapter(adapter_local);
-                            adapter_local.notifyDataSetChanged();
+                            String d = gson.fromJson(response.body(), String.class);
+                            // dtos.remove(position);
+                            delDto(position);
+                            // 지우거나 추가하면 반드시 화면을 갱신시켜야 한다
+                            notifyDataSetChanged();
+                            Toast.makeText(activity,
+                                    d + "삭제..",Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
@@ -139,13 +139,7 @@ public class WillGoAdapter extends
                 });
 
 
-               // dtos.remove(position);
-                 delDto(position);
-                Toast.makeText(context,
-                        "찜삭제된 산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
 
-                // 지우거나 추가하면 반드시 화면을 갱신시켜야 한다
-                notifyDataSetChanged();
               //  showMessage(position);
             }
         });

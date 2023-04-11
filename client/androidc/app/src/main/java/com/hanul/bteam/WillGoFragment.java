@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +17,7 @@ import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.GoneAdapter;
 import com.hanul.bteam.adapter.LocalAdapter;
+import com.hanul.bteam.adapter.OnWillGoitemClickListener;
 import com.hanul.bteam.adapter.WillGoAdapter;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.LocationDTO;
@@ -26,7 +28,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class WillGoFragment extends Fragment {
+public class WillGoFragment extends Fragment implements OnWillGoitemClickListener {
     RecyclerView recycler;
     WillGoAdapter adapter;
     MainActivity activity;
@@ -78,6 +80,7 @@ public class WillGoFragment extends Fragment {
             public void onFailure(Call<String> call, Throwable t) {
             }
         });
+
 //         어댑터 객체 생성
         adapter = new
                 WillGoAdapter(activity.getApplicationContext(), dtos,activity);
@@ -85,5 +88,11 @@ public class WillGoFragment extends Fragment {
         recycler.setAdapter(adapter);
 
         return view;
+    }
+
+    @Override
+    public void onItemClick(WillGoAdapter.ViewHolder holderm, View view, int position) {
+        GoneDTO dto = adapter.getItem(position);
+        Toast.makeText(activity, "산이름ㅌㅌㅌ :" + dto.getLocname(), Toast.LENGTH_SHORT).show();
     }
 }
