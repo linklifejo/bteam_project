@@ -22,6 +22,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.Detailmo;
+import com.hanul.bteam.LocalDDFragment;
+import com.hanul.bteam.LocalDFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.GoneDTO;
@@ -102,9 +104,13 @@ public class WillGoAdapter extends
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Bundle b = new Bundle();
-//                b.putSerializable("dto",dto);
-//                activity.fragmentControl(new Detailmo(),b);
+                GoneDTO dto = dtos.get(position);
+                LocationDTO ld = new LocationDTO();
+                ld.setId(dto.getLocation_id());
+                Bundle b = new Bundle();
+                b.putSerializable("dto",ld);
+                activity.bundle = b;
+                activity.fragmentControl(new LocalDDFragment());
                 Toast.makeText(context,
                         "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
             }

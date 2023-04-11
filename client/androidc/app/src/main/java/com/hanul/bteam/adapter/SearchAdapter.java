@@ -3,6 +3,7 @@ package com.hanul.bteam.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -83,8 +84,10 @@ public class SearchAdapter extends
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                activity.bundle.putSerializable("dto",dto);
+                Bundle b = new Bundle();
+                LocationDTO dto = dtos.get(position);
+                b.putSerializable("dto",dto);
+                activity.bundle = b;
                 activity.fragmentControl(new LocalDDFragment());
                 Toast.makeText(context,
                         "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
