@@ -129,6 +129,22 @@ public class GoneDTO implements Serializable {
         this.gone_time = gone_time;
     }
 
+    public Date getGone_date() {
+        return gone_date;
+    }
+
+    public void setGone_date(Date gone_date) {
+        this.gone_date = gone_date;
+    }
+
+    public List<GoneFileDTO> getFileInfo() {
+        return fileInfo;
+    }
+
+    public void setFileInfo(List<GoneFileDTO> fileInfo) {
+        this.fileInfo = fileInfo;
+    }
+
     public String getOut_time() {
         return out_time;
     }
@@ -159,21 +175,5 @@ public class GoneDTO implements Serializable {
 
     public void setFilepath(String filepath) {
         this.filepath = filepath;
-    }
-
-    public Date getGone_date() {
-        return gone_date;
-    }
-
-    public void setGone_date(Date gone_date) {
-        this.gone_date = gone_date;
-    }
-
-    public List<GoneFileDTO> getFileInfo() {
-        return fileInfo;
-    }
-
-    public void setFileInfo(List<GoneFileDTO> fileInfo) {
-        this.fileInfo = fileInfo;
     }
 }

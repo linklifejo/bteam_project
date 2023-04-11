@@ -22,7 +22,7 @@
             android:weightSum="30">
 
             <TextView
-                android:id="@+id/filename"
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="304dp"
                 android:layout_weight="25"

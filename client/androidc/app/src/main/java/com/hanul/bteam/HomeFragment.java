@@ -117,7 +117,7 @@ public class HomeFragment extends Fragment {
                     Gson gson = new Gson();
                     dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<BoardDTO>>(){}.getType());
                     for(BoardDTO dto: dtos){
-                        dto.setLocname(dto.getLocname());
+                        dto.setTitle(dto.getTitle());
                         dto.setFilepath(dto.getFilepath());
                     }
                     adapter = new BoardrAdapter(activity.getApplicationContext(), dtos,activity);

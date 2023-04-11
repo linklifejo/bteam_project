@@ -19,7 +19,9 @@ import com.hanul.bteam.dto.BoardDTO;
 import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.GoneDTO;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class BoardOneAdapter extends
         RecyclerView.Adapter<BoardOneAdapter.ViewHolder>{
@@ -28,6 +30,7 @@ public class BoardOneAdapter extends
     MainActivity activity;
     // 화면을 붙이기 위한 객체 생성
     LayoutInflater inflater;
+
 
     public BoardOneAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
         this.activity = a;
@@ -64,7 +67,7 @@ public class BoardOneAdapter extends
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // singerview.xml 에서 사용된 모든 위젯을 정의한다
-        TextView title,member_id,gonedate;
+        TextView title,member_id,gonetime;
         LinearLayout parentLayout;
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
@@ -72,7 +75,7 @@ public class BoardOneAdapter extends
             super(itemView);
             parentLayout = itemView.findViewById(R.id.parentLayout);
             member_id = itemView.findViewById(R.id.memberid);
-            gonedate = itemView.findViewById(R.id.gonedate);
+            gonetime = itemView.findViewById(R.id.gonetime);
             title = itemView.findViewById(R.id.title);
         }
 
@@ -80,7 +83,7 @@ public class BoardOneAdapter extends
         public void setDto(@NonNull GoneDTO dto) {
             title.setText(dto.getTitle());
             member_id.setText(dto.getMember_id());
-            gonedate.setText((CharSequence) dto.getGone_date());
+            gonetime.setText(dto.getGone_time());
 
         }
     }
