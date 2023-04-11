@@ -83,6 +83,7 @@ public class HomeFragment extends Fragment {
                     for(GoneDTO dto: dtos_re){
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
+                        dto.setName_desc(dto.getName_desc());
                     }
                     adapter_re = new GoneAdapter(activity.getApplicationContext(), dtos_re,activity);
                     recyclerView.setAdapter(adapter_re);
