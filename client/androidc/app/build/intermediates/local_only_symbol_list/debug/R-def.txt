@@ -70,7 +70,6 @@ drawable trash
 id BoardName
 id BoardSearch
 id BoardTitle
-id Title
 id bottom_navi
 id btn1
 id btnChung
@@ -95,10 +94,13 @@ id couname
 id course
 id danger
 id etAddress
+<<<<<<< HEAD
 id evSearch
 id filename
+=======
+>>>>>>> 5d22c62ef26e387c2863b7f9426775772238e14c
 id filepath
-id gonedate
+id gonetime
 id imageView
 id ivTrash
 id local_frag

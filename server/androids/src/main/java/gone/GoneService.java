@@ -34,5 +34,6 @@ public interface GoneService {
 	// 게시판에 올린사진 인기순
 	List<HomeVO> homeList(HashMap<String, Object> vo);
 	List<GoneVO> gone_willgo_list(String member_id); //방명록 목록 조회
+	List<GoneVO> bolist();
 
 }

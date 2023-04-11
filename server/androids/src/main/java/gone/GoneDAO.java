@@ -147,6 +147,12 @@ public class GoneDAO implements GoneService {
 		return sql.selectList("go.willgo_list",member_id);
 	}
 
+	@Override
+	public List<GoneVO> bolist() {
+		// TODO Auto-generated method stub
+		return sql.selectList("go.bolist");
+	}
+
 
 
 //	@Override
