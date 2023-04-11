@@ -105,12 +105,33 @@ public class WillGoAdapter extends
             @Override
             public void onClick(View v) {
                 GoneDTO dto = dtos.get(position);
-                LocationDTO ld = new LocationDTO();
-                ld.setId(dto.getLocation_id());
-                Bundle b = new Bundle();
-                b.putSerializable("dto",ld);
-                activity.bundle = b;
-                activity.fragmentControl(new LocalDDFragment());
+                Toast.makeText(context,
+                        "gone location_id : " + dto.getLocation_id(), Toast.LENGTH_SHORT).show();
+                CommonMethod commonMethod = new CommonMethod();
+                Integer id = dto.getLocation_id();
+                commonMethod.setParams("id",  id.toString());
+                commonMethod.getData("oneLocation", new Callback<String>(){
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+
+//                        if(response.isSuccessful()){
+//                            Gson gson = new Gson();
+//                            LocationDTO dto = gson.fromJson(response.body(), LocationDTO.class);
+//                            Bundle b = new Bundle();
+//                            b.putSerializable("dto",dto);
+//                            activity.bundle = b;
+//                            activity.fragmentControl(new LocalDDFragment());
+//                        }
+                    }
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                    }
+                });
+
+
+
+
+
                 Toast.makeText(context,
                         "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
             }

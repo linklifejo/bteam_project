@@ -106,4 +106,13 @@ public class LocationController {
 		Gson gson = new Gson();
 		return gson.toJson( (ArrayList<LocationVO>)list );		
 	}
+	// 산 정보검색
+	@ResponseBody @RequestMapping(value="/oneLocation", produces="text/plain; charset=utf-8" )
+	public String oneLocation(HttpServletRequest req, Model model) {
+		
+		Integer id = Integer.valueOf(req.getParameter("id")) ;
+		LocationVO vo = service.location_info(id);
+		Gson gson = new Gson();
+		return gson.toJson( (LocationVO)vo );		
+	}
 }

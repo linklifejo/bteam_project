@@ -70,6 +70,8 @@ public class WillGoFragment extends Fragment implements OnWillGoitemClickListene
                     for(GoneDTO dto: dtos){
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
+                        dto.setLocation_id(dto.getLocation_id());
+                        dto.setId(dto.getId());
                     }
                     adapter = new WillGoAdapter(activity.getApplicationContext(), dtos,activity);
                     recycler.setAdapter(adapter);

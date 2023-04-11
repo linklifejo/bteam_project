@@ -94,11 +94,7 @@ id couname
 id course
 id danger
 id etAddress
-<<<<<<< HEAD
 id evSearch
-id filename
-=======
->>>>>>> 5d22c62ef26e387c2863b7f9426775772238e14c
 id filepath
 id gonetime
 id imageView

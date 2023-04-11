@@ -68,6 +68,8 @@ public class LocalDFragment extends Fragment {
                     for(LocationDTO dto: dtos){
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
+                        dto.setId(dto.getId());
+
                     }
                     adapter = new SearchAdapter(activity.getApplicationContext(), dtos,activity);
                     recycler.setAdapter(adapter);
