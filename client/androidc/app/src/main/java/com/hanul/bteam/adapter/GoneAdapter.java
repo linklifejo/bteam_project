@@ -151,13 +151,13 @@ public class GoneAdapter extends
                                 String d = gson.fromJson(response.body(), String.class);
 
                                 Toast.makeText(activity,
-                                        "찜되었씁니다!!!" + d ,Toast.LENGTH_SHORT).show();
+                                        "" + d ,Toast.LENGTH_SHORT).show();
 //                            //로그인 후 메인 화면을 보여준다
 
 
                             }else {
                                 Toast.makeText(activity,
-                                        "이미 존재합니다;;",Toast.LENGTH_SHORT).show();
+                                        "실패;;",Toast.LENGTH_SHORT).show();
 
                             }
                         }

@@ -65,6 +65,11 @@ public class WillgoServiceImpl implements WillgoService {
 		// TODO Auto-generated method stub
 		return dao.gone_info(id);
 	}
+	@Override
+	public WillgoVO willgo_info(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		return dao.willgo_info(map);
+	}
 
 
 

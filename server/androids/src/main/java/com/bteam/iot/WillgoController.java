@@ -103,26 +103,31 @@ public class WillgoController {
 		map.put("wtype", wtype);
 		map.put("member_id", member_id);
 		map.put("refid", refid);
+		WillgoVO vo =(WillgoVO) service.willgo_info(map);
+		if(vo != null) 	return "존재합니다";
 		
-		if(wtype == "2") {
-			LocationVO lo = service.location_info(refid);
-			map.put("filepath", lo.getFilename());
-			map.put("locname", lo.getLocname());
-		}
-		else {
-			GoneFileVO file = service.gone_file_info(refid);
-			if(file != null) map.put("filepath", file.getFilename());
-			
-			GoneVO go = service.gone_info(refid);
-			if(go != null) {
-				LocationVO lo = service.location_info(go.getLocation_id());
-				if(lo != null) 	map.put("locname", lo.getLocname());
+			if(wtype == "2") {
+				LocationVO lo = service.location_info(refid);
+				map.put("filepath", lo.getFilepath());
+				map.put("locname", lo.getLocname());
+			}
+			else {
+				GoneFileVO file = service.gone_file_info(refid);
+				if(file != null) map.put("filepath", file.getFilepath());
+				
+				GoneVO go = (GoneVO)service.gone_info(refid);
+				if(go != null) {
+					LocationVO loc = (LocationVO)service.location_info(go.getLocation_id());
+					if(loc != null) 	map.put("locname", loc.getLocname());
+					
+				}
 				
 			}
 			
+			return service.willgo_insert(map) == 1 ? "찜성공" : "찜실패";
 		}
-		return service.willgo_insert(map) == 1 ? "성공" : "실패";
-	}
+		
+
 	
 
 	
@@ -141,6 +146,6 @@ public class WillgoController {
 	public String willGoDelete(HttpServletRequest req, Model model) {
 	
 		Integer id = Integer.valueOf(req.getParameter("id")) ;
-		return service.willgo_delete(id) != 1 ? "성공" : "실패";
+		return service.willgo_delete(id) == 1 ? "성공" : "실패";
 	}
 }

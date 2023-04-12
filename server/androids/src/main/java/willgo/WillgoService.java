@@ -13,6 +13,7 @@ public interface WillgoService {
 	int willgo_insert(WillgoVO vo);		
 	List<WillgoVO> willgo_list();	
 	WillgoVO willgo_info(int id);		
+	WillgoVO willgo_info(HashMap<String, Object> map);	
 	int willgo_update(WillgoVO vo);		
 	int willgo_delete(int id); 	
 	List<WillgoVO> willgo_list(String member_id);	

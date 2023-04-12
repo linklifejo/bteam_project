@@ -6,7 +6,7 @@
 
 <!-- 찜 정보등록 -->
 <insert id='insert'>
-insert into willgo( refid, wtype, member_id,locname,filepath)
+insert into willgo( refid, wtype, member_id, locname, filepath)
 values (#{refid}, #{wtype}, #{member_id}, #{locname}, #{filepath})
 </insert>
 
@@ -40,7 +40,13 @@ from willgo
 where member_id= #{member_id} 
  order by willdate
 </select>
-
+<!-- 찜 회원별 타입별 조회 -->
+<select id='willgo_info' resultType='willgo.WillgoVO'>
+select *
+from willgo
+where member_id= #{member_id} and wtype= #{wtype} and refid= #{refid}
+ order by willdate
+</select>
 
 <!-- 선택한 방명록 첨부파일 조회 -->
 <select id='file_Info' resultType='gone.GoneFileVO'>

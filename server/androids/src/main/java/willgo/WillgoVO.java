@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter @Setter
 public class WillgoVO {
 	private int id,refid;
-	private String wtype, member_id;
+	private String wtype, member_id,locname,filepath;
 	private Date willdate;
 
 }

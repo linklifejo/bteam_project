@@ -21,6 +21,7 @@ import com.hanul.bteam.adapter.OnWillGoitemClickListener;
 import com.hanul.bteam.adapter.WillGoAdapter;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.LocationDTO;
+import com.hanul.bteam.dto.WillgoDTO;
 
 import java.util.ArrayList;
 
@@ -32,7 +33,7 @@ public class WillGoFragment extends Fragment implements OnWillGoitemClickListene
     RecyclerView recycler;
     WillGoAdapter adapter;
     MainActivity activity;
-    ArrayList<GoneDTO> dtos;
+    ArrayList<WillgoDTO> dtos;
     Bundle b;
     @Nullable
     @Override
@@ -66,11 +67,12 @@ public class WillGoFragment extends Fragment implements OnWillGoitemClickListene
 
                 if(response.isSuccessful()){
                     Gson gson = new Gson();
-                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
-                    for(GoneDTO dto: dtos){
+                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<WillgoDTO>>(){}.getType());
+                    for(WillgoDTO dto: dtos){
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
-                        dto.setLocation_id(dto.getLocation_id());
+                        dto.setRefid(dto.getRefid());
+                        dto.setWtype(dto.getWtype());
                         dto.setId(dto.getId());
                     }
                     adapter = new WillGoAdapter(activity.getApplicationContext(), dtos,activity);
@@ -94,7 +96,7 @@ public class WillGoFragment extends Fragment implements OnWillGoitemClickListene
 
     @Override
     public void onItemClick(WillGoAdapter.ViewHolder holderm, View view, int position) {
-        GoneDTO dto = adapter.getItem(position);
+        WillgoDTO dto = adapter.getItem(position);
 
         Toast.makeText(activity, "산이름ㅌㅌㅌ :" + dto.getLocname(), Toast.LENGTH_SHORT).show();
     }

@@ -63,7 +63,12 @@ public class WillgoDAO implements WillgoService {
 	@Override
 	public GoneVO gone_info(int id) {
 		// TODO Auto-generated method stub
-		return sql.selectOne("wi.gone_Info", id);
+		return sql.selectOne("wi.gone_info", id);
+	}
+	@Override
+	public WillgoVO willgo_info(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("wi.willgo_info", map);
 	}
 
 
