@@ -41,6 +41,7 @@ public class GoneAdapter extends
     ArrayList<GoneDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
+    GoneDTO dto;
 
     // 생성자로 메인에서 넘겨받은것들을 연결
     public GoneAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
@@ -81,7 +82,7 @@ public class GoneAdapter extends
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d(TAG, "onBindViewHolder: " + position);
         // dtos에 있는 데이터를 각각 불러온다
-        GoneDTO dto = dtos.get(position);
+        dto = dtos.get(position);
         // 불러온 데이터를 ViewHolder에 만들어 놓은 setDto를
         // 사용하여 데이터를 셋팅시킨다
         holder.setDto(dto);
@@ -92,6 +93,7 @@ public class GoneAdapter extends
             public void onClick(View v) {
                 Bundle b = new Bundle();
                 b.putSerializable("dto",dto);
+                activity.bundle = b;
                 activity.fragmentControl(new Detailmo(),b);
                 Toast.makeText(context,
                         "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
@@ -125,16 +127,17 @@ public class GoneAdapter extends
             itemView.findViewById(R.id.btnWillGo).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Bundle  b = activity.bundle;
+
+//                    Bundle  b = activity.bundle;
+//                    GoneDTO dto =(GoneDTO) b.getSerializable("dto");
+//                    Integer id = dto.getId();
                     CommonMethod commonMethod = new CommonMethod();
-                    commonMethod.setParams("type", "2");
-                    commonMethod.setParams("title", "찜한산");
-                    commonMethod.setParams("content", "찜한산");
+                    commonMethod.setParams("wtype", "1");
+                //    commonMethod.setParams("refid", id.toString());
+
+                    commonMethod.setParams("refid", "1");
                     commonMethod.setParams("member_id", activity.loginid);
-                   // commonMethod.setParams("loccode",b.getString("localcode"));
-                    commonMethod.setParams("loccode","localcode");
-                    commonMethod.setParams("location_id",activity.location);
-                    commonMethod.getData("localGo", new Callback<String>() {
+                    commonMethod.getData("willGoIn", new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
                             if(response.isSuccessful()){
@@ -145,7 +148,7 @@ public class GoneAdapter extends
                                 String d = gson.fromJson(response.body(), String.class);
 
                                 Toast.makeText(activity,
-                                        d + "찜입니다!!!",Toast.LENGTH_SHORT).show();
+                                        "찜되었씁니다!!!" + d ,Toast.LENGTH_SHORT).show();
 //                            //로그인 후 메인 화면을 보여준다
 
 

@@ -65,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
     GoogleMap map;
     SupportMapFragment mapFragment;
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return CommonMethod.keyDisappear(this, this.getCurrentFocus());
-    }
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        return CommonMethod.keyDisappear(this, this.getCurrentFocus());
+//    }
 
 
 

@@ -308,7 +308,7 @@ public class GoneController {
 		Gson gson = new Gson();
 		return gson.toJson( (ArrayList<GoneVO>)list );	
 	}
-	
+
 	@ResponseBody @RequestMapping(value="/bolist", produces="text/plain; charset=utf-8" )
 	public String bolist(HttpServletRequest req, Model model) {	
 
