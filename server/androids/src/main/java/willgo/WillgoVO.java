@@ -9,6 +9,6 @@ import lombok.Setter;
 public class WillgoVO {
 	private int id,refid;
 	private String wtype, member_id;
-	private Date will_date;
+	private Date willdate;
 
 }

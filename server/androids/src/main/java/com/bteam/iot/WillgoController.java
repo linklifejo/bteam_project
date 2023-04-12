@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import gone.GoneFileVO;
 import gone.GoneVO;
 import gone.HomeVO;
+import location.LocationVO;
 import willgo.WillgoServiceImpl;
 import willgo.WillgoVO;
 import willgo.WillgoServiceImpl;
@@ -101,11 +103,43 @@ public class WillgoController {
 		map.put("wtype", wtype);
 		map.put("member_id", member_id);
 		map.put("refid", refid);
+		
+		if(wtype == "2") {
+			LocationVO lo = service.location_info(refid);
+			map.put("filepath", lo.getFilename());
+			map.put("locname", lo.getLocname());
+		}
+		else {
+			GoneFileVO file = service.gone_file_info(refid);
+			if(file != null) map.put("filepath", file.getFilename());
+			
+			GoneVO go = service.gone_info(refid);
+			if(go != null) {
+				LocationVO lo = service.location_info(go.getLocation_id());
+				if(lo != null) 	map.put("locname", lo.getLocname());
+				
+			}
+			
+		}
 		return service.willgo_insert(map) == 1 ? "성공" : "실패";
 	}
 	
-	@ResponseBody @RequestMapping(value="/willGoDel", produces="text/plain; charset=utf-8" )
-	public String willGoDel(HttpServletRequest req, Model model) {
+
+	
+	@ResponseBody @RequestMapping(value="/willGo", produces="text/plain; charset=utf-8" )
+	public String willGo(HttpServletRequest req, Model model) {
+		String member_id = (String) req.getParameter("member_id");		
+
+		ArrayList<WillgoVO> list = (ArrayList<WillgoVO>)service.willgo_list(member_id);
+		
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<WillgoVO>)list );	
+	}
+	
+	
+	@ResponseBody @RequestMapping(value="/willGoDelete", produces="text/plain; charset=utf-8" )
+	public String willGoDelete(HttpServletRequest req, Model model) {
+	
 		Integer id = Integer.valueOf(req.getParameter("id")) ;
 		return service.willgo_delete(id) != 1 ? "성공" : "실패";
 	}

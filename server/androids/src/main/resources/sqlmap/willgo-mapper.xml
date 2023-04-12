@@ -6,8 +6,8 @@
 
 <!-- 찜 정보등록 -->
 <insert id='insert'>
-insert into willgo( refid, wtype, member_id)
-values (#{refid}, #{wtype}, #{member_id})
+insert into willgo( refid, wtype, member_id,locname,filepath)
+values (#{refid}, #{wtype}, #{member_id}, #{locname}, #{filepath})
 </insert>
 
 <!-- 찜 정보 수정 -->
@@ -25,21 +25,34 @@ delete from willgo where id = #{id}
 <!-- 찜 정보 조회 -->
 <select id='info' resultType='willgo.WillgoVO'>
 select * from willgo where id = #{id}
-order by will_date
+order by willdate
 </select>
 
 
 <!-- 찜 전체정보 조회 -->
 <select id='list' resultType='willgo.WillgoVO'>
-select * from willgo order by will_date
+select * from willgo order by willdate
 </select>
 <!-- 찜 회원별 타입별 조회 -->
-<select id='member_wtype_list' resultType='willgo.WillgoVO'>
+<select id='member_list' resultType='willgo.WillgoVO'>
 select *
 from willgo
-where wype= #{wtype} and member_id= #{member_id}
- order by will_date
+where member_id= #{member_id} 
+ order by willdate
 </select>
 
+
+<!-- 선택한 방명록 첨부파일 조회 -->
+<select id='file_Info' resultType='gone.GoneFileVO'>
+select * from gone_file where gone_id = #{gone_id}
+</select>
+<!-- 산정보 정보조회 -->
+<select id='location_info' resultType='location.LocationVO'>
+select * from location where id = #{id}
+</select>
+<!-- 산정보 정보조회 -->
+<select id='gone_info' resultType='gone.GoneVO'>
+select * from gone where id = #{id}
+</select>
 
 </mapper>  

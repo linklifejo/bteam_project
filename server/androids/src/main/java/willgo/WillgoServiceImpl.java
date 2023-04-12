@@ -3,8 +3,14 @@ package willgo;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.tools.DocumentationTool.Location;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import gone.GoneFileVO;
+import gone.GoneVO;
+import location.LocationVO;
 
 @Service
 public class WillgoServiceImpl implements WillgoService {
@@ -43,6 +49,21 @@ public class WillgoServiceImpl implements WillgoService {
 	public List<WillgoVO> willgo_list(String member_id) {
 		// TODO Auto-generated method stub
 		return dao.willgo_list(member_id);
+	}
+	
+	@Override
+	public LocationVO location_info(int id) {
+		return dao.location_info(id);
+	}
+	@Override
+	public GoneFileVO gone_file_info(int id) {
+		return dao.gone_file_info(id);
+	}
+
+	@Override
+	public GoneVO gone_info(int id) {
+		// TODO Auto-generated method stub
+		return dao.gone_info(id);
 	}
 
 

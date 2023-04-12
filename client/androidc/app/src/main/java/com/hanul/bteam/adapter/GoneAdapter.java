@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ public class GoneAdapter extends
     ArrayList<GoneDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
+    ImageButton btnWill;
     GoneDTO dto;
 
     // 생성자로 메인에서 넘겨받은것들을 연결
@@ -122,6 +124,7 @@ public class GoneAdapter extends
 
             parentLayout = itemView.findViewById(R.id.parentLayout);
             locname = itemView.findViewById(R.id.locname);
+            btnWill = itemView.findViewById(R.id.btnWillGo);
 
             filepath = itemView.findViewById(R.id.filepath);
             itemView.findViewById(R.id.btnWillGo).setOnClickListener(new View.OnClickListener() {
@@ -135,7 +138,7 @@ public class GoneAdapter extends
                     commonMethod.setParams("wtype", "1");
                 //    commonMethod.setParams("refid", id.toString());
 
-                    commonMethod.setParams("refid", "1");
+                    commonMethod.setParams("refid", btnWill.getTransitionName());
                     commonMethod.setParams("member_id", activity.loginid);
                     commonMethod.getData("willGoIn", new Callback<String>() {
                         @Override
@@ -173,8 +176,13 @@ public class GoneAdapter extends
         public void setDto(@NonNull GoneDTO dto) {
             locname.setText(dto.getLocname());
 //            filepath.setImageResource(dto.getFilepath());
+
             Glide.with(itemView).load(dto.getFilepath())
                     .into(filepath);
+
+            Integer id = dto.getId();
+            btnWill.setTransitionName( id.toString());
+
 
         }
 

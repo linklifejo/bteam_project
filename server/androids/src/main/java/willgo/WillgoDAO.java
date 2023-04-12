@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import gone.GoneFileVO;
+import gone.GoneVO;
+import location.LocationVO;
+
 @Repository
 public class WillgoDAO implements WillgoService {
 	@Autowired @Qualifier("bteam") private SqlSession sql;
@@ -44,7 +48,22 @@ public class WillgoDAO implements WillgoService {
 	@Override
 	public List<WillgoVO> willgo_list(String member_id) {
 		// TODO Auto-generated method stub
-		return sql.selectList("wi.local_list",member_id);
+		return sql.selectList("wi.member_list",member_id);
+	}
+	
+	@Override
+	public LocationVO location_info(int id) {
+		return sql.selectOne("wi.location_info", id);
+	}
+	@Override
+	public GoneFileVO gone_file_info(int id) {
+		return sql.selectOne("wi.file_Info", id);
+	}
+
+	@Override
+	public GoneVO gone_info(int id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("wi.gone_Info", id);
 	}
 
 
