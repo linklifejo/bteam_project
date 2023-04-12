@@ -10,6 +10,7 @@ import java.io.Serializable;
 public class LocationDTO implements Serializable {
     private int id;
     private String type, locname, name_desc, post,address,latitude,longitude,filename,filepath,loccode,heigh;
+    public LocationDTO(){}
     public LocationDTO(int id, String type, String locname, String name_desc, String post, String address, String latitude, String longitude, String filename, String filepath, String loccode,String heigh) {
         this.id = id;
         this.type = type;

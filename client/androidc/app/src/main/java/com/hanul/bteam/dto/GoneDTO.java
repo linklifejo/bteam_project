@@ -10,35 +10,20 @@ import java.util.List;
  *             resId(이미지경로)의 칼럼이 있다
  */
 public class GoneDTO implements Serializable {
-    private int readcnt, no, filecnt,location_id,course_id;
-    private String title, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath;
+    private int id,readcnt, no, filecnt,location_id,course_id;
+    private String title, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath,name_desc;
     private Date gone_date;
     private List<GoneFileDTO> fileInfo;
     public GoneDTO() {
     }
 
-    public GoneDTO( int readcnt, int no, int filecnt, int location_id, int course_id, String title, String content, String type, String member_id, String name, String locname, String couname, String gone_time, String out_time, String loccode, Date gone_date, List<GoneFileDTO> fileInfo) {
-
-        this.readcnt = readcnt;
-        this.no = no;
-        this.filecnt = filecnt;
-        this.location_id = location_id;
-        this.course_id = course_id;
-        this.title = title;
-        this.content = content;
-        this.type = type;
-        this.member_id = member_id;
-        this.name = name;
-        this.locname = locname;
-        this.couname = couname;
-        this.gone_time = gone_time;
-        this.out_time = out_time;
-        this.loccode = loccode;
-        this.gone_date = gone_date;
-        this.fileInfo = fileInfo;
+    public int getId() {
+        return id;
     }
 
-
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getReadcnt() {
         return readcnt;
@@ -160,21 +145,6 @@ public class GoneDTO implements Serializable {
         this.loccode = loccode;
     }
 
-    public Date getGone_date() {
-        return gone_date;
-    }
-
-    public void setGone_date(Date gone_date) {
-        this.gone_date = gone_date;
-    }
-
-    public List<GoneFileDTO> getFileInfo() {
-        return fileInfo;
-    }
-
-    public void setFileInfo(List<GoneFileDTO> fileInfo) {
-        this.fileInfo = fileInfo;
-    }
     public String getFilename() {
         return filename;
     }
@@ -191,4 +161,27 @@ public class GoneDTO implements Serializable {
         this.filepath = filepath;
     }
 
+    public String getName_desc() {
+        return name_desc;
+    }
+
+    public void setName_desc(String name_desc) {
+        this.name_desc = name_desc;
+    }
+
+    public Date getGone_date() {
+        return gone_date;
+    }
+
+    public void setGone_date(Date gone_date) {
+        this.gone_date = gone_date;
+    }
+
+    public List<GoneFileDTO> getFileInfo() {
+        return fileInfo;
+    }
+
+    public void setFileInfo(List<GoneFileDTO> fileInfo) {
+        this.fileInfo = fileInfo;
+    }
 }

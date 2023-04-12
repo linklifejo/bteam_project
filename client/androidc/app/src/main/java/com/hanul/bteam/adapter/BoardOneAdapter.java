@@ -13,12 +13,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.BoardDTO;
 import com.hanul.bteam.dto.CourseDTO;
+import com.hanul.bteam.dto.GoneDTO;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class BoardOneAdapter extends
         RecyclerView.Adapter<BoardOneAdapter.ViewHolder>{
@@ -27,6 +31,7 @@ public class BoardOneAdapter extends
     MainActivity activity;
     // 화면을 붙이기 위한 객체 생성
     LayoutInflater inflater;
+
 
     public BoardOneAdapter(Context context, ArrayList<BoardDTO> dtos, MainActivity a) {
         this.activity = a;
@@ -53,7 +58,10 @@ public class BoardOneAdapter extends
             @Override
             public void onClick(View v) {
                 Bundle b = new Bundle();
+                activity.fragmentControl(new BoardTwo(),b);
                 b.putSerializable("dto", dto);
+
+
             }
         });
     }
@@ -63,24 +71,23 @@ public class BoardOneAdapter extends
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // singerview.xml 에서 사용된 모든 위젯을 정의한다
-        TextView title,writer,writedate;
+        TextView title,member_id,gonetime,content;
         LinearLayout parentLayout;
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             parentLayout = itemView.findViewById(R.id.parentLayout);
-            writer = itemView.findViewById(R.id.writer);
-            writedate = itemView.findViewById(R.id.writedate);
+            member_id = itemView.findViewById(R.id.memberid);
+            gonetime = itemView.findViewById(R.id.gonetime);
             title = itemView.findViewById(R.id.title);
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
         public void setDto(@NonNull BoardDTO dto) {
             title.setText(dto.getTitle());
-            writer.setText(dto.getWriter());
-            writedate.setText(dto.getWritedate());
-
+            member_id.setText(dto.getMember_id());
+            gonetime.setText(dto.getGonetime());
         }
     }
 }

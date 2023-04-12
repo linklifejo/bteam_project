@@ -89,7 +89,7 @@ public class LocationController {
 		model.addAttribute("list", list);
 		return "location/list";
 	}
-	// 고객목록화면 요청
+	// 지역별 산 데이타 요청
 	@ResponseBody @RequestMapping(value="/selectLocal", produces="text/plain; charset=utf-8" )
 	public String selectLocal(HttpServletRequest req, Model model) {
 		String loccode = (String) req.getParameter("loccode");	
@@ -97,5 +97,22 @@ public class LocationController {
 		Gson gson = new Gson();
 		return gson.toJson( (ArrayList<LocationVO>)list );		
 	}
-
+	// 검색별 산 데이타 요청
+	@ResponseBody @RequestMapping(value="/searchLocal", produces="text/plain; charset=utf-8" )
+	public String searchLocal(HttpServletRequest req, Model model) {
+		String search = (String) req.getParameter("search");	
+		
+		List<LocationVO> list = service.location_search_list(search);
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<LocationVO>)list );		
+	}
+	// 산 정보검색
+	@ResponseBody @RequestMapping(value="/oneLocation", produces="text/plain; charset=utf-8" )
+	public String oneLocation(HttpServletRequest req, Model model) {
+		
+		Integer id = Integer.valueOf(req.getParameter("id")) ;
+		LocationVO vo = service.location_info(id);
+		Gson gson = new Gson();
+		return gson.toJson( (LocationVO)vo );		
+	}
 }

@@ -35,25 +35,15 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="소개글" />
+            android:text="소개글"
+            android:textSize="20sp"/>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/name_desc"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="20"
-            android:background="#D1DDD5">
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-        </LinearLayout>
-
-
-
-
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="22sp"/>
 
 
 </LinearLayout>

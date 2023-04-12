@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import common.CommonUtility;
 import gone.GoneFileVO;
 import gone.GoneVO;
@@ -131,6 +132,19 @@ public class LocationController {
 		return "location/list";
 	}
 	
-
+	
+	
+//	// 지역별 화면 요청
+//	@ResponseBody @RequestMapping(value="/selectLocal", produces="text/plain; charset=utf-8" )
+//	public String selectLocal(HttpServletRequest req, Model model) {
+//		String loccode = (String) req.getParameter("loccode");	
+//		List<LocationVO> list = service.location_list(loccode);
+//		
+//		return "region_1./list";		
+//	}
+//	
+	
+	
+	
 	
 }

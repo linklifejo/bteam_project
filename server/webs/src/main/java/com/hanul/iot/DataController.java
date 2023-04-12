@@ -47,7 +47,7 @@ public class DataController {
 	@RequestMapping("/data/course/list")
 	public Object course_list( @RequestBody HashMap<String, Object> map, Model model ) {
 		StringBuffer url = new StringBuffer(
-				"http://api.forest.go.kr/openapi/service/trailInfoService/getforestspatialdataservice");
+				"http://api.forest.go.kr/openapi/service/trailInfoService/getforestspatialdataservice?");
 		url.append("?ServiceKey=").append(key);
 		url.append("&_type=json");
 		url.append("&pageNo=").append( map.get("pageNo") );
@@ -59,7 +59,7 @@ public class DataController {
 		return "data/course/list";
 	}
 	
-	
+
 
 //	//등산 코스 정보조회 요청
 //	@ResponseBody @RequestMapping("/data/course/list")

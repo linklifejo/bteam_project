@@ -2941,7 +2941,6 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
-id Title
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3038,6 +3037,7 @@ id btnJeonlado
 id btnKeong
 id btnLoc
 id btnLocal
+id btnSearch
 id btnSeoul
 id btnWillGo
 id btn_boardList
@@ -3045,8 +3045,6 @@ id btn_delete
 id btn_modify
 id btn_questionsList
 id btn_write
-id button2
-id button3
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3132,11 +3130,11 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id etAddress
+id evSearch
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
-id filename
 id filepath
 id fill
 id fill_horizontal
@@ -3158,6 +3156,7 @@ id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
 id gone
+id gonetime
 id graph
 id graph_wrap
 id group_divider
@@ -3186,6 +3185,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id ivTrash
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3228,6 +3228,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id memberid
 id message
 id middle
 id mini
@@ -3262,6 +3263,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id name_desc
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3487,9 +3489,7 @@ id wrap
 id wrap_content
 id wrap_content_constrained
 id writeDate
-id writedate
 id writename
-id writer
 id writersID
 id x_left
 id x_right
@@ -3697,11 +3697,13 @@ layout questions_1_view
 layout questions_2
 layout review_list
 layout search_frag
+layout searchview
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
-layout willhave_frag
+layout willgo_frag
+layout willgoview
 menu menu_bottom
 mipmap ic_launcher
 mipmap ic_launcher_round

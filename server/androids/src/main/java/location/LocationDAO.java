@@ -42,5 +42,11 @@ public class LocationDAO implements LocationService {
 		return sql.selectList("lo.local_list",local);
 	}
 
+	@Override
+	public List<LocationVO> location_search_list(String search) {
+		// TODO Auto-generated method stub
+		return sql.selectList("lo.search_list",search);
+	}
+
 
 }

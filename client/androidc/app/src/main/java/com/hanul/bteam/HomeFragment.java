@@ -83,6 +83,7 @@ public class HomeFragment extends Fragment {
                     for(GoneDTO dto: dtos_re){
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
+                        dto.setName_desc(dto.getName_desc());
                     }
                     adapter_re = new GoneAdapter(activity.getApplicationContext(), dtos_re,activity);
                     recyclerView.setAdapter(adapter_re);
@@ -93,10 +94,10 @@ public class HomeFragment extends Fragment {
             }
         });
 //         어댑터 객체 생성
-        adapter_re = new
-                GoneAdapter(activity.getApplicationContext(), dtos_re,activity);
-//        // 만든 어댑터를 리싸이클러뷰에 붙인다
-        recyclerView.setAdapter(adapter_re);
+//        adapter_re = new
+//                GoneAdapter(activity.getApplicationContext(), dtos_re,activity);
+////        // 만든 어댑터를 리싸이클러뷰에 붙인다
+//        recyclerView.setAdapter(adapter_re);
 
         // 중요 : dtos 넘겨줄때 반드시 생성해서 넘겨준다
         dtos = new ArrayList<>();
@@ -117,7 +118,7 @@ public class HomeFragment extends Fragment {
                     Gson gson = new Gson();
                     dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<BoardDTO>>(){}.getType());
                     for(BoardDTO dto: dtos){
-                        dto.setLocname(dto.getLocname());
+                        dto.setTitle(dto.getTitle());
                         dto.setFilepath(dto.getFilepath());
                     }
                     adapter = new BoardrAdapter(activity.getApplicationContext(), dtos,activity);

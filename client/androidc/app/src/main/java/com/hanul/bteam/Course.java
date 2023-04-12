@@ -22,7 +22,7 @@ import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.CourseAdapter;
 import com.hanul.bteam.adapter.GoneAdapter;
 import com.hanul.bteam.adapter.HuAdapter;
-import com.hanul.bteam.adapter.LocalAdapter;
+import com.hanul.bteam.adapter.SearchAdapter;
 import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.HuDTO;
