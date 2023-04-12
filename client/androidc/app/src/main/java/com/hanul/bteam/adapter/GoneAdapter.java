@@ -18,12 +18,18 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.R;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class GoneAdapter extends
@@ -116,7 +122,48 @@ public class GoneAdapter extends
             locname = itemView.findViewById(R.id.locname);
 
             filepath = itemView.findViewById(R.id.filepath);
+            itemView.findViewById(R.id.btnWillGo).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Bundle  b = activity.bundle;
+                    CommonMethod commonMethod = new CommonMethod();
+                    commonMethod.setParams("type", "2");
+                    commonMethod.setParams("title", "찜한산");
+                    commonMethod.setParams("content", "찜한산");
+                    commonMethod.setParams("member_id", activity.loginid);
+                   // commonMethod.setParams("loccode",b.getString("localcode"));
+                    commonMethod.setParams("loccode","localcode");
+                    commonMethod.setParams("location_id",activity.location);
+                    commonMethod.getData("localGo", new Callback<String>() {
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            if(response.isSuccessful()){
 
+//                            Log.d(TAG, "onResponse: " + response.body());
+//                            //서버에서 넘어온 데이터를 받는다
+                                Gson gson = new Gson();
+                                String d = gson.fromJson(response.body(), String.class);
+
+                                Toast.makeText(activity,
+                                        d + "찜입니다!!!",Toast.LENGTH_SHORT).show();
+//                            //로그인 후 메인 화면을 보여준다
+
+
+                            }else {
+                                Toast.makeText(activity,
+                                        "이미 존재합니다;;",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+                            Toast.makeText(activity,
+                                    "실패했네요~;;",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            });
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
