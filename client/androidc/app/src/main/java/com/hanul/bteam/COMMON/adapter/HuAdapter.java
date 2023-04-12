@@ -1,4 +1,4 @@
-package com.hanul.bteam.adapter;
+package com.hanul.bteam.COMMON.adapter;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
-import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.HuDTO;
 
 import java.util.ArrayList;

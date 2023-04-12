@@ -1,4 +1,4 @@
-package com.hanul.bteam.adapter;
+package com.hanul.bteam.COMMON.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,11 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.LocalDDFragment;
-import com.hanul.bteam.LocalDFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.GoneDTO;

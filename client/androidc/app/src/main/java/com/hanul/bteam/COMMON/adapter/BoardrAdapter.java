@@ -1,4 +1,4 @@
-package com.hanul.bteam.adapter;
+package com.hanul.bteam.COMMON.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,13 +18,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.hanul.bteam.Board1;
 import com.hanul.bteam.BoardTwo;
-import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.BoardDTO;
-import com.hanul.bteam.dto.GoneDTO;
 
 import java.util.ArrayList;
 

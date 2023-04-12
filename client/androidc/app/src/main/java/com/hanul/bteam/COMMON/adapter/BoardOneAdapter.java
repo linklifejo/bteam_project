@@ -1,28 +1,22 @@
-package com.hanul.bteam.adapter;
+package com.hanul.bteam.COMMON.adapter;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.BoardDTO;
-import com.hanul.bteam.dto.CourseDTO;
-import com.hanul.bteam.dto.GoneDTO;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class BoardOneAdapter extends
         RecyclerView.Adapter<BoardOneAdapter.ViewHolder>{

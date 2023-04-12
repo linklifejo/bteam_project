@@ -16,7 +16,6 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_weight="8"
-        android:background="#D5EC14"
         android:weightSum="10"
 
        >
@@ -27,15 +26,16 @@
             android:scaleType="fitXY"
             android:layout_weight="9"
             android:src="@drawable/mudm"/>
-     <Button
-         android:id="@+id/btnLocal"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_weight="1"
-         android:backgroundTint="#4CAF50"
-         android:text="지역별산"
-         android:textSize="24sp"
-         />
+
+        <Button
+            android:id="@+id/btnLocal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:backgroundTint="#4CAF50"
+            android:gravity="center|top"
+            android:text="지역별산"
+            android:textSize="24sp" />
 
 
     </LinearLayout>
@@ -81,7 +81,7 @@
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="212dp" />
-<!--        <GridView-->
+        <!--        <GridView-->
 <!--            android:id="@+id/gridView"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="match_parent"-->

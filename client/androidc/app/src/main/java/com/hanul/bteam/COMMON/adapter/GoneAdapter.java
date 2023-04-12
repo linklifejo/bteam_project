@@ -1,4 +1,4 @@
-package com.hanul.bteam.adapter;
+package com.hanul.bteam.COMMON.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
