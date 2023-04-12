@@ -25,7 +25,7 @@
 
 
 	.homeimg{
-		width: 800px;
+		width: 1100px;
 		text-align: center; margin: 0 auto;
 	}
 	
@@ -34,27 +34,26 @@
 
 
 
-
-
+<!-- <img src='imgs/mainm.png' style='width:100%'> -->
+<!-- <img class="mainimg object-fit-cover border rounded" src='imgs/mainm.png' style='width:100%'> -->
 <div class="mainsm">
 
 
 <div class='smdd'>
 <div class='btnSet'>
-	<a href='new.cu' class='btn-fill'>인기산</a>
+	<h2 >인기산</h2>
 </div>
 <table class='w-px600 tb-list'>
 
 <tbody>
 <div class="homeimg">
-<c:forEach items='${list}' var='vo'>
+<c:forEach items='${local_list}' var='vo'>
 	<a href='info.go?id=${vo.id}'></a>
-		<span style="display:inline-block; height:300px; width:250px;">
+		<span style="display:inline-block; height:400px; width:350px;">
 	
 		<div class="card"><a href='info.go?id=${vo.gone_id}'><img class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
     		 alt="사진파일"></a>
 		</div>
-		<div>${vo.filename}</div>
 	
 		</span>
 </c:forEach>
@@ -64,22 +63,21 @@
 
 
 <div class='btnSet'>
-	<a href='new.go' class='btn-fill'>게시판</a>
+	<a href='list.go' class='btn-fill'>게시판</a>
 </div>
 
 
 <table class='w-px600 tb-list'>
 
 <tbody>
-<div class="homeimg">
+<div class="homeimg" style="padding-bottom:30px">
 <c:forEach items='${list}' var='vo'>
-	<a href='info.go?id=${vo.id}'></a>
-		<span style="display:inline-block; height:300px; width:250px;">
 	
-		<div class="card"><a href='info.go?id=${vo.gone_id}'><img class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+		<span style="display:inline-block; height:450px; width:350px;">
+	
+		<div style= "height:450px; width:350px;" class="card"><a style= "height:450px; width:350px;" href='info.go?id=${vo.gone_id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
     		 alt="사진파일"></a>
 		</div>
-		<div>${vo.filename}</div>
 	
 		</span>
 
