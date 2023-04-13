@@ -20,17 +20,11 @@ import retrofit2.Callback;
 
 public class CommonMethod {
 
-<<<<<<< HEAD
+
 
     public static String ipConfig = "http://192.168.0.11/ab/";
 
-=======
-<<<<<<< HEAD
-    public static String ipConfig = "http://192.168.0.140/ab/";
-=======
-    public static String ipConfig = "http://192.168.0.22/ab/";
->>>>>>> e137f86e9a2b9429e4a0c3a347afa621f4e588eb
->>>>>>> 2508e70bb53a77a2fe3bb0b50e2efff3ded36834
+
 
 //    public static boolean keyDisappear(Context context, View view){
 //        InputMethodManager imm = (InputMethodManager)context.getSystemService(INPUT_METHOD_SERVICE) ;
