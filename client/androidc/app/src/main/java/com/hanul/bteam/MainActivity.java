@@ -65,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
     GoogleMap map;
     SupportMapFragment mapFragment;
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return CommonMethod.keyDisappear(this, this.getCurrentFocus());
-    }
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        return CommonMethod.keyDisappear(this, this.getCurrentFocus());
+//    }
 
 
 
@@ -126,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
         return path;
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     //Path(파일경로) -> Uri
     public Uri getUirFromPath( String filePath) {

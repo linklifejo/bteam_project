@@ -1,5 +1,6 @@
 package location;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,11 @@ public class LocationServiceImpl implements LocationService {
 	public List<LocationVO> location_search_list(String search) {
 		// TODO Auto-generated method stub
 		return dao.location_search_list(search);
+	}
+
+	public int willgo_insert(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

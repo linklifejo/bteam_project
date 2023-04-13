@@ -19,15 +19,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.LocalDDFragment;
-import com.hanul.bteam.LocalDFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.LocationDTO;
+import com.hanul.bteam.dto.WillgoDTO;
 
 import java.util.ArrayList;
 
@@ -42,12 +40,13 @@ public class WillGoAdapter extends
 
     // 메인에게 넘겨받는것 -> 반드시 : Context, ArrayList<DTO>
     Context context;
-    ArrayList<GoneDTO> dtos;
+
+    ArrayList<WillgoDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
     OnWillGoitemClickListener listener;
     // 생성자로 메인에서 넘겨받은것들을 연결
-    public WillGoAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
+    public WillGoAdapter(Context context, ArrayList<WillgoDTO> dtos, MainActivity a) {
         this.activity = a;
         this.context = context;
         this.dtos = dtos;
@@ -59,7 +58,7 @@ public class WillGoAdapter extends
     // 매소드는 여기에 만든다
     // dtos에 dto를 추가하는 매소드
     //테스트
-    public void addDto(GoneDTO dto) {
+    public void addDto(WillgoDTO dto) {
         dtos.add(dto);
     }
 
@@ -74,7 +73,7 @@ public class WillGoAdapter extends
         this.listener = listener;
     }
     // 화면을 인플레이트 시킨다 (붙인다)
-    public  GoneDTO getItem(int position){
+    public  WillgoDTO getItem(int position){
         return dtos.get(position);
     }
     ////////////////////////////////////////////////////
@@ -94,7 +93,7 @@ public class WillGoAdapter extends
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d(TAG, "onBindViewHolder: " + position);
         // dtos에 있는 데이터를 각각 불러온다
-        GoneDTO dto = dtos.get(position);
+        WillgoDTO dto = dtos.get(position);
         // 불러온 데이터를 ViewHolder에 만들어 놓은 setDto를
         // 사용하여 데이터를 셋팅시킨다
         holder.setDto(dto);
@@ -104,23 +103,32 @@ public class WillGoAdapter extends
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GoneDTO dto = dtos.get(position);
-                Toast.makeText(context,
-                        "gone location_id : " + dto.getLocation_id(), Toast.LENGTH_SHORT).show();
+                WillgoDTO dto = dtos.get(position);
+                String exec = "";
+                String wtype = dto.getWtype();
+                if (wtype == "2") {
+                    exec = "oneLocation";
+                }else{
+                    exec = "";
+                }
                 CommonMethod commonMethod = new CommonMethod();
-                Integer id = dto.getLocation_id();
-                commonMethod.setParams("id",  id.toString());
-                commonMethod.getData("oneLocation", new Callback<String>(){
+                //Integer id = dto.getLocation_id();
+              //  commonMethod.setParams("id",  id.toString());
+                commonMethod.getData("exec", new Callback<String>(){
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
 
                         if(response.isSuccessful()){
-                            Gson gson = new Gson();
-                            LocationDTO dto = gson.fromJson(response.body(), LocationDTO.class);
-                            Bundle b = new Bundle();
-                            b.putSerializable("dto",dto);
-                            activity.bundle = b;
-                            activity.fragmentControl(new LocalDDFragment());
+                            if(wtype =="2") {
+                                Gson gson = new Gson();
+                                LocationDTO dto = gson.fromJson(response.body(), LocationDTO.class);
+                                Bundle b = new Bundle();
+                                b.putSerializable("dto", dto);
+                                activity.bundle = b;
+                                activity.fragmentControl(new LocalDDFragment());
+                            }else {
+
+                            }
                         }
                     }
                     @Override
@@ -143,8 +151,8 @@ public class WillGoAdapter extends
             public void onClick(View v) {
 
                 CommonMethod commonMethod = new CommonMethod();
-                GoneDTO dto = dtos.get(position);
-                commonMethod.setParams("gone_id",  dto.getId() + "");
+                WillgoDTO dto = dtos.get(position);
+                commonMethod.setParams("id",  dto.getId() + "");
                 commonMethod.getData("willGoDelete", new Callback<String>(){
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
@@ -214,7 +222,7 @@ public class WillGoAdapter extends
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
-        public void setDto(@NonNull GoneDTO dto) {
+        public void setDto(@NonNull WillgoDTO dto) {
             locname.setText(dto.getLocname());
 //            filepath.setImageResource(dto.getFilepath());
             Glide.with(itemView).load(dto.getFilepath())

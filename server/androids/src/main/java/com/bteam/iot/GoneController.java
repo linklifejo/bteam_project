@@ -299,16 +299,8 @@ public class GoneController {
 		return service.gone_insert(map) == 1 ? "성공" : "실패";
 	}	
 	
-	@ResponseBody @RequestMapping(value="/willGo", produces="text/plain; charset=utf-8" )
-	public String willGo(HttpServletRequest req, Model model) {
-		String member_id = (String) req.getParameter("member_id");		
 
-		ArrayList<GoneVO> list = (ArrayList<GoneVO>)service.gone_willgo_list(member_id);
-		
-		Gson gson = new Gson();
-		return gson.toJson( (ArrayList<GoneVO>)list );	
-	}
-	
+
 	@ResponseBody @RequestMapping(value="/bolist", produces="text/plain; charset=utf-8" )
 	public String bolist(HttpServletRequest req, Model model) {	
 
@@ -319,14 +311,7 @@ public class GoneController {
 	}
 	
 	
-	
-	@ResponseBody @RequestMapping(value="/willGoDelete", produces="text/plain; charset=utf-8" )
-	public String willGoDelete(HttpServletRequest req, Model model) {
-	
-		Integer gone_id = Integer.valueOf(req.getParameter("gone_id")) ;	
-		service.gone_delete(gone_id); 
-		return service.gone_delete(gone_id) != 1 ? "성공" : "실패";
-	}		
+		
 	
 	
 }
