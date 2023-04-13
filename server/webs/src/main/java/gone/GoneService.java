@@ -27,4 +27,5 @@ public interface GoneService {
 	List<CourseVO> course_list(); // 선택한 방명록 글 조회
 	List<GoneFileVO> GoneFile_list(); //
 	//List<GoneFileVO> GoneFile_boardlist(); //	
+
 }
