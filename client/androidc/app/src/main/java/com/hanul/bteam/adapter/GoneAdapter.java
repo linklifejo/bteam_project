@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -41,6 +42,8 @@ public class GoneAdapter extends
     ArrayList<GoneDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
+    ImageButton btnWill;
+    GoneDTO dto;
 
     // 생성자로 메인에서 넘겨받은것들을 연결
     public GoneAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
@@ -81,7 +84,7 @@ public class GoneAdapter extends
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d(TAG, "onBindViewHolder: " + position);
         // dtos에 있는 데이터를 각각 불러온다
-        GoneDTO dto = dtos.get(position);
+        dto = dtos.get(position);
         // 불러온 데이터를 ViewHolder에 만들어 놓은 setDto를
         // 사용하여 데이터를 셋팅시킨다
         holder.setDto(dto);
@@ -92,6 +95,7 @@ public class GoneAdapter extends
             public void onClick(View v) {
                 Bundle b = new Bundle();
                 b.putSerializable("dto",dto);
+                activity.bundle = b;
                 activity.fragmentControl(new Detailmo(),b);
                 Toast.makeText(context,
                         "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
@@ -120,21 +124,23 @@ public class GoneAdapter extends
 
             parentLayout = itemView.findViewById(R.id.parentLayout);
             locname = itemView.findViewById(R.id.locname);
+            btnWill = itemView.findViewById(R.id.btnWillGo);
 
             filepath = itemView.findViewById(R.id.filepath);
             itemView.findViewById(R.id.btnWillGo).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Bundle  b = activity.bundle;
+
+//                    Bundle  b = activity.bundle;
+//                    GoneDTO dto =(GoneDTO) b.getSerializable("dto");
+//                    Integer id = dto.getId();
                     CommonMethod commonMethod = new CommonMethod();
-                    commonMethod.setParams("type", "2");
-                    commonMethod.setParams("title", "찜한산");
-                    commonMethod.setParams("content", "찜한산");
+                    commonMethod.setParams("wtype", "1");
+                //    commonMethod.setParams("refid", id.toString());
+
+                    commonMethod.setParams("refid", btnWill.getTransitionName());
                     commonMethod.setParams("member_id", activity.loginid);
-                   // commonMethod.setParams("loccode",b.getString("localcode"));
-                    commonMethod.setParams("loccode","localcode");
-                    commonMethod.setParams("location_id",activity.location);
-                    commonMethod.getData("localGo", new Callback<String>() {
+                    commonMethod.getData("willGoIn", new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
                             if(response.isSuccessful()){
@@ -145,13 +151,13 @@ public class GoneAdapter extends
                                 String d = gson.fromJson(response.body(), String.class);
 
                                 Toast.makeText(activity,
-                                        d + "찜입니다!!!",Toast.LENGTH_SHORT).show();
+                                        "" + d ,Toast.LENGTH_SHORT).show();
 //                            //로그인 후 메인 화면을 보여준다
 
 
                             }else {
                                 Toast.makeText(activity,
-                                        "이미 존재합니다;;",Toast.LENGTH_SHORT).show();
+                                        "실패;;",Toast.LENGTH_SHORT).show();
 
                             }
                         }
@@ -170,8 +176,13 @@ public class GoneAdapter extends
         public void setDto(@NonNull GoneDTO dto) {
             locname.setText(dto.getLocname());
 //            filepath.setImageResource(dto.getFilepath());
+
             Glide.with(itemView).load(dto.getFilepath())
                     .into(filepath);
+
+            Integer id = dto.getId();
+            btnWill.setTransitionName( id.toString());
+
 
         }
 

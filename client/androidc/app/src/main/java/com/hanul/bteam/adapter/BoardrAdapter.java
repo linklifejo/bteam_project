@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,8 +19,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.hanul.bteam.Board1;
 import com.hanul.bteam.BoardTwo;
+import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
@@ -27,6 +30,10 @@ import com.hanul.bteam.dto.BoardDTO;
 import com.hanul.bteam.dto.GoneDTO;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 // 4. 선언한 클래스와 xml 파일을 이용하여 화면을 adapter에서 생성한다
 public class BoardrAdapter extends
@@ -97,6 +104,7 @@ public class BoardrAdapter extends
         TextView title;
         ImageView filepath;
         LinearLayout parentLayout;
+        ImageButton btnWill;
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
         public ViewHolder(@NonNull View itemView) {
@@ -104,12 +112,58 @@ public class BoardrAdapter extends
             parentLayout = itemView.findViewById(R.id.parentLayout);
             title = itemView.findViewById(R.id.title);
             filepath = itemView.findViewById(R.id.filepath);
+            btnWill = itemView.findViewById(R.id.btnWillGo);
+            itemView.findViewById(R.id.btnWillGo).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+//                    Bundle  b = activity.bundle;
+//                    GoneDTO dto =(GoneDTO) b.getSerializable("dto");
+//                    Integer id = dto.getId();
+                    CommonMethod commonMethod = new CommonMethod();
+                    commonMethod.setParams("wtype", "3");
+                    //    commonMethod.setParams("refid", id.toString());
+
+                    commonMethod.setParams("refid", btnWill.getTransitionName());
+                    commonMethod.setParams("member_id", activity.loginid);
+                    commonMethod.getData("willGoIn", new Callback<String>() {
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            if(response.isSuccessful()){
+
+//                            Log.d(TAG, "onResponse: " + response.body());
+//                            //서버에서 넘어온 데이터를 받는다
+                                Gson gson = new Gson();
+                                String d = gson.fromJson(response.body(), String.class);
+
+                                Toast.makeText(activity,
+                                        "" + d ,Toast.LENGTH_SHORT).show();
+//                            //로그인 후 메인 화면을 보여준다
+
+
+                            }else {
+                                Toast.makeText(activity,
+                                        "실패;;",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+                            Toast.makeText(activity,
+                                    "실패했네요~;;",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            });
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
         public void setDto(@NonNull BoardDTO dto) {
             title.setText(dto.getTitle());
             Glide.with(itemView).load(dto.getFilepath()).into(filepath);
+            Integer id = dto.getId();
+            btnWill.setTransitionName( id.toString());
         }
 
 

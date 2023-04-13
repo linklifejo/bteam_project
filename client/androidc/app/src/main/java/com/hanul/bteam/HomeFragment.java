@@ -81,6 +81,7 @@ public class HomeFragment extends Fragment {
                     Gson gson = new Gson();
                     dtos_re =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
                     for(GoneDTO dto: dtos_re){
+                        dto.setId(dto.getId());
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
                         dto.setName_desc(dto.getName_desc());
@@ -118,6 +119,7 @@ public class HomeFragment extends Fragment {
                     Gson gson = new Gson();
                     dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<BoardDTO>>(){}.getType());
                     for(BoardDTO dto: dtos){
+                        dto.setId(dto.getId());
                         dto.setTitle(dto.getTitle());
                         dto.setFilepath(dto.getFilepath());
                     }

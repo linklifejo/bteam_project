@@ -6,7 +6,11 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	
+<<<<<<< HEAD
 	<context:component-scan base-package="course,location,gone,common,board,member"></context:component-scan> 
+=======
+	<context:component-scan base-package="course,location,gone,common,board,willgo"></context:component-scan> 
+>>>>>>> e137f86e9a2b9429e4a0c3a347afa621f4e588eb
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<import resource="classpath:db/*.xml"/>

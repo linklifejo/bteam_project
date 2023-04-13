@@ -100,6 +100,7 @@ public class GoneServiceImpl implements GoneService {
 		return dao.location_info(id);
 	}
 
+
 //	@Override
 //	public List<GoneFileVO> GoneFile_boardlist() {
 //		return dao.GoneFile_boardlist();

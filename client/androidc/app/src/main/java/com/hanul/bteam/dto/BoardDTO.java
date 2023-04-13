@@ -5,11 +5,12 @@ import java.io.Serializable;
 // 1. DB에 있는 테이블을 기본으로 하여 DTO를 만든다
 public class BoardDTO implements Serializable {
     String title, memo,locname,course_name,filename,filepath,writer,writedate,member_id,gone_time,content;
-    int no, location_no,course_no,resId;
+    int id,no, location_no,course_no,resId;
 
 
 
-    public BoardDTO(String title, String memo, String locname, String course_name, String filename, String filepath, String writer, String writedate, String member_id, String gonetime, String content, int no, int location_no, int course_no, int resId) {
+    public BoardDTO(int id,String title, String memo, String locname, String course_name, String filename, String filepath, String writer, String writedate, String member_id, String gonetime, String content, int no, int location_no, int course_no, int resId) {
+        this.id = id;
         this.title = title;
         this.memo = memo;
         this.locname = locname;
@@ -26,6 +27,15 @@ public class BoardDTO implements Serializable {
         this.content= content;
 
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getContent() {
         return content;
     }

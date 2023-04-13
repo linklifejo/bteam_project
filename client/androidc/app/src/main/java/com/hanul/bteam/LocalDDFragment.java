@@ -68,13 +68,12 @@ public class LocalDDFragment extends Fragment {
             public void onClick(View view) {
               Bundle  b = activity.bundle;
                 CommonMethod commonMethod = new CommonMethod();
-                commonMethod.setParams("type", "2");
-                commonMethod.setParams("title", "찜한산");
-                commonMethod.setParams("content", "찜한산");
+                commonMethod.setParams("wtype", "2");
+                //    commonMethod.setParams("refid", id.toString());
+                Integer id = dto.getId();
+                commonMethod.setParams("refid",id.toString() );
                 commonMethod.setParams("member_id", activity.loginid);
-                commonMethod.setParams("loccode",b.getString("localcode"));
-                commonMethod.setParams("location_id",activity.location);
-                commonMethod.getData("localGo", new Callback<String>() {
+                commonMethod.getData("willGoIn", new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if(response.isSuccessful()){
@@ -85,7 +84,7 @@ public class LocalDDFragment extends Fragment {
                             String d = gson.fromJson(response.body(), String.class);
 
                             Toast.makeText(activity,
-                                    d + "찜입니다!!!",Toast.LENGTH_SHORT).show();
+                                    "찜되었씁니다!!!" + d ,Toast.LENGTH_SHORT).show();
 //                            //로그인 후 메인 화면을 보여준다
 
 
