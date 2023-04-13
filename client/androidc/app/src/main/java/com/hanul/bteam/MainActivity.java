@@ -1,6 +1,7 @@
 package com.hanul.bteam;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,6 +13,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ContentUris;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -22,7 +24,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -37,11 +41,14 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.login.LoginFrist;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -63,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     Location myLoc, markerLoc;
     MarkerOptions myMarker;
     GoogleMap map;
-    SupportMapFragment mapFragment;
+    String imgFilePath = null;
 
 //    @Override
 //    public boolean onTouchEvent(MotionEvent event) {
@@ -88,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         // 처음 화면 초기화 : Fragment1로 초기화
-        fragmentControl(new HomeFragment());
+        fragmentControl(new LoginFrist());
         // 네비게이션뷰를 찾아서 클릭이벤트를 달아준다
         bNaviView = findViewById(R.id.bottom_navi);
         bNaviView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -142,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
         return uri;
     }
+
     public void fragmentControl(Fragment f) {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.contain,f).commit();
@@ -199,6 +207,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public File creatFile() {
+        // 파일 이름을 만들기 위해 시간값을 생성함
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+                .format(new Date());
+        String imageFileName = "My" + timestamp;
+        // 사진파일을 저장하기 위한 경로
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File curFile = null;
+        try{
+            // 임시파일을 생성함      1:파일이름,2:확장자이름,3:경로
+            curFile = File.createTempFile(imageFileName,
+                    ".jpg", storageDir);
+        }catch (Exception e){
+            e.getMessage();
+        }
+        // 스트링타입으로 임시파일이 있는 곳의 절대경로를 저장함
+        imgFilePath = curFile.getAbsolutePath();
+
+        return curFile;
+    }
+
 
     public  void BitmapConvertFile(Bitmap bitmap, String strFilePath)
     {
@@ -229,6 +258,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
+
 
 
     // 구글맵 메소드
@@ -346,5 +378,7 @@ public class MainActivity extends AppCompatActivity {
 
         return (int)distance;
     }
+
+
 
 }
