@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     android:weightSum="30">
+
+
 
     <!-- 첫번째 레이아웃 -->
     <LinearLayout
@@ -87,6 +90,7 @@
 
 
     </LinearLayout>
+
 
 
 </LinearLayout>

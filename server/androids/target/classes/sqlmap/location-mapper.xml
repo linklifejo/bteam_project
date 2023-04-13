@@ -40,4 +40,12 @@ where type='1' and loccode= #{loccode}
  order by locname
 </select>
 
+<!-- 검색별 산정보 목록조회 -->
+<select id='search_list' resultType='location.LocationVO'>
+select *
+from location
+where type='1' and locname like '%' || #{search} || '%'
+ order by locname
+</select>
+
 </mapper>  

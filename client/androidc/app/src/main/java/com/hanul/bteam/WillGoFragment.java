@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.GoneAdapter;
-import com.hanul.bteam.adapter.LocalAdapter;
+import com.hanul.bteam.adapter.SearchAdapter;
 import com.hanul.bteam.adapter.OnWillGoitemClickListener;
 import com.hanul.bteam.adapter.WillGoAdapter;
 import com.hanul.bteam.dto.GoneDTO;
@@ -70,6 +70,8 @@ public class WillGoFragment extends Fragment implements OnWillGoitemClickListene
                     for(GoneDTO dto: dtos){
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
+                        dto.setLocation_id(dto.getLocation_id());
+                        dto.setId(dto.getId());
                     }
                     adapter = new WillGoAdapter(activity.getApplicationContext(), dtos,activity);
                     recycler.setAdapter(adapter);
@@ -93,6 +95,7 @@ public class WillGoFragment extends Fragment implements OnWillGoitemClickListene
     @Override
     public void onItemClick(WillGoAdapter.ViewHolder holderm, View view, int position) {
         GoneDTO dto = adapter.getItem(position);
+
         Toast.makeText(activity, "산이름ㅌㅌㅌ :" + dto.getLocname(), Toast.LENGTH_SHORT).show();
     }
 }

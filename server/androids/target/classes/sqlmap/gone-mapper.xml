@@ -169,7 +169,7 @@ order by id
 
 <!-- 찜한산조회 -->
 <select id='willgo_list' resultType='gone.GoneVO'>
-select g.id,l.locname,l.filepath
+select g.id,g.location_id,l.locname,l.filepath,l.id
 from gone g, location l
 where g.location_id=l.id and g.type='2' and g.member_id= #{member_id}
 order by g.gone_date

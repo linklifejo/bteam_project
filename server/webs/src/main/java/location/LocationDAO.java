@@ -37,7 +37,13 @@ public class LocationDAO implements LocationService {
 	}
 
 	@Override
-	public List<LocationVO> LocFile_list() {
+	public List<LocationVO> Loc_info() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<LocationVO> location_list(String local) {
 		// TODO Auto-generated method stub
 		return null;
 	}

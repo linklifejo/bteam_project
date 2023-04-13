@@ -22,6 +22,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.Detailmo;
+import com.hanul.bteam.LocalDDFragment;
+import com.hanul.bteam.LocalDFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.GoneDTO;
@@ -102,9 +104,34 @@ public class WillGoAdapter extends
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Bundle b = new Bundle();
-//                b.putSerializable("dto",dto);
-//                activity.fragmentControl(new Detailmo(),b);
+                GoneDTO dto = dtos.get(position);
+                Toast.makeText(context,
+                        "gone location_id : " + dto.getLocation_id(), Toast.LENGTH_SHORT).show();
+                CommonMethod commonMethod = new CommonMethod();
+                Integer id = dto.getLocation_id();
+                commonMethod.setParams("id",  id.toString());
+                commonMethod.getData("oneLocation", new Callback<String>(){
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+
+                        if(response.isSuccessful()){
+                            Gson gson = new Gson();
+                            LocationDTO dto = gson.fromJson(response.body(), LocationDTO.class);
+                            Bundle b = new Bundle();
+                            b.putSerializable("dto",dto);
+                            activity.bundle = b;
+                            activity.fragmentControl(new LocalDDFragment());
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                    }
+                });
+
+
+
+
+
                 Toast.makeText(context,
                         "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
             }

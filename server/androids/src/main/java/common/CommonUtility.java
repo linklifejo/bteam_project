@@ -19,17 +19,28 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-
+import member.MemberVO;
 
 @Service
 public class CommonUtility {
 	
-	
+	//공공데이터 요청결과 JSON정보
+	public Map<String, Object> requestAPItoMap(StringBuffer url) {
+		 JSONObject json = new JSONObject( requestAPI(url.toString()) );
+		 json = json.getJSONObject("response");
+		 json = json.getJSONObject("body");
+		 int count = 0;
+		 if(  json.has("totalCount") ) count = json.getInt("totalCount");
+		 
+		 json = json.getJSONObject("items");
+		 json.put("count", count);
+		 return json.toMap();
+	}
 	
 	
 	//첨부파일 삭제
@@ -182,9 +193,109 @@ public class CommonUtility {
 	
 	
 	
+//	//회원가입축하 이메일 보내기
+//	public void sendWelcome(MemberVO vo, String welcome) {
+//		HtmlEmail email =  new HtmlEmail();
+//		email.setDebug(true);
+//		email.setCharset("utf-8");
+//		
+//		email.setHostName("smtp.naver.com");
+//		//보내는 이인 관리자로 로그인: 아이디/비번 입력
+//		email.setAuthentication("linklife", "456852aa**");		
+//		email.setSSLOnConnect(true); //로그인하기
+//		
+//		try {
+//			//보내는이
+//		email.setFrom("linklife@naver.com", "지능형IoT융합 관리자");
+//		email.addTo(vo.getEmail(), vo.getName()); //받는이:회원가입하는사람
+//		
+//		email.setSubject(vo.getName() + "님 회원가입 축하!!");
+//		StringBuffer msg = new StringBuffer();
+//		msg.append("<html>");
+//		msg.append("<body>");
+//		msg.append("<h3><a target='_blank' href='http://hanuledu.co.kr/'>한울 지능형IoT융합 과정</a></h3>");
+//		msg.append("<div>프로젝트까지 과정을 잘 마무리 하시고 </div>");
+//		msg.append("<p>취업까지 성공하시길 바랍니다!</p>");
+//		msg.append("</body>");
+//		msg.append("</html>");
+//		email.setHtmlMsg(msg.toString());
+//		
+//		//축하파일 첨부하기
+//		EmailAttachment file = new EmailAttachment(); //첨부파일객체 생성
+//		file.setPath( welcome );
+//		email.attach(file);
+//
+////		file = new EmailAttachment(); //첨부파일객체 생성
+////		file.setPath( welcome );
+////		email.attach(file);
+//		
+//		email.send(); //메일보내기
+//		
+//		}catch(EmailException e) {
+//			
+//		}
+//	}
+	
+//	//이메일로 임시비번 보내기
+//	public boolean sendPassword(MemberVO vo, String pw) {
+//		boolean send = true;
+//		
+//		HtmlEmail email = new HtmlEmail();
+//		email.setCharset("utf-8");
+//		email.setDebug(true);
+//		
+//		email.setHostName("smtp.naver.com"); //이메일보낼서버지정
+//		//이메일로 임시비번을 보내는 이는 사이트 관리자
+//		email.setAuthentication("itstudydev", "itlearning10102"); //관리자 아이디,비번 입력
+//		email.setSSLOnConnect(true);  //로그인버튼 누르기
+//		
+//		try {
+//		email.setFrom("linklife@naver.com", "IoT 관리자"); //보내는이 지정
+//		email.addTo( vo.getEmail(), vo.getName()  ); //받는이 지정
+//		email.setSubject("IoT 로그인 임시 비밀번호 확인") ;//제목
+//		
+//		//내용
+//		StringBuffer msg = new StringBuffer();
+//		msg.append("<html>");
+//		msg.append("<body>");
+//		msg.append("<h3>임시비번</h3>");
+//		msg.append("<div><strong>"+ pw +"</strong></div>");
+//		msg.append("<div>임시 비밀번호로 로그인 후 비밀번호를 변경하세요</div>");
+//		msg.append("</body>");
+//		msg.append("</html>");
+//		email.setHtmlMsg( msg.toString() );
+//		
+//		email.send(); //보내기버튼 클릭
+//		
+//		}catch(Exception e) {
+//			System.out.println(e.getMessage());
+//			send = false;
+//		}
+//		return send;
+//	}
 	
 	
 	
+	//솔트를 사용해 비밀번호를 암호화하기
+	public String getEncrypt(String pw, String salt) {
+		pw = pw + salt;
+		
+		try {
+			MessageDigest md		//암호화방식: SHA-256
+				= MessageDigest.getInstance("SHA-256");
+			md.update( pw.getBytes() );
+			byte[] bytes = md.digest();
+			
+			StringBuffer val = new StringBuffer();
+			for(byte b : bytes) {
+				val.append( String.format("%02x", b) );
+			}
+			pw = val.toString(); //암호화된 비번		
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		return pw;
+	}
 	
 	//암호화에 사용할 솔트 생성
 	public String generateSalt() {
