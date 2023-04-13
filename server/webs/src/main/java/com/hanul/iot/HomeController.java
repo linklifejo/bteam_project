@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import common.CommonUtility;
 import gone.GoneFileVO;
 import gone.GoneServiceImpl;
+import location.LocationVO;
 import member.MemberServiceImpl;
 
 
@@ -44,6 +45,14 @@ public class HomeController {
 		return "default/error/" + (code==404 ? "404" : "common");
 	}
 	
+	//지역별산 화면 요청
+	@RequestMapping("/")
+	public String local_list(Model model, HttpSession session ) {
+		session.setAttribute("category", "");
+		List<LocationVO> lolist = service.location_list();
+		model.addAttribute("local_list", lolist);
+		return "home";
+	}
 	
 	
 	

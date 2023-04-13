@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <!DOCTYPE html>
 
 
@@ -66,35 +66,68 @@ table tr:hover { cursor: pointer;  background-color: #f6f6f6 }
 </div>
 </form>
 
-
+<%-- 
 <table class='w-px1000 tb-list'>
 <colgroup>
 	<col width='100px'>
-	<col width='200px'>
+
 	<col width='220px'>
 	<col>
 	<col width='140px'>
 </colgroup>
-<tr><th>번호</th>
-	<th>파일네임</th>
-	<th>사진</th>
-	<th>이름</th>
-	<th>주소</th>
-</tr>
 
 
-<%-- <c:forEach items='${list}' var='vo'>
-	<a href='info.go?id=${vo.id}'></a> --%>
-<c:forEach items='${local_list }' var='vo'>
-<tr><td><a href='info.re?id=${vo.id}'>${vo.locname }</a></td>
-	<td>${vo.filename }</td>
-	<td><img alt="서울산 사진" src="${vo.filepath }" style="width: 300px" height="300px;"></td>
-	<td>${vo.name_desc }</td>
+<c:forEach items='${local_list}' var='vo'>
+<tr>
+	<td>${vo.id }</td>
+	<td>${vo.locname}</td>
+	<td><a href='info.re?id=${vo.id}'><img alt="서울산 사진" src="${vo.filepath }" style="width: 300px" height="300px;"></a></td>
 	<td>${vo.address }</td>
 </tr>
 </c:forEach>
+
+</table> --%>
+
+
+<table class='w-px1000 tb-list'>
+<tbody>
+<div class="homeimg">
+<c:forEach items='${local_list}' var='vo'>
+<a href='info.re?loccode=${vo.loccode}'></a>
+<tr>
+	<td>${vo.id }</td>
+	<td>${vo.locname}</td>
+	<td><a href='info.re?id=${vo.id}'><img alt="서울산 사진" src="${vo.filepath }" style="width: 300px" height="300px;"></a></td>
+	<td>${vo.address }</td>
+</tr>
+		</span>
+</c:forEach>
+</div>
+</tbody>
 </table>
 	
+	
+<%-- 	<table class='w-px600 tb-list'>
+
+	<tbody>
+	<div class="homeimg">
+	<c:forEach items='${list}' var='vo'>
+		<a href='info.re?loccode=${vo.loccode}'></a>
+			<span style="display:inline-block; height:300px; width:250px;">
+		
+			<div class="card"><a href='info.go?id=${vo.gone_id}'><img class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+	    		 alt="사진파일"></a>
+			</div>
+		
+			</span>
+	</c:forEach>
+	</div>
+	</tbody>
+	</table>
+		 --%>
+		
+		
+		
 </tbody>
 
 </div>

@@ -8,7 +8,7 @@
 	</div>
 	<div class="header">
 	<div>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<nav>
 		<ul>
 
 		<c:if test='${not empty loginInfo}'>
@@ -26,7 +26,7 @@
 		<div class="dropdown">
   <button class="dropbtn">지역별산</button><%-- href='list.re?id=${vo.gone_id}' --%>
   <div class="dropdown-content">
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=${vo.loccode}'>서울.경기</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re?L01'>서울.경기</a>
     <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_2.re'>강원</a>
     <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_3.re'>전라도</a>
     <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_4.re'>경상도</a>
@@ -36,19 +36,19 @@
 </div>
 		
 		
-		
 					<li><a ${category eq 'go' ? "class='active'" : ''} href='<c:url value="/"/>list.go'>탐방정보</a></li>
 					<li><a ${category eq 'co' ? "class='active'" : ''} href='<c:url value="/"/>list.co'>코스정보</a></li>
 					<li><a ${category eq 'lo' ? "class='active'" : ''} href='<c:url value="/"/>list.lo'>전국산정보</a></li>
-			<li><a ${category eq 'bo' ? "class='active'" : ''} href='<c:url value="/"/>list.bo'>자유 계시판</a></li>
+			<li><a ${category eq 'bo' ? "class='active'" : ''} href='<c:url value="/"/>list.bo'>자유 게시판</a></li>
 			<!--지역별산 region -->
+			<li><a ${category eq 'no' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>찜</a></li>
 			<li><a ${category eq 'no' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>공지사항</a></li>
 			<li><a ${category eq 'da' ? "class='active'" : ''} href='<c:url value="/"/>list.da'>공공데이터(산)</a></li>
 		</ul>
 	</nav>
 	</div>
 	<div class="login" style="float: right;">
-		<ul>
+		<ul style="padding-top: 0px;">
 		<!-- 로그인하지 않은 경우 -->
 		<c:if test='${empty loginInfo}'>
 			<li><a class=' btn btn-primary' href='login'>로그인</a></li>
@@ -73,24 +73,26 @@
 		</ul>
 	</div>
 	</div>
+	</div>
 	<div>
 	<!-- <img src='imgs/mainm.png' style='width:100%'> -->
-	<img class="mainimg object-fit-cover border rounded" src='imgs/mainm.png' style='width:100%'>
-	</div>
+	<img class="mainimg object-fit-cover border rounded" src='imgs/mainm.png' style='width:100%;height:400px;'>
 	</div>
 </header>
 
 <style>
 .dropbtn {
-  padding: 16px;
-  font-size: ;
+  font-weight: bold;
   border: none;
-  background-color: #F8F9FA;
+  background-color: rgba(0, 0, 0, 0); /* rgb+alpha(=투명도) */	
+  margin-left: 50px;
+  color:#fff;
 }
  
 .dropdown {
   position: relative;
   display: inline-block;
+ 
 }
  
 .dropdown-content {
@@ -98,13 +100,11 @@
   position: absolute;
   background-color: #ebebeb; /* 서브메뉴 */
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+
 }
  
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
@@ -113,12 +113,7 @@
  
 .dropdown:hover .dropdown-content {display: block;}
  
-.dropdown:hover .dropbtn {background-color: #F8F9FA;}
-
-
-
-
-
+.dropdown:hover .dropbtn {background-color: background-color: rgba(0, 0, 0, 1);}
 
 
 
@@ -145,9 +140,16 @@
 
 
 
-header nav ul { font-size: 18px; font-weight: bold;}
-header ul { display: flex; 	padding-top: 8px;}
+header nav ul { font-size: 18px; font-weight: bold; color:#fff;}
+header ul { display: flex; 	padding-top: 8px; }
 header nav ul li:not(:first-child) { margin-left: 50px }
-header nav a:hover, header nav a.active { color:#0730fa  }
+header nav a:hover, header nav a.active { color:#fff;
+  }
+
+.head {
+	background-color: rgba(0, 0, 0, .5); /* rgb+alpha(=투명도) */	 
+	position: fixed; /* 절대위치 : top,right,bottom,left등의 좌표값 속성 */
+	width: 100%;
+}
 
 </style>

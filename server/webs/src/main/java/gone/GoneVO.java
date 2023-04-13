@@ -12,4 +12,5 @@ public class GoneVO {
 	private String title, content, type,member_id,name,locname,couname,gone_time,out_time,loccode;
 	private Date gone_date;
 	private List<GoneFileVO> fileInfo;
+	
 }
