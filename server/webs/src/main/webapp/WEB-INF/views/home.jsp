@@ -94,5 +94,22 @@
 </div>
 
 
+
+
+<!-- 
+<script type="text/javascript">
+$.ajax({
+    url:'https://dapi.kakao.com/v2/local/search/address.json?query='+encodeURIComponent('숭의동'),
+    type:'GET',
+    headers: {'Authorization' : 'KakaoAK 481d31f68d1e3ee3ef028e3423236be5'},
+success:function(data){
+console.log(data);
+},
+error : function(e){
+console.log(e);
+}
+});
+</script> -->
+
 </body>
 </html>
