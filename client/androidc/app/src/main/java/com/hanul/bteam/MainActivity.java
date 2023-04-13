@@ -27,6 +27,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     MarkerOptions myMarker;
     GoogleMap map;
     SupportMapFragment mapFragment;
-
+    ScrollView sc;
 //    @Override
 //    public boolean onTouchEvent(MotionEvent event) {
 //        return CommonMethod.keyDisappear(this, this.getCurrentFocus());
@@ -77,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
+//        sc = findViewById(R.id.sc);
+//        sc.fullScroll(View.FOCUS_DOWN);
         // 액션바가 보이지 않게 하기 위하여
         // 먼저 theme에 가서 NoActionBar로 수정한다
         // 내가 만든 툴바를 액션바로 지정한다

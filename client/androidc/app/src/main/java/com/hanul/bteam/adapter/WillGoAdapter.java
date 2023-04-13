@@ -127,7 +127,9 @@ public class WillGoAdapter extends
                             Gson gson = new Gson();
                             GoneDTO dto1 = gson.fromJson(response.body(), GoneDTO.class);
                             Bundle b2 = new Bundle();
-
+                            dto1.setFilepath(dto.getFilepath());
+                            dto1.setLocname(dto.getLocname());
+                            dto1.setName_desc(dto1.getContent());
                             b2.putSerializable("dto", dto1);
                             activity.bundle = b2;
                             activity.fragmentControl(new Detailmo());
