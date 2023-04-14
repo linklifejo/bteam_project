@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.HomeFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 
@@ -43,11 +44,14 @@ public class LoginFrist extends Fragment {
         view.findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id = etID.getText().toString();
-                String pw = etPW.getText().toString();
-                CommonMethod commonMethod = new CommonMethod();
-
-
+                boolean isStart = false;
+                // 로그인 로직
+//                String id = etID.getText().toString();
+//                String pw = etPW.getText().toString();
+//                CommonMethod commonMethod = new CommonMethod();
+                // 로그인 성공시 아래 실행
+                isStart = true;
+                if (isStart) start();
             }
         });
 
@@ -56,5 +60,10 @@ public class LoginFrist extends Fragment {
 
 
         return view;
+    }
+    private void start(){
+        activity.isLogin = true;
+        activity.isLogin();
+        activity.fragmentControl(new HomeFragment());
     }
 }

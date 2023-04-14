@@ -42,6 +42,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.login.JoinLogin;
 import com.hanul.bteam.login.LoginFrist;
 
 import java.io.File;
@@ -50,6 +51,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     public String location = null;
     public Bundle bundle;
     Toolbar toolbar;
-    Boolean isStart = false;
+    public boolean isLogin = false;
     BottomNavigationView bNaviView;
     Location myLoc, markerLoc;
     MarkerOptions myMarker;
@@ -86,13 +88,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bv = findViewById(R.id.bottom_navi);
-        if(isStart){
-
-        }else{
-    //   bv.removeAllViews();
-
-        }
+        isLogin();
      //   checkDangerousPermissions();
 //        sc = findViewById(R.id.sc);
 //        sc.fullScroll(View.FOCUS_DOWN);
@@ -105,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         // 처음 화면 초기화 : Fragment1로 초기화
-        fragmentControl(new LoginFrist());
+      //  fragmentControl(new LoginFrist());
         // 네비게이션뷰를 찾아서 클릭이벤트를 달아준다
         bNaviView = findViewById(R.id.bottom_navi);
         bNaviView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -129,6 +125,22 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+    public int fieldCheck(){
+        HashMap<String, String> info = new HashMap<String, String>();
+    return 0;
+    }
+
+    public void isLogin(){
+        bv = findViewById(R.id.bottom_navi);
+   //     isLogin=false;
+        if(isLogin){
+            bv.setVisibility(View.VISIBLE);
+            fragmentControl(new HomeFragment());
+        }else{
+            bv.setVisibility(View.GONE);
+            fragmentControl(new LoginFrist());
+        }
     }
     public String getPathFromUri(Uri uri){
 
