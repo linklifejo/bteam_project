@@ -1,15 +1,9 @@
 package com.hanul.bteam;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.GridView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.adapter.BoardrAdapter;
-import com.hanul.bteam.adapter.GoneAdapter;
+import com.hanul.bteam.COMMON.adapter.BoardrAdapter;
+import com.hanul.bteam.COMMON.adapter.GoneAdapter;
 import com.hanul.bteam.dto.BoardDTO;
 import com.hanul.bteam.dto.GoneDTO;
 
