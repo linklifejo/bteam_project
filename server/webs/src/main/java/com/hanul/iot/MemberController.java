@@ -31,6 +31,7 @@ public class MemberController {
 		return "member/join";
 	}
 	
+	
 	//회원가입처리 요청
 	@ResponseBody 
 	@RequestMapping(value="/join", produces="text/html; charset=utf-8")
