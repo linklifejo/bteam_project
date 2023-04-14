@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.LocalDDFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;

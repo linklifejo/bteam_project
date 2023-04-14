@@ -19,15 +19,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-<<<<<<< HEAD:client/androidc/app/src/main/java/com/hanul/bteam/adapter/BoardrAdapter.java
+
 import com.google.gson.Gson;
 import com.hanul.bteam.Board1;
 import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.Detailmo;
-=======
+
 import com.hanul.bteam.BoardTwo;
->>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3:client/androidc/app/src/main/java/com/hanul/bteam/COMMON/adapter/BoardrAdapter.java
+
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.BoardDTO;

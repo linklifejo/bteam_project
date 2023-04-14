@@ -14,10 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.adapter.BoardrAdapter;
-import com.hanul.bteam.adapter.CourseAdapter;
-import com.hanul.bteam.adapter.GoneAdapter;
-import com.hanul.bteam.adapter.HuAdapter;
+
 import com.hanul.bteam.adapter.MyWroteAdapter;
 import com.hanul.bteam.adapter.RecentlyAdapter;
 import com.hanul.bteam.dto.BoardDTO;
