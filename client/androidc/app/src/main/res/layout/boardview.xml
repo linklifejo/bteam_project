@@ -50,11 +50,18 @@
                 android:layout_marginTop="160dp"
                 android:background="#00FFFFFF"
                 android:src="@drawable/jjim_heart1"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
     </androidx.cardview.widget.CardView>
 
 

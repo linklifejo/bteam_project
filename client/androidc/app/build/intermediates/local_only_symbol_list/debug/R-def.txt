@@ -97,7 +97,10 @@ id btn_questionsList
 id btn_upload
 id btn_write
 id btn_write2
+<<<<<<< HEAD
 id btnadd
+=======
+>>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
 id contain
 id content
 id couname
@@ -177,7 +180,10 @@ layout localdd_frag
 layout localview
 layout loginfirst
 layout myinfo_frag
+<<<<<<< HEAD
 layout myinfo_frag_view
+=======
+>>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
 layout myinfo_frag_view1
 layout myinfo_frag_view2
 layout myinfo_modify_frag_view

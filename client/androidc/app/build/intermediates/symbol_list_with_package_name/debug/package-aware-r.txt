@@ -3054,7 +3054,10 @@ id btn_questionsList
 id btn_upload
 id btn_write
 id btn_write2
+<<<<<<< HEAD
 id btnadd
+=======
+>>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3708,7 +3711,10 @@ layout mtrl_picker_text_input_date_range
 layout mtrl_search_bar
 layout mtrl_search_view
 layout myinfo_frag
+<<<<<<< HEAD
 layout myinfo_frag_view
+=======
+>>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
 layout myinfo_frag_view1
 layout myinfo_frag_view2
 layout myinfo_modify_frag_view
