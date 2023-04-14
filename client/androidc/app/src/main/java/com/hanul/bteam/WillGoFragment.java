@@ -18,11 +18,10 @@ import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.COMMON.adapter.OnWillGoitemClickListener;
 import com.hanul.bteam.COMMON.adapter.WillGoAdapter;
 import com.hanul.bteam.dto.GoneDTO;
-<<<<<<< HEAD
+
 import com.hanul.bteam.dto.LocationDTO;
 import com.hanul.bteam.dto.WillgoDTO;
-=======
->>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
+
 
 import java.util.ArrayList;
 
