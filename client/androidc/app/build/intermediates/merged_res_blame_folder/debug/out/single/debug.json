@@ -204,7 +204,6 @@
         "source": "com.hanul.bteam.app-main-35:/layout/goneview.xml"
     },
     {
-<<<<<<< HEAD
         "merged": "com.hanul.bteam.app-merged_res-33:/layout_memberview.xml.flat",
         "source": "com.hanul.bteam.app-main-35:/layout/memberview.xml"
     },
@@ -285,84 +284,6 @@
         "source": "com.hanul.bteam.app-main-35:/drawable/gye_bang_san.jpg"
     },
     {
-=======
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable_duckyu.jpg.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable/duckyu.jpg"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/layout_board_2.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/layout/board_2.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/layout_questions_1.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/layout/questions_1.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable_marker.png.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable/marker.png"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable_do_bong_san.jpg.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable/do_bong_san.jpg"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable-v24_dream03.jpg.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable-v24/dream03.jpg"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable-v24_mudm.jpg.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable-v24/mudm.jpg"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/layout_wroteview.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/layout/wroteview.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/layout_boardview.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/layout/boardview.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/layout_questions_2.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/layout/questions_2.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable_gr_san.jpg.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable/gr_san.jpg"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable_han_ra_san.jpg.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable/han_ra_san.jpg"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable_home.png.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable/home.png"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.hanul.bteam.app-main-35:/mipmap-xxhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/layout_board_1.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/layout/board_1.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/layout_localdd_frag.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/layout/localdd_frag.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/layout_questions_1_view.xml.flat",
-        "source": "com.hanul.bteam.app-main-35:/layout/questions_1_view.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-33:/drawable_gye_bang_san.jpg.flat",
-        "source": "com.hanul.bteam.app-main-35:/drawable/gye_bang_san.jpg"
-    },
-    {
->>>>>>> 41609087b286083e6b77ac422e02943bdd603de6
         "merged": "com.hanul.bteam.app-merged_res-33:/drawable_chi_ak_san.jpg.flat",
         "source": "com.hanul.bteam.app-main-35:/drawable/chi_ak_san.jpg"
     },
