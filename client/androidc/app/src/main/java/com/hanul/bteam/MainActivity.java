@@ -31,6 +31,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -66,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
     public String location = null;
     public Bundle bundle;
     Toolbar toolbar;
+    Boolean isStart = false;
     BottomNavigationView bNaviView;
     Location myLoc, markerLoc;
     MarkerOptions myMarker;
     GoogleMap map;
+    BottomNavigationView bv;
     String imgFilePath = null;
 
 //    @Override
@@ -83,9 +86,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        bv = findViewById(R.id.bottom_navi);
+        if(isStart){
 
+        }else{
+    //   bv.removeAllViews();
 
-
+        }
+     //   checkDangerousPermissions();
+//        sc = findViewById(R.id.sc);
+//        sc.fullScroll(View.FOCUS_DOWN);
         // 액션바가 보이지 않게 하기 위하여
         // 먼저 theme에 가서 NoActionBar로 수정한다
         // 내가 만든 툴바를 액션바로 지정한다
@@ -137,6 +147,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+      //  checkDangerousPermissions();
+
     }
 
     //Path(파일경로) -> Uri
@@ -206,6 +218,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
 
     public File creatFile() {
         // 파일 이름을 만들기 위해 시간값을 생성함
