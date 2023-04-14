@@ -1,5 +1,6 @@
 package com.bteam.iot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -20,6 +21,7 @@ import com.google.gson.Gson;
 import common.CommonUtility;
 import member.MemberServiceImpl;
 import member.MemberVO;
+import willgo.WillgoVO;
 
 @Controller
 public class MemberController {
@@ -35,48 +37,42 @@ public class MemberController {
 		return "member/join";
 	}
 	
-	
-	
-	
-	
+	@ResponseBody @RequestMapping(value="/login",produces="text/html; charset=utf-8")
+	public String login(String id, String pw,HttpServletRequest req, Model model) {
+//		id =  req.getParameter("id");
+//		pw =  req.getParameter("pw");
+		//화면에서 입력한 아이디의 솔트를 조회해와
+		//해당 솔트를 사용해서 입력한 비번을 암호화한다
+		String salt = service.member_salt(id);
+		pw = common.getEncrypt(pw, salt);
+		
+		//화면에서 입력한 아이디/비번이 일치하는 회원정보를 조회해온다
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("pw", pw);
+		MemberVO vo = service.login(map);
+		Gson gson = new Gson();
+		 gson.toJson( (MemberVO) vo);	 
+		return vo== null ? "실패":"성공";
+	}
 	
 	
 	//회원가입처리 요청
 	@ResponseBody 
 	@RequestMapping(value="/join", produces="text/html; charset=utf-8")
-	public String join(String str,HttpServletRequest req, Model model,MultipartRequest file) {
+	public String join(HttpServletRequest req, Model model,MultipartRequest file) {
 		String data = (String) req.getParameter("param");
-		
 		MemberVO vo = new Gson().fromJson(data, MemberVO.class);
 		vo.setGender( vo.getGender()==null ? "남" : vo.getGender() );    
-		
-//		String id = (String) req.getParameter("id");		
-//		String pw = (String) req.getParameter("pw");
-//		String name = (String) req.getParameter("name");
-//		String phone = (String) req.getParameter("phone");
-//		String address = (String) req.getParameter("address");
-//		String profile = (String) req.getParameter("profile");
 		HashMap<String,Object> map = new HashMap<String, Object>();
 		MultipartFile profilFile = file.getFile("file");
 		//첨부된 파일이 있는 경우
 		if( profilFile!=null ) {
-			vo.setProfile( common.fileUpload((MultipartFile) file, "profile", req) );
-			
+			vo.setProfile( common.fileUpload((MultipartFile) file, "profile", req) );	
 		}
-//		if( ! ((JSONObject) file).isEmpty() ) {
-//			map.put("profile", common.fileUpload((MultipartFile) file, "profile", req));
-//		}
-		
 		String salt = common.generateSalt();
 		vo.setPw( common.getEncrypt(vo.getPw(), salt) );
 		vo.setSalt(salt);
-//		map.put("id", id);
-//		map.put("pw", pw);	
-//		map.put("name", name);
-//		map.put("phone", phone);
-//		map.put("address", address);
-//		map.put("salt", salt);		
-
 		return service.member_insert(vo) == 1 ? "성공" : "실패";
 	}
 	
@@ -353,23 +349,23 @@ public class MemberController {
 		return "default/member/find";
 	}
 	
-	//로그인처리 요청
-	@ResponseBody @RequestMapping("/iotLogin")
-	public boolean login(String id, String pw, String admin, HttpSession session) {
-		//화면에서 입력한 아이디의 솔트를 조회해와
-		//해당 솔트를 사용해서 입력한 비번을 암호화한다
-		String salt = service.member_salt(id);
-		pw = common.getEncrypt(pw, salt);
-		
-		//화면에서 입력한 아이디/비번이 일치하는 회원정보를 조회해온다
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("id", id);
-		map.put("pw", pw);
-		map.put("admin", admin);
-		MemberVO vo = service.member_login(map);
-		session.setAttribute("loginInfo", vo);
-		return vo==null ? false : true;
-	}
+//	//로그인처리 요청
+//	@ResponseBody @RequestMapping("/iotLogin")
+//	public boolean login(String id, String pw, String admin, HttpSession session) {
+//		//화면에서 입력한 아이디의 솔트를 조회해와
+//		//해당 솔트를 사용해서 입력한 비번을 암호화한다
+//		String salt = service.member_salt(id);
+//		pw = common.getEncrypt(pw, salt);
+//		
+//		//화면에서 입력한 아이디/비번이 일치하는 회원정보를 조회해온다
+//		HashMap<String, String> map = new HashMap<String, String>();
+//		map.put("id", id);
+//		map.put("pw", pw);
+//		map.put("admin", admin);
+//		MemberVO vo = service.member_login(map);
+//		session.setAttribute("loginInfo", vo);
+//		return vo==null ? false : true;
+//	}
 	
 	//비밀번호변경저장처리 요청
 	@RequestMapping("/change")
@@ -391,10 +387,10 @@ public class MemberController {
 	
 	
 	
-	//로그인화면 요청
-	@RequestMapping("/login")
-	public String login(HttpSession session) {
-		session.setAttribute("category", "login");
-		return "default/member/login";
-	}
+//	//로그인화면 요청
+//	@RequestMapping("/login")
+//	public String login(HttpSession session) {
+//		session.setAttribute("category", "login");
+//		return "default/member/login";
+//	}
 }

@@ -9,6 +9,8 @@ public interface MemberService {
 	int member_insert(MemberVO vo);
 	
 	
+	MemberVO login(HashMap<String, String> map);
+	
 	
 	MemberVO member_myinfo(String id); //내정보보기(내프로필) 회원정보조회
 	List<MemberVO> member_list(); //회원목록조회-관리자

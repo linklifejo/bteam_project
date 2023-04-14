@@ -107,8 +107,6 @@ id couname
 id course
 id danger
 id etAddress
-id etID
-id etPW
 id evSearch
 id filepath
 id gonetime
@@ -130,6 +128,7 @@ id questionsTitle
 id recycler
 id recycler2
 id recyclerView
+id rra
 id rre
 id tab1
 id tab2
@@ -179,6 +178,7 @@ layout locald_frag
 layout localdd_frag
 layout localview
 layout loginfirst
+layout memberview
 layout myinfo_frag
 <<<<<<< HEAD
 layout myinfo_frag_view

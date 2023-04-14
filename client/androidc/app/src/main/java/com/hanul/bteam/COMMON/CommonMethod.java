@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.hanul.bteam.ASyncTask.ApiClient;
 import com.hanul.bteam.ASyncTask.ApiInterface;
 import com.google.gson.Gson;
+import com.hanul.bteam.dto.MemberDTO;
 
 import java.util.HashMap;
 
@@ -26,8 +27,13 @@ public class CommonMethod {
 >>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
 
 
+<<<<<<< HEAD
+    public static String ipConfig = "http://192.168.0.140/ab/";
+    public static MemberDTO loginDto = null;
+=======
     public static String ipConfig = "http://192.168.0.11/ab/";
 
+>>>>>>> 41609087b286083e6b77ac422e02943bdd603de6
 
 
 //    public static boolean keyDisappear(Context context, View view){

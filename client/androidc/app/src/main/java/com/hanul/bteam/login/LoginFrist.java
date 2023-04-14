@@ -1,25 +1,42 @@
 package com.hanul.bteam.login;
 
+import static com.hanul.bteam.COMMON.CommonMethod.loginDto;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.HomeFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
+import com.hanul.bteam.dto.MemberDTO;
+import com.hanul.bteam.dto.WillgoDTO;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginFrist extends Fragment {
     MainActivity activity;
-    EditText etID, etPW;
-    Fragment JoinLogin;
+    EditText id, pw;
+
+
     Button btnLogin, btnJoin;
 
     @Nullable
@@ -32,8 +49,8 @@ public class LoginFrist extends Fragment {
                 container, false);
         activity =(MainActivity)getActivity();
         activity.checkDangerousPermissions();
-        view.findViewById(R.id.etID);
-        view.findViewById(R.id.etPW);
+        id = view.findViewById(R.id.id);
+        pw = view.findViewById(R.id.pw);
         view.findViewById(R.id.btnJoin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,10 +60,38 @@ public class LoginFrist extends Fragment {
         view.findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id = etID.getText().toString();
-                String pw = etPW.getText().toString();
-                CommonMethod commonMethod = new CommonMethod();
+//                MemberDTO dto = new MemberDTO();
+//                dto.setId( id.getText().toString() );
+//                dto.setPw( pw.getText().toString() );
 
+
+
+                CommonMethod commonMethod = new CommonMethod();
+                commonMethod.setParams("id", id.getText());
+                commonMethod.setParams("pw", pw.getText());
+
+                commonMethod.getData("login", new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        if(!response.body().equals(null)){
+//                            loginDto = new Gson().fromJson(response.body(), MemberDTO.class);
+
+                                Bundle b = new Bundle();
+                                b.putSerializable("dto", loginDto);
+                                activity.bundle = b;
+                                activity.fragmentControl(new HomeFragment());
+                            } else {
+                                Toast.makeText(activity,
+                                        "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+
+                    }
+                });
 
             }
         });

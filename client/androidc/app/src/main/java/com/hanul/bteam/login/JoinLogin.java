@@ -127,12 +127,6 @@ public class JoinLogin extends Fragment {
                 }
 
                 // 데이터를 파라메터로 보낸다 : 서버에서 받을때 param으로 받는다
-                commonMethod.setParams("id", id.getText());
-                commonMethod.setParams("pw", pw.getText());
-                commonMethod.setParams("name", name.getText());
-                commonMethod.setParams("phone", phone.getText());
-                commonMethod.setParams("address", address.getText());
-
                 MemberDTO dto = new MemberDTO();
                 dto.setId( id.getText().toString() );
                 dto.setPw( pw.getText().toString() );
@@ -141,9 +135,6 @@ public class JoinLogin extends Fragment {
                 dto.setAddress( address.getText().toString() );
                 commonMethod.setParams("param", dto);
 
-
-//                commonMethod.setParams("id", "abc");
-//                commonMethod.getData("id_check",  new Callback<String>() {
                 commonMethod.sendFile("join", filePart, new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
