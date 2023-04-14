@@ -13,4 +13,10 @@ public interface LocationService {
 	int location_delete(int id);
 	List<LocationVO> Loc_info();
 	List<LocationVO> location_list(String local);// 지역별산
+	List<LocationVO> local_list();// 지역별산
+	List<LocationVO> local2_list();// 지역별산
+	List<LocationVO> local3_list();// 지역별산
+	List<LocationVO> local4_list();// 지역별산
+	List<LocationVO> local5_list();// 지역별산
+	List<LocationVO> local6_list();// 지역별산
 }

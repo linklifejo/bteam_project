@@ -110,8 +110,34 @@ $(function () {
 
 
 <script>
+
+
+$.ajax({
+    url:'https://dapi.kakao.com/v2/local/search/address.json?query='+encodeURIComponent('${vo.address}'),
+    dataType:"json",
+    type:'GET',
+    headers: {'Authorization' : 'KakaoAK 481d31f68d1e3ee3ef028e3423236be5'},
+success:function(data){
+console.log('위경도 : ', data);
+var address = data.documents[0];
+console.log('경도 : ', address.x );
+console.log('위도 : ', address.y );
+console.log('주소 : ', address );
+map_position(address);
+},
+error : function(e){
+console.log(e);
+}
+});
+
+</script>
+
+
+
+<script>
 // 이미지 지도에서 마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+function map_position(address) {
+var markerPosition  = new kakao.maps.LatLng(address.y,address.x); 
 
 // 이미지 지도에 표시할 마커입니다
 // 이미지 지도에 표시할 마커는 Object 형태입니다
@@ -121,47 +147,29 @@ var marker = {
 
 var staticMapContainer  = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
     staticMapOption = { 
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 이미지 지도의 중심좌표
+        center: new kakao.maps.LatLng(address.y, address.x), // 이미지 지도의 중심좌표
         level: 3, // 이미지 지도의 확대 레벨
         marker: marker // 이미지 지도에 표시할 마커 
     };    
 
 // 이미지 지도를 생성합니다
 var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
+}
 </script>
 
 
 
+
+<!-- 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=481d31f68d1e3ee3ef028e3423236be5&libraries=LIBRARY"></script>
 
-<!-- services 라이브러리 불러오기 -->
+services 라이브러리 불러오기
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=481d31f68d1e3ee3ef028e3423236be5&libraries=services"></script>
 
-<!-- services와 clusterer, drawing 라이브러리 불러오기 -->
+services와 clusterer, drawing 라이브러리 불러오기
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=481d31f68d1e3ee3ef028e3423236be5&libraries=services,clusterer,drawing"></script>
 
-
-
-<!-- 주소 -->
-<script type="text/javascript">
-  
-
-$.ajax({
-    url:'https://dapi.kakao.com/v2/local/search/address.json?query='+encodeURIComponent('${vo.address}'),
-    type:'GET',
-    headers: {'Authorization' : 'KakaoAK 481d31f68d1e3ee3ef028e3423236be5'},
-success:function(data){
-console.log('위경도 : ', data);
-var address = data.documents[0];
-console.log('경도 : ', address.x );
-console.log('위도 : ', address.y );
-},
-error : function(e){
-console.log(e);
-}
- 
-});
-</script>
+ -->
 
 
 

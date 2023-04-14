@@ -41,8 +41,43 @@ select * from location order by locname
 <select id='local_list' resultType='location.LocationVO'>
 select *
 from location
-where type='1' and loccode= #{loccode}
- order by locname
+where type='1' and loccode= 'L01'
+order by locname
+</select>
+<!-- 지역별 산정보 목록조회 -->
+<select id='local2_list' resultType='location.LocationVO'>
+select *
+from location
+where type='1' and loccode= 'L02'
+order by locname
+</select>
+<!-- 지역별 산정보 목록조회 -->
+<select id='local3_list' resultType='location.LocationVO'>
+select *
+from location
+where type='1' and loccode= 'L03'
+order by locname
+</select>
+<!-- 지역별 산정보 목록조회 -->
+<select id='local4_list' resultType='location.LocationVO'>
+select *
+from location
+where type='1' and loccode= 'L04'
+order by locname
+</select>
+<!-- 지역별 산정보 목록조회 -->
+<select id='local5_list' resultType='location.LocationVO'>
+select *
+from location
+where type='1' and loccode= 'L05'
+order by locname
+</select>
+<!-- 지역별 산정보 목록조회 -->
+<select id='local6_list' resultType='location.LocationVO'>
+select *
+from location
+where type='1' and loccode= 'L06'
+order by locname
 </select>
 
 

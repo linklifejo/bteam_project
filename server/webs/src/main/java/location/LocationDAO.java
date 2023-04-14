@@ -48,5 +48,35 @@ public class LocationDAO implements LocationService {
 		return null;
 	}
 
+	@Override
+	public List<LocationVO> local_list() {
+		return sql.selectList("lo.local_list");
+	}
+
+	@Override
+	public List<LocationVO> local2_list() {
+		return sql.selectList("lo.local2_list");
+	}
+
+	@Override
+	public List<LocationVO> local3_list() {
+		return sql.selectList("lo.local3_list");
+	}
+
+	@Override
+	public List<LocationVO> local4_list() {
+		return sql.selectList("lo.local4_list");
+	}
+
+	@Override
+	public List<LocationVO> local5_list() {
+		return sql.selectList("lo.local5_list");
+	}
+
+	@Override
+	public List<LocationVO> local6_list() {
+		return sql.selectList("lo.local6_list");
+	}
+
 
 }
