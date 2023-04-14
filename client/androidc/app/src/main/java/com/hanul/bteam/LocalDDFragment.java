@@ -51,9 +51,11 @@ public class LocalDDFragment extends Fragment {
         View view =  inflater.inflate(R.layout.localdd_frag,
                 container, false);
         activity = (MainActivity)getActivity();
-
+        Bundle b = activity.bundle;
         dto = (LocationDTO) activity.bundle.getSerializable("dto");
-        activity.location = Integer.toString(dto.getId());
+
+        Integer id = dto.getId();
+        activity.location = id.toString();
         locname =view.findViewById(R.id.tvLocname);
         btnWillGo = view.findViewById(R.id.btnWillGo);
         locname.setText(dto.getLocname() );

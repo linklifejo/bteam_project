@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.LocalDDFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
@@ -45,6 +46,7 @@ public class WillGoAdapter extends
     MainActivity activity;
     LayoutInflater inflater;
     OnWillGoitemClickListener listener;
+    String wtype;
     // 생성자로 메인에서 넘겨받은것들을 연결
     public WillGoAdapter(Context context, ArrayList<WillgoDTO> dtos, MainActivity a) {
         this.activity = a;
@@ -104,31 +106,39 @@ public class WillGoAdapter extends
             @Override
             public void onClick(View v) {
                 WillgoDTO dto = dtos.get(position);
-                String exec = "";
-                String wtype = dto.getWtype();
-                if (wtype == "2") {
-                    exec = "oneLocation";
-                }else{
-                    exec = "";
-                }
+
+                Integer id = dto.getRefid();
                 CommonMethod commonMethod = new CommonMethod();
-                //Integer id = dto.getLocation_id();
-              //  commonMethod.setParams("id",  id.toString());
-                commonMethod.getData("exec", new Callback<String>(){
+                commonMethod.setParams("id",  id.toString());
+                commonMethod.setParams("wtype",  dto.getWtype());
+                commonMethod.getData("willGoQuery", new Callback<String>(){
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
 
                         if(response.isSuccessful()){
-                            if(wtype =="2") {
-                                Gson gson = new Gson();
-                                LocationDTO dto = gson.fromJson(response.body(), LocationDTO.class);
-                                Bundle b = new Bundle();
-                                b.putSerializable("dto", dto);
-                                activity.bundle = b;
-                                activity.fragmentControl(new LocalDDFragment());
-                            }else {
+                        if(dto.getWtype().equals("2")){
+                            Gson gson = new Gson();
+                            LocationDTO dto1 = gson.fromJson(response.body(), LocationDTO.class);
+                            Bundle b1 = new Bundle();
+                            b1.putSerializable("dto", dto1);
+                            activity.bundle = b1;
+                            activity.fragmentControl(new LocalDDFragment());
+                        }else{
+                            Gson gson = new Gson();
+                            GoneDTO dto1 = gson.fromJson(response.body(), GoneDTO.class);
+                            Bundle b2 = new Bundle();
+                            dto1.setFilepath(dto.getFilepath());
+                            dto1.setLocname(dto.getLocname());
+                            dto1.setName_desc(dto1.getContent());
+                            b2.putSerializable("dto", dto1);
+                            activity.bundle = b2;
+                            activity.fragmentControl(new Detailmo());
 
-                            }
+                        }
+
+
+
+
                         }
                     }
                     @Override

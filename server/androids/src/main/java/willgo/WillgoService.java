@@ -18,6 +18,6 @@ public interface WillgoService {
 	int willgo_delete(int id); 	
 	List<WillgoVO> willgo_list(String member_id);	
 	LocationVO location_info(int id);
-	GoneFileVO gone_file_info(int id); //첨부파일정보 조회
-	GoneVO gone_info(int id); //첨부파일정보 조회
+	GoneFileVO gone_file_info(int id); 
+	GoneVO gone_info(int id); 
 }

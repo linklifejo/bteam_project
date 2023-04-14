@@ -106,7 +106,7 @@ public class WillgoController {
 		WillgoVO vo =(WillgoVO) service.willgo_info(map);
 		if(vo != null) 	return "존재합니다";
 		
-			if(wtype == "2") {
+			if(wtype.equals("2") ) {
 				LocationVO lo = service.location_info(refid);
 				map.put("filepath", lo.getFilepath());
 				map.put("locname", lo.getLocname());
@@ -147,5 +147,22 @@ public class WillgoController {
 	
 		Integer id = Integer.valueOf(req.getParameter("id")) ;
 		return service.willgo_delete(id) == 1 ? "성공" : "실패";
+	}
+	
+	// 산 정보검색
+	@ResponseBody @RequestMapping(value="/willGoQuery", produces="text/plain; charset=utf-8" )
+	public String willGoQuery(HttpServletRequest req, Model model) {
+		String wtype = (String) req.getParameter("wtype");	
+		Integer id = Integer.valueOf(req.getParameter("id")) ;
+		if(wtype.equals("2")) {
+			LocationVO vo = service.location_info(id);
+			Gson gson = new Gson();
+			return gson.toJson( (LocationVO)vo );		
+		}else {
+			GoneVO vo = service.gone_info(id);
+			Gson gson = new Gson();
+			return gson.toJson( (GoneVO)vo );		
+		}
+
 	}
 }

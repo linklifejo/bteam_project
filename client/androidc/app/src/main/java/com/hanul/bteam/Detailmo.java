@@ -27,7 +27,7 @@ public class Detailmo extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View view = (ViewGroup) inflater.inflate(R.layout.detailmo,
+        View view =  inflater.inflate(R.layout.detailmo,
                 container, false);
         activity =(MainActivity)getActivity();
         Bundle b = activity.bundle;
