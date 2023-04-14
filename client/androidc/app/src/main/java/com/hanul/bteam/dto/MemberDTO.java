@@ -1,6 +1,8 @@
 package com.hanul.bteam.dto;
 
-public class MemberDTO {
+import java.io.Serializable;
+
+public class MemberDTO implements Serializable {
     String id , pw ,name , phone , address,profile;
     public MemberDTO() { }
 

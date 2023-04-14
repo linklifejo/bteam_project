@@ -89,19 +89,24 @@ id btnSearch
 id btnSeoul
 id btnWillGo
 id btn_boardList
+id btn_cancel
 id btn_delete
+id btn_good
 id btn_modify
 id btn_questionsList
+id btn_upload
 id btn_write
+id btn_write2
+<<<<<<< HEAD
 id btnadd
+=======
+>>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
 id contain
 id content
 id couname
 id course
 id danger
 id etAddress
-id etID
-id etPW
 id evSearch
 id filepath
 id gonetime
@@ -123,6 +128,7 @@ id questionsTitle
 id recycler
 id recycler2
 id recyclerView
+id rra
 id rre
 id tab1
 id tab2
@@ -143,9 +149,13 @@ id tvHeigh
 id tvLocname
 id tvName_desc
 id tvTitle
+id userBirthInfo
+id userInfo
 id userInfo1_Name
 id userInfo2
-id userInfo3
+id userInfo4
+id userInfo6
+id userNameInfo
 id writeDate
 id writename
 id writersID
@@ -153,6 +163,7 @@ layout activity_main
 layout board_1
 layout board_1_view
 layout board_2
+layout board_3
 layout boardview
 layout course
 layout courseview
@@ -167,8 +178,15 @@ layout locald_frag
 layout localdd_frag
 layout localview
 layout loginfirst
+layout memberview
 layout myinfo_frag
+<<<<<<< HEAD
 layout myinfo_frag_view
+=======
+>>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
+layout myinfo_frag_view1
+layout myinfo_frag_view2
+layout myinfo_modify_frag_view
 layout popupimg
 layout questions_1
 layout questions_1_view

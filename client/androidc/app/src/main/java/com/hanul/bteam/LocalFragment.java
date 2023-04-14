@@ -9,21 +9,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.adapter.SearchAdapter;
-import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.LocationDTO;
 
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class LocalFragment extends Fragment {
     MainActivity activity;

@@ -78,6 +78,12 @@ public class MemberDAO implements MemberService {
 		return sql.insert("member.join", vo);
 	}
 
+	@Override
+	public MemberVO login(HashMap<String, String> map) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("member.login", map);
+	}
+
 	
 
 }
