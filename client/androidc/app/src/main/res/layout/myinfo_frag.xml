@@ -42,36 +42,12 @@
         android:id="@+id/userInfo1_Name"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="32dp"
         android:gravity="left"
         android:text="내 이름 님"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/BoardName" />
-
-    <TextView
-        android:id="@+id/userInfo2"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:gravity="left"
-        android:text="내 정보"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/userInfo1_Name" />
-
-    <TextView
-        android:id="@+id/userInfo3"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:gravity="left"
-        android:text="내 정보"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/userInfo1_Name"
         app:layout_constraintTop_toBottomOf="@+id/BoardName" />
 
     <android.widget.Button
