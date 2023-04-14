@@ -144,6 +144,10 @@
         "source": "com.hanul.bteam.app-main-35:/layout/popupimg.xml"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-33:/layout_myinfo_frag_view2.xml.flat",
+        "source": "com.hanul.bteam.app-main-35:/layout/myinfo_frag_view2.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-33:/layout_review_list.xml.flat",
         "source": "com.hanul.bteam.app-main-35:/layout/review_list.xml"
     },
@@ -336,6 +340,10 @@
         "source": "com.hanul.bteam.app-main-35:/drawable/jjim_heart.png"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-33:/layout_myinfo_modify_frag_view.xml.flat",
+        "source": "com.hanul.bteam.app-main-35:/layout/myinfo_modify_frag_view.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-33:/layout_home_frag.xml.flat",
         "source": "com.hanul.bteam.app-main-35:/layout/home_frag.xml"
     },
@@ -350,6 +358,10 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-33:/layout_hulist.xml.flat",
         "source": "com.hanul.bteam.app-main-35:/layout/hulist.xml"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-33:/layout_board_3.xml.flat",
+        "source": "com.hanul.bteam.app-main-35:/layout/board_3.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-33:/drawable_tae_back_san.jpg.flat",
@@ -382,6 +394,10 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-33:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "com.hanul.bteam.app-pngs-28:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-33:/layout_myinfo_frag_view1.xml.flat",
+        "source": "com.hanul.bteam.app-main-35:/layout/myinfo_frag_view1.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-33:/layout_activity_main.xml.flat",
