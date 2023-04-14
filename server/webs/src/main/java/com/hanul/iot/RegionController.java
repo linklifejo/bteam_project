@@ -35,11 +35,51 @@ public class RegionController {
 	@RequestMapping("/list.re")
 	public String local_list(Model model, HttpSession session ) {
 		session.setAttribute("category", "re");
-		List<LocationVO> list = service.location_list();
-		model.addAttribute("local_list", list);
-		return "region/list";
+		List<LocationVO> local_list = service.local_list();
+		model.addAttribute("local_list", local_list);
+		return "region/list";	
 	}
-
+	//지역별산 화면 요청
+	@RequestMapping("/list2.re")
+	public String local2_list(Model model, HttpSession session ) {
+		session.setAttribute("category", "re");
+		List<LocationVO> local2_list = service.local2_list();
+		model.addAttribute("local2_list", local2_list);
+		return "region/list2";	
+	}
+	//지역별산 화면 요청
+	@RequestMapping("/list3.re")
+	public String local3_list(Model model, HttpSession session ) {
+		session.setAttribute("category", "re");
+		List<LocationVO> local3_list = service.local3_list();
+		model.addAttribute("local3_list", local3_list);
+		return "region/list3";	
+	}
+	//지역별산 화면 요청
+	@RequestMapping("/list4.re")
+	public String local4_list(Model model, HttpSession session ) {
+		session.setAttribute("category", "re");
+		List<LocationVO> local4_list = service.local4_list();
+		model.addAttribute("local4_list", local4_list);
+		return "region/list4";	
+	}
+	//지역별산 화면 요청
+	@RequestMapping("/list5.re")
+	public String local5_list(Model model, HttpSession session ) {
+		session.setAttribute("category", "re");
+		List<LocationVO> local5_list = service.local5_list();
+		model.addAttribute("local5_list", local5_list);
+		return "region/list5";	
+	}
+	//지역별산 화면 요청
+	@RequestMapping("/list6.re")
+	public String local6_list(Model model, HttpSession session ) {
+		session.setAttribute("category", "re");
+		List<LocationVO> local6_list = service.local6_list();
+		model.addAttribute("local6_list", local6_list);
+		return "region/list6";	
+	}
+	
 	
 	//선택한 고객정보화면 요청
 	@RequestMapping("/info.re")
