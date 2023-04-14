@@ -74,6 +74,12 @@ public class MemberServiceImpl implements MemberService {
 		return dao.member_insert(vo);
 	}
 
+	@Override
+	public MemberVO login(HashMap<String, String> map) {
+		// TODO Auto-generated method stub
+		return dao.login(map);
+	}
+
 	
 
 }
