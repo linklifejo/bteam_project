@@ -89,8 +89,7 @@
 
         <activity
             android:name="com.hanul.bteam.MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="stateVisible|adjustResize" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
