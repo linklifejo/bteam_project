@@ -60,6 +60,16 @@ public class LoginFrist extends Fragment {
         view.findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
+                boolean isStart = false;
+                // 로그인 로직
+//                String id = etID.getText().toString();
+//                String pw = etPW.getText().toString();
+//                CommonMethod commonMethod = new CommonMethod();
+                // 로그인 성공시 아래 실행
+                isStart = true;
+                if (isStart) start();
+=======
 //                MemberDTO dto = new MemberDTO();
 //                dto.setId( id.getText().toString() );
 //                dto.setPw( pw.getText().toString() );
@@ -93,6 +103,7 @@ public class LoginFrist extends Fragment {
                     }
                 });
 
+>>>>>>> d991d67973db00062f0e78875093ba6736198852
             }
         });
 
@@ -101,5 +112,10 @@ public class LoginFrist extends Fragment {
 
 
         return view;
+    }
+    private void start(){
+        activity.isLogin = true;
+        activity.isLogin();
+        activity.fragmentControl(new HomeFragment());
     }
 }
