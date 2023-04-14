@@ -26,12 +26,12 @@
 		<div class="dropdown">
   <button class="dropbtn">지역별산</button><%-- href='list.re?id=${vo.gone_id}' --%>
   <div class="dropdown-content">
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re?L01'>서울.경기</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_2.re'>강원</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_3.re'>전라도</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_4.re'>경상도</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_5.re'>충청도</a>
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>region_6.re'>제주도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re?'>서울.경기</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list2.re?'>강원</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list3.re?'>전라도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list4.re?'>경상도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list5.re?'>충청도</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list6.re?'>제주도</a>
   </div>
 </div>
 		

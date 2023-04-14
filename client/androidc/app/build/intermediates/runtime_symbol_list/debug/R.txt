@@ -4111,7 +4111,6 @@ int id endToStart 0x7f0800d0
 int id enterAlways 0x7f0800d1
 int id enterAlwaysCollapsed 0x7f0800d2
 int id etAddress 0x7f0800d3
-<<<<<<< HEAD
 int id evSearch 0x7f0800d4
 int id exitUntilCollapsed 0x7f0800d5
 int id expand_activities_button 0x7f0800d6
@@ -4481,6 +4480,8 @@ int id writename 0x7f080241
 int id writersID 0x7f080242
 int id x_left 0x7f080243
 int id x_right 0x7f080244
+<<<<<<< HEAD
+=======
 =======
 int id etID 0x7f0800d4
 int id etPW 0x7f0800d5
@@ -4854,6 +4855,7 @@ int id x_left 0x7f080244
 int id x_right 0x7f080245
 >>>>>>> 41609087b286083e6b77ac422e02943bdd603de6
 >>>>>>> 08a0ee20299acf07fc92df1c0ca4a0f87c17e712
+>>>>>>> d991d67973db00062f0e78875093ba6736198852
 int integer abc_config_activityDefaultDur 0x7f090000
 int integer abc_config_activityShortDur 0x7f090001
 int integer app_bar_elevation_anim_duration 0x7f090002
@@ -5206,7 +5208,6 @@ int layout material_time_input 0x7f0b004d
 int layout material_timepicker 0x7f0b004e
 int layout material_timepicker_dialog 0x7f0b004f
 int layout material_timepicker_textinput_display 0x7f0b0050
-<<<<<<< HEAD
 int layout memberview 0x7f0b0051
 int layout mtrl_alert_dialog 0x7f0b0052
 int layout mtrl_alert_dialog_actions 0x7f0b0053
@@ -5263,6 +5264,8 @@ int layout support_simple_spinner_dropdown_item 0x7f0b0085
 int layout willgo_frag 0x7f0b0086
 int layout willgoview 0x7f0b0087
 int layout wroteview 0x7f0b0088
+<<<<<<< HEAD
+=======
 =======
 int layout mtrl_alert_dialog 0x7f0b0051
 int layout mtrl_alert_dialog_actions 0x7f0b0052
@@ -5321,6 +5324,7 @@ int layout willgoview 0x7f0b0086
 int layout wroteview 0x7f0b0087
 >>>>>>> 41609087b286083e6b77ac422e02943bdd603de6
 >>>>>>> 08a0ee20299acf07fc92df1c0ca4a0f87c17e712
+>>>>>>> d991d67973db00062f0e78875093ba6736198852
 int menu menu_bottom 0x7f0d0000
 int mipmap ic_launcher 0x7f0e0000
 int mipmap ic_launcher_round 0x7f0e0001

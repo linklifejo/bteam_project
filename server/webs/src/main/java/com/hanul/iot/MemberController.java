@@ -20,7 +20,7 @@ import member.MemberVO;
 @Controller
 public class MemberController {
 	@Autowired private MemberServiceImpl service;
-	private String KAKAO_ID = "bf5b4ca46510724c71f3c62e30d2dc49";
+	private String KAKAO_ID = "481d31f68d1e3ee3ef028e3423236be5";
 	private String NAVER_ID = "cwCXun6Ln6n8NekdCAS4";
 	private String NAVER_SECRET = "ngWzBrV8VC";
 	

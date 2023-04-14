@@ -245,7 +245,6 @@
         "source": "com.hanul.bteam.app-main-35:/layout/goneview.xml"
     },
     {
-<<<<<<< HEAD
         "merged": "com.hanul.bteam.app-merged_res-33:/layout_memberview.xml.flat",
         "source": "com.hanul.bteam.app-main-35:/layout/memberview.xml"
     },
@@ -333,6 +332,8 @@
     },
     {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-33:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-35:\\mipmap-anydpi-v26\\ic_launcher.xml"
 =======
@@ -414,6 +415,7 @@
     },
     {
 >>>>>>> 41609087b286083e6b77ac422e02943bdd603de6
+>>>>>>> d991d67973db00062f0e78875093ba6736198852
         "merged": "com.hanul.bteam.app-merged_res-33:/drawable_chi_ak_san.jpg.flat",
         "source": "com.hanul.bteam.app-main-35:/drawable/chi_ak_san.jpg"
 >>>>>>> 08a0ee20299acf07fc92df1c0ca4a0f87c17e712
