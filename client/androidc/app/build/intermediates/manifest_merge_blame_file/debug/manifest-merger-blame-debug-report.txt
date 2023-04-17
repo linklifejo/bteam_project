@@ -129,7 +129,7 @@
 69-->[androidx.core:core:1.9.0] C:\Users\admin\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 70
 71    <application
-71-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:54:5-97:19
+71-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:54:5-98:19
 72        android:allowBackup="true"
 72-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:55:9-35
 73        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -164,45 +164,45 @@
 88-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:71:13-68
 89
 90        <activity
-90-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:74:9-86:20
+90-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:74:9-87:20
 91            android:name="com.hanul.bteam.MainActivity"
 91-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:75:13-41
 92            android:exported="true" >
 92-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:76:13-36
 93            <intent-filter>
-93-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:77:13-81:29
+93-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:78:13-82:29
 94                <action android:name="android.intent.action.MAIN" />
-94-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:78:17-69
-94-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:78:25-66
+94-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:79:17-69
+94-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:79:25-66
 95
 96                <category android:name="android.intent.category.LAUNCHER" />
-96-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:80:17-77
-96-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:80:27-74
+96-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:81:17-77
+96-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:81:27-74
 97            </intent-filter>
 98
 99            <meta-data
-99-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:83:13-85:36
+99-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:84:13-86:36
 100                android:name="android.app.lib_name"
-100-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:84:17-52
+100-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:85:17-52
 101                android:value="" />
-101-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:85:17-33
+101-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:86:17-33
 102        </activity>
 103
 104        <provider
 105            android:name="androidx.core.content.FileProvider"
-105-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:89:13-62
+105-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:90:13-62
 106            android:authorities="com.hanul.bteam.fileprovider"
-106-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:90:13-64
+106-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:91:13-64
 107            android:exported="false"
-107-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:91:13-37
+107-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:92:13-37
 108            android:grantUriPermissions="true" >
-108-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:92:13-47
+108-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:93:13-47
 109            <meta-data
-109-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:93:13-95:52
+109-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:94:13-96:52
 110                android:name="android.support.FILE_PROVIDER_PATHS"
-110-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:94:17-67
+110-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:95:17-67
 111                android:resource="@xml/filepath" />
-111-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:95:17-49
+111-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:96:17-49
 112        </provider>
 113        <!-- Needs to be explicitly declared on P+ -->
 114        <uses-library

@@ -39,8 +39,8 @@ public class MemberController {
 	
 	@ResponseBody @RequestMapping(value="/login",produces="text/html; charset=utf-8")
 	public String login(String id, String pw,HttpServletRequest req, Model model) {
-//		id =  req.getParameter("id");
-//		pw =  req.getParameter("pw");
+		id =  req.getParameter("id");
+		pw =  req.getParameter("pw");
 		//화면에서 입력한 아이디의 솔트를 조회해와
 		//해당 솔트를 사용해서 입력한 비번을 암호화한다
 		String salt = service.member_salt(id);
@@ -52,8 +52,8 @@ public class MemberController {
 		map.put("pw", pw);
 		MemberVO vo = service.login(map);
 		Gson gson = new Gson();
-		 gson.toJson( (MemberVO) vo);	 
-		return vo== null ? "실패":"성공";
+		 
+		return gson.toJson( (MemberVO) vo);	 
 	}
 	
 	

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -31,6 +32,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.FrameLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -64,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
     //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 //광추가
     //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 // 인기산추가
     // 크흠 // 메롱
-    public  String loginid = "linklife";
+
+    public String loginid;
     public String loccode = null;
     public String location = null;
     public Bundle bundle;
@@ -76,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
     GoogleMap map;
     BottomNavigationView bv;
     String imgFilePath = null;
+    FrameLayout contain;
 
 //    @Override
 //    public boolean onTouchEvent(MotionEvent event) {
@@ -83,32 +87,40 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         isLogin();
-     //   checkDangerousPermissions();
+        //   checkDangerousPermissions();
 //        sc = findViewById(R.id.sc);
 //        sc.fullScroll(View.FOCUS_DOWN);
         // 액션바가 보이지 않게 하기 위하여
         // 먼저 theme에 가서 NoActionBar로 수정한다
         // 내가 만든 툴바를 액션바로 지정한다
+        contain=findViewById(R.id.contain);
+        contain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(contain.getWindowToken(), 0);
+//                editText.clearFocus();
+            }
+        });
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // 기존 타이틀 글자가 안보이게 한다
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         // 처음 화면 초기화 : Fragment1로 초기화
-      //  fragmentControl(new LoginFrist());
+        //  fragmentControl(new LoginFrist());
         // 네비게이션뷰를 찾아서 클릭이벤트를 달아준다
         bNaviView = findViewById(R.id.bottom_navi);
         bNaviView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                switch (id){
+                switch (id) {
                     case R.id.tab1:
                         fragmentControl(new HomeFragment());
                         break;
@@ -126,29 +138,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public int fieldCheck(){
+
+    public int fieldCheck() {
         HashMap<String, String> info = new HashMap<String, String>();
-    return 0;
+        return 0;
     }
 
-    public void isLogin(){
+    public void isLogin() {
         bv = findViewById(R.id.bottom_navi);
-   //     isLogin=false;
-        if(isLogin){
+        //     isLogin=false;
+        if (isLogin) {
             bv.setVisibility(View.VISIBLE);
             fragmentControl(new HomeFragment());
-        }else{
+        } else {
             bv.setVisibility(View.GONE);
             fragmentControl(new LoginFrist());
         }
     }
-    public String getPathFromUri(Uri uri){
 
-        Cursor cursor = getContentResolver().query(uri, null, null, null, null );
+    public String getPathFromUri(Uri uri) {
+
+        Cursor cursor = getContentResolver().query(uri, null, null, null, null);
 
         cursor.moveToNext();
 
-        @SuppressLint("Range") String path = cursor.getString( cursor.getColumnIndex( "_data" ) );
+        @SuppressLint("Range") String path = cursor.getString(cursor.getColumnIndex("_data"));
 
         cursor.close();
 
@@ -159,12 +173,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-      //  checkDangerousPermissions();
+        //  checkDangerousPermissions();
 
     }
 
     //Path(파일경로) -> Uri
-    public Uri getUirFromPath( String filePath) {
+    public Uri getUirFromPath(String filePath) {
         Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, null, "_data = '" + filePath + "'", null, null);
 
         cursor.moveToNext();
@@ -176,11 +190,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void fragmentControl(Fragment f) {
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.contain,f).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contain, f).commit();
     }
+
     public void fragmentControl(Fragment f, Bundle b) {
         bundle = b;
-        getSupportFragmentManager().beginTransaction().replace(R.id.contain,f).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contain, f).commit();
     }
 
     // 위험권한
@@ -232,7 +247,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public File creatFile() {
         // 파일 이름을 만들기 위해 시간값을 생성함
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
@@ -241,11 +255,11 @@ public class MainActivity extends AppCompatActivity {
         // 사진파일을 저장하기 위한 경로
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File curFile = null;
-        try{
+        try {
             // 임시파일을 생성함      1:파일이름,2:확장자이름,3:경로
             curFile = File.createTempFile(imageFileName,
                     ".jpg", storageDir);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
         }
         // 스트링타입으로 임시파일이 있는 곳의 절대경로를 저장함
@@ -255,8 +269,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public  void BitmapConvertFile(Bitmap bitmap, String strFilePath)
-    {
+    public void BitmapConvertFile(Bitmap bitmap, String strFilePath) {
         // 파일 선언 -> 경로는 파라미터에서 받는다
         File file = new File(strFilePath);
 
@@ -271,34 +284,28 @@ public class MainActivity extends AppCompatActivity {
 
             // bitmap 압축
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 out.close();
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
 
-
-
-
     // 구글맵 메소드
     // 한글 주소를 받아서 Location 형태로 변경시켜서 보내주는 매소드
-    public  Location getLocationFromAddress(Context context, String address) {
+    public Location getLocationFromAddress(Context context, String address) {
         Geocoder geocoder = new Geocoder(context);
         List<Address> addresses;
         Location resLocation = new Location("");
 
         try {                                 //    한글주소 ,  최대반환주소갯수
             addresses = geocoder.getFromLocationName(address, 5);
-            if((addresses == null) || (addresses.size() == 0)){
+            if ((addresses == null) || (addresses.size() == 0)) {
                 return null;
             }
 
@@ -338,12 +345,12 @@ public class MainActivity extends AppCompatActivity {
             // 마지막 수신된곳을 알려주게 한다
             Location lastLocation =
                     manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            if(lastLocation != null){
+            if (lastLocation != null) {
                 // 마지막에 수신된 장소를 지도에 표시한다
                 showCurrentLocation(lastLocation);
             }
 
-        }catch (SecurityException e){
+        } catch (SecurityException e) {
             e.getMessage();
         }
 
@@ -379,13 +386,13 @@ public class MainActivity extends AppCompatActivity {
 
     // location 받아서 마커 생성하여 지도에 표시하기
     public void showMyLocationMarker(Location location,
-                                      String name, String phone){
+                                     String name, String phone) {
         // 마커위치를 전역변수에 담음
         markerLoc = location;
         // 마커와 내 위치까지의 거리를 구한다
         int distance = getDistance(myLoc, markerLoc);
 
-        if(myMarker != null){
+        if (myMarker != null) {
             myMarker = new MarkerOptions();
             myMarker.position(new
                     LatLng(location.getLatitude(), location.getLongitude()));
@@ -402,9 +409,15 @@ public class MainActivity extends AppCompatActivity {
         // 거리를 구할때는 Location 타입 사용
         distance = myLoc.distanceTo(markerLoc);
 
-        return (int)distance;
+        return (int) distance;
     }
 
+    public void hideBottomNavigation(boolean bool) {
+        BottomNavigationView bottomNavigation = bNaviView.findViewById(R.id.bottom_navi);
+        if (bool == true)
+            bottomNavigation.setVisibility(View.GONE);
+        else
+            bottomNavigation.setVisibility(View.VISIBLE);
 
-
+    }
 }
