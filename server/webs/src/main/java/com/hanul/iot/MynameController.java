@@ -68,12 +68,6 @@ public class MynameController {
 		return "myname/info";
 	}
 
-
-
-
-	
-	
-	
 	
 	//방명록 목록화면 요청
 	@RequestMapping("/list.na")
@@ -89,4 +83,27 @@ public class MynameController {
 		return "myname/list";
 	}
 
+
+	
+	
+	
+	
+//	//방명록 목록화면 요청
+//	@RequestMapping("/list.na")
+//	public String gone_myname(String member_id, GoneVO vo,Model model, HttpSession session
+//						, GonePageVO page) {
+//		session.getAttribute("loginInfo");
+//		
+//		//DB에서 방명록 목록을 조회해온다
+//		List<GoneVO> gone_myname = service.gone_myname(vo.getMember_id());
+//		model.addAttribute("gone_myname", gone_myname);
+//		return "myname/list";	
+//		
+////		List<GoneVO> vo = (List<GoneVO>)service.gone_myname(vo.getId());		
+////		//화면에 출력할 수 있도록 Model에 담는다
+////		model.addAttribute("page", page);
+////		
+////		return "myname/list";
+//	}
+//
 }
