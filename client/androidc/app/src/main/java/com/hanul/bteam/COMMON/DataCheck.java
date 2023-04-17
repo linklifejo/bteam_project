@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.concurrent.Callable;
 
 public class DataCheck  {
-
+    String tableName = null;
     HashMap<String, CheckDTO> checkField;
 
     public DataCheck(){
@@ -22,6 +22,13 @@ public class DataCheck  {
         this.checkField.put(key, dto);
     }
 
+    public void setTableName(String name) {
+        this.tableName = name;
+    }
+
+    public String getTableName(){
+        return this.tableName;
+    }
     public boolean isOkNumber(String key){
         CheckDTO vo = this.getField(key);
         int minValue,maxValue,numberValue;
@@ -37,6 +44,7 @@ public class DataCheck  {
 
         return false;
     }
+
     public boolean isOkString(String key){
         CheckDTO vo = this.getField(key);
         int min,max;
