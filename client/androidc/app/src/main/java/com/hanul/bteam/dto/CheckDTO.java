@@ -4,17 +4,10 @@ import java.io.Serializable;
 
 public class CheckDTO implements Serializable {
 
-    String table,field,type,value,null_;
-    int max,min;
+    String table,field,type,stringValue,null_;
+    int maxSize,minSize,minValue,maxValue,numberValue;
+    public CheckDTO(){
 
-    public CheckDTO(String table, String field, String type, String value, String null_, int max, int min) {
-        this.table = table;
-        this.field = field;
-        this.type = type;
-        this.value = value;
-        this.null_ = null_;
-        this.max = max;
-        this.min = min;
     }
 
     public String getTable() {
@@ -41,12 +34,12 @@ public class CheckDTO implements Serializable {
         this.type = type;
     }
 
-    public String getValue() {
-        return value;
+    public String getStringValue() {
+        return stringValue;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
     }
 
     public String getNull_() {
@@ -57,19 +50,43 @@ public class CheckDTO implements Serializable {
         this.null_ = null_;
     }
 
-    public int getMax() {
-        return max;
+    public int getMaxSize() {
+        return maxSize;
     }
 
-    public void setMax(int max) {
-        this.max = max;
+    public void setMaxSize(int maxSize) {
+        this.maxSize = maxSize;
     }
 
-    public int getMin() {
-        return min;
+    public int getMinSize() {
+        return minSize;
     }
 
-    public void setMin(int min) {
-        this.min = min;
+    public void setMinSize(int minSize) {
+        this.minSize = minSize;
+    }
+
+    public int getMinValue() {
+        return minValue;
+    }
+
+    public void setMinValue(int minValue) {
+        this.minValue = minValue;
+    }
+
+    public int getMaxValue() {
+        return maxValue;
+    }
+
+    public void setMaxValue(int maxValue) {
+        this.maxValue = maxValue;
+    }
+
+    public int getNumberValue() {
+        return numberValue;
+    }
+
+    public void setNumberValue(int numberValue) {
+        this.numberValue = numberValue;
     }
 }

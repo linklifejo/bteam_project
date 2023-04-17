@@ -127,14 +127,14 @@ public class JoinLogin extends Fragment {
                     filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);
                 }
 
-                vo_check.put("id",id.getText().toString());
-                vo_check.put("pw",pw.getText().toString());
-                vo_check.put("name",name.getText().toString());
-                vo_check.put("phone",phone.getText().toString());
-                vo_check.put("address",address.getText().toString());
-                for(String s : vo_check.values()){
-                    if(vo_check.containsKey(""))
-                }
+//                vo_check.put("id",id.getText().toString());
+//                vo_check.put("pw",pw.getText().toString());
+//                vo_check.put("name",name.getText().toString());
+//                vo_check.put("phone",phone.getText().toString());
+//                vo_check.put("address",address.getText().toString());
+//                for(String s : vo_check.values()){
+//                 //   if(vo_check.containsKey(""))
+//                }
                 // 데이터를 파라메터로 보낸다 : 서버에서 받을때 param으로 받는다
                 MemberDTO dto = new MemberDTO();
                 dto.setId( id.getText().toString() );
