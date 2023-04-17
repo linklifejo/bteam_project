@@ -1,7 +1,5 @@
 package com.hanul.bteam.login;
 
-import static com.hanul.bteam.COMMON.CommonMethod.loginDto;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -82,7 +80,7 @@ public class LoginFrist extends Fragment {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if(!response.body().equals(null)) {
-                            loginDto = new Gson().fromJson(response.body(), MemberDTO.class);
+                            MemberDTO loginDto = new Gson().fromJson(response.body(), MemberDTO.class);
                             if (loginDto != null) {
                                 Bundle b = new Bundle();
                                 b.putSerializable("dto", loginDto);

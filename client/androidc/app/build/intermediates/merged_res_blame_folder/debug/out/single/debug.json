@@ -276,10 +276,6 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable-v24\\mudm.jpg"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/layout_search_frag.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/layout/search_frag.xml"
-    },
-    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_buk_han_san1.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\buk_han_san1.xml"
     },
@@ -378,6 +374,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_local_frag.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\local_frag.xml"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_boardview.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/boardview.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\xml_backup_rules.xml.flat",

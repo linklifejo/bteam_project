@@ -23,8 +23,8 @@ public class CommonMethod {
 
 
     public static String ipConfig = "http://192.168.0.140/ab/";
+    public MemberDTO loginDto = null;
 
-    public static MemberDTO loginDto = null;
 
 
 //    public static boolean keyDisappear(Context context, View view){
