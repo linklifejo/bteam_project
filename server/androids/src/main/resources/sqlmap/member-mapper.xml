@@ -67,7 +67,7 @@ select salt from member where id = #{id}
 <!-- 로그인처리 -->
 <select id='login' resultType='member.MemberVO'>
 select * from member
-where id = #{id} and pw = #{pw, jdbcType=VARCHAR}
+where id = #{id} and pw = #{pw}
 </select>
 
 

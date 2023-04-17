@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.hanul.bteam.app-mergeDebugResources-31:/values-ru/values-ru.xml",
+            "outputFile": "com.hanul.bteam.app-mergeDebugResources-32:/values-ru/values-ru.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\9df4caf478e8a4a3e6e06e7b0287a07e\\transformed\\play-services-base-18.0.1\\res\\values-ru\\values.xml",
