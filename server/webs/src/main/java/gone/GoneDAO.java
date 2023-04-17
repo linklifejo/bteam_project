@@ -1,5 +1,6 @@
 package gone;
 
+import java.lang.reflect.Member;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -112,6 +113,13 @@ public class GoneDAO implements GoneService {
 		// TODO Auto-generated method stub
 		return sql.selectOne("go.loc_info", id);
 	}
+
+	@Override
+	public List<GoneVO> gone_myname(String member_id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("go.gone_myname", member_id);
+	}
+
 
 
 //	@Override

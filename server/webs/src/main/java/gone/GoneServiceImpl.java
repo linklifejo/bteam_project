@@ -1,5 +1,6 @@
 package gone;
 
+import java.lang.reflect.Member;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,6 +100,13 @@ public class GoneServiceImpl implements GoneService {
 		// TODO Auto-generated method stub
 		return dao.location_info(id);
 	}
+
+	@Override
+	public List<GoneVO> gone_myname(String member_id) {
+		// TODO Auto-generated method stub
+		return dao.gone_myname(member_id);
+	}
+
 
 
 //	@Override
