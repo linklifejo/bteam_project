@@ -102,9 +102,7 @@ public class MainActivity extends AppCompatActivity {
         contain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(contain.getWindowToken(), 0);
-//                editText.clearFocus();
+                isContain();
             }
         });
         toolbar = findViewById(R.id.toolbar);
@@ -176,7 +174,11 @@ public class MainActivity extends AppCompatActivity {
         //  checkDangerousPermissions();
 
     }
+    public void isContain(){
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(contain.getWindowToken(), 0);
 
+    }
     //Path(파일경로) -> Uri
     public Uri getUirFromPath(String filePath) {
         Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, null, "_data = '" + filePath + "'", null, null);

@@ -1,10 +1,14 @@
 package com.hanul.bteam;
 
+import static android.content.Context.INPUT_METHOD_SERVICE;
+
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -61,6 +65,12 @@ public class SearchFragment extends Fragment {
                 }else activity.hideBottomNavigation(false);
             }
         });
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.hideBottomNavigation(true);
+            }
+        });
 
         view.findViewById(R.id.btnSearch).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +93,8 @@ public class SearchFragment extends Fragment {
                             }
                             adapter = new SearchAdapter(activity.getApplicationContext(), dtos,activity);
                             recycler.setAdapter(adapter);
+                            activity.isContain();
+                            activity.hideBottomNavigation(false);
                             adapter.notifyDataSetChanged();
 
                         }

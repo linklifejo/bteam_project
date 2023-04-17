@@ -23,6 +23,7 @@ public class GoneDTO implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+
     }
 
     public int getReadcnt() {
