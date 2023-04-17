@@ -75,8 +75,9 @@
 	</div>
 	</div>
 	<div>
-	<!-- <img src='imgs/mainm.png' style='width:100%'> -->
-	<img class="mainimg object-fit-cover border rounded" src='imgs/mainm.png' style='width:100%;height:400px;'>
+	<div>
+		<img alt="" src="imgs/main_2.png" style="height: 90px;" width="100%;">
+	</div>
 	</div>
 </header>
 
@@ -150,6 +151,7 @@ header nav a:hover, header nav a.active { color:#fff;
 	background-color: rgba(0, 0, 0, .5); /* rgb+alpha(=투명도) */	 
 	position: fixed; /* 절대위치 : top,right,bottom,left등의 좌표값 속성 */
 	width: 100%;
+	z-index: 0;
 }
 
 </style>
