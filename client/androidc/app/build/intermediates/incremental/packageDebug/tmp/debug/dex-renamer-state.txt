@@ -1,27 +1,4 @@
-<<<<<<< HEAD
-#Fri Apr 14 19:32:52 KST 2023
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-#Fri Apr 14 09:16:54 KST 2023
-=======
-#Fri Apr 14 15:42:46 KST 2023
->>>>>>> b6814075345f6e857d5eb7bb8131d359c5907739
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-#Fri Apr 14 15:25:05 KST 2023
-=======
-#Wed Apr 12 13:10:34 KST 2023
->>>>>>> 15fdc0c4f759afdfc1044b9df6c8edfd6583f8b3
-=======
-#Fri Apr 14 15:22:25 KST 2023
-=======
-#Thu Apr 13 17:25:53 KST 2023
->>>>>>> 41609087b286083e6b77ac422e02943bdd603de6
->>>>>>> 08a0ee20299acf07fc92df1c0ca4a0f87c17e712
->>>>>>> d991d67973db00062f0e78875093ba6736198852
->>>>>>> 7b6c2d184b5fc108030c71ee24bb39553cfdebe5
+#Mon Apr 17 15:23:55 KST 2023
 path.4=15/classes.dex
 path.3=14/classes.dex
 path.2=12/classes.dex

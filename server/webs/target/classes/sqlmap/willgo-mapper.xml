@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wi">
+
+<!-- 찜 정보등록 -->
+<insert id='insert'>
+insert into willgo( refid, wtype, member_id, locname, filepath)
+values (#{refid}, #{wtype}, #{member_id}, #{locname}, #{filepath})
+</insert>
+
+<!-- 찜 정보 수정 -->
+<update id='update'>
+update willgo
+set refid = #{refid}, wtype = #{wtype}, member_id = #{member_id}
+where id = #{id}
+</update>
+
+<!-- 찜 정보 삭제 -->
+<delete id='delete'>
+delete from willgo where id = #{id}
+</delete>
+
+<!-- 찜 정보 조회 -->
+<select id='info' resultType='willgo.WillgoVO'>
+select * from willgo where id = #{id}
+order by willdate
+</select>
+
+
+<!-- 찜 전체정보 조회 -->
+<select id='list' resultType='willgo.WillgoVO'>
+select * from willgo order by willdate
+</select>
+<!-- 찜 회원별 타입별 조회 -->
+<select id='member_list' resultType='willgo.WillgoVO'>
+select *
+from willgo
+where member_id= #{member_id} 
+ order by willdate
+</select>
+<!-- 찜 회원별 타입별 조회 -->
+<select id='willgo_info' resultType='willgo.WillgoVO'>
+select *
+from willgo
+where member_id= #{member_id} and wtype= #{wtype} and refid= #{refid}
+ order by willdate
+</select>
+
+<!-- 선택한 방명록 첨부파일 조회 -->
+<select id='file_Info' resultType='gone.GoneFileVO'>
+select * from gone_file where gone_id = #{gone_id}
+</select>
+<!-- 산정보 정보조회 -->
+<select id='location_info' resultType='location.LocationVO'>
+select * from location where id = #{id}
+</select>
+<!-- 산정보 정보조회 -->
+<select id='gone_info' resultType='gone.GoneVO'>
+select * from gone where id = #{id}
+</select>
+
+</mapper>  

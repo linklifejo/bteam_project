@@ -32,6 +32,7 @@ public class SearchFragment extends Fragment {
     ArrayList<LocationDTO> dtos;
     EditText search;
     Bundle b;
+    Boolean isTrue = false;
     @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
@@ -50,10 +51,23 @@ public class SearchFragment extends Fragment {
                 LinearLayoutManager(
                 activity, RecyclerView.VERTICAL, false);
         recycler.setLayoutManager(layoutManager);
-        search = view.findViewById(R.id.evSearch);
+        search = view.findViewById(R.id.search);
+
+        search.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    activity.hideBottomNavigation(true);
+                }else activity.hideBottomNavigation(false);
+            }
+        });
+
         view.findViewById(R.id.btnSearch).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                activity.hideBottomNavigation(true);
+
                 CommonMethod commonMethod = new CommonMethod();
                 commonMethod.setParams("search",   search.getText());
                 commonMethod.getData("searchLocal", new Callback<String>(){
@@ -70,6 +84,7 @@ public class SearchFragment extends Fragment {
                             adapter = new SearchAdapter(activity.getApplicationContext(), dtos,activity);
                             recycler.setAdapter(adapter);
                             adapter.notifyDataSetChanged();
+
                         }
                     }
                     @Override
