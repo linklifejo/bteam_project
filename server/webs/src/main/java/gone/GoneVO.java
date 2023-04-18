@@ -5,6 +5,7 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
+import member.MemberVO;
 
 @Getter @Setter
 public class GoneVO {
@@ -12,5 +13,5 @@ public class GoneVO {
 	private String title, content, type,member_id,name,locname,couname,gone_time,out_time,loccode;
 	private Date gone_date;
 	private List<GoneFileVO> fileInfo;
-	
+	private List<MemberVO> salt;
 }

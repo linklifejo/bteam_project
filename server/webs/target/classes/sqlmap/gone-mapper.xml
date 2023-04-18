@@ -17,6 +17,43 @@ from(select filename,filepath
 
 
 
+<!-- <select id='Gone_myname' resultType='gone.GoneVO'>
+select g.*,filepath
+from gone g, gone_file f
+where g.member_id = #{member_id}
+and g.id=f.gone_id
+</select> -->
+
+
+
+
+<!-- 내정보 내가쓴글 -->
+<select id='gone_myname' resultType='gone.GoneVO'>
+<![CDATA[
+select *
+from(select filename,filepath
+	from gone g, gone_file f 
+	where g.id=f.gone_id
+	and g.member_id = #{member_id})
+where rownum <= 3
+]]>
+</select>
+
+
+<!-- 
+내정보 내가쓴글
+<select id='gone_myname' resultType='gone.GoneVO'>
+<![CDATA[
+select *
+from(select filename,filepath
+    from gone g inner join gone_file f on g.id = f.gone_id 
+     where g.id=f.gone_id and g.member_id = 'asdasd')
+where rownum <= 3
+]]>
+</select> -->
+
+
+
 <!-- 인기가 많은순 -->
 <select id='orderList' resultType='gone.GoneFileVO'>
 <![CDATA[

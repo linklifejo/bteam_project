@@ -41,6 +41,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Objects;
 
 import okhttp3.MediaType;
@@ -59,6 +60,7 @@ public class JoinLogin extends Fragment {
     EditText id, pw, name, phone, address;
     ImageView profile;
 
+
     Uri uri;
     @Nullable
     @Override
@@ -72,7 +74,6 @@ public class JoinLogin extends Fragment {
 
         activity =(MainActivity)getActivity();
         id =view.findViewById(R.id.id);
-        pw =view.findViewById(R.id.pw);
         name =view.findViewById(R.id.name);
         phone =view.findViewById(R.id.phone);
         address =view.findViewById(R.id.address);
@@ -126,6 +127,14 @@ public class JoinLogin extends Fragment {
                     filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);
                 }
 
+//                vo_check.put("id",id.getText().toString());
+//                vo_check.put("pw",pw.getText().toString());
+//                vo_check.put("name",name.getText().toString());
+//                vo_check.put("phone",phone.getText().toString());
+//                vo_check.put("address",address.getText().toString());
+//                for(String s : vo_check.values()){
+//                 //   if(vo_check.containsKey(""))
+//                }
                 // 데이터를 파라메터로 보낸다 : 서버에서 받을때 param으로 받는다
                 MemberDTO dto = new MemberDTO();
                 dto.setId( id.getText().toString() );
