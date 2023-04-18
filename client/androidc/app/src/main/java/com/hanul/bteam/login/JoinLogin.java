@@ -30,6 +30,7 @@ import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.COMMON.DataCheck;
 import com.hanul.bteam.HomeFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
@@ -39,6 +40,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.BreakIterator;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -59,6 +61,7 @@ public class JoinLogin extends Fragment {
     int reqPicCode = 2008;
     EditText id, pw, name, phone, address;
     ImageView profile;
+    boolean isCheck = true;
 
 
     Uri uri;
@@ -74,10 +77,16 @@ public class JoinLogin extends Fragment {
 
         activity =(MainActivity)getActivity();
         id =view.findViewById(R.id.id);
+        pw=view.findViewById(R.id.pw);
         name =view.findViewById(R.id.name);
         phone =view.findViewById(R.id.phone);
         address =view.findViewById(R.id.address);
         profile = view.findViewById(R.id.profile);
+
+
+
+
+
 
         view.findViewById(R.id.profile).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +125,31 @@ public class JoinLogin extends Fragment {
         view.findViewById(R.id.btnJoinMem).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!DataCheck.id_check(id.getText().toString())){
+                    id.requestFocus();
+                    isCheck =false;
+                    Toast.makeText(activity,
+                            "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+                }
+                else if(!DataCheck.pw_check(pw.getText().toString())){
+                    pw.requestFocus();
+                    isCheck =false;
+                    Toast.makeText(activity,
+                            "pw 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+                }
+                else if(!DataCheck.checkPhoneNumber(phone.getText().toString())){
+                    phone.requestFocus();
+                    isCheck =false;
+                    Toast.makeText(activity,
+                            "phone 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+                }
+                else if(!DataCheck.checkEmailAddress(address.getText().toString())){
+                    address.requestFocus();
+                    isCheck =false;
+                    Toast.makeText(activity,
+                            "address 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+                }
+
 
 
                 CommonMethod commonMethod = new CommonMethod();
@@ -127,31 +161,29 @@ public class JoinLogin extends Fragment {
                     filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);
                 }
 
-                vo_check.put("id",id.getText().toString());
-                vo_check.put("pw",pw.getText().toString());
-                vo_check.put("name",name.getText().toString());
-                vo_check.put("phone",phone.getText().toString());
-                vo_check.put("address",address.getText().toString());
-                for(String s : vo_check.values()){
-                    if(vo_check.containsKey(""))
-                }
-                // 데이터를 파라메터로 보낸다 : 서버에서 받을때 param으로 받는다
+
+
                 MemberDTO dto = new MemberDTO();
                 dto.setId( id.getText().toString() );
                 dto.setPw( pw.getText().toString() );
                 dto.setName( name.getText().toString() );
                 dto.setPhone( phone.getText().toString() );
                 dto.setAddress( address.getText().toString() );
+
                 commonMethod.setParams("param", dto);
 
                 commonMethod.sendFile("join", filePart, new Callback<String>() {
+
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
-                        activity.fragmentControl(new LoginFrist());
+
+                            activity.fragmentControl(new LoginFrist());
+
                     }
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
+                        isCheck =false;
                         Log.d(TAG, "onFailure: 실패");
                     }
                 });

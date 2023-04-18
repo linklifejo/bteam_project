@@ -2,6 +2,7 @@ package com.bteam.iot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -73,16 +74,23 @@ public class MemberController {
 		String salt = common.generateSalt();
 		vo.setPw( common.getEncrypt(vo.getPw(), salt) );
 		vo.setSalt(salt);
-		return service.member_insert(vo) == 1 ? "성공" : "실패";
+		service.member_insert(vo);
+		Gson gson = new Gson();
+		 
+		return gson.toJson( (MemberVO) vo);	 
 	}
 	
 		
 	
 	//아이디 중복확인처리 요청
-	@ResponseBody @RequestMapping("/id_check")
-	public boolean id_check(String id) {
+	@ResponseBody @RequestMapping(value="/id_check", produces="text/html; charset=utf-8")
+	public String id_check(HttpServletRequest req,Model model) {
 		//화면에서 입력한 아이디가 DB에 존재하는지 존재여부 확인
-		return service.member_id_check(id);
+		String id =  req.getParameter("id");
+		List<MemberVO> vo = service.member_id_check(id);
+		Gson gson = new Gson();
+		 
+		return gson.toJson( (List<MemberVO>) vo);	 
 	}
 	
 	
@@ -104,59 +112,59 @@ public class MemberController {
 	}
 	
 	//카카오콜백처리
-	@RequestMapping("/kakaoCallback")
-	public String kakaoCallback(String code, HttpSession session){
-		if( code==null ) return "redirect:/";
-		//토큰 받기
-//		curl -v -X POST "https://kauth.kakao.com/oauth/token" \
-//		 -H "Content-Type: application/x-www-form-urlencoded" \
-//		 -d "grant_type=authorization_code" \
-//		 -d "client_id=${REST_API_KEY}" \
-//		 --data-urlencode "redirect_uri=${REDIRECT_URI}" \
-//		 -d "code=${AUTHORIZE_CODE}"
-		StringBuffer url 
-		= new StringBuffer("https://kauth.kakao.com/oauth/token?grant_type=authorization_code") ;
-		url.append("&client_id=").append(KAKAO_ID);
-		url.append("&code=").append(code);
-		JSONObject json 
-			= new JSONObject( common.requestAPI(url.toString()) );
-		String type = json.getString("token_type");
-		String token = json.getString("access_token");
-		
-		//카카오 프로필정보 받기
-//		curl -v -X GET "https://kapi.kakao.com/v2/user/me" \
-//		  -H "Authorization: Bearer ${ACCESS_TOKEN}"
-		url = new StringBuffer("https://kapi.kakao.com/v2/user/me");
-		json = new JSONObject( common.requestAPI(url.toString(), type + " " + token) );
-		
-		if( !json.isEmpty() ) {
-			MemberVO vo = new MemberVO();
-			vo.setId( json.get("id").toString() );
-			vo.setSocial("K");
-			
-			json = json.getJSONObject("kakao_account");
-			vo.setName( jsonValue("name", json) );
-			vo.setEmail( jsonValue("email", json ) );
-			vo.setPhone( jsonValue("phone_number", json) );
-			vo.setGender( jsonValue("gender", json, "female").equals("female") ? "여" : "남"); //female/male
-			
-			json = json.getJSONObject("profile");
-			vo.setProfile( jsonValue("profile_image_url", json) );
-			
-			if( vo.getName().isEmpty() ) {
-				vo.setName( jsonValue("nickname", json, "...") );
-			}
-			
-			if(  service.member_id_check(vo.getId()) ) {
-				service.member_update(vo);				
-			}else {
-				service.member_join(vo);
-			}
-			session.setAttribute("loginInfo", vo);
-		}
-		
-		return "redirect:/";
-	}
+//	@RequestMapping("/kakaoCallback")
+//	public String kakaoCallback(String code, HttpSession session){
+//		if( code==null ) return "redirect:/";
+//		//토큰 받기
+////		curl -v -X POST "https://kauth.kakao.com/oauth/token" \
+////		 -H "Content-Type: application/x-www-form-urlencoded" \
+////		 -d "grant_type=authorization_code" \
+////		 -d "client_id=${REST_API_KEY}" \
+////		 --data-urlencode "redirect_uri=${REDIRECT_URI}" \
+////		 -d "code=${AUTHORIZE_CODE}"
+//		StringBuffer url 
+//		= new StringBuffer("https://kauth.kakao.com/oauth/token?grant_type=authorization_code") ;
+//		url.append("&client_id=").append(KAKAO_ID);
+//		url.append("&code=").append(code);
+//		JSONObject json 
+//			= new JSONObject( common.requestAPI(url.toString()) );
+//		String type = json.getString("token_type");
+//		String token = json.getString("access_token");
+//		
+//		//카카오 프로필정보 받기
+////		curl -v -X GET "https://kapi.kakao.com/v2/user/me" \
+////		  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+//		url = new StringBuffer("https://kapi.kakao.com/v2/user/me");
+//		json = new JSONObject( common.requestAPI(url.toString(), type + " " + token) );
+//		
+//		if( !json.isEmpty() ) {
+//			MemberVO vo = new MemberVO();
+//			vo.setId( json.get("id").toString() );
+//			vo.setSocial("K");
+//			
+//			json = json.getJSONObject("kakao_account");
+//			vo.setName( jsonValue("name", json) );
+//			vo.setEmail( jsonValue("email", json ) );
+//			vo.setPhone( jsonValue("phone_number", json) );
+//			vo.setGender( jsonValue("gender", json, "female").equals("female") ? "여" : "남"); //female/male
+//			
+//			json = json.getJSONObject("profile");
+//			vo.setProfile( jsonValue("profile_image_url", json) );
+//			
+//			if( vo.getName().isEmpty() ) {
+//				vo.setName( jsonValue("nickname", json, "...") );
+//			}
+//			
+//			if(  service.member_id_check(vo.getId()) ) {
+//				service.member_update(vo);				
+//			}else {
+//				service.member_join(vo);
+//			}
+//			session.setAttribute("loginInfo", vo);
+//		}
+//		
+//		return "redirect:/";
+//	}
 	
 	private String jsonValue(String key, JSONObject json) {
 		return json.has(key) ? json.getString(key) : "";
@@ -219,32 +227,32 @@ public class MemberController {
 		response = common.requestAPI(url.toString(), type+" "+token);
 		json = new JSONObject(response);
 		
-		if( json.getString("resultcode").equals("00") ) {
-			json = json.getJSONObject("response");
-			
-			MemberVO vo = new MemberVO();
-			vo.setId( json.getString("id") );
-			vo.setName( json.getString("name") );
-			vo.setEmail( json.getString("email") );
-			vo.setProfile( json.getString("profile_image") );
-			//male/female
-			vo.setGender( json.getString("gender").equals("F") ? "여" : "남" );
-			vo.setPhone( json.getString("mobile") );
-			if( vo.getName().isEmpty() ) {
-				vo.setName( json.getString("nickname") );
-			}
-			vo.setSocial("N");
-			
-			//insert/update
-			//네이버로그인이 처음이면 신규저장/ 아니면 변경저장
-			//네이버아이디가 존재하는지 파악: 1:T(update), 0:F(insert)
-			if( service.member_id_check( vo.getId() ) ) {
-				service.member_update(vo);				
-			}else {
-				service.member_join(vo);
-			}
-			session.setAttribute("loginInfo", vo);
-		}
+//		if( json.getString("resultcode").equals("00") ) {
+//			json = json.getJSONObject("response");
+//			
+//			MemberVO vo = new MemberVO();
+//			vo.setId( json.getString("id") );
+//			vo.setName( json.getString("name") );
+//			vo.setEmail( json.getString("email") );
+//			vo.setProfile( json.getString("profile_image") );
+//			//male/female
+//			vo.setGender( json.getString("gender").equals("F") ? "여" : "남" );
+//			vo.setPhone( json.getString("mobile") );
+//			if( vo.getName().isEmpty() ) {
+//				vo.setName( json.getString("nickname") );
+//			}
+//			vo.setSocial("N");
+//			
+//			//insert/update
+//			//네이버로그인이 처음이면 신규저장/ 아니면 변경저장
+//			//네이버아이디가 존재하는지 파악: 1:T(update), 0:F(insert)
+//			if( service.member_id_check( vo.getId() ) ) {
+//				service.member_update(vo);				
+//			}else {
+//				service.member_join(vo);
+//			}
+//			session.setAttribute("loginInfo", vo);
+//		}
 		
 		return "redirect:/";
 	}

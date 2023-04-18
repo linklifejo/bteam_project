@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 //광추가
     //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 // 인기산추가
     // 크흠 // 메롱
-
+    public String profile;
     public String loginid;
     public String loccode = null;
     public String location = null;
@@ -221,12 +221,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "권한 있음", Toast.LENGTH_LONG).show();
+
         } else {
-            Toast.makeText(this, "권한 없음", Toast.LENGTH_LONG).show();
+
 
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[0])) {
-                Toast.makeText(this, "권한 설명 필요함.", Toast.LENGTH_LONG).show();
+
             } else {
                 ActivityCompat.requestPermissions(this, permissions, 1);
             }
@@ -240,9 +240,9 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 1) {
             for (int i = 0; i < permissions.length; i++) {
                 if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, permissions[i] + " 권한이 승인됨.", Toast.LENGTH_LONG).show();
+
                 } else {
-                    Toast.makeText(this, permissions[i] + " 권한이 승인되지 않음.", Toast.LENGTH_LONG).show();
+
                 }
             }
         }

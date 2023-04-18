@@ -75,7 +75,6 @@ public class LoginFrist extends Fragment {
                 CommonMethod commonMethod = new CommonMethod();
                 commonMethod.setParams("id", id.getText());
                 commonMethod.setParams("pw", pw.getText());
-
                 commonMethod.getData("login", new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
@@ -86,8 +85,9 @@ public class LoginFrist extends Fragment {
                                 b.putSerializable("dto", loginDto);
                                 activity.bundle = b;
                                 activity.loginid = id.getText().toString();
+
                                 start();
-//                                activity.fragmentControl(new HomeFragment());
+                                activity.fragmentControl(new HomeFragment());
                             } else {
                                 Toast.makeText(activity,
                                         "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
@@ -98,7 +98,8 @@ public class LoginFrist extends Fragment {
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
-
+//                        Toast.makeText(activity,
+//                                "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
                     }
                 });
 

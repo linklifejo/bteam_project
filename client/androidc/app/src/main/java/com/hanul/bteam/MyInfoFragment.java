@@ -15,12 +15,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 
+import com.hanul.bteam.COMMON.adapter.MemberAdapter;
 import com.hanul.bteam.adapter.MyWroteAdapter;
 import com.hanul.bteam.adapter.RecentlyAdapter;
 import com.hanul.bteam.dto.BoardDTO;
-import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.GoneDTO;
-import com.hanul.bteam.dto.HuDTO;
+import com.hanul.bteam.dto.MemberDTO;
 
 import java.util.ArrayList;
 
@@ -29,10 +29,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MyInfoFragment extends Fragment {
-
     MainActivity activity;
-    RecyclerView recycler2,recycler;
+    RecyclerView recycler2,recycler,rra;
     MyWroteAdapter adapter;
+    ArrayList<MemberDTO> dtoo;
+    MemberAdapter adapter_me;
     ArrayList<BoardDTO> dtos;
     ArrayList<GoneDTO> dtos_re;
     RecentlyAdapter adapter_re;
@@ -106,6 +107,31 @@ public class MyInfoFragment extends Fragment {
                     }
                     adapter_re = new RecentlyAdapter(activity.getApplicationContext(), dtos_re,activity);
                     recycler2.setAdapter(adapter_re);
+                }
+            }
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+            }
+        });
+        dtoo = new ArrayList<>();
+        rra = view.findViewById(R.id.rra);
+        LinearLayoutManager layout2 = new
+                LinearLayoutManager(
+                activity, RecyclerView.HORIZONTAL, false);
+        rra.setLayoutManager(layout2);
+        CommonMethod commonMethod3 = new CommonMethod();
+        commonMethod3.setParams("id", activity.loginid);
+        commonMethod3.getData("id_check", new Callback<String>(){
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if(response.isSuccessful()){
+                    Gson gson = new Gson();
+                    dtoo =  gson.fromJson(response.body(), new TypeToken<ArrayList<MemberDTO>>(){}.getType());
+                    for(MemberDTO dto: dtoo){
+                        dto.setProfile(dto.getProfile());
+                    }
+                    adapter_me = new MemberAdapter(activity.getApplicationContext(), dtoo,activity);
+                    rra.setAdapter(adapter_me);
                 }
             }
             @Override

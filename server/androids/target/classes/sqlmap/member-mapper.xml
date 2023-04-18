@@ -38,9 +38,11 @@ where id = #{id}
 </update>
 
 <!-- 아이디 존재여부 조회 -->
-<select id='id_check' resultType='integer'>
-select count(*) from member where id = #{id}
+<select id='id_check' resultType='member.MemberVO'>
+select profile from member where id = #{id}
 </select>
+
+
 
 <!-- 전체 회원목록조회 -->
 <select id='list' resultType='member.MemberVO'>
