@@ -39,11 +39,9 @@ where id = #{id}
 
 <!-- 아이디 존재여부 조회 -->
 <select id='id_check' resultType='member.MemberVO'>
-<<<<<<< HEAD
-select profile from member where id = #{id} 
-=======
+
 select profile from member where id = #{id}
->>>>>>> 280b943b37c1130f4d048e88be7a521841555b41
+
 </select>
 
 
