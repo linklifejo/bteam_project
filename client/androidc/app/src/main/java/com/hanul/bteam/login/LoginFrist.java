@@ -75,7 +75,6 @@ public class LoginFrist extends Fragment {
                 CommonMethod commonMethod = new CommonMethod();
                 commonMethod.setParams("id", id.getText());
                 commonMethod.setParams("pw", pw.getText());
-
                 commonMethod.getData("login", new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
@@ -86,6 +85,7 @@ public class LoginFrist extends Fragment {
                                 b.putSerializable("dto", loginDto);
                                 activity.bundle = b;
                                 activity.loginid = id.getText().toString();
+
                                 start();
 //                                activity.fragmentControl(new HomeFragment());
                             } else {

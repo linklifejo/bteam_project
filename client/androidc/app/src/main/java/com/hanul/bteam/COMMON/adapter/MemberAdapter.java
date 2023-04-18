@@ -1,4 +1,4 @@
-package com.hanul.bteam.adapter;
+package com.hanul.bteam.COMMON.adapter;
 
 
 
@@ -22,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.MemberDTO;
 
@@ -39,13 +40,15 @@ public class MemberAdapter extends
     // 메인에게 넘겨받는것 -> 반드시 : Context, ArrayList<DTO>
     Context context;
     ArrayList<MemberDTO> dtos;
+    MainActivity activity;
 
     LayoutInflater inflater;
 
     // 생성자로 메인에서 넘겨받은것들을 연결
-    public MemberAdapter(Context context, ArrayList<MemberDTO> dtos) {
+    public MemberAdapter(Context context, ArrayList<MemberDTO> dtos, MainActivity a) {
         this.context = context;
         this.dtos = dtos;
+        this.activity = a;
         inflater = LayoutInflater.from(context);
     }
 
