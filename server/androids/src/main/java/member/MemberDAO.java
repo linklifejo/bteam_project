@@ -61,9 +61,8 @@ public class MemberDAO implements MemberService {
 	}
 
 	@Override
-	public boolean member_id_check(String id) {
-		return (Integer)sql.selectOne("member.id_check", id) == 1 
-					? true : false;
+	public List<MemberVO> member_id_check(String id) {
+		return sql.selectList("member.id_check", id) ;
 	}
 
 	@Override
