@@ -120,6 +120,12 @@ public class GoneDAO implements GoneService {
 		return sql.selectOne("go.gone_myname", member_id);
 	}
 
+	@Override
+	public List<LocationVO> Loc_info() {
+		// TODO Auto-generated method stub
+		return sql.selectList("go.Loc_info");
+	}
+
 
 
 //	@Override

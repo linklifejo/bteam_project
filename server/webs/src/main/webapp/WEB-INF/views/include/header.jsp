@@ -151,7 +151,7 @@ header nav a:hover, header nav a.active { color:#fff;
 	background-color: rgba(0, 0, 0, .5); /* rgb+alpha(=투명도) */	 
 	position: fixed; /* 절대위치 : top,right,bottom,left등의 좌표값 속성 */
 	width: 100%;
-	z-index: 0;
+	z-index: 100;
 }
 
 </style>

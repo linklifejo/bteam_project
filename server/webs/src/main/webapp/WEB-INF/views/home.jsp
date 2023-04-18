@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <head>
   </head>
     <meta charset="utf-8">
@@ -23,9 +24,10 @@
 		container: text-center;
 		text-align: center; margin: 0 auto;
 		width:100%;
-		height:600px;
+		height:800px;
 		position: relative;
 		z-index: -1;
+		background-color: #bbe8ee;
 	}
 	
 
@@ -37,9 +39,19 @@
 
 
 	.homeimg{
-		width: 1100px;
+		width: 2000px;
 		text-align: center; margin: 0 auto;
+		padding-bottom:100px;
+		z-index: -2;
 	}
+	.homeimg2{
+		width: 1200px;
+		text-align: center; margin: 0 auto;
+		padding-bottom:100px;
+		z-index: -2;
+	}
+	
+	
 	
 	.mainfont{
 		padding-bottom: 100px;
@@ -53,7 +65,9 @@
 	}
 	
 	.mainfont_1{
-		padding-top: 200px;
+		padding-top: 100px;
+		font-size: 50px;
+		font-weight: 900;
 	}
 	
 	
@@ -63,6 +77,46 @@
 	}
 	
 	
+	.card-text{
+	  width:300px;
+	  webkit-line-clamp:2;
+      padding:0 5px;
+      margin-bottom: 40px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+	}
+	
+	.mainbtn{
+	margin-top: 50px;
+	}
+	
+	
+	.btnSet{
+	 padding-top: 100px;
+	}
+	
+	
+	.text-center{
+		container: text-center;
+		text-align: center; margin: 0 auto;
+		padding: 100px 0 100px 0;
+		width: 1400px;
+		height: 700px;
+		background-color: fff;
+	}
+	
+	.grid{
+	width: 1400dp;
+	height: 700dp;
+	gap: var(--bs-gap, 0rem);
+	background-color: fff;
+	}
+	
+	
+	.g-col-1{
+
+	}
 	
 </style>
 <body onload="showImage()">
@@ -83,17 +137,17 @@
 	<h1 class="mainfont">등산 가이드</h1>
 </div>
 
-	<h2 class="mainfont_1">인기산</h2>
+	<h1 class="mainfont_1">인기산</h1>
 </div>
 <table class='w-px600 tb-list'>
 
 <tbody>
 <div class="homeimg">
-<c:forEach items='${local_list}' var='vo'>
+<c:forEach items='${Loc_info}' var='vo'>
 	<a href='info.go?id=${vo.id}'></a>
-		<span style="display:inline-block; height:400px; width:350px;">
+		<span style="display:inline-block; height:450px; width:350px;">
 	
-		<div class="card"><a href='info.go?id=${vo.gone_id}'><img class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+		<div  style= "height:450px; width:350px;" class="card"><a href='info.go?id=${vo.id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
     		 alt="사진파일"></a>
 		</div>
 	
@@ -103,7 +157,27 @@
 </tbody>
 </table>
 
+  <body class="bd-example-cssgrid">
 
+    <!-- Example Code -->
+    
+    <div class="grid text-center" style="--bs-columns: 1;" >
+        </font></font><div class="grid" style="--bs-columns: 2; padding: 0 0 0 0">
+          <div class="g-col-1" style="padding-top: 0px;
+	    padding-bottom: 0px;
+	    border-top-width: 0px;
+	    border-bottom-width: 0px;
+	    border-left-width: 0px;
+	    border-right-width: 0px;"><font><font style="vertical-align: inherit;">6/12</font><img style="width: 700px;height: 500px;" alt="" src='imgs/kakaomap.png'></font></div>
+          <div class="g-col-1"  style="padding-top: 0px;
+	    padding-bottom: 0px;
+	    border-top-width: 0px;
+	    border-bottom-width: 0px;
+	    border-left-width: 0px;
+	    border-right-width: 0px;><font inherit;"><font style="vertical-align: inherit;"><img style="width: 700px;height: 500px;" alt="" src='imgs/climb.png'><a style="font-size: 20px; font-weight:bold;" href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/">산 정보 찾아보기</a></font></font></div>
+        </div>
+      </div>
+    </div>
 <div class='btnSet'>
 	<a href='list.go' class='btn-fill'>게시판</a>
 </div>
@@ -112,15 +186,29 @@
 <table class='w-px600 tb-list'>
 
 <tbody>
-<div class="homeimg" style="padding-bottom:30px">
+<div class="homeimg2">
 <c:forEach items='${list}' var='vo'>
 	
-		<span style="display:inline-block; height:450px; width:350px;">
-	
-		<div style= "height:450px; width:350px;" class="card"><a style= "height:450px; width:350px;" href='info.go?id=${vo.gone_id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+<%-- 	
+		<div style= "height:450px; width:350px;" class="card">
+		<a style= "height:450px; width:350px;" href='info.go?id=${vo.gone_id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
     		 alt="사진파일"></a>
-		</div>
-	
+		</div> --%>
+		
+ 	<!-- Example Code -->
+    
+	<span style="display:inline-block; height:500px; width:350px;">
+     
+     <div class="card" style= "height:450px; width:350px;">
+  <img src="${vo.filepath}" class="card-img-top" alt="사진" >
+  <div class="card-body">
+    <h5 class="card-title">${vo.title}</h5>
+    <p class="card-text">${vo.content}</p>
+    <a href='info.go?id=${vo.gone_id}' class="btn btn-primary mainbtn">확인하기</a>
+  </div>
+</div>
+     
+     
 		</span>
 
 </c:forEach>
@@ -136,20 +224,9 @@
 </div>
 
 
-  <body class="bd-example-cssgrid">
 
-    <!-- Example Code -->
-    
-    <div class="grid text-center" style="--bs-columns: 1;" >
-      <div><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-        두 번째 자동 열
-        </font></font><div class="grid" style="--bs-columns: 3;">
-          <div class="g-col-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6/12</font></font></div>
-          <div class="g-col-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4/12</font></font></div>
-          <div class="g-col-1"><font inherit;"><font style="vertical-align: inherit;"><a style="font-size: 20px; font-weight:bold;" href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/">산 정보 찾아보기</a></font></font></div>
-        </div>
-      </div>
-    </div>
+
+
     
     <!-- End Example Code -->  
     

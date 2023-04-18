@@ -46,14 +46,14 @@ public class HomeController {
 	}
 	
 	//지역별산 화면 요청
-	@RequestMapping("/")
-	public String local_list(Model model, HttpSession session ) {
-		session.setAttribute("category", "");
-		List<LocationVO> lolist = service.location_list();
-		model.addAttribute("local_list", lolist);
-		return "home";
-	}
-	
+//	@RequestMapping("/")
+//	public String Loc_info(Model model, HttpSession session) {
+//		session.removeAttribute("category");
+//		List<LocationVO> Loc_info = (List<LocationVO>)service.Loc_info();
+//		model.addAttribute("Loc_info", Loc_info);
+//		return "home";
+//	}
+//	
 	
 	
 	//시각화화면 요청
@@ -68,6 +68,7 @@ public class HomeController {
 	@Autowired private MemberServiceImpl member;
 	@Autowired private CommonUtility common;
 	
+	//지역별산 화면 요청
 	@GetMapping("/")
 //	@RequestMapping(value = "/", method = RequestMethod.GET)
 //	@RequestMapping(value = "/", method = { RequestMethod.POST,  RequestMethod.GET})
@@ -91,6 +92,8 @@ public class HomeController {
 		*/
 		
 		
+		List<LocationVO> Loc_info = (List<LocationVO>)service.Loc_info();
+		model.addAttribute("Loc_info", Loc_info);
 		
 		//DB에서 방명록 목록을 조회해온다
 		List<GoneFileVO> list = (List<GoneFileVO>)service.GoneFile_list();
@@ -101,5 +104,16 @@ public class HomeController {
 		return "home";
 		
 	}
+	
+	
+//	@GetMapping("/")
+//	public String home(Model model, HttpSession session ) {
+//		session.getAttribute("category");
+//		List<LocationVO> Loc_info = (List<LocationVO>)service.Loc_info();
+//		model.addAttribute("Loc_info", Loc_info);
+//		return "home";
+//	}
+	
+	
 	
 }

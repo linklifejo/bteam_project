@@ -107,6 +107,12 @@ public class GoneServiceImpl implements GoneService {
 		return dao.gone_myname(member_id);
 	}
 
+	@Override
+	public List<LocationVO> Loc_info() {
+		// TODO Auto-generated method stub
+		return dao.Loc_info();
+	}
+
 
 
 //	@Override
