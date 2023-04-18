@@ -38,8 +38,7 @@ public class LocationDAO implements LocationService {
 
 	@Override
 	public List<LocationVO> Loc_info() {
-		// TODO Auto-generated method stub
-		return null;
+		return sql.selectList("lo.Loc_info");
 	}
 
 	@Override

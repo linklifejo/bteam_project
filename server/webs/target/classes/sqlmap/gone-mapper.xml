@@ -58,8 +58,8 @@ where rownum <= 3
 <select id='orderList' resultType='gone.GoneFileVO'>
 <![CDATA[
 select *
-from(select filename,filepath, gone_id 
-	from gone g, gone_file f 
+from(select filename,filepath, gone_id, content, title
+	from gone g inner join gone_file f on g.id = f.gone_id  
 	where g.id=f.gone_id and type='1'
 	order by g.readcnt desc)
 where rownum <= 6
@@ -207,4 +207,20 @@ select *
 from course 
 order by couname
 </select>
+
+
+
+<!-- 지역별 산정보 목록조회 -->
+<select id='Loc_info' resultType='location.LocationVO'>
+<![CDATA[
+select *
+from(select filename,filepath
+	from gone g, location l 
+	where g.location_id = l.id and l.type='1'
+	order by g.readcnt desc)
+where rownum <= 5
+]]>
+</select>
+
+
 </mapper>  
