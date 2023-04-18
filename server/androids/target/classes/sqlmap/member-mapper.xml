@@ -39,7 +39,7 @@ where id = #{id}
 
 <!-- 아이디 존재여부 조회 -->
 <select id='id_check' resultType='member.MemberVO'>
-select profile from member where id = #{id} and profile is not null
+select profile from member where id = #{id}
 </select>
 
 

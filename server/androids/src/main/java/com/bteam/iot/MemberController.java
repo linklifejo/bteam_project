@@ -74,7 +74,10 @@ public class MemberController {
 		String salt = common.generateSalt();
 		vo.setPw( common.getEncrypt(vo.getPw(), salt) );
 		vo.setSalt(salt);
-		return service.member_insert(vo) == 1 ? "성공" : "실패";
+		service.member_insert(vo);
+		Gson gson = new Gson();
+		 
+		return gson.toJson( (MemberVO) vo);	 
 	}
 	
 		

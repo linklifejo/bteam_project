@@ -87,7 +87,7 @@ public class LoginFrist extends Fragment {
                                 activity.loginid = id.getText().toString();
 
                                 start();
-//                                activity.fragmentControl(new HomeFragment());
+                                activity.fragmentControl(new HomeFragment());
                             } else {
                                 Toast.makeText(activity,
                                         "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
@@ -98,8 +98,8 @@ public class LoginFrist extends Fragment {
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
-                        Toast.makeText(activity,
-                                "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(activity,
+//                                "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
                     }
                 });
 

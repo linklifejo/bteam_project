@@ -142,7 +142,6 @@ id textView5
 id textView6
 id title
 id toolbar
-id tutu
 id tvAddress
 id tvHeigh
 id tvLocname

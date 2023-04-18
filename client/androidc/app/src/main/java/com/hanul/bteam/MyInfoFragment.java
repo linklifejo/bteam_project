@@ -19,9 +19,7 @@ import com.hanul.bteam.COMMON.adapter.MemberAdapter;
 import com.hanul.bteam.adapter.MyWroteAdapter;
 import com.hanul.bteam.adapter.RecentlyAdapter;
 import com.hanul.bteam.dto.BoardDTO;
-import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.GoneDTO;
-import com.hanul.bteam.dto.HuDTO;
 import com.hanul.bteam.dto.MemberDTO;
 
 import java.util.ArrayList;
