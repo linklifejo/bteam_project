@@ -58,7 +58,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public boolean member_id_check(String id) {
+	public List<MemberVO> member_id_check(String id) {
 		return dao.member_id_check(id);
 	}
 
