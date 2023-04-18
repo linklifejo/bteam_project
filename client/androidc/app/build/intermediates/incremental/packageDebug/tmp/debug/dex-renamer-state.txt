@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-#Tue Apr 18 09:34:38 KST 2023
-=======
-<<<<<<< HEAD
-#Tue Apr 18 09:32:04 KST 2023
-=======
-#Tue Apr 18 09:12:17 KST 2023
->>>>>>> 259bd1c103fd2479e71696d5901c17be9bb34345
->>>>>>> 95903b923209aceb3bfd4d9809f7bebda185dc8e
+#Tue Apr 18 09:40:27 KST 2023
 path.4=15/classes.dex
 path.3=14/classes.dex
 path.2=12/classes.dex
