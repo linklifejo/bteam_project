@@ -176,9 +176,9 @@ public class JoinLogin extends Fragment {
 
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
-
+                        if(isCheck) {
                             activity.fragmentControl(new LoginFrist());
-
+                        }
                     }
 
                     @Override
