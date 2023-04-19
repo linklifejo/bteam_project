@@ -4,27 +4,20 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="go">
 
-<!--
-<select id='boardList' resultType='gone.GoneFileVO'>
-<![CDATA[
-select *
-from(select filename,filepath 
-	from gone g, gone_file f 
-	where g.id=f.gone_id and type='1'
-	order by g.readcnt desc)
-]]>
-</select> -->
 
 
+<!-- 
+내정보 내가쓴글
+<select id='gone_myname' resultType='gone.GoneVO'>
+select (select count(*) from gone_file 
+		where gone_id=b.id) filecnt, b.* from
+(select b.*, name, row_number() over(order by b.id) no  
+from gone b inner join member m on b.member_id = m.id 
+<include refid="search_where"/>) b
 
-<!-- <select id='Gone_myname' resultType='gone.GoneVO'>
-select g.*,filepath
-from gone g, gone_file f
-where g.member_id = #{member_id}
-and g.id=f.gone_id
-</select> -->
+</select>
 
-
+ -->
 
 
 <!-- 내정보 내가쓴글 -->
@@ -32,9 +25,12 @@ and g.id=f.gone_id
 <![CDATA[
 select *
 from(select filename,filepath
-	from gone g, gone_file f 
-	where g.id=f.gone_id
-	and g.member_id = #{member_id})
+   from gone g, gone_file f 
+   where g.id=f.gone_id
+    and g.type='1'
+    and f.ptype='1'
+   and g.member_id = #{member_id}
+    order by g.readcnt desc)
 where rownum <= 3
 ]]>
 </select>

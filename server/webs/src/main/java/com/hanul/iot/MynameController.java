@@ -71,17 +71,20 @@ public class MynameController {
 	
 	//방명록 목록화면 요청
 	@RequestMapping("/list.na")
-	public String myname(Model model, HttpSession session
-						, GonePageVO page) {
-		session.setAttribute("categort", "na");
+	public String myname(String member_id, Model model, HttpSession session) {	
 		
 		//DB에서 방명록 목록을 조회해온다
-		page = service.gone_list(page);		
-		//화면에 출력할 수 있도록 Model에 담는다
-		model.addAttribute("page", page);
+		List<LocationVO> Loc_info = (List<LocationVO>)service.Loc_info();
+		List<GoneVO> gone_myname = (List<GoneVO>)service.gone_myname(member_id);
 		
+		session.removeAttribute("category");
+		
+		model.addAttribute("Loc_info", Loc_info);
+		model.addAttribute("gone_myname", gone_myname);
 		return "myname/list";
 	}
+		
+		
 
 
 	
