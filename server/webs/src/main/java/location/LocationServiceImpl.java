@@ -39,8 +39,7 @@ public class LocationServiceImpl implements LocationService {
 
 	@Override
 	public List<LocationVO> Loc_info() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.Loc_info();
 	}
 
 	@Override
