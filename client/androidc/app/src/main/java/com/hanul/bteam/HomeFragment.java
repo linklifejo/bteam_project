@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.COMMON.adapter.BoardrAdapter;
-import com.hanul.bteam.COMMON.adapter.GoneAdapter;
-import com.hanul.bteam.dto.BoardDTO;
+
+import com.hanul.bteam.adapter.BoardrAdapter;
+import com.hanul.bteam.adapter.GoneAdapter;
 import com.hanul.bteam.dto.GoneDTO;
 
 import java.util.ArrayList;
@@ -32,7 +32,6 @@ public class HomeFragment extends Fragment {
     ArrayList<GoneDTO> dtos_re;
     MainActivity activity;
     BoardrAdapter adapter;
-    ArrayList<BoardDTO> dtos;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -95,10 +94,10 @@ public class HomeFragment extends Fragment {
 //        recyclerView.setAdapter(adapter_re);
 
         // 중요 : dtos 넘겨줄때 반드시 생성해서 넘겨준다
-        dtos = new ArrayList<>();
+        dtos_re = new ArrayList<>();
 
         recycler = view.findViewById(R.id.recycler);
-        GridLayoutManager layout = new GridLayoutManager(activity,1,GridLayoutManager.VERTICAL, false);
+        LinearLayoutManager layout = new LinearLayoutManager(activity,GridLayoutManager.HORIZONTAL, false);
         recycler.setLayoutManager(layout);
         // 어댑터 객체를 생성한다
         CommonMethod commonMethod2 = new CommonMethod();
@@ -111,13 +110,14 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<String> call, Response<String> response) {
                 if(response.isSuccessful()){
                     Gson gson = new Gson();
-                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<BoardDTO>>(){}.getType());
-                    for(BoardDTO dto: dtos){
+                    dtos_re =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
+                    for(GoneDTO dto: dtos_re){
                         dto.setId(dto.getId());
                         dto.setTitle(dto.getTitle());
                         dto.setFilepath(dto.getFilepath());
+                        dto.setContent(dto.getContent());
                     }
-                    adapter = new BoardrAdapter(activity.getApplicationContext(), dtos,activity);
+                    adapter = new BoardrAdapter(activity.getApplicationContext(), dtos_re,activity);
                     recycler.setAdapter(adapter);
                 }
             }

@@ -2957,6 +2957,7 @@ int id SHOW_PROGRESS 0x7f08000d
 int id SYM 0x7f08000e
 int id TOP_END 0x7f08000f
 int id TOP_START 0x7f080010
+int id aaa 0x7f080252
 int id accelerate 0x7f080011
 int id accessibility_action_clickable_span 0x7f080012
 int id accessibility_custom_action_0 0x7f080013
@@ -3064,7 +3065,6 @@ int id btnWillGo 0x7f080078
 int id btn_boardList 0x7f080079
 int id btn_cancel 0x7f08007a
 int id btn_delete 0x7f08007b
-int id btn_good 0x7f08007c
 int id btn_modify 0x7f08007d
 int id btn_questionsList 0x7f08007e
 int id btn_upload 0x7f08007f
@@ -3354,6 +3354,7 @@ int id rounded 0x7f08019a
 int id row_index_key 0x7f08019b
 int id rra 0x7f08019c
 int id rre 0x7f08019d
+int id rro 0x7f080250
 int id satellite 0x7f08019e
 int id save_non_transition_alpha 0x7f08019f
 int id save_overlay_view 0x7f0801a0
@@ -3639,6 +3640,7 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
+int layout bbview 0x7f0b008d
 int layout board_1 0x7f0b001d
 int layout board_1_view 0x7f0b001e
 int layout board_2 0x7f0b001f

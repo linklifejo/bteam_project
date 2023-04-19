@@ -2958,6 +2958,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id aaa
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3065,7 +3066,6 @@ id btnWillGo
 id btn_boardList
 id btn_cancel
 id btn_delete
-id btn_good
 id btn_modify
 id btn_questionsList
 id btn_upload
@@ -3355,6 +3355,7 @@ id rounded
 id row_index_key
 id rra
 id rre
+id rro
 id satellite
 id save_non_transition_alpha
 id save_overlay_view
@@ -3640,6 +3641,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout bbview
 layout board_1
 layout board_1_view
 layout board_2
