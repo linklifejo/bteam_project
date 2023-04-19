@@ -20,8 +20,8 @@
 </c:choose>
 
 
-<title>지능형 IoT ${title}</title>
-<link rel='icon' href='<c:url value="/imgs/hanul.ico"/>'>
+<title>등산가이드 ${title}</title>
+<link rel='icon' href='<c:url value="/imgs/bteam.logo2.png"/>'>
 <link rel='stylesheet' type='text/css' 
 		href='<c:url value="/css/common.css"/>?<%=new java.util.Date()%>'>		
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">

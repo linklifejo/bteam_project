@@ -14,7 +14,7 @@
 
 <style>
 .footer { font-size:14px; border-top: 1px solid #aaa;
-		text-align: center; margin: 0 auto; position: relative; background-color:green;
+		text-align: center; margin: 0 auto; position: relative; background-color:#5bc94b;
 		z-index: -10; 
 		}
 
@@ -36,6 +36,7 @@
 		z-index: 50;
 		color: white;
 		font-weight: bold;
+		font-size: 50pd;
 	}
 	
 

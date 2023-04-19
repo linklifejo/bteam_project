@@ -114,16 +114,22 @@ public class GoneDAO implements GoneService {
 		return sql.selectOne("go.loc_info", id);
 	}
 
-	@Override
-	public List<GoneVO> gone_myname(String member_id) {
-		// TODO Auto-generated method stub
-		return sql.selectOne("go.gone_myname", member_id);
-	}
+	/*
+	 * @Override public List<GoneVO> gone_myname() { // TODO Auto-generated method
+	 * stub return sql.selectOne("go.gone_myname"); }
+	 */
 
 	@Override
 	public List<LocationVO> Loc_info() {
 		// TODO Auto-generated method stub
 		return sql.selectList("go.Loc_info");
+	}
+
+
+	@Override
+	public List<GoneVO> gone_myname(String member_id) {
+		// TODO Auto-generated method stub
+		return sql.selectList("go.gone_myname",member_id);
 	}
 
 

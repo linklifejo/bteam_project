@@ -9,7 +9,7 @@
 <body>
 <div class='center'>
 	<div class='txt-left'>
-	<a href='<c:url value="/"/>'><img src='<c:url value="/"/>imgs/hanul.logo.png'></a>
+	<a href='<c:url value="/"/>'><img src='<c:url value="/"/>imgs/bteam.logo.png'></a>
 	</div>
 	<div class='txt-left'>
 		<h3>내부 서버오류가 발생했습니다</h3>

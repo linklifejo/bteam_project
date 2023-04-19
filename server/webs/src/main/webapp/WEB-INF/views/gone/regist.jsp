@@ -70,12 +70,16 @@
 
 
 <!-- <input type='hidden' name='ptype' value='3'> -->
+<script>
+	$('#btn1').click(function(){
+		var checked = $('#ck1').is(':checked');
+		$('#ck1').prop('checked',!checked);
+	});
+</script>
 
-
-<tr><th>가본산/찜한산</th>
+<tr style="display:none"><th>가본산/찜한산</th>
 		<td>
-			<label><input type='radio' checked name='type' value='1'>가본산</label>
-			<label><input type='radio' checked name='type' value='2'>찜한산</label>
+			<label><input type='radio'id="btn1" checked name='type' value='1'>가본산</label>
 		</td>
 </tr>
 <tr><th>산 선택</th>
@@ -147,5 +151,8 @@ $(function(){
 		});
 })
 </script>
+
+
+
 
 </html>
