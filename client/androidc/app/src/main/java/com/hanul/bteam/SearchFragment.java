@@ -1,14 +1,11 @@
 package com.hanul.bteam;
 
-import static android.content.Context.INPUT_METHOD_SERVICE;
-
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -20,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.COMMON.adapter.SearchAdapter;
+import com.hanul.bteam.adapter.SearchAdapter;
 import com.hanul.bteam.dto.LocationDTO;
 
 import java.util.ArrayList;

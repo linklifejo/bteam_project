@@ -1,36 +1,25 @@
-package com.hanul.bteam.COMMON.adapter;
+package com.hanul.bteam.adapter;
 
 
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.MemberDTO;
 
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class MemberAdapter extends
