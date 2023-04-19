@@ -35,8 +35,6 @@ public class LoginFrist extends Fragment {
     EditText id, pw;
 
 
-    Button btnLogin, btnJoin;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -47,6 +45,7 @@ public class LoginFrist extends Fragment {
                 container, false);
         activity =(MainActivity)getActivity();
         activity.checkDangerousPermissions();
+
         id = view.findViewById(R.id.id);
         pw = view.findViewById(R.id.pw);
         view.findViewById(R.id.btnJoin).setOnClickListener(new View.OnClickListener() {
@@ -85,6 +84,8 @@ public class LoginFrist extends Fragment {
                                 b.putSerializable("dto", loginDto);
                                 activity.bundle = b;
                                 activity.loginid = id.getText().toString();
+                                activity.name = loginDto.getName();
+
 
                                 start();
                                 activity.fragmentControl(new HomeFragment());

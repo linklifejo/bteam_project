@@ -155,8 +155,12 @@
 <<<<<<< HEAD
       <Context docBase="iots" path="/ib" reloadable="true" source="org.eclipse.jst.jee.server:iots"/><Context docBase="androids" path="/ab" reloadable="true" source="org.eclipse.jst.jee.server:androids"/><Context docBase="webs" path="/wb" reloadable="true" source="org.eclipse.jst.jee.server:webs"/><Context docBase="D:\app\wb\upload" path="/wb/upload" reloadable="true"/></Host>
 =======
+<<<<<<< HEAD
+      <Context docBase="iots" path="/ib" reloadable="true" source="org.eclipse.jst.jee.server:iots"/><Context docBase="androids" path="/ab" reloadable="true" source="org.eclipse.jst.jee.server:androids"/><Context docBase="webs" path="/wb" reloadable="true" source="org.eclipse.jst.jee.server:webs"/><Context docBase="D:\app\wb\upload" path="/wb/upload" reloadable="true"/></Host>
+=======
       <Context docBase="iots" path="/ib" reloadable="true" source="org.eclipse.jst.jee.server:iots"/><Context docBase="androids" path="/ab" reloadable="true" source="org.eclipse.jst.jee.server:androids"/><Context docBase="webs" path="/wb" reloadable="true" source="org.eclipse.jst.jee.server:webs"/></Host>
 >>>>>>> 280b943b37c1130f4d048e88be7a521841555b41
+>>>>>>> 73a5e26843ae74cb6f8e4c24c638f7fe14ceed0e
     </Engine>
   </Service>
 </Server>

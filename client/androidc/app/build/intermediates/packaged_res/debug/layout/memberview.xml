@@ -15,18 +15,18 @@
 
         <LinearLayout
             android:id="@+id/parentLayout"
-            android:layout_width="match_parent"
-            android:layout_height="213dp"
+            android:layout_width="178dp"
+            android:layout_height="144dp"
             android:orientation="horizontal"
             android:weightSum="100">
 
             <ImageView
                 android:id="@+id/profile"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="70dp"
+                android:layout_height="90dp"
                 android:layout_weight="20"
-                android:src="@mipmap/ic_launcher_round"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher_round" />
 
 
         </LinearLayout>

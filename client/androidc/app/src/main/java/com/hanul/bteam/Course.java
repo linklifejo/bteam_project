@@ -18,7 +18,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.COMMON.adapter.CourseAdapter;
+import com.hanul.bteam.adapter.CourseAdapter;
 import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.GoneDTO;
 
