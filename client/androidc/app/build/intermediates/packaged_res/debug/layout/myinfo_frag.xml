@@ -29,8 +29,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rra"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
 
             android:src="@drawable/kakao_1" />
 
@@ -39,7 +39,7 @@
 
 
     <TextView
-        android:id="@+id/userInfo1_Name"
+        android:id="@+id/name"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="left"
-        android:text="내가 쓴 글"
+        android:text="일기장"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:layout_editor_absoluteX="1dp" />
@@ -94,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="최근 본 산"
+        android:text="찜한산"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/rre"
         tools:layout_editor_absoluteX="0dp"

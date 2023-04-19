@@ -71,6 +71,7 @@ drawable trash
 id BoardName
 id BoardSearch
 id BoardTitle
+id aaa
 id address
 id bottom_navi
 id btn1
@@ -92,7 +93,6 @@ id btnWillGo
 id btn_boardList
 id btn_cancel
 id btn_delete
-id btn_good
 id btn_modify
 id btn_questionsList
 id btn_upload
@@ -128,6 +128,7 @@ id recycler2
 id recyclerView
 id rra
 id rre
+id rro
 id search
 id tab1
 id tab2
@@ -158,6 +159,7 @@ id writeDate
 id writename
 id writersID
 layout activity_main
+layout bbview
 layout board_1
 layout board_1_view
 layout board_2

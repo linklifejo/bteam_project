@@ -1,58 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#5C3C3C"
+
     android:orientation="vertical"
-
     android:weightSum="30">
-
 
 
     <!-- 첫번째 레이아웃 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:layout_weight="8"
+        android:orientation="vertical"
         android:weightSum="10"
 
-       >
+        >
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
             android:layout_weight="9"
-            android:src="@drawable/mudm"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/mudm" />
 
         <Button
             android:id="@+id/btnLocal"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:backgroundTint="#4CAF50"
+            android:backgroundTint="#8FA690"
             android:gravity="center|top"
             android:text="지역별산"
             android:textSize="24sp" />
 
 
     </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="인기산"
-        android:textSize="20sp"/>
+        android:text="인기글"
+        android:textSize="20sp" />
     <!-- 두번째 레이아웃 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
         android:layout_weight="9"
         android:background="#D1DDD5"
+        android:orientation="horizontal"
 
-       >
+        >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -61,36 +62,48 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn1"
+    <!-- 세번째 레이아웃 -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="게시판"
-        android:textSize="20sp"/>
+        android:orientation="horizontal">
 
-    <!-- 세번째 레이아웃 -->
+        <TextView
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:text="내가쓴글"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:backgroundTint="#8FA690"
+            android:text="탐방글"
+            android:textSize="15sp" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="13"
-        android:background="#60C309"
-        android:orientation="vertical"
-       >
+        android:background="#D1DDD5"
+        android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="212dp" />
         <!--        <GridView-->
-<!--            android:id="@+id/gridView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:listSelector="#A1EF13"-->
-<!--            android:numColumns="3"/>-->
+        <!--            android:id="@+id/gridView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:listSelector="#A1EF13"-->
+        <!--            android:numColumns="3"/>-->
 
 
     </LinearLayout>
-
 
 
 </LinearLayout>

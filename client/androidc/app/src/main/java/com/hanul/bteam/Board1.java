@@ -15,7 +15,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.BoardOneAdapter;
+<<<<<<< HEAD
 import com.hanul.bteam.dto.BoardDTO;
+=======
+import com.hanul.bteam.dto.GoneDTO;
+>>>>>>> dbc75b3882fab3a06174e8a4c8859b5d866acf2e
 
 import java.util.ArrayList;
 
@@ -27,7 +31,7 @@ public class Board1 extends Fragment {
     MainActivity activity;
     RecyclerView recycler;
     BoardOneAdapter adapter;
-    ArrayList<BoardDTO> dtos;
+    ArrayList<GoneDTO> dtos;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -37,6 +41,12 @@ public class Board1 extends Fragment {
         View view = inflater.inflate(R.layout.board_1,
                 container, false);
         activity =(MainActivity)getActivity();
+        view.findViewById(R.id.btn_write).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.fragmentControl(new BoardWrite());
+            }
+        });
         Bundle b = activity.bundle;
         dtos = new ArrayList<>();
 
@@ -55,8 +65,8 @@ public class Board1 extends Fragment {
 
                 if(response.isSuccessful()){
                     Gson gson = new Gson();
-                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<BoardDTO>>(){}.getType());
-                    for(BoardDTO dto: dtos){
+                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
+                    for(GoneDTO dto: dtos){
                         dto.setTitle(dto.getTitle());
                         dto.setMember_id(dto.getMember_id());
                         dto.setGonetime(dto.getGonetime());

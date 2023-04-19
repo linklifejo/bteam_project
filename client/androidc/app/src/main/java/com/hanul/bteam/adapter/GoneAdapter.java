@@ -20,11 +20,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
+import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.MainActivity;
-import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.R;
+import com.hanul.bteam.dto.GoneDTO;
 
 import java.util.ArrayList;
 
@@ -96,7 +97,7 @@ public class GoneAdapter extends
                 Bundle b = new Bundle();
                 b.putSerializable("dto",dto);
                 activity.bundle = b;
-                activity.fragmentControl(new Detailmo(),b);
+                activity.fragmentControl(new BoardTwo(),b);
                 Toast.makeText(context,
                         "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
             }

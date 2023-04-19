@@ -36,7 +36,7 @@ import retrofit2.Response;
 
 
 public class WillGoAdapter extends
-        RecyclerView.Adapter<WillGoAdapter.ViewHolder> implements OnWillGoitemClickListener{
+        RecyclerView.Adapter<WillGoAdapter.ViewHolder> implements OnWillGoitemClickListener {
     private static final String TAG = "main:SingerAdapter";
 
     // 메인에게 넘겨받는것 -> 반드시 : Context, ArrayList<DTO>

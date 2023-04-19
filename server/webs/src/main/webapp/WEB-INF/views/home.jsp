@@ -27,7 +27,7 @@
 		height:800px;
 		position: relative;
 		z-index: -1;
-		background-color: #bbe8ee;
+		background-color: #e9f2ef;
 	}
 	
 
@@ -114,9 +114,37 @@
 	}
 	
 	
-	.g-col-1{
+	.mapmain{
+		position: relative;
+	}
+	
+	.map1{
+		position: absolute;
+		left: 10px;
+		top:210px;
+		
+	}
+
+
+	.climbmain{
+		position: relative;
+	}
+	
+
+	.climb{
+		position: absolute;
+		left: 10px;
+		top:210px;
+		
+	}
+
+	.btn-dark{
+		position: absolute;
+		left: 10px;
 
 	}
+	
+	
 	
 </style>
 <body onload="showImage()">
@@ -134,7 +162,8 @@
 <div class='smdd'>
 <div class='btnSet'>
 <div>
-	<h1 class="mainfont">등산 가이드</h1>
+	<h1 class="mainfont"><img alt="" src="imgs/mainclimb.png"></h1>
+	<!-- <h1 class="mainfont">등산 가이드</h1> -->
 </div>
 
 	<h1 class="mainfont_1">인기산</h1>
@@ -147,7 +176,7 @@
 	<a href='info.go?id=${vo.id}'></a>
 		<span style="display:inline-block; height:450px; width:350px;">
 	
-		<div  style= "height:450px; width:350px;" class="card"><a href='info.go?id=${vo.id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+		<div  style= "height:450px; width:350px;" class="card"><a href='info.re?id=${vo.id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
     		 alt="사진파일"></a>
 		</div>
 	
@@ -162,22 +191,53 @@
     <!-- Example Code -->
     
     <div class="grid text-center" style="--bs-columns: 1;" >
-        </font></font><div class="grid" style="--bs-columns: 2; padding: 0 0 0 0">
-          <div class="g-col-1" style="padding-top: 0px;
-	    padding-bottom: 0px;
-	    border-top-width: 0px;
-	    border-bottom-width: 0px;
-	    border-left-width: 0px;
-	    border-right-width: 0px;"><font><font style="vertical-align: inherit;">6/12</font><img style="width: 700px;height: 500px;" alt="" src='imgs/kakaomap.png'></font></div>
-          <div class="g-col-1"  style="padding-top: 0px;
-	    padding-bottom: 0px;
-	    border-top-width: 0px;
-	    border-bottom-width: 0px;
-	    border-left-width: 0px;
-	    border-right-width: 0px;><font inherit;"><font style="vertical-align: inherit;"><img style="width: 700px;height: 500px;" alt="" src='imgs/climb.png'><a style="font-size: 20px; font-weight:bold;" href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/">산 정보 찾아보기</a></font></font></div>
-        </div>
-      </div>
-    </div>
+        <div class="grid" style="--bs-columns: 2; padding: 0 0 0 0">
+          <div class="g-col-1 mapmain" style="padding-top: 0px;
+		    padding-bottom: 0px;
+		    border-top-width: 0px;
+		    border-bottom-width: 0px;
+		    border-left-width: 0px;
+		    border-right-width: 0px;">  
+		    
+		    <a href="https://map.kakao.com/" style="vertical-align: inherit;">
+		    <img style="width: 700px;height: 500px;" alt="" src='imgs/kakaomap.png'>
+		    <div class="map1" style="font-size: 40px; color: white; font-weight:bold;">
+			<div>
+			<a>지도로 위치 찾아보기</a>
+			</div>
+			<div>
+		    <button href="https://map.kakao.com/" type="button" class="btn btn-dark" style="font-size: 20dp;">지도 찾기</button>		    
+			</div>
+		    </div>
+		    </a>
+	      </div>
+          
+          
+        
+        <div class="g-col-1 climbmain"  style="padding-top: 0px;
+		    padding-bottom: 0px;
+		    border-top-width: 0px;
+		    border-bottom-width: 0px;
+		    border-left-width: 0px;
+		    border-right-width: 0px;
+		    font inherit;">
+		    
+		    <a href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/" style="vertical-align: inherit;">
+		    <img style="width: 700px;height: 500px;" alt="" src='imgs/climb.png'>
+		    <div class="climb" style="font-size: 40px; color: white; font-weight:bold;" href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/">
+		    <div>
+			<a>산 정보 찾아보기</a>
+			</div>
+			<div>
+		    <button type="button" class="btn btn-dark">산정보 찾기</button>		    
+			</div>
+		    </div>
+		    </a>
+	      </div>
+	    </div>
+   </div>
+</div>
+</div>
 <div class='btnSet'>
 	<a href='list.go' class='btn-fill'>게시판</a>
 </div>

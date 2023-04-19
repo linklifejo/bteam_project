@@ -35,7 +35,7 @@ values (#{content}, #{member_id}, #{gone_id})
 <select id='homeList' resultType='gone.HomeVO'>
 <![CDATA[ 
 select *
-from(select g.id,filename, filepath,member_id,gone_time,title,( select locname from location where id=g.location_id) locname,
+from(select g.id,filename, filepath,member_id,gone_time,title,g.content,( select locname from location where id=g.location_id) locname,
 								( select name_desc from location where id = g.location_id)name_desc,
                                ( select name from member where id=g.member_id) name,
                                ( select couname from course where id=g.course_id) couname

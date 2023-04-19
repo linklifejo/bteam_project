@@ -14,7 +14,6 @@ import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.CourseDTO;
 
-
 import java.util.ArrayList;
 
 public class CourseAdapter extends
@@ -46,7 +45,7 @@ public class CourseAdapter extends
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CourseAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CourseDTO dto = dtos.get(position);
         // 불러온 데이터를 ViewHolder에 만들어 놓은 setDto를
         // 사용하여 데이터를 셋팅시킨다

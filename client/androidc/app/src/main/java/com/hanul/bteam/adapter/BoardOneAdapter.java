@@ -14,20 +14,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
-import com.hanul.bteam.dto.BoardDTO;
+import com.hanul.bteam.dto.GoneDTO;
 
 import java.util.ArrayList;
 
 public class BoardOneAdapter extends
         RecyclerView.Adapter<BoardOneAdapter.ViewHolder>{
     Context context;
-    ArrayList<BoardDTO> dtos;
+    ArrayList<GoneDTO> dtos;
     MainActivity activity;
     // 화면을 붙이기 위한 객체 생성
     LayoutInflater inflater;
 
 
-    public BoardOneAdapter(Context context, ArrayList<BoardDTO> dtos, MainActivity a) {
+    public BoardOneAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
         this.activity = a;
         this.context = context;
         this.dtos = dtos;
@@ -37,7 +37,7 @@ public class BoardOneAdapter extends
 
     @NonNull
     @Override
-    public BoardOneAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.board_1_view,
                 parent, false);
 
@@ -45,17 +45,17 @@ public class BoardOneAdapter extends
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BoardOneAdapter.ViewHolder holder, int position) {
-        BoardDTO dto = dtos.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        GoneDTO dto = dtos.get(position);
         holder.setDto(dto);
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle b = new Bundle();
-                activity.fragmentControl(new BoardTwo(),b);
                 b.putSerializable("dto", dto);
+                activity.bundle = b;
 
-
+                activity.fragmentControl(new BoardTwo(),b);
             }
         });
     }
@@ -78,7 +78,7 @@ public class BoardOneAdapter extends
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
-        public void setDto(@NonNull BoardDTO dto) {
+        public void setDto(@NonNull GoneDTO dto) {
             title.setText(dto.getTitle());
             member_id.setText(dto.getMember_id());
             gonetime.setText(dto.getGonetime());
