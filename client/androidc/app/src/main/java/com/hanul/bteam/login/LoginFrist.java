@@ -64,6 +64,11 @@ public class LoginFrist extends Fragment {
 //                String pw = etPW.getText().toString();
 //                CommonMethod commonMethod = new CommonMethod();
                 // 로그인 성공시 아래 실행
+<<<<<<< HEAD
+=======
+                isStart = true;
+                if (isStart) start();
+>>>>>>> f3a7bcba51b2ebfedf7d9ada64a0e4ed1c4cd9d3
 
 //                MemberDTO dto = new MemberDTO();
 //                dto.setId( id.getText().toString() );
@@ -103,8 +108,11 @@ public class LoginFrist extends Fragment {
 //                                "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
                     }
                 });
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f3a7bcba51b2ebfedf7d9ada64a0e4ed1c4cd9d3
             }
         });
 

@@ -192,6 +192,7 @@ layout recentlyview
 layout review_list
 layout search_frag
 layout searchview
+layout searchview2
 layout willgo_frag
 layout willgoview
 layout wroteview

@@ -15,9 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
+<<<<<<< HEAD
 
 import com.hanul.bteam.adapter.MemberAdapter;
 
+=======
+>>>>>>> f3a7bcba51b2ebfedf7d9ada64a0e4ed1c4cd9d3
 import com.hanul.bteam.adapter.MyWroteAdapter;
 import com.hanul.bteam.adapter.RecentlyAdapter;
 import com.hanul.bteam.dto.GoneDTO;

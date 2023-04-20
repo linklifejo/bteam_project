@@ -41,6 +41,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
+<<<<<<< HEAD
+=======
+            <ImageButton
+                android:id="@+id/btnWillGo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="160dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/jjim_heart1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+>>>>>>> f3a7bcba51b2ebfedf7d9ada64a0e4ed1c4cd9d3
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
