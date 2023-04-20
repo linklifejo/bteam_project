@@ -80,19 +80,23 @@
 <div class='btnSet'>
 	<a href='' class='btn-fill'>산 등록</a>
 </div>
+	<h1 class="mainfont_1">인기산</h1>
+</div>
 <table class='w-px600 tb-list'>
-<thead>
-	<tr><th class='w-px140'>산이름</th>
 
-	</tr>
-</thead>
 <tbody>
+<div class="homeimg">
 <c:forEach items='${gone_myname}' var='vo'>
-	<tr><td><a href='info.lo?id=${vo.member_id}'>${vo.filepath }</a></td>
-
-	</tr>
-</c:forEach>
+	<a href='info.go?id=${vo.id}'></a>
+		<span style="display:inline-block; height:450px; width:350px;">
 	
+		<div  style= "height:450px; width:350px;" class="card"><a href='info.go?id=${vo.id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+    		 alt="사진파일"></a>
+		</div>
+	
+		</span>
+</c:forEach>
+</div>
 </tbody>
 </table>
 
