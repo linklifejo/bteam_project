@@ -42,10 +42,6 @@ where id = #{id}
 
 select nvl2(profile,profile,'https://mblogthumb-phinf.pstatic.net/20150427_261/ninevincent_1430122791768m7oO1_JPEG/kakao_1.jpg?type=w2') profile from member where id = #{id}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c1d58e3ac50658d2f043d4f23e750cd3c634b348
 </select>
 
 
