@@ -70,17 +70,24 @@ public class GoneController {
 	}
 	
 	//방명록 첨부파일 다운로드 요청
-	@RequestMapping("/download.go")
-	public void download(int file
+	@ResponseBody @RequestMapping(value="/download.go", produces = "text/html; charset=utf-8")
+	public String download(int file
 						, HttpServletRequest req
 						, HttpServletResponse res) {
 		//해당 첨부파일정보를 DB에서 조회해온다
 		GoneFileVO vo = service.gone_file_info(file);
 		//다운로드 처리한다
-		common.fileDownload(vo.getFilename(), vo.getFilepath()
+		boolean download = common.fileDownload(vo.getFilename(), vo.getFilepath()
 							, req, res);
+		if( download )			
+			return null;
+		else {
+			StringBuffer msg = new StringBuffer ("<script>");
+			msg.append("alert('삭제할 파일이 없습니다'); history.go(-1)");
+			msg.append("</script>");
+			return msg.toString();
+		}
 	}
-	
 	
 	//방명록 글 수정저장처리 요청
 	@RequestMapping("/update.go")
