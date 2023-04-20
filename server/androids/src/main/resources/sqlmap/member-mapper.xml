@@ -39,9 +39,13 @@ where id = #{id}
 
 <!-- 아이디 존재여부 조회 -->
 <select id='id_check' resultType='member.MemberVO'>
+<<<<<<< HEAD
+select nvl2(profile,profile,'https://mblogthumb-phinf.pstatic.net/20150427_261/ninevincent_1430122791768m7oO1_JPEG/kakao_1.jpg?type=w2') profile from member where id = #{id}
+=======
 
 select nvl2(profile,profile,'https://mblogthumb-phinf.pstatic.net/20150427_261/ninevincent_1430122791768m7oO1_JPEG/kakao_1.jpg?type=w2') profile from member where id = #{id}
 
+>>>>>>> c64a0ece669d53ed18483a2b610bc354507311e4
 </select>
 
 

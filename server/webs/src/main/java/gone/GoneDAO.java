@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import course.CourseVO;
 import location.LocationVO;
+import member.MemberVO;
 
 @Repository
 public class GoneDAO implements GoneService {
@@ -131,6 +132,7 @@ public class GoneDAO implements GoneService {
 		// TODO Auto-generated method stub
 		return sql.selectList("go.gone_myname",member_id);
 	}
+
 
 
 

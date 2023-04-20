@@ -26,7 +26,7 @@
 		<div class="dropdown">
   <button class="dropbtn">지역별산</button><%-- href='list.re?id=${vo.gone_id}' --%>
   <div class="dropdown-content">
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re?'>서울.경기</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='list.re?id=${GoneFile_list.gone_id}'>서울.경기</a>
     <a ${category eq 're2' ? "class='active'" : ''} href='<c:url value="/"/>list2.re2?'>강원</a>
     <a ${category eq 're3' ? "class='active'" : ''} href='<c:url value="/"/>list3.re3?'>전라도</a>
     <a ${category eq 're4' ? "class='active'" : ''} href='<c:url value="/"/>list4.re4?'>경상도</a>
@@ -65,8 +65,8 @@
 				</c:otherwise>
 			</c:choose>
 		
-			<li><strong>${loginInfo.name}</strong> 님</li>
-			<li><a class='btn-fill' ${category eq 'na' ? "class='active'" : ''} href='<c:url value="/"/>list.na'>내정보</a></li>
+			<li><strong>${loginInfo.name}</strong> 님</li><!-- href='info.go?id=${vo.id}' -->
+			<li><a class='btn-fill' ${category eq 'na' ? "class='active'" : ''} href='list.na?member_id=${loginInfo.id}'>내정보</a></li>
 			<!-- <li><a class='btn-empty' href='changepw'>비밀번호변경</a></li> -->
 			<li><a class='btn-fill' href='logout'>로그아웃</a></li>
 		</c:if>
