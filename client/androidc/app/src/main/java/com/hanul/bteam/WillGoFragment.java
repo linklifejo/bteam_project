@@ -22,6 +22,8 @@ import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.LocationDTO;
 import com.hanul.bteam.dto.WillgoDTO;
 
+import com.hanul.bteam.dto.LocationDTO;
+import com.hanul.bteam.dto.WillgoDTO;
 
 import java.util.ArrayList;
 
