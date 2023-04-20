@@ -19,15 +19,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-<<<<<<< HEAD
+
 
 import com.google.gson.Gson;
 import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.COMMON.CommonMethod;
 
-=======
-import com.hanul.bteam.BoardTwo;
->>>>>>> dbc75b3882fab3a06174e8a4c8859b5d866acf2e
+
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.GoneDTO;

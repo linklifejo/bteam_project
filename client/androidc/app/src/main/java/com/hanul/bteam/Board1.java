@@ -15,11 +15,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.BoardOneAdapter;
-<<<<<<< HEAD
-import com.hanul.bteam.dto.BoardDTO;
-=======
+
+
 import com.hanul.bteam.dto.GoneDTO;
->>>>>>> dbc75b3882fab3a06174e8a4c8859b5d866acf2e
+
 
 import java.util.ArrayList;
 
