@@ -30,6 +30,7 @@ drawable han_ra_san1
 drawable heart
 drawable home
 drawable ic_baseline_mouse_24
+drawable ic_heart
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable image01
