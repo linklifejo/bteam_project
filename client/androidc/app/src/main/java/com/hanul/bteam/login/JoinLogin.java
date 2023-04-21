@@ -5,6 +5,7 @@ import static android.app.Activity.RESULT_OK;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -62,7 +63,8 @@ public class JoinLogin extends Fragment {
     EditText id, pw, name, phone, address;
     ImageView profile;
     boolean isCheck = true;
-
+    RequestBody fileBody =null;
+    MultipartBody.Part filePart =null;
 
     Uri uri;
     @Nullable
@@ -153,8 +155,7 @@ public class JoinLogin extends Fragment {
 
 
                 CommonMethod commonMethod = new CommonMethod();
-                RequestBody fileBody =null;
-                MultipartBody.Part filePart =null;
+
                 if(imgFile != null) {
 
                     fileBody = RequestBody.create(MediaType.parse("image/jpeg"), new File(imgFilePath));
@@ -169,6 +170,12 @@ public class JoinLogin extends Fragment {
                 dto.setName( name.getText().toString() );
                 dto.setPhone( phone.getText().toString() );
                 dto.setAddress( address.getText().toString() );
+                dto.setProfile(imgFilePath);
+//  //              profile.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.profile, 10, 10));
+//
+//                profile.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(), R.id.profile, 10, 10));
+
+
 
                 commonMethod.setParams("param", dto);
 
@@ -254,6 +261,7 @@ public class JoinLogin extends Fragment {
                             Bitmap bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), uri);
                             profile.setImageBitmap(bitmap);
                             File path = new File(".");
+                            imgFilePath =  profile.toString();
                             Toast.makeText(activity," " + path.getAbsolutePath(), Toast.LENGTH_LONG).show();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -268,7 +276,7 @@ public class JoinLogin extends Fragment {
         // 사진의 크기 가져오기
         BitmapFactory.Options options = new BitmapFactory.Options();
         // 사진의 해상도를 1/8로 지정
-        options.inSampleSize = 8;
+        options.inSampleSize = 32;
         // 비트맵 이미지를 생성
         Bitmap bitmap = BitmapFactory.decodeFile(imgFilePath);
         // 이미지를 갤러리에 저장
@@ -320,5 +328,42 @@ public class JoinLogin extends Fragment {
 
 
     }
+//    public static int calculateInSampleSize(
+//            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+//        // Raw height and width of image
+//        final int height = options.outHeight;
+//        final int width = options.outWidth;
+//        int inSampleSize = 1;
+//
+//        if (height > reqHeight || width > reqWidth) {
+//
+//            final int halfHeight = height / 2;
+//            final int halfWidth = width / 2;
+//
+//            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+//            // height and width larger than the requested height and width.
+//            while ((halfHeight / inSampleSize) >= reqHeight
+//                    && (halfWidth / inSampleSize) >= reqWidth) {
+//                inSampleSize *= 2;
+//            }
+//        }
+//
+//        return inSampleSize;
+//    }
+//    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+//                                                         int reqWidth, int reqHeight) {
+//
+//        // First decode with inJustDecodeBounds=true to check dimensions
+//        final BitmapFactory.Options options = new BitmapFactory.Options();
+//        options.inJustDecodeBounds = true;
+//        BitmapFactory.decodeResource(res, resId, options);
+//
+//        // Calculate inSampleSize
+//        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+//
+//        // Decode bitmap with inSampleSize set
+//        options.inJustDecodeBounds = false;
+//        return BitmapFactory.decodeResource(res, resId, options);
+//    }
 }
 
