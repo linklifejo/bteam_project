@@ -1,14 +1,11 @@
 package com.hanul.bteam;
 
-import static android.content.Context.INPUT_METHOD_SERVICE;
-
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;

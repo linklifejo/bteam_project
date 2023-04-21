@@ -17,9 +17,8 @@ import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.OnWillGoitemClickListener;
 import com.hanul.bteam.adapter.WillGoAdapter;
-import com.hanul.bteam.dto.GoneDTO;
 
-import com.hanul.bteam.dto.LocationDTO;
+
 import com.hanul.bteam.dto.WillgoDTO;
 
 import com.hanul.bteam.dto.LocationDTO;
