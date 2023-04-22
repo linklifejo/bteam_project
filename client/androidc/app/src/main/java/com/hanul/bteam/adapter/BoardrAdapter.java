@@ -167,7 +167,7 @@ public class BoardrAdapter extends
             title.setText(dto.getTitle());
             Glide.with(itemView).load(dto.getFilepath()).into(filepath);
             Integer id = dto.getId();
-
+            btnWill.setTransitionName( id.toString());
         }
 
 
