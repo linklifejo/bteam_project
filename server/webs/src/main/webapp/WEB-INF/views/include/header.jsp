@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-
+<html>
 <header>
+
+	
 	<div class="head">
 	<div class="mainhead">
-		<a href='<c:url value="/"/>'><img src='imgs/main.png' width="100%" height="30px" ></a></li>
+		</li>
 	</div>
 	<div class="header">
 	<div>
 	<nav>
 		<ul>
-
+		<li><a href='<c:url value="/"/>'><img src='imgs/bteam.main.png'></a></li>
 		<c:if test='${not empty loginInfo}'>
 			<c:choose>
 				<c:when test='${loginInfo.admin eq "Y"}'>
@@ -81,6 +83,9 @@
 	</div>
 	</div>
 </header>
+
+</html>
+
 
 <style>
 .dropbtn {
@@ -157,37 +162,4 @@ header nav a:hover, header nav a.active { color:#fff;
 
 </style>
 
-
-
-<script type="text/javascript">
-function weather(){
-	jQuery.ajax({
-		url : "/api/weather",
-		type : "get",
-		timeout: 30000,
-		contentType : "application/json",
-		dataType : "json",
-		success : function(data, status, xhr) {
-			
-			let dataHeader = data.result.response.header.resultCode;
-			
-			
-			if (dataHeader == "00"){
-				console.log("success == >");
-				console.log(data);
-			}else{
-				console.log("fail == >");
-				console.log(data);
-			}
-		},
-		error : function(e, status, xhr, data){
-			console.log("error == >");
-			console.log(e);
-		}
-	});
-	
-}
-
-
-</script>
 
