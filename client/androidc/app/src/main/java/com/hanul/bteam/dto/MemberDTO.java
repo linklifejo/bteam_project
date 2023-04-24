@@ -58,7 +58,7 @@ public class MemberDTO implements Serializable {
         return profile;
     }
 
-    public void setProfile(String profile2) {
+    public void setProfile(String profile) {
         this.profile = profile;
     }
 

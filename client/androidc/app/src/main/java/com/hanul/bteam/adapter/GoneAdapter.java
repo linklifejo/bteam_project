@@ -43,8 +43,8 @@ public class GoneAdapter extends
     ArrayList<GoneDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
-    ImageButton btnWill;
     GoneDTO dto;
+
 
     // 생성자로 메인에서 넘겨받은것들을 연결
     public GoneAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
@@ -115,6 +115,7 @@ public class GoneAdapter extends
     // 3. xml 파일에서 사용된 모든 변수를 adapter에서 클래스로 선언한다
     public class ViewHolder extends RecyclerView.ViewHolder {
         // singerview.xml 에서 사용된 모든 위젯을 정의한다
+        ImageButton btnWill;
         TextView locname;
         ImageView filepath;
         LinearLayout parentLayout;
@@ -182,6 +183,7 @@ public class GoneAdapter extends
                     .into(filepath);
 
             Integer id = dto.getId();
+
             btnWill.setTransitionName( id.toString());
 
 
