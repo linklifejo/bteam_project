@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class='center'>
-	<a href='<c:url value="/"/>'><img src='imgs/hanul.logo.png'></a>
+	<a href='<c:url value="/"/>'><img src='imgs/bteam.logo2.png'></a>
 	<div class='box'>
 	<ul>
 		<li><input type='text' class='chk' id='userid' placeholder="아이디"></li>
