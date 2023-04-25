@@ -245,35 +245,21 @@ public class GoneController {
 	public String selectmou(HttpServletRequest req, Model model) {
 		String type = (String) req.getParameter("type");		
 		String ptype = (String) req.getParameter("ptype");
+		String member_id = (String) req.getParameter("member_id");
 		Integer num = Integer.valueOf(req.getParameter("num")) ;
 		HashMap<String,Object> map = new HashMap<String, Object>();
 		map.put("type", type);
-		map.put("ptype", ptype);		
+		map.put("ptype", ptype);	
+		map.put("id", member_id);
 		map.put("num", num);	
-		ArrayList<HomeVO> list = (ArrayList<HomeVO>)service.homeList(map);
+		ArrayList<HomeVO> list = (ArrayList<HomeVO>)service.mou(map);
 		
-		//model.addAttribute("list", list);
 		Gson gson = new Gson();
 		return gson.toJson( (ArrayList<HomeVO>)list );		
 		
 	}
 	
-	@ResponseBody @RequestMapping(value="/mou", produces="text/plain; charset=utf-8" )
-	public String mou(HttpServletRequest req, Model model) {
-		String type = (String) req.getParameter("type");		
-		String ptype = (String) req.getParameter("ptype");
-		Integer num = Integer.valueOf(req.getParameter("num")) ;
-		HashMap<String,Object> map = new HashMap<String, Object>();
-		map.put("type", type);
-		map.put("ptype", ptype);		
-		map.put("num", num);	
-		ArrayList<HomeVO> list = (ArrayList<HomeVO>)service.homeList(map);
-		
-		//model.addAttribute("list", list);
-		Gson gson = new Gson();
-		return gson.toJson( (ArrayList<HomeVO>)list );		
-		
-	}
+	
 //	// 지역별 이미지및 정보 가져오기
 //	@ResponseBody @RequestMapping(value="/localImage", produces="text/plain; charset=utf-8" )
 //	public String selectImage(HttpServletRequest req, Model model) {

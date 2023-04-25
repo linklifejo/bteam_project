@@ -24,6 +24,7 @@ import com.hanul.bteam.adapter.WillGoAdapter;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.MemberDTO;
 import com.hanul.bteam.dto.WillgoDTO;
+import com.hanul.bteam.login.LoginFrist;
 
 import java.util.ArrayList;
 
@@ -57,9 +58,19 @@ public class MyInfoFragment extends Fragment {
                 activity.fragmentControl(new ModifyInfo());
             }
         });
-
+        //처음 회원가입할때 이름 픽스시키고
         TextView t = view.findViewById(R.id.name);
         t.setText(activity.name);
+
+
+        view.findViewById(R.id.btn_out).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.isLogin=false;
+                activity.isLogin();
+                activity.fragmentControl(new LoginFrist());
+            }
+        });
 
 //        t.setText(d.getName());
 

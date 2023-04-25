@@ -151,8 +151,7 @@ public class WillGoAdapter extends
 
 
 
-                Toast.makeText(context,
-                        "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -175,8 +174,7 @@ public class WillGoAdapter extends
                             delDto(position);
                             // 지우거나 추가하면 반드시 화면을 갱신시켜야 한다
                             notifyDataSetChanged();
-                            Toast.makeText(activity,
-                                    d + "삭제..",Toast.LENGTH_SHORT).show();
+
                         }
                     }
                     @Override

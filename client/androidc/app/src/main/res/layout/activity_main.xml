@@ -18,7 +18,7 @@
       android:id="@+id/toolbar"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:background="#2436AE"
+      android:background="#64B5FD"
       android:elevation="1dp"
       android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
@@ -44,15 +44,14 @@
      app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
      />
 
-<com.google.android.material.bottomnavigation.BottomNavigationView
-    android:id="@+id/bottom_navi"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    app:itemBackground="@color/design_default_color_primary"
-    app:itemIconTint="@drawable/item_color"
-    app:itemTextColor="@drawable/item_color"
-    app:menu="@menu/menu_bottom"
-    android:layout_weight="8"
-    />
+ <com.google.android.material.bottomnavigation.BottomNavigationView
+     android:id="@+id/bottom_navi"
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_weight="8"
+     app:itemBackground="@android:color/holo_blue_light"
+     app:itemIconTint="@drawable/item_color"
+     app:itemTextColor="@drawable/item_color"
+     app:menu="@menu/menu_bottom" />
 
 </LinearLayout>

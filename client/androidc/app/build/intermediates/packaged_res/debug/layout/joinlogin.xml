@@ -76,7 +76,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btnJoinMem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@mipmap/ic_launcher_round" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btnadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -120,5 +120,6 @@
         app:layout_constraintEnd_toStartOf="@+id/profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

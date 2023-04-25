@@ -5,8 +5,10 @@ import java.util.List;
 
 public interface MemberService {
 	//CRUD
-	int member_join(MemberVO vo); //회원가입시 신규저장
+	int member_join(MemberVO vo); 
+	int member_logout(String id);//회원가입시 신규저장
 	int member_insert(MemberVO vo);
+	int member_update(MemberVO vo); //회원정보변경
 	
 	
 	MemberVO login(HashMap<String, String> map);
@@ -23,7 +25,6 @@ public interface MemberService {
 	
 	
 	
-	int member_update(MemberVO vo); //회원정보변경
 	int member_change_pw(MemberVO vo); //회원의 비밀번호변경
 	int member_delete(String id); //회원탈퇴
 	int member_manager(MemberVO vo); //관리자 ///////////////

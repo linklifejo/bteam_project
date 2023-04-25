@@ -55,8 +55,7 @@ public class RecentlyAdapter extends
             public void onClick(View v) {
                 Bundle b = new Bundle();
                 b.putSerializable("dto", dto);
-                Toast.makeText(context,
-                        "산이름 : " + dto.getTitle(), Toast.LENGTH_SHORT).show();
+
             }
         });
     }

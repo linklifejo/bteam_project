@@ -80,6 +80,12 @@ public class MemberServiceImpl implements MemberService {
 		return dao.login(map);
 	}
 
+	@Override
+	public int member_logout(String id) {
+		// TODO Auto-generated method stub
+		return dao.member_logout(id);
+	}
+
 	
 
 }

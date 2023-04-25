@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profile"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.widget.Button
-        android:id="@+id/userInfo1_Name"
+        android:id="@+id/modi"
         android:layout_width="125dp"
         android:layout_height="31dp"
         android:layout_marginStart="16dp"
@@ -28,103 +28,90 @@
         android:gravity="center"
         android:text="내 사진 수정"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/profile"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/userNameInfo"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:background="#EDEDED"
-        android:gravity="left"
-        android:text="아이디"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/userBirthInfo"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:background="#EDEDED"
-        android:gravity="left"
-        android:text="비밀번호"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameInfo" />
 
 
-    <TextView
-        android:id="@+id/userInfo6"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+    <EditText
+        android:id="@+id/pw"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:background="#EDEDED"
+        android:layout_marginEnd="24dp"
         android:gravity="left"
-        android:text="이름"
-        android:textSize="24sp"
+        android:hint="비밀번호 : 5~19 영대소문자 +숫자"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userBirthInfo" />
+        app:layout_constraintTop_toBottomOf="@+id/profile" />
 
-    <TextView
-        android:id="@+id/userInfo4"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:background="#EDEDED"
+        android:layout_marginEnd="24dp"
         android:gravity="left"
-        android:text="전화번호"
-        android:textSize="24sp"
+        android:hint="이름"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userInfo6" />
+        app:layout_constraintTop_toBottomOf="@+id/pw" />
 
-    <TextView
-        android:id="@+id/userInfo2"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:background="#EDEDED"
+        android:layout_marginEnd="24dp"
         android:gravity="left"
-        android:text="이메일"
-        android:textSize="24sp"
+        android:hint="전화번호:   13글자   "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userInfo4" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="left"
+        android:hint="주소"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
 
 
     <android.widget.Button
-        android:id="@+id/btn_write"
+        android:id="@+id/btn_cel"
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="24dp"
         android:background="#64B5FD"
         android:text="수정 취소"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userInfo2"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintTop_toBottomOf="@+id/address" />
 
     <android.widget.Button
-        android:id="@+id/btn_write2"
+        android:id="@+id/btnupdate"
         android:layout_width="120dp"
         android:layout_height="30dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="80dp"
         android:background="#64B5FD"
         android:text="수정 저장"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userInfo2"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintTop_toBottomOf="@+id/address" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,7 +24,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.maps.CameraUpdate;
@@ -47,9 +47,7 @@ import java.util.Map;
 
 public class Danger extends Fragment  {
     MainActivity activity;
-    GoogleMap map;
-    EditText etAddress;
-    SupportMapFragment mapFragment;
+
 
 
     @Nullable

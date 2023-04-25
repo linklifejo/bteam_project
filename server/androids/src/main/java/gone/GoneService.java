@@ -32,6 +32,8 @@ public interface GoneService {
 	// 사람들이 많이 조회한순
 //	List<GoneFileVO> GoneFile_list();
 	// 게시판에 올린사진 인기순
+	
+	//내가쓴글 
 	List<HomeVO> mou(HashMap<String, Object> vo);
 	
 	
