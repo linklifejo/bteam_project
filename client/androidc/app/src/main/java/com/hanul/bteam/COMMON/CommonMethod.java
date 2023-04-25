@@ -22,7 +22,11 @@ import retrofit2.Callback;
 public class CommonMethod {
 
 
+<<<<<<< HEAD
     public static String ipConfig = "http://192.168.0.140/ab/";
+=======
+    public static String ipConfig = "http://192.168.0.11/ab/";
+>>>>>>> dde553957bd1da110faf5252c8f3bc901c4fa65d
 
     public MemberDTO loginDto = null;
 

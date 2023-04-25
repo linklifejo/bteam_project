@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-
+<html>
 <header>
+
+	
 	<div class="head">
 	<div class="mainhead">
-		<a href='<c:url value="/"/>'><img src='imgs/main.png' width="100%" height="30px" ></a></li>
+		</li>
 	</div>
 	<div class="header">
 	<div>
 	<nav>
 		<ul>
-
+		<li><a href='<c:url value="/"/>'><img src='imgs/bteam.main.png'></a></li>
 		<c:if test='${not empty loginInfo}'>
 			<c:choose>
 				<c:when test='${loginInfo.admin eq "Y"}'>
@@ -77,9 +79,13 @@
 	<div>
 	<div>
 		<img alt="" src="imgs/main_2.png" style="height: 90px;" width="100%;">
+		<div>${resultMap}</div>
 	</div>
 	</div>
 </header>
+
+</html>
+
 
 <style>
 .dropbtn {
@@ -155,3 +161,5 @@ header nav a:hover, header nav a.active { color:#fff;
 }
 
 </style>
+
+

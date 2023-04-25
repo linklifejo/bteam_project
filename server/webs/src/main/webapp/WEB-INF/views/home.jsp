@@ -7,7 +7,13 @@
     <meta charset="utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-<title>Insert title here</title>
+
+
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="Viewport" content="width=device-width, initial-scale-1.0" />
+	<title>기상청 날씨API</title>	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style type="text/css">
 
@@ -27,7 +33,6 @@
 		height:800px;
 		position: relative;
 		z-index: -1;
-		background-color: #e9f2ef;
 	}
 	
 
@@ -54,7 +59,6 @@
 	
 	
 	.mainfont{
-		padding-bottom: 100px;
 		font-size: 100px;
 		font-weight: bold;
 		position: absolute;
@@ -65,7 +69,6 @@
 	}
 	
 	.mainfont_1{
-		padding-top: 100px;
 		font-size: 50px;
 		font-weight: 900;
 	}
@@ -92,22 +95,19 @@
 	}
 	
 	
-	.btnSet{
-	 padding-top: 100px;
-	}
 	
 	
 	.text-center{
 		container: text-center;
 		text-align: center; margin: 0 auto;
 		padding: 100px 0 100px 0;
-		width: 1400px;
+		width: 900px;
 		height: 700px;
 		background-color: fff;
 	}
 	
 	.grid{
-	width: 1400dp;
+	width: 900dp;
 	height: 700dp;
 	gap: var(--bs-gap, 0rem);
 	background-color: fff;
@@ -116,6 +116,7 @@
 	
 	.mapmain{
 		position: relative;
+		width: 450px;
 	}
 	
 	.map1{
@@ -128,6 +129,7 @@
 
 	.climbmain{
 		position: relative;
+		width: 450px;
 	}
 	
 
@@ -147,9 +149,73 @@
 	
 	
 </style>
+	
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+	integrity="sha256-pyPw+upLPUjgMXY0G+800xUf+/Im1MZjXxxgOcBQBXU="
+	crossorigin="anonymous"></script>
+
+
+
+
+
+	
+	
+<script type="text/javascript">
+var date = new Date();
+
+var year = date.getFullYear();
+var month = ('0' + (date.getMonth() + 1)).slice(-2);
+var day = ('0' + date.getDate()).slice(-2);
+
+var initDate = year + month + day;
+
+console.log(initDate);
+
+
+		
+	$.ajax({
+		url: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=20230424&base_time=0500&nx=60&ny=127",
+		success: function (result) {
+			console.log(result);
+		},
+	});
+	</script>
+
+
+
 <body onload="showImage()">
+	<div class="container">
+	<h1>기상청 날씨 API</h1>
+	<h2>종로 날씨</h2>
+	<form action="">
+		<label for="datepick">날짜 선택</label>
+		<input type="date" id="datepick"/>
+		<button>조회</button>
+	</form>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>날짜</th>
+				<th>시간</th>
+				<th>온도</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th colspan>조회내용이 없습니다</th>
+			</tr>
+			<tr>
+<!-- 				<th>20230424</th>
+				<th>0600</th>
+				<th>-4.0</th> -->
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	
+	<p class="result"></p>
 <div class="img">
- <img id="introimg" border="0" style= height:800px;width:1800px;>
+ <!-- <img id="introimg" border="0" style= height:700px;width:100%;> -->
 </div>
 
 
@@ -199,14 +265,14 @@
 		    border-left-width: 0px;
 		    border-right-width: 0px;">  
 		    
-		    <a href="https://map.kakao.com/" style="vertical-align: inherit;">
-		    <img style="width: 700px;height: 500px;" alt="" src='imgs/kakaomap.png'>
+		    <a style="vertical-align: inherit;">
+		    <img style="width: 450px;height: 500px;" alt="" src='imgs/kakaomap.png'>
 		    <div class="map1" style="font-size: 40px; color: white; font-weight:bold;">
 			<div>
 			<a>지도로 위치 찾아보기</a>
 			</div>
 			<div>
-		    <button href="https://map.kakao.com/" type="button" class="btn btn-dark" style="font-size: 20dp;">지도 찾기</button>		    
+		    <a href="https://map.kakao.com/"><button type="button" class="btn btn-dark" style="font-size: 20dp;">지도 찾기</button></a>		    
 			</div>
 		    </div>
 		    </a>
@@ -222,14 +288,14 @@
 		    border-right-width: 0px;
 		    font inherit;">
 		    
-		    <a href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/" style="vertical-align: inherit;">
-		    <img style="width: 700px;height: 500px;" alt="" src='imgs/climb.png'>
-		    <div class="climb" style="font-size: 40px; color: white; font-weight:bold;" href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/">
+		    <a style="vertical-align: inherit;">
+		    <img style="width: 450px;height: 500px;" alt="" src='imgs/climb.png'>
+		    <div class="climb" style="font-size: 40px; color: white; font-weight:bold;">
 		    <div>
 			<a>산 정보 찾아보기</a>
 			</div>
 			<div>
-		    <button type="button" class="btn btn-dark">산정보 찾기</button>		    
+		    <a href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/" ><button type="button" class="btn btn-dark">산정보 찾기</button></a>		    
 			</div>
 		    </div>
 		    </a>
@@ -330,6 +396,7 @@ function showImage(){
  setTimeout(showImage,10000);
 }
 </script>
+
 
 
 </body>

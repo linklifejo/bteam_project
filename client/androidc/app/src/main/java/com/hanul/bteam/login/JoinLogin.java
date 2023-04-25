@@ -129,30 +129,30 @@ public class JoinLogin extends Fragment {
         view.findViewById(R.id.btnJoinMem).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!DataCheck.id_check(id.getText().toString())){
-                    id.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-                }
-                else if(!DataCheck.pw_check(pw.getText().toString())){
-                    pw.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "pw 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-                }
-                else if(!DataCheck.checkPhoneNumber(phone.getText().toString())){
-                    phone.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "phone 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-                }
-                else if(!DataCheck.checkEmailAddress(address.getText().toString())){
-                    address.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "address 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-                }
+//                if(!DataCheck.id_check(id.getText().toString())){
+//                    id.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(!DataCheck.pw_check(pw.getText().toString())){
+//                    pw.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "pw 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(!DataCheck.checkPhoneNumber(phone.getText().toString())){
+//                    phone.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "phone 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(!DataCheck.checkEmailAddress(address.getText().toString())){
+//                    address.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "address 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+//                }
 
 
 
@@ -173,6 +173,7 @@ public class JoinLogin extends Fragment {
                 dto.setPhone( phone.getText().toString() );
                 dto.setAddress( address.getText().toString() );
                 dto.setProfile(imgFilePath);
+ //               dto.setProfile(profile.toString() );
 //  //              profile.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.profile, 10, 10));
 //
 //                profile.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(), R.id.profile, 10, 10));
@@ -263,7 +264,11 @@ public class JoinLogin extends Fragment {
                             Bitmap bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), uri);
                             profile.setImageBitmap(bitmap);
                             File path = new File(".");
+<<<<<<< HEAD
                             imgFilePath =  getPathFromUri(uri);
+=======
+                            imgFilePath =   getPathFromUri(uri);
+>>>>>>> dde553957bd1da110faf5252c8f3bc901c4fa65d
                             Toast.makeText(activity," " + path.getAbsolutePath(), Toast.LENGTH_LONG).show();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -278,7 +283,7 @@ public class JoinLogin extends Fragment {
         // 사진의 크기 가져오기
         BitmapFactory.Options options = new BitmapFactory.Options();
         // 사진의 해상도를 1/8로 지정
-        options.inSampleSize = 32;
+        options.inSampleSize = 8;
         // 비트맵 이미지를 생성
         Bitmap bitmap = BitmapFactory.decodeFile(imgFilePath);
         // 이미지를 갤러리에 저장
@@ -341,6 +346,19 @@ public class JoinLogin extends Fragment {
 
         return path;
     }
+    public String getPathFromUri(Uri uri) {
+
+        Cursor cursor = activity.getContentResolver().query(uri, null, null, null, null);
+
+        cursor.moveToNext();
+
+        @SuppressLint("Range") String path = cursor.getString(cursor.getColumnIndex("_data"));
+
+        cursor.close();
+
+        return path;
+    }
+
 //    public static int calculateInSampleSize(
 //            BitmapFactory.Options options, int reqWidth, int reqHeight) {
 //        // Raw height and width of image
