@@ -107,7 +107,7 @@ public class HomeFragment extends Fragment {
         CommonMethod commonMethod2 = new CommonMethod();
         // 어댑터에 생성한 매소드 addDto를 이용하여 dtos에 데이터를 추가한다
         commonMethod2.setParams("type", "1");
-        commonMethod2.setParams("ptype", "3");
+        commonMethod2.setParams("ptype", "1");
         commonMethod2.setParams("num", "10");
         commonMethod2.getData("selectmou", new Callback<String>(){
             @Override

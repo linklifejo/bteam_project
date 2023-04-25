@@ -31,7 +31,6 @@ values (#{content}, #{member_id}, #{gone_id})
 
 
 
-
 <select id='homeList' resultType='gone.HomeVO'>
 <![CDATA[ 
 select *
@@ -172,8 +171,9 @@ order by id
 
 <!-- 게시판 목록조회 -->
 <select id='bolist' resultType='gone.GoneVO'>
-select title,member_id,gone_time,content
-from gone 
+select g.*,filepath
+from gone g,gone_file f
+where g.id=f.gone_id
 order by gone_date
 </select>
 

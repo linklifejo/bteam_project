@@ -131,6 +131,12 @@ public class GoneServiceImpl implements GoneService {
 		return dao.bolist();
 	}
 
+	@Override
+	public List<HomeVO> mou(HashMap<String, Object> vo) {
+		// TODO Auto-generated method stub
+		return dao.mou(vo);
+	}
+
 	
 
 //	@Override

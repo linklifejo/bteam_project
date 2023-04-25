@@ -98,8 +98,6 @@ public class GoneAdapter extends
                 b.putSerializable("dto",dto);
                 activity.bundle = b;
                 activity.fragmentControl(new BoardTwo(),b);
-                Toast.makeText(context,
-                        "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -137,8 +135,7 @@ public class GoneAdapter extends
 //                    Integer id = dto.getId();
                     CommonMethod commonMethod = new CommonMethod();
                     commonMethod.setParams("wtype", "1");
-                //    commonMethod.setParams("refid", id.toString());
-
+//                    commonMethod.setParams("refid", id.toString());
                     commonMethod.setParams("refid", btnWill.getTransitionName());
                     commonMethod.setParams("member_id", activity.loginid);
                     commonMethod.getData("willGoIn", new Callback<String>() {

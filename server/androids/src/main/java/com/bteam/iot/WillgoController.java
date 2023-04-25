@@ -105,13 +105,7 @@ public class WillgoController {
 		map.put("refid", refid);
 		WillgoVO vo =(WillgoVO) service.willgo_info(map);
 		if(vo != null) 	return "존재합니다";
-		
-			if(wtype.equals("2") ) {
-				LocationVO lo = service.location_info(refid);
-				map.put("filepath", lo.getFilepath());
-				map.put("locname", lo.getLocname());
-			}
-			else {
+			 
 				GoneFileVO file = service.gone_file_info(refid);
 				if(file != null) map.put("filepath", file.getFilepath());
 				
@@ -122,7 +116,7 @@ public class WillgoController {
 					
 				}
 				
-			}
+			
 			
 			return service.willgo_insert(map) == 1 ? "찜성공" : "찜실패";
 		}

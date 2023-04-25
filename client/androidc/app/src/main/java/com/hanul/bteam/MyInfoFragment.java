@@ -20,8 +20,10 @@ import com.hanul.bteam.adapter.MemberAdapter;
 
 import com.hanul.bteam.adapter.MyWroteAdapter;
 import com.hanul.bteam.adapter.RecentlyAdapter;
+import com.hanul.bteam.adapter.WillGoAdapter;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.MemberDTO;
+import com.hanul.bteam.dto.WillgoDTO;
 
 import java.util.ArrayList;
 
@@ -32,10 +34,10 @@ import retrofit2.Response;
 public class MyInfoFragment extends Fragment {
     MainActivity activity;
     RecyclerView recycler2,recycler,rra;
-    MyWroteAdapter adapter;
+    WillGoAdapter adapter;
     ArrayList<MemberDTO> dtoo;
     MemberAdapter adapter_me;
-    ArrayList<GoneDTO> dtos;
+    ArrayList<WillgoDTO> dtos;
     ArrayList<GoneDTO> dtos_re;
     RecentlyAdapter adapter_re;
 
@@ -49,12 +51,12 @@ public class MyInfoFragment extends Fragment {
         View view = (ViewGroup) inflater.inflate(R.layout.myinfo_frag,
                 container, false);
         activity = (MainActivity) getActivity();
-//        view.findViewById(R.id.btn_write).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                activity.fragmentControl(new LocalFragment());
-//            }
-//        });
+        view.findViewById(R.id.btn_write).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.fragmentControl(new ModifyInfo());
+            }
+        });
 
         TextView t = view.findViewById(R.id.name);
         t.setText(activity.name);
@@ -69,22 +71,24 @@ public class MyInfoFragment extends Fragment {
         recycler.setLayoutManager(layoutManager);
 
         CommonMethod commonMethod = new CommonMethod();
-        commonMethod.setParams("type", "1");
-        commonMethod.setParams("ptype", "3");
-        commonMethod.setParams("num", "6");
-        commonMethod.getData("selectHome", new Callback<String>(){
+        commonMethod.setParams("member_id",   activity.loginid);
+        commonMethod.getData("willGo", new Callback<String>(){
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
 
                 if(response.isSuccessful()){
                     Gson gson = new Gson();
-                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
-                    for(GoneDTO dto: dtos){
-                        dto.setTitle(dto.getTitle());
+                    dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<WillgoDTO>>(){}.getType());
+                    for(WillgoDTO dto: dtos){
+                        dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
+                        dto.setRefid(dto.getRefid());
+                        dto.setWtype(dto.getWtype());
+                        dto.setId(dto.getId());
                     }
-                    adapter = new MyWroteAdapter(activity.getApplicationContext(), dtos,activity);
+                    adapter = new WillGoAdapter(activity.getApplicationContext(), dtos,activity);
                     recycler.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
                 }
             }
             @Override

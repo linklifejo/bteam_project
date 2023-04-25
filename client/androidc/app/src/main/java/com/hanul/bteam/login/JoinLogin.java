@@ -2,10 +2,12 @@ package com.hanul.bteam.login;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -261,7 +263,7 @@ public class JoinLogin extends Fragment {
                             Bitmap bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), uri);
                             profile.setImageBitmap(bitmap);
                             File path = new File(".");
-                            imgFilePath =  profile.toString();
+                            imgFilePath =  getPathFromUri(uri);
                             Toast.makeText(activity," " + path.getAbsolutePath(), Toast.LENGTH_LONG).show();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -326,7 +328,18 @@ public class JoinLogin extends Fragment {
             activity.sendBroadcast(msIntent);
         }
 
+    }
+    public String getPathFromUri(Uri uri) {
 
+        Cursor cursor = activity.getContentResolver().query(uri, null, null, null, null);
+
+        cursor.moveToNext();
+
+        @SuppressLint("Range") String path = cursor.getString(cursor.getColumnIndex("_data"));
+
+        cursor.close();
+
+        return path;
     }
 //    public static int calculateInSampleSize(
 //            BitmapFactory.Options options, int reqWidth, int reqHeight) {

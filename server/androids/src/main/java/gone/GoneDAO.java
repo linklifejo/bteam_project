@@ -153,6 +153,12 @@ public class GoneDAO implements GoneService {
 		return sql.selectList("go.bolist");
 	}
 
+	@Override
+	public List<HomeVO> mou(HashMap<String, Object> vo) {
+		// TODO Auto-generated method stub
+		return sql.selectList("go.mou");
+	}
+
 
 
 //	@Override

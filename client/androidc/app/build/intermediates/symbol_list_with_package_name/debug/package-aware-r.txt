@@ -2945,7 +2945,6 @@ drawable trash
 id ALT
 id BOTTOM_END
 id BOTTOM_START
-id BoardName
 id BoardSearch
 id BoardTitle
 id CTRL
@@ -3051,14 +3050,12 @@ id bounceStart
 id btn1
 id btnCancel
 id btnChung
-id btnClick
 id btnGwangwon
 id btnJeju
 id btnJeonlado
 id btnJoin
 id btnJoinMem
 id btnKeong
-id btnLoc
 id btnLocal
 id btnLogin
 id btnSearch
@@ -3103,6 +3100,7 @@ id contain
 id container
 id content
 id contentPanel
+id contentr
 id contiguous
 id continuousVelocity
 id coordinator
@@ -3157,13 +3155,13 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
-id etAddress
-id evSearch
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id filenamed
 id filepath
+id filepathd
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3231,7 +3229,6 @@ id list_item
 id local_frag
 id locname
 id m3_side_sheet
-id map
 id marquee
 id masked
 id match_constraint
@@ -3356,7 +3353,6 @@ id rounded
 id row_index_key
 id rra
 id rre
-id rro
 id satellite
 id save_non_transition_alpha
 id save_overlay_view
@@ -3494,8 +3490,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tvAddress
-id tvHeigh
 id tvLocname
 id tvName_desc
 id tvTitle
@@ -3505,7 +3499,6 @@ id unlabeled
 id up
 id useLogo
 id userBirthInfo
-id userInfo
 id userInfo1_Name
 id userInfo2
 id userInfo4
