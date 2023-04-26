@@ -76,6 +76,7 @@ id btnSeoul
 id btnWillGo
 id btn_boardList
 id btn_cancel
+id btn_cancel2
 id btn_cel
 id btn_delete
 id btn_modify
@@ -97,8 +98,8 @@ id filepathd
 id gonetime
 id id
 id imageView
+id imageView2
 id ivTrash
-id local_frag
 id locname
 id memberid
 id modi

@@ -106,7 +106,6 @@ public class BoardrAdapter extends
         TextView title,content;
         ImageView filepath;
         LinearLayout parentLayout;
-        ImageButton btnWill;
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
         public ViewHolder(@NonNull View itemView) {

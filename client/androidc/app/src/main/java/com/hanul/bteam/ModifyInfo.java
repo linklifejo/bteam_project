@@ -32,7 +32,9 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.MemberDTO;
 import com.hanul.bteam.login.LoginFrist;
 
@@ -83,6 +85,12 @@ public class ModifyInfo extends Fragment {
         phone =view.findViewById(R.id.phone);
         address =view.findViewById(R.id.address);
         profile = view.findViewById(R.id.profile);
+
+        Bundle b = activity.bundle;
+        MemberDTO d = (MemberDTO) b.getSerializable("dto");
+        ImageView i = view.findViewById(R.id.profile);
+        Glide.with(view).load(d.getProfile()).into(i);
+
 
         view.findViewById(R.id.btnupdate).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,6 +226,8 @@ public class ModifyInfo extends Fragment {
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                         uri = result.getData().getData();
+
+
                         try {
                             Bitmap bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), uri);
                             profile.setImageBitmap(bitmap);
@@ -245,6 +255,8 @@ public class ModifyInfo extends Fragment {
         // 이미지를 갤러리에 저장
         gelleryAddPic(bitmap);
         // 이미지를 이미지뷰에 세팅
+
+
         profile.setImageBitmap(bitmap);
     }
     private void gelleryAddPic(Bitmap bitmap) {

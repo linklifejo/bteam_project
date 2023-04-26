@@ -80,7 +80,7 @@ public class HomeFragment extends Fragment {
                     dtos_re =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
                     for(GoneDTO dto: dtos_re){
                         dto.setId(dto.getId());
-                        dto.setLocname(dto.getLocname());
+                        dto.setTitle(dto.getTitle());
                         dto.setFilepath(dto.getFilepath());
                         dto.setName_desc(dto.getName_desc());
                     }

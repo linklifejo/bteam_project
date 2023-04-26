@@ -7,24 +7,10 @@
     tools:ignore="ExtraText">
 
     <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#64B5FD"
-        android:gravity="left"
-        android:text="산정보"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/tvLocname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="16dp"
         android:gravity="left"
         android:text="산이름"
         android:textSize="24sp"
@@ -39,6 +25,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="8dp"
         android:gravity="left"
+        android:scaleType="fitXY"
         android:text="산높이"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,42 +37,43 @@
     <TextView
         android:id="@+id/tvName_desc"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="16dp"
         android:gravity="left"
         android:text="산설명"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filepath"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/filepath" />
 
     <Button
-        android:id="@+id/course"
-        android:layout_width="match_parent"
+        android:id="@+id/danger"
+        android:layout_width="120dp"
+
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="추천등산코스"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="47dp"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
+        android:text="위험정보"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/course"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvName_desc" />
 
     <Button
-        android:id="@+id/danger"
-        android:layout_width="match_parent"
+        android:id="@+id/course"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="위험정보"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="62dp"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
+        android:text="추천등산코스"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/course" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/tvName_desc" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

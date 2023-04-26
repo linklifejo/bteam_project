@@ -5,36 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.widget.Button
+    <Button
         android:id="@+id/btn_boardList"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:background="#64B5FD"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
+        android:textSize="20sp"
         android:text="목록"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.Button
+    <Button
         android:id="@+id/btn_modify"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="11dp"
-        android:background="#64B5FD"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
         android:text="수정"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_delete"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.Button
+    <Button
         android:id="@+id/btn_delete"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
-        android:background="#64B5FD"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
         android:text="삭제"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +48,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="left"
         android:text="게시글 제목"
         android:textSize="24sp"

@@ -13,29 +13,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_weight="11"
         android:orientation="vertical"
-        android:weightSum="10"
-
         >
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="250dp"
             android:layout_weight="9"
             android:scaleType="fitXY"
-            android:src="@drawable/mudm" />
+            android:src="@drawable/seol_ak_san" />
 
         <Button
             android:id="@+id/btnLocal"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:backgroundTint="#8FA690"
-            android:gravity="center|top"
-            android:text="지역별산"
-            android:textSize="24sp" />
+            android:layout_height="80dp"
+            android:layout_weight="2"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#989898"
+            android:textSize="24sp"
+            android:text="지역별산 >"
+            android:textAlignment="viewStart"/>
 
 
     </LinearLayout>
@@ -50,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
-        android:background="#D1DDD5"
+        android:background="#ffffff"
         android:orientation="horizontal"
 
         >
@@ -79,28 +78,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:backgroundTint="#8FA690"
-            android:text="탐방글"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#989898"
+            android:text="탐방글 >"
             android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="13"
-        android:background="#D1DDD5"
+        android:layout_weight="9"
+        android:background="#FFFFFF"
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <!--        <GridView-->
-        <!--            android:id="@+id/gridView"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:listSelector="#A1EF13"-->
-        <!--            android:numColumns="3"/>-->
+            android:layout_height="match_parent" />
+
 
 
     </LinearLayout>

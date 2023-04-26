@@ -5,10 +5,11 @@ import java.util.List;
 
 import course.CourseVO;
 import location.LocationVO;
+import member.MemberVO;
 
 public interface GoneService {
 	//CRUD
-	
+	int gone_write(HomeVO vo);
 	int gone_insert(HashMap<String,Object> map);//방명록 새글저장
 	int gone_insert(GoneVO vo);//방명록 새글저장
 	GonePageVO gone_list(GonePageVO vo); //방명록 목록 조회
@@ -35,6 +36,8 @@ public interface GoneService {
 	
 	//내가쓴글 
 	List<HomeVO> mou(HashMap<String, Object> vo);
+	
+	List<HomeVO> diary(HashMap<String, Object> vo);
 	
 	
 	

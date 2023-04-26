@@ -45,7 +45,6 @@ public class GoneAdapter extends
     LayoutInflater inflater;
     GoneDTO dto;
 
-
     // 생성자로 메인에서 넘겨받은것들을 연결
     public GoneAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
         this.activity = a;
@@ -84,10 +83,7 @@ public class GoneAdapter extends
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d(TAG, "onBindViewHolder: " + position);
-        // dtos에 있는 데이터를 각각 불러온다
-        dto = dtos.get(position);
-        // 불러온 데이터를 ViewHolder에 만들어 놓은 setDto를
-        // 사용하여 데이터를 셋팅시킨다
+        GoneDTO dto = dtos.get(position);
         holder.setDto(dto);
 
         // 리싸이클러뷰에 항목을 선택했을때 그 항목을 가져오는 리스너
@@ -114,7 +110,7 @@ public class GoneAdapter extends
     public class ViewHolder extends RecyclerView.ViewHolder {
         // singerview.xml 에서 사용된 모든 위젯을 정의한다
         ImageButton btnWill;
-        TextView locname;
+        TextView title;
         ImageView filepath;
         LinearLayout parentLayout;
 
@@ -123,7 +119,7 @@ public class GoneAdapter extends
             super(itemView);
 
             parentLayout = itemView.findViewById(R.id.parentLayout);
-            locname = itemView.findViewById(R.id.locname);
+            title = itemView.findViewById(R.id.title);
             btnWill = itemView.findViewById(R.id.btnWillGo);
 
             filepath = itemView.findViewById(R.id.filepath);
@@ -173,12 +169,9 @@ public class GoneAdapter extends
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
         public void setDto(@NonNull GoneDTO dto) {
-            locname.setText(dto.getLocname());
-//            filepath.setImageResource(dto.getFilepath());
-
+            title.setText(dto.getTitle());
             Glide.with(itemView).load(dto.getFilepath())
                     .into(filepath);
-
             Integer id = dto.getId();
 
             btnWill.setTransitionName( id.toString());
@@ -186,35 +179,35 @@ public class GoneAdapter extends
 
         }
 
-        private void showMessage(int position) {
-            AlertDialog.Builder builder = new
-                    AlertDialog.Builder(context);
-            builder.setTitle("안내");
-            builder.setMessage("삭제하시겠습니까?");
-            builder.setIcon(android.R.drawable.ic_dialog_alert);
-
-            // 예 버튼
-            builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    // dtos.remove(position);
-                    delDto(position);
-                    // 지우거나 추가하면 반드시 화면을 갱신시켜야 한다
-                    notifyDataSetChanged();
-                }
-            });
-
-            // 아니요 버튼
-            builder.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-
-                }
-            });
-
-            AlertDialog dialog = builder.create();
-            dialog.show();
-        }
+//        private void showMessage(int position) {
+//            AlertDialog.Builder builder = new
+//                    AlertDialog.Builder(context);
+//            builder.setTitle("안내");
+//            builder.setMessage("삭제하시겠습니까?");
+//            builder.setIcon(android.R.drawable.ic_dialog_alert);
+//
+//            // 예 버튼
+//            builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    // dtos.remove(position);
+//                    delDto(position);
+//                    // 지우거나 추가하면 반드시 화면을 갱신시켜야 한다
+//                    notifyDataSetChanged();
+//                }
+//            });
+//
+//            // 아니요 버튼
+//            builder.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//
+//                }
+//            });
+//
+//            AlertDialog dialog = builder.create();
+//            dialog.show();
+//        }
 
     }
 }

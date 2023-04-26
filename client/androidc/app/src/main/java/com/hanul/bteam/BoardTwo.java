@@ -10,27 +10,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.BoardtwoAdapter;
 import com.hanul.bteam.dto.GoneDTO;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class BoardTwo extends Fragment {
     MainActivity activity;
     ArrayList<GoneDTO> dtos;
     BoardtwoAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -43,6 +35,9 @@ public class BoardTwo extends Fragment {
 
         Bundle b = activity.bundle;
         GoneDTO d = (GoneDTO) b.getSerializable("dto");
+//        Serializable d1 = b.getSerializable("dto");
+//        GoneDTO d = (GoneDTO) d1;
+//        Log.d("entity : ",""+b.getSerializable("dto"));
 
         TextView t = view.findViewById(R.id.title);
         t.setText(d.getTitle());
@@ -54,11 +49,6 @@ public class BoardTwo extends Fragment {
 
         TextView ttt = view.findViewById(R.id.content);
         ttt.setText(d.getContent());
-
-
-
-
-
 
 
         view.findViewById(R.id.btn_boardList).setOnClickListener(new View.OnClickListener() {

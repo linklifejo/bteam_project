@@ -29,7 +29,10 @@ insert into gone_comment (content, member_id, gone_id)
 values (#{content}, #{member_id}, #{gone_id})
 </insert>
 
-
+<insert id='gonewrite'>
+insert into gone( title, content, contentr)
+values (#{title}, #{content}, #{contentr})
+</insert>
 
 <select id='homeList' resultType='gone.HomeVO'>
 <![CDATA[ 
@@ -51,6 +54,16 @@ from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,conten
                                ( select name from member where id=g.member_id) name,
                                ( select couname from course where id=g.course_id) couname
             from gone g, gone_file f where g.id=f.gone_id and g.member_id = #{id} and g.type= #{type} and f.ptype= #{ptype} order by g.readcnt desc)
+where rownum <= #{num}
+]]>
+</select>
+
+
+<select id='diary' resultType='gone.HomeVO'>
+<![CDATA[ 
+select * from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,contentr
+from gone g, gone_file f where g.id=f.gone_id 
+and g.member_id = #{id} and g.type= #{type} and f.ptype= #{ptype} and contentr is not null order by g.readcnt desc)
 where rownum <= #{num}
 ]]>
 </select>
@@ -177,6 +190,12 @@ from course
 where location_id = #{location_id}
 order by id
 </select>
+
+
+
+
+
+
 
 
 

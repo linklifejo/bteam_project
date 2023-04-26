@@ -3049,6 +3049,7 @@ id btnSeoul
 id btnWillGo
 id btn_boardList
 id btn_cancel
+id btn_cancel2
 id btn_cel
 id btn_delete
 id btn_modify
@@ -3192,6 +3193,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView2
 id immediateStop
 id included
 id indeterminate
@@ -3214,7 +3216,6 @@ id line3
 id linear
 id listMode
 id list_item
-id local_frag
 id locname
 id m3_side_sheet
 id marquee

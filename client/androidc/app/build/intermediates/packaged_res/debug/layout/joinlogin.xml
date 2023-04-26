@@ -58,7 +58,7 @@
         android:gravity="left"
         android:hint="전화번호:   13글자   "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -76,26 +76,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone" />
 
-    <android.widget.Button
+    <Button
         android:id="@+id/btnJoinMem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="36dp"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
         android:text="가입하기"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address" />
 
-    <android.widget.Button
+    <Button
         android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="취소"
         android:textSize="20sp"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
+
         app:layout_constraintStart_toEndOf="@+id/btnJoinMem"
         app:layout_constraintTop_toBottomOf="@+id/address" />
 
@@ -109,13 +113,15 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@mipmap/ic_launcher_round" />
 
-    <android.widget.Button
+    <Button
         android:id="@+id/btnadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="10dp"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
         android:text="사진선택"
         app:layout_constraintEnd_toStartOf="@+id/profile"
         app:layout_constraintStart_toStartOf="parent"

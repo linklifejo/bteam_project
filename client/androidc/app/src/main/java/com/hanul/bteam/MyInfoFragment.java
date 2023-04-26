@@ -26,6 +26,7 @@ import com.hanul.bteam.dto.MemberDTO;
 import com.hanul.bteam.dto.WillgoDTO;
 import com.hanul.bteam.login.LoginFrist;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -116,8 +117,9 @@ public class MyInfoFragment extends Fragment {
         CommonMethod commonMethod2 = new CommonMethod();
         commonMethod2.setParams("type", "1");
         commonMethod2.setParams("ptype", "1");
+        commonMethod2.setParams("member_id",activity.loginid);
         commonMethod2.setParams("num", "6");
-        commonMethod2.getData("selectHome", new Callback<String>(){
+        commonMethod2.getData("diary", new Callback<String>(){
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 if(response.isSuccessful()){
@@ -125,8 +127,8 @@ public class MyInfoFragment extends Fragment {
                     dtos_re =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
                     for(GoneDTO dto: dtos_re){
                         dto.setTitle(dto.getTitle());
-                        dto.setFilepath(dto.getFilepath());
                     }
+
                     adapter_re = new RecentlyAdapter(activity.getApplicationContext(), dtos_re,activity);
                     recycler2.setAdapter(adapter_re);
                 }
@@ -135,6 +137,12 @@ public class MyInfoFragment extends Fragment {
             public void onFailure(Call<String> call, Throwable t) {
             }
         });
+
+
+
+
+
+
         dtoo = new ArrayList<>();
         rra = view.findViewById(R.id.rra);
         LinearLayoutManager layout2 = new
@@ -150,8 +158,10 @@ public class MyInfoFragment extends Fragment {
                     Gson gson = new Gson();
                     dtoo =  gson.fromJson(response.body(), new TypeToken<ArrayList<MemberDTO>>(){}.getType());
                     for(MemberDTO dto: dtoo){
+                        Bundle b = new Bundle();
+                        b.putSerializable("dto", dto);
+                        activity.bundle = b;
                         dto.setProfile(dto.getProfile());
-
                     }
                     adapter_me = new MemberAdapter(activity.getApplicationContext(), dtoo,activity);
                     rra.setAdapter(adapter_me);
