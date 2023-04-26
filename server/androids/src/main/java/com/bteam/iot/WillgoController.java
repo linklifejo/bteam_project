@@ -128,6 +128,13 @@ public class WillgoController {
 	@ResponseBody @RequestMapping(value="/willGo", produces="text/plain; charset=utf-8" )
 	public String willGo(HttpServletRequest req, Model model) {
 		String member_id = (String) req.getParameter("member_id");		
+		
+		
+		
+		
+		
+		
+		
 
 		ArrayList<WillgoVO> list = (ArrayList<WillgoVO>)service.willgo_list(member_id);
 		
