@@ -15,11 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.COMMON.adapter.OnWillGoitemClickListener;
-import com.hanul.bteam.COMMON.adapter.WillGoAdapter;
-import com.hanul.bteam.dto.GoneDTO;
+import com.hanul.bteam.adapter.OnWillGoitemClickListener;
+import com.hanul.bteam.adapter.WillGoAdapter;
 
-import com.hanul.bteam.dto.LocationDTO;
 import com.hanul.bteam.dto.WillgoDTO;
 
 

@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 
-import com.hanul.bteam.COMMON.adapter.MemberAdapter;
+import com.hanul.bteam.adapter.MemberAdapter;
 import com.hanul.bteam.adapter.MyWroteAdapter;
 import com.hanul.bteam.adapter.RecentlyAdapter;
 import com.hanul.bteam.dto.BoardDTO;
