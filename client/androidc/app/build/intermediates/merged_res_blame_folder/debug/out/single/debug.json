@@ -360,6 +360,10 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/naejang.jpg"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_bbview.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/bbview.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_nae_jang_san.webp.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/nae_jang_san.webp"
     },
@@ -442,6 +446,10 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "com.hanul.bteam.app-main-36:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_ic_heart.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/drawable/ic_heart.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_mu_dueng_san1.xml.flat",

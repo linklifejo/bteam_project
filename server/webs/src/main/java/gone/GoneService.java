@@ -4,6 +4,7 @@ import java.util.List;
 
 import course.CourseVO;
 import location.LocationVO;
+import member.MemberVO;
 
 public interface GoneService {
 	//CRUD
@@ -28,7 +29,8 @@ public interface GoneService {
 	List<GoneFileVO> GoneFile_list(); //
 	//List<GoneFileVO> GoneFile_boardlist(); //	
 	List<GoneVO> gone_myname(String member_id);	
-	List<LocationVO> Loc_info();	
+	List<LocationVO> Loc_info();
+	
 	
 
 }

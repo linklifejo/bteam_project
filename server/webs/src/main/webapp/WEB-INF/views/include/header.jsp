@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-
+<html>
 <header>
+
+	
 	<div class="head">
 	<div class="mainhead">
-		<a href='<c:url value="/"/>'><img src='imgs/main.png' width="100%" height="30px" ></a></li>
+		</li>
 	</div>
 	<div class="header">
 	<div>
 	<nav>
 		<ul>
-
+		<li><a href='<c:url value="/"/>'><img src='imgs/bteam.main.png'></a></li>
 		<c:if test='${not empty loginInfo}'>
 			<c:choose>
 				<c:when test='${loginInfo.admin eq "Y"}'>
@@ -26,7 +28,7 @@
 		<div class="dropdown">
   <button class="dropbtn">지역별산</button><%-- href='list.re?id=${vo.gone_id}' --%>
   <div class="dropdown-content">
-    <a ${category eq 're' ? "class='active'" : ''} href='<c:url value="/"/>list.re?'>서울.경기</a>
+    <a ${category eq 're' ? "class='active'" : ''} href='list.re?id=${GoneFile_list.gone_id}'>서울.경기</a>
     <a ${category eq 're2' ? "class='active'" : ''} href='<c:url value="/"/>list2.re2?'>강원</a>
     <a ${category eq 're3' ? "class='active'" : ''} href='<c:url value="/"/>list3.re3?'>전라도</a>
     <a ${category eq 're4' ? "class='active'" : ''} href='<c:url value="/"/>list4.re4?'>경상도</a>
@@ -65,8 +67,8 @@
 				</c:otherwise>
 			</c:choose>
 		
-			<li><strong>${loginInfo.name}</strong> 님</li>
-			<li><a class='btn-fill' ${category eq 'na' ? "class='active'" : ''} href='<c:url value="/"/>list.na'>내정보</a></li>
+			<li><strong>${loginInfo.name}</strong> 님</li><!-- href='info.go?id=${vo.id}' -->
+			<li><a class='btn-fill' ${category eq 'na' ? "class='active'" : ''} href='list.na?member_id=${loginInfo.id}'>내정보</a></li>
 			<!-- <li><a class='btn-empty' href='changepw'>비밀번호변경</a></li> -->
 			<li><a class='btn-fill' href='logout'>로그아웃</a></li>
 		</c:if>
@@ -77,9 +79,13 @@
 	<div>
 	<div>
 		<img alt="" src="imgs/main_2.png" style="height: 90px;" width="100%;">
+		<div>${resultMap}</div>
 	</div>
 	</div>
 </header>
+
+</html>
+
 
 <style>
 .dropbtn {
@@ -155,3 +161,5 @@ header nav a:hover, header nav a.active { color:#fff;
 }
 
 </style>
+
+

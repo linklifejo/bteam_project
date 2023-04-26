@@ -2,9 +2,12 @@ package com.hanul.bteam.login;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -62,7 +65,8 @@ public class JoinLogin extends Fragment {
     EditText id, pw, name, phone, address;
     ImageView profile;
     boolean isCheck = true;
-
+    RequestBody fileBody =null;
+    MultipartBody.Part filePart =null;
 
     Uri uri;
     @Nullable
@@ -125,36 +129,35 @@ public class JoinLogin extends Fragment {
         view.findViewById(R.id.btnJoinMem).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!DataCheck.id_check(id.getText().toString())){
-                    id.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-                }
-                else if(!DataCheck.pw_check(pw.getText().toString())){
-                    pw.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "pw 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-                }
-                else if(!DataCheck.checkPhoneNumber(phone.getText().toString())){
-                    phone.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "phone 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-                }
-                else if(!DataCheck.checkEmailAddress(address.getText().toString())){
-                    address.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "address 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-                }
+//                if(!DataCheck.id_check(id.getText().toString())){
+//                    id.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(!DataCheck.pw_check(pw.getText().toString())){
+//                    pw.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "pw 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(!DataCheck.checkPhoneNumber(phone.getText().toString())){
+//                    phone.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "phone 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(!DataCheck.checkEmailAddress(address.getText().toString())){
+//                    address.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "address 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
+//                }
 
 
 
                 CommonMethod commonMethod = new CommonMethod();
-                RequestBody fileBody =null;
-                MultipartBody.Part filePart =null;
+
                 if(imgFile != null) {
 
                     fileBody = RequestBody.create(MediaType.parse("image/jpeg"), new File(imgFilePath));
@@ -169,6 +172,13 @@ public class JoinLogin extends Fragment {
                 dto.setName( name.getText().toString() );
                 dto.setPhone( phone.getText().toString() );
                 dto.setAddress( address.getText().toString() );
+                dto.setProfile(imgFilePath);
+ //               dto.setProfile(profile.toString() );
+//  //              profile.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.profile, 10, 10));
+//
+//                profile.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(), R.id.profile, 10, 10));
+
+
 
                 commonMethod.setParams("param", dto);
 
@@ -176,9 +186,9 @@ public class JoinLogin extends Fragment {
 
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
-
+                        if(isCheck) {
                             activity.fragmentControl(new LoginFrist());
-
+                        }
                     }
 
                     @Override
@@ -254,6 +264,7 @@ public class JoinLogin extends Fragment {
                             Bitmap bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), uri);
                             profile.setImageBitmap(bitmap);
                             File path = new File(".");
+                            imgFilePath =   getPathFromUri(uri);
                             Toast.makeText(activity," " + path.getAbsolutePath(), Toast.LENGTH_LONG).show();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -320,5 +331,55 @@ public class JoinLogin extends Fragment {
 
 
     }
+    public String getPathFromUri(Uri uri) {
+
+        Cursor cursor = activity.getContentResolver().query(uri, null, null, null, null);
+
+        cursor.moveToNext();
+
+        @SuppressLint("Range") String path = cursor.getString(cursor.getColumnIndex("_data"));
+
+        cursor.close();
+
+        return path;
+    }
+
+//    public static int calculateInSampleSize(
+//            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+//        // Raw height and width of image
+//        final int height = options.outHeight;
+//        final int width = options.outWidth;
+//        int inSampleSize = 1;
+//
+//        if (height > reqHeight || width > reqWidth) {
+//
+//            final int halfHeight = height / 2;
+//            final int halfWidth = width / 2;
+//
+//            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+//            // height and width larger than the requested height and width.
+//            while ((halfHeight / inSampleSize) >= reqHeight
+//                    && (halfWidth / inSampleSize) >= reqWidth) {
+//                inSampleSize *= 2;
+//            }
+//        }
+//
+//        return inSampleSize;
+//    }
+//    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+//                                                         int reqWidth, int reqHeight) {
+//
+//        // First decode with inJustDecodeBounds=true to check dimensions
+//        final BitmapFactory.Options options = new BitmapFactory.Options();
+//        options.inJustDecodeBounds = true;
+//        BitmapFactory.decodeResource(res, resId, options);
+//
+//        // Calculate inSampleSize
+//        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+//
+//        // Decode bitmap with inSampleSize set
+//        options.inJustDecodeBounds = false;
+//        return BitmapFactory.decodeResource(res, resId, options);
+//    }
 }
 

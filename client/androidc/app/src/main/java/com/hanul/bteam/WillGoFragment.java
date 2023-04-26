@@ -17,9 +17,14 @@ import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.OnWillGoitemClickListener;
 import com.hanul.bteam.adapter.WillGoAdapter;
+<<<<<<< HEAD
+=======
+
 
 import com.hanul.bteam.dto.WillgoDTO;
+>>>>>>> dde553957bd1da110faf5252c8f3bc901c4fa65d
 
+import com.hanul.bteam.dto.WillgoDTO;
 
 import java.util.ArrayList;
 

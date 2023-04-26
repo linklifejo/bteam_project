@@ -10,8 +10,8 @@ import java.util.List;
  *             resId(이미지경로)의 칼럼이 있다
  */
 public class GoneDTO implements Serializable {
-    private int id,readcnt, no, filecnt,location_id,course_id;
-    private String title, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath,name_desc;
+    private int id,readcnt, no, filecnt,location_id,course_id,resId,location_no,course_no;
+    private String title,memo,writer,writedate, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath,name_desc;
   //  private Date gone_date;
  //   private List<GoneFileDTO> fileInfo;
     public GoneDTO() {
@@ -23,7 +23,6 @@ public class GoneDTO implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-
     }
 
     public int getReadcnt() {
@@ -66,12 +65,60 @@ public class GoneDTO implements Serializable {
         this.course_id = course_id;
     }
 
+    public int getResId() {
+        return resId;
+    }
+
+    public void setResId(int resId) {
+        this.resId = resId;
+    }
+
+    public int getLocation_no() {
+        return location_no;
+    }
+
+    public void setLocation_no(int location_no) {
+        this.location_no = location_no;
+    }
+
+    public int getCourse_no() {
+        return course_no;
+    }
+
+    public void setCourse_no(int course_no) {
+        this.course_no = course_no;
+    }
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getMemo() {
+        return memo;
+    }
+
+    public void setMemo(String memo) {
+        this.memo = memo;
+    }
+
+    public String getWriter() {
+        return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
+
+    public String getWritedate() {
+        return writedate;
+    }
+
+    public void setWritedate(String writedate) {
+        this.writedate = writedate;
     }
 
     public String getContent() {
@@ -122,12 +169,12 @@ public class GoneDTO implements Serializable {
         this.couname = couname;
     }
 
-    public String getGone_time() {
+    public String getGonetime() {
         return gone_time;
     }
 
-    public void setGone_time(String gone_time) {
-        this.gone_time = gone_time;
+    public void setGonetime(String gonetime) {
+        this.gone_time = gonetime;
     }
 
     public String getOut_time() {
@@ -169,20 +216,4 @@ public class GoneDTO implements Serializable {
     public void setName_desc(String name_desc) {
         this.name_desc = name_desc;
     }
-
-//    public Date getGone_date() {
-//        return gone_date;
-//    }
-//
-//    public void setGone_date(Date gone_date) {
-//        this.gone_date = gone_date;
-//    }
-
-//    public List<GoneFileDTO> getFileInfo() {
-//        return fileInfo;
-//    }
-//
-//    public void setFileInfo(List<GoneFileDTO> fileInfo) {
-//        this.fileInfo = fileInfo;
-//    }
 }

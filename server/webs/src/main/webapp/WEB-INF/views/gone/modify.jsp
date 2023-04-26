@@ -20,7 +20,8 @@
 
 <div class="main">
 <h3>탐방록 안내수정</h3>
-<form method='post' enctype='multipart/form-data' action='info.bo'>
+<form method='post' enctype='multipart/form-data' action='info.go'>
+<input type='radio'id="btn1" checked name='ptype' value='1'>
 <table class='w-px1200'>
 <tr><th class='w-px140'>제목</th>
 	<td><input type='text' name='title' value='${vo.title}' title='제목' class='chk full'></td>

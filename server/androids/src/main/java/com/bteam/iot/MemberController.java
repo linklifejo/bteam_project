@@ -57,16 +57,56 @@ public class MemberController {
 		return gson.toJson( (MemberVO) vo);	 
 	}
 	
+//	@RequestMapping("/anJoin" )
+//	public String anJoin(HttpServletRequest req,MultipartRequest mReq, Model model) {
+//		
+//		String data = (String) req.getParameter("param");
+//		System.out.println("data : " + data);
+//		MemberVO vo = new Gson().fromJson(data, MemberVO.class);
+//		MultipartFile file = mReq.getFile("file");
+//		String fileName = "";
+//
+//		if(file != null) {
+//			fileName = file.getOriginalFilename();
+//			fileName = "My" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()) + ".jpg";
+//			makeDir(req);	
+//				
+//			if(file.getSize() > 0){			
+//				String realImgPath = req.getSession().getServletContext()
+//						.getRealPath("/resources/");
+//												
+//			 	try {
+//					file.transferTo(new File(realImgPath, fileName));										
+//				} catch (Exception e) {
+//					e.getMessage();
+//				} 
+//									
+//			}else{
+//				fileName = "FileFail.jpg";
+//				String realImgPath = req.getSession().getServletContext()
+//						.getRealPath("/resources/" + fileName);
+//				System.out.println(fileName + " : " + realImgPath);
+//						
+//			}		
+//		}
+//		
+//		vo.setProfile(fileName);
+//		service.member_insert(vo);
+//		String id = vo.getId();
+//		vo = service.member_info(id);
+//		
+//		model.addAttribute("vo", vo); 	
+//		return "member/anList";
+//	}	
 	
 	//회원가입처리 요청
-	@ResponseBody 
-	@RequestMapping(value="/join", produces="text/html; charset=utf-8")
-	public String join(HttpServletRequest req, Model model,MultipartRequest file) {
+	@ResponseBody @RequestMapping(value="/join", produces="text/html; charset=utf-8")
+	public String join(HttpServletRequest req, Model model,MultipartRequest mReq,MultipartFile file) {
 		String data = (String) req.getParameter("param");
 		MemberVO vo = new Gson().fromJson(data, MemberVO.class);
 		vo.setGender( vo.getGender()==null ? "남" : vo.getGender() );    
 		HashMap<String,Object> map = new HashMap<String, Object>();
-		MultipartFile profilFile = file.getFile("file");
+		MultipartFile profilFile = mReq.getFile("file");
 		//첨부된 파일이 있는 경우
 		if( profilFile!=null ) {
 			vo.setProfile( common.fileUpload((MultipartFile) file, "profile", req) );	

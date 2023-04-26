@@ -35,8 +35,6 @@ public class LoginFrist extends Fragment {
     EditText id, pw;
 
 
-    Button btnLogin, btnJoin;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -47,6 +45,7 @@ public class LoginFrist extends Fragment {
                 container, false);
         activity =(MainActivity)getActivity();
         activity.checkDangerousPermissions();
+
         id = view.findViewById(R.id.id);
         pw = view.findViewById(R.id.pw);
         view.findViewById(R.id.btnJoin).setOnClickListener(new View.OnClickListener() {
@@ -65,6 +64,9 @@ public class LoginFrist extends Fragment {
 //                String pw = etPW.getText().toString();
 //                CommonMethod commonMethod = new CommonMethod();
                 // 로그인 성공시 아래 실행
+
+                isStart = true;
+                if (isStart) start();
 
 //                MemberDTO dto = new MemberDTO();
 //                dto.setId( id.getText().toString() );
@@ -85,6 +87,8 @@ public class LoginFrist extends Fragment {
                                 b.putSerializable("dto", loginDto);
                                 activity.bundle = b;
                                 activity.loginid = id.getText().toString();
+                                activity.name = loginDto.getName();
+
 
                                 start();
                                 activity.fragmentControl(new HomeFragment());
@@ -102,8 +106,6 @@ public class LoginFrist extends Fragment {
 //                                "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
                     }
                 });
-
-
             }
         });
 

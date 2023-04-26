@@ -39,7 +39,7 @@ public class RecentlyAdapter extends
 
     @NonNull
     @Override
-    public RecentlyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.recentlyview,
                 parent, false);
         return new ViewHolder(itemView);

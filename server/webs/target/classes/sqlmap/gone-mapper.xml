@@ -4,38 +4,33 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="go">
 
-<!--
-<select id='boardList' resultType='gone.GoneFileVO'>
-<![CDATA[
-select *
-from(select filename,filepath 
-	from gone g, gone_file f 
-	where g.id=f.gone_id and type='1'
-	order by g.readcnt desc)
-]]>
-</select> -->
 
 
+<!-- 
+내정보 내가쓴글
+<select id='gone_myname' resultType='gone.GoneVO'>
+select (select count(*) from gone_file 
+		where gone_id=b.id) filecnt, b.* from
+(select b.*, name, row_number() over(order by b.id) no  
+from gone b inner join member m on b.member_id = m.id 
+<include refid="search_where"/>) b
 
-<!-- <select id='Gone_myname' resultType='gone.GoneVO'>
-select g.*,filepath
-from gone g, gone_file f
-where g.member_id = #{member_id}
-and g.id=f.gone_id
-</select> -->
+</select>
 
-
-
+ -->
+ 
 
 <!-- 내정보 내가쓴글 -->
 <select id='gone_myname' resultType='gone.GoneVO'>
 <![CDATA[
 select *
-from(select filename,filepath
-	from gone g, gone_file f 
-	where g.id=f.gone_id
-	and g.member_id = #{member_id})
-where rownum <= 3
+from(select filename,filepath,g.id,title
+   from gone g, gone_file f 
+   where g.id=f.gone_id
+    and g.type='1'
+    and f.ptype='1'
+   and g.member_id = #{member_id}
+    order by g.readcnt desc)
 ]]>
 </select>
 
@@ -96,8 +91,8 @@ values (#{content}, #{member_id}, #{gone_id})
 <insert id="fileInsert">
 <foreach collection="fileInfo" item="info" separator=" "
 		open="insert all" close="select * from dual">
-into gone_file(gone_id, filename, filepath)
-values( #{id}, #{info.filename}, #{info.filepath} )
+into gone_file(gone_id, filename, filepath, ptype)
+values( #{id}, #{info.filename}, #{info.filepath}, #{ptype} )
 </foreach>
 </insert>
 
@@ -149,7 +144,7 @@ select * from gone_file where gone_id = #{id}
 
 <!-- 선택한 방명록 글 조회 -->
 <select id='info' resultType='gone.GoneVO'>
-select b.*, name 
+select b.*, name, b.id
 from gone b inner join member m on b.member_id = m.id 
 where b.id = #{id}
 </select>
@@ -214,7 +209,7 @@ order by couname
 <select id='Loc_info' resultType='location.LocationVO'>
 <![CDATA[
 select *
-from(select filename,filepath
+from(select filename,filepath, l.id
 	from gone g, location l 
 	where g.location_id = l.id and l.type='1'
 	order by g.readcnt desc)

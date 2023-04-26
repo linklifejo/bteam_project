@@ -43,6 +43,7 @@
 <!-- <input type='hidden' name='course_id' class="co2" >  --><!-- 코스선택 -->
 <!-- <input type='hidden' name='location_id' class="loc2" >  --><!-- 산선택 -->
 <input type='hidden' name='member_id' value='${loginInfo.id}'>
+<!-- <input type='hidden' name='ptype' value='1'> -->
 
 <table class='w-px1200'>
 <tr><th class='w-px140'>제목</th>
@@ -69,13 +70,21 @@
 
 
 
-<!-- <input type='hidden' name='ptype' value='3'> -->
+<script>
+	$('#btn1').click(function(){
+		var checked = $('#ck1').is(':checked');
+		$('#ck1').prop('checked',!checked);
+	});
+</script>
 
-
-<tr><th>가본산/찜한산</th>
+<tr style="display:none"><th>가본산</th>
 		<td>
-			<label><input type='radio' checked name='type' value='1'>가본산</label>
-			<label><input type='radio' checked name='type' value='2'>찜한산</label>
+			<label><input type='radio'id="btn1" checked name='type' value='1'>가본산</label>
+		</td>
+</tr>
+<tr style="display:none"><th>가본산</th>
+		<td>
+			<label><input type='radio'id="btn1" checked name='ptype' value='1'>가본산</label>
 		</td>
 </tr>
 <tr><th>산 선택</th>
@@ -123,12 +132,12 @@
 
 <script>
 $('.btn-save').on('click', function(){
-	if( emptyCheck() ) {
+	if( emptyCheck() ) 
 // 		$(".loc2").val( $( ".loc option:selected" ).val() );
 // 		$(".co2").val(  $( ".cou option:selected" ).val() );
 // // 		console.log('loc2:', $(".loc2").val(), ' co2:', $(".co2").val() );
 		$('form').submit();
-	}
+	
 });
 </script>
 </body>
@@ -147,5 +156,8 @@ $(function(){
 		});
 })
 </script>
+
+
+
 
 </html>

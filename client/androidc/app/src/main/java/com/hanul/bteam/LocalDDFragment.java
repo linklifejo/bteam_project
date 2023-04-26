@@ -22,7 +22,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LocalDDFragment extends Fragment {
-    RecyclerView recycler;
+
     MainActivity activity;
     TextView locname;
     TextView name_desc;

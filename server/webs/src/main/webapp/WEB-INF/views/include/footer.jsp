@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <footer class="footer">
 	<div class="back">
-	<img alt="" src="imgs/footer.png" style="width: 80%" height="500dp">
+	<img alt="" src="imgs/footer.png" style="width: 100%" height="500dp">
 	</div>
 	<div class="foot">
 	<h1>등산 가이드</h1>
@@ -14,7 +14,7 @@
 
 <style>
 .footer { font-size:14px; border-top: 1px solid #aaa;
-		text-align: center; margin: 0 auto; position: relative; background-color:green;
+		text-align: center; margin: 0 auto; position: relative;
 		z-index: -10; 
 		}
 
@@ -36,6 +36,7 @@
 		z-index: 50;
 		color: white;
 		font-weight: bold;
+		font-size: 50pd;
 	}
 	
 

@@ -85,11 +85,13 @@ public class MemberAdapter extends
     // 3. xml 파일에서 사용된 모든 변수를 adapter에서 클래스로 선언한다
     public class ViewHolder extends RecyclerView.ViewHolder{
         // memberview.xml 에서 사용된 모든 위젯을 정의한다
+
         ImageView profile;
         LinearLayout parentLayout;
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             parentLayout = itemView.findViewById(R.id.parentLayout);
             profile = itemView.findViewById(R.id.profile);
         }
@@ -97,8 +99,8 @@ public class MemberAdapter extends
         // singerview에 데이터를 연결시키는 매소드를 만든다
         public void setDto(MemberDTO dto){
             Glide.with(itemView).load(dto.getProfile())
-                    .circleCrop()
-                    .placeholder(R.drawable.buk_han_san)
+
+//                    .placeholder(R.drawable.buk_han_san)
                     .into(profile);
 
             //ivImage.setImageResource(dto.getProfile());

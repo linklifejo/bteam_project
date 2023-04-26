@@ -18,18 +18,18 @@ import com.bumptech.glide.Glide;
 import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
-import com.hanul.bteam.dto.BoardDTO;
+import com.hanul.bteam.dto.GoneDTO;
 
 import java.util.ArrayList;
 
 public class MyWroteAdapter extends
         RecyclerView.Adapter<MyWroteAdapter.ViewHolder> {
     Context context;
-    ArrayList<BoardDTO> dtos;
+    ArrayList<GoneDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
 
-    public MyWroteAdapter(Context context, ArrayList<BoardDTO> dtos, MainActivity a) {
+    public MyWroteAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
         this.context = context;
         this.dtos = dtos;
         this.activity = a;
@@ -40,7 +40,7 @@ public class MyWroteAdapter extends
 
     @NonNull
     @Override
-    public MyWroteAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.wroteview,
                 parent, false);
         return new ViewHolder(itemView);
@@ -49,7 +49,7 @@ public class MyWroteAdapter extends
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        BoardDTO dto = dtos.get(position);
+        GoneDTO dto = dtos.get(position);
         holder.setDto(dto);
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +80,7 @@ public class MyWroteAdapter extends
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
-        public void setDto(@NonNull BoardDTO dto) {
+        public void setDto(@NonNull GoneDTO dto) {
             title.setText(dto.getTitle());
             Glide.with(itemView).load(dto.getFilepath()).into(filepath);
         }

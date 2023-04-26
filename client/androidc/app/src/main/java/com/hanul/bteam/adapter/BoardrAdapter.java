@@ -20,19 +20,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+
+import com.google.gson.Gson;
+import com.hanul.bteam.BoardTwo;
+
 import com.google.gson.Gson;
 import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.COMMON.CommonMethod;
+<<<<<<< HEAD
+=======
+import com.hanul.bteam.Detailmo;
+import com.hanul.bteam.BoardTwo;
+>>>>>>> dde553957bd1da110faf5252c8f3bc901c4fa65d
 
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
-import com.hanul.bteam.dto.BoardDTO;
+import com.hanul.bteam.dto.GoneDTO;
 
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 // 4. 선언한 클래스와 xml 파일을 이용하여 화면을 adapter에서 생성한다
 public class BoardrAdapter extends
@@ -40,13 +45,13 @@ public class BoardrAdapter extends
     private static final String TAG = "main:SingerAdapter";
     // 메인에서 넘겨받을것 -> 생성자를 만든다.
     Context context;
-    ArrayList<BoardDTO> dtos;
+    ArrayList<GoneDTO> dtos;
     MainActivity activity;
     // 화면을 붙이기 위한 객체 생성
     LayoutInflater inflater;
     AlertDialog dialog;
 
-    public BoardrAdapter(Context context, ArrayList<BoardDTO> dtos, MainActivity a) {
+    public BoardrAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
         this.context = context;
         this.dtos = dtos;
         this.activity = a;
@@ -56,9 +61,7 @@ public class BoardrAdapter extends
     //////////////////////////////////////////////////
     // 매소드를 만들때는 무조건 여기에 생성한다(adapter)
     // 하나의 dto 추가하기 (SingerDTO)
-    public void addDto(BoardDTO dto) {
-        dtos.add(dto);
-    }
+
 
     // dtos의 모든 내용 지우기
     public void removeDtos() {
@@ -77,13 +80,16 @@ public class BoardrAdapter extends
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d(TAG, "onBindViewHolder: " + position);
-        BoardDTO dto = dtos.get(position);
+        GoneDTO dto = dtos.get(position);
         holder.setDto(dto);
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle b = new Bundle();
                 b.putSerializable("dto", dto);
+                activity.bundle = b;
+
+
                 activity.fragmentControl(new BoardTwo(),b);
                 Toast.makeText(context,
                         "산이름 : " + dto.getTitle(), Toast.LENGTH_SHORT).show();
@@ -100,7 +106,7 @@ public class BoardrAdapter extends
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // singerview.xml 에서 사용된 모든 위젯을 정의한다
-        TextView title;
+        TextView title,content;
         ImageView filepath;
         LinearLayout parentLayout;
         ImageButton btnWill;
@@ -111,54 +117,55 @@ public class BoardrAdapter extends
             parentLayout = itemView.findViewById(R.id.parentLayout);
             title = itemView.findViewById(R.id.title);
             filepath = itemView.findViewById(R.id.filepath);
-            btnWill = itemView.findViewById(R.id.btnWillGo);
-            itemView.findViewById(R.id.btnWillGo).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-//                    Bundle  b = activity.bundle;
-//                    GoneDTO dto =(GoneDTO) b.getSerializable("dto");
-//                    Integer id = dto.getId();
-                    CommonMethod commonMethod = new CommonMethod();
-                    commonMethod.setParams("wtype", "3");
-                    //    commonMethod.setParams("refid", id.toString());
-
-                    commonMethod.setParams("refid", btnWill.getTransitionName());
-                    commonMethod.setParams("member_id", activity.loginid);
-                    commonMethod.getData("willGoIn", new Callback<String>() {
-                        @Override
-                        public void onResponse(Call<String> call, Response<String> response) {
-                            if(response.isSuccessful()){
-
-//                            Log.d(TAG, "onResponse: " + response.body());
-//                            //서버에서 넘어온 데이터를 받는다
-                                Gson gson = new Gson();
-                                String d = gson.fromJson(response.body(), String.class);
-
-                                Toast.makeText(activity,
-                                        "" + d ,Toast.LENGTH_SHORT).show();
-//                            //로그인 후 메인 화면을 보여준다
-
-
-                            }else {
-                                Toast.makeText(activity,
-                                        "실패;;",Toast.LENGTH_SHORT).show();
-
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<String> call, Throwable t) {
-                            Toast.makeText(activity,
-                                    "실패했네요~;;",Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            });
+            content = itemView.findViewById(R.id.content);
+//            itemView.findViewById(R.id.btnWillGo).setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//
+////                    Bundle  b = activity.bundle;
+////                    GoneDTO dto =(GoneDTO) b.getSerializable("dto");
+////                    Integer id = dto.getId();
+//                    CommonMethod commonMethod = new CommonMethod();
+//                    commonMethod.setParams("wtype", "3");
+//                    //    commonMethod.setParams("refid", id.toString());
+//
+//                    commonMethod.setParams("refid", btnWill.getTransitionName());
+//                    commonMethod.setParams("member_id", activity.loginid);
+//                    commonMethod.getData("willGoIn", new Callback<String>() {
+//                        @Override
+//                        public void onResponse(Call<String> call, Response<String> response) {
+//                            if(response.isSuccessful()){
+//
+////                            Log.d(TAG, "onResponse: " + response.body());
+////                            //서버에서 넘어온 데이터를 받는다
+//                                Gson gson = new Gson();
+//                                String d = gson.fromJson(response.body(), String.class);
+//
+//                                Toast.makeText(activity,
+//                                        "" + d ,Toast.LENGTH_SHORT).show();
+////                            //로그인 후 메인 화면을 보여준다
+//
+//
+//                            }else {
+//                                Toast.makeText(activity,
+//                                        "실패;;",Toast.LENGTH_SHORT).show();
+//
+//                            }
+//                        }
+//
+//                        @Override
+//                        public void onFailure(Call<String> call, Throwable t) {
+//                            Toast.makeText(activity,
+//                                    "실패했네요~;;",Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//                }
+//            });
         }
 
         // singerview에 데이터를 연결시키는 매소드를 만든다
-        public void setDto(@NonNull BoardDTO dto) {
+        public void setDto(@NonNull GoneDTO dto) {
+//            content.setText(dto.getContent());
             title.setText(dto.getTitle());
             Glide.with(itemView).load(dto.getFilepath()).into(filepath);
             Integer id = dto.getId();
@@ -218,32 +225,32 @@ public class BoardrAdapter extends
 //    }
 
 
-        private void popUpImgXml(BoardDTO dto) {
-            // 1. res에 xml파일을 만든다
-            // 2. 그 xml파일을 inflate 시켜 setView 한다
-            // 팝업창에 xml 붙이기
-            LayoutInflater inflater = LayoutInflater.from(context); //(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View view = inflater.inflate(R.layout.popupimg, null);
-            // xml에 있는 리소스 찾기
-            ImageView imageView = view.findViewById(R.id.imageView);
-
-
-            // xml에 데이터 연결하기
-            imageView.setImageResource(dto.getResId());
-            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle("이미지 띄우기").setView(view);
-
-            builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    if (dialog != null) {
-                        dialog.dismiss();
-                    }
-                }
-            });
-            dialog = builder.create();
-            dialog.show();
-        }
+//        private void popUpImgXml(BoardDTO dto) {
+//            // 1. res에 xml파일을 만든다
+//            // 2. 그 xml파일을 inflate 시켜 setView 한다
+//            // 팝업창에 xml 붙이기
+//            LayoutInflater inflater = LayoutInflater.from(context); //(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//            View view = inflater.inflate(R.layout.popupimg, null);
+//            // xml에 있는 리소스 찾기
+//            ImageView imageView = view.findViewById(R.id.imageView);
+//
+//
+//            // xml에 데이터 연결하기
+//            imageView.setImageResource(dto.getResId());
+//            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//            builder.setTitle("이미지 띄우기").setView(view);
+//
+//            builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    if (dialog != null) {
+//                        dialog.dismiss();
+//                    }
+//                }
+//            });
+//            dialog = builder.create();
+//            dialog.show();
+//        }
 
         private void popUpImg(int resId) {
             ImageView imageView = new ImageView(context);
