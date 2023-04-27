@@ -9,6 +9,10 @@
     <title>캐러셀(=슬라이드 이미지, 슬라이드 쇼)</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
+	    <!-- step1. include bxslider files CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>    
 </head>
 <style type="text/css">
 
@@ -25,21 +29,6 @@
 	}	
 	
 	
-  .slide-container {
-    width: 300vw; /* 전체 이미지들의 크기를 정해줘야 한다. */
-    transition: all 0.3s; /* 이 단계에서 애니메이션 효과 ON, 애니속도 == 0.3초 */
-
-  }
-  .slide-box {
-    width: 100vw;
-    float: left; /* 각 이미지들(.slide-box)을 순서대로 좌측 정렬*/
-  }
-  .slide-box img{
-    width: 100%; /* 이미지 사이즈 예쁘게 조절*/
-  }
-
-
-	
 	.homeimg{
 		text-align: center; margin: 0 auto;
 		container: text-center;		
@@ -51,7 +40,7 @@
 	
 	
 	
-	
+/* 	
 	
 	.slide-container {
  width: 300vw;
@@ -67,10 +56,129 @@
 	
 	
 	
-	
+	#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
 
 	
+	 */
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+#slider {
+  position: relative;
+  width: 1200px;
+  height:450px;
+  margin: 0 auto;
+  visibility: hidden;
+}
+.btn {
+  position: absolute;
+  width: 3rem;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border: 0;
+  background: rgba(250, 250, 250, 0.3);
+  transition: 0.2s;
+  cursor: pointer;
+  font-size: 2rem;
+  background: #c3c3c3;
+  opacity: 0.3;
+  &:hover {
+   background: rgba(250, 250, 250, 0.5);  
+  }
+  &.prev {
+    left: 0;
+  }
+  &.next {
+    right: 0;
+  }
+}
+
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  padding: 3px 0;
+  cursor: grab;
+  &.active {
+    cursor: grabbing;
+  }
+}
+.items {
+  position: absolute;
+  width: 500%;
+  itemCount - 1;
+  left: 0;
+  top: 0;
+  display: flex;
+}
+.items.active {
+  transition: 0.3s;
+}
+.item {
+  width: 360px;
+  pointer-events: none;
+  position: relative;
+  padding: 0 1rem;
+}
+  .content {
+    width: 100%;
+    height: 18rem;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 1rem 2.8rem rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #fff;
+  }
+
+.content {
+  &.pink {
+    background: linear-gradient(315deg, #e899dc 0%, #d387ab 74%);
+  }
+  &.yellow {
+    background: linear-gradient(315deg, #fce043 0%, #fb7ba2 74%);
+  }
+  &.skyblue {
+    background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+  }
+  &.orange {
+    background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
+  }
+  
+}	
 </style>
 <body>
 <div class="main">
@@ -123,11 +231,22 @@
 </tr>
 
 
+
+<div id="mydiv">
+  <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+  <div id="mydivheader">Click here to move</div>
+  <p>Move</p>
+  <p>this</p>
+  <p>DIV</p>
+</div>
+
+
+
 </table>
 
 
-
-<div style="overflow: hidden">
+<%-- 
+<div class="slides">
 <c:forEach items='${gone_myname}' var='vo'>
 
 		<span style="display:inline-block; height:450px; width:350px;">
@@ -144,53 +263,14 @@
 </div> 
 
 
-   <div class="slide-container">
-     <div class="slide-box">
-       <img src="imgs/heart1.png">
-     </div>
-     <div class="slide-box">
-       <img src="imgs/heart2.png">
-     </div>
-     <div class="slide-box">
-       <img src="imgs/main1.png">
-     </div>
-   </div>
 
-
-
-
-<button class="next">다음</button>
-<script>
-
-  var 지금사진 = 1;
-
-  $('.next').on('click', function(){
-      $('.slide-container').css('transform', 'translateX(-' + 지금사진 + '00vw)');
-      지금사진 += 1;
-  })
-</script>
-
-
-
-
-
-
-<button class="slide-1">1</button>
-<button class="slide-2">2</button>
-<button class="slide-3">3</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- step2. -->
+    <script>
+        $(document).ready(function(){
+          $('.slides').bxSlider();
+        });
+      </script>
+ --%>
 
 
 
@@ -282,52 +362,175 @@
 </div>
 </tbody>
 </table>
-    <button id="btn1">1</button>
-    <button id="btn2">2</button>
-    <button id="btn3">3</button>
-    <button id="btn4">앞으로</button>
-    <button id="btn5">뒤으로</button>
-</body>
+
+
+
+
+
 
 
 <script type="text/javascript">
-//1. 버튼 눌렀을 때 아래와 같은 효과를 스타일에 적용
-$('#btn1').on('click', function() {  
-   $('.slide-container').css('transform','translateX(0vw)' )
- })
- $('#btn2').on('click', function() {
-   $('.slide-container').css('transform','translateX(-100vw)' )
- })
- $('#btn3').on('click', function() {
-   $('.slide-container').css('transform','translateX(-200vw)' )
- })
- 
- 
- 
- // translateX 수치를 담을 변수를 생성.
-var front = 100;
+//Make the DIV element draggable:
+dragElement(document.getElementById("mydiv"));
 
-//클릭시 한칸씩(100vw) (.slide-container)클래스의 위치가 이동되야함.
-$('#btn4').on('click', function() {
-  if(front > 200) { // 일정 수치이상 되면 수치를 초기화 시켜 줘야함.
-    front = 0;
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
   }
-  $('.slide-container').css('transform','translateX(-'+front+'vw)' )
-  front += 100;
-})
-    
 
-//처음 뒤로가기 누르면 맨 뒤로 가야함. (-200vw)
-// translateX의 수치가 +100씩 되야 함.
-//(-200 -> -100 -> 0 -> -200 -> -100 .... )
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
 
-    var back = -200; // 일단 맨 뒤로 가야 하기 때문에 수치의 초기값은 -200.
-    $('#btn5').on('click', function() { 
-      if(back > 0) { // 일정 수치가 되면 다시 초기값 -200으로 변경. 
-        back = -200;
-      }
-      $('.slide-container').css('transform','translateX('+back+'vw)' )
-      back += 100; // 클릭시 -200에서 +100씩 함.
-    })
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
 </script>
+
+
+
+
+
+
+
+
+
+
+<div id="slider">
+  <button class="btn prev"><</button>
+  <div class="wrapper" style="width: 1200px;">
+    <div class="items" style="left: 100;">
+    <c:forEach items='${gone_myname}' var='vo'>
+      <div class="item" style=""><img src="${vo.filepath}" alt="" style="height: 450px;width: 350px;"></div>
+     </c:forEach>
+    </div> 
+  </div>  
+  <button class="btn next">></button>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+const silder = document.querySelector('#slider');
+const wrapper = document.querySelector('.wrapper');
+const items = document.querySelector('.items');
+const item = document.querySelectorAll('.item');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+const itemCount = item.length - 2;
+let startX = 0;         //mousedown시 위치
+let moveX = 0;         //움직인 정도
+let currentIdx = 0;    //현재 위치(index)
+let positions = [];
+
+function initializeData() {
+  const isActive = items.classList.contains('active');
+  if (isActive) items.classList.remove('active');
+  const width = wrapper.clientWidth;
+  const interval = item[1].clientWidth;
+  const margin = (width - interval) / 2
+  const initX = Math.floor((interval - margin) * -1);
+  let pos = [];
+  for (let i=0; i<itemCount; i++) {
+    pos.push(initX - interval * i);
+  }
+  positions = pos;
+  items.style.width = (itemCount + 1)*100 + '%';
+  items.style.left = positions[currentIdx] + 'px';
+  silder.style.visibility = 'visible';
+}
+
+window.addEventListener('resize', initializeData);
+window.addEventListener('load', initializeData);
+
+// btn click event
+next.addEventListener('click', (e) => {
+  if (currentIdx === itemCount - 1) return;  
+  const isActive = items.classList.contains('active');
+  if (!isActive) items.classList.add('active');
+  currentIdx = currentIdx + 1;
+  items.style.left = positions[currentIdx] + 'px';
+});
+prev.addEventListener('click', (e) => {
+  if (currentIdx === 0) return;
+  const isActive = items.classList.contains('active');
+  if (!isActive) items.classList.add('active');
+  currentIdx = currentIdx - 1;
+  items.style.left = positions[currentIdx] + 'px';
+});
+
+
+wrapper.onmousedown =(e)=> {
+  const rect = wrapper.getBoundingClientRect();
+  startX = e.clientX - rect.left;
+  const isActive = items.classList.contains('active');
+  if (!isActive) items.classList.add('active');
+  items.addEventListener('mousemove', onMouseMove);
+  document.onmouseup =(e)=> {
+    if (wrapper.classList.contains('active')) wrapper.classList.remove('active');
+    items.removeEventListener('mousemove', onMouseMove);
+    document.onmouseup = null;
+    if (moveX > -70 && moveX <= 70) {
+      //   만약 -70~70이면 초기위치로 이동
+      return items.style.left = positions[currentIdx] + 'px';
+    }
+    if (moveX > 0 && currentIdx > 0) {
+      currentIdx = currentIdx - 1;
+      items.style.left = positions[currentIdx] + 'px';
+    }
+    if (moveX < 0 && currentIdx < itemCount - 1){
+      currentIdx = currentIdx + 1;
+      items.style.left = positions[currentIdx] + 'px';
+    }
+    
+  }
+}
+
+function onMouseMove(e) {
+  if (!wrapper.classList.contains('active')) wrapper.classList.add('active');
+  const rect = wrapper.getBoundingClientRect();
+  moveX = e.clientX - rect.left - startX;
+  const left = positions[currentIdx] + moveX;
+  if (currentIdx === 0 && moveX > 0) return;
+  else if(currentIdx === itemCount - 1 && moveX < 0) return;
+  items.style.left = left + 'px';
+}
+</script>
+
+
+
+
+
+
+
 </html>
