@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -155,35 +156,150 @@
 	crossorigin="anonymous"></script>
 
 
+<%-- 
+
+$.ajax({
+    url:'https://dapi.kakao.com/v2/local/search/address.json?query='+encodeURIComponent('${vo.address}'),
+    dataType:"json",
+    type:'GET',
+    headers: {'Authorization' : 'KakaoAK 481d31f68d1e3ee3ef028e3423236be5'},
+success:function(data){
+console.log('위경도 : ', data);
+var address = data.documents[0];
+console.log('경도 : ', address.x );
+console.log('위도 : ', address.y );
+console.log('주소 : ', address );
+map_position(address);
+},
+error : function(e){
+console.log(e);
+}
+});
+
+ --%>
 
 
+<!-- 
+<script type="text/javascript">
+ const date = new Date();
+
+const year = date.getFullYear();
+const month = ('0' + (date.getMonth() + 1)).slice(-2);
+const day = ('0' + date.getDate()).slice(-2);
+const dateStr = year + month + day;
+
+console.log(dateStr);
+
+</script>
+ 
+ -->
 
 	
 	
+
+<!-- 			var weather = result.response
+			console.log('d', weather.body);
+			var weather2 = weather.body
+			console.log('d2', weather2.items);
+			var weather3 = weather2.item
+			console.log('d3', weather3.item); -->
+
+
+
+
+<!-- "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+ 		+ "?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D"
+		+ "&pageNo=1&numOfRows=1000&dataType=html&base_date=" +  initDate
+		+ "&base_time=0500&nx=55&ny=127"; -->
+
+<body onload="showImage()">
+<!-- <script type="text/javascript">
+var date = new Date();
+
+var year = date.getFullYear();
+var month = ('0' + (date.getMonth() + 1)).slice(-2);
+var day = ('0' + date.getDate()).slice(-2);
+var initDate = year + month + day;
+
+console.log(date.getHours());
+console.log(initDate);
+
+var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+	+ "?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D"
+	+ "&pageNo=1&numOfRows=1000&dataType=json&base_date=" + initDate
+	+ "&base_time=0500&nx=55&ny=127";		
+	$.ajax({
+		url: url,
+		success: function (result) {
+			console.log(result);
+			var item = result.response.body.items.item[3];
+			var content = '${item.baseDate}, ${item.baseTime}, ${item.obsrValue}입니다';
+			
+			$(".result").text(content);
+		},
+	});
+
+</script> -->
+
+
+
+
+
+
+
 <script type="text/javascript">
 var date = new Date();
 
 var year = date.getFullYear();
 var month = ('0' + (date.getMonth() + 1)).slice(-2);
 var day = ('0' + date.getDate()).slice(-2);
-
 var initDate = year + month + day;
+var hours = date.getHours()+'00';
 
+console.log(hours);
 console.log(initDate);
 
-
-		
+var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+	+ "?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D"
+	+ "&pageNo=1&numOfRows=1000&dataType=json&base_date=" + initDate
+	+ "&base_time=0500&nx=55&ny=127";		
 	$.ajax({
-		url: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=20230424&base_time=0500&nx=60&ny=127",
+		url: url,
 		success: function (result) {
 			console.log(result);
+			var items = result.response.body.items.item;
+/* 			var filteredItems = [];
+			for (var i = 0; i < items.length; i++){
+				if (items[i].category == "TMP"){
+					filteredItems.push(items[i]);
+				}
+			} */
+			console.log(hours);
+	/* 		var filteredItems = items.filter((item) => {
+				return item.fcstTime = hours;
+			}); */
+			var filteredItems = items.filter((item) => {
+				return item.category == "sky";
+			});
+			filteredItems = filteredItems.filter((item) => {
+				return filter((item).fcstTime = hours;
+			});
+			
+			console.log(filteredItems);
+			/* makeTable(filteredItems); */
 		},
 	});
-	</script>
+/* 	weather(initDate);
+	
+	function makeTable(src){
+		var tableHTML = '';
+		src.forEach(item=>{
+			tableHTML +='<tr><td>${item.fcstDate}</td><td>${item.fcstTime}</td><td>${item.fcstValue}</td></tr>';
+		});
+		$('table tbody').html(tableHTML);
+	} */
+</script>
 
-
-
-<body onload="showImage()">
 	<div class="container">
 	<h1>기상청 날씨 API</h1>
 	<h2>종로 날씨</h2>
@@ -223,7 +339,14 @@ console.log(initDate);
 <!-- <img src='imgs/mainm.png' style='width:100%'> -->
 <!-- <img class="mainimg object-fit-cover border rounded" src='imgs/mainm.png' style='width:100%'> -->
 <div class="mainsm">
-
+<c:forEach items='${weather_list}' var='vo'>
+<tr onclick="location='info.hr?id=${vo.id}'"><td>${vo.id }</td>
+	<td>${vo.region}</td>
+	<td>${vo.region_child}</td>
+	<td>${vo.nx}</td>
+	<td>${vo.ny}</td>
+</tr>
+</c:forEach>
 
 <div class='smdd'>
 <div class='btnSet'>

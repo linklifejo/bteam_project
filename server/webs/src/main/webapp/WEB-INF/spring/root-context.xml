@@ -7,7 +7,7 @@
 	
 	<context:component-scan 
 		base-package
-		="hr, common, member, notice, customer, visual, board,location,course,gone,willgo"/>
+		="hr, common, member, notice, customer, visual, board,location,course,gone,willgo,weather"/>
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<import resource="classpath:db/*.xml"/> 
