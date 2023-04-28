@@ -9,8 +9,11 @@ import member.MemberVO;
 
 public interface GoneService {
 	//CRUD
-	int gone_write(HomeVO vo);
+	int gone_write(GoneVO vo);
 	int gone_insert(HashMap<String,Object> map);//방명록 새글저장
+	
+	
+	
 	int gone_insert(GoneVO vo);//방명록 새글저장
 	GonePageVO gone_list(GonePageVO vo); //방명록 목록 조회
 	GoneVO gone_info(int id); //선택한 방명록 글 조회

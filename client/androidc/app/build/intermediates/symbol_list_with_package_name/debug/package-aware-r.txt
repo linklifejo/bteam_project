@@ -3049,7 +3049,6 @@ id btnSeoul
 id btnWillGo
 id btn_boardList
 id btn_cancel
-id btn_cancel2
 id btn_cel
 id btn_delete
 id btn_modify
@@ -3072,8 +3071,10 @@ id center_vertical
 id chain
 id chain2
 id chains
+id changepw
 id checkbox
 id checked
+id choice
 id chronometer
 id circle_center
 id clear_text
@@ -3096,7 +3097,6 @@ id coordinator
 id cos
 id couname
 id counterclockwise
-id course
 id cradle
 id currentState
 id custom
@@ -3454,6 +3454,7 @@ id textView3
 id textView4
 id textView5
 id textView6
+id textView9
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3710,6 +3711,7 @@ layout myinfo_frag
 layout myinfo_frag_view1
 layout myinfo_frag_view2
 layout myinfo_modify_frag_view
+layout myinfodiary
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

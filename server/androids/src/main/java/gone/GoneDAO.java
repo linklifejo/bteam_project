@@ -165,7 +165,7 @@ public class GoneDAO implements GoneService {
 	}
 
 	@Override
-	public int gone_write(HomeVO vo) {
+	public int gone_write(GoneVO vo) {
 		// TODO Auto-generated method stub
 		return sql.insert("go.gonewrite",vo);
 	}

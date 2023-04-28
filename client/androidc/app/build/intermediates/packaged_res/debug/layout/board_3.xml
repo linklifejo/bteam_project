@@ -16,7 +16,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="80dp"
             android:gravity="left"
             android:hint="게시글 제목"
             android:textSize="24sp"
@@ -78,15 +78,17 @@
             app:layout_constraintTop_toBottomOf="@+id/contentr" />
 
         <Button
-            android:id="@+id/btn_cancel2"
+            android:id="@+id/choice"
             android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="500dp"
-            android:layout_marginEnd="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#FFFFFF"
-            android:text="취소"
             android:textColor="#989898"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contentr" />
+            android:textSize="20sp"
+            android:text="산선택"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

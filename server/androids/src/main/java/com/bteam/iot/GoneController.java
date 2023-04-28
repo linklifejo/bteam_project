@@ -226,17 +226,20 @@ public class GoneController {
 		model.addAttribute("page", page);
 		return "gone/list";
 	}
-//	@ResponseBody @RequestMapping(value = "gonewrite", produces = "application/text; charset=utf-8")
-//	public String gonewrite(HttpServletRequest req, Model model,MultipartRequest mReq,MultipartFile file) {
-//		String data = (String) req.getParameter("param");
-//		HomeVO vo = new Gson().fromJson(data, HomeVO.class);   
-//
-//		
-//		service.gone_write(vo);
-//		Gson gson = new Gson();
-//		 
-//		return gson.toJson( (HomeVO) vo);	 
-//	}
+	@ResponseBody @RequestMapping(value = "gonewrite",  produces="text/plain; charset=utf-8" )
+	public String gonewrite(HttpServletRequest req, Model model,MultipartRequest mReq,MultipartFile file) {
+		String data = (String) req.getParameter("param");
+		GoneVO vo = new Gson().fromJson(data, GoneVO.class);
+		
+//		CourseVO co =service.course_info(location_id);
+//		Integer course_id = co.getId() ;
+		
+	
+		service.gone_write(vo);
+		Gson gson = new Gson();
+		 
+		return gson.toJson( (GoneVO) vo);	 
+	}
 
 	@ResponseBody @RequestMapping(value="/selectHome", produces="text/plain; charset=utf-8" )
 	public String selectHome(HttpServletRequest req, Model model) {

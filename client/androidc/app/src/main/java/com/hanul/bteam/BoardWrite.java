@@ -5,13 +5,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.MemberDTO;
 import com.hanul.bteam.login.LoginFrist;
@@ -27,6 +32,8 @@ public class BoardWrite extends Fragment {
     EditText title,content,contentr;
     RequestBody fileBody =null;
     MultipartBody.Part filePart =null;
+    Button choice;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -41,19 +48,35 @@ public class BoardWrite extends Fragment {
         content=view.findViewById(R.id.content);
         contentr=view.findViewById(R.id.contentr);
 
+        view.findViewById(R.id.choice).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.fragmentControl(new LocalFragment());
+            }
+        });
+
+
+
+
+
         view.findViewById(R.id.btn_upload).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CommonMethod commonMethod = new CommonMethod();
-
-
                 GoneDTO dto = new GoneDTO();
+                Bundle b = activity.bundle;
+                CourseDTO dto1= (CourseDTO) b.getSerializable("dto");
+
                 dto.setTitle( title.getText().toString() );
                 dto.setContent( content.getText().toString() );
                 dto.setContentr( contentr.getText().toString() );
+                dto.setMember_id(activity.loginid);
+                dto.setLocation_id(dto1.getLocation_id());
+                dto.setCourse_id(dto1.getId());
+                dto.setLoccode(dto1.getLoccode());
+
 
                 commonMethod.setParams("param", dto);
-
                 commonMethod.sendFile("gonewrite", filePart, new Callback<String>() {
 
                     @Override

@@ -34,6 +34,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.hanul.bteam.COMMON.CommonMethod;
+import com.hanul.bteam.COMMON.DataCheck;
 import com.hanul.bteam.dto.GoneDTO;
 import com.hanul.bteam.dto.MemberDTO;
 import com.hanul.bteam.login.LoginFrist;
@@ -68,6 +69,7 @@ public class ModifyInfo extends Fragment {
 
 
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -95,6 +97,18 @@ public class ModifyInfo extends Fragment {
         view.findViewById(R.id.btnupdate).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!DataCheck.checkPhoneNumber(phone.getText().toString())){
+                    phone.requestFocus();
+                    isCheck =false;
+                    Toast.makeText(activity,
+                            "휴대폰 안쳣습니당", Toast.LENGTH_SHORT).show();
+                }
+                else if(!DataCheck.checkEmailAddress(address.getText().toString())){
+                    address.requestFocus();
+                    isCheck =false;
+                    Toast.makeText(activity,
+                            "주소를 안쳤습니다", Toast.LENGTH_SHORT).show();
+                }
                 CommonMethod commonMethod = new CommonMethod();
 
                 if(imgFile != null) {

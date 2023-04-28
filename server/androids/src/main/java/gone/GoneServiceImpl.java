@@ -145,7 +145,7 @@ public class GoneServiceImpl implements GoneService {
 	}
 
 	@Override
-	public int gone_write(HomeVO vo) {
+	public int gone_write(GoneVO vo) {
 		// TODO Auto-generated method stub
 		return dao.gone_write(vo);
 	}

@@ -112,7 +112,7 @@ public class MyInfoFragment extends Fragment {
         recycler2 = view.findViewById(R.id.recycler2);
         LinearLayoutManager layout = new
                 LinearLayoutManager(
-                activity, RecyclerView.HORIZONTAL, false);
+                activity, RecyclerView.VERTICAL, false);
         recycler2.setLayoutManager(layout);
         CommonMethod commonMethod2 = new CommonMethod();
         commonMethod2.setParams("type", "1");
@@ -126,6 +126,7 @@ public class MyInfoFragment extends Fragment {
                     Gson gson = new Gson();
                     dtos_re =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
                     for(GoneDTO dto: dtos_re){
+                        dto.setContentr(dto.getContentr());
                         dto.setTitle(dto.getTitle());
                     }
 

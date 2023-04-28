@@ -30,9 +30,10 @@ values (#{content}, #{member_id}, #{gone_id})
 </insert>
 
 <insert id='gonewrite'>
-insert into gone( title, content, contentr)
-values (#{title}, #{content}, #{contentr})
+insert into gone( title, content, contentr,member_id, location_id, course_id,loccode)
+values (#{title}, #{content}, #{contentr},#{member_id}, #{location_id}, #{course_id},#{loccode})
 </insert>
+
 
 <select id='homeList' resultType='gone.HomeVO'>
 <![CDATA[ 
@@ -60,12 +61,9 @@ where rownum <= #{num}
 
 
 <select id='diary' resultType='gone.HomeVO'>
-<![CDATA[ 
-select * from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,contentr
-from gone g, gone_file f where g.id=f.gone_id 
-and g.member_id = #{id} and g.type= #{type} and f.ptype= #{ptype} and contentr is not null order by g.readcnt desc)
-where rownum <= #{num}
-]]>
+ 
+select contentr,title,member_id from gone where type= '1'
+and member_id=#{id}
 </select>
 
 <!-- 방명록첨부파일 신규저장 -->
@@ -202,10 +200,9 @@ order by id
 
 <!-- 게시판 목록조회 -->
 <select id='bolist' resultType='gone.GoneVO'>
-select g.*,filepath
-from gone g,gone_file f
-where g.id=f.gone_id
-order by gone_date
+select g.*,(select filepath from gone_file where gone_id= g.id) filepath
+from gone g 
+order by gone_date desc
 </select>
 
 <!-- 지역정보 목록조회 -->

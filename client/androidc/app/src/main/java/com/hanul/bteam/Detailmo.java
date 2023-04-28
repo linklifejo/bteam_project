@@ -48,14 +48,6 @@ public class Detailmo extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Button button = view.findViewById(R.id.course);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Course fragment = new Course();
-                activity.fragmentControl(fragment);
-            }
-        });
 
         Button btn1 = view.findViewById(R.id.danger);
         btn1.setOnClickListener(new View.OnClickListener() {
