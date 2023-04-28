@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -146,7 +147,10 @@
 
 	}
 	
-	
+	.region{
+		container: text-center;
+		text-align: center; margin: 0 auto;	
+	}
 	
 </style>
 	
@@ -154,38 +158,122 @@
 	integrity="sha256-pyPw+upLPUjgMXY0G+800xUf+/Im1MZjXxxgOcBQBXU="
 	crossorigin="anonymous"></script>
 
-
-
-
-
 	
-	
+
+
 <script type="text/javascript">
 var date = new Date();
 
 var year = date.getFullYear();
 var month = ('0' + (date.getMonth() + 1)).slice(-2);
 var day = ('0' + date.getDate()).slice(-2);
-
 var initDate = year + month + day;
 
+console.log(date.getHours());
 console.log(initDate);
 
-
-		
+var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+	+ "?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D"
+	+ "&pageNo=1&numOfRows=1000&dataType=json&base_date=" + initDate
+	+ "&base_time=0500&nx=55&ny=127";		
 	$.ajax({
-		url: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=20230424&base_time=0500&nx=60&ny=127",
+		url: url,
 		success: function (result) {
 			console.log(result);
+			var item = result.response.body.items.item[3];
+			var content = item.baseDate + "," + item.baseTime + "," + item.obsrValue + "입니다";
+			
+			$(".result").text(content);
 		},
 	});
-	</script>
+
+</script>
 
 
 
-<body onload="showImage()">
+
+
+
+
+<script type="text/javascript">
+/* var intiDate = $("#datepick").val();
+
+$("form").submit(() => {
+	let tDate = $("#datepcik").val();
+	weather(tDate);
+	return false;
+});
+
+function weather(initDate){ */
+	
+var date = new Date();
+
+var year = date.getFullYear();
+var month = ('0' + (date.getMonth() + 1)).slice(-2);
+var day = ('0' + date.getDate()).slice(-2);
+var initDate = year + month + day;
+var hours = date.getHours()+'00';
+
+console.log(hours);
+console.log(initDate);
+
+var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+	+ "?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D"
+	+ "&pageNo=1&numOfRows=1000&dataType=json&base_date=" + initDate
+	+ "&base_time=0500&nx=55&ny=127";		
+	$.ajax({
+		url: url,
+		success: function (result) {
+			console.log('result> ',result);
+			var items = result.response.body.items.item;
+			console.log('ITEMS> ', items)
+/* 			var filteredItems = [];
+			for (var i = 0; i < items.length; i++){
+				if (items[i].category == "TMP"){
+					filteredItems.push(items[i]);
+				}
+			} */
+		
+	/* 		var filteredItems = items.filter((item) => {
+				return item.fcstTime = hours;
+			}); */
+			var filteredItems = items.filter((item) => {
+// 				return item.category == "SKY";
+				return item.category.toLowerCase() == "sky" 
+					&&  item.fcstTime == hours;
+			});
+
+			console.log('filteredItems> ',filteredItems);
+			
+			/* makeTable(filteredItems); */
+			
+		},
+	});
+	/*}	
+ 	weather(initDate);
+
+	function makeTable(src){
+		var tableHTML ='';
+		src.forEach(item=>{
+			tableHTML += 
+			'<tr><td>${filteredItems.fcstDate}</td><td>${filteredItems.fcstTime}</td><td>${filteredItems.fcstValue}</td></tr>';
+		});
+		$("table tbody").html(tableHTML);
+	} */
+	
+/* 	weather(initDate);
+	
+	function makeTable(src){
+		var tableHTML = '';
+		src.forEach(item=>{
+			tableHTML +='<tr><td>${item.fcstDate}</td><td>${item.fcstTime}</td><td>${item.fcstValue}</td></tr>';
+		});
+		$('table tbody').html(tableHTML);
+	} */
+</script>
+
 	<div class="container">
-	<h1>기상청 날씨 API</h1>
+ 	<h1>기상청 날씨 API</h1>
 	<h2>종로 날씨</h2>
 	<form action="">
 		<label for="datepick">날짜 선택</label>
@@ -204,54 +292,57 @@ console.log(initDate);
 			<tr>
 				<th colspan>조회내용이 없습니다</th>
 			</tr>
-			<tr>
-<!-- 				<th>20230424</th>
-				<th>0600</th>
-				<th>-4.0</th> -->
-			</tr>
 		</tbody>
 	</table>
 	</div>
-	
 	<p class="result"></p>
+	
+	
+	
+	
+<body onload="showImage()">
 <div class="img">
- <!-- <img id="introimg" border="0" style= height:700px;width:100%;> -->
+ <img id="introimg" border="0" style= height:700px;width:100%;>
 </div>
 
-
-
-<!-- <img src='imgs/mainm.png' style='width:100%'> -->
-<!-- <img class="mainimg object-fit-cover border rounded" src='imgs/mainm.png' style='width:100%'> -->
 <div class="mainsm">
-
-
+<%-- <c:forEach items='${weather_list}' var='vo'>
+<tr onclick="location='info.hr?id=${vo.id}'"><td>${vo.id }</td>
+	<td>${vo.region}</td>
+	<td>${vo.region_child}</td>
+	<td>${vo.nx}</td>
+	<td>${vo.ny}</td>
+</tr>
+</c:forEach>
+ --%>
 <div class='smdd'>
-<div class='btnSet'>
+
 <div>
 	<h1 class="mainfont"><img alt="" src="imgs/mainclimb.png"></h1>
 	<!-- <h1 class="mainfont">등산 가이드</h1> -->
 </div>
-
-	<h1 class="mainfont_1">인기산</h1>
+							<div class="region">
+								<h1 class="mainfont_1">인기산</h1>
+							
+							<table class='w-px600 tb-list'>
+							
+							<tbody>
+							<div class="homeimg">
+							<c:forEach items='${Loc_info}' var='vo'>
+								<a href='info.go?id=${vo.id}'></a>
+									<span style="display:inline-block; height:450px; width:350px;">
+								
+									<div  style= "height:450px; width:350px;" class="card"><a href='info.re?id=${vo.id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+							    		 alt="사진파일"></a>
+									</div>
+								
+									</span>
+							</c:forEach>
+							</div>
+							</tbody>
+							</table>
+							</div>
 </div>
-<table class='w-px600 tb-list'>
-
-<tbody>
-<div class="homeimg">
-<c:forEach items='${Loc_info}' var='vo'>
-	<a href='info.go?id=${vo.id}'></a>
-		<span style="display:inline-block; height:450px; width:350px;">
-	
-		<div  style= "height:450px; width:350px;" class="card"><a href='info.re?id=${vo.id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
-    		 alt="사진파일"></a>
-		</div>
-	
-		</span>
-</c:forEach>
-</div>
-</tbody>
-</table>
-
   <body class="bd-example-cssgrid">
 
     <!-- Example Code -->
@@ -302,85 +393,48 @@ console.log(initDate);
 	      </div>
 	    </div>
    </div>
-</div>
-</div>
-<div class='btnSet'>
-	<a href='list.go' class='btn-fill'>게시판</a>
+   </body>
 </div>
 
+								<div class='btnSet'>
+									<a href='list.go' class='btn-fill'>게시판</a>
+								</div>
 
-<table class='w-px600 tb-list'>
-
-<tbody>
-<div class="homeimg2">
-<c:forEach items='${list}' var='vo'>
-	
-<%-- 	
-		<div style= "height:450px; width:350px;" class="card">
-		<a style= "height:450px; width:350px;" href='info.go?id=${vo.gone_id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
-    		 alt="사진파일"></a>
-		</div> --%>
-		
- 	<!-- Example Code -->
-    
-	<span style="display:inline-block; height:500px; width:350px;">
-     
-     <div class="card" style= "height:450px; width:350px;">
-  <img src="${vo.filepath}" class="card-img-top" alt="사진" >
-  <div class="card-body">
-    <h5 class="card-title">${vo.title}</h5>
-    <p class="card-text">${vo.content}</p>
-    <a href='info.go?id=${vo.gone_id}' class="btn btn-primary mainbtn">확인하기</a>
-  </div>
-</div>
-     
-     
-		</span>
-
-</c:forEach>
-</div>
-
-
-</tbody>
-</table>
+								
+								<table class='w-px600 tb-list'>
+								
+								<tbody>
+								<div class="homeimg2">
+								<c:forEach items='${list}' var='vo'>
+								    
+										<span style="display:inline-block; height:500px; width:350px;">
+								     
+								<div class="card" style= "height:450px; width:350px;">
+								  <img src="${vo.filepath}" class="card-img-top" alt="사진" >
+								  <div class="card-body">
+								    <h5 class="card-title">${vo.title}</h5>
+								    <p class="card-text">${vo.content}</p>
+								    <a href='info.go?id=${vo.gone_id}' class="btn btn-primary mainbtn">확인하기</a>
+								  </div>
+								</div>
+								     
+								     
+										</span>
+								
+								</c:forEach>
+								</div>
+								
+								
+								</tbody>
+								</table>
 
 
 </div>
 
 </div>
 
-
-
-
-
-    
-    <!-- End Example Code -->  
-    
-    
-<!--     
-    <img alt="" src="src='imgs/mainm.png' style='width:100%;height:400px;">
-    <img alt="" src="imgs/juwang.jpg">
-    <img alt="" src="imgs/nam.jpg">
-    <img alt="" src="imgs/tabak.jpg"> -->
-  </body>
+</body>
 </html>
-
-
-<!-- 
-<script type="text/javascript">
-$.ajax({
-    url:'https://dapi.kakao.com/v2/local/search/address.json?query='+encodeURIComponent('숭의동'),
-    type:'GET',
-    headers: {'Authorization' : 'KakaoAK 481d31f68d1e3ee3ef028e3423236be5'},
-success:function(data){
-console.log(data);
-},
-error : function(e){
-console.log(e);
-}
-});
-
-</script> -->
 
 <script type="text/javascript">
 var imgArray=new Array();
@@ -396,8 +450,3 @@ function showImage(){
  setTimeout(showImage,10000);
 }
 </script>
-
-
-
-</body>
-</html>
