@@ -181,9 +181,11 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 		success: function (result) {
 			console.log(result);
 			var item = result.response.body.items.item[3];
-			var content = item.baseDate + "," + item.baseTime + "," + item.obsrValue + "입니다";
+			var content ='';
+			item.baseDate + "," + item.baseTime + "," + item.obsrValue + "입니다";
 			
 			$(".result").text(content);
+			
 		},
 	});
 
