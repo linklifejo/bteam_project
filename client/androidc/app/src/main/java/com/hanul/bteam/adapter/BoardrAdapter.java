@@ -27,11 +27,10 @@ import com.hanul.bteam.BoardTwo;
 import com.google.gson.Gson;
 import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.COMMON.CommonMethod;
-<<<<<<< HEAD
-=======
+
 import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.BoardTwo;
->>>>>>> dde553957bd1da110faf5252c8f3bc901c4fa65d
+
 
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
