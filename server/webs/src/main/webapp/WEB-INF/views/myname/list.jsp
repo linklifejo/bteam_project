@@ -122,14 +122,16 @@
 
 
 .wrapper {
+  text-align: center; margin: 0 auto;
+  container: text-center;	
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 500px;
   overflow: hidden;
   padding: 3px 0;
-  cursor: grab;
+  /* cursor: grab; */
   &.active {
-    cursor: grabbing;
+   /*  cursor: grabbing; */
   }
 }
 .items {
@@ -140,8 +142,8 @@
   top: 0;
   display: flex;
 }
-.items.active {
-  transition: 0.3s;
+/* .items.active {
+  transition: 0.3s; */
 }
 .item {
   width: 360px;
@@ -428,8 +430,8 @@ function dragElement(elmnt) {
   <button class="btn prev"><</button>
   <div class="wrapper" style="width: 1200px;">
     <div class="items" style="left: 100;">
-    <c:forEach items='${gone_myname}' var='vo'>
-      <div class="item" style=""><img src="${vo.filepath}" alt="" style="height: 450px;width: 350px;"></div>
+    <c:forEach items='${gone_myname}' var='vo' >
+      <div class="item" style=""><div><a href='info.go?id=${vo.id}'><img src="${vo.filepath}" alt="" style="height: 450px;width: 350px;"></a></div><div><a href='info.go?id=${vo.id}'>${vo.title}</a></div></div>
      </c:forEach>
     </div> 
   </div>  
@@ -515,7 +517,7 @@ wrapper.onmousedown =(e)=> {
     
   }
 }
-
+/* 
 function onMouseMove(e) {
   if (!wrapper.classList.contains('active')) wrapper.classList.add('active');
   const rect = wrapper.getBoundingClientRect();
@@ -524,7 +526,7 @@ function onMouseMove(e) {
   if (currentIdx === 0 && moveX > 0) return;
   else if(currentIdx === itemCount - 1 && moveX < 0) return;
   items.style.left = left + 'px';
-}
+} */
 </script>
 
 
