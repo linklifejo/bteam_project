@@ -3,14 +3,14 @@
 #include <ESP8266WebServer.h>
 #include <SoftwareSerial.h> 
 #define LED LED_BUILTIN
-#define TX D6 // arduino softSerial RX -> NodeMcu D6(TX)
-#define RX D7 // arduino softSerial TX -> NodeMcu D7(RX) 
+#define TX D0 // arduino softSerial RX -> NodeMcu D6(TX)
+#define RX D1 // arduino softSerial TX -> NodeMcu D7(RX) 
 const char* ssid = "hanul201";
 const char* password = "hanul201";
 SoftwareSerial arduSerial(RX, TX); // (RX, TX)
 char float1[10] = {0,}; // atof()함수를 위해 char 자료형 배열을 10바이트 선언
 ESP8266WebServer server(80);
-
+String check;
     void handleRoot() {
      Serial.println("You called root page");
      
@@ -25,12 +25,14 @@ ESP8266WebServer server(80);
      s += "let ip,member_id,location_id,course_id,loccode; ";
      //s += "ADCValue.onchange = function(){sendGet(ADCValue.text())};";
      s += " function sendGet(ip, member_id, location_id, course_id, loccode) {";
-     s += "sendInfo();";     
      s += "$.ajax({";
      s += "type : 'get',";
      s += "url : 'http://192.168.0.11/ib/stampIn?ip=' + ip + '&member_id=' + member_id +'&location_id=' + location_id + '&course_id=' + course_id + '&loccode=' + loccode,";
      s += "success : function(result, status, xhr) {";
-     s += " sendData(1);";     
+     s += " if(result=='스템프성공'){;";     
+     s += "setJolla();";      
+     
+     s += "}";        
      s += " $('#ADCValue').html(result);"; 
      s += "},});}";
      
@@ -57,37 +59,48 @@ ESP8266WebServer server(80);
      s += " success : function(result, status, xhr) { ";
      s += " console.log(result);";
      s += " $('#LEDState').html(result);";
+     s += "sendInfo();";      
      s += " sendGet(ip,member_id,location_id,course_id,loccode);";
      s += "}, }); }";
 
      s += "setInterval(function() { ";
-     s += "getData();";
+    // s += "getData();";
      s += "}, 2000);";
 
-     s += "function getData() { ";
+    //  s += "function getData() { ";
+    //  s += "$.ajax({ type : 'get',";
+    //  s += "url : '/readADC',";
+    //  s += "success : function(result, status, xhr) { ";
+    //  s += " console.log(result);";
+    //  s += " $('#ADCValue').html(result);";
+    //  //s += " sendGet($('#ADCValue').text());";
+    //  s += " sendGet(ip,member_id,location_id,course_id,loccode);";
+    //  s += " }, });";
+
+     s += "function setJolla() { ";
      s += "$.ajax({ type : 'get',";
-     s += "url : '/readADC',";
+     s += "url : '/setJolla',";
      s += "success : function(result, status, xhr) { ";
+   
      s += " console.log(result);";
-     s += " $('#ADCValue').html(result);";
-     //s += " sendGet($('#ADCValue').text());";
-     s += " sendGet(ip,member_id,location_id,course_id,loccode);";
+     s += " $('#JollaValue').html(result);";
      s += " }, });";
+
 
      s += "}</script><br></body></html>";
      server.send(200, "text/html", s);// 웹 브라우저에 표시.
     }
 
-    void handleADC() {
-     int a = analogRead(A0); // 노드엠의 A0 핀의 갑을 읽어와서 정수형 변수에 대입.
+    // void handleADC() {
+    //  int a = analogRead(A0); // 노드엠의 A0 핀의 갑을 읽어와서 정수형 변수에 대입.
      
-     String adcValue = String(a); // 문자열로 변환.
-     Serial.println("adcValue (^.^) : " + adcValue); // 시리얼 모니터로 출력.
+    //  String adcValue = String(a); // 문자열로 변환.
+    //  Serial.println("adcValue (^.^) : " + adcValue); // 시리얼 모니터로 출력.
      
-     server.send(200, "text/plain", adcValue); // 웹서버에 전송.
-    // unoFromEsp();
+    //  server.send(200, "text/plain", adcValue); // 웹서버에 전송.
+    // // unoFromEsp();
 
-    }
+    // }
 
     // 잘못된 접근시 안내 메세지 생성.
     void handleNotFound() {
@@ -114,38 +127,39 @@ ESP8266WebServer server(80);
      if (t_state == "1")
      {
      digitalWrite(LED, LOW); //LED ON
-     digitalWrite(D2, LOW); //LED ON
      ledState = "ON"; //Feedback parameter
      Serial.println("led_on");
      Serial.println(server.arg("LEDstate"));
-     
+    
      }
      else
      {
      digitalWrite(LED, HIGH); //LED OFF
-     
      ledState = "OFF"; //Feedback parameter
      Serial.println("led_off");
     
      }
-      if (t_state == "1"){
-       digitalWrite(D2, HIGH); //LED OFF  
-       analogWrite(A0, 255); //LED OFF  
-      }  
-      else{
-        digitalWrite(D2, LOW); //LED OFF
-        analogWrite(A0, LOW); //LED OFF  
-      }
-     server.send(200, "text/plane", ledState); //Send web page
+//arduSerial.println(arduSerial.readString());       
+
+      
+    server.send(200, "text/plain", ledState); //Send web page
     }
+
+    void handleJolla() {
+        digitalWrite(D2, HIGH); //LED OFF
+        delay(2000);
+        digitalWrite(D2, LOW); //LED ON   
+        arduSerial.println("suc");      
+//    server.send(200, "text/plain", jollaState); //Send web page      
+ 
+    }    
   
     void setup() {
      Serial.begin(9600);
      arduSerial.begin(9600);
      pinMode(LED, OUTPUT);
-     pinMode(D2, OUTPUT);
-     pinMode(A0, OUTPUT);
-     pinMode(A0, INPUT);
+     pinMode(D2, OUTPUT);     
+//     pinMode(A0, INPUT);
      WiFi.mode(WIFI_STA);
      WiFi.begin(ssid, password);
      Serial.println("");
@@ -161,14 +175,18 @@ ESP8266WebServer server(80);
      Serial.println(WiFi.localIP());
      server.on("/", handleRoot);
      server.on("/setLED", handleLED);
-     server.on("/readADC", handleADC);
+     server.on("/setJolla", handleJolla);
+
+    // server.on("/readADC", handleADC);
     
      server.onNotFound(handleNotFound);
      server.begin();
      Serial.println("HTTP server started");
     }
     void loop() {
+    
      server.handleClient();
+     
     // unoFromEsp();
     }
    
