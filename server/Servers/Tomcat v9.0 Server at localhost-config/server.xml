@@ -152,7 +152,15 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
+<<<<<<< HEAD
       <Context docBase="iots" path="/ib" reloadable="true" source="org.eclipse.jst.jee.server:iots"/><Context docBase="androids" path="/ab" reloadable="true" source="org.eclipse.jst.jee.server:androids"/><Context docBase="webs" path="/wb" reloadable="true" source="org.eclipse.jst.jee.server:webs"/></Host>
+=======
+<<<<<<< HEAD
+      <Context docBase="iots" path="/ib" reloadable="true" source="org.eclipse.jst.jee.server:iots"/><Context docBase="androids" path="/ab" reloadable="true" source="org.eclipse.jst.jee.server:androids"/><Context docBase="webs" path="/wb" reloadable="true" source="org.eclipse.jst.jee.server:webs"/></Host>
+=======
+      <Context docBase="iots" path="/ib" reloadable="true" source="org.eclipse.jst.jee.server:iots"/><Context docBase="androids" path="/ab" reloadable="true" source="org.eclipse.jst.jee.server:androids"/><Context docBase="webs" path="/wb" reloadable="true" source="org.eclipse.jst.jee.server:webs"/><Context docBase="D:\app\wb\upload" path="/wb/upload" reloadable="true"/><Context docBase="D:\app\ab\upload" path="/ab/upload" reloadable="true"/></Host>
+>>>>>>> d46c89067ab2d69da8591d31f216f3ca774e59db
+>>>>>>> 6a902695650102d4b66349a43590a1871020fa2b
     </Engine>
   </Service>
 </Server>
