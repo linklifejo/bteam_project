@@ -10,11 +10,31 @@ table tr td{ text-align: left }
 [name=address] { margin-top: 3px }
 th span, p span { color:#ff0000; margin-right: 5px; }
 p { margin: 10px auto;  text-align: right;}
+
+
+
+
+.main{
+		container: text-center;
+		text-align: center; margin: 0 auto;
+	}
+.main1{
+		container: text-center;
+		text-align: center; margin: 0 auto;
+	}
+
+
+
+
 </style>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
+
+
+<div class="main">
 <h3>회원가입</h3>
+</div>
 <p class='w-px600'><span>*</span>는 필수입력항목입니다</p>
 <!-- 
 파일을 전송하는 경우 주의점
@@ -84,7 +104,7 @@ p { margin: 10px auto;  text-align: right;}
 </tr>
 </table>
 </form>
-<div class='btnSet'>
+<div class='btnSet main1'>
 <a class='btn-fill btn-join'>회원가입</a>
 </div>
 <script src='js/member_check.js?<%=new java.util.Date() %>'></script>
