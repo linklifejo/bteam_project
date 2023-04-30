@@ -15,7 +15,7 @@
 <style>
 .footer { font-size:14px; border-top: 1px solid #aaa;
 		text-align: center; margin: 0 auto; position: relative;
-		z-index: -10; 
+		z-index: -10; margin-top: 100px;
 		}
 
 		.back{

@@ -8,7 +8,7 @@
 </c:choose>
 <head>
 <meta charset="UTF-8">
-<title>지능형 IoT ${title}</title>
+<title>등산가이드 ${title}</title>
 <link rel='icon' href='<c:url value="/"/>imgs/hanul.ico'>
 <link rel='stylesheet' type='text/css' 
 		href='<c:url value="/"/>css/common.css?<%=new java.util.Date()%>'>
