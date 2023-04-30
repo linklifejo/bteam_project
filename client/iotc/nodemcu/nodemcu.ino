@@ -130,14 +130,15 @@ String check;
      ledState = "ON"; //Feedback parameter
      Serial.println("led_on");
      Serial.println(server.arg("LEDstate"));
-    
+     
      }
      else
      {
      digitalWrite(LED, HIGH); //LED OFF
      ledState = "OFF"; //Feedback parameter
      Serial.println("led_off");
-    
+     arduSerial.println("end");      
+     
      }
 //arduSerial.println(arduSerial.readString());       
 
@@ -147,9 +148,9 @@ String check;
 
     void handleJolla() {
         digitalWrite(D2, HIGH); //LED OFF
-        delay(2000);
+        arduSerial.println("success");             
         digitalWrite(D2, LOW); //LED ON   
-        arduSerial.println("suc");      
+         
 //    server.send(200, "text/plain", jollaState); //Send web page      
  
     }    
