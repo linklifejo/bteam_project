@@ -27,14 +27,16 @@
 </div>
 <table class='w-px600 tb-list'>
 <thead>
-	<tr><th class='w-px140'>코스명</th>
+	<tr>
 		<th class='w-px160'>산이름</th>
+		<th class='w-px140'>코스명</th>
 	</tr>
 </thead>
 <tbody>
 <c:forEach items='${list}' var='vo'>
-	<tr><td><a href='info.co?id=${vo.id}'>${vo.couname }</a></td>
+	<tr>
 		<td>${vo.locname }</td>
+		<td><a href='info.co?id=${vo.id}'>${vo.couname }</a></td>
 	</tr>
 </c:forEach>
 	

@@ -7,6 +7,7 @@ import location.LocationVO;
 import lombok.Getter;
 import lombok.Setter;
 import member.MemberVO;
+import weather.WeatherVO;
 
 @Getter @Setter
 public class GoneVO {
@@ -16,5 +17,6 @@ public class GoneVO {
 	private List<GoneFileVO> fileInfo,gone_id;
 	private List<MemberVO> salt;
 	private List<LocationVO> name_desc;
+	
 	
 }

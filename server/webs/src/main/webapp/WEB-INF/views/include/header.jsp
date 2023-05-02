@@ -9,6 +9,18 @@
 		</li>
 	</div>
 	<div class="header">
+			<!--날씨정보  <div style="background-color: #80c3ed;">
+					<tr>날씨</tr>
+				
+
+<body>
+	<MARQUEE direction="up"><img id="cst" alt="날씨이미지">스크롤 방향 설정</MARQUEE>
+
+</body>
+	
+				
+				<tr><img id="cst" alt="날씨이미지"></tr>
+			</div> -->
 	<div>
 	<nav>
 		<ul>
@@ -99,7 +111,8 @@
 .dropdown {
   position: relative;
   display: inline-block;
- 
+  container: text-center;
+  text-align: center; margin: 0 auto;
 }
  
 .dropdown-content {
@@ -162,4 +175,134 @@ header nav a:hover, header nav a.active { color:#fff;
 
 </style>
 
+
+
+<!-- 날씨정ㅂ
+<script type="text/javascript">
+var sky;
+var pty;
+/* var intiDate = $("#datepick").val();
+
+$("form").submit(() => {
+	let tDate = $("#datepcik").val();
+	weather(tDate);
+	return false;
+});
+
+function weather(initDate){ */
+	
+var date = new Date();
+
+var year = date.getFullYear();
+var month = ('0' + (date.getMonth() + 1)).slice(-2);
+var day = ('0' + date.getDate()).slice(-2);
+var initDate = year + month + day;
+var hours = date.getHours()+'00';
+
+console.log(hours);
+console.log(initDate);
+
+var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+	+ "?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D"
+	+ "&pageNo=1&numOfRows=1000&dataType=json&base_date=" + initDate
+	+ "&base_time=0500&nx=55&ny=127";		
+	$.ajax({
+		url: url,
+		
+		success: function (result) {
+		console.log(result);
+		var items = result.response.body.items.item
+	/* 		var filteredItems = items.filter((item) => {
+				return item.fcstTime = hours;
+			}); */
+ 			var filteredsky = items.filter((item) => {
+// 				return item.category == "SKY";
+				return (item.category.toLowerCase() == "sky" || item.category.toLowerCase() == "pty") 
+					&&  item.fcstTime == hours
+				&&  item.fcstDate == initDate;
+			});
+ 			var sky = filteredsky.filter((item) => {
+// 				return item.category == "SKY";
+				return item.category.toLowerCase() == "sky" 
+		
+			});
+ 			var pty = filteredsky.filter((item) => {
+// 				return item.category == "SKY";
+				return item.category.toLowerCase() == "pty" 
+		
+			});
+ 			pty = pty[0]
+ 			sky = sky[0]
+ 			console.log('pty ',pty);
+ 			console.log('sky ',sky);
+/*  			var filteredpty = items.filter((item) => {
+// 				return item.category == "SKY";
+				return item.category.toLowerCase() == "pty" 
+					&&  item.fcstTime == hours;
+			}); */
+
+			console.log('filteredsky> ',filteredsky);
+
+			
+			console.log('filteredsky> ',filteredsky[0].fcstValue);
+		
+/* 			
+			- 하늘상태(SKY) 코드 : 맑음(1) sun, 구름많음(3)cloudy, 흐림(4)blur
+			- 강수형태(PTY) 코드 : (초단기) 없음(0), 비(1) rain, 비/눈(2)rain_snow, 눈(3)snow, 빗방울(5) , 빗방울눈날림(6), 눈날림(7) 
+
+			
+			(단기) 없음(0), 비(1), 비/눈(2), 눈(3), 소나기(4)  */
+		
+			/* makeTable(filteredItems); */
+			
+			var s = ['', 'imgs/sun.png','','imgs/cloudy.png', 'imgs/blur.png']
+			var p = ['', 'imgs/rain.png','imgs/rain_snow.png', 'imgs/snow.png','','imgs/raindrop.png','imgs/drift.png']
+			
+			/* $("#cst").css('src', 'img/heart'+weather+'.png'); */
+/* 			$("#cst").css('src', s[sky]);
+			$("#cst").css('src', s[pty]); */
+			
+			console.log('pty.fcstValue> ',pty.fcstValue);
+			console.log('sky.fcstValue> ',sky.fcstValue);
+			
+			if(Number(pty.fcstValue) == 0){
+				sky = Number(sky.fcstValue);
+				console.log('sky',sky,s[sky])
+				$("#cst").attr('src', s[sky]);
+			}else{
+				pty = Number(pty.fcstValue);
+				console.log('pty',pty,p[pty])
+				$("#cst").attr('src', p[pty]);
+			}
+			console.log($("#cst").attr('src'))
+		/* 	
+			$("#cst").text(sky);
+			$("#cst").text(pty); */
+			
+		},
+	});
+	
+	
+	/*}	
+ 	weather(initDate);
+
+	function makeTable(src){
+		var tableHTML ='';
+		src.forEach(item=>{
+			tableHTML += 
+			'<tr><td>${filteredItems.fcstDate}</td><td>${filteredItems.fcstTime}</td><td>${filteredItems.fcstValue}</td></tr>';
+		});
+		$("table tbody").html(tableHTML);
+	} */
+	
+/* 	weather(initDate);
+	
+	function makeTable(src){
+		var tableHTML = '';
+		src.forEach(item=>{
+			tableHTML +='<tr><td>${item.fcstDate}</td><td>${item.fcstTime}</td><td>${item.fcstValue}</td></tr>';
+		});
+		$('table tbody').html(tableHTML);
+	} */
+</script> -->
 
