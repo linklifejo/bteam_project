@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import course.CourseVO;
 import location.LocationVO;
+import member.MemberVO;
 
 @Repository
 public class GoneDAO implements GoneService {
@@ -114,7 +115,11 @@ public class GoneDAO implements GoneService {
 //	}
 
 	
-
+	@Override
+	public List<HomeVO> mou(HashMap<String, Object> vo) {
+		// TODO Auto-generated method stub
+		return sql.selectList("go.mou",vo);
+	}
 	
 
 	@Override
@@ -152,6 +157,20 @@ public class GoneDAO implements GoneService {
 		// TODO Auto-generated method stub
 		return sql.selectList("go.bolist");
 	}
+
+	@Override
+	public List<HomeVO> diary(HashMap<String, Object> vo) {
+		// TODO Auto-generated method stub
+		return sql.selectList("go.diary",vo);
+	}
+
+	@Override
+	public int gone_write(GoneVO vo) {
+		// TODO Auto-generated method stub
+		return sql.insert("go.gonewrite",vo);
+	}
+
+	
 
 
 

@@ -93,6 +93,9 @@ public class LoginFrist extends Fragment {
                                 start();
                                 activity.fragmentControl(new HomeFragment());
                             } else {
+                                activity.hideBottomNavigation(true);
+                                activity.fragmentControl(new JoinLogin());
+
                                 Toast.makeText(activity,
                                         "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
                             }

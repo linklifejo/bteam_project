@@ -86,8 +86,7 @@ public class LocalAdapter extends
 
                 activity.bundle.putSerializable("dto",dto);
                 activity.fragmentControl(new LocalDDFragment());
-                Toast.makeText(context,
-                        "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
+
             }
         });
 

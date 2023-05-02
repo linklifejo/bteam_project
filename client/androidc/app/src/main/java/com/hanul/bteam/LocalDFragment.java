@@ -62,6 +62,7 @@ public class LocalDFragment extends Fragment {
                     Gson gson = new Gson();
                     dtos =  gson.fromJson(response.body(), new TypeToken<ArrayList<LocationDTO>>(){}.getType());
                     for(LocationDTO dto: dtos){
+                        dto.setLoccode(dto.getLoccode());
                         dto.setLocname(dto.getLocname());
                         dto.setFilepath(dto.getFilepath());
                         dto.setId(dto.getId());

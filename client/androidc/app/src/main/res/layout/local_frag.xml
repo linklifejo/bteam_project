@@ -5,27 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/local_frag"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:background="#64B5FD"
-        android:gravity="center"
-        android:text="지역별 산"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/btnSeoul"
         android:layout_width="150dp"
         android:layout_height="90dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/local_frag"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/namsan1" />
 
 
@@ -50,11 +38,11 @@
         android:layout_width="150dp"
         android:layout_height="90dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="45dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnSeoul"
-        app:layout_constraintTop_toBottomOf="@+id/local_frag"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/seol_ak_san1" />
 
     <TextView
@@ -78,7 +66,7 @@
         android:layout_width="150dp"
         android:layout_height="90dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:srcCompat="@drawable/mu_dueng_san1" />
@@ -103,7 +91,7 @@
         android:id="@+id/btnKeong"
         android:layout_width="150dp"
         android:layout_height="90dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="45dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
@@ -128,7 +116,7 @@
         android:layout_width="150dp"
         android:layout_height="90dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/gr_san1" />
@@ -153,7 +141,7 @@
         android:id="@+id/btnJeju"
         android:layout_width="150dp"
         android:layout_height="90dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="45dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"

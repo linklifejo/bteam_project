@@ -55,6 +55,7 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.HEAD;
 
 public class JoinLogin extends Fragment {
     private static final String TAG = "main:JoinActivity";
@@ -173,12 +174,6 @@ public class JoinLogin extends Fragment {
                 dto.setPhone( phone.getText().toString() );
                 dto.setAddress( address.getText().toString() );
                 dto.setProfile(imgFilePath);
- //               dto.setProfile(profile.toString() );
-//  //              profile.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.profile, 10, 10));
-//
-//                profile.setImageBitmap(decodeSampledBitmapFromResource(activity.getResources(), R.id.profile, 10, 10));
-
-
 
                 commonMethod.setParams("param", dto);
 
@@ -264,7 +259,10 @@ public class JoinLogin extends Fragment {
                             Bitmap bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), uri);
                             profile.setImageBitmap(bitmap);
                             File path = new File(".");
-                            imgFilePath =   getPathFromUri(uri);
+
+                            imgFilePath =  getPathFromUri(uri);
+
+
                             Toast.makeText(activity," " + path.getAbsolutePath(), Toast.LENGTH_LONG).show();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -329,7 +327,6 @@ public class JoinLogin extends Fragment {
             activity.sendBroadcast(msIntent);
         }
 
-
     }
     public String getPathFromUri(Uri uri) {
 
@@ -343,6 +340,7 @@ public class JoinLogin extends Fragment {
 
         return path;
     }
+
 
 //    public static int calculateInSampleSize(
 //            BitmapFactory.Options options, int reqWidth, int reqHeight) {

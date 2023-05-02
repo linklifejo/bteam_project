@@ -36,6 +36,7 @@ public class HomeFragment extends Fragment {
     ArrayList<GoneDTO> dtos_re;
     MainActivity activity;
     BoardrAdapter adapter;
+    Bundle b;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -79,7 +80,7 @@ public class HomeFragment extends Fragment {
                     dtos_re =  gson.fromJson(response.body(), new TypeToken<ArrayList<GoneDTO>>(){}.getType());
                     for(GoneDTO dto: dtos_re){
                         dto.setId(dto.getId());
-                        dto.setLocname(dto.getLocname());
+                        dto.setTitle(dto.getTitle());
                         dto.setFilepath(dto.getFilepath());
                         dto.setName_desc(dto.getName_desc());
                     }
@@ -105,9 +106,11 @@ public class HomeFragment extends Fragment {
         recycler.setLayoutManager(layout);
         // 어댑터 객체를 생성한다
         CommonMethod commonMethod2 = new CommonMethod();
+        b = activity.bundle;
         // 어댑터에 생성한 매소드 addDto를 이용하여 dtos에 데이터를 추가한다
         commonMethod2.setParams("type", "1");
-        commonMethod2.setParams("ptype", "3");
+        commonMethod2.setParams("ptype", "1");
+        commonMethod2.setParams("member_id",activity.loginid);
         commonMethod2.setParams("num", "10");
         commonMethod2.getData("selectmou", new Callback<String>(){
             @Override

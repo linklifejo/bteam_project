@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
+import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.Detailmo;
 import com.hanul.bteam.LocalDDFragment;
@@ -132,7 +133,7 @@ public class WillGoAdapter extends
                             dto1.setName_desc(dto1.getContent());
                             b2.putSerializable("dto", dto1);
                             activity.bundle = b2;
-                            activity.fragmentControl(new Detailmo());
+                            activity.fragmentControl(new BoardTwo());
 
                         }
 
@@ -150,8 +151,7 @@ public class WillGoAdapter extends
 
 
 
-                Toast.makeText(context,
-                        "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -174,8 +174,7 @@ public class WillGoAdapter extends
                             delDto(position);
                             // 지우거나 추가하면 반드시 화면을 갱신시켜야 한다
                             notifyDataSetChanged();
-                            Toast.makeText(activity,
-                                    d + "삭제..",Toast.LENGTH_SHORT).show();
+
                         }
                     }
                     @Override

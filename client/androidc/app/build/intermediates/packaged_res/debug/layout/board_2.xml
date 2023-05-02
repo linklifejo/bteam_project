@@ -5,65 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/BoardName"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:background="#64B5FD"
-        android:gravity="center"
-        android:text="게시판"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <Button
+        android:id="@+id/btn_boardList"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
+        android:textSize="20sp"
+        android:text="목록"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.Button
-        android:id="@+id/btn_boardList"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:background="#64B5FD"
-        android:text="목록"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BoardName" />
-
-    <android.widget.Button
+    <Button
         android:id="@+id/btn_modify"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="11dp"
-        android:background="#64B5FD"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
         android:text="수정"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_delete"
-        app:layout_constraintTop_toBottomOf="@+id/BoardName" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.Button
+    <Button
         android:id="@+id/btn_delete"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:background="#64B5FD"
-        android:layout_marginTop="20dp"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="#E3E3E3"
+        android:textColor="#989898"
         android:text="삭제"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BoardName" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:gravity="left"
         android:text="게시글 제목"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BoardName" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_boardList" />
 
 
 
@@ -85,16 +77,14 @@
     android:layout_height="0dp"
     app:layout_constraintTop_toBottomOf="@+id/memberid"
     android:id="@+id/aaa">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rro"
+
+    <ImageView
+        android:id="@+id/filepath"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="18dp"
-        android:gravity="left"
-        android:text="내용"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="0dp" />
-    </LinearLayout>
+        android:layout_height="200dp"
+        android:scaleType="fitXY"/>
+
+</LinearLayout>
 
     <TextView
         android:id="@+id/content"
