@@ -2925,6 +2925,7 @@ drawable notify_panel_notification_icon_bg
 drawable search
 drawable seol_ak_san
 drawable seol_ak_san1
+drawable stemp
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3050,6 +3051,7 @@ id btnWillGo
 id btn_boardList
 id btn_cancel
 id btn_cel
+id btn_cho
 id btn_delete
 id btn_modify
 id btn_out
@@ -3425,6 +3427,7 @@ id tab1
 id tab2
 id tab3
 id tab4
+id tab5
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3628,6 +3631,7 @@ layout board_3
 layout boardview
 layout course
 layout courseview
+layout couuse
 layout custom_dialog
 layout danger
 layout design_bottom_navigation_item
@@ -3648,7 +3652,6 @@ layout design_text_input_start_icon
 layout detailmo
 layout goneview
 layout home_frag
-layout hulist
 layout joinlogin
 layout local_frag
 layout locald_frag
@@ -3730,6 +3733,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout splash_screen_view
+layout stemp
 layout support_simple_spinner_dropdown_item
 layout willgo_frag
 layout willgoview

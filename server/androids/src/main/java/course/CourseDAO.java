@@ -19,8 +19,8 @@ public class CourseDAO implements CourseService {
 	}
 
 	@Override
-	public List<CourseVO> course_list() {
-		return sql.selectList("co.list");
+	public List<CourseVO> course_list(int location_id) {
+		return sql.selectList("co.list",location_id);
 	}
 
 	@Override
@@ -48,6 +48,12 @@ public class CourseDAO implements CourseService {
 	public CourseVO course_info(String s) {
 		// TODO Auto-generated method stub
 		return sql.selectOne("co.cou_info", s);
+	}
+
+	@Override
+	public List<LocationVO> location_search_list(String search) {
+		// TODO Auto-generated method stub
+		return sql.selectList("co.search_list",search);
 	}
 
 
