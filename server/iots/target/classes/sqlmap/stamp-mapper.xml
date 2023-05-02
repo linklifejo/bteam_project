@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="st">
+
+<!-- 방명록 글 신규저장 -->
+<insert id='insert'>
+insert into stamp(ip, member_id, location_id, course_id, loccode)
+values ( #{ip}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
+</insert>
+
+<!-- 선택한 방명록글 삭제 -->
+<delete id='delete'>
+delete from stamp where id = #{id}
+</delete>
+<!-- 전체 스템프목록조회 -->
+<select id='list' resultType='stamp.StampVO'>
+select * from stamp 
+</select>
+
+<!-- 스템프존재 정보조회 -->
+<select id='info' resultType='stamp.StampVO'>
+select * from stamp where ip = #{ip} and member_id = #{member_id} and location_id = #{location_id} and course_id = #{course_id} 
+</select>
+</mapper>  
