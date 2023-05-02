@@ -21,6 +21,8 @@ import org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMetho
 
 import com.google.gson.Gson;
 
+import board.BoardFileVO;
+import board.BoardVO;
 import common.CommonUtility;
 import course.CourseServiceImpl;
 import course.CourseVO;
@@ -226,14 +228,27 @@ public class GoneController {
 		model.addAttribute("page", page);
 		return "gone/list";
 	}
+//	@RequestMapping("/insert.bo")
+//	public String insert(BoardVO vo, MultipartFile[] file
+//						, HttpServletRequest request) {
+//		//첨부파일 처리
+//		if( file.length > 1 ) {
+//			List<BoardFileVO> list = attached_file(file, request);
+//			vo.setFileInfo(list);
+//		}
+//		//화면에서 입력한 정보로 DB에 신규저장
+//		service.board_insert(vo);
+//		//화면연결
+//		return "redirect:list.bo";
+//	}
 	@ResponseBody @RequestMapping(value = "gonewrite",  produces="text/plain; charset=utf-8" )
 	public String gonewrite(HttpServletRequest req, Model model,MultipartRequest mReq,MultipartFile file) {
 		String data = (String) req.getParameter("param");
 		GoneVO vo = new Gson().fromJson(data, GoneVO.class);
-		
-//		CourseVO co =service.course_info(location_id);
-//		Integer course_id = co.getId() ;
-		
+		MultipartFile profilFile = mReq.getFile("file");
+		if( profilFile!=null ) {
+			vo.setFilepath( common.fileUpload((MultipartFile) file, "filepath", req) );	
+		}
 	
 		service.gone_write(vo);
 		Gson gson = new Gson();

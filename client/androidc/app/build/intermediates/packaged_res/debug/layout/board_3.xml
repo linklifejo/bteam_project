@@ -62,7 +62,7 @@
             android:text="업로드"
             android:textColor="#989898"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contentr" />
+            app:layout_constraintTop_toBottomOf="@+id/filepath" />
 
 
         <Button
@@ -75,20 +75,43 @@
             android:text="취소"
             android:textColor="#989898"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contentr" />
+            app:layout_constraintTop_toBottomOf="@+id/filepath" />
 
         <Button
             android:id="@+id/choice"
-            android:layout_width="100dp"
+            android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:backgroundTint="#FFFFFF"
             android:textColor="#989898"
             android:textSize="20sp"
-            android:text="산선택"
+            android:text="산을 선택해주세요>"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/filepath"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contentr"
+            app:srcCompat="@drawable/chi_ak_san"
+            android:scaleType="fitXY"/>
+
+        <Button
+            android:id="@+id/btn_cho"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="사진선택"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#989898"
+            app:layout_constraintStart_toEndOf="@+id/filepath"
+            app:layout_constraintTop_toBottomOf="@+id/contentr" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

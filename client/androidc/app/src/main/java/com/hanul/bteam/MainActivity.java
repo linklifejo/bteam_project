@@ -125,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.tab2:
                         fragmentControl(new SearchFragment());
                         break;
+                    case R.id.tab5:
+                        fragmentControl(new Stemp());
+                        break;
                     case R.id.tab3:
                         fragmentControl(new WillGoFragment());
                         break;
