@@ -154,13 +154,22 @@ String check;
 //    server.send(200, "text/plain", jollaState); //Send web page      
  
     }    
-  
+
+    IPAddress local_IP(192, 168, 0, 4);
+    IPAddress gateway(192, 168, 1, 1);
+    IPAddress subnet(255, 255, 0, 0);
+    IPAddress primaryDNS(8, 8, 8, 8);   //optional
+    IPAddress secondaryDNS(8, 8, 4, 4); //optional
     void setup() {
      Serial.begin(9600);
      arduSerial.begin(9600);
      pinMode(LED, OUTPUT);
      pinMode(D2, OUTPUT);     
 //     pinMode(A0, INPUT);
+ // Configures static IP address
+  if (!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS)) {
+    Serial.println("STA Failed to configure");
+  }
      WiFi.mode(WIFI_STA);
      WiFi.begin(ssid, password);
      Serial.println("");
