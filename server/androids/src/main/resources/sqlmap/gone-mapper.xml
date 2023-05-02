@@ -30,8 +30,15 @@ values (#{content}, #{member_id}, #{gone_id})
 </insert>
 
 <insert id='gonewrite'>
-insert into gone( title, content, contentr,member_id, location_id, course_id,loccode)
-values (#{title}, #{content}, #{contentr},#{member_id}, #{location_id}, #{course_id},#{loccode})
+insert into gone( title, content, contentr,member_id, location_id, course_id,loccode,filepath)
+values (#{title}, #{content}, #{contentr},#{member_id}, #{location_id}, #{course_id},#{loccode},#{filepath})
+</insert>
+
+<!-- 방명록첨부파일 신규저장 -->
+<insert id="fileIn">
+insert into gone_file(gone_id, filename, filepath)
+values( #{gone_id}, #{filename}, #{filepath} )
+
 </insert>
 
 

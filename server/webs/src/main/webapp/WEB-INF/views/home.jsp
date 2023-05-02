@@ -160,7 +160,7 @@
 
 	
 
-
+<!-- 
 <script type="text/javascript">
 var date = new Date();
 
@@ -191,13 +191,14 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 
 </script>
 
-
-
+ -->
 
 
 
 
 <script type="text/javascript">
+var sky;
+var pty;
 /* var intiDate = $("#datepick").val();
 
 $("form").submit(() => {
@@ -219,38 +220,92 @@ var hours = date.getHours()+'00';
 console.log(hours);
 console.log(initDate);
 
+
+function sendDate(nx,ny){	
+
 var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
 	+ "?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D"
 	+ "&pageNo=1&numOfRows=1000&dataType=json&base_date=" + initDate
-	+ "&base_time=0500&nx=55&ny=127";		
+	+ "&base_time=0500&nx=" + nx
+	+ "&ny=" + ny;
 	$.ajax({
 		url: url,
-		success: function (result) {
-			console.log('result> ',result);
-			var items = result.response.body.items.item;
-			console.log('ITEMS> ', items)
-/* 			var filteredItems = [];
-			for (var i = 0; i < items.length; i++){
-				if (items[i].category == "TMP"){
-					filteredItems.push(items[i]);
-				}
-			} */
 		
+		success: function (result) {
+		console.log(result);
+		var items = result.response.body.items.item
 	/* 		var filteredItems = items.filter((item) => {
 				return item.fcstTime = hours;
 			}); */
-			var filteredItems = items.filter((item) => {
+ 			var filteredsky = items.filter((item) => {
+// 				return item.category == "SKY";
+				return (item.category.toLowerCase() == "sky" || item.category.toLowerCase() == "pty") 
+					&&  item.fcstTime == hours
+				&&  item.fcstDate == initDate;
+			});
+ 			var sky = filteredsky.filter((item) => {
 // 				return item.category == "SKY";
 				return item.category.toLowerCase() == "sky" 
-					&&  item.fcstTime == hours;
+		
 			});
+ 			var pty = filteredsky.filter((item) => {
+// 				return item.category == "SKY";
+				return item.category.toLowerCase() == "pty" 
+		
+			});
+ 			pty = pty[0]
+ 			sky = sky[0]
+ 			console.log('pty ',pty);
+ 			console.log('sky ',sky);
+/*  			var filteredpty = items.filter((item) => {
+// 				return item.category == "SKY";
+				return item.category.toLowerCase() == "pty" 
+					&&  item.fcstTime == hours;
+			}); */
 
-			console.log('filteredItems> ',filteredItems);
+			console.log('filteredsky> ',filteredsky);
+
 			
+			console.log('filteredsky> ',filteredsky[0].fcstValue);
+		
+/* 			
+			- 하늘상태(SKY) 코드 : 맑음(1) sun, 구름많음(3)cloudy, 흐림(4)blur
+			- 강수형태(PTY) 코드 : (초단기) 없음(0), 비(1) rain, 비/눈(2)rain_snow, 눈(3)snow, 빗방울(5) , 빗방울눈날림(6), 눈날림(7) 
+
+			
+			(단기) 없음(0), 비(1), 비/눈(2), 눈(3), 소나기(4)  */
+		
 			/* makeTable(filteredItems); */
+			
+			var s = ['', 'imgs/sun.png','','imgs/cloudy.png', 'imgs/blur.png']
+			var p = ['', 'imgs/rain.png','imgs/rain_snow.png', 'imgs/snow.png','','imgs/raindrop.png','imgs/drift.png']
+			
+			/* $("#cst").css('src', 'img/heart'+weather+'.png'); */
+/* 			$("#cst").css('src', s[sky]);
+			$("#cst").css('src', s[pty]); */
+			
+			console.log('pty.fcstValue> ',pty.fcstValue);
+			console.log('sky.fcstValue> ',sky.fcstValue);
+			
+			if(Number(pty.fcstValue) == 0){
+				sky = Number(sky.fcstValue);
+				console.log('sky',sky,s[sky])
+				$("#cst").attr('src', s[sky]);
+			}else{
+				pty = Number(pty.fcstValue);
+				console.log('pty',pty,p[pty])
+				$("#cst").attr('src', p[pty]);
+			}
+			console.log($("#cst").attr('src'))
+		/* 	
+			$("#cst").text(sky);
+			$("#cst").text(pty); */
 			
 		},
 	});
+}
+	
+	
 	/*}	
  	weather(initDate);
 
@@ -274,35 +329,21 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 	} */
 </script>
 
-	<div class="container">
- 	<h1>기상청 날씨 API</h1>
-	<h2>종로 날씨</h2>
-	<form action="">
-		<label for="datepick">날짜 선택</label>
-		<input type="date" id="datepick"/>
-		<button>조회</button>
-	</form>
+
+
+ 
 	<table class="table table-hover">
 		<thead>
-			<tr>
-				<th>날짜</th>
-				<th>시간</th>
-				<th>온도</th>
-			</tr>
+				<tr>날씨</tr>
+				<tr><img id="cst" alt="날씨이미지"></tr>
+
 		</thead>
-		<tbody>
-			<tr>
-				<th colspan>조회내용이 없습니다</th>
-			</tr>
-		</tbody>
-	</table>
-	</div>
-	<p class="result"></p>
-	
+	</table>	
 	
 	
 	
 <body onload="showImage()">
+
 <div class="img">
  <img id="introimg" border="0" style= height:700px;width:100%;>
 </div>
@@ -318,6 +359,39 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 </c:forEach>
  --%>
 <div class='smdd'>
+
+<button style="width: 50px; height: 50px;" type='button' onclick='sendDate(60,127)'></button>
+
+<script>
+$('button').on({
+    'click': function() {
+         var onclick = ($(this).attr('onclick') === 'sendDate(60,127)')
+            ? 'sendDate(98,76)'
+            : 'sendDate(89,90)';
+         $(this).attr('onclick', onclick);
+    }
+});
+</script>
+
+
+
+
+
+
+<table>
+	<c:forEach items='${weather_list}' var='vo'>
+			<a href='info.go?id=${vo.id}'></a>
+				<span style="display:inline-block; height:450px; width:350px;">
+								
+				<div  style= "height:450px; width:350px;">${vo.nx}</div>
+							
+								
+			</span>
+	</c:forEach>
+</table>
+
+
+
 
 <div>
 	<h1 class="mainfont"><img alt="" src="imgs/mainclimb.png"></h1>
@@ -365,7 +439,7 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 			<a>지도로 위치 찾아보기</a>
 			</div>
 			<div>
-		    <a href="https://map.kakao.com/"><button type="button" class="btn btn-dark" style="font-size: 20dp;">지도 찾기</button></a>		    
+		    <a href="#" onclick="window.open('https://map.kakao.com/','width=#,height=#')"><button type="button" class="btn btn-dark" style="font-size: 20dp;">지도 찾기</button></a>		    
 			</div>
 		    </div>
 		    </a>
@@ -388,7 +462,7 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 			<a>산 정보 찾아보기</a>
 			</div>
 			<div>
-		    <a href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/" ><button type="button" class="btn btn-dark">산정보 찾기</button></a>		    
+		    <a href="#" onclick="window.open('https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/','width=#,height=#')"><button type="button" class="btn btn-dark">산정보 찾기</button></a>		    
 			</div>
 		    </div>
 		    </a>

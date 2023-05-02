@@ -75,6 +75,7 @@ public class LocalDDFragment extends Fragment {
 
         // 만든 어댑터를 리싸이클러뷰에 붙인다
         CommonMethod commonMethod = new CommonMethod();
+        commonMethod.setParams("location_id", activity.location );
         commonMethod.getData("list", new Callback<String>(){
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
