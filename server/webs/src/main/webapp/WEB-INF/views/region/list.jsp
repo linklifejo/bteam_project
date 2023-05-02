@@ -50,7 +50,7 @@ table tr:hover { cursor: pointer;  background-color: #f6f6f6 }
 <body>
 <h3>지역별산</h3>
 
-<form method='post' action='list.location'>
+<%-- <form method='post' action='list.location'>
 <div id='list-top' class='w-px1000 top' >
 <ul style="padding-left: 0">
 	<li>서울-경기</li>
@@ -64,7 +64,7 @@ table tr:hover { cursor: pointer;  background-color: #f6f6f6 }
 	</li>
 </ul>
 </div>
-</form>
+</form> --%>
 
 <%-- 
 <table class='w-px1000 tb-list'>
@@ -94,13 +94,15 @@ table tr:hover { cursor: pointer;  background-color: #f6f6f6 }
 <div class="homeimg">
 <c:forEach items='${local_list}' var='vo'>
 <a href='info.re?loccode=${vo.loccode}'></a>
-<tr>
-	<td>${vo.id }</td>
-	<td>${vo.locname}</td>
-	<td><a href='info.re?id=${vo.id}'><img alt="서울산 사진" src="${vo.filepath }" style="width: 300px" height="300px;"></a></td>
-	<td>${vo.address }</td>
-</tr>
-		</span>
+<span style="width: 350px;">
+<div style="display: flex; width: 350px;">
+	<div>
+	<div><a href='info.re?id=${vo.id}'><img alt="서울산 사진" src="${vo.filepath }" style="width: 300px" height="300px;"></a></div>
+	<div>${vo.locname}</div>
+	
+	</div>
+</div>
+</span>
 </c:forEach>
 </div>
 </tbody>

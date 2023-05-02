@@ -98,6 +98,7 @@ public class HomeController {
 		//DB에서 방명록 목록을 조회해온다
 		List<GoneFileVO> list = (List<GoneFileVO>)service.GoneFile_list();
 		
+		
 		model.addAttribute("list", list);
 		
 		session.removeAttribute("category");

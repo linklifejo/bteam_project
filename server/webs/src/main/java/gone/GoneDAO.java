@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import course.CourseVO;
 import location.LocationVO;
 import member.MemberVO;
+import weather.WeatherVO;
 
 @Repository
 public class GoneDAO implements GoneService {

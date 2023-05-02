@@ -5,6 +5,7 @@ import java.util.List;
 import course.CourseVO;
 import location.LocationVO;
 import member.MemberVO;
+import weather.WeatherVO;
 
 public interface GoneService {
 	//CRUD

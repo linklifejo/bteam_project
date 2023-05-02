@@ -36,10 +36,10 @@ public class WeatherController {
 	
 	//고객목록화면 요청
 	@RequestMapping("/")
-	public String list(Model model, HttpSession session ) {
+	public String weather_list(Model model, HttpSession session ) {
 		session.setAttribute("category", "we");
-		List<WeatherVO> list = service.weather_list();
-		model.addAttribute("list", list);
+		List<WeatherVO> weather_list = service.weather_list();
+		model.addAttribute("weather_list", weather_list);
 		return "home";
 	}
 }

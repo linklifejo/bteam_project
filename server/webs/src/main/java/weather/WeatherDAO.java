@@ -18,7 +18,7 @@ public class WeatherDAO implements WeatherService {
 
 	@Override
 	public List<WeatherVO> weather_list() {
-		return sql.selectList("we.list");
+		return sql.selectList("we.weather_list");
 	}
 
 	@Override

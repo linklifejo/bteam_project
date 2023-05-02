@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import course.CourseVO;
 import location.LocationVO;
 import member.MemberVO;
+import weather.WeatherVO;
 
 @Service
 public class GoneServiceImpl implements GoneService {
@@ -119,6 +120,7 @@ public class GoneServiceImpl implements GoneService {
 		// TODO Auto-generated method stub
 		return dao.gone_myname(member_id);
 	}
+
 
 
 
