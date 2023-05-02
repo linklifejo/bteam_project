@@ -120,6 +120,26 @@ public class MemberController {
 		return gson.toJson( (MemberVO) vo);	 
 	}
 	
+	@ResponseBody @RequestMapping(value="/update", produces="text/html; charset=utf-8")
+	public String update(HttpServletRequest req, Model model,MultipartRequest mReq,MultipartFile file) {
+		String data = (String) req.getParameter("param");
+		MemberVO vo = new Gson().fromJson(data, MemberVO.class);  
+		vo.setGender( vo.getGender()==null ? "남" : vo.getGender() );
+		HashMap<String,Object> map = new HashMap<String, Object>();
+		MultipartFile profilFile = mReq.getFile("file");
+		//첨부된 파일이 있는 경우
+		if( profilFile!=null ) {
+			vo.setProfile( common.fileUpload((MultipartFile) file, "profile", req) );	
+		}
+		String salt = common.generateSalt();
+		vo.setPw( common.getEncrypt(vo.getPw(), salt) );
+		vo.setSalt(salt);
+		service.member_update(vo);
+		Gson gson = new Gson();
+		 
+		return gson.toJson( (MemberVO) vo);	 
+	}
+	
 		
 	
 	//아이디 중복확인처리 요청
@@ -298,34 +318,16 @@ public class MemberController {
 	}
 	
 	
-	
-	//로그아웃처리 요청
-	@RequestMapping("/logout")
-	public String logout(HttpSession session, HttpServletRequest request) {
-
-		MemberVO vo = (MemberVO)session.getAttribute("loginInfo");
-		String social = vo.getSocial();
-		
-		//세션에 저장한 로그인정보를 삭제
-		session.removeAttribute("loginInfo");
-		
-		if( social != null && social.equals("K") ) {			
-			
-			//"https://kauth.kakao.com/oauth/logout?
-			//client_id=${YOUR_REST_API_KEY}
-			//&logout_redirect_uri=${YOUR_LOGOUT_REDIRECT_URI}"
-			StringBuffer url 
-			= new StringBuffer("https://kauth.kakao.com/oauth/logout?");
-			url.append("client_id=").append(KAKAO_ID);
-			url.append("&logout_redirect_uri=")
-				.append( common.appURL(request) );
-			return "redirect:" + url.toString();
-			
-		}else {		
-			//응답화면연결
-			return "redirect:/";
-		}
-	}
+//	
+//	//로그아웃처리 요청
+//	@ResponseBody @RequestMapping(value="/logout", produces="text/html; charset=utf-8")
+//	public String logout(HttpServletRequest req,Model model) {
+//		String id =  req.getParameter("id");
+//		Gson gson = new Gson();
+//		 
+//		return gson.toJson(id);	 
+//		
+//	}
 	
 	@Autowired private CommonUtility common;
 	

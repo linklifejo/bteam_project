@@ -83,6 +83,12 @@ public class MemberDAO implements MemberService {
 		return sql.selectOne("member.login", map);
 	}
 
+	@Override
+	public int member_logout(String id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("member.logout",id);
+	}
+
 	
 
 }

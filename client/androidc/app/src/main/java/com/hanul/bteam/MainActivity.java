@@ -125,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.tab2:
                         fragmentControl(new SearchFragment());
                         break;
+                    case R.id.tab5:
+                        fragmentControl(new Stemp());
+                        break;
                     case R.id.tab3:
                         fragmentControl(new WillGoFragment());
                         break;
@@ -192,12 +195,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void fragmentControl(Fragment f) {
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.contain, f).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contain, f).addToBackStack(null).commit();
     }
 
     public void fragmentControl(Fragment f, Bundle b) {
         bundle = b;
-        getSupportFragmentManager().beginTransaction().replace(R.id.contain, f).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contain, f).addToBackStack(null).commit();
     }
 
     // 위험권한

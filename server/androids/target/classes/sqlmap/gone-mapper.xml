@@ -29,7 +29,17 @@ insert into gone_comment (content, member_id, gone_id)
 values (#{content}, #{member_id}, #{gone_id})
 </insert>
 
+<insert id='gonewrite'>
+insert into gone( title, content, contentr,member_id, location_id, course_id,loccode,filepath)
+values (#{title}, #{content}, #{contentr},#{member_id}, #{location_id}, #{course_id},#{loccode},#{filepath})
+</insert>
 
+<!-- 방명록첨부파일 신규저장 -->
+<insert id="fileIn">
+insert into gone_file(gone_id, filename, filepath)
+values( #{gone_id}, #{filename}, #{filepath} )
+
+</insert>
 
 
 <select id='homeList' resultType='gone.HomeVO'>
@@ -42,6 +52,25 @@ from(select g.id,filename, filepath,member_id,gone_time,title,g.content,( select
             from gone g, gone_file f where g.id=f.gone_id and g.type= #{type} and f.ptype= #{ptype} order by g.readcnt desc)
 where rownum <= #{num}
 ]]>
+</select>
+
+<select id='mou' resultType='gone.HomeVO'>
+<![CDATA[ 
+select *
+from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,contentr,( select locname from location where id=g.location_id) locname,
+								( select name_desc from location where id = g.location_id)name_desc,
+                               ( select name from member where id=g.member_id) name,
+                               ( select couname from course where id=g.course_id) couname
+            from gone g, gone_file f where g.id=f.gone_id and g.member_id = #{id} and g.type= #{type} and f.ptype= #{ptype} order by g.readcnt desc)
+where rownum <= #{num}
+]]>
+</select>
+
+
+<select id='diary' resultType='gone.HomeVO'>
+ 
+select contentr,title,member_id from gone where type= '1'
+and member_id=#{id}
 </select>
 
 <!-- 방명록첨부파일 신규저장 -->
@@ -170,11 +199,17 @@ order by id
 
 
 
+
+
+
+
+
+
 <!-- 게시판 목록조회 -->
 <select id='bolist' resultType='gone.GoneVO'>
-select title,member_id,gone_time,content
-from gone 
-order by gone_date
+select g.*,(select filepath from gone_file where gone_id= g.id) filepath
+from gone g 
+order by gone_date desc
 </select>
 
 <!-- 지역정보 목록조회 -->

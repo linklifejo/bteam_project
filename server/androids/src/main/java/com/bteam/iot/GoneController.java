@@ -16,10 +16,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMethodMappingNamingStrategy;
 
 import com.google.gson.Gson;
 
+import board.BoardFileVO;
+import board.BoardVO;
 import common.CommonUtility;
 import course.CourseServiceImpl;
 import course.CourseVO;
@@ -30,6 +33,7 @@ import gone.GoneServiceImpl;
 import gone.GoneVO;
 import gone.HomeVO;
 import location.LocationVO;
+import member.MemberVO;
 
 @Controller
 public class GoneController {
@@ -224,6 +228,33 @@ public class GoneController {
 		model.addAttribute("page", page);
 		return "gone/list";
 	}
+//	@RequestMapping("/insert.bo")
+//	public String insert(BoardVO vo, MultipartFile[] file
+//						, HttpServletRequest request) {
+//		//첨부파일 처리
+//		if( file.length > 1 ) {
+//			List<BoardFileVO> list = attached_file(file, request);
+//			vo.setFileInfo(list);
+//		}
+//		//화면에서 입력한 정보로 DB에 신규저장
+//		service.board_insert(vo);
+//		//화면연결
+//		return "redirect:list.bo";
+//	}
+	@ResponseBody @RequestMapping(value = "gonewrite",  produces="text/plain; charset=utf-8" )
+	public String gonewrite(HttpServletRequest req, Model model,MultipartRequest mReq,MultipartFile file) {
+		String data = (String) req.getParameter("param");
+		GoneVO vo = new Gson().fromJson(data, GoneVO.class);
+		MultipartFile profilFile = mReq.getFile("file");
+		if( profilFile!=null ) {
+			vo.setFilepath( common.fileUpload((MultipartFile) file, "filepath", req) );	
+		}
+	
+		service.gone_write(vo);
+		Gson gson = new Gson();
+		 
+		return gson.toJson( (GoneVO) vo);	 
+	}
 
 	@ResponseBody @RequestMapping(value="/selectHome", produces="text/plain; charset=utf-8" )
 	public String selectHome(HttpServletRequest req, Model model) {
@@ -245,18 +276,36 @@ public class GoneController {
 	public String selectmou(HttpServletRequest req, Model model) {
 		String type = (String) req.getParameter("type");		
 		String ptype = (String) req.getParameter("ptype");
+		String member_id = (String) req.getParameter("member_id");
 		Integer num = Integer.valueOf(req.getParameter("num")) ;
 		HashMap<String,Object> map = new HashMap<String, Object>();
 		map.put("type", type);
-		map.put("ptype", ptype);		
+		map.put("ptype", ptype);	
+		map.put("id", member_id);
 		map.put("num", num);	
-		ArrayList<HomeVO> list = (ArrayList<HomeVO>)service.homeList(map);
+		ArrayList<HomeVO> list = (ArrayList<HomeVO>)service.mou(map);
 		
-		//model.addAttribute("list", list);
 		Gson gson = new Gson();
 		return gson.toJson( (ArrayList<HomeVO>)list );		
 		
 	}
+	@ResponseBody @RequestMapping(value="/diary", produces="text/plain; charset=utf-8" )
+	public String diary(HttpServletRequest req, Model model) {	
+		String type = (String) req.getParameter("type");		
+		String ptype = (String) req.getParameter("ptype");
+		String member_id = (String) req.getParameter("member_id");
+		Integer num = Integer.valueOf(req.getParameter("num")) ;
+		HashMap<String,Object> map = new HashMap<String, Object>();
+		map.put("type", type);
+		map.put("ptype", ptype);	
+		map.put("id", member_id);
+		map.put("num", num);	
+		ArrayList<HomeVO> list = (ArrayList<HomeVO>)service.diary(map);
+		Gson gson = new Gson();
+		return gson.toJson( (ArrayList<HomeVO>)list );			
+	}
+	
+	
 //	// 지역별 이미지및 정보 가져오기
 //	@ResponseBody @RequestMapping(value="/localImage", produces="text/plain; charset=utf-8" )
 //	public String selectImage(HttpServletRequest req, Model model) {

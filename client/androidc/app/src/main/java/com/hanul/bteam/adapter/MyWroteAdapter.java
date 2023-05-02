@@ -57,8 +57,7 @@ public class MyWroteAdapter extends
                 Bundle b = new Bundle();
                 b.putSerializable("dto", dto);
                 activity.fragmentControl(new BoardTwo(),b);
-                Toast.makeText(context,
-                        "산이름 : " + dto.getTitle(), Toast.LENGTH_SHORT).show();
+
             }
         });
     }

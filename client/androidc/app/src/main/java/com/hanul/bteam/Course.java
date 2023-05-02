@@ -21,6 +21,7 @@ import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.adapter.CourseAdapter;
 import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.GoneDTO;
+import com.hanul.bteam.dto.LocationDTO;
 
 import java.util.ArrayList;
 
@@ -48,7 +49,7 @@ public class Course extends Fragment {
                 container, false);
         activity =(MainActivity)getActivity();
         Bundle b = activity.bundle;
-        GoneDTO d = (GoneDTO) b.getSerializable("dto");
+        LocationDTO d = (LocationDTO) b.getSerializable("dto");
         TextView t = view.findViewById(R.id.locname);
         t.setText(d.getLocname());
         ImageView i = view.findViewById(R.id.filepath);

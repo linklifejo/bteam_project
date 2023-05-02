@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import course.CourseVO;
 import location.LocationVO;
+import member.MemberVO;
 
 @Service
 public class GoneServiceImpl implements GoneService {
@@ -129,6 +130,24 @@ public class GoneServiceImpl implements GoneService {
 	public List<GoneVO> bolist() {
 		// TODO Auto-generated method stub
 		return dao.bolist();
+	}
+
+	@Override
+	public List<HomeVO> mou(HashMap<String, Object> vo) {
+		// TODO Auto-generated method stub
+		return dao.mou(vo);
+	}
+
+	@Override
+	public List<HomeVO> diary(HashMap<String, Object> vo) {
+		// TODO Auto-generated method stub
+		return dao.diary(vo);
+	}
+
+	@Override
+	public int gone_write(GoneVO vo) {
+		// TODO Auto-generated method stub
+		return dao.gone_write(vo);
 	}
 
 	

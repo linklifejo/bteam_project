@@ -1,6 +1,7 @@
 package com.hanul.bteam.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hanul.bteam.BoardTwo;
+import com.hanul.bteam.BoardWrite;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.CourseDTO;
@@ -50,7 +53,16 @@ public class CourseAdapter extends
         // 불러온 데이터를 ViewHolder에 만들어 놓은 setDto를
         // 사용하여 데이터를 셋팅시킨다
         holder.setDto(dto);
+        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle b = new Bundle();
+                b.putSerializable("dto", dto);
+                activity.bundle = b;
+                activity.fragmentControl(new BoardWrite(),b);
 
+            }
+        });
     }
 
     @Override

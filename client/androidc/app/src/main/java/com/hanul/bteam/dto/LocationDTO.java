@@ -9,9 +9,26 @@ import java.io.Serializable;
  */
 public class LocationDTO implements Serializable {
     private int id;
-    private String type, locname, name_desc, post,address,latitude,longitude,filename,filepath,loccode,heigh;
+    private String type, locname, name_desc, post,address,latitude,longitude,filename,filepath,loccode,heigh,filepathd,filenamed;
     public LocationDTO(){}
-    public LocationDTO(int id, String type, String locname, String name_desc, String post, String address, String latitude, String longitude, String filename, String filepath, String loccode,String heigh) {
+
+    public String getFilepathd() {
+        return filepathd;
+    }
+
+    public void setFilepathd(String filepathd) {
+        this.filepathd = filepathd;
+    }
+
+    public String getFilenamed() {
+        return filenamed;
+    }
+
+    public void setFilenamed(String filenamed) {
+        this.filenamed = filenamed;
+    }
+
+    public LocationDTO(int id, String type, String locname, String name_desc, String post, String filepathd, String filenamed, String address, String latitude, String longitude, String filename, String filepath, String loccode, String heigh) {
         this.id = id;
         this.type = type;
         this.locname = locname;
@@ -23,6 +40,8 @@ public class LocationDTO implements Serializable {
         this.filename = filename;
         this.filepath = filepath;
         this.loccode = loccode;
+        this.filepathd=filepathd;
+        this.filenamed=filenamed;
     }
     public int getId() {
         return id;

@@ -102,17 +102,13 @@ public class CourseController {
 	}
 	
 	
-	//고객목록화면 요청
-	@RequestMapping("/list.co")
-	public String list(Model model, HttpSession session ) {
-		session.setAttribute("category", "cu");
-		List<CourseVO> list = service.course_list();
-		model.addAttribute("list", list);
-		return "course/list";
-	}
+	
+	
 	@ResponseBody @RequestMapping(value="/list", produces="text/plain; charset=utf-8" )
-	public String selectLocal(HttpServletRequest req, Model model) {	
-		List<CourseVO> list = service.course_list();
+	public String selectLocal(HttpServletRequest req, Model model) {
+		Integer location_id = Integer.valueOf(req.getParameter("location_id")) ;
+//		String search = (String) req.getParameter("search");
+		List<CourseVO> list = service.course_list(location_id);
 		Gson gson = new Gson();
 		return gson.toJson( (ArrayList<CourseVO>)list );		
 	}
