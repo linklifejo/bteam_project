@@ -95,6 +95,7 @@ public class HomeController {
 		List<LocationVO> Loc_info = (List<LocationVO>)service.Loc_info();
 		model.addAttribute("Loc_info", Loc_info);
 		
+		
 		//DB에서 방명록 목록을 조회해온다
 		List<GoneFileVO> list = (List<GoneFileVO>)service.GoneFile_list();
 		

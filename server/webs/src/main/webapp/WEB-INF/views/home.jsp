@@ -332,20 +332,20 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 
 
  
-	<table class="table table-hover">
+	
 		<thead>
 				<tr>날씨</tr>
 				<tr><img id="cst" alt="날씨이미지"></tr>
 
 		</thead>
-	</table>	
+	
 	
 	
 	
 <body onload="showImage()">
 
 <div class="img">
- <img id="introimg" border="0" style= height:700px;width:100%;>
+ <img id="introimg" border="0" style= height:700px;width:1500px;>
 </div>
 
 <div class="mainsm">
@@ -419,6 +419,12 @@ $('button').on({
 							</table>
 							</div>
 </div>
+
+
+
+
+
+
   <body class="bd-example-cssgrid">
 
     <!-- Example Code -->
@@ -486,11 +492,11 @@ $('button').on({
 										<span style="display:inline-block; height:500px; width:350px;">
 								     
 								<div class="card" style= "height:450px; width:350px;">
-								  <img src="${vo.filepath}" class="card-img-top" alt="사진" >
+								  <img src="${vo.filepath}" class="card-img-top h-100" alt="사진" >
 								  <div class="card-body">
 								    <h5 class="card-title">${vo.title}</h5>
 								    <p class="card-text">${vo.content}</p>
-								    <a href='info.go?id=${vo.gone_id}' class="btn btn-primary mainbtn">확인하기</a>
+								    <a href='info.go?id=${vo.gone_id}' class="btn btn-primary mainbtn" style="color: white;">확인하기</a>
 								  </div>
 								</div>
 								     
