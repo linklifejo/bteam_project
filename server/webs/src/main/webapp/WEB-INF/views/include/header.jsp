@@ -3,23 +3,26 @@
 <html>
 <header>
 
-	
+    
 	<div class="head">
 	<div class="mainhead">
 		</li>
 	</div>
 	<div class="header">
-			<!--날씨정보  <div style="background-color: #80c3ed;">
-					<tr>날씨</tr>
-				
-
+			 
+			<!-- <div style="background-color: #80c3ed;">
+	<MARQUEE scrolldelay="2000" scrollamount="70" width="200" height="50" direction="up">
 <body>
-	<MARQUEE direction="up"><img id="cst" alt="날씨이미지">스크롤 방향 설정</MARQUEE>
-
-</body>
+ 
+ 	<table class="weather">
+		<tbody>
+		
+		</tbody>
+ 	</table>
+ 
 	
-				
-				<tr><img id="cst" alt="날씨이미지"></tr>
+</body>
+	</MARQUEE>
 			</div> -->
 	<div>
 	<nav>
@@ -86,6 +89,8 @@
 		</c:if>
 		</ul>
 	</div>
+	
+	
 	</div>
 	</div>
 	<div>
@@ -173,12 +178,12 @@ header nav a:hover, header nav a.active { color:#fff;
 	z-index: 100;
 }
 
+
+
 </style>
 
 
-
-<!-- 날씨정ㅂ
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 var sky;
 var pty;
 /* var intiDate = $("#datepick").val();
@@ -202,13 +207,18 @@ var hours = date.getHours()+'00';
 console.log(hours);
 console.log(initDate);
 
+$(function(){
+	
+	
+	<c:forEach items='${weather_list}' var='vo'>
+			
 var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
 	+ "?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D"
 	+ "&pageNo=1&numOfRows=1000&dataType=json&base_date=" + initDate
-	+ "&base_time=0500&nx=55&ny=127";		
+	+ "&base_time=0500&nx=" + ${vo.nx}
+	+ "&ny=" + ${vo.ny};	
 	$.ajax({
 		url: url,
-		
 		success: function (result) {
 		console.log(result);
 		var items = result.response.body.items.item
@@ -268,41 +278,28 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 			if(Number(pty.fcstValue) == 0){
 				sky = Number(sky.fcstValue);
 				console.log('sky',sky,s[sky])
-				$("#cst").attr('src', s[sky]);
+ 				$("table.weather tbody").append('<tr><td><img src="'+s[sky]+'"></td><td>${vo.region}</td></tr>');
+				//$("table.weather tbody tr").eq(1).append('<td><img src="'+s[sky]+'"></td>');
+				
 			}else{
 				pty = Number(pty.fcstValue);
 				console.log('pty',pty,p[pty])
-				$("#cst").attr('src', p[pty]);
+				$("table.weather tbody").append('<tr><td><img src="'+p[pty]+'"></td><td>${vo.region}</td></tr>');
+				//$("table.weather tbody tr").eq(1).append('<td><img src="'+p[pty]+'"></td>');
+				/* $("#cst").attr('src', p[pty]); */
 			}
-			console.log($("#cst").attr('src'))
+				//$("table.weather tbody tr").eq(0).append('<th>${vo.region}</th>');
+			/* console.log($("#cst").attr('src')) */
 		/* 	
 			$("#cst").text(sky);
 			$("#cst").text(pty); */
 			
 		},
 	});
+</c:forEach>
+})
+ -->
 	
-	
-	/*}	
- 	weather(initDate);
+</script>
 
-	function makeTable(src){
-		var tableHTML ='';
-		src.forEach(item=>{
-			tableHTML += 
-			'<tr><td>${filteredItems.fcstDate}</td><td>${filteredItems.fcstTime}</td><td>${filteredItems.fcstValue}</td></tr>';
-		});
-		$("table tbody").html(tableHTML);
-	} */
-	
-/* 	weather(initDate);
-	
-	function makeTable(src){
-		var tableHTML = '';
-		src.forEach(item=>{
-			tableHTML +='<tr><td>${item.fcstDate}</td><td>${item.fcstTime}</td><td>${item.fcstValue}</td></tr>';
-		});
-		$('table tbody').html(tableHTML);
-	} */
-</script> -->
 

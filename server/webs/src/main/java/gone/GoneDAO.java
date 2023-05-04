@@ -134,6 +134,10 @@ public class GoneDAO implements GoneService {
 		return sql.selectList("go.gone_myname",member_id);
 	}
 
+	public List<WeatherVO> weather_list() {
+		return sql.selectList("go.weather_list");
+	}
+
 
 
 
