@@ -19,6 +19,7 @@ import gone.GoneFileVO;
 import gone.GoneServiceImpl;
 import location.LocationVO;
 import member.MemberServiceImpl;
+import weather.WeatherVO;
 
 
 /**
@@ -99,8 +100,13 @@ public class HomeController {
 		//DB에서 방명록 목록을 조회해온다
 		List<GoneFileVO> list = (List<GoneFileVO>)service.GoneFile_list();
 		
-		
 		model.addAttribute("list", list);
+		
+		
+		
+		
+		List<WeatherVO> weather_list = (List<WeatherVO>)service.weather_list();
+		model.addAttribute("weather_list", weather_list);
 		
 		session.removeAttribute("category");
 		return "home";

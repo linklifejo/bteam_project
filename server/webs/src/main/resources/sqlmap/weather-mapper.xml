@@ -35,6 +35,8 @@ from weather
 where region = #{region} and region_child = #{region_child};
 </select>
 
+
+
 <!-- 전국지역 날씨 -->
 <select id='weather_list' resultType='weather.WeatherVO'>
 select region, nx, ny
