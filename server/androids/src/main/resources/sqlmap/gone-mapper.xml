@@ -11,16 +11,17 @@ from gone_comment c inner join member m on c.member_id = m.id
 where gone_id = #{gone_id}
 order by c.id desc
 </select>
-
 <!-- 방명록댓글 삭제 -->
 <delete id='commentDelete'>
 delete from gone_comment where id = #{id}
 </delete>
 
+
 <!-- 방명록댓글 변경저장 -->
 <update id='commentUpdate'>
 update gone_comment set content = #{content} where id = #{id}
 </update>
+
 
 
 <!-- 방명록댓글 신규저장 -->
@@ -29,17 +30,71 @@ insert into gone_comment (content, member_id, gone_id)
 values (#{content}, #{member_id}, #{gone_id})
 </insert>
 
-<insert id='gonewrite'>
-insert into gone( title, content, contentr,member_id, location_id, course_id,loccode,filepath)
-values (#{title}, #{content}, #{contentr},#{member_id}, #{location_id}, #{course_id},#{loccode},#{filepath})
+<insert id='insert'>
+insert into gone(type, title, content, member_id, location_id, course_id, loccode)
+values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
+<selectKey keyProperty="id" order="AFTER" resultType='integer'>
+select seq_gone.currval from dual
+</selectKey>
 </insert>
+
+<insert id='gonewrite'>
+insert into gone( title, content, contentr,member_id, location_id, course_id,loccode)
+values (#{title}, #{content}, #{contentr},#{member_id}, #{location_id}, #{course_id},#{loccode})
+<selectKey keyProperty="id" order="AFTER" resultType='integer'>
+select seq_gone.currval from dual
+</selectKey>
+</insert>
+
+
+
+
+
+<!-- 선택한 방명록글 삭제 -->
+<delete id='delete'>
+delete from gone where id = #{id}
+</delete>
+
+
+
+
+
+
+<!-- 방명록댓글 변경저장 -->
+<update id='gonewroteup'>
+update gone set title = #{title},content = #{content},contentr = #{contentr},member_id= #{member_id} where id = #{id}
+</update>
+
+<insert id="gonefileInsert">
+insert into gone_file(gone_id, filepath,ptype)
+values( #{id},  #{filepath}, '1' )
+
+</insert>
+
+<!-- 방명록댓글 삭제 -->
+<delete id='gonefileDelete'>
+delete from gone_file where gone_id=#{id}
+</delete>
+
+
+<!-- 삭제대상 파일정보삭제 -->
+<delete id="fileDelete">
+delete from gone_file where id in ( ${removed} )
+</delete>
+
 
 <!-- 방명록첨부파일 신규저장 -->
-<insert id="fileIn">
-insert into gone_file(gone_id, filename, filepath)
-values( #{gone_id}, #{filename}, #{filepath} )
-
+<insert id="fileInsert">
+<foreach collection="fileInfo" item="info" separator=" "
+		open="insert all" close="select * from dual">
+into gone_file(gone_id, filename, filepath)
+values( #{id}, #{info.filename}, #{info.filepath} )
+</foreach>
 </insert>
+
+
+<!-- 방명록첨부파일 신규저장 -->
+
 
 
 <select id='homeList' resultType='gone.HomeVO'>
@@ -73,14 +128,7 @@ select contentr,title,member_id from gone where type= '1'
 and member_id=#{id}
 </select>
 
-<!-- 방명록첨부파일 신규저장 -->
-<insert id="fileInsert">
-<foreach collection="fileInfo" item="info" separator=" "
-		open="insert all" close="select * from dual">
-into gone_file(gone_id, filename, filepath)
-values( #{id}, #{info.filename}, #{info.filepath} )
-</foreach>
-</insert>
+
 
 <!-- 방명록 글 신규저장 -->
 <insert id='insert_will'>
@@ -88,28 +136,17 @@ insert into gone(type, title, content, member_id, location_id, course_id, loccod
 values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
 </insert>
 <!-- 방명록 글 신규저장 -->
-<insert id='insert'>
-insert into gone(type, title, content, member_id, location_id, course_id, loccode)
-values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
-<selectKey keyProperty="id" order="AFTER" resultType='integer'>
-select seq_gone.currval from dual
-</selectKey>
-</insert>
 
-<!-- 선택한 방명록글 삭제 -->
-<delete id='delete'>
-delete from gone where id = #{id}
-</delete>
+
+
+
+
 
 <!-- 선택한 방명록 첨부파일 조회 -->
 <select id='fileInfo' resultType='gone.GoneFileVO'>
-select * from gone_file where id = #{id}
+select * from gone_file where gone_id = #{id}
 </select>
 
-<!-- 삭제대상 파일정보삭제 -->
-<delete id="fileDelete">
-delete from gone_file where id in ( ${removed} )
-</delete>
 
 <!-- 삭제대상 파일정보 조회-->
 <select id='fileRemoved' resultType='gone.GoneFileVO'>
