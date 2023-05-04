@@ -8,8 +8,11 @@ import location.LocationVO;
 import member.MemberVO;
 
 public interface GoneService {
-	//CRUD
+	//CRUD 글쓰기
 	int gone_write(GoneVO vo);
+	int gone_fileInsert(GoneFileVO vo);
+	
+	
 	int gone_insert(HashMap<String,Object> map);//방명록 새글저장
 	
 	
@@ -18,10 +21,31 @@ public interface GoneService {
 	GonePageVO gone_list(GonePageVO vo); //방명록 목록 조회
 	GoneVO gone_info(int id); //선택한 방명록 글 조회
 	int gone_read(int id); 	//선택한 방명록 글 조회수 변경	
-	int gone_update(GoneVO vo); //선택한 방명록 정보수정저장
+	
+	
+	
+	int gone_update(HashMap<String, Object> map); //선택한 방명록 정보수정저장
+	
+	
+	
+	
+	int gone_wroteup(GoneVO vo); //선택한 방명록 정보수정저장
+	
+	
+	
+	
+	
 	int gone_delete(int id); //선택한 방명록 정보삭제
 	
+	int gone_filedelete(int id);
+	
+	
 	GoneFileVO gone_file_info(int id); //첨부파일정보 조회
+	
+	
+	
+	
+	
 	List<GoneFileVO> gone_removed_file( String removed ); //삭제하려는 첨부파일정보 조회
 	int gone_file_delete(String removed); //변경첨부/삭제한 파일정보 삭제
 	

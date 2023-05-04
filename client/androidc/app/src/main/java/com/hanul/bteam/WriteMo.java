@@ -14,16 +14,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -36,10 +31,7 @@ import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import com.hanul.bteam.COMMON.CommonMethod;
-import com.hanul.bteam.dto.CourseDTO;
 import com.hanul.bteam.dto.GoneDTO;
-import com.hanul.bteam.dto.MemberDTO;
-import com.hanul.bteam.login.LoginFrist;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -56,7 +48,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BoardWrite extends Fragment {
+
+public class WriteMo extends Fragment {
     MainActivity activity;
     File imgFile = null;
     String imgFilePath = null;
@@ -77,22 +70,21 @@ public class BoardWrite extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.board_3,
+        View view = inflater.inflate(R.layout.writemo,
                 container, false);
         activity = (MainActivity) getActivity();
+        Bundle b = activity.bundle;
+        GoneDTO d = (GoneDTO) b.getSerializable("dto");
 
         title =view.findViewById(R.id.title);
         content=view.findViewById(R.id.content);
         contentr=view.findViewById(R.id.contentr);
         filepath = view.findViewById(R.id.filepath);
 
-        view.findViewById(R.id.choice).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                activity.fragmentControl(new LocalFragment());
-            }
-        });
 
+        title.setText(d.getTitle());
+        content.setText(d.getContent());
+        contentr.setText(d.getContentr());
 
         view.findViewById(R.id.btn_upload).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,27 +92,42 @@ public class BoardWrite extends Fragment {
                 CommonMethod commonMethod = new CommonMethod();
                 GoneDTO dto = new GoneDTO();
                 Bundle b = activity.bundle;
-                CourseDTO dto1= (CourseDTO) b.getSerializable("dto");
+
+
                 if(imgFilePath != null) {
 
                     fileBody = RequestBody.create(MediaType.parse("image/jpeg"), new File(imgFilePath));
                     filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);
                 }
+                dto.setId(d.getId());
 
+                if(imgFilePath != null) {
+                    dto.setFilepath(imgFilePath)
+                    ;}
+
+                dto.setId( d.getId() );
                 dto.setTitle( title.getText().toString() );
                 dto.setContent( content.getText().toString() );
                 dto.setContentr( contentr.getText().toString() );
-                dto.setMember_id(activity.loginid);
-                dto.setLocation_id(dto1.getLocation_id());
-                dto.setCourse_id(dto1.getId());
-                dto.setLoccode(dto1.getLoccode());
+                dto.setMember_id( activity.loginid );
                 if(imgFilePath != null) {
-                    dto.setFilepath(imgFilePath);
-                }
+                    dto.setFilepath(imgFilePath)
+                    ;}
+
 
 
                 commonMethod.setParams("param", dto);
-                commonMethod.sendFile("gonewrite", filePart, new Callback<String>() {
+
+//                commonMethod.setParams("id", d.getId());
+//                commonMethod.setParams("title", title.getText().toString());
+//                commonMethod.setParams("content", ( content.getText().toString()));
+//                commonMethod.setParams("contentr", ( contentr.getText().toString() ));
+//                commonMethod.setParams("member_id", activity.loginid);
+//                commonMethod.setParams("imgFilePath", dto.getFilepath() );
+//                if(imgFilePath != null) {
+//                    dto.setFilepath(imgFilePath)
+//                    ;}
+                commonMethod.sendFile("gonewritemo", filePart, new Callback<String>() {
 
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
@@ -140,7 +147,7 @@ public class BoardWrite extends Fragment {
         view.findViewById(R.id.btn_cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.fragmentControl(new Board1());
+                activity.fragmentControl(new HomeFragment());
             }
         });
 

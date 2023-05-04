@@ -131,14 +131,13 @@ public class MemberController {
 		if( profilFile!=null ) {
 			vo.setProfile( common.fileUpload((MultipartFile) file, "profile", req) );	
 		}
-		String salt = common.generateSalt();
-		vo.setPw( common.getEncrypt(vo.getPw(), salt) );
-		vo.setSalt(salt);
 		service.member_update(vo);
 		Gson gson = new Gson();
 		 
 		return gson.toJson( (MemberVO) vo);	 
 	}
+	
+	
 	
 		
 	
@@ -418,21 +417,23 @@ public class MemberController {
 //	}
 	
 	//비밀번호변경저장처리 요청
-	@RequestMapping("/change")
-	public String changepw(String pw, HttpSession session) {
-		//화면에서 입력한 비번으로 DB에 변경
-		//솔트를 사용해 입력한 비번을 암호화		
-		MemberVO vo = (MemberVO)session.getAttribute("loginInfo");
-		if(vo==null) return "redirect:login";
+	@ResponseBody @RequestMapping(value="/pwchange", produces="text/html; charset=utf-8")
+	public String pwchange(HttpServletRequest req, Model model) {
+		String id = (String) req.getParameter("id");
+		String pw = (String) req.getParameter("pw");
+		 
+		HashMap<String,String> map = new HashMap<String, String>();
+		String salt = service.member_salt(id);
+		pw = common.getEncrypt(pw, salt);
+		map.put("id", id);
+		map.put("pw", pw);
+		map.put("salt", salt);
 		
-		pw = common.getEncrypt(pw, vo.getSalt()); //암호화된 비번
-		vo.setPw( pw );
-		
-		service.member_change_pw(vo);
-		
-		session.setAttribute("loginInfo", vo);
-		//응답화면연결 - 웰컴
-		return "redirect:/";
+		salt = common.generateSalt();
+		service.member_change_pw(map);                   
+		Gson gson = new Gson();
+		 
+		return service.member_change_pw(map) == 1 ? "성공" : "실패";	 
 	}
 	
 	
