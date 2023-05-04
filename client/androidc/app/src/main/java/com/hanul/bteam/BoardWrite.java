@@ -101,7 +101,7 @@ public class BoardWrite extends Fragment {
                 GoneDTO dto = new GoneDTO();
                 Bundle b = activity.bundle;
                 CourseDTO dto1= (CourseDTO) b.getSerializable("dto");
-                if(imgFile != null) {
+                if(imgFilePath != null) {
 
                     fileBody = RequestBody.create(MediaType.parse("image/jpeg"), new File(imgFilePath));
                     filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);
@@ -114,7 +114,9 @@ public class BoardWrite extends Fragment {
                 dto.setLocation_id(dto1.getLocation_id());
                 dto.setCourse_id(dto1.getId());
                 dto.setLoccode(dto1.getLoccode());
-                dto.setFilepath(imgFilePath);
+                if(imgFilePath != null) {
+                    dto.setFilepath(imgFilePath);
+                }
 
 
                 commonMethod.setParams("param", dto);
@@ -123,7 +125,7 @@ public class BoardWrite extends Fragment {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
 
-                            activity.fragmentControl(new Board1());
+                        activity.fragmentControl(new Board1());
 
                     }
 

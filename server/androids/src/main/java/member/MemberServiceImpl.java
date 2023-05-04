@@ -41,12 +41,27 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	
+	
+	
+	
+	
 
 	@Override
-	public int member_change_pw(MemberVO vo) {
-		return dao.member_change_pw(vo);
+	public int member_change_pw(HashMap<String, String> map) {
+		return dao.member_change_pw(map);
 	}
+	
+	
+	
 
+	
+	
+	
+	
+	
+	
 	@Override
 	public String member_salt(String id) {
 		return dao.member_salt(id);
@@ -86,6 +101,9 @@ public class MemberServiceImpl implements MemberService {
 		return dao.member_logout(id);
 	}
 
+	
+
+	
 	
 
 }

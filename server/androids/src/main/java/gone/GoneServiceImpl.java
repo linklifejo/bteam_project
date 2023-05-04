@@ -38,7 +38,7 @@ public class GoneServiceImpl implements GoneService {
 	}
 
 	@Override
-	public int gone_update(GoneVO vo) {
+	public int gone_update(HashMap<String, Object> vo) {
 		return dao.gone_update(vo);
 	}
 
@@ -148,6 +148,24 @@ public class GoneServiceImpl implements GoneService {
 	public int gone_write(GoneVO vo) {
 		// TODO Auto-generated method stub
 		return dao.gone_write(vo);
+	}
+
+	@Override
+	public int gone_fileInsert(GoneFileVO vo) {
+		// TODO Auto-generated method stub
+		return dao.gone_fileInsert(vo);
+	}
+
+	@Override
+	public int gone_wroteup(GoneVO vo) {
+		// TODO Auto-generated method stub
+		return dao.gone_wroteup(vo);
+	}
+
+	@Override
+	public int gone_filedelete(int id) {
+		// TODO Auto-generated method stub
+		return dao.gone_filedelete(id);
 	}
 
 	

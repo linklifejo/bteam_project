@@ -25,7 +25,14 @@ public interface MemberService {
 	
 	
 	
-	int member_change_pw(MemberVO vo); //회원의 비밀번호변경
+	int member_change_pw(HashMap<String, String> map); //회원의 비밀번호변경
+	
+	
+	
+	
 	int member_delete(String id); //회원탈퇴
+	
+	
+	
 	int member_manager(MemberVO vo); //관리자 ///////////////
 }

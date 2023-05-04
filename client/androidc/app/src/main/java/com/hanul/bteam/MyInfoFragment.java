@@ -62,7 +62,12 @@ public class MyInfoFragment extends Fragment {
         //처음 회원가입할때 이름 픽스시키고
         TextView t = view.findViewById(R.id.name);
         t.setText(activity.name);
-
+        view.findViewById(R.id.changepw).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.fragmentControl(new PwChange());
+            }
+        });
 
         view.findViewById(R.id.btn_out).setOnClickListener(new View.OnClickListener() {
             @Override
