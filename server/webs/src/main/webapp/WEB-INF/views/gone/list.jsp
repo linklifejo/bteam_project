@@ -130,6 +130,19 @@ function fn_info( id ){
 </ul>
 </c:if>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <c:if test='${page.viewType eq "list"}'>
 <table class='w-px1200 tb-list'>
 <colgroup>

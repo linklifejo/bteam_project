@@ -46,7 +46,87 @@
 <div class="main">
 	<h3>${vo.locname }</h3>
 </div>
-	<table width="900px"'>
+
+
+
+
+
+ <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
+                <div class="col mb-5" style="width: 800px">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" style="width: 750px" height="600px" src="${vo.filepath}" alt="...">
+                        <!-- Product details-->
+                        <div>
+                           		<div>
+					<div class="text-center">
+					 <table style="width:100%">
+					 <tr>
+					 	<th><h3>주소</h3></th>
+					 </tr>
+					 <tr>
+						<td>${vo.address}</td>
+					 </tr>
+					 <tr>
+					 	<th><h3>설명</h3></th>
+					 </tr>
+					 <tr>
+						<td>${vo.name_desc}</td>
+					 </tr>
+					 </table>
+					</div>
+				</div>
+                        </div>
+                        <!-- Product actions-->
+		
+						<div id="staticMap" style="width:750px;height:450px;">
+						</div>         
+		       		</div>
+		 	   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%-- 				<div class="col mb-5">
+				    <div class="card h-100">
+				        <!-- Product image-->
+				        <img class="card-img-top" style="width: 750px" height="600px" src="${vo.filepath}" alt="...">
+				        <!-- Product details-->
+				        <div class="card-body p-4">
+				            <div class="text-center">
+				                <!-- Product name-->
+				                <h5 class="fw-bolder">Fancy Product</h5>
+				                <!-- Product price-->
+				                $40.00 - $80.00
+				            </div>
+				        </div>
+				        <!-- Product actions-->
+				        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+				            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+				        </div>
+				    </div>
+				</div>
+
+ --%>
+
+<%-- 	<table width="900px"'>
 	<colgroup>
 		<col width="140px">
 		<col>
@@ -56,17 +136,11 @@
 	</tr>
 	<tr><th>사진</th>
 		<td><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepath}"
-    		 alt="사진파일">
+    		 alt="사진파일"></td>
 	</tr>
 	
 	<tr><th>추가설명</th>
 		<td>${vo.name_desc }</td>
-	</tr>
-	<tr><th>위도</th>
-		<td></td>
-	</tr>
-	<tr><th>경도</th>
-		<td></td>
 	</tr>
 	<tr><th>주소</th>
 		<td>${vo.address}</td>
@@ -79,7 +153,7 @@
 		
 		</td>
 	</tr> 
-	</table>
+	</table> --%>
 	
 	
 <!-- 찜버튼 -->

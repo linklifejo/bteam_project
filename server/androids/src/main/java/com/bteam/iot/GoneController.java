@@ -17,14 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
-import org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMethodMappingNamingStrategy;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import board.BoardFileVO;
-import board.BoardVO;
 import common.CommonUtility;
-import course.CourseServiceImpl;
 import course.CourseVO;
 import gone.GoneCommentVO;
 import gone.GoneFileVO;
@@ -32,8 +29,6 @@ import gone.GonePageVO;
 import gone.GoneServiceImpl;
 import gone.GoneVO;
 import gone.HomeVO;
-import location.LocationVO;
-import member.MemberVO;
 
 @Controller
 public class GoneController {
@@ -42,38 +37,12 @@ public class GoneController {
 
 
 	// 방명록 새글신규저장처리 요청
-	@RequestMapping("/insert.go")
-	public String insert(GoneVO vo, MultipartFile[] file, HttpServletRequest request) {
-		// 첨부파일 처리
-		if (file.length > 1) {
-			List<GoneFileVO> list = attached_file(file, request);
-			vo.setFileInfo(list);
-		}
-		// 화면에서 입력한 정보로 DB에 신규저장
-		service.gone_insert(vo);
-		// 화면연결
-		return "redirect:list.go";
-	}
+
 
 	@Autowired
 	private CommonUtility common;
 
-	// 첨부한 파일정보 관리
-	private List<GoneFileVO> attached_file(MultipartFile[] file, HttpServletRequest request) {
-		List<GoneFileVO> list = null;
-		for (MultipartFile attached : file) {
-			if (attached.isEmpty())
-				continue;
-			if (list == null)
-				list = new ArrayList<GoneFileVO>();
-			GoneFileVO fileVO = new GoneFileVO();
-			fileVO.setFilename(attached.getOriginalFilename());
-			fileVO.setFilepath(common.fileUpload(attached, "gone", request));
-			list.add(fileVO);
-		}
-		return list;
-	}
-
+	
 	// 방명록 첨부파일 다운로드 요청
 	@RequestMapping("/download.go")
 	public void download(int file, HttpServletRequest req, HttpServletResponse res) {
@@ -82,35 +51,54 @@ public class GoneController {
 		// 다운로드 처리한다
 		common.fileDownload(vo.getFilename(), vo.getFilepath(), req, res);
 	}
-
-	// 방명록 글 수정저장처리 요청
-	@RequestMapping("/update.go")
-	public String update(int id, GonePageVO page, Model model, GoneVO vo, String removed, HttpServletRequest request,
-			MultipartFile[] file) {
-		// 첨부되어진 파일이 있다면 해당 파일 정보를 저장한다
-		List<GoneFileVO> files = attached_file(file, request); // 파일목록
-		vo.setFileInfo(files);
-
-		// 화면에서 변경입력한 정보로 DB에 변경저장한다
-		service.gone_update(vo);
-
-		// 삭제하려는 대상파일정보 조회
-		if (!removed.isEmpty()) {
-			List<GoneFileVO> remove_files = service.gone_removed_file(removed);
-
-			// DB에서 삭제 + 물리적인 파일 삭제
-			if (service.gone_file_delete(removed) > 0) {
-				for (GoneFileVO f : remove_files) {
-					common.file_delete(f.getFilepath(), request);
-				}
-			}
+	@ResponseBody @RequestMapping(value = "gonewrite",  produces="text/plain; charset=utf-8" )
+	public String insert( HttpServletRequest req, Model model ,MultipartRequest mReq,MultipartFile[] file) {
+		// 첨부파일 처리
+		String data = (String) req.getParameter("param");
+		GoneVO vo = new Gson().fromJson(data, GoneVO.class);
+		MultipartFile filepath = mReq.getFile("file");
+		if (filepath!=null) {
+			List<GoneFileVO> list = attached_file(file, req);
+			vo.setFileInfo(list);
 		}
+		// 화면에서 입력한 정보로 DB에 신규저장
+		service.gone_write(vo);
+		Gson gson = new Gson();
+		// 화면연결
+		return gson.toJson( (GoneVO) vo);
+	}
 
+
+	// 방명록 글 수정저장처리 요청 HttpServletRequest req, Model model ,MultipartRequest mReq,MultipartFile[] file
+	@ResponseBody @RequestMapping(value="/gonewritemo", produces="text/plain; charset=utf-8" )
+//	public String update( Model model, HttpServletRequest req
+//			) {
+//		System.out.println("HERE");
+		
+	public String update( Model model, HttpServletRequest req,
+			MultipartRequest mReq,MultipartFile file) {
+		String data = (String) req.getParameter("param");
+		GoneVO vo = new Gson().fromJson(data, GoneVO.class);
+//		Integer id = Integer.valueOf(vo.getId());
+
+		// 첨부되어진 파일이 있다면 해당 파일 정보를 저장한다
+		
+		
+		MultipartFile filepath = mReq.getFile("file");
+				
+		if(service.gone_file_info(vo.getId())!=null)service.gone_filedelete(vo.getId());
+		if( filepath!=null ) {
+			vo.setFilepath(common.fileUpload((MultipartFile) file, "filepath", req));
+			service.gone_filedelete(vo.getId());
+		}
+		
+		// 화면에서 변경입력한 정보로 DB에 변경저장한다
 		// 화면연결 - 정보화면
-		model.addAttribute("url", "info.go");
-		model.addAttribute("page", page);
-		model.addAttribute("id", id);
-		return "gone/redirect";
+		// 화면연결
+ 
+
+		return service.gone_wroteup(vo) == 1 ? "성공" : "실패";
+		
 	}
 
 	// 방명록 글 수정화면 요청
@@ -125,25 +113,23 @@ public class GoneController {
 	}
 
 	// 방명록 글 삭제처리 요청
-	@RequestMapping("/delete.go")
-	public String delete(int id, GonePageVO page, Model model, HttpServletRequest request) {
+	@ResponseBody @RequestMapping(value="/delete", produces="text/plain; charset=utf-8" )
+	public String delete(GonePageVO page, Model model, HttpServletRequest req) {
 		// 첨부파일정보를 조회해둔다
+		Integer id = Integer.valueOf(req.getParameter("id")) ;
+		
 		List<GoneFileVO> files = service.gone_info(id).getFileInfo();
-
 		// 선택한 글을 DB에서 삭제한다
 		if (service.gone_delete(id) == 1) {
 			// 첨부되어진 파일을 물리적으로 저장된 영역에서 삭제한다
 			for (GoneFileVO vo : files) {
-				common.file_delete(vo.getFilepath(), request);
+				common.file_delete(vo.getFilepath(), req);
 			}
 		}
-
 		// 응답화면연결 - 목록
 		// redirect 화면에서 출력할 정보를 Model에 담는다
-		model.addAttribute("url", "list.go");
-		model.addAttribute("id", id);
-		model.addAttribute("page", page);
-		return "gone/redirect";
+		Gson gson = new Gson();
+		return gson.toJson(id);		
 	}
 
 	// 방명록 새글쓰기화면 요청
@@ -241,21 +227,28 @@ public class GoneController {
 //		//화면연결
 //		return "redirect:list.bo";
 //	}
-	@ResponseBody @RequestMapping(value = "gonewrite",  produces="text/plain; charset=utf-8" )
-	public String gonewrite(HttpServletRequest req, Model model,MultipartRequest mReq,MultipartFile file) {
-		String data = (String) req.getParameter("param");
-		GoneVO vo = new Gson().fromJson(data, GoneVO.class);
-		MultipartFile profilFile = mReq.getFile("file");
-		if( profilFile!=null ) {
-			vo.setFilepath( common.fileUpload((MultipartFile) file, "filepath", req) );	
-		}
 	
-		service.gone_write(vo);
-		Gson gson = new Gson();
-		 
-		return gson.toJson( (GoneVO) vo);	 
-	}
+	
+		
+		
+	// 첨부한 파일정보 관리
+		private List<GoneFileVO> attached_file(MultipartFile[] file, HttpServletRequest request) {
+			List<GoneFileVO> list = null;
+			for (MultipartFile attached : file) {
+				if (attached.isEmpty())
+					continue;
+				if (list == null)
+					list = new ArrayList<GoneFileVO>();
+				GoneFileVO fileVO = new GoneFileVO();
+				fileVO.setFilename(attached.getOriginalFilename());
+				fileVO.setFilepath(common.fileUpload(attached, "gone", request));
+				list.add(fileVO);
+			}
+			return list;
+		}
 
+		
+		
 	@ResponseBody @RequestMapping(value="/selectHome", produces="text/plain; charset=utf-8" )
 	public String selectHome(HttpServletRequest req, Model model) {
 		String type = (String) req.getParameter("type");		

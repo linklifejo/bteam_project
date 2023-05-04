@@ -43,8 +43,8 @@ table.animal img { width:100%; height:100px }
 <div class="main">
 <h3>공공데이터</h3>
 <div class='btnSet api'>
-	<a>약국정보</a>
-	<a>유기동물정보</a>
+	<a hidden="hide">약국정보</a>
+	<a hidden="hide">유기동물정보</a>
 	<a>산 정보</a>
 	<a href="https://map.forest.go.kr/forest/?systype=mapSearch&searchOption=trail#/">산 등산코스 정보</a>
 </div>
