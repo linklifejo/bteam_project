@@ -43,7 +43,7 @@ public class StampController {
 
 	@ResponseBody @RequestMapping(value="/stampIn", produces="text/plain; charset=utf-8" )
 	public String stampIn(HttpServletRequest req, Model model) {
-		String ip = (String) req.getParameter("ip");		
+     	
 		String member_id = (String) req.getParameter("member_id");
 		System.out.println("member_id> "+req.getParameter("member_id"));
 		if( member_id.equals("undefined") ) return "스템프실패";
@@ -58,7 +58,7 @@ public class StampController {
 		String loccode = (String) req.getParameter("loccode");
 	
 		HashMap<String,Object> map = new HashMap<String, Object>();
-		map.put("ip", ip);
+	
 		map.put("member_id", member_id);
 		map.put("location_id", location_id);
 		map.put("course_id", course_id);
@@ -78,7 +78,7 @@ public class StampController {
 //	     s += " ip=result.course_id;";
 //	     s += " ip=result.loccode
 		HashMap<String,Object> map = new HashMap<String, Object>();
-		map.put("ip", "192.168.0.3");
+		//map.put("ip", "192.168.0.3");
 		map.put("member_id", "linklife");
 		map.put("location_id", "1111");
 		map.put("course_id", "1111");

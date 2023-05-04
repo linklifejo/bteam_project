@@ -51,6 +51,10 @@ public class CouAdapter extends
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CourseDTO dto = dtos.get(position);
+        String member_id= activity.loginid;
+        Integer location_id = dto.getLocation_id();
+        Integer course_id = dto.getId();
+        String loccode= dto.getLoccode();
         // 불러온 데이터를 ViewHolder에 만들어 놓은 setDto를
         // 사용하여 데이터를 셋팅시킨다
         holder.setDto(dto);
@@ -62,7 +66,8 @@ public class CouAdapter extends
                 activity.bundle = b;
 //                activity.fragmentControl(new BoardWrite(),b);
                 Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("http://192.168.0.4"));
+
+                        Uri.parse("http://192.168.0.4/setInfo?member_id="+member_id + "&location_id=" +location_id.toString() + "&course_id=" +course_id.toString() + "&loccode=" +loccode));
                 activity.startActivity(intent);
             }
         });
