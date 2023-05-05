@@ -11,7 +11,11 @@
         android:enabled="true"
         android:icon="@drawable/search"
         android:title="검색"/>
-
+    <item android:id="@+id/tab5"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/stemp"
+        android:title="스탬프"/>
     <item android:id="@+id/tab3"
         app:showAsAction="always"
         android:enabled="true"
@@ -22,5 +26,6 @@
         android:enabled="true"
         android:icon="@drawable/my"
         android:title="나의정보"/>
+
 
 </menu>

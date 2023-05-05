@@ -11,16 +11,17 @@ from gone_comment c inner join member m on c.member_id = m.id
 where gone_id = #{gone_id}
 order by c.id desc
 </select>
-
 <!-- 방명록댓글 삭제 -->
 <delete id='commentDelete'>
 delete from gone_comment where id = #{id}
 </delete>
 
+
 <!-- 방명록댓글 변경저장 -->
 <update id='commentUpdate'>
 update gone_comment set content = #{content} where id = #{id}
 </update>
+
 
 
 <!-- 방명록댓글 신규저장 -->
@@ -29,6 +30,70 @@ insert into gone_comment (content, member_id, gone_id)
 values (#{content}, #{member_id}, #{gone_id})
 </insert>
 
+<insert id='insert'>
+insert into gone(type, title, content, member_id, location_id, course_id, loccode)
+values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
+<selectKey keyProperty="id" order="AFTER" resultType='integer'>
+select seq_gone.currval from dual
+</selectKey>
+</insert>
+
+<insert id='gonewrite'>
+insert into gone( title, content, contentr,member_id, location_id, course_id,loccode)
+values (#{title}, #{content}, #{contentr},#{member_id}, #{location_id}, #{course_id},#{loccode})
+<selectKey keyProperty="id" order="AFTER" resultType='integer'>
+select seq_gone.currval from dual
+</selectKey>
+</insert>
+
+
+
+
+
+<!-- 선택한 방명록글 삭제 -->
+<delete id='delete'>
+delete from gone where id = #{id}
+</delete>
+
+
+
+
+
+
+<!-- 방명록댓글 변경저장 -->
+<update id='gonewroteup'>
+update gone set title = #{title},content = #{content},contentr = #{contentr},member_id= #{member_id} where id = #{id}
+</update>
+
+<insert id="gonefileInsert">
+insert into gone_file(gone_id, filepath,ptype)
+values( #{id},  #{filepath}, '1' )
+
+</insert>
+
+<!-- 방명록댓글 삭제 -->
+<delete id='gonefileDelete'>
+delete from gone_file where gone_id=#{id}
+</delete>
+
+
+<!-- 삭제대상 파일정보삭제 -->
+<delete id="fileDelete">
+delete from gone_file where id in ( ${removed} )
+</delete>
+
+
+<!-- 방명록첨부파일 신규저장 -->
+<insert id="fileInsert">
+<foreach collection="fileInfo" item="info" separator=" "
+		open="insert all" close="select * from dual">
+into gone_file(gone_id, filename, filepath)
+values( #{id}, #{info.filename}, #{info.filepath} )
+</foreach>
+</insert>
+
+
+<!-- 방명록첨부파일 신규저장 -->
 
 
 
@@ -44,14 +109,26 @@ where rownum <= #{num}
 ]]>
 </select>
 
-<!-- 방명록첨부파일 신규저장 -->
-<insert id="fileInsert">
-<foreach collection="fileInfo" item="info" separator=" "
-		open="insert all" close="select * from dual">
-into gone_file(gone_id, filename, filepath)
-values( #{id}, #{info.filename}, #{info.filepath} )
-</foreach>
-</insert>
+<select id='mou' resultType='gone.HomeVO'>
+<![CDATA[ 
+select *
+from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,contentr,( select locname from location where id=g.location_id) locname,
+								( select name_desc from location where id = g.location_id)name_desc,
+                               ( select name from member where id=g.member_id) name,
+                               ( select couname from course where id=g.course_id) couname
+            from gone g, gone_file f where g.id=f.gone_id and g.member_id = #{id} and g.type= #{type} and f.ptype= #{ptype} order by g.readcnt desc)
+where rownum <= #{num}
+]]>
+</select>
+
+
+<select id='diary' resultType='gone.HomeVO'>
+ 
+select contentr,title,member_id from gone where type= '1'
+and member_id=#{id}
+</select>
+
+
 
 <!-- 방명록 글 신규저장 -->
 <insert id='insert_will'>
@@ -59,28 +136,17 @@ insert into gone(type, title, content, member_id, location_id, course_id, loccod
 values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
 </insert>
 <!-- 방명록 글 신규저장 -->
-<insert id='insert'>
-insert into gone(type, title, content, member_id, location_id, course_id, loccode)
-values ( #{type}, #{title}, #{content}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
-<selectKey keyProperty="id" order="AFTER" resultType='integer'>
-select seq_gone.currval from dual
-</selectKey>
-</insert>
 
-<!-- 선택한 방명록글 삭제 -->
-<delete id='delete'>
-delete from gone where id = #{id}
-</delete>
+
+
+
+
 
 <!-- 선택한 방명록 첨부파일 조회 -->
 <select id='fileInfo' resultType='gone.GoneFileVO'>
-select * from gone_file where id = #{id}
+select * from gone_file where gone_id = #{id}
 </select>
 
-<!-- 삭제대상 파일정보삭제 -->
-<delete id="fileDelete">
-delete from gone_file where id in ( ${removed} )
-</delete>
 
 <!-- 삭제대상 파일정보 조회-->
 <select id='fileRemoved' resultType='gone.GoneFileVO'>
@@ -170,11 +236,17 @@ order by id
 
 
 
+
+
+
+
+
+
 <!-- 게시판 목록조회 -->
 <select id='bolist' resultType='gone.GoneVO'>
-select title,member_id,gone_time,content
-from gone 
-order by gone_date
+select g.*,(select filepath from gone_file where gone_id= g.id) filepath
+from gone g 
+order by gone_date desc
 </select>
 
 <!-- 지역정보 목록조회 -->

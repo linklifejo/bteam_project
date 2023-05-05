@@ -234,16 +234,6 @@
 
 
 
-<div id="mydiv">
-  <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-  <div id="mydivheader">Click here to move</div>
-  <p>Move</p>
-  <p>this</p>
-  <p>DIV</p>
-</div>
-
-
-
 </table>
 
 
@@ -278,7 +268,7 @@
 
 
 <!-- 자동 테스트 이동 -->
-<!-- <body>
+ <body>
     <h2 align = "center">아래의 텍스트가 움직여요!!</h2>
     <p>
 	<MARQUEE>이 텍스트가 움직인답니다.</MARQUEE>
@@ -320,7 +310,7 @@
 	<MARQUEE hspace="50" vspace="50" >스크롤의 위/아래 여백을 줍니다.</MARQUEE>
 	스크롤의 여백
     </p>
-</body> -->
+</body>
 
 
 
@@ -346,7 +336,7 @@
 	
 		</span>
 </c:forEach> --%>
-    <div style="overflow: hidden;"> <!-- 밑에 가로bar 사라지게 하는 코드 -->
+<%--     <div style="overflow: hidden;"> <!-- 밑에 가로bar 사라지게 하는 코드 -->
 <c:forEach items='${gone_myname}' var='vo'>
       <div class="slide-container" style="">
         <div class="slide-box" style="height: 450px; width: 350px;">
@@ -360,7 +350,7 @@
         </div>
       </div>
 </c:forEach>
-    </div>
+    </div> --%>
 </div>
 </tbody>
 </table>
@@ -431,7 +421,7 @@ function dragElement(elmnt) {
   <div class="wrapper" style="width: 1200px;">
     <div class="items" style="left: 100;">
     <c:forEach items='${gone_myname}' var='vo' >
-      <div class="item" style=""><div><a href='info.go?id=${vo.id}'><img src="${vo.filepath}" alt="" style="height: 450px;width: 350px;"></a></div><div><a href='info.go?id=${vo.id}'>${vo.title}</a></div></div>
+      <div class="item" style=""><div><a href='info.go?id=${vo.id}'><img src="${vo.filepath}" alt="" style="height: 450px;width: 350px;"></a></div><div><a style="font-size: 20px; font-weight: bold;" href='info.go?id=${vo.id}'>${vo.title}</a></div></div>
      </c:forEach>
     </div> 
   </div>  

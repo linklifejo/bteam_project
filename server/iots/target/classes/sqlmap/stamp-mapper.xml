@@ -6,8 +6,13 @@
 
 <!-- 방명록 글 신규저장 -->
 <insert id='insert'>
+<<<<<<< HEAD
 insert into stamp(ip, member_id, location_id, course_id, loccode)
 values ( #{ip}, #{member_id}, #{location_id}, #{course_id} , #{loccode})
+=======
+insert into stamp(member_id, location_id, course_id, loccode)
+values ( #{member_id}, #{location_id}, #{course_id} , #{loccode})
+>>>>>>> ac82d46e07b9905e640af5c8ff9d03b162096f82
 </insert>
 
 <!-- 선택한 방명록글 삭제 -->
@@ -21,6 +26,10 @@ select * from stamp
 
 <!-- 스템프존재 정보조회 -->
 <select id='info' resultType='stamp.StampVO'>
+<<<<<<< HEAD
 select * from stamp where ip = #{ip} and member_id = #{member_id} and location_id = #{location_id} and course_id = #{course_id} 
+=======
+select * from stamp where  member_id = #{member_id} and location_id = #{location_id} and course_id = #{course_id} 
+>>>>>>> ac82d46e07b9905e640af5c8ff9d03b162096f82
 </select>
 </mapper>  

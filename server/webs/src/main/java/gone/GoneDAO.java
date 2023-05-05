@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import course.CourseVO;
 import location.LocationVO;
 import member.MemberVO;
+import weather.WeatherVO;
 
 @Repository
 public class GoneDAO implements GoneService {
@@ -131,6 +132,10 @@ public class GoneDAO implements GoneService {
 	public List<GoneVO> gone_myname(String member_id) {
 		// TODO Auto-generated method stub
 		return sql.selectList("go.gone_myname",member_id);
+	}
+
+	public List<WeatherVO> weather_list() {
+		return sql.selectList("go.weather_list");
 	}
 
 

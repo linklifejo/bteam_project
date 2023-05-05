@@ -45,10 +45,26 @@ public class MemberDAO implements MemberService {
 		return 0;
 	}
 
+	
+	
+	
+	
+	
+	
 	@Override
-	public int member_change_pw(MemberVO vo) {
-		return sql.update("member.change_pw", vo);
+	public int member_change_pw(HashMap<String, String> map) {
+		return sql.update("member.change_pw", map);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Override
 	public String member_salt(String id) {
@@ -82,6 +98,14 @@ public class MemberDAO implements MemberService {
 		// TODO Auto-generated method stub
 		return sql.selectOne("member.login", map);
 	}
+
+	@Override
+	public int member_logout(String id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("member.logout",id);
+	}
+
+	
 
 	
 

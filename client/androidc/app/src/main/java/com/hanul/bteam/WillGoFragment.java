@@ -96,6 +96,5 @@ public class WillGoFragment extends Fragment implements OnWillGoitemClickListene
     public void onItemClick(WillGoAdapter.ViewHolder holderm, View view, int position) {
         WillgoDTO dto = adapter.getItem(position);
 
-        Toast.makeText(activity, "산이름ㅌㅌㅌ :" + dto.getLocname(), Toast.LENGTH_SHORT).show();
     }
 }

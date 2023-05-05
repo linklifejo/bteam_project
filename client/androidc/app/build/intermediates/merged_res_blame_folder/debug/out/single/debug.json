@@ -1,13 +1,5 @@
 [
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable-v24_trash.png.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable-v24/trash.png"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-34:/layout_hulist.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/layout/hulist.xml"
-    },
-    {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_nae_jang_san1.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/nae_jang_san1.xml"
     },
@@ -36,16 +28,8 @@
         "source": "com.hanul.bteam.app-main-36:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_do_bong_san1.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/do_bong_san1.xml"
-    },
-    {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_myinfo_frag_view2.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/myinfo_frag_view2.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_g_ak1.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/g_ak1.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_ham_back_san.jpg.flat",
@@ -92,12 +76,12 @@
         "source": "com.hanul.bteam.app-main-36:/layout/activity_main.xml"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/layout_myinfo_frag_view1.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/layout/myinfo_frag_view1.xml"
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_myinfodiary.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/myinfodiary.xml"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_gye_bang_san1.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/gye_bang_san1.xml"
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_myinfo_frag_view1.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/myinfo_frag_view1.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_willgo_frag.xml.flat",
@@ -110,10 +94,6 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_home.png.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/home.png"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_su_rak_san1.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/su_rak_san1.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/mipmap-mdpi_ic_launcher.webp.flat",
@@ -168,10 +148,6 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/namsan1.xml"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_su_rak_san.jpg.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/su_rak_san.jpg"
-    },
-    {
         "merged": "com.hanul.bteam.app-merged_res-34:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "com.hanul.bteam.app-main-36:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
@@ -180,16 +156,8 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/han_ra_san1.xml"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_tae_back_san1.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/tae_back_san1.xml"
-    },
-    {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_buk_han_san.jpg.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/buk_han_san.jpg"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_o_deo_san.jpg.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/o_deo_san.jpg"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable-v24_image01.jpg.flat",
@@ -240,10 +208,6 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/gr_san1.xml"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_chi_ak_san1.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/chi_ak_san1.xml"
-    },
-    {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_mudng.jpg.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/mudng.jpg"
     },
@@ -262,10 +226,6 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/xml_data_extraction_rules.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/xml/data_extraction_rules.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_buk_han_san1.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/buk_han_san1.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/xml_filepath.xml.flat",
@@ -320,6 +280,10 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/ji_ri_san.png"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_stemp.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/drawable/stemp.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_heart.png.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/heart.png"
     },
@@ -334,10 +298,6 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_namsan2.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/namsan2.xml"
-    },
-    {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_mirg.jpg.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/mirg.jpg"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_joinlogin.xml.flat",
@@ -368,10 +328,6 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/nae_jang_san.webp"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_tae_back_san.jpg.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/tae_back_san.jpg"
-    },
-    {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_boardview.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/boardview.xml"
     },
@@ -392,10 +348,6 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/nack_san1.xml"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_duckyu2.jpg.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/duckyu2.jpg"
-    },
-    {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_courseview.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/courseview.xml"
     },
@@ -404,12 +356,16 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/ham_back_san1.xml"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_stemp.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/stemp.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_popupimg.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/popupimg.xml"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/drawable_o_deo_san1.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/drawable/o_deo_san1.xml"
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_couuse.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/couuse.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_mylocation.png.flat",

@@ -23,9 +23,13 @@ public class CommonMethod {
 
 
 
+<<<<<<< HEAD
 
     public static String ipConfig = "http://192.168.0.3/ab/";
 
+=======
+    public static String ipConfig = "http://192.168.0.11/ab/";
+>>>>>>> ac82d46e07b9905e640af5c8ff9d03b162096f82
 
     public MemberDTO loginDto = null;
 

@@ -20,16 +20,7 @@
             android:src="@drawable/dream03" />
 
 
-        <Button
-            android:id="@+id/course"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="추천등산코스" />
-        <Button
-            android:id="@+id/danger"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="위험정보" />
+
 
         <TextView
             android:id="@+id/textView"

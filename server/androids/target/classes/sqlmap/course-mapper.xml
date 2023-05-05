@@ -20,7 +20,7 @@ where id = #{id}
 <!-- 해당코스정보 삭제 -->
 <delete id='delete'>
 delete from course where id = #{id}
-</delete>
+</delete> 
 
 <!-- 해당코스정보조회 -->
 <select id='info' resultType='course.CourseVO'>
@@ -33,7 +33,7 @@ where c.id = #{id}
 <!-- 코스목록조회 -->
 <select id='list' resultType='course.CourseVO'>
 select c.*, locname
-from course c inner join location l on c.location_id = l.id
+from course c inner join location l on c.location_id = l.id where c.location_id = #{location_id}
 order by couname
 </select>
 <!-- 산정보목록조회 -->
@@ -42,4 +42,15 @@ select *
 from location 
 order by locname
 </select>
+
+
+<select id='search_list' resultType='location.LocationVO'>
+select *
+from location
+where type='1' and locname like '%' || #{search} || '%'
+ order by locname
+</select>
+
+
+
 </mapper>  

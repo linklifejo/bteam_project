@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import course.CourseVO;
 import location.LocationVO;
+import member.MemberVO;
 
 @Repository
 public class GoneDAO implements GoneService {
@@ -48,12 +49,15 @@ public class GoneDAO implements GoneService {
 		System.out.println("");
 		return sql.update("go.read", id);
 	}
-
+	
 	@Override
-	public int gone_update(GoneVO vo) {
-		if( vo.getFileInfo()!=null )
-			sql.insert("go.fileInsert", vo);
-		return sql.update("go.update", vo);
+	public int gone_wroteup(GoneVO vo) {
+		// TODO Auto-generated method stub
+		if( vo.getFilepath()!=null )
+			sql.insert("go.gonefileInsert", vo);
+		
+		return sql.update("go.gonewroteup",vo);
+		
 	}
 
 	@Override
@@ -114,7 +118,11 @@ public class GoneDAO implements GoneService {
 //	}
 
 	
-
+	@Override
+	public List<HomeVO> mou(HashMap<String, Object> vo) {
+		// TODO Auto-generated method stub
+		return sql.selectList("go.mou",vo);
+	}
 	
 
 	@Override
@@ -152,6 +160,44 @@ public class GoneDAO implements GoneService {
 		// TODO Auto-generated method stub
 		return sql.selectList("go.bolist");
 	}
+
+	@Override
+	public List<HomeVO> diary(HashMap<String, Object> vo) {
+		// TODO Auto-generated method stub
+		return sql.selectList("go.diary",vo);
+	}
+
+	@Override
+	public int gone_write(GoneVO vo) {
+		// TODO Auto-generated method stub
+		int insert = sql.insert("go.gonewrite",vo);
+		sql.insert("go.gonefileInsert",vo);
+		return insert;
+	}
+
+	@Override
+	public int gone_fileInsert(GoneFileVO vo) {
+		// TODO Auto-generated method stub
+		return sql.insert("go.gonefileInsert",vo);
+	}
+
+	
+
+	@Override
+	public int gone_filedelete(int id) {
+		// TODO Auto-generated method stub
+		return sql.delete("go.gonefileDelete",id);
+	}
+
+	@Override
+	public int gone_update(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+
+	
 
 
 

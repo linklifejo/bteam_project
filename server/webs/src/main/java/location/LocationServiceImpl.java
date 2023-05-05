@@ -49,33 +49,9 @@ public class LocationServiceImpl implements LocationService {
 	}
 
 	@Override
-	public List<LocationVO> local_list() {
-		return dao.local_list();
+	public List<LocationVO> local_list(String loccode) {
+		return dao.local_list(loccode);
 	}
 
-	@Override
-	public List<LocationVO> local2_list() {
-		return dao.local2_list();
-	}
-
-	@Override
-	public List<LocationVO> local3_list() {
-		return dao.local3_list();
-	}
-
-	@Override
-	public List<LocationVO> local4_list() {
-		return dao.local4_list();
-	}
-
-	@Override
-	public List<LocationVO> local5_list() {
-		return dao.local5_list();
-	}
-
-	@Override
-	public List<LocationVO> local6_list() {
-		return dao.local6_list();
-	}
 
 }

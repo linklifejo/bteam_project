@@ -3,12 +3,27 @@
 <html>
 <header>
 
-	
+    
 	<div class="head">
 	<div class="mainhead">
 		</li>
 	</div>
 	<div class="header">
+			 
+			<!-- <div style="background-color: #80c3ed;">
+	<MARQUEE scrolldelay="2000" scrollamount="70" width="200" height="50" direction="up">
+<body>
+ 
+ 	<table class="weather">
+		<tbody>
+		
+		</tbody>
+ 	</table>
+ 
+	
+</body>
+	</MARQUEE>
+			</div> -->
 	<div>
 	<nav>
 		<ul>
@@ -28,12 +43,12 @@
 		<div class="dropdown">
   <button class="dropbtn">지역별산</button><%-- href='list.re?id=${vo.gone_id}' --%>
   <div class="dropdown-content">
-    <a ${category eq 're' ? "class='active'" : ''} href='list.re?id=${GoneFile_list.gone_id}'>서울.경기</a>
-    <a ${category eq 're2' ? "class='active'" : ''} href='<c:url value="/"/>list2.re2?'>강원</a>
-    <a ${category eq 're3' ? "class='active'" : ''} href='<c:url value="/"/>list3.re3?'>전라도</a>
-    <a ${category eq 're4' ? "class='active'" : ''} href='<c:url value="/"/>list4.re4?'>경상도</a>
-    <a ${category eq 're5' ? "class='active'" : ''} href='<c:url value="/"/>list5.re5?'>충청도</a>
-    <a ${category eq 're6' ? "class='active'" : ''} href='<c:url value="/"/>list6.re6?'>제주도</a>
+    <a ${category eq 're1' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L01'>서울.경기</a>
+    <a ${category eq 're2' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L02'>강원</a>
+    <a ${category eq 're3' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L03'>전라도</a>
+    <a ${category eq 're4' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L04'>경상도</a>
+    <a ${category eq 're5' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L05'>충청도</a>
+    <a ${category eq 're6' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L06'>제주도</a>
   </div>
 </div>
 		
@@ -74,6 +89,8 @@
 		</c:if>
 		</ul>
 	</div>
+	
+	
 	</div>
 	</div>
 	<div>
@@ -99,7 +116,8 @@
 .dropdown {
   position: relative;
   display: inline-block;
- 
+  container: text-center;
+  text-align: center; margin: 0 auto;
 }
  
 .dropdown-content {
@@ -160,6 +178,128 @@ header nav a:hover, header nav a.active { color:#fff;
 	z-index: 100;
 }
 
+
+
 </style>
+
+
+<!-- <script type="text/javascript">
+var sky;
+var pty;
+/* var intiDate = $("#datepick").val();
+
+$("form").submit(() => {
+	let tDate = $("#datepcik").val();
+	weather(tDate);
+	return false;
+});
+
+function weather(initDate){ */
+	
+var date = new Date();
+
+var year = date.getFullYear();
+var month = ('0' + (date.getMonth() + 1)).slice(-2);
+var day = ('0' + date.getDate()).slice(-2);
+var initDate = year + month + day;
+var hours = date.getHours()+'00';
+
+console.log(hours);
+console.log(initDate);
+
+$(function(){
+	
+	
+	<c:forEach items='${weather_list}' var='vo'>
+			
+var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+	+ "?serviceKey=H%2B2%2ByRkjGYPQjyO0QIsSEBqKP%2Bna4lYEnkYd2suNuR6VKwU%2FT8hO8TU%2BctSqX9rXxgYxq0xsiq0rTxhOWGstag%3D%3D"
+	+ "&pageNo=1&numOfRows=1000&dataType=json&base_date=" + initDate
+	+ "&base_time=0500&nx=" + ${vo.nx}
+	+ "&ny=" + ${vo.ny};	
+	$.ajax({
+		url: url,
+		success: function (result) {
+		console.log(result);
+		var items = result.response.body.items.item
+	/* 		var filteredItems = items.filter((item) => {
+				return item.fcstTime = hours;
+			}); */
+ 			var filteredsky = items.filter((item) => {
+// 				return item.category == "SKY";
+				return (item.category.toLowerCase() == "sky" || item.category.toLowerCase() == "pty") 
+					&&  item.fcstTime == hours
+				&&  item.fcstDate == initDate;
+			});
+ 			var sky = filteredsky.filter((item) => {
+// 				return item.category == "SKY";
+				return item.category.toLowerCase() == "sky" 
+		
+			});
+ 			var pty = filteredsky.filter((item) => {
+// 				return item.category == "SKY";
+				return item.category.toLowerCase() == "pty" 
+		
+			});
+ 			pty = pty[0]
+ 			sky = sky[0]
+ 			console.log('pty ',pty);
+ 			console.log('sky ',sky);
+/*  			var filteredpty = items.filter((item) => {
+// 				return item.category == "SKY";
+				return item.category.toLowerCase() == "pty" 
+					&&  item.fcstTime == hours;
+			}); */
+
+			console.log('filteredsky> ',filteredsky);
+
+			
+			console.log('filteredsky> ',filteredsky[0].fcstValue);
+		
+/* 			
+			- 하늘상태(SKY) 코드 : 맑음(1) sun, 구름많음(3)cloudy, 흐림(4)blur
+			- 강수형태(PTY) 코드 : (초단기) 없음(0), 비(1) rain, 비/눈(2)rain_snow, 눈(3)snow, 빗방울(5) , 빗방울눈날림(6), 눈날림(7) 
+
+			
+			(단기) 없음(0), 비(1), 비/눈(2), 눈(3), 소나기(4)  */
+		
+			/* makeTable(filteredItems); */
+			
+			var s = ['', 'imgs/sun.png','','imgs/cloudy.png', 'imgs/blur.png']
+			var p = ['', 'imgs/rain.png','imgs/rain_snow.png', 'imgs/snow.png','','imgs/raindrop.png','imgs/drift.png']
+			
+			/* $("#cst").css('src', 'img/heart'+weather+'.png'); */
+/* 			$("#cst").css('src', s[sky]);
+			$("#cst").css('src', s[pty]); */
+			
+			console.log('pty.fcstValue> ',pty.fcstValue);
+			console.log('sky.fcstValue> ',sky.fcstValue);
+			
+			if(Number(pty.fcstValue) == 0){
+				sky = Number(sky.fcstValue);
+				console.log('sky',sky,s[sky])
+ 				$("table.weather tbody").append('<tr><td><img src="'+s[sky]+'"></td><td>${vo.region}</td></tr>');
+				//$("table.weather tbody tr").eq(1).append('<td><img src="'+s[sky]+'"></td>');
+				
+			}else{
+				pty = Number(pty.fcstValue);
+				console.log('pty',pty,p[pty])
+				$("table.weather tbody").append('<tr><td><img src="'+p[pty]+'"></td><td>${vo.region}</td></tr>');
+				//$("table.weather tbody tr").eq(1).append('<td><img src="'+p[pty]+'"></td>');
+				/* $("#cst").attr('src', p[pty]); */
+			}
+				//$("table.weather tbody tr").eq(0).append('<th>${vo.region}</th>');
+			/* console.log($("#cst").attr('src')) */
+		/* 	
+			$("#cst").text(sky);
+			$("#cst").text(pty); */
+			
+		},
+	});
+</c:forEach>
+})
+ -->
+	
+</script>
 
 

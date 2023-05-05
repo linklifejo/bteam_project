@@ -61,7 +61,7 @@ public class Board1 extends Fragment {
         recycler.setLayoutManager(layoutManager);
 
         CommonMethod commonMethod = new CommonMethod();
-
+        commonMethod.setParams("num", "6");
         commonMethod.getData("bolist", new Callback<String>(){
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
@@ -74,6 +74,7 @@ public class Board1 extends Fragment {
                         dto.setMember_id(dto.getMember_id());
                         dto.setGonetime(dto.getGonetime());
                         dto.setContent(dto.getContent());
+                        dto.setFilepath(dto.getFilepath());
 
                     }
                     adapter = new BoardOneAdapter(activity.getApplicationContext(), dtos,activity);

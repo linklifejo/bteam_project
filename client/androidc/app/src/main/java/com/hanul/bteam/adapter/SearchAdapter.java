@@ -89,8 +89,7 @@ public class SearchAdapter extends
                 b.putSerializable("dto",dto);
                 activity.bundle = b;
                 activity.fragmentControl(new LocalDDFragment());
-                Toast.makeText(context,
-                        "산이름 : " + dto.getLocname(), Toast.LENGTH_SHORT).show();
+
             }
         });
 

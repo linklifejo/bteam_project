@@ -17,8 +17,8 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public List<CourseVO> course_list() {
-		return dao.course_list();
+	public List<CourseVO> course_list(int location_id) {
+		return dao.course_list(location_id);
 	}
 
 	@Override
@@ -46,6 +46,12 @@ public class CourseServiceImpl implements CourseService {
 	public CourseVO course_info(String s) {
 		// TODO Auto-generated method stub
 		return dao.course_info(s);
+	}
+
+	@Override
+	public List<LocationVO> location_search_list(String search) {
+		// TODO Auto-generated method stub
+		return dao.location_search_list(search);
 	}
 
 
