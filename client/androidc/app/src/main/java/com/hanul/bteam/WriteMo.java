@@ -30,6 +30,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.dto.GoneDTO;
 
@@ -85,6 +86,7 @@ public class WriteMo extends Fragment {
         title.setText(d.getTitle());
         content.setText(d.getContent());
         contentr.setText(d.getContentr());
+        Glide.with(view).load(d.getFilepath()).into(filepath);
 
         view.findViewById(R.id.btn_upload).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,20 +101,18 @@ public class WriteMo extends Fragment {
                     fileBody = RequestBody.create(MediaType.parse("image/jpeg"), new File(imgFilePath));
                     filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);
                 }
-                dto.setId(d.getId());
-
-                if(imgFilePath != null) {
-                    dto.setFilepath(imgFilePath)
-                    ;}
-
                 dto.setId( d.getId() );
                 dto.setTitle( title.getText().toString() );
                 dto.setContent( content.getText().toString() );
                 dto.setContentr( contentr.getText().toString() );
                 dto.setMember_id( activity.loginid );
-                if(imgFilePath != null) {
-                    dto.setFilepath(imgFilePath)
-                    ;}
+                if(imgFilePath==null){
+                    dto.setFilepath(d.getFilepath());
+                }else{
+                    dto.setFilepath(imgFilePath);
+                }
+
+
 
 
 
