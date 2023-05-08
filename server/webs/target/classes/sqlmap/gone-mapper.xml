@@ -213,10 +213,16 @@ from(select filename,filepath, l.id
 	from gone g, location l 
 	where g.location_id = l.id and l.type='1'
 	order by g.readcnt desc)
-where rownum <= 5
+where rownum <= 4
 ]]>
 </select>
 
 
+<!-- 전국지역 날씨 -->
+<select id='weather_list' resultType='gone.GoneVO'>
+select region, nx, ny
+from weather
+where region_child is null
+</select>
 
 </mapper>  

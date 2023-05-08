@@ -121,6 +121,10 @@ public class GoneServiceImpl implements GoneService {
 		return dao.gone_myname(member_id);
 	}
 
+	public List<WeatherVO> weather_list() {
+		return dao.weather_list();
+	}
+
 
 
 
