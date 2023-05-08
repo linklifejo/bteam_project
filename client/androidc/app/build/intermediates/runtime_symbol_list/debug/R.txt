@@ -3034,6 +3034,7 @@ int id bounceBoth 0x7f080066
 int id bounceEnd 0x7f080067
 int id bounceStart 0x7f080068
 int id btn1 0x7f080069
+int id btnCanc 0x7f080249
 int id btnCancel 0x7f08006a
 int id btnChung 0x7f08006b
 int id btnGwangwon 0x7f08006c
@@ -3327,6 +3328,7 @@ int id profile 0x7f08018b
 int id progress_circular 0x7f08018c
 int id progress_horizontal 0x7f08018d
 int id pw 0x7f08018e
+int id pw_check 0x7f08024a
 int id questionsName 0x7f08018f
 int id questionsTitle 0x7f080190
 int id radio 0x7f080191
@@ -3721,6 +3723,7 @@ int layout notification_template_icon_group 0x7f0b007c
 int layout notification_template_part_chronometer 0x7f0b007d
 int layout notification_template_part_time 0x7f0b007e
 int layout popupimg 0x7f0b007f
+int layout pwchange 0x7f0b0090
 int layout questions_1 0x7f0b0080
 int layout questions_1_view 0x7f0b0081
 int layout questions_2 0x7f0b0082
@@ -3736,6 +3739,7 @@ int layout stemp 0x7f0b008b
 int layout support_simple_spinner_dropdown_item 0x7f0b008c
 int layout willgo_frag 0x7f0b008d
 int layout willgoview 0x7f0b008e
+int layout writemo 0x7f0b0091
 int layout wroteview 0x7f0b008f
 int menu menu_bottom 0x7f0d0000
 int mipmap ic_launcher 0x7f0e0000
