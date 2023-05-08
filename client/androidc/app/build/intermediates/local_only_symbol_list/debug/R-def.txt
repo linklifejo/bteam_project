@@ -62,6 +62,7 @@ id aaa
 id address
 id bottom_navi
 id btn1
+id btnCanc
 id btnCancel
 id btnChung
 id btnGwangwon
@@ -111,6 +112,7 @@ id parentLayout
 id phone
 id profile
 id pw
+id pw_check
 id questionsName
 id questionsTitle
 id recycler
@@ -167,6 +169,7 @@ layout myinfo_frag_view2
 layout myinfo_modify_frag_view
 layout myinfodiary
 layout popupimg
+layout pwchange
 layout questions_1
 layout questions_1_view
 layout questions_2
@@ -177,6 +180,7 @@ layout searchview
 layout stemp
 layout willgo_frag
 layout willgoview
+layout writemo
 layout wroteview
 menu menu_bottom
 mipmap ic_launcher
