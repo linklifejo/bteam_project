@@ -88,6 +88,7 @@ public class LoginFrist extends Fragment {
                                 activity.bundle = b;
                                 activity.loginid = id.getText().toString();
                                 activity.name = loginDto.getName();
+                                activity.profile = loginDto.getProfile();
 
 
                                 start();

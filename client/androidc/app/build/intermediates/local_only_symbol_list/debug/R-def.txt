@@ -9,6 +9,7 @@ color teal_700
 color white
 drawable buk_han_san
 drawable chi_ak_san
+drawable ddd
 drawable do_bong_san
 drawable dream03
 drawable duckyu
@@ -55,6 +56,7 @@ drawable namsan2
 drawable search
 drawable seol_ak_san
 drawable seol_ak_san1
+drawable splash_base
 drawable stemp
 id BoardSearch
 id BoardTitle
@@ -154,6 +156,7 @@ layout courseview
 layout couuse
 layout danger
 layout detailmo
+layout fragment_splash
 layout goneview
 layout home_frag
 layout joinlogin
@@ -177,6 +180,7 @@ layout recentlyview
 layout review_list
 layout search_frag
 layout searchview
+layout splashlayout
 layout stemp
 layout willgo_frag
 layout willgoview
