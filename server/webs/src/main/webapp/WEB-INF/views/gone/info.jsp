@@ -55,7 +55,7 @@ table td { text-align: left; }
 	<div class='align'>
 		<span>
 <%-- 			<a href='download.go?id=${f.id}'><i class="font-img-b fa-solid fa-file-arrow-down"></i></a> --%>
-			<a class='download' data-file='${f.id}'><i class="font-img-b fa-solid fa-file-arrow-down"></i></a>
+			<%-- <a class='download' data-file='${f.id}'><i class="font-img-b fa-solid fa-file-arrow-down"></i></a> --%>
 		</span>
 		<span class='preview'></span>
 	</div>
