@@ -30,6 +30,11 @@
 		container: text-center;	
 	}
 
+	.button{
+		text-align: center; margin: 0 auto;
+		container: text-center;	
+	}
+	
 
 .dropdown-content a:hover {background-color: #ddd;}
  
@@ -84,7 +89,9 @@
 		       		</div>
 		 	   </div>
 </div>
-
+<div class="button">
+<button><a href='list.re?loccode=${vo.loccode}'>목록으로</a></button>
+</div>
 
 
 
@@ -158,9 +165,9 @@
 	
 <!-- 찜버튼 -->
 	
-<div class="container">
+<%-- <div class="container">
 <img style="width: 50px;height: 50px;" alt="찜하기버튼" src="./imgs/heart1.png" id="pic">
-<button><a href='list.re?id=${vo.id}'>목록으로</a></button>
+
 </div>
 
 <script type="text/javascript">
@@ -179,7 +186,7 @@ $(function () {
 });
 
 
-</script>
+</script> --%>
 
 
 
