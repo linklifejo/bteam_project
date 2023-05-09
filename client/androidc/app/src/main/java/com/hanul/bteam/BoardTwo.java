@@ -48,9 +48,12 @@ public class BoardTwo extends Fragment {
         activity = (MainActivity) getActivity();
 
         Bundle b = activity.bundle;
-        GoneDTO d = (GoneDTO) b.getSerializable("dto");
-//        Serializable d1 = b.getSerializable("dto");
-//        GoneDTO d = (GoneDTO) d1;
+
+//        GoneDTO d = (GoneDTO) b.getSerializable("dto");
+//        b.putSerializable("dto", d);
+
+        Serializable d1 = b.getSerializable("dto");
+        GoneDTO d = (GoneDTO) d1;
 //        Log.d("entity : ",""+b.getSerializable("dto"));
 
         TextView t = view.findViewById(R.id.title);
