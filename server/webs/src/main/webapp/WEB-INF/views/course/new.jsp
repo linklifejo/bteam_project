@@ -36,10 +36,10 @@
 		<col width="140px">
 		<col>
 	</colgroup>
-	<tr><th>산이름</th>
+	<tr><th>코스이름</th>
 		<td><input type='text' name='couname' ></td>
 	</tr>
-	<tr><th>첨부파일</th>
+	<tr><th>안내도</th>
 	<td class='txt-left'>
 		<div class="align">
 		<label>
