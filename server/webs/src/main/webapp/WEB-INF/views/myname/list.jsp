@@ -268,7 +268,7 @@
 
 
 <!-- 자동 테스트 이동 -->
- <body>
+ <!-- <body>
     <h2 align = "center">아래의 텍스트가 움직여요!!</h2>
     <p>
 	<MARQUEE>이 텍스트가 움직인답니다.</MARQUEE>
@@ -310,7 +310,7 @@
 	<MARQUEE hspace="50" vspace="50" >스크롤의 위/아래 여백을 줍니다.</MARQUEE>
 	스크롤의 여백
     </p>
-</body>
+</body> -->
 
 
 

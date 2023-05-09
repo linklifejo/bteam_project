@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <footer class="footer">
-	<div class="foot" style='background-image: url("imgs/footer_1.png")';>
+	<div class="foot" style='background-image: url("imgs/footer_2.png")';>
 	<div class="back" style="">
 	<!-- <img alt="" src="imgs/footer.png" style="width: 1500px" height="500dp"> -->
 	<!-- <div style='background-image: url("imgs/footer.png")';> -->
-	<h1>등산 가이드</h1>
-	<h5>가고싶은 산을 한눈에 보는사이트</h5>
+	<a><img alt="등산가이드" src="imgs/mainclimb.png"></a>
+	<h4>가고싶은 산을 한눈에 보는사이트</h4>
 	</div>
 <!-- 	<a>
 	<img alt="" src="imgs/footer.png" >
@@ -26,6 +26,7 @@
 		position: absolute;
 		left: 10px;
 		right: 10px;
+		top:100px;
 	}
 	
 		.foot{
