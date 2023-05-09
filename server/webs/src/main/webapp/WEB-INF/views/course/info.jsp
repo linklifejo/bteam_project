@@ -46,7 +46,7 @@
 
 <div class="main1">
 	<div class='btnSet'>
-		<a class='btn-fill' href='list.co'>고객목록</a>
+		<a class='btn-fill' href='list.co'>코스목록</a>
 		<a class='btn-fill' href='modify.co?id=${vo.id}'>정보수정</a>
 		<a class='btn-empty' onclick='fn_delete()'>정보삭제</a>
 	</div>

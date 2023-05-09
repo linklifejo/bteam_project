@@ -38,7 +38,7 @@
 
 <div class="smdd">
 <div class="main">
-<h3>방명록 목록</h3>
+<h3>글 목록</h3>
 </div>
 
 <div class="no">
