@@ -19,7 +19,7 @@
 
 <div class="main">
 
-<h3>방명록 안내수정</h3>
+<h3>글 수정</h3>
 <form method='post' enctype='multipart/form-data' action='info.bo'>
 <table class='w-px1200'>
 <tr><th class='w-px140'>제목</th>
