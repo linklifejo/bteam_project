@@ -1,5 +1,6 @@
 package com.hanul.iot;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +23,8 @@ import location.LocationServiceImpl;
 import location.LocationVO;
 import member.MemberServiceImpl;
 import member.MemberVO;
+import notice.NoticePageVO;
+import notice.NoticeVO;
 
 @Controller
 public class LocationController {
@@ -76,14 +79,41 @@ public class LocationController {
 		/* session.setAttribute("loginInfo", vo); */
 		return "location/new";
 	}
-	
-	//선택한 고객정보 수정저장처리 요청
+
+	//선택한 공지글수정저장처리 요청
 	@RequestMapping("/update.lo")
-	public String update(LocationVO vo) {
-		//화면에서 변경입력한 정보를 DB에 변경저장한다
+	public String update(LocationVO vo
+						, MultipartFile file
+						, HttpServletRequest request) throws Exception{
+		LocationVO location = service.location_info( vo.getId() );
+		
+		//파일 첨부하지 않는 경우
+		if( file==null || file.isEmpty() ) {
+			if( vo.getFilename()==null || vo.getFilename().isEmpty() ) {				
+				//원래 첨부파일 X --> 첨부X
+				//원래 첨부파일 O --> 첨부X
+				common.file_delete(location.getFilepath(), request);
+				
+			}else {
+				//원래 첨부파일 O --> 그대로 사용: 원래 정보로 담아둔다
+				vo.setFilename( location.getFilename() );
+				vo.setFilepath( location.getFilepath() );
+			}
+		
+		}else {
+		//파일 첨부하는 경우
+		//원래 첨부파일 X --> 첨부
+			vo.setFilename( file.getOriginalFilename() );
+			vo.setFilepath( common.fileUpload(file, "location", request) );
+			
+		//원래 첨부파일 O --> 바꿔 첨부
+			common.file_delete(location.getFilepath(), request);
+		}
+		
+		//화면에서 변경입력한 정보로 DB에 변경저장한다
 		service.location_update(vo);
-		//응답화면연결-고객정보
-		return "redirect:info.lo?id=" + vo.getId();
+		//공지글안내화면연결
+		return "redirect:info.lo?id="+ vo.getId();
 	}
 	
 	

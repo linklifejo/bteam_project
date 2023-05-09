@@ -29,7 +29,7 @@
 <div class="main">
 	<h3>전국산정보수정</h3>
 </div>
-	<form method="post" action='update.lo'>
+	<form method="post" action='update.lo' enctype="multipart/form-data">
 	<table class='w-px600'>
 	<colgroup>
 		<col width="140px">
@@ -45,9 +45,11 @@
 			<input type='file' name='file' class='attach-file'>
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
-		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>		
-		<div class='file-name'></div>
-		<div class='preview'></div>
+		<span id='file-name'>${vo.filename }</span>
+		<span id='preview'></span>
+		<a id='delete-file' 
+		style='display:${empty vo.filename ? "none": "inline"}'><i class="font-img-r fa-regular fa-trash-can"></i></a>
+
 		</div>
 	</td>
 	</tr>

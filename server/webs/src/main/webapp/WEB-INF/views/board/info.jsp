@@ -30,7 +30,7 @@ table td { text-align: left; }
 
 <div class="main">
 
-<h3>방명록 안내</h3>
+<h3>안  내</h3>
 <table class='w-px1200'>
 <colgroup>
 	<col width='140px'>

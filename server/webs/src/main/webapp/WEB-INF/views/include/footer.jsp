@@ -3,7 +3,7 @@
 <footer class="footer">
 	<div class="foot" style='background-image: url("imgs/footer_1.png")';>
 	<div class="back" style="">
-	<!-- <img alt="" src="imgs/footer.png" style="width: 1500px" height="500dp"> -->
+	<!-- <img alt="" src="imgs/footer.png" style="width: 1500px" height="200px"> -->
 	<!-- <div style='background-image: url("imgs/footer.png")';> -->
 	<h1>등산 가이드</h1>
 	<h5>가고싶은 산을 한눈에 보는사이트</h5>
