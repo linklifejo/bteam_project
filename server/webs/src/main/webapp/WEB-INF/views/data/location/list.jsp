@@ -37,7 +37,7 @@
 </tr>	
 	
 </table>
-<table class='tb-list location'>
+<table class='tb-list location desc'>
 
 <tr><th>설명</th><td colspan='10' class='txt-left'>${vo.mntninfodtlinfocont}</td>
 	
@@ -47,6 +47,11 @@
 </c:forEach>
 
 <script>
+$(function(){
+	$('table.desc tr').each( function(idx){		
+		$('table.desc tr:eq('+idx+ ') td').html( $('table.desc tr:eq('+idx+ ') td').text() );
+	})
+})
 $('.location img').on('click', function(){
 	$('#popup, #popup-background').css('display', 'block');
 	$('#popup').html( $(this).clone() )

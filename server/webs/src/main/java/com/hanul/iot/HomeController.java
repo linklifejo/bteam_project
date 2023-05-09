@@ -106,7 +106,7 @@ public class HomeController {
 		
 		
 		List<WeatherVO> weather_list = (List<WeatherVO>)service.weather_list();
-		model.addAttribute("weather_list", weather_list);
+		session.setAttribute("weather_list", weather_list);
 		
 		session.removeAttribute("category");
 		return "home";
