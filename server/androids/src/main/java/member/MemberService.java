@@ -15,6 +15,8 @@ public interface MemberService {
 	
 	
 	MemberVO member_myinfo(String id); //내정보보기(내프로필) 회원정보조회
+	
+	
 	List<MemberVO> member_list(); //회원목록조회-관리자
 	MemberVO member_login(HashMap<String, String> map); //로그인처리
 	String member_salt(String id); //회원의 솔트조회

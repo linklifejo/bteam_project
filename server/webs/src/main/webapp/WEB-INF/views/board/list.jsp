@@ -38,7 +38,11 @@
 
 <div class="smdd">
 <div class="main">
-<h3>방명록 목록</h3>
+<<<<<<< HEAD
+<h3>자유게시판</h3>
+=======
+<h3>글 목록</h3>
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
 </div>
 
 <div class="no">
@@ -72,7 +76,7 @@
 	</li>
 	<!-- 로그인된 경우 새글쓰기 가능 -->
 	<c:if test="${not empty loginInfo }">
-	<li><a class='btn-fill' href='new.bo'>새글쓰기</a></li>
+	<li><a class='btn-fill' href='new.bo'>글 쓰기</a></li>
 	</c:if>
 </ul>
 

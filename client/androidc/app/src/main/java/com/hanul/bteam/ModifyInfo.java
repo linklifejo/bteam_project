@@ -56,7 +56,7 @@ import retrofit2.Response;
 
 public class ModifyInfo extends Fragment {
     MainActivity activity;
-    EditText pw, name, phone, address;
+    EditText  name, phone, address;
     ImageView profile;
     File imgFile = null;
     String imgFilePath = null;
@@ -65,8 +65,7 @@ public class ModifyInfo extends Fragment {
     MultipartBody.Part filePart =null;
     boolean isCheck = true;
     Uri uri;
-
-
+    MemberDTO d;
 
 
 
@@ -78,53 +77,61 @@ public class ModifyInfo extends Fragment {
 
 
 
-        ViewGroup view = (ViewGroup) inflater.inflate(R.layout.myinfo_modify_frag_view,
+        View view =  inflater.inflate(R.layout.myinfo_modify_frag_view,
                 container, false);
 
         activity = (MainActivity) getActivity();
-        pw=view.findViewById(R.id.pw);
+        Bundle b = activity.bundle;
+        d = (MemberDTO) b.getSerializable("dto");
+        MemberDTO dto = new MemberDTO();
         name =view.findViewById(R.id.name);
         phone =view.findViewById(R.id.phone);
         address =view.findViewById(R.id.address);
         profile = view.findViewById(R.id.profile);
 
-        Bundle b = activity.bundle;
-        MemberDTO d = (MemberDTO) b.getSerializable("dto");
-        ImageView i = view.findViewById(R.id.profile);
-        Glide.with(view).load(d.getProfile()).into(i);
+        //조회
+        name.setText(d.getName());
+        phone.setText(d.getPhone());
+        address.setText(d.getAddress());
+        Glide.with(view).load(d.getProfile()).into(profile);
 
 
         view.findViewById(R.id.btnupdate).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!DataCheck.checkPhoneNumber(phone.getText().toString())){
-                    phone.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "휴대폰 안쳣습니당", Toast.LENGTH_SHORT).show();
-                }
-                else if(!DataCheck.checkEmailAddress(address.getText().toString())){
-                    address.requestFocus();
-                    isCheck =false;
-                    Toast.makeText(activity,
-                            "주소를 안쳤습니다", Toast.LENGTH_SHORT).show();
-                }
+//                if(!DataCheck.checkPhoneNumber(phone.getText().toString())){
+//                    phone.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "휴대폰 안쳣습니당", Toast.LENGTH_SHORT).show();
+//                }
+//                else if(!DataCheck.checkEmailAddress(address.getText().toString())){
+//                    address.requestFocus();
+//                    isCheck =false;
+//                    Toast.makeText(activity,
+//                            "주소를 안쳤습니다", Toast.LENGTH_SHORT).show();
+//                }
                 CommonMethod commonMethod = new CommonMethod();
 
                 if(imgFile != null) {
-
                     fileBody = RequestBody.create(MediaType.parse("image/jpeg"), new File(imgFilePath));
                     filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);
                 }
 
-                MemberDTO dto = new MemberDTO();
+
                 dto.setId( activity.loginid );
-                dto.setPw( pw.getText().toString() );
                 dto.setName( name.getText().toString() );
                 activity.name= name.getText().toString();
                 dto.setPhone( phone.getText().toString() );
                 dto.setAddress( address.getText().toString() );
-                dto.setProfile(imgFilePath);
+
+
+                if(imgFilePath==null){
+                    dto.setProfile(d.getProfile());
+                }else{
+                    dto.setProfile(imgFilePath);
+                }
+
 
 
 
@@ -135,8 +142,10 @@ public class ModifyInfo extends Fragment {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if(isCheck) {
-
-                            activity.fragmentControl(new MyInfoFragment());
+                            Bundle b = new Bundle();
+                            b.putSerializable("dto", dto);
+                            activity.bundle=b;
+                            activity.fragmentControl(new MyInfoFragment(),b);
                         }
                     }
 

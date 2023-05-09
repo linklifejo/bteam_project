@@ -2787,6 +2787,7 @@ int drawable common_google_signin_btn_text_light_normal 0x7f070095
 int drawable common_google_signin_btn_text_light_normal_background 0x7f070096
 int drawable compat_splash_screen 0x7f070097
 int drawable compat_splash_screen_no_icon_background 0x7f070098
+int drawable ddd 0x7f070126
 int drawable design_fab_background 0x7f070099
 int drawable design_ic_visibility 0x7f07009a
 int drawable design_ic_visibility_off 0x7f07009b
@@ -2924,6 +2925,7 @@ int drawable notify_panel_notification_icon_bg 0x7f07011e
 int drawable search 0x7f07011f
 int drawable seol_ak_san 0x7f070120
 int drawable seol_ak_san1 0x7f070121
+int drawable splash_base 0x7f070127
 int drawable stemp 0x7f070122
 int drawable test_level_drawable 0x7f070123
 int drawable tooltip_frame_dark 0x7f070124
@@ -3651,6 +3653,7 @@ int layout design_navigation_menu_item 0x7f0b0034
 int layout design_text_input_end_icon 0x7f0b0035
 int layout design_text_input_start_icon 0x7f0b0036
 int layout detailmo 0x7f0b0037
+int layout fragment_splash 0x7f0b0093
 int layout goneview 0x7f0b0038
 int layout home_frag 0x7f0b0039
 int layout joinlogin 0x7f0b003a
@@ -3735,6 +3738,10 @@ int layout select_dialog_item_material 0x7f0b0088
 int layout select_dialog_multichoice_material 0x7f0b0089
 int layout select_dialog_singlechoice_material 0x7f0b008a
 int layout splash_screen_view 0x7f0b008b
+<<<<<<< HEAD
+=======
+int layout splashlayout 0x7f0b0092
+>>>>>>> a6b03a40a7adf0fb27cd24018d2d673180c5cdcb
 int layout stemp 0x7f0b008c
 int layout support_simple_spinner_dropdown_item 0x7f0b008d
 int layout willgo_frag 0x7f0b008e

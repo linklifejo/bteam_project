@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hanul.bteam.COMMON.CommonMethod;
@@ -24,6 +26,7 @@ import com.hanul.bteam.adapter.MyWroteAdapter;
 import com.hanul.bteam.adapter.RecentlyAdapter;
 import com.hanul.bteam.adapter.WillGoAdapter;
 import com.hanul.bteam.dto.GoneDTO;
+import com.hanul.bteam.dto.LocationDTO;
 import com.hanul.bteam.dto.MemberDTO;
 import com.hanul.bteam.dto.WillgoDTO;
 import com.hanul.bteam.login.LoginFrist;
@@ -46,6 +49,7 @@ public class MyInfoFragment extends Fragment {
     RecentlyAdapter adapter_re;
 
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -55,15 +59,34 @@ public class MyInfoFragment extends Fragment {
         View view = (ViewGroup) inflater.inflate(R.layout.myinfo_frag,
                 container, false);
         activity = (MainActivity) getActivity();
+        Bundle b = activity.bundle;
+
+//        MemberDTO d = (MemberDTO) b.getSerializable("dto");
+
+//        MemberDTO d = (MemberDTO) b.getSerializable("dto");
+//        Serializable d1 = b.getSerializable("dto");
+//        d2 = (MemberDTO) d1;
+//        d = (MemberDTO) b.getSerializable("dto");
+
         view.findViewById(R.id.btn_write).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.fragmentControl(new ModifyInfo());
+                MemberDTO d = (MemberDTO) b.getSerializable("dto");
+                Bundle b = new Bundle();
+                b.putSerializable("dto",d);
+                activity.bundle = b;
+                activity.fragmentControl(new ModifyInfo(),b);
             }
         });
         //처음 회원가입할때 이름 픽스시키고
         TextView t = view.findViewById(R.id.name);
         t.setText(activity.name);
+
+        ImageView i =view.findViewById(R.id.profile);
+        if(i !=null) {
+            Glide.with(view).load(activity.profile).into(i);
+        }
+
         view.findViewById(R.id.changepw).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,7 +174,7 @@ public class MyInfoFragment extends Fragment {
 
 
 
-        dtoo = new ArrayList<>();
+       dtoo = new ArrayList<>();
         rra = view.findViewById(R.id.rra);
         LinearLayoutManager layout2 = new
                 LinearLayoutManager(

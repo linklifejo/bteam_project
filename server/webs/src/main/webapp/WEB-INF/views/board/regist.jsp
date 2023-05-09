@@ -18,7 +18,7 @@
 <body>
 
 <div class="main">
-<h3>방명록 새글쓰기</h3>
+<h3>글 쓰기</h3>
 
 
 <form method='post' enctype='multipart/form-data' action='insert.bo'>

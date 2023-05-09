@@ -333,7 +333,7 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 
 
 
- 
+<!--  
 <script type="text/javascript">
 var sky;
 var pty;
@@ -486,7 +486,7 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 	  
 
 
-	
+	 -->
 	
 	
 <body onload="showImage()">

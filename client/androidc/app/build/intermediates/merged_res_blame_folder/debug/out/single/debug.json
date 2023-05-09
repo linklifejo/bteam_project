@@ -1,7 +1,16 @@
 [
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_seol_ak_san1.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\seol_ak_san1.xml"
+=======
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_nae_jang_san1.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/nae_jang_san1.xml"
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_seol_ak_san1.xml.flat",
@@ -20,8 +29,17 @@
         "source": "com.hanul.bteam.app-main-36:/layout/searchview.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_couuse.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\couuse.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\mipmap-xhdpi\\ic_launcher.webp"
+=======
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_course.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/course.xml"
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -48,6 +66,25 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/marker.png"
     },
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_myinfodiary.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\myinfodiary.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable-v24_dream03.jpg.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable-v24\\dream03.jpg"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_heart.png.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\heart.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_splash_base.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\splash_base.xml"
+=======
+>>>>>>> a6b03a40a7adf0fb27cd24018d2d673180c5cdcb
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_pwchange.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/pwchange.xml"
     },
@@ -62,6 +99,7 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_myinfo_modify_frag_view.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/myinfo_modify_frag_view.xml"
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_recentlyview.xml.flat",
@@ -124,12 +162,17 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/g_ak.jpg"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_g_ak.jpg.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\g_ak.jpg"
+=======
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_danger.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/danger.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_mu_dueng_san.jpg.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/mu_dueng_san.jpg"
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable-v24_dream03.jpg.flat",
@@ -232,8 +275,17 @@
         "source": "com.hanul.bteam.app-main-36:/layout/local_frag.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_splashlayout.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\splashlayout.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\activity_main.xml"
+=======
         "merged": "com.hanul.bteam.app-merged_res-34:/xml_data_extraction_rules.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/xml/data_extraction_rules.xml"
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/xml_filepath.xml.flat",
@@ -252,8 +304,21 @@
         "source": "com.hanul.bteam.app-main-36:/layout/goneview.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_fragment_splash.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/fragment_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_stemp.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\stemp.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_gye_bang_san.jpg.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\gye_bang_san.jpg"
+=======
         "merged": "com.hanul.bteam.app-merged_res-34:/mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "com.hanul.bteam.app-main-36:/mipmap-xhdpi/ic_launcher_round.webp"
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_memberview.xml.flat",
@@ -276,6 +341,46 @@
         "source": "com.hanul.bteam.app-main-36:/drawable-v24/item_color.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_questions_1_view.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\questions_1_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_bbview.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\bbview.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_localdd_frag.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\localdd_frag.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_pwchange.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\pwchange.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_han_ra_san1.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\han_ra_san1.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_han_ra_san.jpg.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\han_ra_san.jpg"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_searchview.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\searchview.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_nack_san1.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\nack_san1.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_mu_dueng_san1.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\mu_dueng_san1.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_gr_san1.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\gr_san1.xml"
+=======
         "merged": "com.hanul.bteam.app-merged_res-34:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
@@ -290,6 +395,7 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_stemp.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/stemp.xml"
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_heart.png.flat",
@@ -356,6 +462,22 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/nack_san1.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_ddd.jpg.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\ddd.jpg"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_do_bong_san.jpg.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\do_bong_san.jpg"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_stemp.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\stemp.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_localview.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\localview.xml"
+=======
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_courseview.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/courseview.xml"
     },
@@ -366,18 +488,24 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_stemp.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/stemp.xml"
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_popupimg.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/popupimg.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_boardview.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\boardview.xml"
+=======
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_couuse.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/couuse.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_mylocation.png.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/mylocation.png"
+>>>>>>> bf83645ea1a6401520d5b65767f1259db88fc04b
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/mipmap-hdpi_ic_launcher.webp.flat",
