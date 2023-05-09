@@ -15,8 +15,10 @@ values (#{locname}, #{name_desc}, #{latitude}, #{longitude}, #{post}, #{address}
 <update id='update'>
 update location
 set locname = #{locname}, name_desc = #{name_desc}, latitude = #{latitude},
-			 longitude = #{longitude}, post = #{post}, address = #{address},
-			 filename = #{filename}, filepath = #{filepath}
+			 longitude = #{longitude}, post = #{post}, address = #{address}
+			 <if test="filename != null">
+			 , filename = #{filename, jdbcType=VARCHAR}, filepath = #{filepath, jdbcType=VARCHAR}
+			 </if>
 where id = #{id}
 </update>
 
