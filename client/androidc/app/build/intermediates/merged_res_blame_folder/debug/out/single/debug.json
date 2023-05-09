@@ -48,6 +48,10 @@
         "source": "com.hanul.bteam.app-main-36:/drawable/marker.png"
     },
     {
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_pwchange.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/pwchange.xml"
+    },
+    {
         "merged": "com.hanul.bteam.app-merged_res-34:/layout_detailmo.xml.flat",
         "source": "com.hanul.bteam.app-main-36:/layout/detailmo.xml"
     },
@@ -194,6 +198,10 @@
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_gye_bang_san.jpg.flat",
         "source": "com.hanul.bteam.app-main-36:/drawable/gye_bang_san.jpg"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_writemo.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/writemo.xml"
     },
     {
         "merged": "com.hanul.bteam.app-merged_res-34:/drawable_ic_launcher_background.xml.flat",
