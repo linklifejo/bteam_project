@@ -131,6 +131,11 @@ public class MemberController {
 		if( profilFile!=null ) {
 			vo.setProfile( common.fileUpload((MultipartFile) file, "profile", req) );	
 		}
+//		else {
+//			MemberVO m = service.member_myinfo(vo.getId());
+//			vo.setProfile(m.getProfile());
+//		}
+		
 		service.member_update(vo);
 		Gson gson = new Gson();
 		 

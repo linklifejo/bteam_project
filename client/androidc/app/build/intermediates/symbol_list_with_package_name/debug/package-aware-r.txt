@@ -3035,6 +3035,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btn1
+id btnCanc
 id btnCancel
 id btnChung
 id btnGwangwon
@@ -3328,6 +3329,7 @@ id profile
 id progress_circular
 id progress_horizontal
 id pw
+id pw_check
 id questionsName
 id questionsTitle
 id radio
@@ -3722,6 +3724,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout popupimg
+layout pwchange
 layout questions_1
 layout questions_1_view
 layout questions_2
@@ -3737,6 +3740,7 @@ layout stemp
 layout support_simple_spinner_dropdown_item
 layout willgo_frag
 layout willgoview
+layout writemo
 layout wroteview
 menu menu_bottom
 mipmap ic_launcher
