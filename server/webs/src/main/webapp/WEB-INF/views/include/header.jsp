@@ -10,12 +10,12 @@
 	</div>
 	<div class="header">
 			 
-			<!-- <div style="background-color: #80c3ed;">
-	<MARQUEE scrolldelay="2000" scrollamount="70" width="200" height="50" direction="up">
+			<div style="background-color: #80c3ed;">
+	<MARQUEE scrolldelay="2000" scrollamount="70" width="250" height="50" direction="up">
 <body>
  
- 	<table class="weather">
-		<tbody>
+ 	<table class="weather" style="border: hidden;">
+		<tbody style="border: hidden;">
 		
 		</tbody>
  	</table>
@@ -23,7 +23,7 @@
 	
 </body>
 	</MARQUEE>
-			</div> -->
+			</div>
 	<div>
 	<nav>
 		<ul>
@@ -32,7 +32,6 @@
 			<c:choose>
 				<c:when test='${loginInfo.admin eq "Y"}'>
 					<li><a ${category eq 'hr' ? "class='active'" : ''} href='<c:url value="/"/>list.hr'>사원관리</a></li>
-					<li><a ${category eq 'vi' ? "class='active'" : ''} href='<c:url value="/"/>visual/list'>시각화</a></li>
 					<li><a ${category eq 'cu' ? "class='active'" : ''} href='<c:url value="/"/>list.cu'>고객관리</a></li>
 				</c:when>
 				<c:otherwise>
@@ -58,7 +57,6 @@
 					<li><a ${category eq 'lo' ? "class='active'" : ''} href='<c:url value="/"/>list.lo'>전국산정보</a></li>
 			<li><a ${category eq 'bo' ? "class='active'" : ''} href='<c:url value="/"/>list.bo'>자유 게시판</a></li>
 			<!--지역별산 region -->
-			<li><a ${category eq 'no' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>찜</a></li>
 			<li><a ${category eq 'no' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>공지사항</a></li>
 			<li><a ${category eq 'da' ? "class='active'" : ''} href='<c:url value="/"/>list.da'>공공데이터(산)</a></li>
 		</ul>
@@ -178,12 +176,10 @@ header nav a:hover, header nav a.active { color:#fff;
 	z-index: 100;
 }
 
-
-
 </style>
 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 var sky;
 var pty;
 /* var intiDate = $("#datepick").val();
@@ -208,8 +204,8 @@ console.log(hours);
 console.log(initDate);
 
 $(function(){
-	
-	
+
+
 	<c:forEach items='${weather_list}' var='vo'>
 			
 var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
@@ -217,6 +213,10 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 	+ "&pageNo=1&numOfRows=1000&dataType=json&base_date=" + initDate
 	+ "&base_time=0500&nx=" + ${vo.nx}
 	+ "&ny=" + ${vo.ny};	
+	
+	if(hours.length < 4){
+		hours = '0' + date.getHours()+'00'
+	}
 	$.ajax({
 		url: url,
 		success: function (result) {
@@ -274,20 +274,25 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 			
 			console.log('pty.fcstValue> ',pty.fcstValue);
 			console.log('sky.fcstValue> ',sky.fcstValue);
-			
+			var val;
 			if(Number(pty.fcstValue) == 0){
 				sky = Number(sky.fcstValue);
 				console.log('sky',sky,s[sky])
- 				$("table.weather tbody").append('<tr><td><img src="'+s[sky]+'"></td><td>${vo.region}</td></tr>');
+				val = s[sky];
+//  				$("table.weather tbody").append('<tr><td><img src="'+s[sky]+'"></td><td>${vo.region}</td></tr>');
+// 				$("table.weather tbody tr").css('border', 'hidden');
 				//$("table.weather tbody tr").eq(1).append('<td><img src="'+s[sky]+'"></td>');
 				
 			}else{
 				pty = Number(pty.fcstValue);
 				console.log('pty',pty,p[pty])
-				$("table.weather tbody").append('<tr><td><img src="'+p[pty]+'"></td><td>${vo.region}</td></tr>');
+				val = p[pty];
+// 				$("table.weather tbody").append('<tr><td><img src="'+p[pty]+'"></td><td>${vo.region}</td></tr>');
 				//$("table.weather tbody tr").eq(1).append('<td><img src="'+p[pty]+'"></td>');
 				/* $("#cst").attr('src', p[pty]); */
 			}
+			$("table.weather tbody").append('<tr><td><img src="'+val+'"></td><td>${vo.region}</td></tr>');
+			$("table.weather tbody td").css('border', 'hidden');
 				//$("table.weather tbody tr").eq(0).append('<th>${vo.region}</th>');
 			/* console.log($("#cst").attr('src')) */
 		/* 	
@@ -296,9 +301,10 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 			
 		},
 	});
+	
 </c:forEach>
 })
- -->
+
 	
 </script>
 
