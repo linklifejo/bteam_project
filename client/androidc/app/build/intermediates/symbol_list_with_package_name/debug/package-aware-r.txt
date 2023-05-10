@@ -2789,6 +2789,7 @@ drawable common_google_signin_btn_text_light_normal_background
 drawable compat_splash_screen
 drawable compat_splash_screen_no_icon_background
 drawable ddd
+drawable deng
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2829,6 +2830,8 @@ drawable ic_search_black_24
 drawable icon_background
 drawable image01
 drawable image02
+drawable img
+drawable img_1
 drawable item_color
 drawable ji_ri_san
 drawable ji_ri_san1
@@ -3654,7 +3657,6 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout detailmo
-layout fragment_splash
 layout goneview
 layout home_frag
 layout joinlogin
@@ -4439,6 +4441,7 @@ style TextAppearance_MaterialComponents_Tooltip
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
+style Theme_App_Starting
 style Theme_AppCompat
 style Theme_AppCompat_CompactMenu
 style Theme_AppCompat_DayNight
