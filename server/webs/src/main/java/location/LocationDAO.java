@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import course.CourseVO;
+
 @Repository
 public class LocationDAO implements LocationService {
 	@Autowired @Qualifier("bteam") private SqlSession sql;
@@ -50,6 +52,11 @@ public class LocationDAO implements LocationService {
 	@Override
 	public List<LocationVO> local_list(String loccode) {
 		return sql.selectList("lo.local_list",loccode);
+	}
+
+	@Override
+	public CourseVO course_info(int location_id) {
+		return sql.selectOne("lo.cou_info", location_id);
 	}
 
 

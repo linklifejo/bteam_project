@@ -19,6 +19,7 @@
 
 
 	.main{
+		margin-top:100px;
 		text-align: center; margin: 0 auto;
 		container: text-center;
 	}
@@ -34,7 +35,9 @@
 		container: text-center;		
 	}
 	
-	
+	.my{
+		margin-bottom: 100px;
+	}
 	
 	
 	
@@ -187,7 +190,7 @@
 <h3>내정보</h3>
 
 
-<table>
+<table class="my">
 <colgroup>
 	<col width='200px'>
 	<col width='200px'>
@@ -314,10 +317,7 @@
 
 
 
-<div class='btnSet'>
-	<a href='' class='btn-fill'>산 등록</a>
-</div>
-	<h1 class="mainfont_1">인기산</h1>
+	<h1 class="mainfont_1">내가 쓴글</h1>
 </div>
 <table class='w-px600 tb-list'>
 
