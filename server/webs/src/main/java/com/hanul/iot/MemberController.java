@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import common.CommonUtility;
 import member.MemberServiceImpl;
 import member.MemberVO;
+import notice.NoticeVO;
 
 @Controller
 public class MemberController {
@@ -30,7 +32,54 @@ public class MemberController {
 		session.setAttribute("category", "join");
 		return "member/join";
 	}
-	
+	//회원가입화면 요청
+	@RequestMapping("/memberModify")
+	public String memberupdate(HttpSession session, Model model) {
+	//	session.setAttribute("category", "join");
+		MemberVO vo = (MemberVO)session.getAttribute("loginInfo");
+		MemberVO  member = service.member_myinfo( vo.getId() );
+		model.addAttribute("vo", member);
+		return "member/modify";
+	}
+
+	//회원가입처리 요청
+//	@ResponseBody 
+	@RequestMapping(value="/memberUpdate", produces="text/html; charset=utf-8")
+	public String memberUpdate(MemberVO vo, MultipartFile file  
+				, HttpServletRequest request) {
+		MemberVO  member = service.member_myinfo( vo.getId() );
+		
+		//파일 첨부하지 않는 경우
+		if( file.isEmpty() ) {
+			if( member.getProfile().isEmpty() ) {				
+				//원래 첨부파일 X --> 첨부X
+				//원래 첨부파일 O --> 첨부X
+				common.file_delete(member.getProfile(), request);
+				
+			}else {
+				//원래 첨부파일 O --> 그대로 사용: 원래 정보로 담아둔다
+				vo.setProfile( member.getProfile() );
+		
+			}
+		
+		}else {
+		//파일 첨부하는 경우
+		//원래 첨부파일 X --> 첨부
+		//	vo.setProfile( file.getOriginalFilename() );
+			vo.setProfile( common.fileUpload(file, "profile", request) );
+			
+		//원래 첨부파일 O --> 바꿔 첨부
+			common.file_delete(member.getProfile(), request);
+		}
+		
+		//화면에서 입력한 회원정보로 DB에 회원가입처리
+		//비번암호화: 암호화용salt -> salt를 사용해 입력비번을 암호화
+
+		service.member_update(vo);
+	//	return "myname/list";
+		return "redirect:list.na?member_id="+ vo.getId();
+//		return "redirect:list.na" ;
+	}	
 	
 	//회원가입처리 요청
 	@ResponseBody 

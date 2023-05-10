@@ -19,6 +19,7 @@
 
 
 	.main{
+		margin-top:100px;
 		text-align: center; margin: 0 auto;
 		container: text-center;
 	}
@@ -34,7 +35,9 @@
 		container: text-center;		
 	}
 	
-	
+	.my{
+		margin-bottom: 100px;
+	}
 	
 	
 	
@@ -187,7 +190,7 @@
 <h3>내정보</h3>
 
 
-<table>
+<table class="my">
 <colgroup>
 	<col width='200px'>
 	<col width='200px'>
@@ -221,7 +224,7 @@
 
 
 		<div class='btnSet'>
-			<a href='new.lo' class='btn-fill'>내정보 수정</a>
+			<a href='memberModify' class='btn-fill'>내정보 수정</a>
 		</div>
 		
 	
@@ -268,7 +271,7 @@
 
 
 <!-- 자동 테스트 이동 -->
- <body>
+ <!-- <body>
     <h2 align = "center">아래의 텍스트가 움직여요!!</h2>
     <p>
 	<MARQUEE>이 텍스트가 움직인답니다.</MARQUEE>
@@ -310,14 +313,11 @@
 	<MARQUEE hspace="50" vspace="50" >스크롤의 위/아래 여백을 줍니다.</MARQUEE>
 	스크롤의 여백
     </p>
-</body>
+</body> -->
 
 
 
-<div class='btnSet'>
-	<a href='' class='btn-fill'>산 등록</a>
-</div>
-	<h1 class="mainfont_1">인기산</h1>
+	<h1 class="mainfont_1">내가 쓴글</h1>
 </div>
 <table class='w-px600 tb-list'>
 

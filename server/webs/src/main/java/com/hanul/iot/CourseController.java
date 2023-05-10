@@ -2,30 +2,44 @@ package com.hanul.iot;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
+import common.CommonUtility;
 import course.CourseVO;
 import location.LocationVO;
+import notice.NoticeVO;
 import course.CourseServiceImpl;
 
 @Controller
 public class CourseController {
 	@Autowired private CourseServiceImpl service;
 		
-	//신규고객등록처리 요청
+
+	@Autowired private CommonUtility common;
+	//신규공지글 저장처리 요청
 	@RequestMapping("/insert.co")
-	public String insert(CourseVO vo) {
-		//화면에서 입력한 정보로  DB에 신규삽입저장한다.
+	public String insert(CourseVO vo, MultipartFile file
+						, HttpServletRequest request) {
+		//첨부파일이 있는 경우 서버의 물리적영역에 첨부된 파일을 저장
+		//첨부된 파일을 물리적으로 어디에, 어떤이름으로 저장했는지를 DB에 저장
+		if( ! file.isEmpty() ) {
+			vo.setFilename( file.getOriginalFilename() );
+			vo.setFilepath( 
+					common.fileUpload(file, "course", request) );
+		}
+		
+		//화면에서 입력한 정보로 DB에 신규저장
 		service.course_insert(vo);
-		//응답화면연결 - 고객목록
+		//응답화면연결 -목록
 		return "redirect:list.co";
 	}
-	
 	
 	//신규고객등록화면 요청
 	@RequestMapping("/new.co")
@@ -35,14 +49,7 @@ public class CourseController {
 		return "course/new";
 	}
 	
-	//선택한 고객정보 수정저장처리 요청
-	@RequestMapping("/update.co")
-	public String update(CourseVO vo) {
-		//화면에서 변경입력한 정보를 DB에 변경저장한다
-		service.course_update(vo);
-		//응답화면연결-고객정보
-		return "redirect:info.co?id=" + vo.getId();
-	}
+
 	
 	//선택한 고객정보 수정화면 요청
 	@RequestMapping("/modify.co")
@@ -57,6 +64,41 @@ public class CourseController {
 		return "course/modify";
 	}
 	
+
+	@RequestMapping("/update.co")
+	public String update(CourseVO vo
+						, MultipartFile file
+						, HttpServletRequest request) throws Exception{
+		CourseVO course = service.course_info( vo.getId() );
+		
+		//파일 첨부하지 않는 경우
+		if( file==null || file.isEmpty() ) {
+			if( vo.getFilename()==null || vo.getFilename().isEmpty() ) {				
+				//원래 첨부파일 X --> 첨부X
+				//원래 첨부파일 O --> 첨부X
+				common.file_delete(course.getFilepath(), request);
+				
+			}else {
+				//원래 첨부파일 O --> 그대로 사용: 원래 정보로 담아둔다
+				vo.setFilename( course.getFilename() );
+				vo.setFilepath( course.getFilepath() );
+			}
+		
+		}else {
+		//파일 첨부하는 경우
+		//원래 첨부파일 X --> 첨부
+			vo.setFilename( file.getOriginalFilename() );
+			vo.setFilepath( common.fileUpload(file, "course", request) );
+			
+		//원래 첨부파일 O --> 바꿔 첨부
+			common.file_delete(course.getFilepath(), request);
+		}
+		
+		//화면에서 변경입력한 정보로 DB에 변경저장한다
+		service.course_update(vo);
+		//공지글안내화면연결
+		return "redirect:info.co?id="+ vo.getId();
+	}
 	
 	//선택한 고객정보 삭제처리 요청
 	@RequestMapping("/delete.co")

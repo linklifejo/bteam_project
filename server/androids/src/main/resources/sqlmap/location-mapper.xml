@@ -48,4 +48,19 @@ where type='1' and locname like '%' || #{search} || '%'
  order by locname
 </select>
 
+
+<!-- 코스목록조회 -->
+<select id='cou_list' resultType='course.CourseVO'>
+select *
+from course 
+order by couname
+</select>
+<!-- 코스조회 -->
+<select id='cou_info' resultType='location.LocationVO'>
+select *
+from course 
+where location_id = #{location_id}
+order by id
+</select>
+
 </mapper>  

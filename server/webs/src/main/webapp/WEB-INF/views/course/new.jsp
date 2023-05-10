@@ -36,7 +36,7 @@
 		<col width="140px">
 		<col>
 	</colgroup>
-	<tr><th>코스이름</th>
+	<tr><th>코스명</th>
 		<td><input type='text' name='couname' ></td>
 	</tr>
 	<tr><th>안내도</th>

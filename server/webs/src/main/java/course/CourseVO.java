@@ -10,8 +10,6 @@ import lombok.Setter;
 @Getter @Setter
 public class CourseVO {
 	private int id, location_id;
-	private String couname, type, locname, grade;
-	private List<LocationVO> filename;
-	
+	private String couname, type, locname, grade,filename,filepath;
 	
 }

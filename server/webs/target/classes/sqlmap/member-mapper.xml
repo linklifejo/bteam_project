@@ -22,8 +22,11 @@ values (#{id}, #{pw, jdbcType=VARCHAR}, #{name}
 <!-- 회원정보변경 -->
 <update id="update">
 update member set 
-pw = #{pw, jdbcType=VARCHAR}, name = #{name} 
+ name = #{name} 
+  <if test="pw != null">
+,pw = #{pw, jdbcType=VARCHAR}
 , salt = #{salt, jdbcType=VARCHAR}
+</if>
 , gender = #{gender}
 , email = #{email, jdbcType=VARCHAR}
 , birth = #{birth, jdbcType=VARCHAR}
@@ -39,7 +42,10 @@ where id = #{id}
 <select id='id_check' resultType='integer'>
 select count(*) from member where id = #{id}
 </select>
-
+<!-- 아이디 존재여부 조회 -->
+<select id='myInfo' resultType='member.MemberVO'>
+select * from member where id = #{id}
+</select>
 <!-- 전체 회원목록조회 -->
 <select id='list' resultType='member.MemberVO'>
 select * from member 

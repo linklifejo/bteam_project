@@ -35,6 +35,10 @@
 	<tr><th>코스명</th>
 		<td>${vo.couname }</td>
 	</tr>
+		<tr><th>사진</th>
+		<td><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepath}"
+    		 alt="사진파일"></td>
+	</tr>
 	<tr><th>구분</th>
 	<td >${vo.grade }</td>
 	</tr>
