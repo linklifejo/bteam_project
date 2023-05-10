@@ -21,7 +21,7 @@ public class MemberDAO implements MemberService {
 	@Override
 	public MemberVO member_myinfo(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return sql.selectOne("member.myInfo", id);
 	}
 
 	@Override

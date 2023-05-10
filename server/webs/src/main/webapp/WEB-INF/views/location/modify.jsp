@@ -38,23 +38,23 @@
 	<tr><th>산이름</th>
 		<td><input type='text' name='locname' value='${vo.locname }'></td>
 	</tr>
-	<tr><th>첨부파일</th>
-	<td class='txt-left'>
-		<div class="align">
+<tr><th>산 이미지</th>
+	<td>
+<%-- 	<img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.profile}"
+	 alt="산이미지파일">
+ --%>
+	<div class='align'>
+
+		<span id='preview'><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepath}" alt="사진파일"></span>
 		<label>
-			<input type='file' name='file' class='attach-file'>
+
+			<input type='file' name='file' accept="image/*" id='attach-file'>
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
-		<span id='file-name'>${vo.filename }</span>
-		<span id='preview'></span>
-		<a id='delete-file' 
-		style='display:${empty vo.filename ? "none": "inline"}'><i class="font-img-r fa-regular fa-trash-can"></i></a>
-
-
-
+		<a id='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
 		</div>
 	</td>
-	</tr>
+</tr>
 	
 	<tr><th>추가설명</th>
 	
