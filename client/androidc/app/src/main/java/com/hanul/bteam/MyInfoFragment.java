@@ -69,10 +69,10 @@ public class MyInfoFragment extends Fragment {
         view.findViewById(R.id.btn_write).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MemberDTO d = (MemberDTO) b.getSerializable("dto");
-                Bundle b = new Bundle();
-                b.putSerializable("dto",d);
-                activity.bundle = b;
+//                MemberDTO d = (MemberDTO) b.getSerializable("dto");
+//                Bundle b = new Bundle();
+//                b.putSerializable("dto",d);
+//                activity.bundle = b;
                 activity.fragmentControl(new ModifyInfo(),b);
             }
         });
@@ -188,7 +188,7 @@ public class MyInfoFragment extends Fragment {
                     dtoo =  gson.fromJson(response.body(), new TypeToken<ArrayList<MemberDTO>>(){}.getType());
                     for(MemberDTO dto: dtoo){
                         Bundle b = new Bundle();
-                        b.putSerializable("dto", dto);
+                        b.putSerializable("dto1", dto);
                         activity.bundle = b;
                         dto.setProfile(dto.getProfile());
                     }
