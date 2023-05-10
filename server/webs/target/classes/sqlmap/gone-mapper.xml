@@ -202,7 +202,13 @@ select *
 from course 
 order by couname
 </select>
-
+<!-- 코스조회 -->
+<select id='cou_info' resultType='course.CourseVO'>
+select *
+from course 
+where location_id = #{location_id}
+order by id
+</select>
 
 
 <!-- 지역별 산정보 목록조회 -->

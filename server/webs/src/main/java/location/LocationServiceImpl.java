@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import course.CourseVO;
 import gone.GoneFileVO;
 
 @Service
@@ -51,6 +52,11 @@ public class LocationServiceImpl implements LocationService {
 	@Override
 	public List<LocationVO> local_list(String loccode) {
 		return dao.local_list(loccode);
+	}
+
+	@Override
+	public CourseVO course_info(int location_id) {
+		return dao.course_info(location_id);
 	}
 
 
