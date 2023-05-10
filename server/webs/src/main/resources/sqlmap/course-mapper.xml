@@ -6,8 +6,8 @@
 
 <!-- 신규코스정보 삽입저장 -->
 <insert id='insert'>
-insert into course(couname, type, location_id)
-values (#{couname}, #{type}, #{location_id})
+insert into course(couname, type, location_id,filename,filepath)
+values (#{couname}, #{type}, #{location_id}, #{filename}, #{filepath})
 </insert>
 
 
@@ -15,7 +15,7 @@ values (#{couname}, #{type}, #{location_id})
 <!-- 해당코스정보 수정저장 -->
 <update id='update'>
 update course
-set couname = #{couname}, type = #{type}
+set couname = #{couname}, type = #{type}, filename = #{filename}, filepath = #{filepath}
 where id = #{id}
 </update>
 
