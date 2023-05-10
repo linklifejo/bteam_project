@@ -129,7 +129,11 @@
 69-->[androidx.core:core:1.9.0] C:\Users\sec7\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 70
 71    <application
+<<<<<<< HEAD
 71-->C:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:54:5-98:19
+=======
+71-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:54:5-100:19
+>>>>>>> cf957acf9b5550d4561613a9e7b47255e15916cb
 72        android:allowBackup="true"
 72-->C:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:55:9-35
 73        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -164,6 +168,7 @@
 88-->C:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:71:13-68
 89
 90        <activity
+<<<<<<< HEAD
 90-->C:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:74:9-87:20
 91            android:name="com.hanul.bteam.MainActivity"
 91-->C:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:75:13-41
@@ -252,3 +257,95 @@
 138    </application>
 139
 140</manifest>
+=======
+90-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:74:9-89:20
+91            android:name="com.hanul.bteam.MainActivity"
+91-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:75:13-41
+92            android:exported="true"
+92-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:76:13-36
+93            android:theme="@style/Theme.App.Starting" >
+93-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:77:13-54
+94            <intent-filter>
+94-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:80:13-84:29
+95                <action android:name="android.intent.action.MAIN" />
+95-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:81:17-69
+95-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:81:25-66
+96
+97                <category android:name="android.intent.category.LAUNCHER" />
+97-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:83:17-77
+97-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:83:27-74
+98            </intent-filter>
+99
+100            <meta-data
+100-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:86:13-88:36
+101                android:name="android.app.lib_name"
+101-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:87:17-52
+102                android:value="" />
+102-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:88:17-33
+103        </activity>
+104
+105        <provider
+106            android:name="androidx.core.content.FileProvider"
+106-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:92:13-62
+107            android:authorities="com.hanul.bteam.fileprovider"
+107-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:93:13-64
+108            android:exported="false"
+108-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:94:13-37
+109            android:grantUriPermissions="true" >
+109-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:95:13-47
+110            <meta-data
+110-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:96:13-98:52
+111                android:name="android.support.FILE_PROVIDER_PATHS"
+111-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:97:17-67
+112                android:resource="@xml/filepath" />
+112-->D:\bteam_project\client\androidc\app\src\main\AndroidManifest.xml:98:17-49
+113        </provider>
+114        <!-- Needs to be explicitly declared on P+ -->
+115        <uses-library
+115-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
+116            android:name="org.apache.http.legacy"
+116-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
+117            android:required="false" />
+117-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\admin\.gradle\caches\transforms-3\77f14a6df3d89474b2fa24a53d9c91f9\transformed\play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
+118
+119        <activity
+119-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\admin\.gradle\caches\transforms-3\9df4caf478e8a4a3e6e06e7b0287a07e\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+120            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+120-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\admin\.gradle\caches\transforms-3\9df4caf478e8a4a3e6e06e7b0287a07e\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+121            android:exported="false"
+121-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\admin\.gradle\caches\transforms-3\9df4caf478e8a4a3e6e06e7b0287a07e\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+122            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+122-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\admin\.gradle\caches\transforms-3\9df4caf478e8a4a3e6e06e7b0287a07e\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+123
+124        <meta-data
+124-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\admin\.gradle\caches\transforms-3\b4a76a349f706e6c557a13ae2ac7dde3\transformed\play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+125            android:name="com.google.android.gms.version"
+125-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\admin\.gradle\caches\transforms-3\b4a76a349f706e6c557a13ae2ac7dde3\transformed\play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+126            android:value="@integer/google_play_services_version" />
+126-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\admin\.gradle\caches\transforms-3\b4a76a349f706e6c557a13ae2ac7dde3\transformed\play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+127
+128        <provider
+128-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+129            android:name="androidx.startup.InitializationProvider"
+129-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+130            android:authorities="com.hanul.bteam.androidx-startup"
+130-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+131            android:exported="false" >
+131-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+132            <meta-data
+132-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+133                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+133-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+134                android:value="androidx.startup" />
+134-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+135            <meta-data
+135-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+136                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+136-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+137                android:value="androidx.startup" />
+137-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\admin\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+138        </provider>
+139    </application>
+140
+141</manifest>
+>>>>>>> cf957acf9b5550d4561613a9e7b47255e15916cb

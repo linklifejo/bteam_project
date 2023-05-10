@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.splashscreen.SplashScreen;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 // 인기산추가
     // 크흠 // 메롱
     public String profile;
-    public String loginid,name;
+    public String loginid,name,phone,address;
     public String loccode = null;
     public String location = null;
     public Bundle bundle;
@@ -89,7 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
+        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         setContentView(R.layout.activity_main);
         isLogin();
         //   checkDangerousPermissions();

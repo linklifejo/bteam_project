@@ -62,8 +62,8 @@
                         <!-- Product image-->
                         <img class="card-img-top" style="width: 750px" height="600px" src="${vo.filepath}" alt="...">
                         <!-- Product details-->
-                        <div>
-                           		<div>
+             <div>
+                 <div>
 					<div class="text-center">
 					 <table style="width:100%">
 					 <tr>
@@ -78,10 +78,16 @@
 					 <tr>
 						<td>${vo.name_desc}</td>
 					 </tr>
+					 <tr>
+					 	<th><h3>코스정보</h3></th>
+					 </tr>
+					 <tr>
+
+					 </tr>
 					 </table>
 					</div>
 				</div>
-                        </div>
+             </div>
                         <!-- Product actions-->
 		
 						<div id="staticMap" style="width:750px;height:450px;">

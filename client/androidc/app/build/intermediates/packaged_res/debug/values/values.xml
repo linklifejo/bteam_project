@@ -9,6 +9,19 @@
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">bteam</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        // Set the splash screen background, animated icon, and animation duration.
+        <item name="windowSplashScreenBackground">@color/black</item>
+
+        // Use windowSplashScreenAnimatedIcon to add either a drawable or an
+        // animated drawable. One of these is required.
+        <item name="windowSplashScreenAnimatedIcon">@drawable/deng</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>  # Required for
+        # animated icons
+
+        // Set the theme of the Activity that directly follows your splash screen.
+                <item name="postSplashScreenTheme">@style/Theme.Bteam</item>  # Required.
+    </style>
     <style name="Theme.Bteam" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
 

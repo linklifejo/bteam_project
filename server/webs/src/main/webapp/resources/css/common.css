@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body {
+body { 
 	margin: 0  auto;
 	text-align: center;
 	min-width: 1280px;
@@ -172,5 +172,6 @@ ul.grid li:nth-child(5n)~li { margin-top: 10px; }
 .w-px800 { width: 800px }
 .w-px1000 { width: 1000px }
 .w-px1200 { width: 1200px }
+
 
 

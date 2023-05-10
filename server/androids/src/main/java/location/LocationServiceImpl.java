@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import course.CourseVO;
+
 @Service
 public class LocationServiceImpl implements LocationService {
 	@Autowired private LocationDAO dao;
@@ -50,6 +52,12 @@ public class LocationServiceImpl implements LocationService {
 	public int willgo_insert(HashMap<String, Object> map) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public CourseVO course_info(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
