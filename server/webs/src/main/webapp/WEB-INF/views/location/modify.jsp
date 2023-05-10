@@ -50,6 +50,8 @@
 		<a id='delete-file' 
 		style='display:${empty vo.filename ? "none": "inline"}'><i class="font-img-r fa-regular fa-trash-can"></i></a>
 
+
+
 		</div>
 	</td>
 	</tr>

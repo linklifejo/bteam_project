@@ -26,7 +26,7 @@
 <div class="main">
 	<h3>코스정보수정</h3>
 </div>
-	<form method="post" action='update.co'>
+	<form method="post" action='update.co' enctype='multipart/form-data'>
 	<table class='w-px600'>
 	<colgroup>
 		<col width="140px">
@@ -35,6 +35,19 @@
 	<tr><th>코스명</th>
 		<td><input type='text' name='couname' value='${vo.couname }'></td>
 	</tr>
+		<tr><th>안내도</th>
+	<td class='txt-left'>
+		<div class="align">
+		<label>
+			<input type='file' name='file' class='attach-file'>
+			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
+		</label>
+		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>		
+		<div class='file-name'></div>
+		<div class='preview'></div>
+		</div>
+	</td>
+</tr>
 	<tr><th>구분</th>
 		<td>
 			<label><input type='radio' name='type' value='1'>위험</label>
