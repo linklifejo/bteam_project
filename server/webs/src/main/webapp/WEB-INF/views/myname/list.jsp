@@ -224,7 +224,7 @@
 
 
 		<div class='btnSet'>
-			<a href='new.lo' class='btn-fill'>내정보 수정</a>
+			<a href='memberModify' class='btn-fill'>내정보 수정</a>
 		</div>
 		
 	

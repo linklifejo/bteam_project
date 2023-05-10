@@ -35,16 +35,20 @@
 	<tr><th>코스명</th>
 		<td><input type='text' name='couname' value='${vo.couname }'></td>
 	</tr>
-		<tr><th>안내도</th>
-	<td class='txt-left'>
-		<div class="align">
+<tr><th>안내도</th>
+	<td>
+<%-- 	<img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.profile}"
+	 alt="사진파일">
+ --%>
+	<div class='align'>
+
+		<span id='preview'><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepath}" alt="사진파일"></span>
 		<label>
-			<input type='file' name='file' class='attach-file'>
+
+			<input type='file' name='file' accept="image/*" id='attach-file'>
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
-		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>		
-		<div class='file-name'></div>
-		<div class='preview'></div>
+		<a id='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
 		</div>
 	</td>
 </tr>
