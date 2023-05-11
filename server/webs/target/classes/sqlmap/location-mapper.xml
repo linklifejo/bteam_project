@@ -6,8 +6,8 @@
 
 <!-- 신규고객정보 삽입저장 -->
 <insert id='insert'>
-insert into location( locname, name_desc, latitude,longitude, post, address, filename, filepath)
-values (#{locname}, #{name_desc}, #{latitude}, #{longitude}, #{post}, #{address}, #{filename}, #{filepath})
+insert into location( locname, name_desc, latitude,longitude, post, address, filename, filepath, filenamed, filepathd, filenamet, filepatht)
+values (#{locname}, #{name_desc}, #{latitude}, #{longitude}, #{post}, #{address}, #{filename}, #{filepath}, #{filenamed}, #{filepathd}, #{filenamet}, #{filepatht})
 </insert>
 
 
@@ -18,7 +18,14 @@ set locname = #{locname}, name_desc = #{name_desc}, latitude = #{latitude},
 			 longitude = #{longitude}, post = #{post}, address = #{address}
 			 <if test="filename != null">
 			 , filename = #{filename, jdbcType=VARCHAR}, filepath = #{filepath, jdbcType=VARCHAR}
-			 </if>
+			  </if>
+			  <if test="filenamed != null">
+			 , filenamed = #{filenamed, jdbcType=VARCHAR}, filepathd = #{filepathd, jdbcType=VARCHAR}
+			  </if>
+			  <if test="filenamet != null">
+			 , filenamet = #{filenamet, jdbcType=VARCHAR}, filepatht = #{filepatht, jdbcType=VARCHAR}
+			  </if>
+			
 where id = #{id}
 </update>
 
@@ -53,8 +60,10 @@ order by locname
 select *
 from location
 where type='1' and loccode= #{loccode}, locname = #{locname}, name_desc = #{name_desc}, latitude = #{latitude},
-			 longitude = #{longitude}, post = #{post}, address = #{address},
-			 filename = #{filename}, filepath = #{filepath}
+			 longitude = #{longitude}, post = #{post}, address = #{address}
+			 ,filename = #{filename}, filepath = #{filepath}
+			 ,filenamed = #{filenamed}, filepathd = #{filepathd}
+			 ,filenamet = #{filenamet}, filepatht = #{filepatht}
  order by locname
 </select>
 

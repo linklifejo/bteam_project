@@ -55,6 +55,40 @@
 		</div>
 	</td>
 </tr>
+<tr><th>위험정보이미지</th>
+	<td>
+<%-- 	<img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.profile}"
+	 alt="산이미지파일">
+ --%>
+	<div class='align'>
+
+		<span id='preview'><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepathd}" alt="사진파일"></span>
+		<label>
+
+			<input type='file' name='file' accept="image/*" id='attach-file'>
+			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
+		</label>
+		<a id='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
+		</div>
+	</td>
+</tr>
+<tr><th>안내도이미지</th>
+	<td>
+<%-- 	<img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.profile}"
+	 alt="산이미지파일">
+ --%>
+	<div class='align'>
+
+		<span id='preview'><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepatht}" alt="사진파일"></span>
+		<label>
+
+			<input type='file' name='file' accept="image/*" id='attach-file'>
+			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
+		</label>
+		<a id='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
+		</div>
+	</td>
+</tr>
 	
 	<tr><th>추가설명</th>
 	

@@ -31,13 +31,14 @@ select c.*,
 	(select grade from coursegrade where id = c.type) grade
 from course c 
 where c.id = #{id}
+order by locname
 </select>
 
 <!-- 코스목록조회 -->
 <select id='list' resultType='course.CourseVO'>
 select c.*, locname
 from course c inner join location l on c.location_id = l.id
-order by couname
+order by locname
 </select>
 <!-- 산정보목록조회 -->
 <select id='loc_list' resultType='location.LocationVO'>
