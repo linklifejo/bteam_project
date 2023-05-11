@@ -44,7 +44,6 @@
 
 		<span id='preview'><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepath}" alt="사진파일"></span>
 		<label>
-
 			<input type='file' name='file' accept="image/*" id='attach-file'>
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>

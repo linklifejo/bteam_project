@@ -35,8 +35,16 @@
 	<tr><th>산이름</th>
 		<td>${vo.locname }</td>
 	</tr>
-	<tr><th>사진</th>
+	<tr><th>산이미지</th>
 		<td><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepath}"
+    		 alt="사진파일"></td>
+	</tr>
+		<tr><th>위험정보이미지</th>
+		<td><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepathd}"
+    		 alt="사진파일"></td>
+	</tr>
+		<tr><th>안내도이미지</th>
+		<td><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepatht}"
     		 alt="사진파일"></td>
 	</tr>
 	

@@ -33,14 +33,36 @@ public class LocationController {
 	
 	//신규고객등록처리 요청
 	@RequestMapping("/insert.lo")
-	public String insert(LocationVO vo, MultipartFile file
-			, HttpServletRequest request) {
-		//첨부파일 처리
-		if( file != null ) {
-			LocationVO vo1 = attached_file(file, request);
-			vo.setFilename(vo1.getFilename());
-			vo.setFilepath(vo1.getFilepath());
+	public String insert(LocationVO vo, MultipartFile[] file
+			, HttpServletRequest request) throws Exception{
+		LocationVO	vo1=null;
+		for(int i=0;i<file.length;i++) {
+
+			//첨부파일 처리
+			if( file[i] != null ) {
+				if( i==0 ) {
+					vo1 = attached_file(file[i], request);
+					vo.setFilename(vo1.getFilename());
+					vo.setFilepath(vo1.getFilepath());
+					
+				}
+				else if( i==1 ) {
+					
+					vo1 = attached_file(file[i], request);
+					vo.setFilenamed(vo1.getFilename());
+					vo.setFilepathd(vo1.getFilepath());
+				}
+				else if( i==2 ) {
+					
+					vo1 = attached_file(file[i], request);
+					vo.setFilenamet(vo1.getFilename());
+					vo.setFilepatht(vo1.getFilepath());
+				}
+			}
 		}
+
+		 
+
 		//화면에서 입력한 정보로  DB에 신규삽입저장한다.
 		service.location_insert(vo);
 		//응답화면연결 - 고객목록
@@ -83,12 +105,13 @@ public class LocationController {
 	//선택한 공지글수정저장처리 요청
 	@RequestMapping("/update.lo")
 	public String update(LocationVO vo
-						, MultipartFile file
+						, MultipartFile[] file
 						, HttpServletRequest request) throws Exception{
-		LocationVO location = service.location_info( vo.getId() );
 		
+		LocationVO location = service.location_info( vo.getId() );
+
 		//파일 첨부하지 않는 경우
-		if( file==null || file.isEmpty() ) {
+		if( file[0]==null || file[0].isEmpty() ) {
 			if( vo.getFilename()==null || vo.getFilename().isEmpty() ) {				
 				//원래 첨부파일 X --> 첨부X
 				//원래 첨부파일 O --> 첨부X
@@ -103,12 +126,60 @@ public class LocationController {
 		}else {
 		//파일 첨부하는 경우
 		//원래 첨부파일 X --> 첨부
-			vo.setFilename( file.getOriginalFilename() );
-			vo.setFilepath( common.fileUpload(file, "location", request) );
+			vo.setFilename( file[0].getOriginalFilename() );
+			vo.setFilepath( common.fileUpload(file[0], "location", request) );
 			
 		//원래 첨부파일 O --> 바꿔 첨부
 			common.file_delete(location.getFilepath(), request);
 		}
+		
+		
+		//파일 첨부하지 않는 경우
+		if( file[1]==null || file[1].isEmpty() ) {
+			if( vo.getFilenamed()==null || vo.getFilenamed().isEmpty() ) {				
+				//원래 첨부파일 X --> 첨부X
+				//원래 첨부파일 O --> 첨부X
+				common.file_delete(location.getFilepathd(), request);
+				
+			}else {
+				//원래 첨부파일 O --> 그대로 사용: 원래 정보로 담아둔다
+				vo.setFilenamed( location.getFilenamed() );
+				vo.setFilepathd( location.getFilepathd() );
+			}
+		
+		}else {
+		//파일 첨부하는 경우
+		//원래 첨부파일 X --> 첨부
+			vo.setFilenamed( file[1].getOriginalFilename() );
+			vo.setFilepathd( common.fileUpload(file[1], "location", request) );
+			
+		//원래 첨부파일 O --> 바꿔 첨부
+			common.file_delete(location.getFilepathd(), request);
+		}
+		
+		//파일 첨부하지 않는 경우
+		if( file[2]==null || file[2].isEmpty() ) {
+			if( vo.getFilenamet()==null || vo.getFilenamet().isEmpty() ) {				
+				//원래 첨부파일 X --> 첨부X
+				//원래 첨부파일 O --> 첨부X
+				common.file_delete(location.getFilepatht(), request);
+				
+			}else {
+				//원래 첨부파일 O --> 그대로 사용: 원래 정보로 담아둔다
+				vo.setFilenamet( location.getFilenamet() );
+				vo.setFilepatht( location.getFilepatht() );
+			}
+		
+		}else {
+		//파일 첨부하는 경우
+		//원래 첨부파일 X --> 첨부
+			vo.setFilenamet( file[2].getOriginalFilename() );
+			vo.setFilepatht( common.fileUpload(file[2], "location", request) );
+			
+		//원래 첨부파일 O --> 바꿔 첨부
+			common.file_delete(location.getFilepatht(), request);
+		}
+		
 		
 		//화면에서 변경입력한 정보로 DB에 변경저장한다
 		service.location_update(vo);
