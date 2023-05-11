@@ -4,6 +4,7 @@ package com.hanul.bteam.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.MainActivity;
+import com.hanul.bteam.Photo;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.MemberDTO;
 
@@ -75,6 +78,16 @@ public class MemberAdapter extends
         // 불러온 데이터를 ViewHolder에 만들어 놓은 setDto를
         // 사용하여 데이터를 셋팅시킨다
         holder.setDto(dto);
+
+        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle b = new Bundle();
+                b.putSerializable("dto", dto);
+                activity.fragmentControl(new Photo(),b);
+
+            }
+        });
     }
 
     // dtos에 저장된 dto 갯수

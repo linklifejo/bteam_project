@@ -10,6 +10,7 @@ color white
 drawable buk_han_san
 drawable chi_ak_san
 drawable ddd
+drawable deng
 drawable do_bong_san
 drawable dream03
 drawable duckyu
@@ -30,6 +31,8 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable image01
 drawable image02
+drawable img
+drawable img_1
 drawable item_color
 drawable ji_ri_san
 drawable ji_ri_san1
@@ -61,7 +64,6 @@ drawable stemp
 id BoardSearch
 id BoardTitle
 id aaa
-id address
 id bottom_navi
 id btn1
 id btnCanc
@@ -97,6 +99,8 @@ id content
 id contentr
 id couname
 id danger
+id delpr
+id email
 id filenamed
 id filepath
 id filepathd
@@ -135,6 +139,8 @@ id textView3
 id textView4
 id textView5
 id textView6
+id textView7
+id textView8
 id textView9
 id title
 id toolbar
@@ -156,7 +162,6 @@ layout courseview
 layout couuse
 layout danger
 layout detailmo
-layout fragment_splash
 layout goneview
 layout home_frag
 layout joinlogin
@@ -171,6 +176,7 @@ layout myinfo_frag_view1
 layout myinfo_frag_view2
 layout myinfo_modify_frag_view
 layout myinfodiary
+layout photo
 layout popupimg
 layout pwchange
 layout questions_1
@@ -191,6 +197,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string hello_blank_fragment
+style Theme.App.Starting
 style Theme.Bteam
 xml backup_rules
 xml data_extraction_rules

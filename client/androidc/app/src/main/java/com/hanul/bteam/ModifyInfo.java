@@ -56,7 +56,7 @@ import retrofit2.Response;
 
 public class ModifyInfo extends Fragment {
     MainActivity activity;
-    EditText  name, phone, address;
+    EditText  name, phone, email;
     ImageView profile;
     File imgFile = null;
     String imgFilePath = null;
@@ -82,18 +82,18 @@ public class ModifyInfo extends Fragment {
 
         activity = (MainActivity) getActivity();
         Bundle b = activity.bundle;
-        d = (MemberDTO) b.getSerializable("dto");
+//        d = (MemberDTO) b.getSerializable("dto");
         MemberDTO dto = new MemberDTO();
         name =view.findViewById(R.id.name);
         phone =view.findViewById(R.id.phone);
-        address =view.findViewById(R.id.address);
+        email =view.findViewById(R.id.email);
         profile = view.findViewById(R.id.profile);
 
         //조회
-        name.setText(d.getName());
-        phone.setText(d.getPhone());
-        address.setText(d.getAddress());
-        Glide.with(view).load(d.getProfile()).into(profile);
+        name.setText(activity.name);
+        phone.setText(activity.phone);
+        email.setText(activity.email);
+        Glide.with(view).load(activity.profile).into(profile);
 
 
         view.findViewById(R.id.btnupdate).setOnClickListener(new View.OnClickListener() {
@@ -123,11 +123,11 @@ public class ModifyInfo extends Fragment {
                 dto.setName( name.getText().toString() );
                 activity.name= name.getText().toString();
                 dto.setPhone( phone.getText().toString() );
-                dto.setAddress( address.getText().toString() );
+                dto.setEmail( email.getText().toString() );
 
 
                 if(imgFilePath==null){
-                    dto.setProfile(d.getProfile());
+                    dto.setProfile(activity.profile);
                 }else{
                     dto.setProfile(imgFilePath);
                 }
