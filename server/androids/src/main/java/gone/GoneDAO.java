@@ -2,7 +2,6 @@ package gone;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import course.CourseVO;
 import location.LocationVO;
-import member.MemberVO;
 
 @Repository
 public class GoneDAO implements GoneService {
@@ -171,7 +169,12 @@ public class GoneDAO implements GoneService {
 	public int gone_write(GoneVO vo) {
 		// TODO Auto-generated method stub
 		int insert = sql.insert("go.gonewrite",vo);
-		sql.insert("go.gonefileInsert",vo);
+		if( vo.getFileInfo()!=null ) {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("filepath", vo.getFileInfo().get(0).getFilepath());
+			map.put("id", vo.getId());
+			sql.insert("go.gonefileInsert",map);
+		}
 		return insert;
 	}
 

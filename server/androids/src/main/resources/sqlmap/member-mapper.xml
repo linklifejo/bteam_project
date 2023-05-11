@@ -28,11 +28,11 @@ update member set
 <!-- , salt = #{salt, jdbcType=VARCHAR} -->
  name = #{name} 
 , gender = #{gender}
-<!-- , email = #{email, jdbcType=VARCHAR} -->
+, email = #{email, jdbcType=VARCHAR}
 <!-- , birth = #{birth, jdbcType=VARCHAR} -->
 , phone = #{phone, jdbcType=VARCHAR}
 <!-- , post = #{post, jdbcType=VARCHAR} -->
-, address = #{address, jdbcType=VARCHAR}
+<!-- , address = #{address, jdbcType=VARCHAR} -->
 <!-- , social = #{social, jdbcType=VARCHAR} -->
 , profile = #{profile, jdbcType=VARCHAR}
 where id = #{id}
