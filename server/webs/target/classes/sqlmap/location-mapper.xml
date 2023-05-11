@@ -33,6 +33,21 @@ select * from location where id = #{id}
 </select>
 
 
+<!-- 코스조회 -->
+<select id='cou_info' resultType='course.CourseVO'>
+select *
+from course 
+where location_id = #{id}
+order by id
+</select>
+
+
+
+
+
+
+
+
 <!-- 고객목록조회 -->
 <select id='list' resultType='location.LocationVO'>
 select * from location order by locname

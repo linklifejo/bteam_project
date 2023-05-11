@@ -36,11 +36,24 @@
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">        
                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+ <div class="dropdown">
+  <button class="dropbtn">지역별산</button>
+  <div class="dropdown-content">
+    <a ${category eq 're1' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L01'>서울.경기</a>
+    <a ${category eq 're2' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L02'>강원</a>
+    <a ${category eq 're3' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L03'>전라도</a>
+    <a ${category eq 're4' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L04'>경상도</a>
+    <a ${category eq 're5' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L05'>충청도</a>
+    <a ${category eq 're6' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L06'>제주도</a>
+  </div>
+</div> 
                        		<c:if test='${not empty loginInfo}'>
 								<c:choose>
 									<c:when test='${loginInfo.admin eq "Y"}'>
 										<li><a ${category eq 'hr' ? "class='active'" : ''} href='<c:url value="/"/>list.hr'>사원관리</a></li>
 										<li><a ${category eq 'cu' ? "class='active'" : ''} href='<c:url value="/"/>list.cu'>고객관리</a></li>
+									    <li class="nav-item"><a class="nav-link ${category eq 'co' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.co">코스정보</a></li>
+          								<li class="nav-item"><a class="nav-link ${category eq 'lo' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.lo">전국산정보</a></li>
 									</c:when>
 									<c:otherwise>
 										
@@ -48,33 +61,26 @@
 								</c:choose>
 							</c:if>
             <li class="nav-item"><a class="nav-link ${category eq 'go' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.go">탐방정보</a></li>
-            <li class="nav-item"><a class="nav-link ${category eq 'co' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.co">코스정보</a></li>
-            <li class="nav-item"><a class="nav-link ${category eq 'lo' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.lo">전국산정보</a></li>
+
             <li class="nav-item"><a class="nav-link ${category eq 'bo' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.bo">자유게시판</a></li>
             <li class="nav-item"><a class="nav-link ${category eq 'no' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.no">공지사항</a></li>
             <li class="nav-item"><a class="nav-link ${category eq 'da' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.da">산 데이터</a></li>
-            
-    <%--         <li><a ${category eq 'go' ? "class='active'" : ''} href='<c:url value="/"/>list.go'>탐방정보</a></li>
-			<li><a ${category eq 'co' ? "class='active'" : ''} href='<c:url value="/"/>list.co'>코스정보</a></li>
-			<li><a ${category eq 'lo' ? "class='active'" : ''} href='<c:url value="/"/>list.lo'>전국산정보</a></li>
-			<li><a ${category eq 'bo' ? "class='active'" : ''} href='<c:url value="/"/>list.bo'>자유 게시판</a></li>
-			<!--지역별산 region -->
-			<li><a ${category eq 'no' ? "class='active'" : ''} href='<c:url value="/"/>list.no'>공지사항</a></li>
-			<li><a ${category eq 'da' ? "class='active'" : ''} href='<c:url value="/"/>list.da'>공공데이터(산)</a></li>
-               --%>                     
-                        
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">지역별산</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a ${category eq 're1' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L01'>서울.경기</a></li>
-                                <li><a ${category eq 're2' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L02'>강원</a></li>
-                                <li><a ${category eq 're3' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L03'>전라도</a></li>
-                                <li><a ${category eq 're4' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L04'>경상도</a></li>
-                                <li><a ${category eq 're5' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L05'>충청도</a></li>
-                                <li><a ${category eq 're6' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L06'>제주도</a></li>
-                            </ul>
-                        </li>
+                                
+          
                     </ul>
+                     
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                    	<div class="login" style="float: right;">
 		<ul style="padding-top: 0px;">
 		<!-- 로그인하지 않은 경우 -->
