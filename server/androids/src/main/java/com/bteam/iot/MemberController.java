@@ -441,6 +441,14 @@ public class MemberController {
 		return service.member_change_pw(map) == 1 ? "성공" : "실패";	 
 	}
 	
+	@ResponseBody @RequestMapping(value="/del", produces="text/html; charset=utf-8")
+	public String del(HttpServletRequest req, Model model) {
+		String id = (String) req.getParameter("id");
+		service.member_del(id);                   
+		Gson gson = new Gson();
+		return gson.toJson(id);	 
+	}
+	
 	
 	
 //	//로그인화면 요청

@@ -101,6 +101,12 @@ public class MemberServiceImpl implements MemberService {
 		return dao.member_logout(id);
 	}
 
+	@Override
+	public int member_del(String id) {
+		// TODO Auto-generated method stub
+		return dao.member_del(id);
+	}
+
 	
 
 	

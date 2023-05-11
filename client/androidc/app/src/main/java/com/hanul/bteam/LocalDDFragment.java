@@ -86,6 +86,7 @@ public class LocalDDFragment extends Fragment {
                     for(CourseDTO dto1: dtos){
                         dto1.setLoccode(dto.getLoccode());
                         dto1.setCouname(dto1.getCouname());
+                        dto1.setLocname(dto.getLocname());
                     }
                     adapter = new CourseAdapter(activity.getApplicationContext(), dtos,activity);
                     recycler.setAdapter(adapter);

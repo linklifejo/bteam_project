@@ -92,10 +92,6 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\drawable\\mylocation.png"
     },
     {
-        "merged": "com.hanul.bteam.app-merged_res-34:/layout_photo.xml.flat",
-        "source": "com.hanul.bteam.app-main-36:/layout/photo.xml"
-    },
-    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\menu_menu_bottom.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\menu\\menu_bottom.xml"
     },
@@ -334,6 +330,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\layout_searchview.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-main-36:\\layout\\searchview.xml"
+    },
+    {
+        "merged": "com.hanul.bteam.app-merged_res-34:/layout_board_3.xml.flat",
+        "source": "com.hanul.bteam.app-main-36:/layout/board_3.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\drawable_nack_san1.xml.flat",

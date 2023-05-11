@@ -44,6 +44,12 @@ select nvl2(profile,profile,'https://mblogthumb-phinf.pstatic.net/20150427_261/n
 
 </select>
 
+<update id='del'>
+update member
+set profile = ''
+where id = #{id}
+</update>
+
 
 
 <!-- 전체 회원목록조회 -->

@@ -1,5 +1,6 @@
 package com.hanul.bteam;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,12 @@ public class Photo extends Fragment {
         ImageView i = view.findViewById(R.id.profile);
         Glide.with(view).load(activity.profile).into(i);
 
+        Drawable defaultImage = getResources().getDrawable(R.drawable.kakao_1);
+
+        if (activity.profile == null) {
+            i.setImageDrawable(defaultImage);
+        }
+
         view.findViewById(R.id.delpr).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +53,8 @@ public class Photo extends Fragment {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if (response.isSuccessful()) {
+                            activity.profile =null;
+
                             activity.fragmentControl(new MyInfoFragment());
 
                         }

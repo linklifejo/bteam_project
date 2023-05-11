@@ -31,7 +31,6 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable image01
 drawable image02
-drawable img
 drawable img_1
 drawable item_color
 drawable ji_ri_san

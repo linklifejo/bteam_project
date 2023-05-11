@@ -76,6 +76,8 @@ public class MyInfoFragment extends Fragment {
                 activity.fragmentControl(new ModifyInfo(),b);
             }
         });
+
+
         //처음 회원가입할때 이름 픽스시키고
         TextView t = view.findViewById(R.id.name);
         t.setText(activity.name);
@@ -84,6 +86,10 @@ public class MyInfoFragment extends Fragment {
         if(i !=null) {
             Glide.with(view).load(activity.profile).into(i);
         }
+
+//            Glide.with(view).load(i).into(i);
+
+
 
         view.findViewById(R.id.changepw).setOnClickListener(new View.OnClickListener() {
             @Override
