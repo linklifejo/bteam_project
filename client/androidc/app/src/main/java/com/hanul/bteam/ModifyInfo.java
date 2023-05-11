@@ -56,7 +56,7 @@ import retrofit2.Response;
 
 public class ModifyInfo extends Fragment {
     MainActivity activity;
-    EditText  name, phone, address;
+    EditText  name, phone, email;
     ImageView profile;
     File imgFile = null;
     String imgFilePath = null;
@@ -86,13 +86,13 @@ public class ModifyInfo extends Fragment {
         MemberDTO dto = new MemberDTO();
         name =view.findViewById(R.id.name);
         phone =view.findViewById(R.id.phone);
-        address =view.findViewById(R.id.address);
+        email =view.findViewById(R.id.email);
         profile = view.findViewById(R.id.profile);
 
         //조회
         name.setText(activity.name);
         phone.setText(activity.phone);
-        address.setText(activity.address);
+        email.setText(activity.email);
         Glide.with(view).load(activity.profile).into(profile);
 
 
@@ -123,7 +123,7 @@ public class ModifyInfo extends Fragment {
                 dto.setName( name.getText().toString() );
                 activity.name= name.getText().toString();
                 dto.setPhone( phone.getText().toString() );
-                dto.setAddress( address.getText().toString() );
+                dto.setEmail( email.getText().toString() );
 
 
                 if(imgFilePath==null){

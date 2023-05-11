@@ -64,7 +64,6 @@ drawable stemp
 id BoardSearch
 id BoardTitle
 id aaa
-id address
 id bottom_navi
 id btn1
 id btnCanc
@@ -100,6 +99,8 @@ id content
 id contentr
 id couname
 id danger
+id delpr
+id email
 id filenamed
 id filepath
 id filepathd
@@ -138,6 +139,8 @@ id textView3
 id textView4
 id textView5
 id textView6
+id textView7
+id textView8
 id textView9
 id title
 id toolbar
@@ -173,6 +176,7 @@ layout myinfo_frag_view1
 layout myinfo_frag_view2
 layout myinfo_modify_frag_view
 layout myinfodiary
+layout photo
 layout popupimg
 layout pwchange
 layout questions_1
