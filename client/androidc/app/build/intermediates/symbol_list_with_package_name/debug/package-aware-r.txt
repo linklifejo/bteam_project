@@ -2789,6 +2789,7 @@ drawable common_google_signin_btn_text_light_normal_background
 drawable compat_splash_screen
 drawable compat_splash_screen_no_icon_background
 drawable ddd
+drawable deng
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2829,6 +2830,8 @@ drawable ic_search_black_24
 drawable icon_background
 drawable image01
 drawable image02
+drawable img
+drawable img_1
 drawable item_color
 drawable ji_ri_san
 drawable ji_ri_san1
@@ -3005,7 +3008,6 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id address
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3114,6 +3116,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delpr
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3144,6 +3147,7 @@ id easeOut
 id east
 id edit_query
 id elastic
+id email
 id embed
 id end
 id endToStart
@@ -3461,6 +3465,8 @@ id textView3
 id textView4
 id textView5
 id textView6
+id textView7
+id textView8
 id textView9
 id text_input_end_icon
 id text_input_error_icon
@@ -3654,7 +3660,6 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout detailmo
-layout fragment_splash
 layout goneview
 layout home_frag
 layout joinlogin
@@ -3726,6 +3731,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout photo
 layout popupimg
 layout pwchange
 layout questions_1
@@ -4439,6 +4445,7 @@ style TextAppearance_MaterialComponents_Tooltip
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
+style Theme_App_Starting
 style Theme_AppCompat
 style Theme_AppCompat_CompactMenu
 style Theme_AppCompat_DayNight

@@ -61,4 +61,7 @@ dependencies {
     // 구글맵 사용
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
+    // 스플래시 스크린
+    implementation 'androidx.core:core-splashscreen:1.0.0-alpha01'
+
 }
