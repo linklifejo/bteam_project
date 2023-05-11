@@ -38,12 +38,9 @@
 
 <div class="smdd">
 <div class="main">
-<<<<<<< HEAD
 
-<h3>게시판 목록</h3>
-=======
 <h3>자유게시판</h3>
->>>>>>> cf957acf9b5550d4561613a9e7b47255e15916cb
+
 
 </div>
 
