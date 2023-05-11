@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -45,6 +46,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
@@ -80,7 +82,19 @@ public class BoardWrite extends Fragment {
         View view = inflater.inflate(R.layout.board_3,
                 container, false);
         activity = (MainActivity) getActivity();
+        Bundle b = activity.bundle;
 
+        Serializable serializable = b.getSerializable("dto");
+
+        if (serializable instanceof CourseDTO) {
+            CourseDTO d = (CourseDTO) serializable;
+            if (d.getCouname() != null) {
+                TextView t = view.findViewById(R.id.couname);
+                t.setText(d.getCouname());
+                TextView tt = view.findViewById(R.id.locname);
+                tt.setText(d.getLocname());
+            }
+        }
         title =view.findViewById(R.id.title);
         content=view.findViewById(R.id.content);
         contentr=view.findViewById(R.id.contentr);

@@ -4,11 +4,19 @@ import java.io.Serializable;
 
 public class CourseDTO implements Serializable {
 
-    String couname,course_id,loccode;
+    String couname,course_id,loccode,locname;
             int location_id,id;
 
     public String getLoccode() {
         return loccode;
+    }
+
+    public String getLocname() {
+        return locname;
+    }
+
+    public void setLocname(String locname) {
+        this.locname = locname;
     }
 
     public void setLoccode(String loccode) {

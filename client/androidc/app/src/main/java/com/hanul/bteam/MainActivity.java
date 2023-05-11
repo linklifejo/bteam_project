@@ -34,6 +34,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bv;
     String imgFilePath = null;
     FrameLayout contain;
+    String kakao;
 
 //    @Override
 //    public boolean onTouchEvent(MotionEvent event) {

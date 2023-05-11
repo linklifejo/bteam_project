@@ -34,6 +34,8 @@ public interface MemberService {
 	
 	int member_delete(String id); //회원탈퇴
 	
+	int member_del(String id); //회원탈퇴
+	
 	
 	
 	int member_manager(MemberVO vo); //관리자 ///////////////
