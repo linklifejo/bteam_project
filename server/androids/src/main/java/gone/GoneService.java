@@ -15,7 +15,7 @@ public interface GoneService {
 	
 	int gone_insert(HashMap<String,Object> map);//방명록 새글저장
 	
-	
+	int gone_jjimupdate(HashMap<String,Object> map);
 	
 	int gone_insert(GoneVO vo);//방명록 새글저장
 	GonePageVO gone_list(GonePageVO vo); //방명록 목록 조회

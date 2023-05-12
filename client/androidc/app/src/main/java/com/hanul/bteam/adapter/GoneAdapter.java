@@ -3,6 +3,7 @@ package com.hanul.bteam.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,9 +24,11 @@ import com.google.gson.Gson;
 import com.hanul.bteam.BoardTwo;
 import com.hanul.bteam.COMMON.CommonMethod;
 import com.hanul.bteam.Detailmo;
+import com.hanul.bteam.HomeFragment;
 import com.hanul.bteam.MainActivity;
 import com.hanul.bteam.R;
 import com.hanul.bteam.dto.GoneDTO;
+import com.hanul.bteam.dto.LocationDTO;
 
 import java.util.ArrayList;
 
@@ -43,7 +46,8 @@ public class GoneAdapter extends
     ArrayList<GoneDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
-    GoneDTO dto;
+    GoneDTO dtoo;
+
 
     // 생성자로 메인에서 넘겨받은것들을 연결
     public GoneAdapter(Context context, ArrayList<GoneDTO> dtos, MainActivity a) {
@@ -109,10 +113,13 @@ public class GoneAdapter extends
     // 3. xml 파일에서 사용된 모든 변수를 adapter에서 클래스로 선언한다
     public class ViewHolder extends RecyclerView.ViewHolder {
         // singerview.xml 에서 사용된 모든 위젯을 정의한다
-        ImageButton btnWill;
+        ImageButton btnWill,btndel;
         TextView title;
         ImageView filepath;
         LinearLayout parentLayout;
+        String jjim_check = activity.jjim_check;
+      
+
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
         public ViewHolder(@NonNull View itemView) {
@@ -121,8 +128,56 @@ public class GoneAdapter extends
             parentLayout = itemView.findViewById(R.id.parentLayout);
             title = itemView.findViewById(R.id.title);
             btnWill = itemView.findViewById(R.id.btnWillGo);
-
             filepath = itemView.findViewById(R.id.filepath);
+            btndel =itemView.findViewById(R.id.btndel);
+            if(jjim_check =="0") {
+                btnWill.setVisibility(View.GONE);
+                btndel.setVisibility(View.VISIBLE);
+            }
+            else{
+                btnWill.setVisibility(View.VISIBLE);
+                btndel.setVisibility(View.GONE);
+            }
+            itemView.findViewById(R.id.btndel).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CommonMethod commonMethod = new CommonMethod();
+                    commonMethod.setParams("wtype", "1");
+                    commonMethod.setParams("refid", btndel.getTransitionName());
+                    commonMethod.setParams("member_id", activity.loginid);
+                    jjim_check ="0";
+                    commonMethod.setParams("jjim", jjim_check);
+                    commonMethod.getData("willGoIn", new Callback<String>() {
+
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            if(response.isSuccessful()){
+                                Gson gson = new Gson();
+                                GoneDTO dto = gson.fromJson(response.body(), GoneDTO.class);
+
+                                btnWill.setVisibility(View.VISIBLE);
+                                btndel.setVisibility(View.GONE);
+
+
+                            }else {
+                                Toast.makeText(activity,
+                                        "실패;;",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+                            Toast.makeText(activity,
+                                    "실패했네요~;;",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                }
+            });
+
+
+
+
             itemView.findViewById(R.id.btnWillGo).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -135,19 +190,30 @@ public class GoneAdapter extends
 //                    commonMethod.setParams("refid", id.toString());
                     commonMethod.setParams("refid", btnWill.getTransitionName());
                     commonMethod.setParams("member_id", activity.loginid);
+                    jjim_check ="1";
+                    commonMethod.setParams("jjim", jjim_check);
+
+
                     commonMethod.getData("willGoIn", new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
                             if(response.isSuccessful()){
-
-//                            Log.d(TAG, "onResponse: " + response.body());
-//                            //서버에서 넘어온 데이터를 받는다
                                 Gson gson = new Gson();
-                                String d = gson.fromJson(response.body(), String.class);
+                                GoneDTO dto = gson.fromJson(response.body(), GoneDTO.class);
 
-                                Toast.makeText(activity,
-                                        "" + d ,Toast.LENGTH_SHORT).show();
-//                            //로그인 후 메인 화면을 보여준다
+//                                if(dto.getJjim() =="1") {
+//                                    jjim_check =dto.getJjim();
+//
+//                                }
+//                                else{
+//                                    jjim_check =dto.getJjim();
+//
+//                                }
+                                btnWill.setVisibility(View.GONE);
+                                btndel.setVisibility(View.VISIBLE);
+
+
+
 
 
                             }else {
@@ -167,14 +233,21 @@ public class GoneAdapter extends
             });
         }
 
+
+
+
+
+
+
         // singerview에 데이터를 연결시키는 매소드를 만든다
         public void setDto(@NonNull GoneDTO dto) {
             title.setText(dto.getTitle());
             Glide.with(itemView).load(dto.getFilepath())
                     .into(filepath);
             Integer id = dto.getId();
-
             btnWill.setTransitionName( id.toString());
+            btndel.setTransitionName(id.toString());
+
 
 
         }

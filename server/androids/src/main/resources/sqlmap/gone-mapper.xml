@@ -103,17 +103,23 @@ select *
 from(select g.id,filename, filepath,member_id,gone_time,title,g.content,( select locname from location where id=g.location_id) locname,
 								( select name_desc from location where id = g.location_id)name_desc,
                                ( select name from member where id=g.member_id) name,
+                               
                                ( select couname from course where id=g.course_id) couname
             from gone g, gone_file f where g.id=f.gone_id and g.type= #{type} and f.ptype= #{ptype} order by g.readcnt desc)
 where rownum <= #{num}
 ]]>
 </select>
 
+
+
+
+
 <select id='mou' resultType='gone.HomeVO'>
 <![CDATA[ 
 select *
-from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,contentr,( select locname from location where id=g.location_id) locname,
+from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,contentr,g.jjim,( select locname from location where id=g.location_id) locname,
 								( select name_desc from location where id = g.location_id)name_desc,
+								
                                ( select name from member where id=g.member_id) name,
                                ( select couname from course where id=g.course_id) couname
             from gone g, gone_file f where g.id=f.gone_id and g.member_id = #{id} and g.type= #{type} and f.ptype= #{ptype} order by g.readcnt desc)
@@ -157,6 +163,12 @@ select * from gone_file where id in ( ${removed} )
 <!-- 선택한 방명록 글변경저장 -->
 <update id="update">
 update gone set title = #{title}, content  = #{content} 
+where id = #{id}
+</update>
+
+
+<update id="jjim_update">
+update gone set jjim = #{jjim}
 where id = #{id}
 </update>
 

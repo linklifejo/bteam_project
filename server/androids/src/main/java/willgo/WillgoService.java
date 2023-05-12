@@ -20,4 +20,11 @@ public interface WillgoService {
 	LocationVO location_info(int id);
 	GoneFileVO gone_file_info(int id); 
 	GoneVO gone_info(int id); 
+	
+	
+		
+	
+	
+	
+	
 }
