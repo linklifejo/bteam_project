@@ -89,7 +89,6 @@ $('.api a').click(function(){
 	if( $(this).index()==0 ) pharmacy_list( 1 );
 	else if( $(this).index()==1 ) animal_list( 1 );
 	else if( $(this).index()==2 ) location_list( 1 );
-	else if( $(this).index()==3 ) course_list( 1 );
 })
 
 
@@ -295,7 +294,6 @@ $(document).on('click', '.page-list a', function(){
 	if( $('.pharmacy').length > 0 ) pharmacy_list( $(this).data('page') );
 	else if( $('.animal').length > 0 ) animal_list( $(this).data('page') );
 	else if( $('.location').length > 0 ) location_list( $(this).data('page') );
-	else if( $('.course').length > 0 ) course_list( $(this).data('page') );
 	
 }).on('click', '.map', function(){
 	if(  $(this).data('x')=='undefined' || $(this).data('y')=='undefined' ){

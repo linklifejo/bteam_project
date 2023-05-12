@@ -55,8 +55,8 @@ public class LocationDAO implements LocationService {
 	}
 
 	@Override
-	public CourseVO course_info(int location_id) {
-		return sql.selectOne("lo.cou_info", location_id);
+	public List<CourseVO> course_info(int id) {
+		return sql.selectList("lo.cou_info", id);
 	}
 
 

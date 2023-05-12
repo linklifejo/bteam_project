@@ -544,7 +544,7 @@ $('button').on({
 	
 	<!-- <h1 class="mainfont">등산 가이드</h1> -->
 </div>
-							<div class="region">
+<%-- 							<div class="region">
 								<h1 class="mainfont_1">인기산</h1>
 							
 							<table class='w-px600 tb-list'>
@@ -564,8 +564,68 @@ $('button').on({
 							</div>
 							</tbody>
 							</table>
-							</div>
+							</div> --%>
+
+<h1 class="mainfont_1" style="margin-bottom: 20px;">인기산</h1>
+
+<%-- <c:forEach items='${Loc_info}' var='vo'>
+           <span style="display:inline-block; height:450px; width:350px;">
+                
+                    <div class="col mb-5">
+                    <div class="card h-100">
+                     <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <!-- Product image-->
+                    <div  style= "height:450px; width:353px;" class="card"><a href='info.re?id=${vo.id}'><img style= "height:450px; width:350px;" class="mainimg object-fit-cover border rounded" src="${vo.filepath}"
+							    		 alt="사진파일"></a>
+									</div>
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="${vo.filepath}" alt="사진">
+                            <!-- Product details-->
+                        </div>
+                    </div>
+			</div>
+			</span>
+</c:forEach>
 </div>
+
+
+ --%>
+
+
+
+<c:forEach items='${Loc_info}' var='vo'>
+   
+   
+  <!--  <section class="py-5"> -->
+            <span style="display:inline-block; height:500px; width:400px;">
+              
+                    
+                    <div class="col mb-5">
+                        <div class="card h-100" style="width:400px;">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem width:50px; height:50px; font-size:30px;"">${vo.rownum}</div>
+                            <!-- Product image-->
+                             <a href='info.re?id=${vo.id}' style= "height:500px; width:400px;"><img style= "height:700px; width:400px;" src="${vo.filepath}" class="card-img-top h-100" alt="사진">
+                   			</a>
+                            <!-- Product details-->
+                 
+                        </div>
+                
+				</div>
+           </span>
+    <!--     </section> -->
+        
+       
+   </c:forEach>
+
+
+
+
+
+
+
 
 
 
@@ -576,7 +636,7 @@ $('button').on({
 
     <!-- Example Code -->
     
-    <div class="grid text-center" style="--bs-columns: 1; width:1400px;" >
+    <div class="grid text-center" style="--bs-columns: 1; width:1400px;margin-top: 100px;" >
         <div class="grid" style="--bs-columns: 2; padding: 0 0 0 0">
           <div class="g-col-1 mapmain" style="padding-top: 0px;
 		    padding-bottom: 0px;
@@ -623,30 +683,94 @@ $('button').on({
 	    </div>
    </div>
    </body>
+   
+   
+
+<div class='btnSet' style="margin-top: 100px; font-size:25px;"">
+				<a href='list.go' class='btn-fill'>게시판</a>
+			</div>
+
+   
+<div class="row mx-5 justify-content-center">
+
+		<div style="width:1400px;" class="row mx-5 justify-content-center">
+	
+			<c:forEach items='${list}' var='vo'>
+                       
+                        <div class="col-xl-3 col-md-6 mb-4" style="width:450px">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                                        <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem width:50px; height:50px; font-size:30px;">ID: ${vo.member_id}</div>
+                            <!-- Product image-->
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div style="height:500px;" class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+			                            		<img src="${vo.filepath}" class="card-img-top h-100" alt="사진">
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                             <div class="card-body p-4">
+                               <div>
+                                   <!-- Product name-->
+                                   <h5 class="fw-bolder">${vo.title}</h5>
+                                   <!-- Product reviews-->
+                                   <!-- Product price-->
+                                   <span class="text-muted">${vo.content}</span>
+                                   <div class="d-flex justify-content-center small text-warning mb-2">
+                                       <div class="bi-star-fill"></div>
+                                       <div class="bi-star-fill"></div>
+                                       <div class="bi-star-fill"></div>
+                                       <div class="bi-star-fill"></div>
+                                       <div class="bi-star-fill"></div>
+                                   </div>
+                                   
+                               </div>
+                           </div>
+                                            
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a class="btn btn-outline-dark mt-auto" href='info.go?id=${vo.gone_id}'>확인하기</a></div>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+
+                  </c:forEach>    
+		</div>	
+
+ 
+   </div>
+   
+   </div>
+  
+   
+   
 </div>
 
-								<div class='btnSet' style="margin-top: 100px;">
+<!-- 								<div class='btnSet' style="margin-top: 100px;">
 									<a href='list.go' class='btn-fill'>게시판</a>
-								</div>
+								</div> -->
 
 								
-								<table class='w-px600 tb-list'>
+<%-- 								<table class='w-px600 tb-list'>
 								
 								<tbody>
 								<div class="homeimg2">
 								<c:forEach items='${list}' var='vo'>
 								    
 										<span style="display:inline-block; height:700px; width:450px;">
-								     
+								     <div class="col mb-5">
 								<div class="card" style= "height:600px; width:450px;">
-								  <img src="${vo.filepath}" class="card-img-top h-100" alt="사진" >
+								  <img src="${vo.filepath}" class="card-img-top h-100" alt="사진">
 								  <div class="card-body">
 								    <h5 class="card-title">${vo.title}</h5>
 								    <p class="card-text">${vo.content}</p>
 								    <a href='info.go?id=${vo.gone_id}' class="btn btn-primary mainbtn" style="color: white;">확인하기</a>
 								  </div>
 								</div>
-								     
+								     </div>
 								     
 										</span>
 								
@@ -655,12 +779,13 @@ $('button').on({
 								
 								
 								</tbody>
-								</table>
+								</table> --%>
 
 
 </div>
 
 </div>
+
 
 </body>
 </html>

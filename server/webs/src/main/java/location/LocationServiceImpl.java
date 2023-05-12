@@ -55,8 +55,8 @@ public class LocationServiceImpl implements LocationService {
 	}
 
 	@Override
-	public CourseVO course_info(int location_id) {
-		return dao.course_info(location_id);
+	public List<CourseVO> course_info(int id) {
+		return dao.course_info(id);
 	}
 
 
