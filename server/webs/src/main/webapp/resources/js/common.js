@@ -175,3 +175,5 @@ function isImage( filename ){
 	return images.indexOf( ext ) == -1 ? false : true;			
 }
 
+
+

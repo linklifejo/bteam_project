@@ -9,11 +9,11 @@
 	<div class="mainhead">
 		</li>
 	</div>
-	<div class="header" style="padding-right: 0px;padding-left: 0px;">
+	<div class="header justify-content-center" style="width:100%;">
 		
 		
 		
-		 	<div style="background-color: #80c3ed;">
+		 	<div style="background-color: #80c3ed; margin-right: 20px;">
 								<MARQUEE scrolldelay="2000" scrollamount="70" width="250" height="50" direction="up">
 							<body>
 							 
@@ -35,9 +35,9 @@
             <div>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">        
-                   <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                   <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" style="padding-top: 0px;">
  <div class="dropdown">
-  <button class="dropbtn">지역별산</button>
+  <button class="dropbtn" style="margin-left: 0px;">지역별산</button>
   <div class="dropdown-content">
     <a ${category eq 're1' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L01'>서울.경기</a>
     <a ${category eq 're2' ? "class='active'" : ''} href='<c:url value="/"/>list.re?loccode=L02'>강원</a>
@@ -82,7 +82,7 @@
                     
                     
                    	<div class="login" style="float: right;">
-		<ul style="padding-top: 0px;">
+		<ul style="padding-top: 0px;margin-bottom: 0px;">
 		<!-- 로그인하지 않은 경우 -->
 		<c:if test='${empty loginInfo}'>
 			<li><a class=' btn btn-primary' href='login'>로그인</a></li>
@@ -277,12 +277,15 @@
 	right: 10px;
 	top: 2px;
 } */
+.login{
+	top: 10px;
+}
 
 
 
 header nav ul { font-size: 18px; font-weight: bold; color:#fff;}
 header ul { display: flex; 	padding-top: 8px; }
-/* header nav ul li:not(:first-child) { margin-left: 50px } */
+header nav ul li:not(:first-child) { margin-left: 20px } */
 header nav a:hover, header nav a.active { color:#fff;
   }
 
