@@ -2829,7 +2829,6 @@ int drawable ic_search_black_24 0x7f0700be
 int drawable icon_background 0x7f0700bf
 int drawable image01 0x7f0700c0
 int drawable image02 0x7f0700c1
-int drawable img 0x7f070128
 int drawable img_1 0x7f07012a
 int drawable item_color 0x7f0700c2
 int drawable ji_ri_san 0x7f0700c3
@@ -3007,7 +3006,6 @@ int id action_text 0x7f080046
 int id actions 0x7f080047
 int id activity_chooser_view_content 0x7f080048
 int id add 0x7f080049
-int id address 0x7f08004a
 int id adjust_height 0x7f08004b
 int id adjust_width 0x7f08004c
 int id alertTitle 0x7f08004d
@@ -3116,6 +3114,7 @@ int id decelerate 0x7f0800b3
 int id decelerateAndComplete 0x7f0800b4
 int id decor_content_parent 0x7f0800b5
 int id default_activity_button 0x7f0800b6
+int id delpr 0x7f08024e
 int id deltaRelative 0x7f0800b7
 int id dependency_ordering 0x7f0800b8
 int id design_bottom_sheet 0x7f0800b9
@@ -3146,6 +3145,7 @@ int id easeOut 0x7f0800d1
 int id east 0x7f0800d2
 int id edit_query 0x7f0800d3
 int id elastic 0x7f0800d4
+int id email 0x7f08024d
 int id embed 0x7f0800d5
 int id end 0x7f0800d6
 int id endToStart 0x7f0800d7
@@ -3463,6 +3463,8 @@ int id textView3 0x7f08020e
 int id textView4 0x7f08020f
 int id textView5 0x7f080210
 int id textView6 0x7f080211
+int id textView7 0x7f08024b
+int id textView8 0x7f08024c
 int id textView9 0x7f080212
 int id text_input_end_icon 0x7f080213
 int id text_input_error_icon 0x7f080214
@@ -3824,6 +3826,7 @@ int layout notification_template_custom_big 0x7f0b007c
 int layout notification_template_icon_group 0x7f0b007d
 int layout notification_template_part_chronometer 0x7f0b007e
 int layout notification_template_part_time 0x7f0b007f
+int layout photo 0x7f0b0094
 int layout popupimg 0x7f0b0080
 int layout pwchange 0x7f0b0081
 int layout questions_1 0x7f0b0082

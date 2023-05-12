@@ -34,6 +34,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     //    용성 텍스트 추가 // 나도 추가 //동환추가2 // 나도 또 추가 //한번더추가 // 인기산추가
     // 크흠 // 메롱
     public String profile;
-    public String loginid,name,phone,address;
+    public String loginid,name,phone,address,email;
     public String loccode = null;
     public String location = null;
     public Bundle bundle;
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bv;
     String imgFilePath = null;
     FrameLayout contain;
+    String kakao;
 
 //    @Override
 //    public boolean onTouchEvent(MotionEvent event) {

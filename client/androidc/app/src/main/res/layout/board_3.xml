@@ -16,7 +16,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="150dp"
             android:gravity="left"
             android:hint="게시글 제목"
             android:textSize="24sp"
@@ -79,14 +79,14 @@
 
         <Button
             android:id="@+id/choice"
-            android:layout_width="250dp"
+            android:layout_width="233dp"
             android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="#FFFFFF"
+            android:text="산을 선택해주세요>"
             android:textColor="#989898"
             android:textSize="20sp"
-            android:text="산을 선택해주세요>"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,10 +96,10 @@
             android:layout_height="70dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
+            android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contentr"
-            app:srcCompat="@drawable/chi_ak_san"
-            android:scaleType="fitXY"/>
+            app:srcCompat="@drawable/chi_ak_san" />
 
         <Button
             android:id="@+id/btn_cho"
@@ -107,11 +107,38 @@
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:text="사진선택"
             android:backgroundTint="#FFFFFF"
+            android:text="사진선택"
             android:textColor="#989898"
             app:layout_constraintStart_toEndOf="@+id/filepath"
             app:layout_constraintTop_toBottomOf="@+id/contentr" />
+
+        <TextView
+            android:id="@+id/couname"
+            android:layout_width="365dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="96dp"
+            android:text="코스"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choice" />
+
+        <TextView
+            android:id="@+id/locname"
+            android:layout_width="138dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="11dp"
+            android:text="산이름"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/choice"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

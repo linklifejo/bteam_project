@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -56,7 +57,7 @@ import retrofit2.Response;
 
 public class ModifyInfo extends Fragment {
     MainActivity activity;
-    EditText  name, phone, address;
+    EditText  name, phone, email;
     ImageView profile;
     File imgFile = null;
     String imgFilePath = null;
@@ -86,14 +87,21 @@ public class ModifyInfo extends Fragment {
         MemberDTO dto = new MemberDTO();
         name =view.findViewById(R.id.name);
         phone =view.findViewById(R.id.phone);
-        address =view.findViewById(R.id.address);
+        email =view.findViewById(R.id.email);
         profile = view.findViewById(R.id.profile);
 
         //조회
         name.setText(activity.name);
         phone.setText(activity.phone);
-        address.setText(activity.address);
+        email.setText(activity.email);
+
         Glide.with(view).load(activity.profile).into(profile);
+        Drawable defaultImage = getResources().getDrawable(R.drawable.kakao_1);
+
+        if (activity.profile == null) {
+            profile.setImageDrawable(defaultImage);
+        }
+
 
 
         view.findViewById(R.id.btnupdate).setOnClickListener(new View.OnClickListener() {
@@ -123,15 +131,26 @@ public class ModifyInfo extends Fragment {
                 dto.setName( name.getText().toString() );
                 activity.name= name.getText().toString();
                 dto.setPhone( phone.getText().toString() );
-                dto.setAddress( address.getText().toString() );
+                activity.phone=phone.getText().toString();
+                dto.setEmail( email.getText().toString() );
+                activity.email=email.getText().toString();
 
 
+//                if(imgFilePath!=null){
+//                    dto.setProfile(imgFilePath);
+//                    activity.profile = dto.getProfile();
+//                }
+
+                // 수정화면 들어갈때 사진 조회및 널체크 조회후 profile을 activity에전달
                 if(imgFilePath==null){
                     dto.setProfile(activity.profile);
                 }else{
                     dto.setProfile(imgFilePath);
+                    activity.profile = dto.getProfile();
                 }
-
+                if(activity.profile == null){
+                    Glide.with(view).load(activity.profile).into(profile);
+                }
 
 
 

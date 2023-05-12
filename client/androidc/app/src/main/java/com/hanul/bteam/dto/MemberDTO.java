@@ -3,15 +3,24 @@ package com.hanul.bteam.dto;
 import java.io.Serializable;
 
 public class MemberDTO implements Serializable {
-    String id , pw ,name , phone , address,profile;
+    String id , pw ,name , phone , address,profile,email;
     public MemberDTO() { }
 
-    public MemberDTO(String id, String name, String phone, String address, String profile) {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public MemberDTO(String id, String name, String phone, String address, String profile,String email) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.profile = profile;
+        this.email = email;
     }
 
     public String getId() {

@@ -63,7 +63,7 @@ public class JoinLogin extends Fragment {
     File imgFile = null;
     String imgFilePath = null;
     int reqPicCode = 2008;
-    EditText id, pw, name, phone, address;
+    EditText id, pw, name, phone, email;
     ImageView profile;
     boolean isCheck = true;
     RequestBody fileBody =null;
@@ -85,7 +85,7 @@ public class JoinLogin extends Fragment {
         pw=view.findViewById(R.id.pw);
         name =view.findViewById(R.id.name);
         phone =view.findViewById(R.id.phone);
-        address =view.findViewById(R.id.address);
+        email =view.findViewById(R.id.email);
         profile = view.findViewById(R.id.profile);
 
 
@@ -172,7 +172,7 @@ public class JoinLogin extends Fragment {
                 dto.setPw( pw.getText().toString() );
                 dto.setName( name.getText().toString() );
                 dto.setPhone( phone.getText().toString() );
-                dto.setAddress( address.getText().toString() );
+                dto.setEmail( email.getText().toString() );
                 dto.setProfile(imgFilePath);
 
                 commonMethod.setParams("param", dto);
