@@ -2798,6 +2798,7 @@ int drawable do_bong_san 0x7f07009f
 int drawable dream03 0x7f0700a0
 int drawable duckyu 0x7f0700a1
 int drawable g_ak 0x7f0700a2
+int drawable good 0x7f07012b
 int drawable googleg_disabled_color_18 0x7f0700a3
 int drawable googleg_standard_color_18 0x7f0700a4
 int drawable gr_san 0x7f0700a5
@@ -2829,6 +2830,7 @@ int drawable ic_search_black_24 0x7f0700be
 int drawable icon_background 0x7f0700bf
 int drawable image01 0x7f0700c0
 int drawable image02 0x7f0700c1
+int drawable img 0x7f070128
 int drawable img_1 0x7f07012a
 int drawable item_color 0x7f0700c2
 int drawable ji_ri_san 0x7f0700c3
@@ -3062,6 +3064,7 @@ int id btn_questionsList 0x7f08007f
 int id btn_upload 0x7f080080
 int id btn_write 0x7f080081
 int id btnadd 0x7f080082
+int id btndel 0x7f080252
 int id btnupdate 0x7f080083
 int id buttonPanel 0x7f080084
 int id cache_measures 0x7f080085
@@ -3201,6 +3204,7 @@ int id ignoreRequest 0x7f080108
 int id image 0x7f080109
 int id imageView 0x7f08010a
 int id imageView2 0x7f08010b
+int id imageView3 0x7f080250
 int id immediateStop 0x7f08010c
 int id included 0x7f08010d
 int id indeterminate 0x7f08010e
@@ -3458,6 +3462,7 @@ int id textStart 0x7f080209
 int id textTop 0x7f08020a
 int id textView 0x7f08020b
 int id textView1 0x7f08020c
+int id textView10 0x7f080251
 int id textView2 0x7f08020d
 int id textView3 0x7f08020e
 int id textView4 0x7f08020f

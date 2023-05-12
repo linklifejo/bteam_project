@@ -78,13 +78,18 @@
 					 <tr>
 						<td>${vo.name_desc}</td>
 					 </tr>
-					 <tr>
-					 	<th><h3>코스정보</h3></th>
-					 </tr>
-					 <tr>
-
-					 </tr>
 					 </table>
+							 <table style="width: 100%;">
+							 
+							 	<th><h3>코스정보</h3></th>
+							 
+									<c:forEach items='${cou}' var='cou'>
+									<tr>
+									<td>${cou.couname}</td>
+									</tr>
+									</c:forEach>
+							 
+							 </table>						
 					</div>
 				</div>
              </div>

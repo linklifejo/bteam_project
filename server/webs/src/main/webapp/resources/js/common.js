@@ -94,7 +94,11 @@ $( function() {
 		var attached = this.files[0];
 		if( attached ){  //선택한 파일이 있는 경우
 			$(this).closest('div').find('.delete-file').css('display', 'inline');
-			$(this).closest('div').find('.file-name').text( attached.name );
+			var name = $(this).closest('div').find('.file-name')
+			console.log('type> ', name.is('input') )			
+			if( name.is('input') )		name.val( attached.name  )
+			else  						name.text( attached.name  )
+//				$(this).closest('div').find('.file-name').text( attached.name );
 			
 			var preview = $(this).closest('div').find('.preview');
 			if( preview.length==1 ){ //미리보기할 태그가 있는 경우
@@ -198,7 +202,10 @@ function copyFileTag(){
 
 function initAttatched( tag ){
 	tag.val('');
-	tag.closest('div').find('.file-name').text('');
+	var name=tag.closest('div').find('.file-name')
+	if( name.is('input') )		name.val( ''  )
+	else  						name.text( ''  )
+//	tag.closest('div').find('.file-name').text('');
 	tag.closest('div').find('.preview').empty();
 	tag.closest('div').find('.delete-file').css('display', 'none');
 }
@@ -218,4 +225,6 @@ function isImage( filename ){
 	var images = [ "jpg", "jpeg", "png", "bmp", "gif", "webp" ];
 	return images.indexOf( ext ) == -1 ? false : true;			
 }
+
+
 

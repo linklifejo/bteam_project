@@ -70,6 +70,7 @@ public class WillgoDAO implements WillgoService {
 		// TODO Auto-generated method stub
 		return sql.selectOne("wi.willgo_info", map);
 	}
+	
 
 
 
