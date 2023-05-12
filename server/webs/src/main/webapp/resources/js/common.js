@@ -86,6 +86,42 @@ $( function() {
 //		$('#delete-file').css('display', 'none');	
 	});
 
+
+	//첨부파일 선택
+    $('[name=file]:not(#attach-file)').change(function(){
+	
+		console.log( this.files[0] );
+		var attached = this.files[0];
+		if( attached ){  //선택한 파일이 있는 경우
+			$(this).closest('div').find('.delete-file').css('display', 'inline');
+			var name = $(this).closest('div').find('.file-name')
+			console.log('type> ', name.is('input') )			
+			if( name.is('input') )		name.val( attached.name  )
+			else  						name.text( attached.name  )
+//				$(this).closest('div').find('.file-name').text( attached.name );
+			
+			var preview = $(this).closest('div').find('.preview');
+			if( preview.length==1 ){ //미리보기할 태그가 있는 경우
+				//해당 이미지파일 정보를 읽어서 화면에 img 태그로 만든다
+				if( isImage( attached.name ) ){
+					preview.html('<img>');
+					var reader = new FileReader();
+					reader.onload = function( e ){						
+						preview.children('img').attr('src', e.target.result );
+					}
+					reader.readAsDataURL( attached );
+				}else{
+					preview.empty();
+				}
+				
+			}
+			
+		}else{
+			initAttatched( $(this) );
+		}
+	
+	});
+	
 }); 
 
 
@@ -120,11 +156,17 @@ $(document).on('change', '.attach-file', function(){
 	}
 	
 }).on('click', '.delete-file', function(){
-	//선택한 삭제버튼에 해당하는 첨부파일태그 삭제
-	var _div = $(this).closest('div');
-	removedFile( _div );
-	_div.remove();
+	if(  $(this).closest('div').find('[name=file]').hasClass('d-none') ){
+//		console.log( $(this).closest('div').find('[name=file]') )
+		initAttatched( $(this).closest('div').find('[name=file]'))
+		
+	}else{
 	
+		//선택한 삭제버튼에 해당하는 첨부파일태그 삭제
+		var _div = $(this).closest('div');
+		removedFile( _div );
+		_div.remove();
+	}
 })
 ;
 
@@ -158,6 +200,15 @@ function copyFileTag(){
 	last.find('.delete-file').css('display', 'none');
 }
 
+function initAttatched( tag ){
+	tag.val('');
+	var name=tag.closest('div').find('.file-name')
+	if( name.is('input') )		name.val( ''  )
+	else  						name.text( ''  )
+//	tag.closest('div').find('.file-name').text('');
+	tag.closest('div').find('.preview').empty();
+	tag.closest('div').find('.delete-file').css('display', 'none');
+}
 
 function initAttatch(){
 	$('#attach-file').val('');

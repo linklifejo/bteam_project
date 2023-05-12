@@ -105,6 +105,12 @@ public class MemberDAO implements MemberService {
 		return sql.selectOne("member.logout",id);
 	}
 
+	@Override
+	public int member_del(String id) {
+		// TODO Auto-generated method stub
+		return sql.update("member.del",id);
+	}
+
 	
 
 	

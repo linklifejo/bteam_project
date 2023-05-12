@@ -630,6 +630,21 @@
             ]
         },
         {
+            "outputFile": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\8dabd95bc81c6c3e4a972c559871b715\\transformed\\material-1.8.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,114,170,226,293,358,413,478",
+                        "endColumns": "58,55,55,66,64,54,64,68",
+                        "endOffsets": "109,165,221,288,353,408,473,542"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\values-te_values-te.arsc.flat",
             "map": [
                 {
@@ -717,21 +732,6 @@
                         "endLines": "5,33,34,35,36,37,38,39,40,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112",
                         "endColumns": "12,88,89,85,97,86,103,115,90,65,93,66,61,92,63,67,62,73,64,53,120,56,61,53,78,127,87,91,144,79,81,87,57,51,65,74,77,89,72,75,80,68,104,76,90,92,73,76,91,54,65,83,85,62,64,63,109,111,98,118,63,55,82",
                         "endOffsets": "321,3164,3254,3340,3438,3525,3629,3745,3836,6094,6188,6255,6317,6410,6474,6542,6605,6679,6744,6798,6919,6976,7038,7092,7171,7299,7387,7479,7624,7704,7786,7874,7932,7984,8050,8125,8203,8293,8366,8442,8523,8592,8697,8774,8865,8958,9032,9109,9201,9256,9322,9406,9492,9555,9620,9684,9794,9906,10005,10124,10188,10244,10327"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\admin\\.gradle\\daemon\\7.4\\com.hanul.bteam.app-merged_res-34:\\values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\8dabd95bc81c6c3e4a972c559871b715\\transformed\\material-1.8.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,114,170,226,293,358,413,478",
-                        "endColumns": "58,55,55,66,64,54,64,68",
-                        "endOffsets": "109,165,221,288,353,408,473,542"
                     }
                 }
             ]
