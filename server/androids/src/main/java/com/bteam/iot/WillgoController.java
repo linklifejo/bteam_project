@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import common.CommonUtility;
 import gone.GoneFileVO;
+import gone.GoneServiceImpl;
 import gone.GoneVO;
 import gone.HomeVO;
 import location.LocationVO;
@@ -93,18 +95,28 @@ public class WillgoController {
 		return "willgo/list";
 	}
 
-
+	@Autowired private GoneServiceImpl gone;
+	
+	
+	
+	
+	
 	@ResponseBody @RequestMapping(value="/willGoIn", produces="text/plain; charset=utf-8" )
 	public String willGoIns(HttpServletRequest req, Model model) {
 		String wtype = (String) req.getParameter("wtype");		
 		String member_id = (String) req.getParameter("member_id");
-		Integer refid = Integer.valueOf(req.getParameter("refid")) ;
+		Integer refid = Integer.valueOf(req.getParameter("refid"));
+		
+		String jjim = (String) req.getParameter("jjim");
+		Integer id = Integer.valueOf(req.getParameter("refid"));
 		HashMap<String,Object> map = new HashMap<String, Object>();
 		map.put("wtype", wtype);
 		map.put("member_id", member_id);
 		map.put("refid", refid);
+		
+		
 		WillgoVO vo =(WillgoVO) service.willgo_info(map);
-		if(vo != null) 	return "존재합니다";
+		
 			 
 				GoneFileVO file = service.gone_file_info(refid);
 				if(file != null) map.put("filepath", file.getFilepath());
@@ -116,9 +128,24 @@ public class WillgoController {
 					
 				}
 				
+				if(jjim.equals("0") ) {
+					service.willgo_delete(id);
+					}
+				
+				else{
+						service.willgo_insert(map);	
+					}
+				
+				HashMap<String,Object> map1 = new HashMap<String, Object>();
+				map1.put("id", refid);
+				map1.put("jjim", jjim);
+				gone.gone_jjimupdate(map1);
+				
+				GoneVO voo = service.gone_info(id);
+				
 			
-			
-			return service.willgo_insert(map) == 1 ? "찜성공" : "찜실패";
+				Gson gson = new Gson();
+				return gson.toJson( (GoneVO)voo );		
 		}
 		
 

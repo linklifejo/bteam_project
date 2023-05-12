@@ -168,6 +168,12 @@ public class GoneServiceImpl implements GoneService {
 		return dao.gone_filedelete(id);
 	}
 
+	@Override
+	public int gone_jjimupdate(HashMap<String,Object> map) {
+		// TODO Auto-generated method stub
+		return dao.gone_jjimupdate(map);
+	}
+
 	
 
 //	@Override

@@ -11,8 +11,17 @@ import java.util.List;
  */
 public class GoneDTO implements Serializable {
     private int id,readcnt, no, filecnt,location_id,course_id,resId,location_no,course_no;
-    private String title,memo,writer,writedate, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath,name_desc,contentr,profile;
-  //  private Date gone_date;
+    private String jjim,title,memo,writer,writedate, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath,name_desc,contentr,profile;
+
+    public String getJjim() {
+        return jjim;
+    }
+
+    public void setJjim(String jjim) {
+        this.jjim = jjim;
+    }
+
+    //  private Date gone_date;
  //   private List<GoneFileDTO> fileInfo;
     public GoneDTO() {
     }

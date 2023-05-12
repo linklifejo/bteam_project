@@ -8,8 +8,8 @@ import lombok.Setter;
 
 @Getter @Setter
 public class GoneVO {
-	private int id,readcnt, no, filecnt,location_id,course_id;
-	private String title, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath,contentr;
+	private int id,readcnt, no, filecnt,location_id,course_id,refid;
+	private String title, content, type,member_id,name,locname,couname,gone_time,out_time,loccode,filename,filepath,contentr,jjim;
 	private Date gone_date;
 	private List<GoneFileVO> fileInfo;
 	
