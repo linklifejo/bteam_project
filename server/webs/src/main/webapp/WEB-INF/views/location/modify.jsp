@@ -52,7 +52,8 @@
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
 		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
-
+<input type='hidden' name='filename' class='file-name' value='${vo.filename}'>
+	
 		</div>
 	</td>
 </tr>
@@ -70,10 +71,11 @@
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
 		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
-
+	<input type='hidden' name='filenamed' class='file-name' value='${vo.filenamed}'>
 		</div>
 	</td>
 </tr>
+
 <tr><th>안내도이미지</th>
 	<td>
 <%-- 	<img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.profile}"
@@ -88,12 +90,11 @@
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
 		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
-
+<input type='hidden' name='filenamet'  class='file-name'  value='${vo.filenamet}'>
+	
 		</div>
 	</td>
 </tr>
-
-
 
 	
 	<tr><th>추가설명</th>
@@ -116,6 +117,7 @@
 	</tr>
 	</table>
 	<input type='hidden' name='id' value='${vo.id}'>
+
 	</form>
 	
 <div class="main1">
