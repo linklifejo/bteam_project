@@ -20,23 +20,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 
 public class CommonMethod {
-//    http://112.164.58.220:8822/wb/upload/gone/2023/05/10/ca5ec703-b1e2-4479-a046-28eea646ca45_무등산 1.jpg
-
-<<<<<<< HEAD
-
-
-<<<<<<< HEAD
-
 
     public static String ipConfig = "http://192.168.0.3/ab/";
 
 
-=======
-=======
-//      public static String ipConfig = "http://112.164.58.220:8822/ab/";
->>>>>>> 7f2befe6d9f0a2ac06d29bfc5c69a2b794f3bbd0
-    public static String ipConfig = "http://192.168.0.140/ab/";
->>>>>>> cf957acf9b5550d4561613a9e7b47255e15916cb
+
+    //  public static String ipConfig = "http://112.164.58.220:8822/ab/";
+
 
     public MemberDTO loginDto = null;
 
