@@ -22,6 +22,7 @@
 		margin-top:100px;
 		text-align: center; margin: 0 auto;
 		container: text-center;
+		margin:50px;
 	}
 
 	.main1{
@@ -421,7 +422,7 @@ function dragElement(elmnt) {
   <div class="wrapper" style="width: 1200px;">
     <div class="items" style="left: 100;">
     <c:forEach items='${gone_myname}' var='vo' >
-      <div class="item" style=""><div><a href='info.go?id=${vo.id}'><img src="${vo.filepath}" alt="" style="height: 450px;width: 350px;"></a></div><div><a style="font-size: 20px; font-weight: bold;" href='info.go?id=${vo.id}'>${vo.title}</a></div></div>
+      <div class="item" style=""><div><a href='info.go?id=${vo.id}'><img src="${vo.filepath}" alt="" style="height: 450px;width: 350px;"></a></div><div><a style="font-size: 20px; font-weight: bold;" href='info.go?id=${vo.id}'>제목: ${vo.title}</a></div></div>
      </c:forEach>
     </div> 
   </div>  

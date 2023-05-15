@@ -40,10 +40,8 @@ drawable ji_ri_san1
 drawable jjim_heart
 drawable jjim_heart1
 drawable kakao_1
-drawable marker
 drawable mu_dueng_san
 drawable mu_dueng_san1
-drawable mudm
 drawable mudng
 drawable mudng2
 drawable my

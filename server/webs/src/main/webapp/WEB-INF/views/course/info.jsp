@@ -12,7 +12,8 @@
 	.main{
 		text-align: center; margin: 0 auto;
 		container: text-center;
-	}
+		margin:50px;
+		}
 
 	.main1{
 		text-align: center; margin: 0 auto;

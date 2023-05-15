@@ -164,6 +164,9 @@ public class MyInfoFragment extends Fragment {
                     for(GoneDTO dto: dtos_re){
                         dto.setContentr(dto.getContentr());
                         dto.setTitle(dto.getTitle());
+                        dto.setContent(dto.getContent());
+                        dto.setFilepath(dto.getFilepath());
+                        dto.setMember_id(dto.getMember_id());
                     }
 
                     adapter_re = new RecentlyAdapter(activity.getApplicationContext(), dtos_re,activity);

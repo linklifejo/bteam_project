@@ -12,8 +12,9 @@
 
 	.main{
 		text-align: center; margin: 0 auto;
-		
-	}
+		container: text-center;
+		margin:50px;
+		}
 
 	.main1{
 		text-align: center; margin: 0 auto;
@@ -30,13 +31,13 @@
 	<h3>전국산정보수정</h3>
 </div>
 	<form method="post" action='update.lo' enctype="multipart/form-data">
-	<table class='w-px600'>
+	<table class='w-px1200'>
 	<colgroup>
 		<col width="140px">
 		<col>
 	</colgroup>
 	<tr><th>산이름</th>
-		<td><input type='text' name='locname' value='${vo.locname }'></td>
+		<td><input class="w-100" type='text' name='locname' value='${vo.locname }'></td>
 	</tr>
 <tr><th>산 이미지</th>
 	<td>
@@ -45,7 +46,7 @@
  --%>
 	<div class='align'>
 
-		<span class='preview'><img class="mainimg object-fit-cover border rounded" style="width: 750px" height="600px" src="${vo.filepath}" alt="사진파일"></span>
+		<span class='preview'><img class="mainimg object-fit-cover border rounded" style="width: 1000px" height="600px" src="${vo.filepath}" alt="사진파일"></span>
 		<label>
 
 			<input type='file' name='file' accept="image/*" class="d-none">
@@ -98,16 +99,14 @@
 
 	
 	<tr><th>추가설명</th>
+		<td><textarea class="w-100" name='name_desc' >${vo.name_desc }</textarea></td>
 	
-           <td><input type='text' name='name_desc' value='${vo.name_desc }'></td>
+	<div  type='hidden' value=1>
+	</tr>
+		<input type='hidden' value=1 name='latitude' ></td>
+		<input  type='hidden' value=1 name='longitude' ></td>
+	</div>
 	
-	</tr>
-	<tr><th>위도</th>
-		<td><input type='text' name='latitude' value='${vo.latitude }'></td>
-	</tr>
-	<tr><th>경도</th>
-		<td><input type='text' name='longitude' value='${vo.longitude }'></td>
-	</tr>
 	<tr><th>주소</th>
 		<td><a class='btn-fill btn-post'>우편번호찾기</a>
 			<input type='text' name='post' value='${vo.post }' class='w-px60' >

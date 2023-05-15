@@ -48,9 +48,10 @@ public class GoneDAO implements GoneService {
 
 	@Override
 	public int gone_update(GoneVO vo) {
+		int update = sql.update("go.update", vo);
 		if( vo.getFileInfo()!=null )
 			sql.insert("go.fileInsert", vo);
-		return sql.update("go.update", vo);
+		return update;
 	}
 
 	@Override
@@ -100,9 +101,9 @@ public class GoneDAO implements GoneService {
 	}
 
 	@Override
-	public List<CourseVO> course_list() {
+	public List<CourseVO> course_list(int location_id) {
 		// TODO Auto-generated method stub
-		return sql.selectList("go.cou_list");
+		return sql.selectList("go.cou_list",location_id);
 	}
 
 	@Override

@@ -6,7 +6,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+
+<style type="text/css">
+
+	.main{
+		text-align: center; margin: 0 auto;
+		container: text-center;
+		margin:50px;
+		}
+
+
+</style>
+
+
+
+
+
+
 <body>
+<div class="main">
 <h3>공지글수정</h3>
 <form method='post' action='update.no' enctype='multipart/form-data'>
 <table class='w-px1200'>
@@ -44,7 +63,7 @@
 <a class='btn-empty' href='javascript:history.go(-1)'>취소</a>
 <%-- <a class='btn-empty' href='info.no?id=${vo.id }'>취소</a> --%>
 </div>
-
+</div>
 <script>
 //첨부된 파일일 이미지인 경우만 미리보기태그에 img 태그 넣기
 if( isImage( '${vo.filename}' ) ) 

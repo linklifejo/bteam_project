@@ -13,7 +13,7 @@
 	.main{
 		text-align: center; margin: 0 auto;
 		container: text-center;
-		margin-top: 20px;
+		margin-top: 50px;
 		margin-bottom: 20px;
 	}
 
