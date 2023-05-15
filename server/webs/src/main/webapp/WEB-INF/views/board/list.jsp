@@ -38,7 +38,9 @@
 
 <div class="smdd">
 <div class="main">
+
 <h3>자유게시판</h3>
+
 
 </div>
 
