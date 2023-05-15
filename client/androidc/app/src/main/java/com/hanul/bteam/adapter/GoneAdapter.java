@@ -46,7 +46,7 @@ public class GoneAdapter extends
     ArrayList<GoneDTO> dtos;
     MainActivity activity;
     LayoutInflater inflater;
-    GoneDTO dtoo;
+
 
 
     // 생성자로 메인에서 넘겨받은것들을 연결
@@ -88,6 +88,7 @@ public class GoneAdapter extends
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d(TAG, "onBindViewHolder: " + position);
         GoneDTO dto = dtos.get(position);
+
         holder.setDto(dto);
 
         // 리싸이클러뷰에 항목을 선택했을때 그 항목을 가져오는 리스너
@@ -117,9 +118,13 @@ public class GoneAdapter extends
         TextView title;
         ImageView filepath;
         LinearLayout parentLayout;
+<<<<<<< HEAD
         String jjim_check = activity.jjim_check;
 
 
+=======
+        String jjim_check ="0";
+>>>>>>> 0a82c591a0f2c43729925f4693d8648f37ad893c
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
         public ViewHolder(@NonNull View itemView) {
@@ -130,14 +135,9 @@ public class GoneAdapter extends
             btnWill = itemView.findViewById(R.id.btnWillGo);
             filepath = itemView.findViewById(R.id.filepath);
             btndel =itemView.findViewById(R.id.btndel);
-            if(jjim_check =="0") {
-                btnWill.setVisibility(View.GONE);
-                btndel.setVisibility(View.VISIBLE);
-            }
-            else{
-                btnWill.setVisibility(View.VISIBLE);
-                btndel.setVisibility(View.GONE);
-            }
+            jjim_check=title.getText().toString();
+
+
             itemView.findViewById(R.id.btndel).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -154,7 +154,7 @@ public class GoneAdapter extends
                             if(response.isSuccessful()){
                                 Gson gson = new Gson();
                                 GoneDTO dto = gson.fromJson(response.body(), GoneDTO.class);
-
+                              //  jjim_check ="0";
                                 btnWill.setVisibility(View.VISIBLE);
                                 btndel.setVisibility(View.GONE);
 
@@ -200,21 +200,8 @@ public class GoneAdapter extends
                             if(response.isSuccessful()){
                                 Gson gson = new Gson();
                                 GoneDTO dto = gson.fromJson(response.body(), GoneDTO.class);
-
-//                                if(dto.getJjim() =="1") {
-//                                    jjim_check =dto.getJjim();
-//
-//                                }
-//                                else{
-//                                    jjim_check =dto.getJjim();
-//
-//                                }
                                 btnWill.setVisibility(View.GONE);
                                 btndel.setVisibility(View.VISIBLE);
-
-
-
-
 
                             }else {
                                 Toast.makeText(activity,
@@ -248,8 +235,15 @@ public class GoneAdapter extends
             btnWill.setTransitionName( id.toString());
             btndel.setTransitionName(id.toString());
 
+            jjim_check = dto.getJjim().toString();
+            if(jjim_check.equals("0")) {
+                btnWill.setVisibility(View.VISIBLE);
+                btndel.setVisibility(View.GONE);
 
-
+            }else {
+                btnWill.setVisibility(View.GONE);
+                btndel.setVisibility(View.VISIBLE);
+            }
         }
 
 //        private void showMessage(int position) {

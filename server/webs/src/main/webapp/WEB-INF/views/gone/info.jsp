@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 table td { text-align: left; }
-#comment-regist, #comment-list { width: 600px; margin: 0 auto; text-align: left }
+#comment-regist, #comment-list { width: 1200px; margin: 0 auto; text-align: left }
 #comment, textarea.modify { height: 60px; margin-top: 5px;}
 #comment-regist div { display: flex;  justify-content: space-between;}
 

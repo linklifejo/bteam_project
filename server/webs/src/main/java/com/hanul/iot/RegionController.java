@@ -44,13 +44,15 @@ public class RegionController {
 	
 	//선택한 고객정보화면 요청
 	@RequestMapping("/info.re")
-	public String info(int id, int location_id, Model model) {
+	public String info(int id, Model model) {
 		//해당 고객정보를 DB에서 조회해온다
 		LocationVO vo = service.location_info(id);
 
-		CourseVO cou = service.course_info(location_id);
-		//화면에 출력할 수 있도록 Model에 attribute로 담는다
-				
+		
+		List<CourseVO> cou = service.course_info(id);
+		
+		
+		//화면에 출력할 수 있도록 Model에 attribute로 담는다				
 		model.addAttribute("vo", vo);
 		model.addAttribute("cou", cou);
 		//응답화면연결
