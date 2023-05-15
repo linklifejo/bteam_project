@@ -130,18 +130,18 @@ public class JoinLogin extends Fragment {
         view.findViewById(R.id.btnJoinMem).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(!DataCheck.id_check(id.getText().toString())){
-//                    id.requestFocus();
-//                    isCheck =false;
-//                    Toast.makeText(activity,
-//                            "아이디나 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-//                }
-//                else if(!DataCheck.pw_check(pw.getText().toString())){
-//                    pw.requestFocus();
-//                    isCheck =false;
-//                    Toast.makeText(activity,
-//                            "pw 비밀번호가 맞지 않습니다", Toast.LENGTH_SHORT).show();
-//                }
+                if(!DataCheck.id_check(id.getText().toString())){
+                    id.requestFocus();
+                    isCheck =false;
+                    Toast.makeText(activity,
+                            "아이디 양식이 다릅니다", Toast.LENGTH_SHORT).show();
+                }
+                else if(!DataCheck.pw_check(pw.getText().toString())){
+                    pw.requestFocus();
+                    isCheck =false;
+                    Toast.makeText(activity,
+                            "비밀번호 양식이 다릅니다", Toast.LENGTH_SHORT).show();
+                }
 //                else if(!DataCheck.checkPhoneNumber(phone.getText().toString())){
 //                    phone.requestFocus();
 //                    isCheck =false;
