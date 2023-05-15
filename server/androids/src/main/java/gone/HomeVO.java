@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter @Getter
 public class HomeVO {
 	private int id,location_id,course_id,num,readcnt;
-	private String filename, filepath,ptype,type,member_id,name,locname,couname,title,name_desc,content,contentr;
+	private String filename, filepath,ptype,type,member_id,name,locname,couname,title,name_desc,content,contentr,jjim;
 	private Date gone_date;
 }

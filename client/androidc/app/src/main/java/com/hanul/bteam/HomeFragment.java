@@ -1,9 +1,12 @@
 package com.hanul.bteam;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +23,13 @@ import com.hanul.bteam.adapter.BoardrAdapter;
 import com.hanul.bteam.adapter.GoneAdapter;
 
 
+
 import com.hanul.bteam.adapter.BoardrAdapter;
+import com.hanul.bteam.adapter.GoneAdapter;
+
+
+import com.hanul.bteam.adapter.BoardrAdapter;
+
 
 import com.hanul.bteam.dto.GoneDTO;
 
@@ -83,6 +92,9 @@ public class HomeFragment extends Fragment {
                         dto.setTitle(dto.getTitle());
                         dto.setFilepath(dto.getFilepath());
                         dto.setName_desc(dto.getName_desc());
+
+                        dto.setJjim(dto.getJjim());
+
                     }
                     adapter_re = new GoneAdapter(activity.getApplicationContext(), dtos_re,activity);
                     recyclerView.setAdapter(adapter_re);

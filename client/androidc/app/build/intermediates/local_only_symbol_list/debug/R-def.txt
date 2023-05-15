@@ -15,6 +15,7 @@ drawable do_bong_san
 drawable dream03
 drawable duckyu
 drawable g_ak
+drawable good
 drawable gr_san
 drawable gr_san1
 drawable gumdang
@@ -31,6 +32,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable image01
 drawable image02
+drawable img
 drawable img_1
 drawable item_color
 drawable ji_ri_san
@@ -90,6 +92,7 @@ id btn_questionsList
 id btn_upload
 id btn_write
 id btnadd
+id btndel
 id btnupdate
 id changepw
 id choice
@@ -107,6 +110,7 @@ id gonetime
 id id
 id imageView
 id imageView2
+id imageView3
 id ivTrash
 id locname
 id memberid
@@ -133,6 +137,7 @@ id tab4
 id tab5
 id textView
 id textView1
+id textView10
 id textView2
 id textView3
 id textView4

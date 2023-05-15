@@ -434,6 +434,8 @@ public class MemberController {
 		map.put("pw", pw);
 		map.put("salt", salt);
 		
+		
+
 		salt = common.generateSalt();
 		service.member_change_pw(map);                   
 		Gson gson = new Gson();

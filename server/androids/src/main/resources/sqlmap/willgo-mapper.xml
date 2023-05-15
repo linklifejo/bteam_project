@@ -7,7 +7,7 @@
 <!-- 찜 정보등록 -->
 <insert id='insert'>
 insert into willgo( refid, wtype, member_id, locname, filepath)
-values (#{refid}, #{wtype}, #{member_id}, #{locname}, #{filepath})
+values (#{refid}, #{wtype}, #{member_id}, #{locname}, #{filepath} )
 </insert>
 
 <!-- 찜 정보 수정 -->
@@ -19,7 +19,7 @@ where id = #{id}
 
 <!-- 찜 정보 삭제 -->
 <delete id='delete'>
-delete from willgo where id = #{id}
+delete from willgo where refid = #{id}
 </delete>
 
 <!-- 찜 정보 조회 -->
@@ -33,6 +33,7 @@ order by willdate
 <select id='list' resultType='willgo.WillgoVO'>
 select * from willgo order by willdate
 </select>
+
 <!-- 찜 회원별 타입별 조회 -->
 <select id='member_list' resultType='willgo.WillgoVO'>
 select *

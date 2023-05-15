@@ -198,6 +198,12 @@ public class GoneDAO implements GoneService {
 		return 0;
 	}
 
+	@Override
+	public int gone_jjimupdate(HashMap<String,Object> map) {
+		// TODO Auto-generated method stub
+		return sql.update("go.jjim_update",map);
+	}
+
 	
 
 	
