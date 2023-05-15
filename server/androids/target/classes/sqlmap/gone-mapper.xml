@@ -100,7 +100,7 @@ values( #{id}, #{info.filename}, #{info.filepath} )
 <select id='homeList' resultType='gone.HomeVO'>
 <![CDATA[ 
 select *
-from(select g.id,filename, filepath,member_id,gone_time,title,g.content,jjim,( select locname from location where id=g.location_id) locname,
+from(select g.id,filename, filepath,member_id,gone_time,title,g.content,nvl(jjim,0) jjim,( select locname from location where id=g.location_id) locname,
 								( select name_desc from location where id = g.location_id)name_desc,
                                ( select name from member where id=g.member_id) name,
                                
@@ -117,7 +117,7 @@ where rownum <= #{num}
 <select id='mou' resultType='gone.HomeVO'>
 <![CDATA[ 
 select *
-from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,g.contentr,jjim,( select locname from location where id=g.location_id) locname,
+from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,g.contentr,nvl(jjim,0) jjim,( select locname from location where id=g.location_id) locname,
 								( select name_desc from location where id = g.location_id)name_desc,
 								
                                ( select name from member where id=g.member_id) name,

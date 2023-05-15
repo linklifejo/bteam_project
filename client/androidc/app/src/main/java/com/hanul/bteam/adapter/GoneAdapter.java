@@ -118,13 +118,13 @@ public class GoneAdapter extends
         TextView title;
         ImageView filepath;
         LinearLayout parentLayout;
-<<<<<<< HEAD
+
         String jjim_check = activity.jjim_check;
 
 
-=======
-        String jjim_check ="0";
->>>>>>> 0a82c591a0f2c43729925f4693d8648f37ad893c
+
+//        String jjim_check ="0";
+
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
         public ViewHolder(@NonNull View itemView) {

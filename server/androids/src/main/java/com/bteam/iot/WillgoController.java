@@ -148,6 +148,12 @@ public class WillgoController {
 				return gson.toJson( (GoneVO)voo );		
 		}
 		
+	@ResponseBody @RequestMapping(value="/willGoDelete", produces="text/plain; charset=utf-8" )
+	public String willGoDelete(HttpServletRequest req, Model model) {
+		
+		Integer id = Integer.valueOf(req.getParameter("id")) ;
+		return service.willgo_delete(id) == 1 ? "성공" : "실패";
+	}
 
 	
 
@@ -156,13 +162,6 @@ public class WillgoController {
 	public String willGo(HttpServletRequest req, Model model) {
 		String member_id = (String) req.getParameter("member_id");		
 		
-		
-		
-		
-		
-		
-		
-
 		ArrayList<WillgoVO> list = (ArrayList<WillgoVO>)service.willgo_list(member_id);
 		
 		Gson gson = new Gson();
@@ -170,12 +169,6 @@ public class WillgoController {
 	}
 	
 	
-	@ResponseBody @RequestMapping(value="/willGoDelete", produces="text/plain; charset=utf-8" )
-	public String willGoDelete(HttpServletRequest req, Model model) {
-	
-		Integer id = Integer.valueOf(req.getParameter("id")) ;
-		return service.willgo_delete(id) == 1 ? "성공" : "실패";
-	}
 	
 	// 산 정보검색
 	@ResponseBody @RequestMapping(value="/willGoQuery", produces="text/plain; charset=utf-8" )
