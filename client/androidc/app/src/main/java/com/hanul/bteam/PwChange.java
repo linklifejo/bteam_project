@@ -36,6 +36,8 @@ public class PwChange extends Fragment {
         pw = view.findViewById(R.id.pw);
         pw_check = view.findViewById(R.id.pw_check);
 
+
+
         view.findViewById(R.id.changepw).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

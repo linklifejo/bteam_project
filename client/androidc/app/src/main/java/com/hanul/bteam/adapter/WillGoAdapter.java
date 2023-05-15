@@ -162,7 +162,8 @@ public class WillGoAdapter extends
 
                 CommonMethod commonMethod = new CommonMethod();
                 WillgoDTO dto = dtos.get(position);
-                commonMethod.setParams("id",  dto.getId() + "");
+                commonMethod.setParams("id",  dto.getRefid());
+
                 commonMethod.getData("willGoDelete", new Callback<String>(){
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
@@ -210,10 +211,13 @@ public class WillGoAdapter extends
         TextView locname;
         ImageView filepath,ivTrash;
         LinearLayout parentLayout;
+        String jjim_check = activity.jjim_check;
+
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
 
             parentLayout = itemView.findViewById(R.id.parentLayout);
             locname = itemView.findViewById(R.id.locname);
@@ -236,6 +240,7 @@ public class WillGoAdapter extends
 //            filepath.setImageResource(dto.getFilepath());
             Glide.with(itemView).load(dto.getFilepath())
                     .into(filepath);
+
 
         }
 
