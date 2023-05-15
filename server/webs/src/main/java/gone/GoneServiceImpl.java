@@ -87,9 +87,9 @@ public class GoneServiceImpl implements GoneService {
 	}
 
 	@Override
-	public List<CourseVO> course_list() {
+	public List<CourseVO> course_list(int location_id) {
 		// TODO Auto-generated method stub
-		return dao.course_list();
+		return dao.course_list(location_id);
 	}
 
 	@Override

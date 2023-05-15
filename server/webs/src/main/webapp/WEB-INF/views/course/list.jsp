@@ -11,8 +11,14 @@
 	.main{
 		text-align: center; margin: 0 auto;
 		container: text-center;
-	}
+		margin-top:50px;
+		}
 
+	
+	.tb-list{
+		text-align: center; margin: 0 auto;
+		container: text-center;		
+	}
 
 </style>
 <body>
@@ -25,11 +31,11 @@
 	<a href='new.co' class='btn-fill'>코스등록</a>
 </div>
 </div>
-<table class='w-px600 tb-list'>
+<table class='w-px1000 tb-list'>
 <thead>
 	<tr>
-		<th class='w-px160'>산이름</th>
-		<th class='w-px140'>코스명</th>
+		<th class='w-px300'>산이름</th>
+		<th>코스명</th>
 	</tr>
 </thead>
 <tbody>

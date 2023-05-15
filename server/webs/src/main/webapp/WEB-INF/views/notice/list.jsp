@@ -17,11 +17,13 @@ table tr:hover { cursor: pointer;  background-color: #f6f6f6 }
 		container: text-center;
 	}
 
-	.smdd{
+	.main{
 		text-align: center; margin: 0 auto;
-		width: auto;
-		position: relative;
+		container: text-center;
+		margin-top: 50px;
+		margin-bottom: 20px;
 	}
+
 	
 	.nodi{
 		display: flex;
@@ -60,8 +62,10 @@ table tr:hover { cursor: pointer;  background-color: #f6f6f6 }
 <tbody>
 
 <body>
-<h3>공지글목록</h3>
 
+<div class="main">
+<h3>공지글목록</h3>
+</div>
 
 <div class="no">
 

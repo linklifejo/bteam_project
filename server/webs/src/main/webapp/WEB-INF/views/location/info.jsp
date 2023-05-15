@@ -12,7 +12,8 @@
 	.main{
 		text-align: center; margin: 0 auto;
 		container: text-center;
-	}
+		margin:50px;
+		}
 
 
 	.main1{
@@ -50,12 +51,6 @@
 	
 	<tr><th>추가설명</th>
 		<td>${vo.name_desc }</td>
-	</tr>
-	<tr><th>위도</th>
-		<td>${vo.latitude }</td>
-	</tr>
-	<tr><th>경도</th>
-		<td>${vo.longitude }</td>
 	</tr>
 	<tr><th>주소</th>
 		<td>${vo.address }</td>
