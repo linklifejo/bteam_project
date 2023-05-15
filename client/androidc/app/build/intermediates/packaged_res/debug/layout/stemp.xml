@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
         android:gravity="left"
-        android:text="산을 선택하세요"
+        android:text="산을 선택해주세요"
         android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="1dp" />

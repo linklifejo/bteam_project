@@ -2850,7 +2850,6 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
-drawable marker
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -2900,7 +2899,6 @@ drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
 drawable mu_dueng_san
 drawable mu_dueng_san1
-drawable mudm
 drawable mudng
 drawable mudng2
 drawable my

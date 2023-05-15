@@ -38,9 +38,11 @@ select seq_gone.currval from dual
 </selectKey>
 </insert>
 
+
+
 <insert id='gonewrite'>
 insert into gone( title, content, contentr,member_id, location_id, course_id,loccode)
-values (#{title}, #{content}, #{contentr},#{member_id}, #{location_id}, #{course_id},#{loccode})
+values (#{title}, #{content, jdbcType=VARCHAR}, #{contentr},#{member_id}, #{location_id}, #{course_id},#{loccode})
 <selectKey keyProperty="id" order="AFTER" resultType='integer'>
 select seq_gone.currval from dual
 </selectKey>
@@ -52,7 +54,7 @@ select seq_gone.currval from dual
 
 <!-- 선택한 방명록글 삭제 -->
 <delete id='delete'>
-delete from gone where id = #{id}
+delete from gone where id = #{id}   
 </delete>
 
 
@@ -100,7 +102,7 @@ values( #{id}, #{info.filename}, #{info.filepath} )
 <select id='homeList' resultType='gone.HomeVO'>
 <![CDATA[ 
 select *
-from(select g.id,filename, filepath,member_id,gone_time,title,g.content,jjim,( select locname from location where id=g.location_id) locname,
+from(select g.id,filename, filepath,member_id,gone_time,title,g.content,nvl(jjim,0) jjim,( select locname from location where id=g.location_id) locname,
 								( select name_desc from location where id = g.location_id)name_desc,
                                ( select name from member where id=g.member_id) name,
                                
@@ -117,7 +119,7 @@ where rownum <= #{num}
 <select id='mou' resultType='gone.HomeVO'>
 <![CDATA[ 
 select *
-from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,g.contentr,jjim,( select locname from location where id=g.location_id) locname,
+from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,g.contentr,nvl(jjim,0) jjim,( select locname from location where id=g.location_id) locname,
 								( select name_desc from location where id = g.location_id)name_desc,
 								
                                ( select name from member where id=g.member_id) name,
@@ -129,10 +131,13 @@ where rownum <= #{num}
 
 
 <select id='diary' resultType='gone.HomeVO'>
- 
-select contentr,title,member_id from gone where type= '1'
-and member_id=#{id}
+<![CDATA[ 
+select *
+from gone
+where contentr is not null and member_id=#{id} and  rownum <= #{num} and type= #{type} 
+]]>
 </select>
+
 
 
 
@@ -258,8 +263,14 @@ order by id
 <select id='bolist' resultType='gone.GoneVO'>
 select g.*,(select filepath from gone_file where gone_id= g.id) filepath
 from gone g 
+where content is not null
 order by gone_date desc
 </select>
+
+
+
+
+
 
 <!-- 지역정보 목록조회 -->
 <select id='loc_List' resultType='gone.GoneVO'>
