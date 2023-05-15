@@ -118,7 +118,7 @@ public class GoneAdapter extends
         ImageView filepath;
         LinearLayout parentLayout;
         String jjim_check = activity.jjim_check;
-      
+
 
 
         // singerview.xml에서 정의한 아이디를 찾아 연결시킨다(생성자)
