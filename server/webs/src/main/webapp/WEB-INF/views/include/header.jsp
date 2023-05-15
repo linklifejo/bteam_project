@@ -60,7 +60,7 @@
 									</c:otherwise>
 								</c:choose>
 							</c:if>
-            <li class="nav-item"><a class="nav-link ${category eq 'go' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.go">탐방정보</a></li>
+            <li class="nav-item"><a class="nav-link ${category eq 'go' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.go">탐방글</a></li>
 
             <li class="nav-item"><a class="nav-link ${category eq 'bo' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.bo">자유게시판</a></li>
             <li class="nav-item"><a class="nav-link ${category eq 'no' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.no">공지사항</a></li>

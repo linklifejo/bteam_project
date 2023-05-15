@@ -566,7 +566,7 @@ $('button').on({
 							</table>
 							</div> --%>
 
-<h1 class="mainfont_1" style="margin-bottom: 20px;">인기산</h1>
+<h1 class="mainfont_1" style="margin-bottom: 50px;margin-top: 100px;">인기산</h1>
 
 <%-- <c:forEach items='${Loc_info}' var='vo'>
            <span style="display:inline-block; height:450px; width:350px;">
@@ -636,7 +636,7 @@ $('button').on({
 
     <!-- Example Code -->
     
-    <div class="grid text-center" style="--bs-columns: 1; width:1400px;margin-top: 100px;" >
+    <div class="grid text-center" style="--bs-columns: 1; width:1400px;margin-top: 100px;margin-bottom: 100px;" >
         <div class="grid" style="--bs-columns: 2; padding: 0 0 0 0">
           <div class="g-col-1 mapmain" style="padding-top: 0px;
 		    padding-bottom: 0px;
@@ -686,8 +686,8 @@ $('button').on({
    
    
 
-<div class='btnSet' style="margin-top: 100px; font-size:25px;"">
-				<a href='list.go' class='btn-fill'>게시판</a>
+<div class='btnSet' style="margin-top: 200px; font-size:25px;margin-bottom: 50px;">
+				<a href='list.go' class='btn-fill'>탐방글</a>
 			</div>
 
    
