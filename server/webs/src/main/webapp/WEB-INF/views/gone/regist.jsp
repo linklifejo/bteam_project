@@ -23,7 +23,8 @@
 	.main{
 		text-align: center; margin: 0 auto;
 		container: text-center;
-	}
+		margin:50px;
+		}
 
 
 	.main1{
@@ -58,12 +59,12 @@
 	<td class='txt-left'>
 		<div class="align">
 		<label>
-			<input type='file' name='file' class='attach-file'>
+			<input type='file' name='file' id='attach-file'>
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
-		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>		
-		<div class='file-name'></div>
-		<div class='preview'></div>
+		<a id='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>		
+		<div id='file-name'></div>
+		<div id='preview'></div>
 		</div>
 	</td>
 </tr>
@@ -154,7 +155,21 @@ $(function(){
 		var v =$(this).val();
 		$(".co2").val(v);
 		});
-})
+	
+	$('[name=location_id]').change(function(){
+		$.ajax({
+			url:'course/' + $(this).val(),
+			success: function(response){
+				console.log(response)
+				var tag = '';
+				$(response).each(function(){
+					tag += "<option value='"+ this.id+"'>"+ this.couname+"</option>";
+				})
+				$('[name=course_id]').html( tag )
+			}
+		})
+	})
+});
 </script>
 
 

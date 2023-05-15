@@ -200,6 +200,7 @@ order by locname
 <select id='cou_list' resultType='course.CourseVO'>
 select *
 from course 
+where location_id = #{location_id}
 order by couname
 </select>
 <!-- 코스조회 -->
@@ -214,8 +215,8 @@ order by id
 <!-- 지역별 산정보 목록조회 -->
 <select id='Loc_info' resultType='location.LocationVO'>
 <![CDATA[
-select rownum, filename,filepath, id
-from(select filename,filepath, l.id
+select rownum, filename,filepath, id, locname
+from(select filename,filepath, l.id, l.locname
 	from gone g, location l 
 	where g.location_id = l.id and l.type='1'
 	order by g.readcnt desc)

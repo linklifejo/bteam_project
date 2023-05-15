@@ -88,7 +88,7 @@ $( function() {
 
 
 	//첨부파일 선택
-    $('[name=file]:not(#attach-file)').change(function(){
+    $('[name=file]:not(#attach-file):not(.attach-file)').change(function(){
 	
 		console.log( this.files[0] );
 		var attached = this.files[0];

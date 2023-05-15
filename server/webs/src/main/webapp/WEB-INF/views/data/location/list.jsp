@@ -19,22 +19,15 @@
 	<col width='120px'>
 	<col width='70px'><col width='100px'>
 	<col width='70px'><col width='80px'>
-	<col width='200px'><col width='300px'>
-	<col width='100px'><col width='300px'>
-	<col width='100px'><col width='300px'>
+
 </colgroup>
 
 <tr><td rowspan='3'><img src="${vo.mntnattchimageseq}"></td>
 	<th>산명</th><td>${vo.mntnnm}</td>
 	<th>높이</th><td>${vo.mntninfohght}</td>
-	
-	<th>주변관광정보이미지</th><td><img src="${vo.crcmrsghtngetcimageseq}"></td>
-	<th>추천코스</th><td><img src="${vo.rcmmncoursimageseq}"></td>
-	<th>교통정보이미지</th><td><img src="${vo.mntninfotrnspinfoimageseq}"></td>
+	<th>주소</th><td rowspan='3' colspan='9' class='txt-left'>${vo.mntninfopoflc}</td>	
 </tr>
-<tr>
-	<th>주소</th><td rowspan='3' colspan='9' class='txt-left'>${vo.mntninfopoflc}</td>
-</tr>	
+
 	
 </table>
 <table class='tb-list location desc'>

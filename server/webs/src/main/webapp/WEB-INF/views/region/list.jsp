@@ -112,10 +112,10 @@ $('h3.g').text(g)
 
 <div class="container px-4 px-lg-5 mt-5">
 		<div
-			class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+			class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4">
 			<c:forEach items='${local_list}' var='vo'>
 			<div class="col mb-5"><a href='info.re?id=${vo.id}'>
-				<div class="card h-100">
+				<div class="card h-100" >
 					<!-- Product image-->
 				<img class="card-img-top h-100"
 					src="${vo.filepath }"

@@ -12,11 +12,14 @@
 #popup { width: 800px; height: 600px; }
 table.animal img { width:100%; height:100px }
 	
- 	.main{
+
+	.main{
+		text-align: center; margin: 0 auto;
 		container: text-center;
-		text-align: center; margin: 0 auto;	
-	}
-	
+		margin:50px;
+		}
+
+
 
 
 	.common1{

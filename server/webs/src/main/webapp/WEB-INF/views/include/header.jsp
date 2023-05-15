@@ -50,8 +50,8 @@
                        		<c:if test='${not empty loginInfo}'>
 								<c:choose>
 									<c:when test='${loginInfo.admin eq "Y"}'>
-										<li><a ${category eq 'hr' ? "class='active'" : ''} href='<c:url value="/"/>list.hr'>사원관리</a></li>
-										<li><a ${category eq 'cu' ? "class='active'" : ''} href='<c:url value="/"/>list.cu'>고객관리</a></li>
+										<%-- <li><a ${category eq 'hr' ? "class='active'" : ''} href='<c:url value="/"/>list.hr'>사원관리</a></li>
+										<li><a ${category eq 'cu' ? "class='active'" : ''} href='<c:url value="/"/>list.cu'>고객관리</a></li> --%>
 									    <li class="nav-item"><a class="nav-link ${category eq 'co' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.co">코스정보</a></li>
           								<li class="nav-item"><a class="nav-link ${category eq 'lo' ? 'active' : ''}"  aria-current="page"  href="<c:url value='/'/>list.lo">전국산정보</a></li>
 									</c:when>
@@ -209,7 +209,7 @@
 	</div>
 	<div>
 	<div>
-		<img alt="" src="imgs/main_2.png" style="height: 90px;" width="100%;">
+		<img class="mainimg" alt="" src="imgs/main_5.jpg" style="height: 500px;" width="100%;">
 		<div>${resultMap}</div>
 	</div>
 	</div>
@@ -219,6 +219,18 @@
 
 
 <style>
+
+.mainimg{
+ 		container: text-center;
+		text-align: center; margin: 0 auto;
+		width:100%;
+		height:800px;
+		position: relative;
+		z-index: -1;
+
+}
+
+
 .dropbtn {
   font-weight: bold;
   border: none;

@@ -11,8 +11,8 @@
 	.main{
 		text-align: center; margin: 0 auto;
 		container: text-center;
-	}
-
+		margin:50px;
+		}
 
 </style>
 
@@ -31,23 +31,26 @@
 		<c:forEach items="${vo.fileInfo}" var="f">
 		<div class='align' data-file='${f.id}'>
 		<label>
-			<input type='file' name='file' class='attach-file'>
+			<input type='file' name='file' id='attach-file'>
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
-		<span class='file-name'>${f.filename}</span>
-		<span class='preview'></span>
-		<a class='delete-file' style='display:inline'><i class="font-img-r fa-regular fa-trash-can"></i></a>
+		<span id='file-name'>${f.filename}</span>
+		<span id='preview'></span>
+		<a id='delete-file' style='display:inline'><i class="font-img-r fa-regular fa-trash-can"></i></a>
 		</div>
 		</c:forEach>
+		<c:if test="${empty vo.fileInfo}">
+		
 		<div class='align'>
 		<label>
-			<input type='file' name='file' class='attach-file'>
+			<input type='file' name='file' id='attach-file'>
 			<a><i class="font-img-b fa-solid fa-file-circle-plus"></i></a>
 		</label>
-		<span class='file-name'></span>
-		<span class='preview'></span>
-		<a class='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
+		<span id='file-name'></span>
+		<span id='preview'></span>
+		<a id='delete-file'><i class="font-img-r fa-regular fa-trash-can"></i></a>
 		</div>		
+		</c:if>
 	</td>
 </tr>
 <tr><th>내용</th>
@@ -82,7 +85,7 @@
 <script>
 <c:forEach items="${vo.fileInfo}" var="f" varStatus="s">
 if( isImage( '${f.filename}' ) ){
-	$('.preview').eq( ${s.index} )
+	$('#preview').eq( ${s.index} )
 			.html( '<img src="${f.filepath}">' );
 }
 </c:forEach>
@@ -92,6 +95,7 @@ $('#cancel').click(function(){
 });
 
 $('#save').on('click', function(){
+	$('[name=removed]').val( $('#file-name').text() )
 	if( emptyCheck() ) $('form').attr('action', 'update.go').submit();
 });
 </script>
