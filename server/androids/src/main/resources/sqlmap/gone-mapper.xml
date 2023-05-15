@@ -131,15 +131,10 @@ where rownum <= #{num}
 
 
 <select id='diary' resultType='gone.HomeVO'>
- <![CDATA[ 
+<![CDATA[ 
 select *
-from(select g.id,filename, filepath,g.member_id,gone_time,title,g.content,g.contentr,nvl(jjim,0) jjim,( select locname from location where id=g.location_id) locname,
-								( select name_desc from location where id = g.location_id)name_desc,
-								
-                               ( select name from member where id=g.member_id) name,
-                               ( select couname from course where id=g.course_id) couname
-            from gone g, gone_file f where g.id=f.gone_id and g.member_id = #{id} and g.type= '1')
-where rownum <= #{num}
+from gone
+where contentr is not null and member_id=#{id} and  rownum <= #{num} and type= #{type} 
 ]]>
 </select>
 
