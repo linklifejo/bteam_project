@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2. 1에서 만든 DTO에서 내가 보여주고 싶은 데이터를 골라 xml파일을 만든다 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/parentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="제목:"/>
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="387dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="게시글 제목"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp">
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="id:"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/memberid"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="작성자"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="작성 날짜:"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/gonetime"
+                        android:layout_width="174dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="작성 날짜"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</LinearLayout>

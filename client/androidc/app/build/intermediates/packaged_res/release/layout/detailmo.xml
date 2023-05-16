@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="30">
+
+
+        <TextView
+            android:id="@+id/locname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="산의이름"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/filepath"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/dream03" />
+
+
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="소개글"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/name_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="22sp"/>
+
+
+</LinearLayout>
