@@ -75,11 +75,11 @@
 		</c:forEach>
 		</select>
 	</li>
-	<li><select class='w-px120' name='viewType'>
+<!-- 	<li><select class='w-px120' name='viewType'>
 		<option value='list'>리스트</option>
 		<option value='grid'>그리드</option>
 		</select>
-	</li>
+	</li> -->
 	<!-- 로그인된 경우 새글쓰기 가능 -->
 	<c:if test="${not empty loginInfo }">
 	<li><a class='btn-fill' href='new.go'>새글쓰기</a></li>

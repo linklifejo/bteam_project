@@ -56,11 +56,11 @@ table.animal img { width:100%; height:100px }
 	<ul class='animal-top' style="padding-left: 0px;"></ul>
 	<ul class='common'>
 		<li class="common1" style="margin-bottom: 15px;">
-		<select class='w-px100 common1' id='pageList'>
+		<%-- <select class='w-px100 common1' id='pageList'>
 			<c:forEach var='i' begin='1' end='5'>
 			<option value='${10*i}'>${10*i}개씩</option>
 			</c:forEach>
-			</select>
+			</select> --%>
 		</li>
 	</ul>
 </div>

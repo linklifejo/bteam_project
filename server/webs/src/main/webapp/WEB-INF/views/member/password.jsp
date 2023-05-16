@@ -7,7 +7,23 @@
 <title>Insert title here</title>
 <link rel='stylesheet' href='css/member.css'>
 </head>
+
+
+
+<style type="text/css">
+
+.main{
+		container: text-center;
+		text-align: center; margin: 0 auto;
+		margin-top: 50px;
+	}
+
+
+</style>
+
+
 <body>
+<div class="main">
 	<div class='box'>
 		<form method='post' action='change'>
 		<ul>
@@ -25,7 +41,9 @@
 		</ul>
 		</form>
 	</div>
-
+	
+					<a class='btn-empty' href='javascript:history.go(-1)'>취소</a>
+</div>
 <script src='js/member_check.js?<%=new java.util.Date()%>'></script>
 <script>
 $('[type=password]').keyup(function(){

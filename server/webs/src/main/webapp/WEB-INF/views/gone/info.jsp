@@ -158,7 +158,7 @@ $('.download').click(function(){
 });
 
 <c:forEach items="${vo.fileInfo}" var='f' varStatus='state'>
-if( isImage( '${f.filename}' ) ){
+if( isImage( '${f.filepath}' ) ){
 	$('.preview').eq( ${state.index}).html( '<img src="${f.filepath}">' )
 }
 </c:forEach>
