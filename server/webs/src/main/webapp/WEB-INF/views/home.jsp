@@ -132,6 +132,19 @@
 		text-align: center; margin: 0 auto;	
 	}
 	
+	
+	
+.text {
+  width: 300px;
+  display: -webkit-box;
+  word-wrap: break-word;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+	
+	
 </style>
 	
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
@@ -625,7 +638,7 @@ $('button').on({
 			<a>지도로 위치 찾아보기</a>
 			</div>
 			<div>
-		    <a href="#" onclick="window.open('https://map.kakao.com/','width=#,height=#')"><button type="button" class="btn btn-dark" style="font-size: 20dp;">지도 찾기</button></a>		    
+		    <a href="#" onclick="window.open('https://map.kakao.com/','width=#,height=#')"><button type="button" class="btn btn-dark" style="font-size: 20dp;">위치 찾기</button></a>		    
 			</div>
 		    </div>
 		    </a>
@@ -678,7 +691,7 @@ $('button').on({
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div style="height:500px;" class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            <div style="height:400px;" class="text-xs font-weight-bold text-primary text-uppercase mb-1">
 			                            		<img src="${vo.filepath}" class="card-img-top h-100" alt="사진">
                                             </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
@@ -688,7 +701,7 @@ $('button').on({
                                    <h5 class="fw-bolder">${vo.title}</h5>
                                    <!-- Product reviews-->
                                    <!-- Product price-->
-                                   <span class="text-muted">${vo.content}</span>
+                                   <span class="text-muted text">${vo.content}</span>
                                    <div class="d-flex justify-content-center small text-warning mb-2">
                                        <div class="bi-star-fill"></div>
                                        <div class="bi-star-fill"></div>

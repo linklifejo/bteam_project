@@ -17,10 +17,12 @@ p { margin: 10px auto;  text-align: right;}
 .main{
 		container: text-center;
 		text-align: center; margin: 0 auto;
+		margin-top: 50px;
 	}
 .main1{
 		container: text-center;
 		text-align: center; margin: 0 auto;
+		margin-top: 30px;
 	}
 
 
@@ -101,6 +103,10 @@ p { margin: 10px auto;  text-align: right;}
 <div class="main1">
 	<div class='btnSet main1'>
 		<a class='btn-fill' onclick="$('form').submit()">회원정보수정</a>
+<<<<<<< HEAD
+		<%-- <a class='btn-empty' href='myname/list.na?id=${vo.id}'>취소</a> --%>
+=======
+>>>>>>> 5e048b8fe94a639fd9426262e033bc4a94e2f48e
 		<a class='btn-empty' href='javascript:history.go(-1)'>취소</a>
 	</div>
 </div>

@@ -206,15 +206,17 @@
 					<i class="font-profile fa-regular fa-circle-user"></i>
 				</c:when>
 				<c:otherwise>
-					<img class='profile' src='${loginInfo.profile}'>
+					<img style="width:350px; height: 350px;" class='profile' src='${loginInfo.profile}'>
 				</c:otherwise>
 			</c:choose>
 		
 	</td>
 	<td>
 		<li><strong>${loginInfo.name}</strong>님 안녕하세요</li>
-		<li>ID :   <strong>${loginInfo.name}</strong></li>
-		<div>가입일자</div>
+		<li>ID :   <strong>${loginInfo.id}</strong></li>
+		<li>성별 :   <strong>${loginInfo.gender}</strong></li>
+		<li>전화번호 :   <strong>${loginInfo.phone}</strong></li>
+		<!-- <div>가입일자</div> -->
 	</td>
 		</c:if>
 	<td>
