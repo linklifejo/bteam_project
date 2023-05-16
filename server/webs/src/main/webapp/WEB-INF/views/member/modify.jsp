@@ -101,7 +101,7 @@ p { margin: 10px auto;  text-align: right;}
 <div class="main1">
 	<div class='btnSet main1'>
 		<a class='btn-fill' onclick="$('form').submit()">회원정보수정</a>
-		<a class='btn-empty' href='myname/list.na?id=${vo.id}'>취소</a>
+		<a class='btn-empty' href='javascript:history.go(-1)'>취소</a>
 	</div>
 </div>
 <script src='js/member_check.js?<%=new java.util.Date() %>'></script>
