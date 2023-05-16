@@ -51,10 +51,11 @@ public class GoneDAO implements GoneService {
 	@Override
 	public int gone_wroteup(GoneVO vo) {
 		// TODO Auto-generated method stub
+		int update = sql.update("go.gonewroteup",vo);
 		if( vo.getFilepath()!=null )
 			sql.insert("go.gonefileInsert", vo);
 		
-		return sql.update("go.gonewroteup",vo);
+		return update;
 		
 	}
 

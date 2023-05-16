@@ -17,7 +17,8 @@
 	.main{
 		text-align: center; margin: 0 auto;
 		container: text-center;
-	}
+		margin:50px;
+
 
 	.container{
 		text-align: center; margin: 0 auto;
@@ -50,7 +51,6 @@
 <body>
 <div class="main">
 	<h3>${vo.locname }</h3>
-</div>
 
 
 
@@ -67,13 +67,13 @@
 					<div class="text-center">
 					 <table style="width:100%">
 					 <tr>
-					 	<th><h3>주소</h3></th>
+					 	<th><h2>주소</h3></th>
 					 </tr>
 					 <tr>
 						<td>${vo.address}</td>
 					 </tr>
 					 <tr>
-					 	<th><h3>설명</h3></th>
+					 	<th><h2>설명</h3></th>
 					 </tr>
 					 <tr>
 						<td>${vo.name_desc}</td>
@@ -81,7 +81,7 @@
 					 </table>
 							 <table style="width: 100%;">
 							 
-							 	<th><h3>코스정보</h3></th>
+							 	<th><h2>코스정보</h3></th>
 							 
 									<c:forEach items='${cou}' var='cou'>
 									<tr>
@@ -104,18 +104,7 @@
 <button><a href='list.re?loccode=${vo.loccode}'>목록으로</a></button>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
 

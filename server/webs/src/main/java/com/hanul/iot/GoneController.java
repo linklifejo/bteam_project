@@ -1,7 +1,6 @@
 package com.hanul.iot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,16 +17,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import common.CommonUtility;
+import course.CourseVO;
 import gone.GoneCommentVO;
 import gone.GoneFileVO;
 import gone.GonePageVO;
 import gone.GoneServiceImpl;
 import gone.GoneVO;
-import location.LocationServiceImpl;
 import location.LocationVO;
 import member.MemberServiceImpl;
-import member.MemberVO;
-import course.CourseVO;
 
 @Controller
 public class GoneController {
@@ -39,7 +36,7 @@ public class GoneController {
 	public String insert(GoneVO vo, MultipartFile[] file
 						, HttpServletRequest request) {
 		//첨부파일 처리
-		if( file.length > 1 ) {
+		if( !file[0].isEmpty()) {
 			List<GoneFileVO> list = attached_file(file, request);
 			vo.setFileInfo(list);
 		}
@@ -98,11 +95,29 @@ public class GoneController {
 		//첨부되어진 파일이 있다면 해당 파일 정보를 저장한다
 		List<GoneFileVO> files = attached_file(file, request); //파일목록
 		vo.setFileInfo(files);
-		
+				
 		//화면에서 변경입력한 정보로 DB에 변경저장한다		
-		service.gone_update(vo);
 		
-		//삭제하려는 대상파일정보 조회
+		List<GoneFileVO> gonefiles  = service.gone_info(id).getFileInfo();
+		if( files==null ) {
+			//첨부파일 없는 경우
+			//원래X removeX, 원래O removeO
+			if(!removed.isEmpty()) {
+				removed = "";
+			}else {
+				if( gonefiles.size()>0 )
+					removed = String.valueOf( gonefiles.get(0).getId() );
+			}
+				
+		}else {
+			//첨부파일 있는 경우: 원래삭제, 새첨부저장
+			if( gonefiles.size()>0 )
+				removed = String.valueOf( gonefiles.get(0).getId() );
+			else
+				removed = "";
+		}
+		
+		
 		if( ! removed.isEmpty() ) { 
 			List<GoneFileVO> remove_files  
 				= service.gone_removed_file(removed);
@@ -114,6 +129,8 @@ public class GoneController {
 				}
 			}
 		}
+		
+		service.gone_update(vo);
 		
 		//화면연결 - 정보화면		
 		model.addAttribute("url", "info.go");
@@ -164,12 +181,17 @@ public class GoneController {
 	
 	//방명록 새글쓰기화면 요청
 	@RequestMapping("/new.go")
-	public String gone(Model model) {
-		List<location.LocationVO> vo =service.location_list();
+	public String gone( Model model) {
+		List<LocationVO> vo =service.location_list();
 		model.addAttribute("location", vo);
-		List<course.CourseVO> co =service.course_list();
+		List<course.CourseVO> co =service.course_list(vo.get(0).getId());
 		model.addAttribute("course", co);
 		return "gone/regist";
+	}
+	@ResponseBody @RequestMapping("/course/{id}")
+	public Object gone( Model model, @PathVariable int id) {
+		List<CourseVO> co =service.course_list(id);		
+		return co;
 	}
 
 	//선택한 방명록 글화면 요청

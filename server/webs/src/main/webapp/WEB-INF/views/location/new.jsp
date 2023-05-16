@@ -11,8 +11,9 @@
 
 	.main{
 		text-align: center; margin: 0 auto;
-		
-	}
+		container: text-center;
+		margin:50px;
+		}
 
 	.main1{
 		text-align: center; margin: 0 auto;
@@ -34,7 +35,7 @@
 		<col>
 	</colgroup>
 	<tr><th>산이름</th>
-		<td><input type='text' name='locname' ></td>
+		<td><input type='text' name='locname' class="w-100" ></td>
 	</tr>
 	
 	<tr><th>산이미지</th>
@@ -80,13 +81,11 @@
 	</tr>
 	
 	<tr><th>추가설명</th>
-		<td><input type='text' name='name_desc' ></td>
+		<td><textarea class="w-100" name='name_desc' ></textarea></td>
 	</tr>
-	<tr><th>위도</th>
-		<td><input type='text' name='latitude' ></td>
-	</tr>
-	<tr><th>경도</th>
-		<td><input type='text' name='longitude' ></td>
+
+		<input type='hidden' value=1 name='latitude' ></td>
+		<input  type='hidden' value=1 name='longitude' ></td>
 	</tr>
 	<tr><th>주소</th>
 		<td><a class='btn-fill btn-post'>우편번호찾기</a>

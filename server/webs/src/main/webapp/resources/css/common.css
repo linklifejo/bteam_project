@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+h3 {
+		font-size: 70px !important;
+		font-weight: bold !important;
+		position: absolute;
+		left: 10px;
+		top:250px;
+		right: 10px;
+}
+
+
+
+
 body { 
 	margin: 0  auto;
 	text-align: center;

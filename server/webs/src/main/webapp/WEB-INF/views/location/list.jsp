@@ -11,6 +11,7 @@
 
 	.lodi{
 		text-align: center; margin: 0 auto;
+	    margin-top: 50px;
 	}
 
 
@@ -26,20 +27,18 @@
 <div class='btnSet'>
 	<a href='new.lo' class='btn-fill'>산 등록</a>
 </div>
-<table class='w-px600 tb-list'>
+<table class='w-px1200 tb-list'>
 <thead>
 	<tr><th class='w-px140'>산이름</th>
 		<th>추가설명</th>
-		<th class='w-px160'>위도</th>
-		<th class='w-px160'>경도</th>
+
 	</tr>
 </thead>
 <tbody>
 <c:forEach items='${list}' var='vo'>
 	<tr><td><a href='info.lo?id=${vo.id}'>${vo.locname }</a></td>
 		<td>${vo.name_desc }</td>
-		<td>${vo.latitude }</td>
-		<td>${vo.longitude }</td>
+
 	</tr>
 </c:forEach>
 	

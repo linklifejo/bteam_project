@@ -27,36 +27,23 @@
 		text-align: center; margin: 0 auto;
 	}
 	
-	.img{
+/* 	.img1{
 		container: text-center;
 		text-align: center; margin: 0 auto;
 		width:100%;
 		height:800px;
 		position: relative;
 		z-index: -1;
+	} */
+	.img1{
+		font-size: 100px;
+		font-weight: bold;
+		position: absolute;
+		left: 10px;
+		top:0px;
+		right: 10px;
+		z-index: -1;
 	}
-	
-
-	.mainimg {
-		width: 250px;
-		height: 300px;
-		object-fit: contain;
-	}
-
-
-	.homeimg{
-		width: 2000px;
-		text-align: center; margin: 0 auto;
-		padding-bottom:100px;
-		z-index: -2;
-	}
-	.homeimg2{
-		width: 1400px;
-		text-align: center; margin: 0 auto;
-		padding-bottom:100px;
-		z-index: -2;
-	}
-	
 	
 	
 	.mainfont{
@@ -64,9 +51,8 @@
 		font-weight: bold;
 		position: absolute;
 		left: 10px;
-		top:250px;
+		top:200px;
 		right: 10px;
-		color: white;
 	}
 	
 	.mainfont_1{
@@ -90,12 +76,6 @@
       text-overflow:ellipsis;
       white-space:nowrap;
 	}
-	
-	.mainbtn{
-	margin-top: 50px;
-	}
-	
-	
 	
 	
 	.text-center{
@@ -297,16 +277,7 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 	 -->
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 <%-- 	/*}	
  	weather(initDate);
 
@@ -491,8 +462,9 @@ var url ="https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcs
 	
 <body onload="showImage()">
 
-<div class="img">
- <img id="introimg" border="0" style= height:700px;width:1500px;>
+<div class="img1">
+ <img id="introimg" border="0" style= height:500px;width:100%;>
+ 
 </div>
 
 <div class="mainsm">
@@ -566,7 +538,7 @@ $('button').on({
 							</table>
 							</div> --%>
 
-<h1 class="mainfont_1" style="margin-bottom: 20px;">인기산</h1>
+<h1 class="mainfont_1" style="margin-bottom: 50px;margin-top: 100px;">인기산</h1>
 
 <%-- <c:forEach items='${Loc_info}' var='vo'>
            <span style="display:inline-block; height:450px; width:350px;">
@@ -605,10 +577,11 @@ $('button').on({
                     <div class="col mb-5">
                         <div class="card h-100" style="width:400px;">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem width:50px; height:50px; font-size:30px;"">${vo.rownum}</div>
+                            <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem width:50px; height:50px; font-size:30px;">${vo.rownum}</div>
                             <!-- Product image-->
                              <a href='info.re?id=${vo.id}' style= "height:500px; width:400px;"><img style= "height:700px; width:400px;" src="${vo.filepath}" class="card-img-top h-100" alt="사진">
                    			</a>
+                   			<div style="font-size:30px; font-weight: bold;">${vo.locname}</div>
                             <!-- Product details-->
                  
                         </div>
@@ -636,7 +609,7 @@ $('button').on({
 
     <!-- Example Code -->
     
-    <div class="grid text-center" style="--bs-columns: 1; width:1400px;margin-top: 100px;" >
+    <div class="grid text-center" style="--bs-columns: 1; width:1400px;margin-top: 100px;margin-bottom: 100px;" >
         <div class="grid" style="--bs-columns: 2; padding: 0 0 0 0">
           <div class="g-col-1 mapmain" style="padding-top: 0px;
 		    padding-bottom: 0px;
@@ -686,8 +659,8 @@ $('button').on({
    
    
 
-<div class='btnSet' style="margin-top: 100px; font-size:25px;"">
-				<a href='list.go' class='btn-fill'>게시판</a>
+<div class='btnSet' style="margin-top: 200px; font-size:25px;margin-bottom: 50px;">
+				<a href='list.go' class='btn-fill'>탐방글</a>
 			</div>
 
    

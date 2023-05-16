@@ -234,16 +234,19 @@ public class GoneAdapter extends
             Integer id = dto.getId();
             btnWill.setTransitionName( id.toString());
             btndel.setTransitionName(id.toString());
+          if(dto.getJjim()==null) {
+              dto.setJjim("0");
+          }
+              jjim_check = dto.getJjim().toString();
+              if (jjim_check.equals("0")) {
+                  btnWill.setVisibility(View.VISIBLE);
+                  btndel.setVisibility(View.GONE);
 
-            jjim_check = dto.getJjim().toString();
-            if(jjim_check.equals("0")) {
-                btnWill.setVisibility(View.VISIBLE);
-                btndel.setVisibility(View.GONE);
+              } else {
+                  btnWill.setVisibility(View.GONE);
+                  btndel.setVisibility(View.VISIBLE);
+              }
 
-            }else {
-                btnWill.setVisibility(View.GONE);
-                btndel.setVisibility(View.VISIBLE);
-            }
         }
 
 //        private void showMessage(int position) {
